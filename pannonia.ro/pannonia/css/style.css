@@ -1,0 +1,74 @@
+@charset "utf-8";
+body { margin:0; padding:0; background: none; width:100%; background:#AA6F47 url(../images/bg.gif) top repeat-x;font-family:Arial, Helvetica, sans-serif; font-size:12px;}
+html { padding:0; margin:0;}
+
+.clr {clear:both;font-size:1px;height:1px;line-height:1px;margin:0;}
+
+/* main */
+.main {width:980px; padding:0; margin:0 auto; }
+
+/* header */
+.header { width:980px; margin:0; padding:0; height:93px;}
+
+/* header_text */
+.header_text { height:93px; width:270px; margin:0; padding:0; border:none; float:left;}
+.header_text p { font: normal 12px; color:#8a8a8a; padding:60px 0 0 20px; margin:0;}
+
+/* menu */
+.menu {margin:30px 0 0 0; padding:0; float:right; height:30px;}
+.menu ul { margin:0; padding:0; list-style:none;}
+.menu li { margin:0; padding:0;  font:bold 12px; color:#a6a6a6; float:left;}
+.menu a { float:left; font:bold 12px; color:#fff; padding:10px 15px; margin:0; text-decoration:none; border-right:1px solid #7F4D0B;}
+.menu a:hover {color:#252525; background-color:#F7E6D4; padding:10px 15px;}
+.menu a.active {color:#252525; background-color:#F7E6D4; padding:10px 15px;}
+
+/* body */
+.body { width:980px; margin:0; padding:0; float:left;background-color:#fff}
+.body h2 { font: normal 24px Arial, Helvetica, sans-serif; color:#181818; padding:0; border-bottom:1px solid #e9ebec;}
+.body h3 { font: normal 18px Tahoma, Geneva, sans-serif; color:#282828; padding:10px 5px; margin:0 0 10px 0; border-bottom:1px solid #cccccc;}
+.body p {font:normal 12px; color:#232323; padding:0; margin:10px 0;}
+.body a { color:#d34600; font:bold 12px; text-decoration:none;}
+.body ul { margin:0; padding:0 0 0 100px; font:normal 12px; color:#232323;}
+.body li { background:url(../images/arrow.gif) left no-repeat; padding:0 0 0 20px; margin:0;}
+.body img { float:left; margin:0; border:0;}
+
+/*logo*/
+.logo { width:295px; height:185px; margin:0; padding:20px 0 0 0;}
+
+/*side_body*/
+.side_body { width:280px; padding:10px 0 10px 0; float:left;}
+.side_body p {font:normal 12px; color:#333; padding:0; margin:10px 0;}
+.side_body a { font: bold 12px; color:#666666; margin:0; padding:0; text-decoration:none;}
+
+/*main_body*/
+.main_body { width:550px; padding:20px 10px; margin:0; background:#F7E6D4;}
+.main_body ul { margin:0; padding:0 0 0 100px; font:normal 12px; color:#232323;}
+.main_body li  { background:url(../images/arrow.gif) left no-repeat; padding:5px 0 5px 20px; margin:0; list-style:none;}
+.main_body a { font:bold 12px; color:#0c9ec4; text-decoration:none;}
+
+/*main_body_all*/
+.main_body_all { width:830px; padding:20px 0 20px 10px; margin:0;}
+.main_body_all ul { margin:0; padding:0 0 0 100px; font:normal 12px; color:#232323;}
+.main_body_all li  { background:url(../images/arrow.gif) left no-repeat; padding:5px 0 5px 20px; margin:0; list-style:none;}
+.main_body_all a { font:bold 12px; color:#0c9ec4; text-decoration:none;}
+
+/* Contact Form */
+.response { font:normal 12px; color:red; text-align:center;}
+.loader { text-align:center; width:auto; padding:0; margin:0;}
+#contactform { margin:0; padding:5px;}
+#contactform * { font-family:;; font-size:12px;}
+#contactform ol { margin:0; padding:0; list-style:none;}
+#contactform li { margin:0 0 5px 0; padding:10px; background:none;}
+#contactform li.buttons { margin:0; overflow:hidden;}
+#contactform label { margin:0; width:150px; display:block; float:left; padding:0 0 2px 0; font:bold 12px; color:#666666;}
+#contactform label span { font:normal 10px; color:#afafaf; margin:0; padding:0;}
+#contactform input.text { width:359px; border:1px solid #5F2D0B; margin:0; padding:5px 2px; height:16px; background:#fff;}
+#contactform textarea { width:359px; border:1px solid #5F2D0B; padding:2px; background:#fff;}
+#contactform li.buttons input { padding:2px 5px; margin:0 15px 0 0; background:#222222; border:1px solid #000; color:#FFF; float:right;}
+
+/* footer */
+.footer_block { width:100%; background-color:#5F2D0B; color:#fff; padding:10px 0;}
+.footer { text-align:center; font: normal 12px; color:#FFF; margin:0; padding:10px 0;}
+.footer a {font: normal 12px; color:#FFF;}
+
+.parteneri { width:120px; float:left;padding-top:10px; text-align:center;margin:10px;}
