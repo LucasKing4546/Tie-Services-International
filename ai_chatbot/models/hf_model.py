@@ -1,46 +1,47 @@
-from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
+from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
 import torch
 
+
 class SQL_Model:
-    def __init__(self, model_name="mistralai/Mistral-7B-Instruct-v0.2", max_tokens=512, device=None):
-        self.model_name = model_name
-        self.max_tokens = max_tokens
-        self.device = device or torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    def __init__(self, m_model, cache_dir=None):
+        if m_model is None:
+            model_name = "defog/sqlcoder-7b-2"
+        else:
+            model_name = m_model
 
-        print(f"[INFO] Loading model from {model_name} on {self.device}")
-
-        self.tokenizer = AutoTokenizer.from_pretrained(self.model_name)
-        self.model = AutoModelForCausalLM.from_pretrained(self.model_name, torch_dtype=torch.float16 if self.device == "cuda" else torch.float32)
-        self.model.to(self.device)
-
-        #  Inference pipeline: makes usage simple
-
-        self.generator = pipeline(
-            "text-generation",
-            model=self.model,
-            tokenizer=self.tokenizer,
-            device=0 if self.device == "cuda" else -1,
+        # Configure quantization
+        quantization_config = BitsAndBytesConfig(
+            load_in_4bit=True,
+            bnb_4bit_compute_dtype=torch.float16,
+            bnb_4bit_use_double_quant=True,
+            bnb_4bit_quant_type="nf4"
         )
 
-    def generate_sql(self, prompt, use_sampling=False):
-        print(f"[DEBUG] Prompt sent to model:\n{prompt}\n")
+        self.tokenizer = AutoTokenizer.from_pretrained(model_name, cache_dir=cache_dir) # Pass cache_dir
+        self.model = AutoModelForCausalLM.from_pretrained(
+            model_name,
+            quantization_config=quantization_config,
+            device_map="auto",
+            torch_dtype=torch.float16,
+            low_cpu_mem_usage=True,
+            cache_dir=cache_dir
+        )
 
-        generator_args = {
-            "max_new_tokens": self.max_tokens,
-            "pad_token_id": self.tokenizer.eos_token_id
-        }
+        if self.tokenizer.pad_token is None:
+            self.tokenizer.pad_token = self.tokenizer.eos_token
 
-        if use_sampling:
-            generator_args["do_sample"] = True
-            generator_args["temperature"] = 0.7
-            generator_args["top_p"] = 0.9
-        else:
-            generator_args["do_sample"] = False  # Greedy decoding
-            # Don't include temperature
+    def generate_sql(self, prompt, use_sampling=True):
+        inputs = self.tokenizer(prompt, return_tensors="pt", padding=True, truncation=True)
 
-        response = self.generator(prompt, **generator_args)
+        with torch.no_grad():
+            outputs = self.model.generate(
+                inputs.input_ids.to(self.model.device),
+                attention_mask=inputs.attention_mask.to(self.model.device),
+                max_length=512,
+                temperature=0.7 if use_sampling else 1.0,
+                do_sample=use_sampling,
+                pad_token_id=self.tokenizer.pad_token_id,
+                eos_token_id=self.tokenizer.eos_token_id
+            )
 
-        output = response[0]["generated_text"]
-        sql_output = output[len(prompt):].strip()
-        return sql_output
-
+        return self.tokenizer.decode(outputs[0], skip_special_tokens=True)
