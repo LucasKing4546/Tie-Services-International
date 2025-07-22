@@ -1,0 +1,352 @@
+{
+  "users": {
+    "description": "User account information and authentication details",
+    "columns": [
+      {
+        "name": "id",
+        "type": "INTEGER",
+        "constraints": "PRIMARY KEY AUTO_INCREMENT"
+      },
+      {
+        "name": "username",
+        "type": "VARCHAR(50)",
+        "constraints": "NOT NULL UNIQUE"
+      },
+      {
+        "name": "email",
+        "type": "VARCHAR(100)",
+        "constraints": "NOT NULL UNIQUE"
+      },
+      {
+        "name": "password_hash",
+        "type": "VARCHAR(255)",
+        "constraints": "NOT NULL"
+      },
+      {
+        "name": "first_name",
+        "type": "VARCHAR(50)"
+      },
+      {
+        "name": "last_name",
+        "type": "VARCHAR(50)"
+      },
+      {
+        "name": "date_of_birth",
+        "type": "DATE"
+      },
+      {
+        "name": "phone_number",
+        "type": "VARCHAR(20)"
+      },
+      {
+        "name": "created_at",
+        "type": "TIMESTAMP",
+        "constraints": "DEFAULT CURRENT_TIMESTAMP"
+      },
+      {
+        "name": "updated_at",
+        "type": "TIMESTAMP",
+        "constraints": "DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP"
+      },
+      {
+        "name": "is_active",
+        "type": "BOOLEAN",
+        "constraints": "DEFAULT TRUE"
+      },
+      {
+        "name": "last_login",
+        "type": "TIMESTAMP"
+      }
+    ]
+  },
+  "products": {
+    "description": "Product catalog table storing all available items",
+    "columns": [
+      {
+        "name": "product_id",
+        "type": "INTEGER",
+        "constraints": "PRIMARY KEY AUTO_INCREMENT"
+      },
+      {
+        "name": "sku",
+        "type": "VARCHAR(20)",
+        "constraints": "NOT NULL UNIQUE"
+      },
+      {
+        "name": "product_name",
+        "type": "VARCHAR(200)",
+        "constraints": "NOT NULL"
+      },
+      {
+        "name": "category_id",
+        "type": "INTEGER",
+        "constraints": "FOREIGN KEY REFERENCES categories(id)"
+      },
+      {
+        "name": "price",
+        "type": "DECIMAL(10,2)",
+        "constraints": "NOT NULL CHECK (price > 0)"
+      },
+      {
+        "name": "stock_quantity",
+        "type": "INTEGER",
+        "constraints": "DEFAULT 0 CHECK (stock_quantity >= 0)"
+      },
+      {
+        "name": "weight_kg",
+        "type": "DECIMAL(8,3)"
+      },
+      {
+        "name": "dimensions",
+        "type": "JSON"
+      },
+      {
+        "name": "description",
+        "type": "TEXT"
+      },
+      {
+        "name": "is_discontinued",
+        "type": "BOOLEAN",
+        "constraints": "DEFAULT FALSE"
+      },
+      {
+        "name": "created_date",
+        "type": "DATE",
+        "constraints": "DEFAULT CURRENT_DATE"
+      },
+      {
+        "name": "updated_date",
+        "type": "DATE"
+      }
+    ]
+  },
+  "categories": {
+    "description": "Product categories for organizational hierarchy",
+    "columns": [
+      {
+        "name": "id",
+        "type": "INTEGER",
+        "constraints": "PRIMARY KEY AUTO_INCREMENT"
+      },
+      {
+        "name": "category_name",
+        "type": "VARCHAR(100)",
+        "constraints": "NOT NULL UNIQUE"
+      },
+      {
+        "name": "parent_category_id",
+        "type": "INTEGER",
+        "constraints": "FOREIGN KEY REFERENCES categories(id)"
+      },
+      {
+        "name": "description",
+        "type": "TEXT"
+      },
+      {
+        "name": "image_url",
+        "type": "VARCHAR(500)"
+      },
+      {
+        "name": "sort_order",
+        "type": "INTEGER",
+        "constraints": "DEFAULT 0"
+      },
+      {
+        "name": "is_active",
+        "type": "BOOLEAN",
+        "constraints": "DEFAULT TRUE"
+      },
+      {
+        "name": "created_at",
+        "type": "TIMESTAMP",
+        "constraints": "DEFAULT CURRENT_TIMESTAMP"
+      }
+    ]
+  },
+  "orders": {
+    "description": "Customer order transactions and delivery information",
+    "columns": [
+      {
+        "name": "order_id",
+        "type": "INTEGER",
+        "constraints": "PRIMARY KEY AUTO_INCREMENT"
+      },
+      {
+        "name": "user_id",
+        "type": "INTEGER",
+        "constraints": "NOT NULL FOREIGN KEY REFERENCES users(id)"
+      },
+      {
+        "name": "order_number",
+        "type": "VARCHAR(50)",
+        "constraints": "NOT NULL UNIQUE"
+      },
+      {
+        "name": "order_status",
+        "type": "ENUM('pending', 'confirmed', 'shipped', 'delivered', 'cancelled')",
+        "constraints": "DEFAULT 'pending'"
+      },
+      {
+        "name": "total_amount",
+        "type": "DECIMAL(12,2)",
+        "constraints": "NOT NULL CHECK (total_amount >= 0)"
+      },
+      {
+        "name": "tax_amount",
+        "type": "DECIMAL(10,2)",
+        "constraints": "DEFAULT 0.00"
+      },
+      {
+        "name": "shipping_cost",
+        "type": "DECIMAL(8,2)",
+        "constraints": "DEFAULT 0.00"
+      },
+      {
+        "name": "discount_amount",
+        "type": "DECIMAL(10,2)",
+        "constraints": "DEFAULT 0.00"
+      },
+      {
+        "name": "shipping_address",
+        "type": "JSON"
+      },
+      {
+        "name": "billing_address",
+        "type": "JSON"
+      },
+      {
+        "name": "payment_method",
+        "type": "VARCHAR(50)"
+      },
+      {
+        "name": "payment_status",
+        "type": "ENUM('pending', 'completed', 'failed', 'refunded')",
+        "constraints": "DEFAULT 'pending'"
+      },
+      {
+        "name": "order_date",
+        "type": "TIMESTAMP",
+        "constraints": "DEFAULT CURRENT_TIMESTAMP"
+      },
+      {
+        "name": "shipped_date",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "delivered_date",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "notes",
+        "type": "TEXT"
+      }
+    ]
+  },
+  "order_items": {
+    "description": "Individual items within each order with quantities and pricing",
+    "columns": [
+      {
+        "name": "order_item_id",
+        "type": "INTEGER",
+        "constraints": "PRIMARY KEY AUTO_INCREMENT"
+      },
+      {
+        "name": "order_id",
+        "type": "INTEGER",
+        "constraints": "NOT NULL FOREIGN KEY REFERENCES orders(order_id)"
+      },
+      {
+        "name": "product_id",
+        "type": "INTEGER",
+        "constraints": "NOT NULL FOREIGN KEY REFERENCES products(product_id)"
+      },
+      {
+        "name": "quantity",
+        "type": "INTEGER",
+        "constraints": "NOT NULL CHECK (quantity > 0)"
+      },
+      {
+        "name": "unit_price",
+        "type": "DECIMAL(10,2)",
+        "constraints": "NOT NULL CHECK (unit_price >= 0)"
+      },
+      {
+        "name": "total_price",
+        "type": "DECIMAL(12,2)",
+        "constraints": "NOT NULL CHECK (total_price >= 0)"
+      },
+      {
+        "name": "discount_applied",
+        "type": "DECIMAL(8,2)",
+        "constraints": "DEFAULT 0.00"
+      },
+      {
+        "name": "product_snapshot",
+        "type": "JSON"
+      }
+    ]
+  },
+  "reviews": {
+    "description": "Product reviews and ratings from customers",
+    "columns": [
+      {
+        "name": "review_id",
+        "type": "INTEGER",
+        "constraints": "PRIMARY KEY AUTO_INCREMENT"
+      },
+      {
+        "name": "product_id",
+        "type": "INTEGER",
+        "constraints": "NOT NULL FOREIGN KEY REFERENCES products(product_id)"
+      },
+      {
+        "name": "user_id",
+        "type": "INTEGER",
+        "constraints": "NOT NULL FOREIGN KEY REFERENCES users(id)"
+      },
+      {
+        "name": "rating",
+        "type": "INTEGER",
+        "constraints": "NOT NULL CHECK (rating BETWEEN 1 AND 5)"
+      },
+      {
+        "name": "title",
+        "type": "VARCHAR(200)"
+      },
+      {
+        "name": "review_text",
+        "type": "TEXT"
+      },
+      {
+        "name": "is_verified_purchase",
+        "type": "BOOLEAN",
+        "constraints": "DEFAULT FALSE"
+      },
+      {
+        "name": "helpful_votes",
+        "type": "INTEGER",
+        "constraints": "DEFAULT 0"
+      },
+      {
+        "name": "total_votes",
+        "type": "INTEGER",
+        "constraints": "DEFAULT 0"
+      },
+      {
+        "name": "is_approved",
+        "type": "BOOLEAN",
+        "constraints": "DEFAULT FALSE"
+      },
+      {
+        "name": "created_at",
+        "type": "TIMESTAMP",
+        "constraints": "DEFAULT CURRENT_TIMESTAMP"
+      },
+      {
+        "name": "updated_at",
+        "type": "TIMESTAMP",
+        "constraints": "DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP"
+      }
+    ]
+  }
+}

@@ -7,7 +7,6 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from typing import List, Dict, Any
-import json
 
 # Define the app
 app = modal.App("ai_chatbot")
@@ -23,7 +22,11 @@ image = (
     .pip_install("transformers", "torch", "huggingface_hub", "accelerate", "bitsandbytes", "fastapi", "uvicorn",
                  "python-multipart")
     .add_local_python_source("models")
+    .add_local_python_source("prompting")
+    .add_local_python_source("utils")
+    .add_local_dir("data", "/root/data")
 )
+
 
 # Define a new, dedicated mount point for the volume
 VOLUME_MOUNT_PATH = "/vol_cache"
@@ -119,28 +122,33 @@ async def chat_endpoint(request: ChatRequest):
 
         last_user_message = user_messages[-1].parts[0]["text"]
 
-        # Check if this is a SQL-related query
-        sql_keywords = ["sql", "query", "database", "table", "select", "insert", "update", "delete", "join"]
-        is_sql_query = any(keyword in last_user_message.lower() for keyword in sql_keywords)
+        # Load schema information
+        from prompting.schema_builder import SchemaBuilder
+        builder = SchemaBuilder("data/table_schemas.json")
 
-        if is_sql_query:
-            # Format as SQL generation prompt
-            prompt = f"""Translate the following question into a SQL query:
-Available tables:
-- workers(id, name, salary, role)
-- products(id, name, price, category)
-- orders(id, customer_id, product_id, quantity, order_date)
-- customers(id, name, email, phone)
+        # Create SQLCoder specific prompt format
+        schema_info = ""
+        for schema_name, schema in builder.schemas.items():
+            columns = ", ".join([f"{col['name']} {col['type']}" for col in schema.columns])
+            schema_info += f"CREATE TABLE {schema_name} (\n    {columns}\n);\n\n"
 
-Question: {last_user_message}
-SQL:"""
+        if not schema_info:
+            schema_info = "-- No schema information available"
 
-            # Generate SQL
-            sql_response = model.generate_sql(prompt, use_sampling=True)
-            response_text = f"Here's the SQL query for your request:\n\n```sql\n{sql_response}\n```"
-        else:
-            # For non-SQL queries, provide a helpful response
-            response_text = f"I'm specialized in SQL query generation. Your message: '{last_user_message}' doesn't seem to be a database-related question. Try asking me to generate SQL queries, like 'Show me all engineers' or 'Find the average salary by role'."
+        sqlcoder_prompt = f"""### Task
+        Generate a SQL query to answer this question: `{last_user_message}`
+        
+        ### Database Schema
+        The query will run on a database with the following schema:
+        ```sql
+        {schema_info.strip()}
+        ```
+        
+        ### SQL
+        """
+        # Generate SQL using the SQLCoder format
+        sql_response = model.generate_sql(sqlcoder_prompt, use_sampling=True)
+        response_text = f"Here's the SQL query for your request:\n\n```sql\n{sql_response}\n```"
 
         # Format response to match expected structure
         response = ChatResponse(
@@ -155,14 +163,11 @@ SQL:"""
                 }
             ]
         )
-
         return response
 
     except Exception as e:
         print(f"Error in chat endpoint: {str(e)}")
         raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
-
-
 # Health check endpoint
 @web_app.get("/health")
 async def health_check():
