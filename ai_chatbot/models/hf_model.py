@@ -31,13 +31,30 @@ class SQL_Model:
             self.tokenizer.pad_token = self.tokenizer.eos_token
 
     def generate_sql(self, prompt, use_sampling=True):
-        inputs = self.tokenizer(prompt, return_tensors="pt", padding=True, truncation=True, max_length=2048)
+        # Tokenize to check length
+        inputs = self.tokenizer(prompt, return_tensors="pt", padding=True, truncation=False)
+        input_length = inputs.input_ids.shape[1]
+
+        print(f"DEBUG - Input token length: {input_length}")
+
+        # If prompt is too long, truncate it intelligently
+        max_input_length = 1800  # Leave room for generation
+        if input_length > max_input_length:
+            print(f"WARNING: Prompt too long ({input_length} tokens), truncating...")
+            inputs = self.tokenizer(
+                prompt,
+                return_tensors="pt",
+                padding=True,
+                truncation=True,
+                max_length=max_input_length
+            )
+            input_length = inputs.input_ids.shape[1]
 
         with torch.no_grad():
             outputs = self.model.generate(
                 inputs.input_ids.to(self.model.device),
                 attention_mask=inputs.attention_mask.to(self.model.device),
-                max_new_tokens=256,  # Generate up to 256 new tokens
+                max_new_tokens=300,  # Increased for longer SQL queries
                 temperature=0.7 if use_sampling else 1.0,
                 do_sample=use_sampling,
                 pad_token_id=self.tokenizer.pad_token_id,
@@ -46,20 +63,23 @@ class SQL_Model:
                 num_beams=1 if use_sampling else 4
             )
 
-        # Decode the full response
-        full_response = self.tokenizer.decode(outputs[0], skip_special_tokens=True)
+        # Decode only the new tokens (skip the input)
+        new_tokens = outputs[0][input_length:]
+        sql_response = self.tokenizer.decode(new_tokens, skip_special_tokens=True)
 
-        # For SQLCoder, we need to extract only the SQL after the prompt
-        # The model should generate after "### SQL\n"
-        if "### SQL" in full_response:
-            sql_part = full_response.split("### SQL")[-1].strip()
-        else:
-            # Fallback: remove the original prompt
-            sql_part = full_response[len(prompt):].strip()
+        print(f"DEBUG - Raw generated tokens: {repr(sql_response)}")
 
-        # Clean up the SQL response
-        sql_part = sql_part.strip()
-        if sql_part.startswith('\n'):
-            sql_part = sql_part[1:]
+        # Clean up the response
+        sql_response = sql_response.strip()
 
-        return sql_part
+        # Remove common prefixes/suffixes
+        if sql_response.startswith("```sql"):
+            sql_response = sql_response[6:].strip()
+        if sql_response.endswith("```"):
+            sql_response = sql_response[:-3].strip()
+
+        # Remove any leading/trailing whitespace and newlines
+        sql_response = sql_response.strip()
+
+        print(f"DEBUG - Final SQL: {repr(sql_response)}")
+        return sql_response
