@@ -1,6 +1,6 @@
 import re
 import json
-from typing import Dict, Any, List, Set
+from typing import Dict, Any, Set
 
 
 class SQLValidator:

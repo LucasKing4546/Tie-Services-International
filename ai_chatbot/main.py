@@ -147,13 +147,6 @@ async def chat_endpoint(request: ChatRequest):
                 }]
             )
 
-        conn=mysql.connector.connect(
-            host="localhost",
-            user="root",
-            password="Kisgidam2012*",
-            database="chatbot_answers"
-        )
-
         response_text = f"Here's the SQL query for your request:\n\n```sql\n{sql_response}\n```"
 
         # Validate the SQL if validator is available

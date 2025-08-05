@@ -1,6 +1,6 @@
 import json
 import os
-from typing import Dict, List, Optional, Any, Set
+from typing import Dict, List, Optional, Set
 from dataclasses import dataclass
 from utils.language_detection import LanguageDetector
 
@@ -266,7 +266,6 @@ class SchemaBuilder:
         Returns:
             Set[str]: Set of relevant table names
         """
-        relevant_tables = set()
         question_lower = user_question.lower()
 
         # Remove common Romanian articles and prepositions for better matching
@@ -355,7 +354,7 @@ class SchemaBuilder:
 
         return "\n\n".join(schema_parts)
 
-    def _format_schema_info(self, language: str) -> str:
+    def _format_schema_info(self) -> str:
         """Format schema information for the prompt (legacy method - now returns optimized version)"""
         if not self.schemas:
             return "No table schemas available."
@@ -398,7 +397,7 @@ class SchemaBuilder:
         return self.schemas.get(table_name)
 
     def list_all_tables(self) -> List[str]:
-        """Get list of all available table names"""
+        """Get a list of all available table names"""
         return list(self.schemas.keys())
 
     def search_tables_by_description(self, search_term: str) -> List[str]:
