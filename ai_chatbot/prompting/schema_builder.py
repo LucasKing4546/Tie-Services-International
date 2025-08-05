@@ -86,155 +86,152 @@ class SchemaBuilder:
         }
 
         # Keywords to table mapping for Romanian and English questions
+        # Keywords to table mapping for Romanian and English questions
         self.table_keywords = {
-            # IT and Home department
-            'it': ['acasa', 'it'],
-            'home': ['acasa'],
-            'acasa': ['acasa'],
-            'departament': ['acasa'],
+            # IT
+            'it': ['ai_it'],
 
             # Financial
-            'financiar': ['financiar', 'facturi'],
-            'financial': ['financiar', 'facturi'],
-            'facturi': ['facturi', 'financiar'],
-            'invoices': ['facturi', 'financiar'],
-            'plata': ['financiar'],
-            'payment': ['financiar'],
-            'bani': ['financiar'],
-            'money': ['financiar'],
+            'financiar': ['ai_financiar', 'ai_facturi'],
+            'financial': ['ai_financiar', 'ai_facturi'],
+            'facturi': ['ai_facturi', 'ai_financiar'],
+            'invoices': ['ai_facturi', 'ai_financiar'],
+            'plata': ['ai_financiar'],
+            'payment': ['ai_financiar'],
+            'bani': ['ai_financiar'],
+            'money': ['ai_financiar'],
 
             # Commercial
-            'comercial': ['comercial', 'comenzi_comercial', 'oferte_comercial', 'clienti_comercial'],
-            'commercial': ['comercial', 'comenzi_comercial', 'oferte_comercial', 'clienti_comercial'],
-            'comenzi': ['comenzi_comercial', 'comenzi_proiectare', 'comenzi_aprovizionare'],
-            'orders': ['comenzi_comercial', 'comenzi_proiectare', 'comenzi_aprovizionare'],
-            'oferte': ['oferte_comercial', 'oferte_proiectare'],
-            'offers': ['oferte_comercial', 'oferte_proiectare'],
-            'clienti': ['clienti_comercial'],
-            'clients': ['clienti_comercial'],
-            'customers': ['clienti_comercial'],
+            'comercial': ['ai_comercial', 'ai_omenzi_comercial', 'ai_oferte_comercial', 'ai_clienti_comercial'],
+            'commercial': ['ai_comercial', 'ai_omenzi_comercial', 'ai_oferte_comercial', 'ai_clienti_comercial'],
+            'comenzi': ['ai_omenzi_comercial', 'ai_comenzi_proiectare', 'ai_comenzi_aprovizionare'],
+            'orders': ['ai_omenzi_comercial', 'ai_comenzi_proiectare', 'ai_comenzi_aprovizionare'],
+            'oferte': ['ai_oferte_comercial', 'ai_oferte_proiectare'],
+            'offers': ['ai_oferte_comercial', 'ai_oferte_proiectare'],
+            'clienti': ['ai_clienti_comercial'],
+            'clients': ['ai_clienti_comercial'],
+            'customers': ['ai_clienti_comercial'],
 
             # Procurement
-            'aprovizionare': ['aprovizionare', 'cereri_aprovizionare', 'comenzi_aprovizionare', 'nir_aprovizionare',
-                              'bon_aprovizionare'],
-            'procurement': ['aprovizionare', 'cereri_aprovizionare', 'comenzi_aprovizionare'],
-            'purchasing': ['aprovizionare'],
-            'cereri': ['cereri_aprovizionare'],
-            'requests': ['cereri_aprovizionare'],
-            'nir': ['nir_aprovizionare'],
-            'bon': ['bon_aprovizionare'],
-            'articole': ['articole_aprovizionare'],
-            'articles': ['articole_aprovizionare'],
+            'aprovizionare': ['ai_aprovizionare', 'ai_cereri_aprovizionare', 'ai_comenzi_aprovizionare',
+                              'ai_nir_aprovizionare', 'ai_bon_aprovizionare'],
+            'procurement': ['ai_aprovizionare', 'ai_cereri_aprovizionare', 'ai_comenzi_aprovizionare'],
+            'purchasing': ['ai_aprovizionare'],
+            'cereri': ['ai_cereri_aprovizionare'],
+            'requests': ['ai_cereri_aprovizionare'],
+            'nir': ['ai_nir_aprovizionare'],
+            'bon': ['ai_bon_aprovizionare'],
+            'articole': ['ai_articole_aprovizionare'],
+            'articles': ['ai_articole_aprovizionare'],
 
             # Production
-            'productie': ['productie'],
-            'production': ['productie'],
-            'fabricatie': ['productie'],
-            'manufacturing': ['productie'],
+            'productie': ['ai_productie'],
+            'production': ['ai_productie'],
+            'fabricatie': ['ai_productie'],
+            'manufacturing': ['ai_productie'],
 
             # Engineering/Design
-            'proiectare': ['proiectare_inginerie', 'comenzi_proiectare', 'oferte_proiectare'],
-            'inginerie': ['proiectare_inginerie'],
-            'engineering': ['proiectare_inginerie'],
-            'design': ['proiectare_inginerie'],
+            'proiectare': ['ai_proiectare_inginerie', 'ai_comenzi_proiectare', 'ai_oferte_proiectare'],
+            'inginerie': ['ai_proiectare_inginerie'],
+            'engineering': ['ai_proiectare_inginerie'],
+            'design': ['ai_proiectare_inginerie'],
 
             # Human Resources
-            'resurse': ['resurse_umane'],
-            'umane': ['resurse_umane'],
-            'hr': ['resurse_umane'],
-            'human': ['resurse_umane'],
-            'resources': ['resurse_umane'],
-            'angajati': ['resurse_umane'],
-            'employees': ['resurse_umane'],
-            'pontaj': ['resurse_umane', 'productie', 'proiectare_inginerie'],
-            'timesheet': ['resurse_umane', 'productie', 'proiectare_inginerie'],
+            'resurse': ['ai_resurse_umane'],
+            'umane': ['ai_resurse_umane'],
+            'hr': ['ai_resurse_umane'],
+            'human': ['ai_resurse_umane'],
+            'resources': ['ai_resurse_umane'],
+            'angajati': ['ai_resurse_umane'],
+            'employees': ['ai_resurse_umane'],
+            'pontaj': ['ai_resurse_umane', 'ai_productie', 'ai_proiectare_inginerie'],
+            'timesheet': ['ai_resurse_umane', 'ai_productie', 'ai_proiectare_inginerie'],
 
             # Management
-            'management': ['management'],
-            'conducere': ['management'],
-            'leadership': ['management'],
+            'management': ['ai_management'],
+            'conducere': ['ai_management'],
+            'leadership': ['ai_management'],
 
             # Events
-            'evenimente': ['evenimente'],
-            'events': ['evenimente'],
-            'activitati': ['evenimente'],
-            'activities': ['evenimente'],
+            'evenimente': ['ai_evenimente'],
+            'events': ['ai_evenimente'],
+            'activitati': ['ai_evenimente'],
+            'activities': ['ai_evenimente'],
 
             # TODO
-            'todo': ['to_do'],
-            'task': ['to_do'],
-            'sarcina': ['to_do'],
-            'sarcini': ['to_do'],
-            'tasks': ['to_do'],
-            'lista': ['to_do'],
-            'list': ['to_do'],
+            'todo': ['ai_to_do'],
+            'task': ['ai_to_do'],
+            'sarcina': ['ai_to_do'],
+            'sarcini': ['ai_to_do'],
+            'tasks': ['ai_to_do'],
+            'lista': ['ai_to_do'],
+            'list': ['ai_to_do'],
 
             # SMI (Integrated Management System)
-            'smi': ['smi', 'smi_calitate', 'smi_mediu', 'smi_ssm'],
-            'calitate': ['smi_calitate', 'smi'],
-            'quality': ['smi_calitate', 'smi'],
-            'mediu': ['smi_mediu', 'smi'],
-            'environment': ['smi_mediu', 'smi'],
-            'ssm': ['smi_ssm', 'smi'],
-            'safety': ['smi_ssm', 'smi'],
-            'securitate': ['smi_ssm', 'smi'],
-            'sanatate': ['smi_ssm', 'smi'],
-            'health': ['smi_ssm', 'smi'],
+            'smi': ['ai_smi', 'ai_smi_calitate', 'ai_smi_mediu', 'ai_smi_ssm'],
+            'calitate': ['ai_smi_calitate', 'ai_smi'],
+            'quality': ['ai_smi_calitate', 'ai_smi'],
+            'mediu': ['ai_smi_mediu', 'ai_smi'],
+            'environment': ['ai_smi_mediu', 'ai_smi'],
+            'ssm': ['ai_smi_ssm', 'ai_smi'],
+            'safety': ['ai_smi_ssm', 'ai_smi'],
+            'securitate': ['ai_smi_ssm', 'ai_smi'],
+            'sanatate': ['ai_smi_ssm', 'ai_smi'],
+            'health': ['ai_smi_ssm', 'ai_smi'],
 
             # Maintenance
-            'mentenanta': ['mentenanta'],
-            'maintenance': ['mentenanta'],
-            'reparatii': ['mentenanta'],
-            'repairs': ['mentenanta'],
+            'mentenanta': ['ai_mentenanta'],
+            'maintenance': ['ai_mentenanta'],
+            'reparatii': ['ai_mentenanta'],
+            'repairs': ['ai_mentenanta'],
 
             # Deliveries
-            'livrari': ['livrari'],
-            'deliveries': ['livrari'],
-            'transport': ['livrari', 'comenzi_aprovizionare'],
+            'livrari': ['ai_livrari'],
+            'deliveries': ['ai_livrari'],
+            'transport': ['ai_livrari', 'ai_comenzi_aprovizionare'],
 
             # Service & Support
-            'service': ['service_support'],
-            'support': ['service_support'],
-            'technical': ['service_support'],
-            'tehnic': ['service_support'],
+            'service': ['ai_service_support'],
+            'support': ['ai_service_support'],
+            'technical': ['ai_service_support'],
+            'tehnic': ['ai_service_support'],
 
             # Vehicle Fleet
-            'parc': ['parc_auto'],
-            'auto': ['parc_auto'],
-            'masini': ['parc_auto'],
-            'cars': ['parc_auto'],
-            'vehicles': ['parc_auto'],
-            'fleet': ['parc_auto'],
+            'parc': ['ai_parc_auto'],
+            'auto': ['ai_parc_auto'],
+            'masini': ['ai_parc_auto'],
+            'cars': ['ai_parc_auto'],
+            'vehicles': ['ai_parc_auto'],
+            'fleet': ['ai_parc_auto'],
 
             # Reports
-            'rapoarte': ['rapoarte'],
-            'reports': ['rapoarte'],
-            'situatii': ['rapoarte', 'financiar'],
-            'status': ['rapoarte'],
+            'rapoarte': ['ai_rapoarte'],
+            'reports': ['ai_rapoarte'],
+            'situatii': ['ai_rapoarte', 'ai_financiar'],
+            'status': ['ai_rapoarte'],
 
             # Registry
-            'registru': ['registru', 'resurse_umane'],
-            'registry': ['registru'],
-            'evidenta': ['registru', 'smi_ssm'],
-            'records': ['registru'],
+            'registru': ['ai_registru', 'ai_resurse_umane'],
+            'registry': ['ai_registru'],
+            'evidenta': ['ai_registru', 'ai_smi_ssm'],
+            'records': ['ai_registru'],
 
             # Intrabooking
-            'intrabooking': ['intrabooking'],
-            'booking': ['intrabooking'],
-            'rezervare': ['intrabooking'],
-            'reservation': ['intrabooking'],
+            'intrabooking': ['ai_intrabooking'],
+            'booking': ['ai_intrabooking'],
+            'rezervare': ['ai_intrabooking'],
+            'reservation': ['ai_intrabooking'],
 
             # Utilities
-            'utile': ['utile'],
-            'utilities': ['utile'],
-            'formulare': ['utile'],
-            'forms': ['utile'],
-            'fisiere': ['utile', 'smi'],
-            'files': ['utile', 'smi'],
-            'proceduri': ['utile'],
-            'procedures': ['utile']
+            'utile': ['ai_utile'],
+            'utilities': ['ai_utile'],
+            'formulare': ['ai_utile'],
+            'forms': ['ai_utile'],
+            'fisiere': ['ai_utile', 'ai_smi'],
+            'files': ['ai_utile', 'ai_smi'],
+            'proceduri': ['ai_utile'],
+            'procedures': ['ai_utile']
         }
-
     def _load_schemas(self) -> Dict[str, TableSchema]:
         """Load table schemas from JSON file"""
         schemas = {}
@@ -284,8 +281,10 @@ class SchemaBuilder:
                         table_scores[table] = table_scores.get(table, 0) + 1
 
         # If no specific matches, include main department tables
+        # If no specific matches, include main department tables
         if not table_scores:
-            main_tables = ['acasa', 'financiar', 'comercial', 'aprovizionare', 'productie', 'resurse_umane']
+            main_tables = ['ai_financiar', 'ai_comercial', 'ai_aprovizionare', 'ai_productie',
+                           'ai_resurse_umane']
             for table in main_tables:
                 if table in self.schemas:
                     table_scores[table] = 1
