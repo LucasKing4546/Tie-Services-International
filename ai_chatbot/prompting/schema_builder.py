@@ -376,7 +376,7 @@ class SchemaBuilder:
         schema_info = self.create_optimized_schema_info(user_question, format_type="sql")
 
         prompt = f"""### Task
-        Generate a SQL query to answer the following question. You will always need to return just the 'answer' column of the table you extract information from.
+        Generate a SQL query to answer the following question. You will always need to return just the 'answer' column of the table you extract information from (do not return the 'id', or 'category' column).
         
         ### Database Schema
         The query will run on a database with the following schema:
