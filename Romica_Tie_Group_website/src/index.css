@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Ocean-inspired design system with deep blue gradients */
+
+@layer base {
+  :root {
+    --background: 210 25% 98%;
+    --foreground: 210 15% 15%;
+
+    --card: 210 25% 100%;
+    --card-foreground: 210 15% 15%;
+
+    --popover: 210 25% 100%;
+    --popover-foreground: 210 15% 15%;
+
+    --primary: 210 100% 40%;
+    --primary-foreground: 210 25% 98%;
+
+    --secondary: 195 35% 85%;
+    --secondary-foreground: 210 15% 15%;
+
+    --muted: 195 20% 92%;
+    --muted-foreground: 210 15% 45%;
+
+    --accent: 195 65% 75%;
+    --accent-foreground: 210 15% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 25% 98%;
+
+    --border: 195 25% 88%;
+    --input: 195 25% 88%;
+    --ring: 210 100% 40%;
+
+    --radius: 0.5rem;
+
+    /* Ocean gradient colors */
+    --ocean-light: 190 60% 85%;
+    --ocean-medium: 195 55% 65%;
+    --ocean-deep: 210 65% 45%;
+    --ocean-dark: 215 70% 25%;
+  }
+
+  .dark {
+    --background: 215 70% 8%;
+    --foreground: 195 20% 92%;
+
+    --card: 215 70% 10%;
+    --card-foreground: 195 20% 92%;
+
+    --popover: 215 70% 10%;
+    --popover-foreground: 195 20% 92%;
+
+    --primary: 195 65% 75%;
+    --primary-foreground: 215 70% 8%;
+
+    --secondary: 210 30% 18%;
+    --secondary-foreground: 195 20% 92%;
+
+    --muted: 210 30% 15%;
+    --muted-foreground: 195 15% 65%;
+
+    --accent: 210 30% 20%;
+    --accent-foreground: 195 20% 92%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 195 20% 92%;
+
+    --border: 210 30% 18%;
+    --input: 210 30% 18%;
+    --ring: 195 65% 75%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .ocean-gradient {
+    background: linear-gradient(135deg, hsl(var(--ocean-light)) 0%, hsl(var(--ocean-medium)) 35%, hsl(var(--ocean-deep)) 70%, hsl(var(--ocean-dark)) 100%);
+  }
+  
+  .ocean-gradient-reverse {
+    background: linear-gradient(135deg, hsl(var(--ocean-dark)) 0%, hsl(var(--ocean-deep)) 30%, hsl(var(--ocean-medium)) 65%, hsl(var(--ocean-light)) 100%);
+  }
+  
+  .ocean-text-gradient {
+    background: linear-gradient(135deg, hsl(var(--ocean-deep)), hsl(var(--ocean-dark)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Interactive hover effects */
+  .hover-scale-102:hover {
+    transform: scale(1.02);
+  }
+
+  /* Custom animations */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  @keyframes pulse-slow {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse-slow 2s ease-in-out infinite;
+  }
+
+  /* Parallax and interaction effects */
+  .parallax-bg {
+    transform: translate3d(0, 0, 0);
+    will-change: transform;
+  }
+}
