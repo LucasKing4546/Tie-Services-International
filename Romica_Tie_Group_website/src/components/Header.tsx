@@ -8,9 +8,9 @@ const Header = () => {
   const { theme, setTheme } = useTheme();
 
   const navigation = [
-    { name: 'Home', href: '#home' },
-    { name: 'Solutions', href: '#solutions' },
-    { name: 'Quality & Compliance', href: '#quality' },
+    { name: 'Home', href: '/' },
+    { name: 'Solutions', href: '/solutions' },
+    { name: 'Quality & Compliance', href: '/quality-compliance' },
     { name: 'Projects', href: '#projects' },
     { name: 'Global Network', href: '#network' },
     { name: 'Support & Service', href: '#support' },
@@ -23,13 +23,11 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center">
-            <div className="text-2xl font-bold ocean-text-gradient">
-              ROMICA TIE GROUP
-            </div>
+            <img src="/logo-rtg-top.png" alt="Logo" className="max-h-20 max-w-40" />
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden xl:flex space-x-8">
+          <nav className="hidden xl:flex space-x-5">
             {navigation.map((item) => (
               <a
                 key={item.name}
@@ -49,12 +47,6 @@ const Header = () => {
               className="w-9 h-9"
             >
               {theme === 'light' ? <Moon size={16} /> : <Sun size={16} />}
-            </Button>
-            <Button variant="outline" className="border-primary text-primary hover:bg-primary/10">
-              Find Local Agent
-            </Button>
-            <Button className="bg-primary hover:bg-primary/90">
-              Partner With Us
             </Button>
           </div>
 
@@ -93,12 +85,6 @@ const Header = () => {
                 >
                   {theme === 'light' ? <Moon size={16} className="mr-2" /> : <Sun size={16} className="mr-2" />}
                   {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
-                </Button>
-                <Button variant="outline" className="w-full border-primary text-primary">
-                  Find Local Agent
-                </Button>
-                <Button className="w-full bg-primary hover:bg-primary/90">
-                  Partner With Us
                 </Button>
               </div>
             </div>

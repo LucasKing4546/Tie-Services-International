@@ -1,8 +1,7 @@
-import React from 'react';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import 'leaflet/dist/leaflet.css'; 
-import L from 'leaflet'; 
-import { LatLngTuple } from 'leaflet';
+import React, { useState } from 'react';
+// Import the new InteractiveWorldMap component
+import InteractiveWorldMap from './InteractiveWorldMap';
+
 
 // --- Icon components from lucide-react, mocked for a self-contained example ---
 // In a real project, you would import these from 'lucide-react'
@@ -12,7 +11,6 @@ const Users = (props) => <svg {...props} xmlns="http://www.w3.org/2000/svg" widt
 const Clock = (props) => <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>;
 
 // --- Mocked Button component for a self-contained example ---
-// In a real project, you would import this from '@/components/ui/button'
 const Button = ({ children, className, variant = 'default', size = 'default', ...props }) => {
   let baseClasses = 'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50';
   let sizeClasses = '';
@@ -43,16 +41,7 @@ const Button = ({ children, className, variant = 'default', size = 'default', ..
   );
 };
 
-// --- Custom marker icon using an inline SVG ---
-const svgIcon = new L.Icon({
-  iconUrl: `data:image/svg+xml;base64,${btoa('<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin"><path d="M12 12.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/><path d="M12 2a8.5 8.5 0 1 0 0 17l-1 1-1-1a8.5 8.5 0 0 0-14.7 6.3h0l.2.2.8.8.8.8h0a6.5 6.5 0 0 0 10 0l-1-1-1-1z"/></svg>')}`,
-  iconSize: [32, 32],
-  iconAnchor: [16, 32],
-  popupAnchor: [0, -32]
-});
-
-// --- Main App Component ---
-export default function App() {
+export default function GlobalPresence() {
   const regions = [
     {
       name: "South Korea",
@@ -61,7 +50,7 @@ export default function App() {
       active: true,
       icon: MapPin,
       gradient: "from-blue-500 to-blue-700",
-      coordinates: [35.9078, 127.7669]
+      coordinates: [127.7669, 35.9078]
     },
     {
       name: "European Union",
@@ -70,7 +59,7 @@ export default function App() {
       active: true,
       icon: Globe,
       gradient: "from-teal-500 to-teal-700",
-      coordinates: [54.5260, 15.2551]
+      coordinates: [15.2551, 54.5260]
     },
     {
       name: "North America",
@@ -79,11 +68,9 @@ export default function App() {
       active: true,
       icon: Users,
       gradient: "from-purple-500 to-purple-700",
-      coordinates: [37.0902, -95.7129]
+      coordinates: [-95.7129, 37.0902]
     }
   ];
-
-  const mapCenter: LatLngTuple = [20, 0];// Default center for the map
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white font-sans antialiased">
@@ -100,8 +87,7 @@ export default function App() {
               Wherever your
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-teal-500">
-                mission takes you
-              </span>
+                mission takes you</span>
             </h2>
             <p className="text-xl text-gray-500 dark:text-gray-400 max-w-3xl mx-auto">
               Strategic presence across three continents ensures rapid response and local expertise 
@@ -111,28 +97,12 @@ export default function App() {
 
           <div className="grid lg:grid-cols-3 gap-16 items-start">
             
-            {/* Interactive world map using Leaflet */}
+            {/* Interactive world map using the new component */}
             <div className="lg:col-span-2">
               <div className="relative bg-gradient-to-br from-blue-500/5 to-teal-500/5 rounded-3xl p-8 border border-blue-500/10 dark:border-blue-500/20">
-                <MapContainer 
-                  center={mapCenter} // Initial center of the map
-                  zoom={2} 
-                  scrollWheelZoom={true} 
-                  className="h-[500px] w-full rounded-2xl z-0"
-                >
-                  <TileLayer
-                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                  />
-                  {regions.map((region) => (
-                    <Marker key={region.name} position={region.coordinates as LatLngTuple} icon={svgIcon}>
-                      <Popup>
-                        <h4 className="font-bold">{region.name}</h4>
-                        <p className="text-sm">{region.description}</p>
-                      </Popup>
-                    </Marker>
-                  ))}
-                </MapContainer>
+                <div className="h-[500px] w-full rounded-2xl z-0 overflow-hidden">
+                  <InteractiveWorldMap locations={regions} />
+                </div>
               </div>
             </div>
             
@@ -186,54 +156,10 @@ export default function App() {
                   </div>
                 );
               })}
-              
-              {/* Call to action */}
-              <div className="bg-gradient-to-br from-blue-500/10 to-teal-500/10 rounded-2xl p-6 border border-blue-500/20 mt-8 dark:from-blue-500/20 dark:to-teal-500/20 dark:border-blue-500/30">
-                <h4 className="font-bold text-lg mb-3">Partner with us globally</h4>
-                <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
-                  Connect with our regional teams to explore partnership opportunities in your area.
-                </p>
-                <Button className="w-full bg-blue-500 hover:bg-blue-600 text-white">
-                  Find Your Local Agent
-                </Button>
-              </div>
-            </div>
-          </div>
-          
-          {/* Additional capabilities showcase */}
-          <div className="mt-20 grid md:grid-cols-3 gap-8">
-            <div className="text-center group">
-              <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-blue-500/20 to-blue-600/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <Globe className="w-8 h-8 text-blue-600" />
-              </div>
-              <h3 className="font-bold text-lg mb-2">Global Logistics</h3>
-              <p className="text-sm text-gray-500 dark:text-gray-400">
-                Worldwide shipping and installation support for complex marine equipment
-              </p>
-            </div>
-            
-            <div className="text-center group">
-              <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-teal-500/20 to-teal-600/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <Users className="w-8 h-8 text-teal-600" />
-              </div>
-              <h3 className="font-bold text-lg mb-2">Local Expertise</h3>
-              <p className="text-sm text-gray-500 dark:text-gray-400">
-                Regional specialists with deep understanding of local regulations and requirements
-              </p>
-            </div>
-            
-            <div className="text-center group">
-              <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-purple-500/20 to-purple-600/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <Clock className="w-8 h-8 text-purple-600" />
-              </div>
-              <h3 className="font-bold text-lg mb-2">24/7 Support</h3>
-              <p className="text-sm text-gray-500 dark:text-gray-400">
-                Round-the-clock technical assistance and emergency response capabilities
-              </p>
             </div>
           </div>
         </div>
       </section>
     </div>
   );
-};
+}

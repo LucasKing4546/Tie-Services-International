@@ -107,16 +107,9 @@ const HeroSection = () => {
         </div>
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 mb-24 text-center">
         <div className="max-w-4xl">
           <div className="mb-8">
-            <div className="flex items-center mb-6">
-              <div className="w-12 h-0.5 bg-white/60 mr-4"></div>
-              <span className="text-white/80 text-sm font-medium tracking-[0.2em] uppercase">
-                Precision Engineering Since 1989
-              </span>
-            </div>
-            
             <h1 className="text-6xl md:text-8xl font-black mb-8 leading-none text-white">
               Bespoke Deck
               <br />
@@ -136,35 +129,6 @@ const HeroSection = () => {
               Where precision meets the power of the ocean.
             </span>
           </p>
-
-          <div className="flex flex-col lg:flex-row gap-6 mb-12">
-            <Button size="lg" className="group bg-white text-primary hover:bg-blue-50 px-10 py-6 text-lg font-bold rounded-none transition-all duration-300 hover:scale-105">
-              Explore Our Custom Solutions
-              <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-primary px-10 py-6 text-lg font-bold rounded-none transition-all duration-300 hover:scale-105">
-              Partner with Our Engineering Team
-            </Button>
-          </div>
-
-          {/* Equipment operation video preview */}
-          <div className="relative group cursor-pointer" onClick={() => setIsPlaying(!isPlaying)}>
-            <div className="bg-black/30 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300">
-              <div className="flex items-center justify-between">
-                <div>
-                  <h3 className="text-white font-semibold text-lg mb-2">Watch Our Equipment in Action</h3>
-                  <p className="text-white/70 text-sm">LARS & Winch Systems operating on research vessels</p>
-                </div>
-                <div className="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-all">
-                  {isPlaying ? (
-                    <div className="w-4 h-4 bg-white rounded-sm"></div>
-                  ) : (
-                    <Play className="w-6 h-6 text-white ml-1" />
-                  )}
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
 
