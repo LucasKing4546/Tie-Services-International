@@ -1,5 +1,4 @@
-# LucasKing4546 Projects Repository
-
+🧠 Tie Services International Development Hub
 This repository contains two distinct projects showcasing my work in **AI-powered database querying** and **modern web development**.
 
 ---
@@ -85,9 +84,4 @@ This repository is released under the **MIT License** – free to use, modify, a
 **Lucas Secara**
 
   - **GitHub:** [LucasKing4546](https://www.google.com/search?q=https://github.com/LucasKing4546)
-  - **Email:** (add your email if you want)
-
-<!-- end list -->
-
-```
-```
+  - **Email:** lucassecara@yahoo.com
