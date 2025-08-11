@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AI SQL Assistant Widget</title>
+        <!-- Tailwind CSS CDN -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <!-- Font Awesome for icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>  
+        <!-- Chat Widget Button -->
+        <div id="chatButton" class="chat-button">
+            <i class="fas fa-robot robot-icon"></i>
+        </div>
+
+        <!-- Chat Widget Window -->
+        <div id="chatWindow" class="chat-window">
+            <div class="chat-header">
+                <div class="header-content">
+                    <div class="robot-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="title-section">
+                        <h3>eERP Assistant</h3>
+                        <p>Sunt aici să te ajut!</p>
+                    </div>
+                </div>
+                <button id="closeChatButton" class="close-button">&times;</button>
+            </div>
+            <div id="chatMessages" class="chat-messages">
+                <!-- Initial AI message -->
+                <div class="message ai">
+                    <strong>Salut! 👋</strong><br>
+                    Sunt asistentul tău intern. Te pot ajuta să găsești tutoriale și informații despre fiecare departament și operațiunile sale.<br><br>
+                    Încearcă să mă întrebi ceva de genul:<br>
+                    • "Cum adaug o cerere de ofertă de articole?"<br>
+                    • "Tutorial livrări"<br>
+                    • "Cum funcționează pagina de evenimente?"<br>
+                </div>
+            </div>
+            <div class="chat-input-area">
+                <input type="text" id="chatInput" placeholder="Scrie un mesaj...">
+                <button id="sendMessageButton">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
