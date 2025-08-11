@@ -1,4 +1,4 @@
-🧠 Tie Services International Development Hub
+## 🧠 Tie Services International Development Hub
 This repository contains two distinct projects showcasing my work in **AI-powered database querying** and **modern web development**.
 
 ---
