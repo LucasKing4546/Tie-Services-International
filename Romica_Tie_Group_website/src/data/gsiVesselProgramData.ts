@@ -1,3 +1,5 @@
+import { ProjectData } from '../types/project';
+
 export const gsiVesselProgramData: ProjectData = {
   title: "GSI Vessel Program",
   subtitle: "Hyundai Heavy Industries Partnership",
