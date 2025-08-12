@@ -12,7 +12,7 @@ export default function CredibilityBar() {
             <Shield className="w-4 h-4 mr-2" />
             Certified by Industry Leaders
           </div>
-          <h3 className="text-2xl font-bold text-gray-900">Trusted & Certified</h3>
+          <h3 className="text-4xl font-bold text-gray-900">Trusted & Certified</h3>
         </div>
 
         {/* Logo Bar */}
@@ -21,7 +21,7 @@ export default function CredibilityBar() {
           {/* DNV Logo */}
           <div className="group cursor-pointer transition-all duration-300 hover:scale-110">
             <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/DNV_GL_logo.svg/320px-DNV_GL_logo.svg.png"
+              src="/dnv_logo.png"
               alt="DNV Certification"
               className="h-12 md:h-16 w-auto filter grayscale group-hover:grayscale-0 transition-all duration-300 opacity-70 group-hover:opacity-100"
             />
@@ -30,7 +30,7 @@ export default function CredibilityBar() {
           {/* Lloyd's Register Logo */}
           <div className="group cursor-pointer transition-all duration-300 hover:scale-110">
             <img
-              src="https://upload.wikimedia.org/wikipedia/en/thumb/4/4e/Lloyd%27s_Register_logo.svg/320px-Lloyd%27s_Register_logo.svg.png"
+              src="/lv_logo.png"
               alt="Lloyd's Register Certification"
               className="h-12 md:h-16 w-auto filter grayscale group-hover:grayscale-0 transition-all duration-300 opacity-70 group-hover:opacity-100"
             />
@@ -39,7 +39,7 @@ export default function CredibilityBar() {
           {/* Bureau Veritas Logo */}
           <div className="group cursor-pointer transition-all duration-300 hover:scale-110">
             <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Bureau_Veritas_logo.svg/320px-Bureau_Veritas_logo.svg.png"
+              src="/Bureau_Veritas_logo.png"
               alt="Bureau Veritas Certification"
               className="h-12 md:h-16 w-auto filter grayscale group-hover:grayscale-0 transition-all duration-300 opacity-70 group-hover:opacity-100"
             />

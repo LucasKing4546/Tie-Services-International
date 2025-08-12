@@ -11,8 +11,8 @@ const Header = () => {
     { name: 'Home', href: '/' },
     { name: 'Solutions', href: '/solutions' },
     { name: 'Quality & Compliance', href: '/quality-compliance' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Global Network', href: '#network' },
+    { name: 'Projects', href: '/projects' },
+    { name: 'Global Network', href: '/global-network' },
     { name: 'Support & Service', href: '#support' },
     { name: 'Resources', href: '#resources' },
     { name: 'About Us', href: '#about' }

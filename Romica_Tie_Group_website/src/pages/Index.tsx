@@ -5,6 +5,7 @@ import CoreMarketsSection from '@/components/CoreMarketsSection';
 import FeaturedProject from '@/components/FeaturedProject';
 import GlobalPresence from '@/components/GlobalPresence';
 import Footer from '@/components/Footer';
+import CredibilityBar from '@/components/CredibilityBar';
 
 const Index = () => {
   return (
@@ -12,6 +13,7 @@ const Index = () => {
       <Header />
       <main>
         <HeroSection />
+        <CredibilityBar />
         <CoreMarketsSection />
         <FeaturedProject />
         <GlobalPresence />
