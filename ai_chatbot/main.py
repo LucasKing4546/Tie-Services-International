@@ -147,7 +147,11 @@ async def chat_endpoint(request: ChatRequest):
                 }]
             )
 
-        response_text = f"Here's the SQL query for your request:\n\n```sql\n{sql_response}\n```"
+        response_text = sql_response
+
+        # Removed semicolon to return a correct SQL query
+        if response_text[-1] == ';':
+            response_text = response_text[:-1]
 
         # Validate the SQL if validator is available
         try:
