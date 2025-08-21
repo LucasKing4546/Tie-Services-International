@@ -86,7 +86,7 @@ export default function GlobalPresence() {
             <h2 className="text-5xl md:text-6xl font-black mb-6 leading-tight">
               Wherever your
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-teal-500">
+              <span className="text-transparent bg-clip-text bg-primary">
                 mission takes you</span>
             </h2>
             <p className="text-xl text-gray-500 dark:text-gray-400 max-w-3xl mx-auto">

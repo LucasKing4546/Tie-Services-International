@@ -1,331 +1,146 @@
-import React, { useEffect, useRef, useState } from 'react';
-import mapboxgl from 'mapbox-gl';
-import 'mapbox-gl/dist/mapbox-gl.css';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { MapPin, Mail, Phone, ExternalLink } from 'lucide-react';
+import React, { useState } from 'react';
+// Import the new InteractiveWorldMap component
+import InteractiveWorldMap from '../InteractiveWorldMap';
 
-// Since this project has Supabase enabled, we'll use environment variables from Supabase secrets
-// For now, we'll show an input field for the user to enter their Mapbox token temporarily
-const GlobalNetworkMap = () => {
-  const mapContainer = useRef<HTMLDivElement>(null);
-  const map = useRef<mapboxgl.Map | null>(null);
-  const [mapboxToken, setMapboxToken] = useState('');
-  const [mapInitialized, setMapInitialized] = useState(false);
-  const [selectedAgent, setSelectedAgent] = useState<any>(null);
 
-  // Sample agent data - in production this would come from your database
-  const agents = [
-    {
-      id: 1,
-      name: 'North Atlantic Marine Solutions',
-      region: 'United Kingdom & Ireland',
-      coordinates: [-3.4360, 55.3781],
-      contact: {
-        email: 'info@nams.co.uk',
-        phone: '+44 (0) 131 555 0123',
-        address: 'Edinburgh, Scotland'
-      },
-      services: ['A-Frames', 'Winches', 'LARS'],
-      established: '2018'
-    },
-    {
-      id: 2,
-      name: 'Nordic Marine Engineering',
-      region: 'Scandinavia',
-      coordinates: [10.7522, 59.9139],
-      contact: {
-        email: 'contact@nordicmarine.no',
-        phone: '+47 22 12 34 56',
-        address: 'Oslo, Norway'
-      },
-      services: ['Oceanographic Equipment', 'Survey Systems'],
-      established: '2020'
-    },
-    {
-      id: 3,
-      name: 'Pacific Marine Technologies',
-      region: 'Asia Pacific',
-      coordinates: [151.2093, -33.8688],
-      contact: {
-        email: 'info@pacificmarine.com.au',
-        phone: '+61 2 9876 5432',
-        address: 'Sydney, Australia'
-      },
-      services: ['ROV Systems', 'Deep Water Equipment'],
-      established: '2019'
-    },
-    {
-      id: 4,
-      name: 'Gulf Marine Solutions',
-      region: 'Middle East',
-      coordinates: [55.2708, 25.2048],
-      contact: {
-        email: 'sales@gulfmarine.ae',
-        phone: '+971 4 123 4567',
-        address: 'Dubai, UAE'
-      },
-      services: ['Offshore Systems', 'Marine Handling'],
-      established: '2021'
-    },
-    {
-      id: 5,
-      name: 'Americas Marine Engineering',
-      region: 'North America',
-      coordinates: [-74.0060, 40.7128],
-      contact: {
-        email: 'info@americasmarine.com',
-        phone: '+1 (555) 123-4567',
-        address: 'New York, USA'
-      },
-      services: ['Research Vessels', 'Commercial Systems'],
-      established: '2017'
-    }
-  ];
+// --- Icon components from lucide-react, mocked for a self-contained example ---
+// In a real project, you would import these from 'lucide-react'
+const Globe = (props) => <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>;
+const MapPin = (props) => <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 12.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"></path><path d="M12 2a8.5 8.5 0 1 0 0 17l-1 1-1-1a8.5 8.5 0 0 0-14.7 6.3h0l.2.2.8.8.8.8h0a6.5 6.5 0 0 0 10 0l-1-1-1-1z"></path></svg>;
+const Users = (props) => <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>;
+const Clock = (props) => <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>;
 
-  const initializeMap = () => {
-    if (!mapContainer.current || !mapboxToken.trim()) return;
-
-    mapboxgl.accessToken = mapboxToken;
-
-    try {
-      map.current = new mapboxgl.Map({
-        container: mapContainer.current,
-        style: 'mapbox://styles/mapbox/satellite-streets-v12',
-        projection: 'globe' as any,
-        zoom: 1.5,
-        center: [30, 15],
-        pitch: 0,
-      });
-
-      // Add navigation controls
-      map.current.addControl(
-        new mapboxgl.NavigationControl({
-          visualizePitch: true,
-        }),
-        'top-right'
-      );
-
-      // Add atmosphere effects
-      map.current.on('style.load', () => {
-        if (!map.current) return;
-        
-        map.current.setFog({
-          color: 'rgb(255, 255, 255)',
-          'high-color': 'rgb(200, 200, 225)',
-          'horizon-blend': 0.2,
-        });
-
-        // Add markers for each agent
-        agents.forEach((agent) => {
-          // Create custom marker element
-          const markerEl = document.createElement('div');
-          markerEl.className = 'custom-marker';
-          markerEl.style.cssText = `
-            width: 40px;
-            height: 40px;
-            background: hsl(var(--primary));
-            border: 3px solid white;
-            border-radius: 50%;
-            cursor: pointer;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: transform 0.2s;
-          `;
-          
-          const icon = document.createElement('div');
-          icon.innerHTML = '📍';
-          icon.style.fontSize = '16px';
-          markerEl.appendChild(icon);
-
-          // Add hover effect
-          markerEl.addEventListener('mouseenter', () => {
-            markerEl.style.transform = 'scale(1.2)';
-          });
-          markerEl.addEventListener('mouseleave', () => {
-            markerEl.style.transform = 'scale(1)';
-          });
-
-          // Create marker
-          const marker = new mapboxgl.Marker(markerEl)
-            .setLngLat(agent.coordinates as [number, number])
-            .addTo(map.current!);
-
-          // Add click handler
-          markerEl.addEventListener('click', () => {
-            setSelectedAgent(agent);
-          });
-        });
-      });
-
-      setMapInitialized(true);
-    } catch (error) {
-      console.error('Error initializing map:', error);
-    }
-  };
-
-  useEffect(() => {
-    if (mapboxToken && !mapInitialized) {
-      initializeMap();
-    }
-
-    return () => {
-      if (map.current) {
-        map.current.remove();
-        setMapInitialized(false);
-      }
-    };
-  }, [mapboxToken]);
-
+// --- Mocked Button component for a self-contained example ---
+const Button = ({ children, className, variant = 'default', size = 'default', ...props }) => {
+  let baseClasses = 'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50';
+  let sizeClasses = '';
+  switch (size) {
+    case 'sm':
+      sizeClasses = 'h-8 px-3 text-xs';
+      break;
+    case 'lg':
+      sizeClasses = 'h-12 px-8';
+      break;
+    default:
+      sizeClasses = 'h-9 px-4 py-2';
+      break;
+  }
+  let variantClasses = '';
+  switch (variant) {
+    case 'ghost':
+      variantClasses = 'bg-transparent text-foreground hover:bg-accent hover:text-accent-foreground';
+      break;
+    default:
+      variantClasses = 'bg-primary text-primary-foreground shadow hover:bg-primary/90';
+      break;
+  }
   return (
-    <div className="space-y-6">
-      {/* Mapbox Token Input */}
-      {!mapInitialized && (
-        <Card className="bg-blue-50 border-blue-200">
-          <CardHeader>
-            <CardTitle className="text-lg flex items-center gap-2">
-              <MapPin className="h-5 w-5" />
-              Configure Map Access
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <p className="text-sm text-muted-foreground">
-              To display the interactive map, please enter your Mapbox public token. 
-              You can get a free token at{' '}
-              <a 
-                href="https://mapbox.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-primary hover:underline"
-              >
-                mapbox.com
-              </a>
-            </p>
-            <div className="flex gap-2">
-              <Input
-                type="password"
-                placeholder="Enter your Mapbox public token..."
-                value={mapboxToken}
-                onChange={(e) => setMapboxToken(e.target.value)}
-                className="flex-1"
-              />
-              <Button onClick={initializeMap} disabled={!mapboxToken.trim()}>
-                Load Map
-              </Button>
-            </div>
-          </CardContent>
-        </Card>
-      )}
-
-      {/* Map Container */}
-      <div className="grid lg:grid-cols-3 gap-6">
-        <div className="lg:col-span-2">
-          <div 
-            ref={mapContainer} 
-            className="w-full h-[500px] rounded-lg shadow-lg bg-muted flex items-center justify-center"
-          >
-            {!mapInitialized && (
-              <div className="text-center text-muted-foreground">
-                <MapPin className="h-12 w-12 mx-auto mb-4" />
-                <p>Interactive map will appear here once configured</p>
-              </div>
-            )}
-          </div>
-        </div>
-
-        {/* Agent Information Panel */}
-        <div className="space-y-4">
-          {selectedAgent ? (
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">{selectedAgent.name}</CardTitle>
-                <p className="text-sm text-muted-foreground">{selectedAgent.region}</p>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div>
-                  <h4 className="font-semibold text-sm mb-2">Contact Information</h4>
-                  <div className="space-y-2 text-sm">
-                    <div className="flex items-center gap-2">
-                      <Mail className="h-4 w-4 text-primary" />
-                      <a 
-                        href={`mailto:${selectedAgent.contact.email}`}
-                        className="text-primary hover:underline"
-                      >
-                        {selectedAgent.contact.email}
-                      </a>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Phone className="h-4 w-4 text-primary" />
-                      <span>{selectedAgent.contact.phone}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <MapPin className="h-4 w-4 text-primary" />
-                      <span>{selectedAgent.contact.address}</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div>
-                  <h4 className="font-semibold text-sm mb-2">Services</h4>
-                  <div className="flex flex-wrap gap-1">
-                    {selectedAgent.services.map((service: string, index: number) => (
-                      <span 
-                        key={index}
-                        className="px-2 py-1 bg-primary/10 text-primary text-xs rounded"
-                      >
-                        {service}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="text-xs text-muted-foreground">
-                  Partner since {selectedAgent.established}
-                </div>
-
-                <Button className="w-full" size="sm">
-                  <ExternalLink className="mr-2 h-4 w-4" />
-                  Contact Agent
-                </Button>
-              </CardContent>
-            </Card>
-          ) : (
-            <Card>
-              <CardContent className="p-6 text-center">
-                <MapPin className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-                <h3 className="font-semibold text-foreground mb-2">
-                  Select a Location
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  Click on any marker on the map to view detailed information about 
-                  our local representatives in that region.
-                </p>
-              </CardContent>
-            </Card>
-          )}
-
-          {/* Quick Contact */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-lg">Need Direct Support?</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3">
-              <p className="text-sm text-muted-foreground">
-                Can't find a representative in your area? Contact our global team directly.
-              </p>
-              <Button variant="outline" className="w-full" size="sm">
-                <Mail className="mr-2 h-4 w-4" />
-                global@romica.com
-              </Button>
-            </CardContent>
-          </Card>
-        </div>
-      </div>
-    </div>
+    <button className={`${baseClasses} ${sizeClasses} ${variantClasses} ${className}`} {...props}>
+      {children}
+    </button>
   );
 };
 
-export default GlobalNetworkMap;
+export default function GlobalPresence() {
+  const regions = [
+    {
+      name: "South Korea",
+      description: "Strategic partnership hub with major shipbuilders including Hyundai Heavy Industries",
+      stats: "15+ active projects",
+      active: true,
+      icon: MapPin,
+      gradient: "from-blue-500 to-blue-700",
+      coordinates: [127.7669, 35.9078]
+    },
+    {
+      name: "European Union",
+      description: "Engineering excellence serving North Sea and Arctic operations",
+      stats: "200+ installations",
+      active: true,
+      icon: Globe,
+      gradient: "from-teal-500 to-teal-700",
+      coordinates: [15.2551, 54.5260]
+    },
+    {
+      name: "North America",
+      description: "Advanced research vessel support across Atlantic and Pacific",
+      stats: "50+ partnerships",
+      active: true,
+      icon: Users,
+      gradient: "from-purple-500 to-purple-700",
+      coordinates: [-95.7129, 37.0902]
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white font-sans antialiased">
+      <section className="py-16 bg-gradient-to-b from-gray-200/30 to-white relative overflow-hidden dark:from-gray-800/30 dark:to-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="grid lg:grid-cols-3 gap-16 items-start">
+            
+            {/* Interactive world map using the new component */}
+            <div className="lg:col-span-2">
+              <div className="relative bg-gradient-to-br from-blue-500/5 to-teal-500/5 rounded-3xl p-8 border border-blue-500/10 dark:border-blue-500/20">
+                <div className="h-[500px] w-full rounded-2xl z-0 overflow-hidden">
+                  <InteractiveWorldMap locations={regions} />
+                </div>
+              </div>
+            </div>
+            
+            {/* Regional highlights */}
+            <div className="space-y-6">
+              <div className="flex items-center space-x-3 mb-8">
+                <Clock className="w-6 h-6 text-blue-500" />
+                <div>
+                  <h3 className="font-bold text-lg">24/7 Global Support</h3>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">Round-the-clock assistance wherever you operate</p>
+                </div>
+              </div>
+              
+              {regions.map((region, index) => {
+                const IconComponent = region.icon;
+                return (
+                  <div 
+                    key={region.name}
+                    className="group relative bg-gradient-to-br from-gray-100 to-gray-200/20 rounded-2xl p-6 border border-gray-300 hover:border-blue-500/30 transition-all duration-300 hover:shadow-lg dark:from-gray-800 dark:to-gray-900/20 dark:border-gray-700 dark:hover:border-blue-500/50"
+                  >
+                    <div className="flex items-start space-x-4">
+                      <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${region.gradient} flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}>
+                        <IconComponent className="w-6 h-6 text-white" />
+                      </div>
+                      
+                      <div className="flex-1">
+                        <div className="flex items-center justify-between mb-2">
+                          <h4 className="font-bold text-lg">{region.name}</h4>
+                          {region.active && (
+                            <div className="flex items-center space-x-2">
+                              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                              <span className="text-xs font-medium text-green-600">Active</span>
+                            </div>
+                          )}
+                        </div>
+                        
+                        <p className="text-sm text-gray-500 dark:text-gray-400 mb-3 leading-relaxed">
+                          {region.description}
+                        </p>
+                        
+                        <div className="flex items-center justify-between">
+                          <span className="text-sm font-semibold text-blue-500">{region.stats}</span>
+                          <div className="opacity-0 group-hover:opacity-100 transition-opacity">
+                            <Button variant="ghost" size="sm" className="text-xs text-blue-500 hover:bg-blue-500/10">
+                              Learn More →
+                            </Button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}

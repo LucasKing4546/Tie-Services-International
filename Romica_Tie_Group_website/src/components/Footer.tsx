@@ -24,7 +24,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-secondary text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
         <div className="py-16">
@@ -41,15 +41,15 @@ const Footer = () => {
               
               <div className="space-y-3">
                 <div className="flex items-center space-x-3">
-                  <MapPin className="w-5 h-5 text-blue-400" />
+                  <MapPin className="w-5 h-5 text-primary" />
                   <span className="text-gray-300">UK & Romania Operations</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Phone className="w-5 h-5 text-blue-400" />
+                  <Phone className="w-5 h-5 text-primary" />
                   <span className="text-gray-300">+44 (0) 123 456 7890</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Mail className="w-5 h-5 text-blue-400" />
+                  <Mail className="w-5 h-5 text-primary" />
                   <span className="text-gray-300">info@romicatiegroup.com</span>
                 </div>
               </div>
@@ -64,7 +64,7 @@ const Footer = () => {
                     <li key={linkIndex}>
                       <a 
                         href="#" 
-                        className="text-gray-300 hover:text-blue-400 transition-colors duration-200"
+                        className="text-gray-300 hover:text-primary transition-colors duration-200"
                       >
                         {link}
                       </a>
@@ -78,7 +78,7 @@ const Footer = () => {
           <Separator className="my-12 bg-gray-700" />
 
           {/* CTA Section */}
-          <div className="bg-gradient-to-r from-blue-600 to-cyan-600 rounded-2xl p-8 text-center">
+          <div className="bg-primary/80 rounded-2xl p-8 text-center">
             <h3 className="text-2xl font-bold mb-4">Ready to Discuss Your Project?</h3>
             <p className="text-blue-100 mb-6 text-lg">
               Our engineering team is ready to develop custom solutions for your specific requirements
@@ -106,18 +106,18 @@ const Footer = () => {
             <div className="flex items-center space-x-6">
               <div className="flex items-center space-x-4">
                 <span className="text-gray-400 text-sm">Follow Us:</span>
-                <Button variant="ghost" size="sm" className="text-gray-400 hover:text-blue-400">
+                <Button variant="ghost" size="sm" className="text-gray-400 hover:text-primary">
                   <Linkedin className="w-5 h-5" />
                 </Button>
-                <Button variant="ghost" size="sm" className="text-gray-400 hover:text-blue-400">
+                <Button variant="ghost" size="sm" className="text-gray-400 hover:text-primary">
                   <Globe className="w-5 h-5" />
                 </Button>
               </div>
               
               <div className="text-gray-400 text-sm">
-                <a href="#" className="hover:text-blue-400 transition-colors">Privacy Policy</a>
+                <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
                 <span className="mx-2">•</span>
-                <a href="#" className="hover:text-blue-400 transition-colors">Terms of Service</a>
+                <a href="#" className="hover:text-primary transition-colors">Terms of Service</a>
               </div>
             </div>
           </div>

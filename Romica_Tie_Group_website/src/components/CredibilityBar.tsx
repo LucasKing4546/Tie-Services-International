@@ -3,16 +3,16 @@ import { Shield } from 'lucide-react';
 
 export default function CredibilityBar() {
   return (
-    <div className="w-full bg-white py-12 border-t border-b border-gray-200">
+    <div className="w-full bg-card py-12 border-t border-b border-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-50 text-blue-700 text-sm font-semibold mb-4">
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-background text-primary text-sm font-semibold mb-4">
             <Shield className="w-4 h-4 mr-2" />
             Certified by Industry Leaders
           </div>
-          <h3 className="text-4xl font-bold text-gray-900">Trusted & Certified</h3>
+          <h3 className="text-4xl font-bold text-accent-foreground">Trusted & Certified</h3>
         </div>
 
         {/* Logo Bar */}
@@ -49,7 +49,7 @@ export default function CredibilityBar() {
 
         {/* Optional tagline */}
         <div className="text-center mt-8">
-          <p className="text-gray-600 text-sm">
+          <p className="text-muted-foreground text-sm">
             Certified to the highest international standards for marine operations
           </p>
         </div>

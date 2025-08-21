@@ -110,10 +110,10 @@ const HeroSection = () => {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 mb-24 text-center">
         <div className="max-w-4xl">
           <div className="mb-8">
-            <h1 className="text-6xl md:text-8xl font-black mb-8 leading-none text-white">
+            <h1 className="text-6xl md:text-8xl font-black mb-8 leading-none text-white"> 
               Bespoke Deck
               <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 via-white to-blue-100">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r text-white">
                 Machinery
               </span>
               <br />
@@ -125,7 +125,7 @@ const HeroSection = () => {
           
           <p className="text-xl md:text-2xl mb-10 font-light text-white/90 leading-relaxed max-w-3xl">
             Engineering solutions that unlock the ocean's deepest secrets. 
-            <span className="block mt-2 text-blue-200 font-medium">
+            <span className="block mt-2 text-white font-medium">
               Where precision meets the power of the ocean.
             </span>
           </p>

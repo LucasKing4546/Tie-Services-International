@@ -83,7 +83,7 @@ const BecomePartner = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main className="pt-20">
+      <main className="pt-5">
         {/* Hero Section */}
         <section className="relative py-20 bg-gradient-to-br from-primary/10 via-background to-secondary/10">
           <div className="container mx-auto px-4">

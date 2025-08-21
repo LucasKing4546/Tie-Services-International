@@ -63,15 +63,15 @@ const Projects = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen pt-16">
       <Header />
       <main>
         {/* Hero Section */}
-        <section className="relative py-20 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
+        <section className="py-20 bg-gradient-to-br from-primary/5 to-secondary/5">
           <div className="absolute inset-0 bg-grid-pattern opacity-5" />
           <div className="container mx-auto px-4 relative">
-            <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
+            <div className="max-w-7xl mx-auto text-center">
+              <h1 className="text-4xl md:text-6xl font-bold ocean-text-gradient mb-6">
                 Project Case Studies
               </h1>
               <p className="text-xl text-muted-foreground mb-8 leading-relaxed">

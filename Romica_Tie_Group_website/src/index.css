@@ -2,75 +2,84 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Ocean-inspired design system with deep blue gradients */
+/* ROMICA brand-inspired design system with red and navy blue */
 
 @layer base {
   :root {
     --background: 210 25% 98%;
-    --foreground: 210 15% 15%;
+    --foreground: 220 20% 15%;
 
-    --card: 210 25% 100%;
-    --card-foreground: 210 15% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 15%;
 
-    --popover: 210 25% 100%;
-    --popover-foreground: 210 15% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 15%;
 
-    --primary: 210 100% 40%;
-    --primary-foreground: 210 25% 98%;
+    /* ROMICA Red */
+    --primary: 355 55% 41%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 195 35% 85%;
-    --secondary-foreground: 210 15% 15%;
+    /* ROMICA Navy Blue */
+    --secondary: 220 63% 17%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 195 20% 92%;
-    --muted-foreground: 210 15% 45%;
+    --muted: 210 15% 92%;
+    --muted-foreground: 220 35% 45%;
 
-    --accent: 195 65% 75%;
-    --accent-foreground: 210 15% 15%;
+    --accent: 355 35% 85%;
+    --accent-foreground: 220 20% 15%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 25% 98%;
+    --destructive: 0 70% 45%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 195 25% 88%;
-    --input: 195 25% 88%;
-    --ring: 210 100% 40%;
+    --border: 210 20% 88%;
+    --input: 210 20% 88%;
+    --ring: 355 55% 41%;
 
     --radius: 0.5rem;
 
-    /* Ocean gradient colors */
-    --ocean-light: 190 60% 85%;
-    --ocean-medium: 195 55% 65%;
-    --ocean-deep: 210 65% 45%;
-    --ocean-dark: 215 70% 25%;
+    /* Ocean-inspired but tuned to ROMICA palette */
+    --ocean-light: 355 45% 85%;
+    --ocean-medium: 355 55% 55%;
+    --ocean-deep: 355 55% 41%;
+    --ocean-dark: 220 33% 27%;
   }
 
   .dark {
-    --background: 215 70% 8%;
-    --foreground: 195 20% 92%;
+    --background: 220 40% 10%;
+    --foreground: 210 20% 92%;
 
-    --card: 215 70% 10%;
-    --card-foreground: 195 20% 92%;
+    --card: 220 40% 12%;
+    --card-foreground: 210 20% 92%;
 
-    --popover: 215 70% 10%;
-    --popover-foreground: 195 20% 92%;
+    --popover: 220 40% 12%;
+    --popover-foreground: 210 20% 92%;
 
-    --primary: 195 65% 75%;
-    --primary-foreground: 215 70% 8%;
+    /* Dark mode ROMICA Red (lighter) */
+    --primary: 355 55% 55%;
+    --primary-foreground: 220 40% 10%;
 
-    --secondary: 210 30% 18%;
-    --secondary-foreground: 195 20% 92%;
+    /* Dark mode ROMICA Navy (lighter) */
+    --secondary: 220 40% 10%;
+    --secondary-foreground: 210 20% 92%;
 
-    --muted: 210 30% 15%;
-    --muted-foreground: 195 15% 65%;
+    --muted: 220 20% 20%;
+    --muted-foreground: 210 35% 65%;
 
-    --accent: 210 30% 20%;
-    --accent-foreground: 195 20% 92%;
+    --accent: 355 25% 35%;
+    --accent-foreground: 210 20% 92%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 195 20% 92%;
+    --destructive: 0 60% 35%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 210 30% 18%;
-    --input: 210 30% 18%;
-    --ring: 195 65% 75%;
+    --border: 220 20% 25%;
+    --input: 220 20% 25%;
+    --ring: 355 55% 55%;
+
+    --ocean-light: 355 35% 45%;
+    --ocean-medium: 355 45% 40%;
+    --ocean-deep: 355 55% 55%;
+    --ocean-dark: 220 30% 35%;
   }
 }
 
@@ -94,12 +103,15 @@
   }
   
   .ocean-text-gradient {
-    background: linear-gradient(135deg, hsl(var(--ocean-deep)), hsl(var(--ocean-dark)));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
+  background: linear-gradient(135deg, hsl(var(--ocean-deep)), hsl(var(--ocean-dark)));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  
+  display: inline-block;
+  padding: 10px 0;
+  line-height: 1.4; /* Ensure proper line height */
+}
   /* Interactive hover effects */
   .hover-scale-102:hover {
     transform: scale(1.02);
