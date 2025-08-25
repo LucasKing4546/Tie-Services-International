@@ -24,8 +24,9 @@ const FeaturedProject = () => {
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-b from-background to-muted/20 relative overflow-hidden">
-      {/* Background tech pattern */}
+    <section className="py-24 bg-card relative overflow-hidden">
+      {/*
+      Background tech pattern     
       <div className="absolute inset-0 opacity-5">
         <svg className="w-full h-full" viewBox="0 0 100 100">
           <defs>
@@ -37,7 +38,7 @@ const FeaturedProject = () => {
           <rect width="100%" height="100%" fill="url(#tech-grid)" />
         </svg>
       </div>
-
+      */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         
         {/* Section header */}

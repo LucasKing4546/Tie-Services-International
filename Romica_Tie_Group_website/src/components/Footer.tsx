@@ -31,9 +31,9 @@ const Footer = () => {
           <div className="grid lg:grid-cols-6 gap-8">
             {/* Company Info */}
             <div className="lg:col-span-2">
-              <h3 className="text-2xl font-bold mb-4 ocean-text-gradient text-white">
-                ROMICA TIE GROUP
-              </h3>
+              <div className="flex items-center mb-6">
+                <img src="/logo-rtg-top.png" alt="Logo" className="max-h-30 max-w-60" />
+              </div>
               <p className="text-gray-300 mb-6 leading-relaxed">
                 Over 35 years of expertise in deck machinery and 20+ years serving 
                 the global marine research community with bespoke solutions.
@@ -84,10 +84,10 @@ const Footer = () => {
               Our engineering team is ready to develop custom solutions for your specific requirements
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100">
+              <Button size="lg" className="bg-white text-secondary hover:bg-gray-100">
                 Get Custom Quote
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+              <Button size="lg" variant="outline" className="border-white text-secondary hover:bg-gray-100">
                 Schedule Consultation
               </Button>
             </div>

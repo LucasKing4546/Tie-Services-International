@@ -20,7 +20,7 @@
     --primary-foreground: 0 0% 100%;
 
     /* ROMICA Navy Blue */
-    --secondary: 220 63% 17%;
+    --secondary: 230 63% 21%;
     --secondary-foreground: 0 0% 100%;
 
     --muted: 210 15% 92%;
@@ -60,7 +60,7 @@
     --primary-foreground: 220 40% 10%;
 
     /* Dark mode ROMICA Navy (lighter) */
-    --secondary: 220 40% 10%;
+    --secondary: 230 63% 31%;
     --secondary-foreground: 210 20% 92%;
 
     --muted: 220 20% 20%;

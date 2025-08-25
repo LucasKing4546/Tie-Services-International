@@ -2,7 +2,7 @@
 const express = require('express');
 const router = express.Router();
 
-const MODAL_API_URL = 'https://lucasking4546--ai-chatbot-serve-api.modal.run/chat';
+const MODAL_API_URL = 'https://tie-services-international--ai-chatbot-serve-api.modal.run/chat';
 
 router.post('/', async (req, res) => {
     try {

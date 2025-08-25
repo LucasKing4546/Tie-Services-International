@@ -12,7 +12,7 @@ const CoreMarketsSection = () => {
       subtitle: "Deep-sea discovery awaits",
       description: "Engineering solutions that unlock the ocean's deepest secrets. Every mission matters.",
       stats: "200+ vessels equipped",
-      color: "from-blue-500 to-blue-700"
+      color: "bg-primary"
     },
     {
       icon: Anchor,
@@ -20,7 +20,7 @@ const CoreMarketsSection = () => {
       subtitle: "Precision meets purpose",
       description: "Where millimeter accuracy shapes tomorrow's understanding of our seafloor.",
       stats: "99.9% precision rate",
-      color: "from-teal-500 to-teal-700"
+      color: "bg-secondary"
     },
     {
       icon: Waves,
@@ -28,7 +28,7 @@ const CoreMarketsSection = () => {
       subtitle: "Conquering the impossible",
       description: "Built to withstand what nature throws at us. Tested where others fear to venture.",
       stats: "Category 5 tested",
-      color: "from-cyan-500 to-cyan-700"
+      color: "bg-primary"
     },
     {
       icon: Globe,
@@ -36,7 +36,7 @@ const CoreMarketsSection = () => {
       subtitle: "Everywhere excellence",
       description: "From Arctic ice to tropical storms—our solutions adapt, perform, excel.",
       stats: "47 countries served",
-      color: "from-indigo-500 to-indigo-700"
+      color: "bg-secondary"
     },
     {
       icon: Zap,
@@ -44,7 +44,7 @@ const CoreMarketsSection = () => {
       subtitle: "Impossible? Challenge accepted",
       description: "Your unique challenge becomes our next breakthrough. No two solutions alike.",
       stats: "100% custom builds",
-      color: "from-purple-500 to-purple-700"
+      color: "bg-primary"
     },
     {
       icon: Users,
@@ -52,7 +52,7 @@ const CoreMarketsSection = () => {
       subtitle: "Knowledge that powers",
       description: "Expert hands-on training. 24/7 support. Because downtime isn't an option.",
       stats: "24/7 global support",
-      color: "from-emerald-500 to-emerald-700"
+      color: "bg-secondary"
     }
   ];
 

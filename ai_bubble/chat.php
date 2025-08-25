@@ -37,7 +37,7 @@ if (!isset($input['contents']) || !is_array($input['contents'])) {
 }
 
 $contents = $input['contents'];
-$apiUrl = 'https://lucasking4546--ai-chatbot-serve-api.modal.run/chat';
+$apiUrl = 'https://tie-services-international--ai-chatbot-serve-api.modal.run/chat';
 
 // Prepare the request
 $postData = json_encode(['contents' => $contents]);

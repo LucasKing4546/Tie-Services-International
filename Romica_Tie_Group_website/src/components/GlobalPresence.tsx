@@ -73,20 +73,20 @@ export default function GlobalPresence() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white font-sans antialiased">
+    <div className="min-h-screen bg-background text-gray-900 dark:text-white font-sans antialiased">
       <section className="py-16 bg-gradient-to-b from-gray-200/30 to-white relative overflow-hidden dark:from-gray-800/30 dark:to-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           
           {/* Section header */}
           <div className="text-center mb-20">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/10 text-blue-500 text-sm font-medium mb-6">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/10 text-secondary text-sm font-medium mb-6">
               <Globe className="w-4 h-4 mr-2" />
               Global Network
             </div>
             <h2 className="text-5xl md:text-6xl font-black mb-6 leading-tight">
               Wherever your
               <br />
-              <span className="text-transparent bg-clip-text bg-primary">
+              <span className="text-transparent bg-clip-text bg-secondary/85">
                 mission takes you</span>
             </h2>
             <p className="text-xl text-gray-500 dark:text-gray-400 max-w-3xl mx-auto">
