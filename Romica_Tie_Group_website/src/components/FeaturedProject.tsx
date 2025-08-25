@@ -25,20 +25,6 @@ const FeaturedProject = () => {
 
   return (
     <section className="py-24 bg-card relative overflow-hidden">
-      {/*
-      Background tech pattern     
-      <div className="absolute inset-0 opacity-5">
-        <svg className="w-full h-full" viewBox="0 0 100 100">
-          <defs>
-            <pattern id="tech-grid" width="10" height="10" patternUnits="userSpaceOnUse">
-              <path d="M 10 0 L 0 0 0 10" fill="none" stroke="currentColor" strokeWidth="0.5"/>
-              <circle cx="0" cy="0" r="0.5" fill="currentColor"/>
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#tech-grid)" />
-        </svg>
-      </div>
-      */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         
         {/* Section header */}
@@ -164,11 +150,11 @@ const FeaturedProject = () => {
 
             {/* CTA */}
             <div className="flex space-x-4">
-              <Button size="lg" className="flex-1 bg-primary hover:bg-primary/90 text-white py-6 rounded-2xl group">
+              <Button size="lg" className="flex-1 bg-primary hover:bg-primary/90 text-white py-6 rounded-2xl group" onClick={() => { window.location.href = '/projects/gsi-vessel-program'; }}>
                 View Full Case Study
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button size="lg" variant="outline" className="px-8 py-6 rounded-2xl">
+              <Button size="lg" variant="outline" className="px-8 py-6 rounded-2xl" onClick={() => { window.location.href = '/projects'; }  }>
                 More Projects
               </Button>
             </div>

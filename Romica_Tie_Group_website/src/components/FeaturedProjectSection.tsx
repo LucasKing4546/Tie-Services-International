@@ -65,7 +65,7 @@ const FeaturedProjectSection = () => {
                   </div>
                 </div>
 
-                <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
+                <Button size="lg" className="bg-blue-600 hover:bg-blue-700" onClick={() => { window.location.href = '/projects/gsi-vessel-program'; }}>
                   View Full Case Study
                 </Button>
               </div>

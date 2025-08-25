@@ -5,6 +5,9 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Solutions from "./pages/Solutions";
+import Winches from "./pages/products/Winches";
+import AFrames from "./pages/products/AFrames";
+import LARS from "./pages/products/LARS";
 import QualityCompliance from "./pages/QualityCompliance";
 import Projects from "./pages/Projects";
 import GSIVesselProgram from "./pages/projects/GSIVesselProgram";
@@ -17,6 +20,7 @@ import Resources from "./pages/Resources";
 import AboutUs from "./pages/AboutUs";
 import NotFound from "./pages/NotFound";
 
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -28,6 +32,9 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/solutions" element={<Solutions />} />
+          <Route path="/solutions/winches" element={<Winches />} />
+          <Route path="/solutions/aframes" element={<AFrames />} />
+          <Route path="/solutions/lars" element={<LARS />} />
           <Route path="/quality-compliance" element={<QualityCompliance />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/projects/gsi-vessel-program" element={<GSIVesselProgram />} />

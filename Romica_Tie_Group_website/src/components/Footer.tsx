@@ -7,19 +7,39 @@ const Footer = () => {
   const footerSections = [
     {
       title: 'Solutions',
-      links: ['UUV & ROV Handling', 'Oceanographic Research', 'Marine Survey', 'Bespoke Engineering']
+      links: [
+        { label: 'UUV & ROV Handling', href: '/solutions' },
+        { label: 'Oceanographic Research', href: '/solutions' },
+        { label: 'Marine Survey', href: '/solutions' },
+        { label: 'Bespoke Engineering', href: '/solutions' }
+      ]
     },
     {
       title: 'Products',
-      links: ['Winches', 'A-Frames', 'Launch & Recovery Systems', 'CTD Handling']
+      links: [
+        { label: 'Winches', href: '/products/winches' },
+        { label: 'A-Frames', href: '/products/a-frames' },
+        { label: 'Launch & Recovery Systems', href: '/products/launch-recovery' },
+        { label: 'CTD Handling', href: '/products/ctd-handling' }
+      ]
     },
     {
       title: 'Quality',
-      links: ['Certifications', 'Our Commitment', 'Testing Procedures', 'Compliance Standards']
+      links: [
+        { label: 'Certifications', href: '/quality/certifications' },
+        { label: 'Our Commitment', href: '/quality/commitment' },
+        { label: 'Testing Procedures', href: '/quality/testing' },
+        { label: 'Compliance Standards', href: '/quality/compliance' }
+      ]
     },
     {
       title: 'Support',
-      links: ['Technical Support', 'Training Programs', 'Spare Parts', 'Warranty Information']
+      links: [
+        { label: 'Technical Support', href: '/support/technical' },
+        { label: 'Training Programs', href: '/support/training' },
+        { label: 'Spare Parts', href: '/support/spare-parts' },
+        { label: 'Warranty Information', href: '/support/warranty' }
+      ]
     }
   ];
 
@@ -63,10 +83,10 @@ const Footer = () => {
                   {section.links.map((link, linkIndex) => (
                     <li key={linkIndex}>
                       <a 
-                        href="#" 
+                        href={link.href} 
                         className="text-gray-300 hover:text-primary transition-colors duration-200"
                       >
-                        {link}
+                        {link.label}
                       </a>
                     </li>
                   ))}

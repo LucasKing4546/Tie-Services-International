@@ -51,7 +51,8 @@ const Solutions = () => {
       description: 'Comprehensive range of marine winches for every application',
       types: ['Umbilical Winches', 'Traction Winches', 'Seismic Winches', 'CTD Winches'],
       highlight: 'Space-saving right-angle level wind design',
-      icon: Zap
+      icon: Zap,
+      link: '/solutions/winches'
     },
     {
       id: 'aframes',
@@ -59,7 +60,8 @@ const Solutions = () => {
       description: 'Diverse range of lifting and handling frames',
       types: ['Conventional A-Frames', 'Wide-angle A-Frames', 'Telescoping A-Frames', 'Articulating A-Frames', 'Z-Frames'],
       highlight: 'Custom engineering for specific vessel requirements',
-      icon: Anchor
+      icon: Anchor,
+      link: '/solutions/aframes'
     },
     {
       id: 'lars',
@@ -67,7 +69,8 @@ const Solutions = () => {
       description: 'Sophisticated systems for safe deployment and recovery',
       types: ['ROV LARS', 'AUV LARS', 'Scientific LARS', 'Hybrid Systems'],
       highlight: 'Advanced motion compensation and safety systems',
-      icon: Ship
+      icon: Ship,
+      link: '/solutions/lars'
     }
   ];
 
@@ -211,7 +214,7 @@ const Solutions = () => {
                             <p className="text-sm text-primary font-medium">{product.highlight}</p>
                         </div>
                         </div>
-                        <Button className="w-full" variant="outline">
+                        <Button className="w-full" variant="outline" onClick={() => { window.location.href = product.link; }}>
                         View Details <ChevronRight className="ml-2 h-4 w-4" />
                         </Button>
                     </div>

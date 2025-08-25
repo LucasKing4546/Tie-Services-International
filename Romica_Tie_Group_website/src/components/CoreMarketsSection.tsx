@@ -112,6 +112,7 @@ const CoreMarketsSection = () => {
                       variant="ghost" 
                       size="sm"
                       className="text-white hover:bg-white/20 p-2 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"
+                      onClick={() => { window.location.href = '/solutions'; }}
                     >
                       <ArrowUpRight className="w-4 h-4" />
                     </Button>
@@ -129,7 +130,7 @@ const CoreMarketsSection = () => {
         </div>
 
         <div className="text-center mt-16">
-          <Button size="lg" className="bg-primary hover:bg-primary/90 text-white px-8 py-4 text-lg font-semibold rounded-full group">
+          <Button size="lg" className="bg-primary hover:bg-primary/90 text-white px-8 py-4 text-lg font-semibold rounded-full group" onClick={() => { window.location.href = '/solutions'; }}>
             View All Solutions
             <ArrowUpRight className="ml-2 w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
           </Button>
