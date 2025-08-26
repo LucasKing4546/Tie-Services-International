@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Pannonia Apartments - Updated with Transformative Teal Theme */
+
+@layer base {
+  :root {
+    --background: 180 60% 96%;
+    --foreground: 180 100% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 180 100% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 180 100% 15%;
+
+    --primary: 174 70% 22%; /* Transformative Teal */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 180 48% 92%;
+    --secondary-foreground: 180 92% 20%;
+
+    --muted: 180 30% 70%;
+    --muted-foreground: 180 20% 30%;
+
+    --accent: 180 65% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 180 35% 60%;
+    --input: 180 35% 60%;
+    --ring: 180 92% 30%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 180 60% 97%;
+    --sidebar-foreground: 180 100% 15%;
+    --sidebar-primary: 180 92% 30%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 180 50% 85%;
+    --sidebar-accent-foreground: 180 100% 20%;
+    --sidebar-border: 180 35% 60%;
+    --sidebar-ring: 180 92% 30%;
+  }
+
+  .dark {
+    --background: 180 40% 10%;
+    --foreground: 180 60% 90%;
+
+    --card: 180 40% 10%;
+    --card-foreground: 180 60% 90%;
+
+    --popover: 180 40% 10%;
+    --popover-foreground: 180 60% 90%;
+
+    --primary: 180 92% 50%;
+    --primary-foreground: 0 0% 10%;
+
+    --secondary: 180 30% 30%;
+    --secondary-foreground: 180 60% 90%;
+
+    --muted: 180 30% 30%;
+    --muted-foreground: 180 30% 80%;
+
+    --accent: 180 65% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 220 15% 89%;
+
+    --border: 180 35% 40%;
+    --input: 180 35% 40%;
+    --ring: 180 92% 40%;
+
+    --sidebar-background: 180 40% 10%;
+    --sidebar-foreground: 180 60% 90%;
+    --sidebar-primary: 180 92% 50%;
+    --sidebar-primary-foreground: 0 0% 10%;
+    --sidebar-accent: 180 30% 40%;
+    --sidebar-accent-foreground: 180 60% 90%;
+    --sidebar-border: 180 30% 40%;
+    --sidebar-ring: 180 92% 40%;
+  }
+}
+
+@layer base {
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: 'Inter', sans-serif;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .btn-elegant {
+    @apply inline-flex items-center justify-center rounded-lg bg-primary px-8 py-3 text-sm font-medium text-primary-foreground shadow-sm transition-all duration-200 hover:bg-primary/90 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center rounded-lg border border-primary bg-transparent px-8 py-3 text-sm font-medium text-primary shadow-sm transition-all duration-200 hover:bg-primary hover:text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50;
+  }
+
+  .section-padding {
+    @apply px-4 py-16 sm:px-6 lg:px-8 lg:py-24;
+  }
+
+  .container-narrow {
+    @apply mx-auto max-w-4xl;
+  }
+
+  .container-wide {
+    @apply mx-auto max-w-7xl;
+  }
+}
