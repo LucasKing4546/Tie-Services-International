@@ -20,7 +20,7 @@ model_volume = modal.Volume.from_name("huggingface-models", create_if_missing=Tr
 image = (
     modal.Image.debian_slim()
     .pip_install("transformers", "torch", "huggingface_hub", "accelerate", "bitsandbytes", "fastapi", "uvicorn",
-                 "python-multipart", "mysql-connector-python")
+                 "python-multipart")
     .add_local_python_source("models")
     .add_local_python_source("prompting")
     .add_local_python_source("utils")

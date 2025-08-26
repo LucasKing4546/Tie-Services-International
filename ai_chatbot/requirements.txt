@@ -1,3 +1,10 @@
 transformers
-langchain
-langchain-huggingface
+torch
+huggingface_hub
+accelerate
+bitsandbytes
+fastapi
+uvicorn
+python-multipart
+pydantic
+modal
