@@ -7,7 +7,6 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from typing import List, Dict, Any
-import mysql.connector
 
 # Define the app
 app = modal.App("ai_chatbot")
