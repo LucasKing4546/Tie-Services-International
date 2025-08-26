@@ -18,6 +18,12 @@ An AI-powered chatbot that interprets natural language questions (in Romanian or
 
 **Run / Deploy Instructions:**
 ```bash
+# Add a new workspace
+modal token new # This opens a browser window where you log in to the other workspace. It then stores a token locally.
+
+# Activate your workspace
+modal profile activate your-profile
+
 # Deploy the chatbot to Modal
 modal deploy main.py
 
