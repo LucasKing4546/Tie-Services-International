@@ -18,6 +18,9 @@ An AI-powered chatbot that interprets natural language questions (in Romanian or
 
 **Run / Deploy Instructions:**
 ```bash
+# Install requirements
+pip install -r requirements.txt
+
 # Add a new workspace
 modal token new # This opens a browser window where you log in to the other workspace. It then stores a token locally.
 
