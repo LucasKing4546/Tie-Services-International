@@ -398,7 +398,7 @@
         "type": "TEXT"
       },
       {
-        "name": "cereri_id_aprovizonare",
+        "name": "cereri_id_aprovizionare",
         "type": "INTEGER",
         "constraints": "FOREIGN KEY REFERENCES ai_cereri_aprovizionare(cereri_id_aprovizionare)"
       },
