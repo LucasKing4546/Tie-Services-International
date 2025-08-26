@@ -54,13 +54,13 @@ class SQL_Model:
             outputs = self.model.generate(
                 inputs.input_ids.to(self.model.device),
                 attention_mask=inputs.attention_mask.to(self.model.device),
-                max_new_tokens=300,  # Increased for longer SQL queries
-                temperature=0.7 if use_sampling else 1.0,
-                do_sample=use_sampling,
+                max_new_tokens=200,
+                do_sample=False,  # As recommended
+                num_beams=4,  # As recommended
                 pad_token_id=self.tokenizer.pad_token_id,
                 eos_token_id=self.tokenizer.eos_token_id,
                 repetition_penalty=1.1,
-                num_beams=1 if use_sampling else 4
+                temperature = 0.7 if use_sampling else 1.0
             )
 
         # Decode only the new tokens (skip the input)

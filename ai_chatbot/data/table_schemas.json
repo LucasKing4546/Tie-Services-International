@@ -96,7 +96,7 @@
       {
         "name": "facturi_id",
         "type": "INTEGER",
-        "constraints": "FOREIGN KEY REFERENCES facturi(facturi_id) ON DELETE CASCADE ON UPDATE CASCADE"
+        "constraints": "FOREIGN KEY REFERENCES ai_facturi(facturi_id) ON DELETE CASCADE ON UPDATE CASCADE"
       },
       {
         "name": "answer",
@@ -159,16 +159,16 @@
       {
         "name": "comenzi_id_proiectare",
         "type": "INTEGER",
-        "constraints": "FOREIGN KEY REFERENCES comenzi_proiectare(comenzi_id_proiectare)"
+        "constraints": "FOREIGN KEY REFERENCES ai_comenzi_proiectare(comenzi_id_proiectare)"
       },
       {
         "name": "oferte_id_proiectare",
         "type": "INTEGER",
-        "constraints": "FOREIGN KEY REFERENCES oferte_proiectare(oferte_id_proiectare)"
+        "constraints": "FOREIGN KEY REFERENCES ai_oferte_proiectare(oferte_id_proiectare)"
       }
     ]
   },
-  "ai_omenzi_comercial": {
+  "ai_comenzi_comercial": {
     "description": "Commercial orders with various status tracking",
     "columns": [
       {
@@ -241,17 +241,17 @@
       {
         "name": "comenzi_id_comercial",
         "type": "INTEGER",
-        "constraints": "FOREIGN KEY REFERENCES comenzi_comercial(comenzi_id_comercial)"
+        "constraints": "FOREIGN KEY REFERENCES ai_comenzi_comercial(comenzi_id_comercial)"
       },
       {
         "name": "oferte_id_comercial",
         "type": "INTEGER",
-        "constraints": "FOREIGN KEY REFERENCES oferte_comercial(oferte_id_comercial)"
+        "constraints": "FOREIGN KEY REFERENCES ai_oferte_comercial(oferte_id_comercial)"
       },
       {
         "name": "clienti_id_comercial",
         "type": "INTEGER",
-        "constraints": "FOREIGN KEY REFERENCES clienti_comercial(clienti_id_comercial)"
+        "constraints": "FOREIGN KEY REFERENCES ai_clienti_comercial(clienti_id_comercial)"
       }
     ]
   },
@@ -398,39 +398,39 @@
         "type": "TEXT"
       },
       {
-        "name": "cereri_id_aprovizionare",
+        "name": "cereri_id_aprovizonare",
         "type": "INTEGER",
-        "constraints": "FOREIGN KEY REFERENCES cereri_aprovizionare(cereri_id_aprovizionare)"
+        "constraints": "FOREIGN KEY REFERENCES ai_cereri_aprovizionare(cereri_id_aprovizionare)"
       },
       {
         "name": "comenzi_id_aprovizionare",
         "type": "INTEGER",
-        "constraints": "FOREIGN KEY REFERENCES comenzi_aprovizionare(comenzi_id_aprovizionare)"
+        "constraints": "FOREIGN KEY REFERENCES ai_comenzi_aprovizionare(comenzi_id_aprovizionare)"
       },
       {
         "name": "nir_id_aprovizionare",
         "type": "INTEGER",
-        "constraints": "FOREIGN KEY REFERENCES nir_aprovizionare(nir_id_aprovizionare)"
+        "constraints": "FOREIGN KEY REFERENCES ai_nir_aprovizionare(nir_id_aprovizionare)"
       },
       {
         "name": "bon_id_aprovizionare",
         "type": "INTEGER",
-        "constraints": "FOREIGN KEY REFERENCES bon_aprovizionare(bon_id_aprovizionare)"
+        "constraints": "FOREIGN KEY REFERENCES ai_bon_aprovizionare(bon_id_aprovizionare)"
       },
       {
         "name": "terti_id_aprovizionare",
         "type": "INTEGER",
-        "constraints": "FOREIGN KEY REFERENCES terti_aprovizionare(terti_id_aprovizionare)"
+        "constraints": "FOREIGN KEY REFERENCES ai_terti_aprovizionare(terti_id_aprovizionare)"
       },
       {
         "name": "articole_id_aprovizionare",
         "type": "INTEGER",
-        "constraints": "FOREIGN KEY REFERENCES articole_aprovizionare(articole_id_aprovizionare)"
+        "constraints": "FOREIGN KEY REFERENCES ai_articole_aprovizionare(articole_id_aprovizionare)"
       },
       {
         "name": "liste_id_aprovizionare",
         "type": "INTEGER",
-        "constraints": "FOREIGN KEY REFERENCES liste_aprovizionare(liste_id_aprovizionare)"
+        "constraints": "FOREIGN KEY REFERENCES ai_liste_aprovizionare(liste_id_aprovizionare)"
       }
     ]
   },
@@ -571,17 +571,17 @@
       {
         "name": "calitate_id",
         "type": "INTEGER",
-        "constraints": "FOREIGN KEY REFERENCES smi_calitate(calitate_id)"
+        "constraints": "FOREIGN KEY REFERENCES ai_smi_calitate(calitate_id)"
       },
       {
         "name": "mediu_id",
         "type": "INTEGER",
-        "constraints": "FOREIGN KEY REFERENCES smi_mediu(mediu_id)"
+        "constraints": "FOREIGN KEY REFERENCES ai_smi_mediu(mediu_id)"
       },
       {
         "name": "ssm_id",
         "type": "INTEGER",
-        "constraints": "FOREIGN KEY REFERENCES smi_ssm(ssm_id)"
+        "constraints": "FOREIGN KEY REFERENCES ai_smi_ssm(ssm_id)"
       }
     ]
   },

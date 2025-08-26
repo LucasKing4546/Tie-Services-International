@@ -376,19 +376,40 @@ class SchemaBuilder:
         schema_info = self.create_optimized_schema_info(user_question, format_type="sql")
 
         prompt = f"""### Task
-        Generate a SQL query as simple as possible to answer the following question. You will always need to return just the 'answer' column of the table you extract information from (do not return the 'id', or 'category' column).
+        Generate a SQL query to answer [QUESTION]{user_question}[/QUESTION]
+        
+        ### Instructions
+        - If you cannot answer the question with the available database schema, return 'I do not know'
+        - Always return only the 'answer' column from tables
+        - Simple tables (ai_evenimente, ai_management, ai_service_support, ai_livrari, ai_it, ai_parc_auto, ai_registru, ai_intrabooking) have no categories - use: SELECT answer FROM [table_name]
+        - For ai_aprovizionare questions about cereri: JOIN with ai_cereri_aprovizionare using cereri_id_aprovizionare
+        - For ai_aprovizionare questions about comenzi: JOIN with ai_comenzi_aprovizionare using comenzi_id_aprovizionare
+        - For ai_aprovizionare questions about nir: JOIN with ai_nir_aprovizionare using nir_id_aprovizionare
+        - For ai_aprovizionare questions about bon: JOIN with ai_bon_aprovizionare using bon_id_aprovizionare
+        - For ai_aprovizionare questions about terti: JOIN with ai_terti_aprovizionare using terti_id_aprovizionare
+        - For ai_aprovizionare questions about articole: JOIN with ai_articole_aprovizionare using articole_id_aprovizionare
+        - For ai_aprovizionare questions about liste: JOIN with ai_liste_aprovizionare using liste_id_aprovizionare
+        - For ai_comercial questions about comenzi: JOIN with ai_omenzi_comercial using comenzi_id_comercial
+        - For ai_comercial questions about oferte: JOIN with ai_oferte_comercial using oferte_id_comercial
+        - For ai_comercial questions about clienti: JOIN with ai_clienti_comercial using clienti_id_comercial
+        - For ai_proiectare_inginerie questions about comenzi: JOIN with ai_comenzi_proiectare using comenzi_id_proiectare
+        - For ai_proiectare_inginerie questions about oferte: JOIN with ai_oferte_proiectare using oferte_id_proiectare
+        - For ai_financiar questions about facturi: JOIN with ai_facturi using facturi_id
+        - For ai_smi questions about calitate: JOIN with ai_smi_calitate using calitate_id
+        - For ai_smi questions about mediu: JOIN with ai_smi_mediu using mediu_id
+        - For ai_smi questions about ssm: JOIN with ai_smi_ssm using ssm_id
         
         ### Database Schema
-        The query will run on a database with the following schema:
-        
+        This query will run on a database whose schema is represented in this string:
         {schema_info}
         
-        ### Question
-        {user_question}
+        ### Examples
+        Simple: "evenimente" → SELECT answer FROM ai_evenimente
+        Complex: "la aprovizionare cum fac o cerere de oferta" → SELECT ac.answer FROM ai_aprovizionare a JOIN ai_cereri_aprovizionare ac ON a.cereri_id_aprovizionare = ac.cereri_id_aprovizionare WHERE a.category = 'cereri de oferta' AND ac.category = 'adauga cerere articol'
         
-        ### SQL
-        """
-
+        ### Answer
+        Given the database schema, here is the SQL query that [QUESTION]{user_question}[/QUESTION]
+[SQL]"""
         return prompt
 
     def get_table_info(self, table_name: str) -> Optional[TableSchema]:
