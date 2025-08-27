@@ -19,12 +19,16 @@ const Gallery = () => {
       bathrooms: 1,
       area: 20,
       images: [
-        { id: 1, title: t("galleryImageCategoryDormitor"), category: t("galleryImageCategoryDormitor"), image: "DoubleRoom/best_shot.jpg" },
-        { id: 2, title: t("galleryImageCategoryDormitor"), category: t("galleryImageCategoryDormitor"), image: "DoubleRoom/tv.jpg" },
-        { id: 3, title: t("galleryImageCategoryDormitor"), category: t("galleryImageCategoryDormitor"), image: "DoubleRoom/hol.jpg" },
-        { id: 4, title: t("galleryImageCategoryDormitor"), category: t("galleryImageCategoryDormitor"), image: "DoubleRoom/whole_room.jpg" },
-        { id: 5, title: t("galleryImageCategoryTerasa"), category: t("galleryImageCategoryTerasa"), image: "DoubleRoom/outside.jpg" },
-        { id: 6, title: t("galleryImageCategoryBaie"), category: t("galleryImageCategoryBaie"), image: "DoubleRoom/bathroom.jpg" }
+        { id: 1, title: t("galleryImageCategoryDormitor"), category: t("galleryImageCategoryDormitor"), image: "DoubleRoom/best_shot.JPEG" },
+        { id: 2, title: t("galleryImageCategoryDormitor"), category: t("galleryImageCategoryDormitor"), image: "DoubleRoom/dorm1.JPEG" },
+        { id: 3, title: t("galleryImageCategoryDormitor"), category: t("galleryImageCategoryDormitor"), image: "DoubleRoom/dorm2.JPEG" },
+        { id: 4, title: t("galleryImageCategoryDormitor"), category: t("galleryImageCategoryDormitor"), image: "DoubleRoom/whole_room.JPEG" },
+        { id: 5, title: t("galleryImageCategoryDormitor"), category: t("galleryImageCategoryDormitor"), image: "DoubleRoom/tv.JPEG" },
+        { id: 6, title: t("galleryImageCategoryTerasa"), category: t("galleryImageCategoryTerasa"), image: "DoubleRoom/outside.JPEG" },
+        { id: 7, title: t("galleryImageCategoryTerasa"), category: t("galleryImageCategoryTerasa"), image: "DoubleRoom/outside2.JPEG" },
+        { id: 8, title: t("galleryImageCategoryBaie"), category: t("galleryImageCategoryBaie"), image: "DoubleRoom/bathroom1.JPEG" },
+        { id: 9, title: t("galleryImageCategoryBaie"), category: t("galleryImageCategoryBaie"), image: "DoubleRoom/bathroom2.JPEG" }
+
       ]
     },
     {
@@ -36,7 +40,7 @@ const Gallery = () => {
       bathrooms: 1,
       area: 30,
       images: [
-        { id: 9, title: t("galleryImageCategoryDormitor"), category: t("galleryImageCategoryDormitor"), image: "Superior Triple Room/dorm1.jpg" },
+        { id: 10, title: t("galleryImageCategoryDormitor"), category: t("galleryImageCategoryDormitor"), image: "Superior Triple Room/dorm1.jpg" },
         { id: 10, title: t("galleryImageCategoryDormitor"), category: t("galleryImageCategoryDormitor"), image: "Superior Triple Room/dorm2.jpg" },
         { id: 11, title: t("galleryImageCategoryDormitor"), category: t("galleryImageCategoryDormitor"), image: "Superior Triple Room/dorm3.jpg" },
         { id: 12, title: t("galleryImageCategoryDormitor"), category: t("galleryImageCategoryDormitor"), image: "Superior Triple Room/dorm4.jpg" },
@@ -44,7 +48,7 @@ const Gallery = () => {
         { id: 14, title: t("galleryImageCategoryBucatarie"), category: t("galleryImageCategoryBucatarie"), image: "Superior Triple Room/kitchen2.jpg" },
         { id: 15, title: t("galleryImageCategoryBucatarie"), category: t("galleryImageCategoryBucatarie"), image: "Superior Triple Room/kitchen3.jpg" },
         { id: 16, title: t("galleryImageCategoryBaie"), category: t("galleryImageCategoryBaie"), image: "Superior Triple Room/bath1.jpg" },
-        { id: 17, title: t("galleryImageCategoryBaie"), category: t("galleryImageCategoryBaie"), image: "Superior Triple Room/bath2.jpg" }    
+        { id: 17, title: t("galleryImageCategoryBaie"), category: t("galleryImageCategoryBaie"), image: "Superior Triple Room/bath2.jpg" }
       ]
     },
     {
@@ -56,12 +60,15 @@ const Gallery = () => {
       bathrooms: 1,
       area: 25,
       images: [
-        { id: 17, title: t("galleryImageCategoryDormitor"), category: t("galleryImageCategoryDormitor"), image: "Family Room/dorm1.jpg" },
-        { id: 18, title: t("galleryImageCategoryDormitor"), category: t("galleryImageCategoryDormitor"), image: "Family Room/dorm2.jpg" },
-        { id: 19, title: t("galleryImageCategoryDormitor"), category: t("galleryImageCategoryDormitor"), image: "Family Room/dorm3.jpg" },
-        { id: 20, title: t("galleryImageCategoryBucatarie"), category: t("galleryImageCategoryBucatarie"), image: "Family Room/kitchen.jpg" },
-        { id: 21, title: t("galleryImageCategoryBaie"), category: t("galleryImageCategoryBaie"), image: "Family Room/bath1.jpg" },
-        { id: 22, title: t("galleryImageCategoryTerasa"), category: t("galleryImageCategoryTerasa"), image: "Family Room/outdoor.jpg" }
+        { id: 17, title: t("galleryImageCategoryDormitor"), category: t("galleryImageCategoryDormitor"), image: "Family Room/dorm1.JPEG" },
+        { id: 18, title: t("galleryImageCategoryDormitor"), category: t("galleryImageCategoryDormitor"), image: "Family Room/dorm2.JPEG" },
+        { id: 19, title: t("galleryImageCategoryDormitor"), category: t("galleryImageCategoryDormitor"), image: "Family Room/dorm3.JPEG" },
+        { id: 20, title: t("galleryImageCategoryDormitor"), category: t("galleryImageCategoryDormitor"), image: "Family Room/dorm4.JPEG" },
+        { id: 21, title: t("galleryImageCategoryDormitor"), category: t("galleryImageCategoryDormitor"), image: "Family Room/dorm5.JPEG" },
+        { id: 22, title: t("galleryImageCategoryBucatarie"), category: t("galleryImageCategoryBucatarie"), image: "Family Room/kitchen.JPEG" },
+        { id: 23, title: t("galleryImageCategoryBucatarie"), category: t("galleryImageCategoryBucatarie"), image: "Family Room/kitchen2.JPEG" },
+        { id: 24, title: t("galleryImageCategoryBaie"), category: t("galleryImageCategoryBaie"), image: "Family Room/bath1.JPEG" },
+        { id: 25, title: t("galleryImageCategoryTerasa"), category: t("galleryImageCategoryBaie"), image: "Family Room/bath2.JPEG" }
       ]
     },
     {
@@ -73,12 +80,15 @@ const Gallery = () => {
       bathrooms: 1,
       area: 30,
       images: [
-        { id: 23, title: t("galleryImageCategoryDormitor"), category: t("galleryImageCategoryDormitor"), image: "Superior Double Room/first.jpg" },
-        { id: 24, title: t("galleryImageCategoryDormitor"), category: t("galleryImageCategoryDormitor"), image: "Superior Double Room/second.jpg" },
-        { id: 25, title: t("galleryImageCategoryBaie"), category: t("galleryImageCategoryBaie"), image: "Superior Double Room/bathroom.jpg" },
-        { id: 26, title: t("galleryImageCategoryBucatarie"), category: t("galleryImageCategoryBucatarie"), image: "Superior Double Room/bath1.jpg" },
-        { id: 27, title: t("galleryImageCategoryBalcon"), category: t("galleryImageCategoryBalcon"), image: "Superior Double Room/terasa.jpg" },
-        { id: 28, title: t("galleryImageCategoryTerasa"), category: t("galleryImageCategoryTerasa"), image: "Superior Double Room/outdoor.jpg" }
+        { id: 23, title: t("galleryImageCategoryDormitor"), category: t("galleryImageCategoryDormitor"), image: "Superior Double Room/dorm1.JPEG" },
+        { id: 24, title: t("galleryImageCategoryDormitor"), category: t("galleryImageCategoryDormitor"), image: "Superior Double Room/dorm2.JPEG" },
+        { id: 25, title: t("galleryImageCategoryDormitor"), category: t("galleryImageCategoryDormitor"), image: "Superior Double Room/dorm3.JPEG" },
+        { id: 26, title: t("galleryImageCategoryDormitor"), category: t("galleryImageCategoryDormitor"), image: "Superior Double Room/dorm4.JPEG" },
+        { id: 27, title: t("galleryImageCategoryBaie"), category: t("galleryImageCategoryBaie"), image: "Superior Double Room/bath1.JPEG" },
+        { id: 28, title: t("galleryImageCategoryBaie"), category: t("galleryImageCategoryBaie"), image: "Superior Double Room/bath2.JPEG" },
+        { id: 29, title: t("galleryImageCategoryBaie"), category: t("galleryImageCategoryBaie"), image: "Superior Double Room/bath3.JPEG" },
+        { id: 30, title: t("galleryImageCategoryBalcon"), category: t("galleryImageCategoryHol"), image: "Superior Double Room/hol.JPEG" },
+        { id: 31, title: t("galleryImageCategoryBalcon"), category: t("galleryImageCategoryBalcon"), image: "Superior Double Room/balcon.JPEG" }
       ]
     },
     {
@@ -90,15 +100,18 @@ const Gallery = () => {
       bathrooms: 1,
       area: 50,
       images: [
-        { id: 31, title: t("galleryImageCategoryDormitor"), category: t("galleryImageCategoryDormitor"), image: "Standard Apartment/dormp.jpg" },
-        { id: 32, title: t("galleryImageCategoryDormitor"), category: t("galleryImageCategoryDormitor"), image: "Standard Apartment/dormp2.jpg" },
-        { id: 33, title: t("galleryImageCategoryLiving"), category: t("galleryImageCategoryLiving"), image: "Standard Apartment/hol1.jpg" },
-        { id: 34, title: t("galleryImageCategoryDormitor"), category: t("galleryImageCategoryDormitor"), image: "Standard Apartment/dorm1.jpg" },
-        { id: 35, title: t("galleryImageCategoryBucatarie"), category: t("galleryImageCategoryBucatarie"), image: "Standard Apartment/kitchen1.jpg" },
-        { id: 36, title: t("galleryImageCategoryLiving"), category: t("galleryImageCategoryLiving"), image: "Standard Apartment/living1.jpg" },
-        { id: 37, title: t("galleryImageCategoryLiving"), category: t("galleryImageCategoryLiving"), image: "Standard Apartment/living2.jpg" },
-        { id: 38, title: t("galleryImageCategoryBaie"), category: t("galleryImageCategoryBaie"), image: "Standard Apartment/bath1.jpg" },
-        { id: 39, title: t("galleryImageCategoryBalcon"), category: t("galleryImageCategoryBalcon"), image: "Standard Apartment/balcon1.jpg" }
+        { id: 31, title: t("galleryImageCategoryDormitor"), category: t("galleryImageCategoryDormitor"), image: "Standard Apartment/dormp.JPEG" },
+        { id: 32, title: t("galleryImageCategoryDormitor"), category: t("galleryImageCategoryDormitor"), image: "Standard Apartment/dormp2.JPEG" },
+        { id: 33, title: t("galleryImageCategoryLiving"), category: t("galleryImageCategoryLiving"), image: "Standard Apartment/hol1.JPEG" },
+        { id: 34, title: t("galleryImageCategoryLiving"), category: t("galleryImageCategoryLiving"), image: "Standard Apartment/hol2.JPEG" },
+        { id: 35, title: t("galleryImageCategoryLiving"), category: t("galleryImageCategoryLiving"), image: "Standard Apartment/hol3.JPEG" },
+        { id: 36, title: t("galleryImageCategoryDormitor"), category: t("galleryImageCategoryDormitor"), image: "Standard Apartment/dorm1.JPEG" },
+        { id: 37, title: t("galleryImageCategoryDormitor"), category: t("galleryImageCategoryDormitor"), image: "Standard Apartment/dorm2.JPEG" },
+        { id: 38, title: t("galleryImageCategoryBucatarie"), category: t("galleryImageCategoryBucatarie"), image: "Standard Apartment/kitchen1.JPEG" },
+        { id: 39, title: t("galleryImageCategoryBucatarie"), category: t("galleryImageCategoryBucatarie"), image: "Standard Apartment/kitchen2.JPEG" },
+        { id: 40, title: t("galleryImageCategoryBaie"), category: t("galleryImageCategoryBaie"), image: "Standard Apartment/bath1.JPEG" },
+        { id: 41, title: t("galleryImageCategoryBaie"), category: t("galleryImageCategoryBaie"), image: "Standard Apartment/bath2.JPEG" },
+        { id: 42, title: t("galleryImageCategoryBalcon"), category: t("galleryImageCategoryBalcon"), image: "Standard Apartment/balcon1.JPEG" }
       ]
     },
     {
@@ -110,15 +123,15 @@ const Gallery = () => {
       bathrooms: 1,
       area: 50,
       images: [
-        { id: 40, title: t("galleryImageCategoryDormitor"), category: t("galleryImageCategoryDormitor"), image: "Two Bedroom Apartment/dormp.jpg" },
-        { id: 41, title: t("galleryImageCategoryDormitor"), category: t("galleryImageCategoryDormitor"), image: "Two Bedroom Apartment/dormp2.jpg" },
-        { id: 42, title: t("galleryImageCategoryDormitor"), category: t("galleryImageCategoryDormitor"), image: "Two Bedroom Apartment/dorms.jpg" },
-        { id: 43, title: t("galleryImageCategoryDormitor"), category: t("galleryImageCategoryDormitor"), image: "Two Bedroom Apartment/etajat.jpg" },
-        { id: 44, title: t("galleryImageCategoryBaie"), category: t("galleryImageCategoryBaie"), image: "Two Bedroom Apartment/baie.jpg" },
-        { id: 45, title: t("galleryImageCategoryBucatarie"), category: t("galleryImageCategoryBucatarie"), image: "Two Bedroom Apartment/kitchen1.jpg" },
-        { id: 46, title: t("galleryImageCategoryBucatarie"), category: t("galleryImageCategoryBucatarie"), image: "Two Bedroom Apartment/kitchen3.jpg" },
-        { id: 47, title: t("galleryImageCategoryTerasa"), category: t("galleryImageCategoryTerasa"), image: "Two Bedroom Apartment/curte1.jpg" },
-        { id: 48, title: t("galleryImageCategoryTerasa"), category: t("galleryImageCategoryTerasa"), image: "Two Bedroom Apartment/curte2.jpg" }
+        { id: 40, title: t("galleryImageCategoryDormitor"), category: t("galleryImageCategoryDormitor"), image: "Two Bedroom Apartment/dormp.JPEG" },
+        { id: 41, title: t("galleryImageCategoryDormitor"), category: t("galleryImageCategoryDormitor"), image: "Two Bedroom Apartment/dormp2.JPEG" },
+        { id: 42, title: t("galleryImageCategoryDormitor"), category: t("galleryImageCategoryDormitor"), image: "Two Bedroom Apartment/dorms.JPEG" },
+        { id: 43, title: t("galleryImageCategoryDormitor"), category: t("galleryImageCategoryDormitor"), image: "Two Bedroom Apartment/etajat.JPEG" },
+        { id: 44, title: t("galleryImageCategoryBaie"), category: t("galleryImageCategoryBaie"), image: "Two Bedroom Apartment/baie1.JPEG" },
+        { id: 45, title: t("galleryImageCategoryBaie"), category: t("galleryImageCategoryBaie"), image: "Two Bedroom Apartment/baie2.JPEG" },
+        { id: 46, title: t("galleryImageCategoryBucatarie"), category: t("galleryImageCategoryBucatarie"), image: "Two Bedroom Apartment/kitchen1.JPEG" },
+        { id: 47, title: t("galleryImageCategoryBucatarie"), category: t("galleryImageCategoryBucatarie"), image: "Two Bedroom Apartment/kitchen2.JPEG" },
+        { id: 48, title: t("galleryImageCategoryTerasa"), category: t("galleryImageCategoryTerasa"), image: "Two Bedroom Apartment/curte1.JPEG" },
       ]
     }
   ];
