@@ -107,7 +107,7 @@ const Footer = () => {
               <Button size="lg" className="bg-white text-secondary hover:bg-gray-100">
                 Get Custom Quote
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-secondary hover:bg-gray-100">
+              <Button size="lg" variant="outline" className="bg-white text-secondary hover:bg-gray-100">
                 Schedule Consultation
               </Button>
             </div>

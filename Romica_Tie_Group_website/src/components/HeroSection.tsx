@@ -74,39 +74,6 @@ const HeroSection = () => {
         style={{ zIndex: 1 }}
       />
 
-      {/* Dynamic equipment visualization */}
-      <div ref={equipmentRef} className="absolute right-0 top-1/2 transform -translate-y-1/2 w-1/2 h-full" style={{ zIndex: 2 }}>
-        <div className="relative w-full h-full">
-          {/* Simulated LARS system */}
-          <div className="absolute top-1/4 right-1/4 w-32 h-48 opacity-20">
-            <div className="w-full h-8 bg-white/30 rounded-lg mb-2"></div>
-            <div className="w-6 h-full bg-white/40 rounded-full mx-auto relative">
-              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-1 h-full bg-white/60 animate-pulse"></div>
-            </div>
-          </div>
-          
-          {/* Simulated winch system */}
-          <div className="absolute bottom-1/3 right-1/3 w-24 h-24 opacity-25">
-            <div className="w-full h-full rounded-full border-4 border-white/40 relative">
-              <div className="absolute inset-2 rounded-full bg-white/20"></div>
-              <div className="absolute top-1/2 left-1/2 w-2 h-2 bg-white/60 rounded-full transform -translate-x-1/2 -translate-y-1/2 animate-spin" style={{animationDuration: '3s'}}></div>
-            </div>
-          </div>
-
-          {/* Technical grid overlay */}
-          <div className="absolute inset-0 opacity-10">
-            <svg className="w-full h-full" viewBox="0 0 400 400">
-              <defs>
-                <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                  <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" strokeWidth="1"/>
-                </pattern>
-              </defs>
-              <rect width="100%" height="100%" fill="url(#grid)" />
-            </svg>
-          </div>
-        </div>
-      </div>
-
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 mb-24 text-center">
         <div className="max-w-4xl">
           <div className="mb-8">

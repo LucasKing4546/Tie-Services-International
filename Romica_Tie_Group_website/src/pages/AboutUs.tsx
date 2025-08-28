@@ -173,7 +173,7 @@ const AboutUs = () => {
             <Card className="bg-gradient-to-br from-background to-secondary/10 hover:shadow-lg transition-shadow">
               <CardHeader className="text-center">
                 <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <MapPin className="w-8 h-8 text-secondary-foreground" />
+                  <MapPin className="w-8 h-8 text-secondary" />
                 </div>
                 <CardTitle className="text-2xl">Romania</CardTitle>
               </CardHeader>

@@ -9,6 +9,16 @@ import Footer from '@/components/Footer';
 const Solutions = () => {
   const [activeApplication, setActiveApplication] = useState('uuv-rov');
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   const applications = [
     {
       id: 'uuv-rov',
@@ -88,10 +98,10 @@ const Solutions = () => {
               Comprehensive marine engineering solutions structured by application and product type to match your problem-solving approach
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Button size="lg" className="bg-primary hover:bg-primary/90">
+              <Button size="lg" className="bg-primary hover:bg-primary/90" onClick={() => scrollToSection('applications-section')}>
                 Explore Applications
               </Button>
-              <Button size="lg" variant="outline">
+              <Button size="lg" variant="outline" onClick={() => scrollToSection('products-section')}>
                 Browse Products
               </Button>
             </div>
@@ -102,7 +112,7 @@ const Solutions = () => {
       {/* Main Content */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="mb-8">
+            <div id="applications-section" className="mb-8">
             <h2 className="text-4xl font-bold text-foreground mb-4">Solutions by Application</h2>
             <p className="text-lg text-muted-foreground">
                 Organized by customer problem-solving mindset to help you find the right solution for your specific marine application.
@@ -174,7 +184,7 @@ const Solutions = () => {
             );
             })}
 
-            <div className="mb-8">
+            <div id="products-section" className="mb-8">
             <h2 className="text-4xl font-bold text-foreground mb-4">Products by Type</h2>
             <p className="text-lg text-muted-foreground">
                 Comprehensive range of marine equipment organized by product category for easy navigation and comparison.
