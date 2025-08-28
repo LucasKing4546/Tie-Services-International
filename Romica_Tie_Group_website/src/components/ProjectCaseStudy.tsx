@@ -36,7 +36,7 @@ const ProjectCaseStudy: React.FC<ProjectCaseStudyProps> = ({ projectData }) => {
   const VesselIcon = iconMap[projectData.icon as keyof typeof iconMap];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background py-4">
       <Header />
       <main>
         {/* Hero Section */}
@@ -46,7 +46,7 @@ const ProjectCaseStudy: React.FC<ProjectCaseStudyProps> = ({ projectData }) => {
               <Button 
                 variant="ghost" 
                 className="mb-6"
-                onClick={() => window.history.back()}
+                onClick={() => window.location.href = '/projects'}
               >
                 <ArrowLeft className="mr-2 h-4 w-4" />
                 Back to Projects
@@ -253,7 +253,7 @@ const ProjectCaseStudy: React.FC<ProjectCaseStudyProps> = ({ projectData }) => {
                       <Download className="mr-2 h-4 w-4" />
                       Download Case Study
                     </Button>
-                    <Button variant="outline" className="w-full">
+                    <Button variant="outline" className="w-full" onClick={() => window.location.href = '/support-service'}>
                       Contact Our Team
                     </Button>
                   </div>
