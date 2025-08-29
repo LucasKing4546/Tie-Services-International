@@ -249,7 +249,7 @@ const ProjectCaseStudy: React.FC<ProjectCaseStudyProps> = ({ projectData }) => {
                   </Card>
 
                   <div className="space-y-3">
-                    <Button className="w-full">
+                    <Button className="w-full"> 
                       <Download className="mr-2 h-4 w-4" />
                       Download Case Study
                     </Button>
