@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 /* ROMICA brand-inspired design system with red and navy blue */
+html {
+  scroll-behavior: smooth;
+}
 
 @layer base {
   :root {

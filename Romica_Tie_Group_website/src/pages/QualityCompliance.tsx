@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { CheckCircle, Award, Shield, FileCheck, Building2, Globe } from 'lucide-react';
@@ -6,6 +6,23 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 const QualityCompliance = () => {
+  // Handle URL hash navigation
+  useEffect(() => {
+    const hash = window.location.hash.replace('#', '');
+    if (hash) {
+      const element = document.getElementById(hash);
+      if (element) {
+        // Small delay to ensure page is fully loaded
+        setTimeout(() => {
+          element.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }, 100);
+      }
+    }
+  }, []);
+
   const certifications = [
     {
       category: "Class-Approved Designs",
@@ -95,7 +112,7 @@ const QualityCompliance = () => {
       </section>
 
       {/* Our Commitment Section */}
-      <section className="py-16">
+      <section id="commitment-section" className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
@@ -131,7 +148,7 @@ const QualityCompliance = () => {
       </section>
 
       {/* Certifications Section */}
-      <section className="py-16 bg-muted/30">
+      <section id="certifications-section" className="py-16 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">

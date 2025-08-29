@@ -8,37 +8,34 @@ const Footer = () => {
     {
       title: 'Solutions',
       links: [
-        { label: 'UUV & ROV Handling', href: '/solutions' },
-        { label: 'Oceanographic Research', href: '/solutions' },
-        { label: 'Marine Survey', href: '/solutions' },
-        { label: 'Bespoke Engineering', href: '/solutions' }
+        { label: 'UUV & ROV Handling', href: '/solutions#applications-section' },
+        { label: 'Oceanographic Research', href: '/solutions#applications-section' },
+        { label: 'Marine Survey', href: '/solutions#applications-section' },
+        { label: 'Bespoke Engineering', href: '/solutions#applications-section' }
       ]
     },
     {
       title: 'Products',
       links: [
-        { label: 'Winches', href: '/products/winches' },
-        { label: 'A-Frames', href: '/products/a-frames' },
-        { label: 'Launch & Recovery Systems', href: '/products/launch-recovery' },
-        { label: 'CTD Handling', href: '/products/ctd-handling' }
+        { label: 'Winches', href: '/solutions#products-section' },
+        { label: 'A-Frames', href: '/solutions#products-section' },
+        { label: 'Launch & Recovery Systems', href: '/solutions#products-section' },
       ]
     },
     {
       title: 'Quality',
       links: [
-        { label: 'Certifications', href: '/quality/certifications' },
-        { label: 'Our Commitment', href: '/quality/commitment' },
-        { label: 'Testing Procedures', href: '/quality/testing' },
-        { label: 'Compliance Standards', href: '/quality/compliance' }
+        { label: 'Certifications', href: '/quality-compliance#certifications-section' },
+        { label: 'Our Commitment', href: '/quality-compliance#commitment-section' },
       ]
     },
     {
       title: 'Support',
       links: [
-        { label: 'Technical Support', href: '/support/technical' },
-        { label: 'Training Programs', href: '/support/training' },
-        { label: 'Spare Parts', href: '/support/spare-parts' },
-        { label: 'Warranty Information', href: '/support/warranty' }
+        { label: 'Technical Support', href: '/support-service#technical-support-section' },
+        { label: 'Training Programs', href: '/support-service#training-section' },
+        { label: 'Spare Parts', href: '/support-service#spare-parts-section' },
+        { label: 'Warranty Information', href: '/support-service#warranty-section' }
       ]
     }
   ];

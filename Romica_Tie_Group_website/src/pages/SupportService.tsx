@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
@@ -21,6 +21,23 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 const SupportService = () => {
+  // Handle URL hash navigation
+  useEffect(() => {
+    const hash = window.location.hash.replace('#', '');
+    if (hash) {
+      const element = document.getElementById(hash);
+      if (element) {
+        // Small delay to ensure page is fully loaded
+        setTimeout(() => {
+          element.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }, 100);
+      }
+    }
+  }, []);
+
   const supportChannels = [
     {
       icon: Phone,
@@ -126,7 +143,7 @@ const SupportService = () => {
         </section>
 
         {/* Technical Support Section */}
-        <section className="py-16">
+        <section id="technical-support-section" className="py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold mb-4">Technical Support</h2>
@@ -196,7 +213,7 @@ const SupportService = () => {
         <Separator />
 
         {/* Training Programs Section */}
-        <section className="py-16">
+        <section id="training-section" className="py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold mb-4">Training Programs</h2>
@@ -271,7 +288,7 @@ const SupportService = () => {
         <Separator />
 
         {/* Spare Parts & Maintenance Section */}
-        <section className="py-16">
+        <section id="spare-parts-section" className="py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold mb-4">Spare Parts & Maintenance</h2>
@@ -370,7 +387,7 @@ const SupportService = () => {
         <Separator />
 
         {/* Warranty Information Section */}
-        <section className="py-16">
+        <section id="warranty-section" className="py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold mb-4">Warranty Information</h2>
