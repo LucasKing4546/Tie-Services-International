@@ -14,7 +14,7 @@ const Header = () => {
     { name: 'Projects', href: '/projects' },
     { name: 'Global Network', href: '/global-network' },
     { name: 'Support & Service', href: '/support-service' },
-    { name: 'Resources', href: '/resources' },
+    { name: 'Resources & News', href: '/resources' },
     { name: 'About Us', href: '/about-us' }
   ];
 
@@ -27,7 +27,7 @@ const Header = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden xl:flex space-x-5">
+          <nav className="hidden xl:flex space-x-4">
             {navigation.map((item) => (
               <a
                 key={item.name}
