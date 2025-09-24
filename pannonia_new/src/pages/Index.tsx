@@ -61,7 +61,7 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center items-stretch">
             {[
               {
                 icon: <Wifi className="h-8 w-8 text-primary" />,
