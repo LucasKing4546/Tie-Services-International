@@ -1,0 +1,23 @@
+---
+import { EQUIPMENT } from '@data/home';
+---
+<section class="sec" id="equipment">
+  <div class="wrap">
+    <div class="sechd">
+      <span class="mono red fu">05 — The range</span>
+      <h2 class="d2">
+        <span class="rl"><span>Open specs.</span></span>
+        <span class="rl"><span>No part numbers.</span></span>
+      </h2>
+    </div>
+    <div class="eq stag">
+      {EQUIPMENT.map((e) => (
+        <div class="ecard">
+          <div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true" set:html={e.icon} /></div>
+          <div><h3>{e.name}</h3><p>{e.blurb}</p></div>
+          <a class="arw" href={e.href}>{e.cta} →</a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,36 @@
+---
+import Base from '@layouts/Base.astro';
+import Hero from '@components/home/Hero.astro';
+import Marquee from '@components/home/Marquee.astro';
+import Statement from '@components/home/Statement.astro';
+import Stats from '@components/home/Stats.astro';
+import TierLadder from '@components/home/TierLadder.astro';
+import SectorTrack from '@components/home/SectorTrack.astro';
+import MachineLift from '@components/home/MachineLift.astro';
+import EquipmentGrid from '@components/home/EquipmentGrid.astro';
+import ProofCase from '@components/home/ProofCase.astro';
+import LifecycleSteps from '@components/home/LifecycleSteps.astro';
+import '@/styles/home.css';
+---
+<Base pageId="H-01">
+  <Hero />
+  <Marquee />
+  <Statement />
+  <Stats />
+  <TierLadder />
+  <SectorTrack />
+  <MachineLift />
+  <EquipmentGrid />
+  <ProofCase />
+  <LifecycleSteps />
+
+  <Fragment slot="body-end">
+    <script>
+      // three.js is ~600 kB — fetch it only once the browser is idle, and only
+      // on this page. Everything above renders and is readable without it.
+      const start = () => import('@lib/home-scroll').then((m) => m.initHome());
+      if ('requestIdleCallback' in window) requestIdleCallback(start, { timeout: 1500 });
+      else addEventListener('load', start);
+    </script>
+  </Fragment>
+</Base>

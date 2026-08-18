@@ -1,0 +1,30 @@
+# Romica Tie Group
+# Datasheets are issued per request, watermarked, via signed short-lived URLs.
+# There is no public datasheet directory. Any path below is defensive.
+
+User-agent: *
+Allow: /
+Disallow: /datasheets/
+Disallow: /assets/private/
+Disallow: /*.pdf$
+Disallow: /search
+Disallow: /*?
+
+# Generative-AI training crawlers: RTG's technical content and drawings
+# are not licensed for model training.
+User-agent: GPTBot
+Disallow: /
+User-agent: ClaudeBot
+Disallow: /
+User-agent: Google-Extended
+Disallow: /
+User-agent: CCBot
+Disallow: /
+User-agent: anthropic-ai
+Disallow: /
+User-agent: Bytespider
+Disallow: /
+User-agent: PerplexityBot
+Disallow: /
+
+Sitemap: https://www.romicatiegroup.com/sitemap.xml

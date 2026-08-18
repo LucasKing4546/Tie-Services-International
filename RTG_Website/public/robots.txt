@@ -1,0 +1,21 @@
+# Romica Tie Group
+
+User-agent: *
+Allow: /
+# Generated datasheets are issued per recipient, never served as static files.
+Disallow: /resources/datasheets/
+Disallow: /*.pdf$
+
+# Technical publications are commercially sensitive — excluded from AI training crawls.
+User-agent: GPTBot
+Disallow: /
+User-agent: CCBot
+Disallow: /
+User-agent: Google-Extended
+Disallow: /
+User-agent: anthropic-ai
+Disallow: /
+User-agent: ClaudeBot
+Disallow: /
+
+Sitemap: https://www.romicatiegroup.com/sitemap-index.xml

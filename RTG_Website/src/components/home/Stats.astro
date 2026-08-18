@@ -1,0 +1,30 @@
+---
+import { HERO_STATS } from '@data/home';
+/** Numeric values count up on first view; text values render as-is. */
+const numeric = (v: string) => /^[\d,]+/.test(v);
+const digits = (v: string) => v.replace(/[^\d]/g, '');
+const suffix = (v: string) => v.replace(/^[\d,]+/, '');
+---
+<section class="sec sm" style="padding-top:0">
+  <div class="wrap">
+    <div class="stats stag">
+      {HERO_STATS.map((s) => (
+        <div class="stat">
+          <b>
+            {numeric(s.value) ? (
+              <>
+                {s.accent
+                  ? <em class="ct" data-to={digits(s.value)}>0</em>
+                  : <span class="ct" data-to={digits(s.value)}>0</span>}
+                {suffix(s.value)}
+              </>
+            ) : (
+              <Fragment set:html={s.value.replace('/', '<span style="color:var(--red)">/</span>')} />
+            )}
+          </b>
+          <span>{s.label}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

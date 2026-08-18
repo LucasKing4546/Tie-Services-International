@@ -1,0 +1,25 @@
+---
+import { SECTORS } from '@data/home';
+---
+<section class="hz-wrap" id="sectors">
+  <div class="hz-stick">
+    <div class="hz-head">
+      <div>
+        <p class="mono on-navy" style="margin:0 0 20px">03 — Sectors</p>
+        <h2 class="d3" style="color:#fff;max-width:14ch">Find the deck you actually work on.</h2>
+      </div>
+      <p class="lede" style="color:rgba(255,255,255,.66);max-width:34ch;margin:0">
+        Seven sectors. Each one filters the equipment, the evidence and the engineer you talk to.</p>
+    </div>
+    <div class="hz-track" id="hzTrack">
+      {SECTORS.map((s) => (
+        <a class="scard" href={s.href}>
+          <span class="n">{s.id}</span>
+          <div><h3>{s.name}</h3><p>{s.blurb}</p></div>
+          <span class="arw">Explore →</span>
+        </a>
+      ))}
+    </div>
+    <div class="hz-prog"><div class="rail"><div class="fill" id="hzFill"></div></div></div>
+  </div>
+</section>

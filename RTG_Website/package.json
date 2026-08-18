@@ -1,0 +1,29 @@
+{
+  "name": "rtg-website",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Romica Tie Group — marine deck equipment. Static site, 69 pages across 17 templates.",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "pagemap": "node scripts/build-page-map.mjs",
+    "audit:seo": "node scripts/audit-seo.mjs",
+    "audit:protection": "node scripts/audit-protection.mjs",
+    "audit": "npm run audit:seo && npm run audit:protection"
+  },
+  "dependencies": {
+    "astro": "^5.2.5",
+    "@astrojs/mdx": "^4.0.8",
+    "@astrojs/sitemap": "^3.2.1",
+    "three": "^0.173.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@types/three": "^0.173.0",
+    "typescript": "^5.7.3",
+    "xlsx": "^0.18.5"
+  }
+}

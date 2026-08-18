@@ -1,0 +1,45 @@
+---
+import { MACHINES } from '@data/home';
+const first = MACHINES[0];
+---
+<section class="sec sm" style="padding-bottom:44px">
+  <div class="wrap">
+    <div class="sechd" style="margin-bottom:0">
+      <span class="mono red fu">04 — The machines</span>
+      <h2 class="d2"><span class="rl"><span>Look at the actual</span></span>
+      <span class="rl"><span>hardware.</span></span></h2>
+    </div>
+  </div>
+</section>
+
+<section class="zw" id="showcase">
+  <div class="zs">
+    <canvas id="craneGL" aria-hidden="true"></canvas>
+    <div class="zf" id="zFrame">
+      <canvas id="showGL" role="img" aria-label="Interactive 3D models of RTG deck equipment"></canvas>
+      <div class="zf-in">
+        <div class="zf-top">
+          <div id="mHead">
+            <h3 id="mName" set:html={first.name} />
+            <p class="sub" id="mDesc">{first.desc}</p>
+          </div>
+          <div class="zf-pick" id="mPick">
+            {MACHINES.map((m, i) => (
+              <button class={i === 0 ? 'on' : ''} data-m={i}>
+                {m.key === 'winch' ? 'Winch' : m.key === 'aframe' ? 'A-frame LARS' : 'Power unit'}
+              </button>
+            ))}
+          </div>
+        </div>
+        <div></div>
+        <div class="zf-bot">
+          <div class="spec" id="mSpec">
+            {first.spec.map(([b, l]) => <div><b>{b}</b><span>{l}</span></div>)}
+          </div>
+          <a class="btn b-red" href="/equipment/">See the full range<span class="dot"></span></a>
+        </div>
+      </div>
+      <span class="zoom-hint" id="zHint">Keep scrolling</span>
+    </div>
+  </div>
+</section>

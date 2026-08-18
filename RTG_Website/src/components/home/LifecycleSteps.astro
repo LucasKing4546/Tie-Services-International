@@ -1,0 +1,33 @@
+---
+import { LIFECYCLE } from '@data/home';
+---
+<section class="sec" id="lifecycle" style="padding-bottom:76px">
+  <div class="wrap">
+    <div class="sechd" style="margin-bottom:44px">
+      <span class="mono red fu">07 — Lifecycle</span>
+      <h2 class="d2"><span class="rl"><span>Refurbish. Upgrade.</span></span>
+      <span class="rl"><span>Re-certify.</span></span></h2>
+    </div>
+    <div class="eq stag">
+      {LIFECYCLE.map((l) => (
+        <div class="ecard lc">
+          <div>
+            <div class="lc-h">
+              <span class="lc-n">{l.step}</span>
+              <div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true" set:html={l.icon} /></div>
+            </div>
+            <h3>{l.title}</h3>
+            <p>{l.blurb}</p>
+            <ul class="lc-l">{l.points.map((pt) => <li>{pt}</li>)}</ul>
+          </div>
+          <a class="arw" href={l.href}>{l.cta} →</a>
+        </div>
+      ))}
+    </div>
+    <div class="lc-band fu">
+      <div><b>Assess first.</b> A machine that is worth rebuilding is usually obvious within a day of
+        stripping it — and a machine that is not is worth knowing about before you buy steel.</div>
+      <a class="btn btn-o" href="/lifecycle/condition-assessment/">Talk it through</a>
+    </div>
+  </div>
+</section>

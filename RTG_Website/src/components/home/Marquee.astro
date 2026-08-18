@@ -1,0 +1,7 @@
+---
+import { MARQUEE } from '@data/home';
+const doubled = [...MARQUEE, ...MARQUEE];
+---
+<div class="mq" aria-hidden="true">
+  <div class="mq-in">{doubled.map((t) => <span>{t}</span>)}</div>
+</div>

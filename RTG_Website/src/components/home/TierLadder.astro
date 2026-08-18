@@ -1,0 +1,27 @@
+---
+import { TIERS } from '@data/home';
+---
+<section class="pin-wrap" id="tiers">
+  <div class="pin-stick" style="background:var(--off)">
+    <div class="wrap pin-grid">
+      <div class="pin-vis"><canvas id="tierGL" role="img"
+        aria-label="3D winch assembly building up one manufacturing tier at a time"></canvas></div>
+      <div>
+        <p class="mono red" style="margin:0 0 24px">02 — Contract manufacturing</p>
+        <h2 class="d3" style="margin-bottom:34px;max-width:16ch">How much of your machine would you like us to take?</h2>
+        <div class="pin-copy">
+          {TIERS.map((t, i) => (
+            <article class={`tier${i === 0 ? ' on' : ''}`} data-t={i}>
+              <div class="num">{t.n}</div>
+              <h3 class="d3">{t.title}</h3>
+              <p class="lede">{t.lede}</p>
+              <ul>{t.points.map((pt) => <li>{pt}</li>)}</ul>
+            </article>
+          ))}
+        </div>
+        <div class="pin-bar" aria-hidden="true">{TIERS.map((_, i) => <i class={i === 0 ? 'on' : ''}></i>)}</div>
+        <p style="margin-top:30px"><a class="arw" href="/contract-manufacturing/">Your design. Your IP. Our factory. →</a></p>
+      </div>
+    </div>
+  </div>
+</section>

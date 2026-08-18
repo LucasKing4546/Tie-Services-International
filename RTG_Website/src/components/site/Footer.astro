@@ -1,0 +1,30 @@
+---
+import { FOOTER_NAV, LEGAL_NAV, SITE } from '@data/site.js';
+const year = new Date().getFullYear();
+---
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr-g">
+      <div>
+        <a class="brand" href="/">
+          <span class="mk" aria-hidden="true"></span>
+          <span><b>ROMICA TIE GROUP</b><small>UK design · EU manufacture</small></span>
+        </a>
+        <p class="ftr-blurb">
+          Custom deck equipment for research, survey and offshore vessels.
+          Designed in the UK, built and tested in Satu Mare, Romania.
+        </p>
+      </div>
+      {FOOTER_NAV.map((col) => (
+        <div>
+          <h4>{col.heading}</h4>
+          <ul>{col.links.map((l) => <li><a href={l.href}>{l.label}</a></li>)}</ul>
+        </div>
+      ))}
+    </div>
+    <div class="ftr-b">
+      <span>© {year} {SITE.name}. All drawings and technical publications remain our copyright.</span>
+      <span>{LEGAL_NAV.map((l, i) => <>{i > 0 && ' · '}<a href={l.href}>{l.label}</a></>)}</span>
+    </div>
+  </div>
+</footer>

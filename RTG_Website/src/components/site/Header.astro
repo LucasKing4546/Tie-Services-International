@@ -1,0 +1,24 @@
+---
+import { NAV } from '@data/site.js';
+interface Props { currentPath?: string }
+const { currentPath = '' } = Astro.props;
+const isActive = (href: string) => currentPath === href || (href !== '/' && currentPath.startsWith(href));
+---
+<header class="hdr" id="hdr">
+  <div class="wrap hdr-in">
+    <a class="brand" href="/">
+      <span class="mk" aria-hidden="true"></span>
+      <span><b>ROMICA TIE GROUP</b><small>UK design · EU manufacture</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      {NAV.map((item) => (
+        <a href={item.href} aria-current={isActive(item.href) ? 'page' : undefined}>{item.label}</a>
+      ))}
+      <a class="btn b-red" href="/contact/">Talk to an engineer</a>
+    </nav>
+  </div>
+</header>
+<script>
+  const hdr = document.getElementById('hdr');
+  if (hdr) addEventListener('scroll', () => hdr.classList.toggle('on', scrollY > 30), { passive: true });
+</script>
