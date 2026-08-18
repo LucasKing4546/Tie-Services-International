@@ -81,7 +81,7 @@ p{margin:0 0 1em;max-width:62ch}
 .rl{display:block;overflow:hidden;padding-bottom:.14em;margin-bottom:-.14em}
 .rl > span{display:block;transition:transform 1s var(--e)}
 html.js .rl > span{transform:translateY(105%)}
-.rl.in > span{transform:translateY(0)}
+html.js .rl.in > span{transform:translateY(0)}
 .rl:nth-child(2) > span{transition-delay:.07s}
 .rl:nth-child(3) > span{transition-delay:.14s}
 .rl:nth-child(4) > span{transition-delay:.21s}
