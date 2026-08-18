@@ -1,0 +1,23 @@
+---
+/** One card in a CardGrid — .ecard, promoted from home.css (blocks.css). */
+import type { CardItem } from '@lib/blocks';
+
+interface Props {
+  item: CardItem;
+  tone?: 'light' | 'dark';
+}
+
+const { item, tone = 'light' } = Astro.props;
+---
+
+<a class:list={['ecard', { inv: tone === 'dark' }]} href={item.href}>
+  {item.icon && (
+    <div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true" set:html={item.icon} /></div>
+  )}
+  <div>
+    {item.meta && <p class="lc-n" style="margin-bottom:8px">{item.meta}</p>}
+    <h3>{item.title}</h3>
+    {item.blurb && <p>{item.blurb}</p>}
+  </div>
+  <span class="arw">{item.cta ?? 'Read more'} →</span>
+</a>

@@ -255,7 +255,9 @@ LARS, hydraulic power unit and deck crane. `buildCrane({ rig: true })` returns a
 crane with a live hoist whose hook can carry a DOM payload.
 
 - Always lazily import. Never on the critical path.
-- Always gate rendering on visibility — the viewer exposes `onScreen`.
+- Always gate rendering on visibility — `createViewer()` exposes a `visible`
+  flag; `home-scroll.ts` layers its own `onScreen` field on top of that per
+  stage, driven by an `IntersectionObserver`. Only render while on screen.
 - Honour `prefers-reduced-motion`.
 - When real CAD becomes available, export decimated GLB with all internal
   geometry stripped (which also satisfies §6) and swap it in; the scene, lighting

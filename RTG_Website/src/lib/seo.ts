@@ -43,9 +43,18 @@ const breadcrumbNode = (p: PageMeta) => {
 /**
  * Page-level JSON-LD graph. Organization on every page (per Meta Tag Rules),
  * BreadcrumbList site-wide, plus the page's own schema type from the workbook.
- * `extra` lets a template add Product specs, Article dates and so on.
+ *
+ * `extra` appends independent graph nodes (Product offers, FAQPage, per-
+ * vacancy JobPosting…). `pageNode` instead *extends* the page's own node —
+ * spread last, so a template's fields win over the defaults — for cases like
+ * Product's `additionalProperty` or Case's `datePublished` that belong on
+ * the page node itself rather than as a sibling.
  */
-export function buildJsonLd(p: PageMeta, extra: Record<string, unknown>[] = []) {
+export function buildJsonLd(
+  p: PageMeta,
+  extra: Record<string, unknown>[] = [],
+  pageNode: Record<string, unknown> = {},
+) {
   const graph: Record<string, unknown>[] = [organizationNode()];
 
   const crumbs = breadcrumbNode(p);
@@ -59,6 +68,7 @@ export function buildJsonLd(p: PageMeta, extra: Record<string, unknown>[] = []) 
     inLanguage: 'en',
     isPartOf: { '@id': `${SITE.origin}/#org` },
     publisher: { '@id': `${SITE.origin}/#org` },
+    ...pageNode,
   });
 
   graph.push(...extra);

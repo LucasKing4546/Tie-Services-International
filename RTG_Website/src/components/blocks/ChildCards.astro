@@ -1,0 +1,36 @@
+---
+/**
+ * A hub's children, rendered as a CardGrid — no hand-written child list.
+ * Items come from childrenOf() (src/data/pages.ts), one path segment
+ * deeper than `of`, so a new Page Map row under a hub's slug appears here
+ * automatically. This is what replaces src/data/home.ts's hand-typed
+ * SECTORS/TIERS arrays once the templates that need them exist.
+ */
+import { childEntries } from '@lib/content';
+import CardGrid from './CardGrid.astro';
+import Card from './Card.astro';
+
+interface Props {
+  of: string;
+  cols?: 2 | 3;
+  /** Page ids to leave out — rare, for a hub that surfaces one child via a
+   *  different block (a "featured" case study, say) and doesn't want it
+   *  doubled up in the grid. */
+  exclude?: string[];
+}
+
+const { of, cols = 3, exclude = [] } = Astro.props;
+const pairs = (await childEntries(of)).filter(({ page }) => !exclude.includes(page.id));
+---
+
+<CardGrid cols={cols}>
+  {pairs.map(({ page, entry }) => (
+    <Card
+      item={{
+        title: page.name,
+        href: page.slug,
+        blurb: entry.data.lede ?? page.description,
+      }}
+    />
+  ))}
+</CardGrid>

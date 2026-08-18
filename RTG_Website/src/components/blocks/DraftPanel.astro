@@ -1,0 +1,26 @@
+---
+/**
+ * The dashed-red "this page is a working outline" panel — mirrors the
+ * reference build's draft() convention (site_build/site_data.py:72), so
+ * nothing provisional reaches production unnoticed. Every template renders
+ * this when the entry's frontmatter has draft: true. Defaults its block
+ * list to PageMeta.blocks (the workbook's own content-block brief) so a
+ * stub MDX file needs no outline of its own to get a useful panel.
+ */
+import type { PageMeta } from '@data/pages';
+
+interface Props {
+  page: PageMeta;
+  items?: string[];
+  note?: string;
+}
+
+const { page, items, note = 'Content to be supplied by RTG before launch' } = Astro.props;
+const list = items && items.length > 0 ? items : page.blocks;
+---
+
+<div class="draftnote">
+  <h4>Draft page — {note}</h4>
+  <p>This page is built, styled and carries its final metadata. The copy above is a working outline. The blocks it needs:</p>
+  {list.length > 0 && <ul>{list.map((b) => <li>{b}</li>)}</ul>}
+</div>

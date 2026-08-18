@@ -1,0 +1,12 @@
+---
+/** .eq / .eq.eq-2 grid — promoted from home.css (blocks.css). */
+interface Props {
+  cols?: 2 | 3;
+  stagger?: boolean;
+}
+const { cols = 3, stagger = true } = Astro.props;
+---
+
+<div class:list={['eq', { 'eq-2': cols === 2, stag: stagger }]}>
+  <slot />
+</div>

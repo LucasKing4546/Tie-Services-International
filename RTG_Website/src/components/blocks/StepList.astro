@@ -1,0 +1,36 @@
+---
+/**
+ * A numbered sequence of steps — .steps/.step/.lc-n/.lc-l, mostly promoted
+ * from home.css's lifecycle-card rules (blocks.css). Used by Service, Tier,
+ * Ladder and Guide (the six questions).
+ */
+import type { Step } from '@lib/blocks';
+
+interface Props {
+  steps: Step[];
+  /** Show a mono step label above the number, e.g. "STEP" or "TIER". */
+  label?: string;
+}
+
+const { steps, label } = Astro.props;
+---
+
+<div class="steps stag">
+  {steps.map((s, i) => (
+    <div class="step">
+      <div>
+        {label && <p class="lc-n">{label}</p>}
+        <p class="num">{s.n ?? String(i + 1).padStart(2, '0')}</p>
+      </div>
+      <div>
+        <h3 class="d3" style="font-size:22px">{s.title}</h3>
+        {s.body && <p style="margin-top:10px;color:var(--muted)">{s.body}</p>}
+        {s.points.length > 0 && (
+          <ul class="lc-l" style="margin-top:16px">
+            {s.points.map((p) => <li>{p}</li>)}
+          </ul>
+        )}
+      </div>
+    </div>
+  ))}
+</div>

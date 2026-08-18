@@ -1,0 +1,25 @@
+---
+/** The site-wide closing CTA — .cta was dead CSS in home.css until it was
+ *  promoted to blocks.css for exactly this component. */
+import type { Link } from '@lib/blocks';
+
+interface Props {
+  heading: string;
+  body?: string;
+  primary: Link;
+  secondary?: Link;
+}
+
+const { heading, body, primary, secondary } = Astro.props;
+---
+
+<div class="cta">
+  <div>
+    <h2 class="d3">{heading}</h2>
+    {body && <p class="lede" style="margin-top:14px;color:rgba(255,255,255,.72)">{body}</p>}
+  </div>
+  <div style="display:flex;gap:12px;flex-wrap:wrap">
+    <a class="btn b-red" href={primary.href}>{primary.label}</a>
+    {secondary && <a class="btn btn-o inv" href={secondary.href}>{secondary.label}</a>}
+  </div>
+</div>

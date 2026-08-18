@@ -1,0 +1,199 @@
+/* ==========================================================================
+   Shared block primitives. Imported by Base.astro, so every page gets them -
+   unlike home.css, which is homepage-only. Promoted rules keep their exact
+   declarations from home.css; anything genuinely homepage-specific (hero,
+   3D stages, marquee, pinned tiers, horizontal track, .scard, .case-vis,
+   .ecard.lc) stays there.
+   ========================================================================== */
+
+/* ---------- generic section ---------- */
+.sec{padding:112px 0}
+.sec.sm{padding:96px 0}
+.sec.off{background:var(--off)}
+.navy{background:var(--navy);color:#fff}
+.navy h1,.navy h2,.navy h3{color:#fff}
+.sechd{max-width:900px;margin-bottom:52px}
+.sechd .mono{display:block;margin-bottom:22px}
+
+/* ---------- page hero (PageHero.astro) ---------- */
+.phero{padding:168px 0 64px}
+.phero .crumbs{margin-bottom:22px}
+.phero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+
+/* ---------- breadcrumbs (Breadcrumbs.astro) ---------- */
+.crumbs ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.crumbs li{display:flex;align-items:center;gap:8px;font-family:var(--f-m);font-size:11px;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.crumbs li:not(:last-child)::after{content:"/";color:var(--line)}
+.crumbs a{color:var(--muted);transition:color .2s}
+.crumbs a:hover{color:var(--red)}
+.crumbs li[aria-current] span{color:var(--navy)}
+
+/* ---------- two-column layout ---------- */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}
+@media (max-width:900px){.two{grid-template-columns:1fr;gap:34px}}
+
+/* ---------- stats / proof bar ---------- */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:18px;overflow:hidden}
+@media (max-width:820px){.stats{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.stats{grid-template-columns:1fr}}
+.stats.compact .stat{padding:30px 26px}
+.stat{background:var(--white);padding:44px 34px}
+.stats.inv{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.14)}
+.stats.inv .stat{background:transparent}
+.stats.inv .stat b{color:#fff}
+.stats.inv .stat span{color:rgba(255,255,255,.66)}
+.stat b{display:block;font-family:var(--f-d);font-weight:800;font-size:clamp(44px,5.4vw,68px);
+  letter-spacing:-.045em;line-height:.9;color:var(--navy);margin-bottom:14px}
+.stat b em{font-style:normal;color:var(--red)}
+.stat span{font-size:14.5px;color:var(--muted);display:block;max-width:26ch}
+
+/* ---------- card grid (CardGrid.astro + Card.astro) ---------- */
+.eq{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.eq.eq-2{grid-template-columns:repeat(2,1fr)}
+@media (max-width:920px){.eq,.eq.eq-2{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:600px){.eq,.eq.eq-2{grid-template-columns:1fr}}
+.ecard{border:1px solid var(--line);border-radius:16px;padding:34px 30px;background:var(--white);
+  transition:border-color .35s var(--e),transform .35s var(--e),box-shadow .35s var(--e);
+  display:flex;flex-direction:column;min-height:250px;justify-content:space-between}
+.ecard:hover{border-color:var(--navy);transform:translateY(-5px);box-shadow:0 18px 44px rgba(3,29,91,.09)}
+.ecard.inv{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.14);color:#fff}
+.ecard.inv:hover{border-color:var(--red);background:rgba(255,255,255,.08)}
+.ecard.inv h3{color:#fff}
+.ecard.inv p{color:rgba(255,255,255,.66)}
+.ecard .ic{width:46px;height:46px;border-radius:12px;background:var(--off);display:grid;place-items:center;
+  margin-bottom:26px;transition:background .35s var(--e)}
+.ecard:hover .ic{background:var(--red)}
+.ecard .ic svg{width:22px;height:22px;stroke:var(--navy);fill:none;stroke-width:1.6;transition:stroke .35s var(--e)}
+.ecard:hover .ic svg{stroke:#fff}
+.ecard h3{font-size:21px;letter-spacing:-.025em;margin-bottom:10px}
+.ecard p{font-size:14.5px;color:var(--muted);margin:0 0 22px}
+
+/* ---------- step list (StepList.astro) ---------- */
+.steps{display:flex;flex-direction:column;gap:0}
+.step{display:grid;grid-template-columns:64px 1fr;gap:24px;padding:30px 0;border-top:1px solid var(--line)}
+.step:last-child{padding-bottom:0}
+.lc-n{font-family:var(--f-m);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--red)}
+.step .num{font-family:var(--f-d);font-weight:800;font-size:22px;color:var(--off-2)}
+.lc-l{list-style:none;margin:0 0 24px;padding:0;display:flex;flex-direction:column;gap:8px}
+.lc-l li{font-size:14px;color:var(--muted);display:flex;gap:10px;align-items:baseline}
+.lc-l li::before{content:"";width:4px;height:4px;border-radius:50%;flex:none;transform:translateY(-2px);
+  background:var(--red);opacity:.5}
+.lc-band{margin-top:26px;border:1px solid var(--line);border-radius:16px;background:var(--off);
+  padding:28px 32px;display:flex;align-items:center;justify-content:space-between;gap:26px;flex-wrap:wrap}
+.lc-band div{font-size:16px;color:var(--muted);max-width:72ch}
+.lc-band b{color:var(--navy);font-family:var(--f-d);font-weight:800;letter-spacing:-.02em}
+
+/* ---------- case / quote (Quote.astro) ---------- */
+.case{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+@media (max-width:900px){.case{grid-template-columns:1fr;gap:34px}}
+.quote{font-family:var(--f-d);font-weight:600;font-size:clamp(21px,2.5vw,30px);line-height:1.22;
+  letter-spacing:-.028em;color:var(--navy);margin:0 0 22px;max-width:20ch}
+.quote-c{font-family:var(--f-m);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+/* ---------- cta band (CtaBand.astro) - previously dead CSS, now the site-wide closer ---------- */
+.cta{background:var(--navy);color:#fff;border-radius:24px;padding:80px 64px;position:relative;overflow:hidden;
+  display:flex;justify-content:space-between;align-items:center;gap:40px;flex-wrap:wrap}
+.cta h1,.cta h2,.cta h3{color:#fff}
+@media (max-width:700px){.cta{padding:52px 32px}}
+.cta::after{content:"";position:absolute;right:-90px;bottom:-140px;width:400px;height:400px;border-radius:50%;
+  border:60px solid var(--red);opacity:.16}
+.cta > *{position:relative;z-index:1}
+.cta .d3{max-width:15ch}
+
+/* ---------- spec table (SpecTable.astro) ----------
+   Publish performance figures and an overall bounding envelope only. Never
+   drum core diameter, drum length or flange diameter, and never a component
+   make or part number - see CLAUDE.md section 6. Publish the box, not the
+   arrangement inside it. A row whose value is the literal "TO SUPPLY"
+   renders <Gap> instead of the raw text. */
+table.spec{width:100%;border-collapse:collapse}
+table.spec caption{text-align:left;font-family:var(--f-m);font-size:11px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+table.spec tr{border-top:1px solid var(--line)}
+table.spec tr:last-child{border-bottom:1px solid var(--line)}
+table.spec th,table.spec td{padding:14px 4px;text-align:left;font-size:15px;vertical-align:baseline}
+table.spec th{font-weight:500;color:var(--muted);width:56%}
+table.spec td{font-family:var(--f-d);font-weight:700;color:var(--navy);letter-spacing:-.01em}
+table.spec td em{display:block;font-family:var(--f-b);font-weight:400;font-style:normal;font-size:12.5px;
+  color:var(--muted);margin-top:3px}
+table.spec .foot{margin-top:16px;font-size:13.5px;color:var(--muted)}
+
+/* ---------- note callout (Note.astro) ---------- */
+.note{border:1px solid var(--line);border-radius:16px;padding:26px 28px;background:var(--off)}
+.note h4{font-size:16px;margin-bottom:10px}
+.note p{font-size:15px;color:var(--muted);margin:0}
+.note.warn{background:#FBEEEF;border-color:#EBC9CD}
+
+/* ---------- tag list (TagList.astro) ---------- */
+.taglist{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.tag{font-family:var(--f-m);font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--navy);background:var(--off);border:1px solid var(--line);border-radius:100px;padding:7px 14px}
+
+/* ---------- image placeholder (ImageSlot.astro) ----------
+   No <img> until real photography exists - a <figure role="img"
+   aria-label> so the alt-text audit is satisfied honestly rather than
+   faked. Swapping in a real photo is a one-file change. */
+.imgslot{border-radius:16px;background:var(--off);border:1px dashed var(--line);
+  display:flex;flex-direction:column;justify-content:flex-end;gap:6px;padding:20px;
+  aspect-ratio:var(--imgslot-ratio,4/3)}
+.imgslot b{font-family:var(--f-m);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
+.imgslot span{font-size:13px;color:var(--muted);max-width:42ch}
+
+/* ---------- RTG-to-supply marker (Gap.astro) ---------- */
+.gap{background:#FBEEEF;color:var(--red-dk);border:1px dashed #D79AA2;border-radius:6px;
+  padding:1px 7px;font-size:.92em}
+
+/* ---------- draft outline panel (DraftPanel.astro) ---------- */
+.draftnote{border:1px dashed var(--red);border-radius:16px;padding:26px 28px;background:#FBEEEF}
+.draftnote h4{font-size:15px;color:var(--red-dk);margin-bottom:10px}
+.draftnote p{font-size:14.5px;color:var(--muted);margin:0 0 12px}
+.draftnote ul{margin:0;padding-left:20px;font-size:14.5px;color:var(--muted);display:flex;
+  flex-direction:column;gap:6px}
+
+/* ---------- FAQ (Faq.astro) ---------- */
+.faq{margin:0}
+.faq > div{border-top:1px solid var(--line);padding:22px 0}
+.faq > div:last-child{border-bottom:1px solid var(--line)}
+.faq dt{font-family:var(--f-d);font-weight:700;font-size:17px;letter-spacing:-.015em;margin-bottom:8px}
+.faq dd{margin:0;font-size:15px;color:var(--muted)}
+
+/* ---------- forms (EnquiryForm.astro + FormField.astro) ---------- */
+.form{display:flex;flex-direction:column;gap:18px;max-width:520px}
+.field{display:flex;flex-direction:column;gap:8px}
+.field label{font-family:var(--f-m);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.field label em{color:var(--red);font-style:normal}
+.field input,.field select,.field textarea{font-family:var(--f-b);font-size:15px;color:var(--navy);
+  border:1px solid var(--line);border-radius:10px;padding:13px 15px;background:var(--white);width:100%}
+.field textarea{min-height:110px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{outline:3px solid var(--red);outline-offset:1px}
+.hint{font-size:13px;color:var(--muted);margin:0}
+.consent{display:flex;align-items:flex-start;gap:10px}
+.consent label{font-size:14px;color:var(--muted);text-transform:none;letter-spacing:0;font-family:var(--f-b)}
+/* honeypot - never shown, never tabbed to; a filled value marks the submission as spam */
+.hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;overflow:hidden}
+
+/* ---------- motion: parallax + sticky media (src/lib/motion.ts) ----------
+   data-motion="parallax": CSS-first via animation-timeline: view() where
+   supported; motion.ts falls back to a --parallax-y custom property on
+   browsers without it. data-motion="sticky" needs no JS at all. */
+@supports (animation-timeline: view()){
+  .mo-parallax{animation:mo-parallax linear both;animation-timeline:view();animation-range:cover}
+  @keyframes mo-parallax{from{transform:translateY(-32px)}to{transform:translateY(32px)}}
+}
+@supports not (animation-timeline: view()){
+  .mo-parallax{transform:translateY(var(--parallax-y,0));transition:transform .1s linear}
+}
+[data-motion="sticky"]{position:sticky;top:112px;align-self:start}
+@media (max-width:900px){[data-motion="sticky"]{position:static;top:auto}}
+
+/* ---------- MDX prose rhythm (Prose.astro) ---------- */
+.prose h2{font-size:clamp(26px,3vw,36px);letter-spacing:-.03em;margin:56px 0 20px}
+.prose h2:first-child{margin-top:0}
+.prose h3{font-size:21px;letter-spacing:-.02em;margin:34px 0 14px}
+.prose p{font-size:16.5px;color:var(--muted);line-height:1.65;max-width:68ch}
+.prose ul,.prose ol{color:var(--muted);font-size:16.5px;line-height:1.6;max-width:68ch;padding-left:22px}
+.prose li{margin-bottom:6px}
+.prose strong{color:var(--navy)}
+.prose a{color:var(--red);text-decoration:underline;text-underline-offset:3px}

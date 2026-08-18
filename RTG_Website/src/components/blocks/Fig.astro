@@ -1,0 +1,23 @@
+---
+/**
+ * One verified figure, inline in prose — e.g. "a working depth record of
+ * <Fig of="cptDepthM" /> for a CPT sampling system". Registered as an MDX
+ * component (src/lib/mdx.ts) so no MDX body ever hardcodes a PROOF number.
+ * By default renders PROOF_DISPLAY's fully formatted string (unit already
+ * baked in, e.g. "3,000 m"); pass `raw` when the sentence supplies its own
+ * unit word and only the bare number is wanted.
+ */
+import { PROOF, PROOF_DISPLAY } from '@data/site.js';
+
+type ProofKey = keyof typeof PROOF;
+
+interface Props {
+  of: ProofKey;
+  raw?: boolean;
+}
+
+const { of: key, raw = false } = Astro.props;
+const text = raw ? PROOF[key].toLocaleString('en-GB') : PROOF_DISPLAY[key].value;
+---
+
+<strong>{text}</strong>

@@ -1,11 +1,12 @@
 /**
- * Homepage scroll choreography.
+ * Homepage scroll choreography — the 3D behaviours only. Masked line reveals,
+ * count-ups and the header scroll toggle are shared across every template
+ * (src/lib/motion.ts + Header.astro) and are not duplicated here.
  *
- * Four behaviours, all driven from one rAF loop so they share a frame budget:
- *   1. masked line reveals + count-ups (IntersectionObserver)
- *   2. pinned manufacturing-tier assembly, built up in 3D one tier at a time
- *   3. horizontal sector track
- *   4. the crane hoisting the machine frame in, then the zoom into it
+ * Three behaviours, all driven from one rAF loop so they share a frame budget:
+ *   1. pinned manufacturing-tier assembly, built up in 3D one tier at a time
+ *   2. horizontal sector track
+ *   3. the crane hoisting the machine frame in, then the zoom into it
  *
  * The 3D stages are created lazily by the caller so three.js is only fetched
  * on pages that actually need it.
@@ -47,34 +48,11 @@ interface Machine {
 }
 
 export function initHome(): void {
-
-
+  // Reveals and count-ups are booted site-wide by initMotion() (src/lib/
+  // motion.ts) via Base.astro, before this module is even fetched — this
+  // function only adds the homepage's 3D on top of that. The header scroll
+  // toggle lives in Header.astro's own script, which every page already gets.
   const rm = matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  /* header state */
-  const hdr = document.getElementById('hdr');
-  if (hdr) addEventListener('scroll', () => hdr.classList.toggle('on', scrollY > 30), { passive: true });
-
-  /* reveal on enter */
-  const io = new IntersectionObserver((es: IntersectionObserverEntry[]) => es.forEach(e => {
-    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-  }), { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
-  document.querySelectorAll('.rl, .fu, .stag').forEach(el => io.observe(el));
-
-  /* count-up */
-  const done = new WeakSet();
-  const cio = new IntersectionObserver((es: IntersectionObserverEntry[]) => es.forEach(e => {
-    if (!e.isIntersecting || done.has(e.target)) return;
-    done.add(e.target);
-    const el = e.target as HTMLElement, to = +(el.dataset.to ?? 0), t0 = performance.now(), dur = 1400;
-    if (rm) { el.textContent = to.toLocaleString('en-GB'); return; }
-    (function tick(now: number){
-      const p = Math.min(1, (now - t0)/dur), k = 1 - Math.pow(1 - p, 3);
-      el.textContent = Math.round(k*to).toLocaleString('en-GB');
-      if (p < 1) requestAnimationFrame(tick);
-    })(performance.now());
-  }), { threshold: 0.5 });
-  document.querySelectorAll('.ct').forEach(el => cio.observe(el));
 
   /* ─────────── 3D stages ─────────── */
   const clamp = (v: number, a: number, b: number) => Math.min(b, Math.max(a, v));
@@ -346,8 +324,8 @@ export function initHome(): void {
       zf.style.opacity = liftK > 0.02 ? '1' : '0';
     }
 
-    /* the case-study machine turns on its own */
-    if (proofV && proofV.onScreen) proofV.pivot.rotation.y += 0.0022;
+    /* the case-study machine turns on its own — never under reduced motion */
+    if (!rm && proofV && proofV.onScreen) proofV.pivot.rotation.y += 0.0022;
 
     if (heroV  && heroV.onScreen)  heroV.render();
     if (tierV  && tierV.onScreen)  tierV.render();

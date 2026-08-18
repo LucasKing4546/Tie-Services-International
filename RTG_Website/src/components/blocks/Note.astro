@@ -1,0 +1,14 @@
+---
+/** Callout box. Registered as an MDX component so authors get <Note> with
+ *  no import. */
+interface Props {
+  heading?: string;
+  tone?: 'note' | 'warn';
+}
+const { heading, tone = 'note' } = Astro.props;
+---
+
+<div class:list={['note', { warn: tone === 'warn' }]}>
+  {heading && <h4>{heading}</h4>}
+  <p><slot /></p>
+</div>

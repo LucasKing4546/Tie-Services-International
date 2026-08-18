@@ -18,10 +18,14 @@ const BANNED = [
   { re: /flange\s+diameter/i,      why: 'internal drum proportion' },
   { re: /\bMOFLON\b/i,             why: 'component manufacturer' },
   { re: /\bFronius\b/i,            why: 'component manufacturer' },
-  { re: /\bpart\s+number\b/i,      why: 'component part number' },
+  { re: /\bpart\s+numbers?\b/i,    why: 'component part number' },
 ];
 
-const roots = ['dist', 'src/content', 'src/data'].map((d) => resolve(root, d)).filter(existsSync);
+// Scans everything that can carry public-facing prose, not just the content
+// pipeline — a banned term written straight into a component (as
+// EquipmentGrid.astro's headline once nearly was) is just as real a leak.
+const roots = ['dist', 'src/content', 'src/data', 'src/components', 'src/layouts', 'src/pages', 'src/lib']
+  .map((d) => resolve(root, d)).filter(existsSync);
 const hits = [];
 const exts = ['.html', '.mdx', '.md', '.ts', '.astro', '.json'];
 

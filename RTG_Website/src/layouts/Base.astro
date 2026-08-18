@@ -6,34 +6,35 @@
  * so title tags, meta descriptions, canonicals, Open Graph and JSON-LD can
  * never drift from the workbook. Templates supply body content only.
  */
-import { page as lookupPage, type PageMeta } from '@data/pages';
+import { ClientRouter } from 'astro:transitions';
 import { SITE } from '@data/site.js';
 import { absolute, ogImageFor, buildJsonLd } from '@lib/seo';
+import { resolvePage } from '@lib/page';
 import Header from '@components/site/Header.astro';
 import Footer from '@components/site/Footer.astro';
 import '@/styles/tokens.css';
+import '@/styles/blocks.css';
 
 interface Props {
   /** Page Map id, e.g. 'S-02'. Unknown ids throw at build time. */
   pageId: string;
-  /** Extra JSON-LD nodes for this template (Product specs, Article dates, …) */
+  /** Extra JSON-LD graph nodes for this template (FAQPage, per-vacancy JobPosting…) */
   jsonLd?: Record<string, unknown>[];
-  /** Set on the homepage only — it renders its own full-bleed hero */
-  bare?: boolean;
+  /** Fields merged into the page's own JSON-LD node (Product additionalProperty, Article dates…) */
+  jsonLdPage?: Record<string, unknown>;
 }
 
-const { pageId, jsonLd = [], bare = false } = Astro.props;
-const p: PageMeta = lookupPage(pageId);
+const { pageId, jsonLd = [], jsonLdPage = {} } = Astro.props;
+const { p, offMap } = resolvePage(pageId);
 
 const canonical = absolute(p.slug);
 const ogImage = ogImageFor(p);
-const schema = buildJsonLd(p, jsonLd);
+const schema = buildJsonLd(p, jsonLd, jsonLdPage);
 
-// Gated pages stay indexable but must never expose the asset itself.
-const robots =
-  p.access === 'Gated'
-    ? 'index, follow, max-image-preview:large'
-    : 'index, follow, max-image-preview:large';
+// Off-map pages (404) are never indexed. Every real workbook page stays
+// indexable even when Gated — the form stands in front of the asset, not
+// the page describing it.
+const robots = offMap ? 'noindex, follow' : 'index, follow, max-image-preview:large';
 ---
 
 <!DOCTYPE html>
@@ -41,6 +42,12 @@ const robots =
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    {/* Synchronous and blocking, on purpose: this must land before first
+       paint so JS-enabled browsers never show a flash of revealed content
+       that then hides. A no-JS visit never runs it, so .rl/.fu/.stag stay
+       visible by default — see tokens.css. */}
+    <script is:inline>document.documentElement.classList.add('js');</script>
 
     <title>{p.title}</title>
     <meta name="description" content={p.description} />
@@ -71,6 +78,8 @@ const robots =
 
     <script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />
 
+    <ClientRouter />
+
     <slot name="head" />
   </head>
 
@@ -82,5 +91,15 @@ const robots =
     </main>
     <Footer />
     <slot name="body-end" />
+
+    <script>
+      import { initMotion } from '@lib/motion';
+      // Fires on first load AND after every client-side navigation under
+      // ClientRouter — the one place every template's reveals, counters
+      // and parallax hooks get booted. Do not call initMotion() a second
+      // time from a template; home-scroll.ts relies on this already having
+      // run and only adds the homepage's 3D on top of it.
+      document.addEventListener('astro:page-load', initMotion);
+    </script>
   </body>
 </html>

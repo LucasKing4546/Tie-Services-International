@@ -1,0 +1,32 @@
+---
+/**
+ * The generic section wrapper every template uses. .sec/.sec.sm/.sec.off/
+ * .navy are promoted from home.css (blocks.css) — see src/styles/blocks.css.
+ */
+import type { MotionHint } from '@lib/blocks';
+
+interface Props {
+  id?: string;
+  tone?: 'default' | 'off' | 'navy';
+  size?: 'lg' | 'sm';
+  /** false skips the .wrap max-width container — rare (a full-bleed child
+   *  already wraps itself, as the horizontal sector track does). */
+  wrap?: boolean;
+  motion?: MotionHint;
+  class?: string;
+}
+
+const { id, tone = 'default', size = 'lg', wrap = true, motion = 'none', class: cls } = Astro.props;
+
+const toneClass = tone === 'off' ? 'off' : tone === 'navy' ? 'navy' : '';
+const sizeClass = size === 'sm' ? 'sm' : '';
+const motionAttr = motion !== 'none' ? motion : undefined;
+---
+
+<section id={id} class:list={['sec', sizeClass, toneClass, cls]} data-motion={motionAttr}>
+  {wrap ? (
+    <div class="wrap"><slot /></div>
+  ) : (
+    <slot />
+  )}
+</section>

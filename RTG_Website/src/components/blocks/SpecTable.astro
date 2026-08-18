@@ -1,0 +1,39 @@
+---
+/**
+ * Publish performance figures and an overall bounding envelope only — never
+ * drum core diameter, drum length or flange diameter, and never a component
+ * make or part number (CLAUDE.md §6, enforced at build time by
+ * scripts/audit-protection.mjs). Publish the box, not the arrangement
+ * inside it.
+ *
+ * A row whose value is the literal string "TO SUPPLY" renders <Gap> instead
+ * of the raw text — frontmatter never carries HTML, so this is the one
+ * place that convention gets interpreted.
+ */
+import type { SpecRow } from '@lib/blocks';
+import Gap from './Gap.astro';
+
+interface Props {
+  caption?: string;
+  rows: SpecRow[];
+  footnote?: string;
+}
+
+const { caption = 'Representative specification', rows, footnote } = Astro.props;
+---
+
+<table class="spec">
+  <caption>{caption}</caption>
+  <tbody>
+    {rows.map((row) => (
+      <tr>
+        <th scope="row">{row.k}</th>
+        <td>
+          {row.v === 'TO SUPPLY' ? <Gap>To be confirmed</Gap> : row.v}
+          {row.note && <em>{row.note}</em>}
+        </td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+{footnote && <p class="foot">{footnote}</p>}

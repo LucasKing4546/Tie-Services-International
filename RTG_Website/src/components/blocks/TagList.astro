@@ -1,0 +1,18 @@
+---
+/**
+ * A cross-cut facet list — "Applications" on equipment pages, per the
+ * workbook's Meta Tag Rules sheet: Sectors stays the top-level taxonomy,
+ * Applications is shown only here.
+ */
+interface Props { items: string[]; label?: string }
+const { items, label } = Astro.props;
+---
+
+{items.length > 0 && (
+  <div>
+    {label && <p class="mono" style="margin-bottom:12px">{label}</p>}
+    <ul class="taglist">
+      {items.map((t) => <li class="tag">{t}</li>)}
+    </ul>
+  </div>
+)}

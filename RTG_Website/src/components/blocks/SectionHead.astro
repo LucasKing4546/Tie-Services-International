@@ -1,0 +1,34 @@
+---
+/**
+ * Eyebrow + heading + optional lede. Mirrors the pattern already used by the
+ * homepage sections (e.g. EquipmentGrid.astro) — a mono eyebrow, a masked
+ * line-reveal heading, an optional 52ch lede paragraph.
+ */
+interface Props {
+  eyebrow?: string;
+  /** A string gets one .rl line; an array gets one .rl per entry, staggered. */
+  heading: string | string[];
+  level?: 2 | 3;
+  lede?: string;
+  /** false renders the heading plainly, no mask/reveal — for pages like
+   *  Legal where the heading shouldn't feel like a marketing moment. */
+  reveal?: boolean;
+  tone?: 'on-navy' | 'default';
+}
+
+const { eyebrow, heading, level = 2, lede, reveal = true, tone = 'default' } = Astro.props;
+const lines = Array.isArray(heading) ? heading : [heading];
+const Tag = level === 3 ? 'h3' : 'h2';
+const sizeClass = level === 3 ? 'd3' : 'd2';
+const eyebrowClass = tone === 'on-navy' ? 'mono on-navy fu' : 'mono red fu';
+---
+
+<div class="sechd">
+  {eyebrow && <span class={eyebrowClass}>{eyebrow}</span>}
+  <Tag class={sizeClass}>
+    {reveal
+      ? lines.map((line) => <span class="rl"><span>{line}</span></span>)
+      : lines.join(' ')}
+  </Tag>
+  {lede && <p class="lede" style="margin-top:18px">{lede}</p>}
+</div>

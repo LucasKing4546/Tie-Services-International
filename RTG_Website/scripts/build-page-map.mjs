@@ -56,8 +56,23 @@ const pages = rows
 // Preserve the hand-written header (types + helper functions) from the existing
 // file so this script only ever replaces the data array.
 const current = readFileSync(OUT, 'utf8');
-const head = current.slice(0, current.indexOf('export const PAGES'));
-const tail = current.slice(current.indexOf('];') + 2);
+const pagesStart = current.indexOf('export const PAGES');
+if (pagesStart === -1) {
+  console.error('Could not find "export const PAGES" in src/data/pages.ts — aborting.');
+  process.exit(1);
+}
+// Search for the closing "];" starting FROM the PAGES declaration, not from
+// the top of the file — the PageMeta interface above it declares fields like
+// `secondaryKeywords: string[];`, which also contains the substring "];" and
+// would otherwise be matched first, truncating the head and duplicating
+// everything from the interface's array fields onward into the tail.
+const closeIdx = current.indexOf('];', pagesStart);
+if (closeIdx === -1) {
+  console.error('Could not find the closing "];" of the PAGES array — aborting.');
+  process.exit(1);
+}
+const head = current.slice(0, pagesStart);
+const tail = current.slice(closeIdx + 2);
 
 const body = pages
   .map(

@@ -1,0 +1,41 @@
+---
+/**
+ * Every gated form on the site renders through this — one place that
+ * guarantees the honeypot exists (CLAUDE.md §5.2: a field named "website",
+ * reject any submission that fills it) rather than leaving eight templates
+ * to each remember it. No backend exists yet (§5.2) — `action` defaults to
+ * '#' and submission is otherwise inert until one is built.
+ */
+import type { FieldSpec } from '@lib/blocks';
+import FormField from './FormField.astro';
+
+interface Props {
+  fields: FieldSpec[];
+  submit?: string;
+  action?: string;
+  consent?: boolean;
+}
+
+const { fields, submit = 'Send', action = '#', consent = true } = Astro.props;
+---
+
+<form class="form" method="post" action={action} novalidate>
+  <slot name="intro" />
+
+  {fields.map((field) => <FormField field={field} />)}
+
+  <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+  {consent && (
+    <div class="consent">
+      <input type="checkbox" id="consent" name="consent" required />
+      <label for="consent">
+        I agree that RTG may contact me about this enquiry and store my details as set out in the
+        <a href="/privacy/">privacy notice</a>.
+      </label>
+    </div>
+  )}
+
+  <button class="btn b-red" type="submit">{submit}</button>
+  <p class="hint">Fields marked * are required. We reply to enquiries within one working day.</p>
+</form>

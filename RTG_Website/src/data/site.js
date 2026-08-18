@@ -74,3 +74,20 @@ export const PROOF = {
   cptDepthM: 3000,
   loadTestTe: 150,
 };
+
+/**
+ * Plain display form of each PROOF figure — value pre-formatted for the .ct
+ * count-up (see src/lib/motion.ts) plus a generic label. Used by
+ * ProofBar.astro and Fig.astro on every template. The homepage's own
+ * HERO_STATS (src/data/home.ts) composes richer, page-specific sentences
+ * from these same PROOF numbers; this is the reusable version everywhere
+ * else — one edit to PROOF still propagates to both.
+ */
+export const PROOF_DISPLAY = {
+  years: { value: `${PROOF.years}`, label: 'Years designing and building deck equipment' },
+  machines: { value: PROOF.machines.toLocaleString('en-GB'), label: 'Custom deck machines delivered' },
+  projects: { value: `${PROOF.projects}+`, label: 'Completed projects' },
+  clients: { value: `${PROOF.clients}+`, label: 'Clients served' },
+  cptDepthM: { value: `${PROOF.cptDepthM.toLocaleString('en-GB')} m`, label: 'Proven CPT sampling working depth' },
+  loadTestTe: { value: `${PROOF.loadTestTe} Te`, label: 'In-house load test capability, class witnessed' },
+};

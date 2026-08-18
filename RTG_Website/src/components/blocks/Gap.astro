@@ -1,0 +1,10 @@
+---
+/**
+ * Marks a fact RTG has not yet confirmed — CLAUDE.md: "Never claim a
+ * certification, approval, client name or figure that is not confirmed in
+ * research/. If it is unconfirmed, mark it and flag it." Registered as an
+ * MDX component (src/lib/mdx.ts) so authors get <Gap>...</Gap> with no
+ * import. Renders inline, not as a block element.
+ */
+---
+<span class="gap"><slot /></span>

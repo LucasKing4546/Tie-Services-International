@@ -4,7 +4,7 @@ interface Props { currentPath?: string }
 const { currentPath = '' } = Astro.props;
 const isActive = (href: string) => currentPath === href || (href !== '/' && currentPath.startsWith(href));
 ---
-<header class="hdr" id="hdr">
+<header class="hdr" id="hdr" transition:persist>
   <div class="wrap hdr-in">
     <a class="brand" href="/">
       <span class="mk" aria-hidden="true"></span>
@@ -21,4 +21,21 @@ const isActive = (href: string) => currentPath === href || (href !== '/' && curr
 <script>
   const hdr = document.getElementById('hdr');
   if (hdr) addEventListener('scroll', () => hdr.classList.toggle('on', scrollY > 30), { passive: true });
+
+  // <header> above carries transition:persist, so under client-side
+  // navigation this DOM node is kept rather than replaced — the freshly
+  // rendered aria-current from the new page's server render is discarded
+  // along with it. Recompute it from the URL on every navigation instead,
+  // mirroring Header.astro's own isActive() prefix match.
+  function syncNav() {
+    const path = location.pathname;
+    document.querySelectorAll<HTMLAnchorElement>('#hdr .nav a[href]').forEach((a) => {
+      const href = a.getAttribute('href');
+      if (!href) return;
+      const active = path === href || (href !== '/' && path.startsWith(href));
+      if (active) a.setAttribute('aria-current', 'page');
+      else a.removeAttribute('aria-current');
+    });
+  }
+  document.addEventListener('astro:page-load', syncNav);
 </script>

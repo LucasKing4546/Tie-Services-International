@@ -1,0 +1,13 @@
+---
+/** .quote / .quote-c — promoted from home.css (blocks.css). Registered as an
+ *  MDX component so authors get <Quote> with no import. */
+interface Props {
+  text: string;
+  attribution: string;
+  context?: string;
+}
+const { text, attribution, context } = Astro.props;
+---
+
+<blockquote class="quote">&ldquo;{text}&rdquo;</blockquote>
+<p class="quote-c">{attribution}{context && ` · ${context}`}</p>

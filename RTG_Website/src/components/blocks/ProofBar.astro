@@ -1,0 +1,40 @@
+---
+/**
+ * The verified-figures strip, for any template — not just the homepage.
+ * Values always come from PROOF_DISPLAY (src/data/site.js), which is
+ * derived from PROOF, so a single correction there propagates everywhere.
+ * Never hardcode a figure directly in a template or MDX body.
+ */
+import { PROOF, PROOF_DISPLAY } from '@data/site.js';
+
+type ProofKey = keyof typeof PROOF;
+
+interface Props {
+  keys?: ProofKey[];
+  tone?: 'light' | 'dark';
+  compact?: boolean;
+}
+
+const { keys = Object.keys(PROOF) as ProofKey[], tone = 'light', compact = false } = Astro.props;
+const items = keys.map((k) => ({ key: k, ...PROOF_DISPLAY[k] }));
+
+const numeric = (v: string) => /^[\d,]+/.test(v);
+const digits = (v: string) => v.replace(/[^\d]/g, '');
+const suffix = (v: string) => v.replace(/^[\d,]+/, '');
+---
+
+<div class:list={['stats', 'stag', { inv: tone === 'dark', compact }]}>
+  {items.map((item) => (
+    <div class="stat">
+      <b>
+        {numeric(item.value) ? (
+          <>
+            <span class="ct" data-to={digits(item.value)}>0</span>
+            {suffix(item.value)}
+          </>
+        ) : item.value}
+      </b>
+      <span>{item.label}</span>
+    </div>
+  ))}
+</div>

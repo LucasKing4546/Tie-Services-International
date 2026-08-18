@@ -1,0 +1,29 @@
+---
+/**
+ * Visual breadcrumb trail. Mirrors the BreadcrumbList JSON-LD node built by
+ * src/lib/seo.ts:breadcrumbNode() — same ancestorsOf() call, same >= 2 item
+ * threshold, so the visible trail and the structured data can never disagree.
+ */
+import { ancestorsOf, type PageMeta } from '@data/pages';
+
+interface Props { page: PageMeta }
+const { page } = Astro.props;
+
+const trail = [...ancestorsOf(page.slug), page];
+---
+
+{trail.length >= 2 && (
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <ol>
+      {trail.map((item, i) => {
+        const isLast = i === trail.length - 1;
+        const label = item.slug === '/' ? 'Home' : item.name;
+        return (
+          <li aria-current={isLast ? 'page' : undefined}>
+            {isLast ? <span>{label}</span> : <a href={item.slug}>{label}</a>}
+          </li>
+        );
+      })}
+    </ol>
+  </nav>
+)}

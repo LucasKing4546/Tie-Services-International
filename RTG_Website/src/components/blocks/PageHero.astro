@@ -1,0 +1,62 @@
+---
+/**
+ * Every inner-page hero. This is the ONLY place in the entire site allowed
+ * to render an <h1> — it always renders page.h1 from the Page Map, verbatim.
+ * No template and no MDX body may write one; MDX bodies start at ##. That
+ * makes "exactly one <h1> per page, matching the workbook" a property of
+ * the architecture (scripts/audit-seo.mjs enforces the count; this is why
+ * the count is always right).
+ */
+import type { PageMeta } from '@data/pages';
+import type { ImgBrief, Link } from '@lib/blocks';
+import Breadcrumbs from './Breadcrumbs.astro';
+import ImageSlot from './ImageSlot.astro';
+
+interface Props {
+  page: PageMeta;
+  eyebrow?: string;
+  lede?: string;
+  ctas?: Link[];
+  media?: ImgBrief;
+  crumbs?: boolean;
+}
+
+const { page, eyebrow, lede, ctas = [], media, crumbs = true } = Astro.props;
+---
+
+<section class="sec phero">
+  <div class="wrap">
+    {media ? (
+      <div class="two">
+        <div>
+          {crumbs && <Breadcrumbs page={page} />}
+          {eyebrow && <p class="mono red fu" style="margin:0 0 20px">{eyebrow}</p>}
+          <h1 class="d2"><span class="rl"><span>{page.h1}</span></span></h1>
+          {lede && <p class="lede fu" style="margin-top:24px">{lede}</p>}
+          {ctas.length > 0 && (
+            <div class="phero-cta">
+              {ctas.map((c, i) => (
+                <a class={i === 0 ? 'btn b-red' : 'btn btn-o'} href={c.href}>{c.label}</a>
+              ))}
+            </div>
+          )}
+        </div>
+        <ImageSlot ref={media.ref} brief={media.brief} ratio={media.ratio} motion="parallax" />
+      </div>
+    ) : (
+      <div>
+        {crumbs && <Breadcrumbs page={page} />}
+        {eyebrow && <p class="mono red fu" style="margin:0 0 20px">{eyebrow}</p>}
+        <h1 class="d2"><span class="rl"><span>{page.h1}</span></span></h1>
+        {lede && <p class="lede fu" style="margin-top:24px">{lede}</p>}
+        {ctas.length > 0 && (
+          <div class="phero-cta">
+            {ctas.map((c, i) => (
+              <a class={i === 0 ? 'btn b-red' : 'btn btn-o'} href={c.href}>{c.label}</a>
+            ))}
+          </div>
+        )}
+      </div>
+    )}
+  </div>
+</section>

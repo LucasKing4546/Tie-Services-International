@@ -1,0 +1,29 @@
+---
+/**
+ * Placeholder for a real photograph — no <img> until photography exists
+ * (CLAUDE.md §5.5). A <figure role="img" aria-label> so the alt-text audit
+ * (scripts/audit-seo.mjs) is satisfied honestly, not faked with an empty
+ * alt on an element with no image behind it. Swapping in a real photo later
+ * is a one-file change to this component.
+ */
+import type { MotionHint } from '@lib/blocks';
+
+interface Props {
+  /** Image Brief ref from the workbook, e.g. 'IMG-05'. */
+  ref: string;
+  brief: string;
+  /** CSS aspect-ratio, e.g. '4/3', '16/9'. Defaults to 4/3. */
+  ratio?: string;
+  motion?: MotionHint;
+  class?: string;
+}
+
+const { ref, brief, ratio, motion = 'none', class: cls } = Astro.props;
+const style = ratio ? `--imgslot-ratio:${ratio}` : undefined;
+const motionAttr = motion !== 'none' ? motion : undefined;
+---
+
+<figure class:list={['imgslot', cls]} role="img" aria-label={brief} style={style} data-motion={motionAttr}>
+  <b>{ref}</b>
+  <span>{brief}</span>
+</figure>

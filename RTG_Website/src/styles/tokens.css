@@ -71,17 +71,26 @@ p{margin:0 0 1em;max-width:62ch}
   color:var(--red);transition:gap .3s var(--e)}
 .arw:hover{gap:15px}
 
-/* ---------- masked line reveal ---------- */
+/* ---------- masked line reveal + motion primitives ----------
+   .rl / .fu / .stag start the page transition-ready but visible. An inline
+   head script (Base.astro) adds a "js" class to <html> before first paint;
+   only then do these rules hide the elements, and initMotion() (src/lib/
+   motion.ts) adds .in once each is observed on screen to reveal them. A
+   no-JS visit never gets the html.js class, so it renders everything
+   plainly with no animation — content is never lost to a missing script. */
 .rl{display:block;overflow:hidden;padding-bottom:.14em;margin-bottom:-.14em}
-.rl > span{display:block;transform:translateY(105%);transition:transform 1s var(--e)}
+.rl > span{display:block;transition:transform 1s var(--e)}
+html.js .rl > span{transform:translateY(105%)}
 .rl.in > span{transform:translateY(0)}
 .rl:nth-child(2) > span{transition-delay:.07s}
 .rl:nth-child(3) > span{transition-delay:.14s}
 .rl:nth-child(4) > span{transition-delay:.21s}
 
-.fu{opacity:0;transform:translateY(26px);transition:opacity .9s var(--e),transform .9s var(--e)}
+.fu{transform:translateY(26px);transition:opacity .9s var(--e),transform .9s var(--e)}
+html.js .fu{opacity:0}
 .fu.in{opacity:1;transform:none}
-.stag > *{opacity:0;transform:translateY(24px);transition:opacity .8s var(--e),transform .8s var(--e)}
+.stag > *{transform:translateY(24px);transition:opacity .8s var(--e),transform .8s var(--e)}
+html.js .stag > *{opacity:0}
 .stag.in > *{opacity:1;transform:none}
 .stag.in > *:nth-child(1){transition-delay:.04s}
 .stag.in > *:nth-child(2){transition-delay:.11s}
@@ -90,28 +99,11 @@ p{margin:0 0 1em;max-width:62ch}
 .stag.in > *:nth-child(5){transition-delay:.32s}
 .stag.in > *:nth-child(6){transition-delay:.39s}
 
-/* ---------- header ---------- */
-.hdr{position:fixed;inset:0 0 auto 0;z-index:400;padding:22px 0;transition:padding .4s var(--e)}
-.hdr::before{content:"";position:absolute;inset:0;background:rgba(255,255,255,.82);
-  backdrop-filter:blur(14px);border-bottom:1px solid var(--line);opacity:0;transition:opacity .4s var(--e)}
-.hdr.on{padding:12px 0}
-.hdr.on::before{opacity:1}
-.hdr-in{position:relative;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.brand{display:flex;align-items:center;gap:12px}
-.brand .mk{width:34px;height:34px;border-radius:8px;background:var(--navy);position:relative;flex:none}
-.brand .mk::before{content:"";position:absolute;inset:9px;border-radius:50%;border:2px solid var(--red)}
-.brand .mk::after{content:"";position:absolute;left:50%;top:50%;width:3px;height:3px;border-radius:50%;
-  background:#fff;transform:translate(-50%,-50%)}
-.brand b{font-family:var(--f-d);font-weight:800;font-size:19px;letter-spacing:-.03em;line-height:1;color:var(--navy)}
-.brand small{display:block;font-family:var(--f-m);font-size:8.5px;letter-spacing:.14em;color:var(--muted);
-  text-transform:uppercase;font-weight:400;margin-top:3px}
-.nav{display:flex;align-items:center;gap:4px}
-.nav a{font-family:var(--f-d);font-weight:600;font-size:14px;letter-spacing:-.01em;padding:9px 15px;
-  border-radius:100px;color:var(--navy);transition:background .25s,color .25s}
-.nav a:hover{background:var(--off)}
-.nav .btn{margin-left:10px;padding:12px 22px;font-size:13.5px}
-@media (max-width:1080px){.nav a:not(.btn){display:none}}
-
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .rl > span{transform:none}
+  .fu,.stag > *{opacity:1!important;transform:none!important}
+}
 
 /* ---------- header ---------- */
 .hdr{position:fixed;inset:0 0 auto 0;z-index:400;padding:22px 0;transition:padding .4s var(--e)}
