@@ -88,10 +88,10 @@ html.js .rl.in > span{transform:translateY(0)}
 
 .fu{transform:translateY(26px);transition:opacity .9s var(--e),transform .9s var(--e)}
 html.js .fu{opacity:0}
-.fu.in{opacity:1;transform:none}
+html.js .fu.in{opacity:1;transform:none}
 .stag > *{transform:translateY(24px);transition:opacity .8s var(--e),transform .8s var(--e)}
 html.js .stag > *{opacity:0}
-.stag.in > *{opacity:1;transform:none}
+html.js .stag.in > *{opacity:1;transform:none}
 .stag.in > *:nth-child(1){transition-delay:.04s}
 .stag.in > *:nth-child(2){transition-delay:.11s}
 .stag.in > *:nth-child(3){transition-delay:.18s}
