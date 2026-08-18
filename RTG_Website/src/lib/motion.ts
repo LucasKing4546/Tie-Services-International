@@ -1,7 +1,9 @@
 /**
  * Shared motion system. Every page boots this — Base.astro runs it on
- * 'astro:page-load', which fires on first load and after every client-side
- * navigation under the view-transitions router. Templates opt in
+ * 'astro:page-load', which fires on first load and again after every
+ * client-side navigation under the view-transitions router (the listener
+ * itself is only ever registered once, per Astro's script-processing model,
+ * but the function it calls runs on every navigation). Templates opt in
  * declaratively (a CSS class, or a `data-motion` attribute) rather than
  * writing their own scroll module — see CLAUDE.md and the template plan for
  * why: src/lib/home-scroll.ts shows what 364 lines of DOM-id-coupled scroll
@@ -18,11 +20,20 @@
  * `html.js` gate in tokens.css). Nothing here can make content that was
  * visible become permanently invisible — only add a transition it already
  * had.
+ *
+ * Teardown: initMotion() runs once per navigation, not once per document —
+ * every IntersectionObserver and the parallax scroll listener from the
+ * PREVIOUS page must be torn down first, or they accumulate for the life of
+ * the tab. teardownFns holds exactly the cleanup for the current page.
  */
 
 let booted = false;
+let teardownFns: (() => void)[] = [];
 
 export function initMotion(): void {
+  teardownFns.forEach((fn) => fn());
+  teardownFns = [];
+
   const html = document.documentElement;
   html.classList.add('js');
 
@@ -63,6 +74,7 @@ function initReveals(rm: boolean): void {
     { threshold: 0.15, rootMargin: '0px 0px -8% 0px' },
   );
   targets.forEach((el) => io.observe(el));
+  teardownFns.push(() => io.disconnect());
 }
 
 // ---------------------------------------------------------------- counters
@@ -95,6 +107,7 @@ function initCounters(rm: boolean): void {
     { threshold: 0.5 },
   );
   targets.forEach((el) => cio.observe(el));
+  teardownFns.push(() => cio.disconnect());
 }
 
 // ---------------------------------------------------------------- parallax
@@ -130,8 +143,10 @@ function initParallax(): void {
   els.forEach((el) => io.observe(el));
 
   let ticking = false;
+  let live = true;
   function apply(): void {
     ticking = false;
+    if (!live) return;
     active.forEach((el) => {
       const r = el.getBoundingClientRect();
       const mid = r.top + r.height / 2 - innerHeight / 2;
@@ -139,14 +154,17 @@ function initParallax(): void {
       el.style.setProperty('--parallax-y', `${shift}px`);
     });
   }
-  addEventListener(
-    'scroll',
-    () => {
-      if (ticking) return;
-      ticking = true;
-      requestAnimationFrame(apply);
-    },
-    { passive: true },
-  );
+  const onScroll = () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(apply);
+  };
+  addEventListener('scroll', onScroll, { passive: true });
   apply();
+
+  teardownFns.push(() => {
+    live = false;
+    io.disconnect();
+    removeEventListener('scroll', onScroll);
+  });
 }
