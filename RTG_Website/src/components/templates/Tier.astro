@@ -1,0 +1,69 @@
+---
+/**
+ * The Tier template — C-01…C-04, the four contract-manufacturing scope
+ * tiers. Composition per the template plan: scope -> "what we need from
+ * you" -> sibling tier strip -> CTA. "Scope" and "what we need from you"
+ * both live in the MDX body as flowing prose (the latter via an inline
+ * <Note>, same convention as C-00's Ladder template links to), so both
+ * render together through Prose rather than as separate structured blocks.
+ *
+ * The plan describes the sibling strip as childrenOf('/contract-manufacturing/'),
+ * but that hub's children are all nine C-01…C-09 pages — the four tiers
+ * plus Policy/Article/Form pages sitting alongside them, not just the
+ * tiers. Each tier page's own `related` frontmatter already lists exactly
+ * its three sibling tiers (itself excluded), authored that way from the
+ * start, so that's what this reads instead — the same cardFrom() pattern
+ * Sector and Ladder already use for their own related-page strips.
+ */
+import { render } from 'astro:content';
+import type { PageMeta } from '@data/pages';
+import type { PageEntry, CardItem } from '@lib/blocks';
+import { cardFrom } from '@lib/content';
+import Base from '@layouts/Base.astro';
+import PageHero from '@components/blocks/PageHero.astro';
+import Section from '@components/blocks/Section.astro';
+import SectionHead from '@components/blocks/SectionHead.astro';
+import Prose from '@components/blocks/Prose.astro';
+import CardGrid from '@components/blocks/CardGrid.astro';
+import Card from '@components/blocks/Card.astro';
+import PageEnding from '@components/blocks/PageEnding.astro';
+import { mdxComponents } from '@lib/mdx';
+
+interface Props {
+  page: PageMeta;
+  entry: PageEntry;
+}
+
+const { page, entry } = Astro.props;
+const { data } = entry;
+const { Content } = await render(entry);
+
+const siblingTiers: CardItem[] = data.related.map((id) => cardFrom({ pageId: id }));
+---
+
+<Base pageId={page.id}>
+  <PageHero
+    page={page}
+    eyebrow={data.eyebrow}
+    lede={data.lede}
+    media={data.hero.media}
+    ctas={data.hero.ctas}
+  />
+
+  <Section>
+    <Prose>
+      <Content components={mdxComponents} />
+    </Prose>
+  </Section>
+
+  {siblingTiers.length > 0 && (
+    <Section tone="off">
+      <SectionHead eyebrow="The scope ladder" heading="The other tiers" level={2} />
+      <CardGrid cols={3}>
+        {siblingTiers.map((item) => <Card item={item} />)}
+      </CardGrid>
+    </Section>
+  )}
+
+  <PageEnding page={page} proofBar={data.proofBar} cta={data.cta} draft={data.draft} outline={data.outline} />
+</Base>
