@@ -43,11 +43,11 @@
 .stats.inv{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.14)}
 .stats.inv .stat{background:transparent}
 .stats.inv .stat b{color:#fff}
-.stats.inv .stat span{color:rgba(255,255,255,.66)}
+.stats.inv .stat > span{color:rgba(255,255,255,.66)}
 .stat b{display:block;font-family:var(--f-d);font-weight:800;font-size:clamp(44px,5.4vw,68px);
   letter-spacing:-.045em;line-height:.9;color:var(--navy);margin-bottom:14px}
 .stat b em{font-style:normal;color:var(--red)}
-.stat span{font-size:14.5px;color:var(--muted);display:block;max-width:26ch}
+.stat > span{font-size:14.5px;color:var(--muted);display:block;max-width:26ch}
 
 /* ---------- card grid (CardGrid.astro + Card.astro) ---------- */
 .eq{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}

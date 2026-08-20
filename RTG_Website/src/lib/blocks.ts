@@ -64,3 +64,13 @@ export type SectionSize = 'lg' | 'sm';
 /** Emits the right data-motion attribute so no template hand-writes one —
  *  see src/lib/motion.ts. */
 export type MotionHint = 'parallax' | 'sticky' | 'none';
+
+/**
+ * Splits a stat value like "1,500" or "250+" into the leading digits (for
+ * the .ct count-up span) and a trailing suffix rendered as plain text next
+ * to it. Shared by Stats.astro and ProofBar.astro so the split logic — and
+ * any future fix to it — exists in exactly one place.
+ */
+export const isNumericStat = (v: string): boolean => /^[\d,]+/.test(v);
+export const statDigits = (v: string): string => v.replace(/[^\d]/g, '');
+export const statSuffix = (v: string): string => v.replace(/^[\d,]+/, '');

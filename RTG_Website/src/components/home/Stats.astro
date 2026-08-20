@@ -1,9 +1,6 @@
 ---
 import { HERO_STATS } from '@data/home';
-/** Numeric values count up on first view; text values render as-is. */
-const numeric = (v: string) => /^[\d,]+/.test(v);
-const digits = (v: string) => v.replace(/[^\d]/g, '');
-const suffix = (v: string) => v.replace(/^[\d,]+/, '');
+import { isNumericStat, statDigits, statSuffix } from '@lib/blocks';
 ---
 <section class="sec sm" style="padding-top:0">
   <div class="wrap">
@@ -11,12 +8,12 @@ const suffix = (v: string) => v.replace(/^[\d,]+/, '');
       {HERO_STATS.map((s) => (
         <div class="stat">
           <b>
-            {numeric(s.value) ? (
+            {isNumericStat(s.value) ? (
               <>
                 {s.accent
-                  ? <em class="ct" data-to={digits(s.value)}>0</em>
-                  : <span class="ct" data-to={digits(s.value)}>0</span>}
-                {suffix(s.value)}
+                  ? <em class="ct" data-to={statDigits(s.value)}>0</em>
+                  : <span class="ct" data-to={statDigits(s.value)}>0</span>}
+                {statSuffix(s.value)}
               </>
             ) : (
               <Fragment set:html={s.value.replace('/', '<span style="color:var(--red)">/</span>')} />

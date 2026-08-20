@@ -6,6 +6,7 @@
  * Never hardcode a figure directly in a template or MDX body.
  */
 import { PROOF, PROOF_DISPLAY } from '@data/site.js';
+import { isNumericStat, statDigits, statSuffix } from '@lib/blocks';
 
 type ProofKey = keyof typeof PROOF;
 
@@ -17,20 +18,16 @@ interface Props {
 
 const { keys = Object.keys(PROOF) as ProofKey[], tone = 'light', compact = false } = Astro.props;
 const items = keys.map((k) => ({ key: k, ...PROOF_DISPLAY[k] }));
-
-const numeric = (v: string) => /^[\d,]+/.test(v);
-const digits = (v: string) => v.replace(/[^\d]/g, '');
-const suffix = (v: string) => v.replace(/^[\d,]+/, '');
 ---
 
 <div class:list={['stats', 'stag', { inv: tone === 'dark', compact }]}>
   {items.map((item) => (
     <div class="stat">
       <b>
-        {numeric(item.value) ? (
+        {isNumericStat(item.value) ? (
           <>
-            <span class="ct" data-to={digits(item.value)}>0</span>
-            {suffix(item.value)}
+            <span class="ct" data-to={statDigits(item.value)}>0</span>
+            {statSuffix(item.value)}
           </>
         ) : item.value}
       </b>
