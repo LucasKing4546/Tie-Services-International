@@ -18,11 +18,13 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const outDir = resolve(root, 'src/content/pages');
 if (!existsSync(outDir)) mkdirSync(outDir, { recursive: true });
 
+// Hand-written pages only. Everything else — including pages once reserved
+// here for future hand-writing but never actually written — gets a stub, so
+// the site is never blocked on unwritten prose. Ids drop out of this set as
+// their MDX gets hand-written for real.
 const SKIP = new Set([
   'S-02', 'E-02', 'E-01', 'R-01', 'C-00', 'C-01', 'C-02', 'C-03', 'C-04',
-  'L-00', 'L-01', 'L-02', 'C-06', 'C-07', 'A-01', 'X-01', 'X-02', 'X-03', 'X-04',
-  'A-05', 'Z-01', 'Z-02', 'Z-03', 'Z-04', 'P-00', 'P-01', 'P-03', 'P-06',
-  'Y-00', 'Y-03', 'R-02',
+  'L-00', 'L-01', 'L-02', 'C-06', 'C-07', 'P-00', 'P-03', 'P-06',
 ]);
 
 let written = 0;
