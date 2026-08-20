@@ -1,0 +1,84 @@
+---
+/**
+ * The Guide template — L-02, "Refurbish, upgrade or replace?" (the only
+ * page on this template). Composition per the template plan: six
+ * questions as a numbered list -> "when not to refurbish" -> CTA to L-05.
+ * Article + FAQPage schema.
+ *
+ * The plan describes this as "StepList -> Faq", but the content is
+ * authored once, as `faqs[]` (q/a pairs) — rendering it through both
+ * StepList AND Faq.astro would show the same six questions twice. Instead
+ * the same data drives both: StepList gives the visible numbered
+ * treatment the plan calls for, and the FAQPage JSON-LD (mainEntity of
+ * Question/Answer nodes) is built directly from data.faqs as a second,
+ * independent representation of the same source — never re-typed.
+ * "When not to refurbish" is an inline <Note tone="warn"> in the MDX body.
+ */
+import { render } from 'astro:content';
+import type { PageMeta } from '@data/pages';
+import type { PageEntry, Step } from '@lib/blocks';
+import { articleJsonLd } from '@lib/seo';
+import Base from '@layouts/Base.astro';
+import PageHero from '@components/blocks/PageHero.astro';
+import Section from '@components/blocks/Section.astro';
+import SectionHead from '@components/blocks/SectionHead.astro';
+import Prose from '@components/blocks/Prose.astro';
+import StepList from '@components/blocks/StepList.astro';
+import PageEnding from '@components/blocks/PageEnding.astro';
+import { mdxComponents } from '@lib/mdx';
+
+interface Props {
+  page: PageMeta;
+  entry: PageEntry;
+}
+
+const { page, entry } = Astro.props;
+const { data } = entry;
+const { Content } = await render(entry);
+
+const questions: Step[] = data.faqs.map((f, i) => ({
+  n: String(i + 1).padStart(2, '0'),
+  title: f.q,
+  body: f.a,
+  points: [],
+}));
+
+const faqPage =
+  data.faqs.length > 0
+    ? [
+        {
+          '@type': 'FAQPage',
+          mainEntity: data.faqs.map((f) => ({
+            '@type': 'Question',
+            name: f.q,
+            acceptedAnswer: { '@type': 'Answer', text: f.a },
+          })),
+        },
+      ]
+    : [];
+---
+
+<Base pageId={page.id} jsonLd={faqPage} jsonLdPage={articleJsonLd(data)}>
+  <PageHero
+    page={page}
+    eyebrow={data.eyebrow}
+    lede={data.lede}
+    media={data.hero.media}
+    ctas={data.hero.ctas}
+  />
+
+  {questions.length > 0 && (
+    <Section>
+      <SectionHead eyebrow="Six questions" heading="Before you decide" level={2} />
+      <StepList steps={questions} label="Question" />
+    </Section>
+  )}
+
+  <Section tone="off">
+    <Prose>
+      <Content components={mdxComponents} />
+    </Prose>
+  </Section>
+
+  <PageEnding page={page} proofBar={data.proofBar} cta={data.cta} draft={data.draft} outline={data.outline} />
+</Base>
