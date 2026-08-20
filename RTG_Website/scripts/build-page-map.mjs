@@ -26,7 +26,14 @@ const rows = XLSX.utils.sheet_to_json(wb.Sheets['Page Map'], { defval: null });
 
 const list = (v) =>
   v ? String(v).split(/[;\n]/).map((s) => s.trim()).filter(Boolean) : [];
-const s = (v) => (v == null || String(v).trim() === '' ? null : String(v).trim());
+// A handful of workbook cells are literally typed "None" rather than left
+// blank (the Legal rows' OG image brief and CTA columns) — treat that the
+// same as an empty cell, or it ships as real, visible text: og:image:alt
+// content="None" was going out on four pages before this normalised it.
+const s = (v) =>
+  v == null || String(v).trim() === '' || String(v).trim().toLowerCase() === 'none'
+    ? null
+    : String(v).trim();
 
 const pages = rows
   .filter((r) => s(r['Page ID']) && s(r['Page ID']) !== 'TOTALS')
