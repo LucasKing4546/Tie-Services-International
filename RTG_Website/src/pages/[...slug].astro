@@ -16,11 +16,12 @@ import { PAGES, type TemplateName } from '@data/pages';
 import { entryFor } from '@lib/content';
 import Fallback from '@components/templates/Fallback.astro';
 import Sector from '@components/templates/Sector.astro';
+import Product from '@components/templates/Product.astro';
 
 const TEMPLATES: Record<Exclude<TemplateName, 'Home'>, typeof Fallback> = {
   Hub: Fallback,
   Sector,
-  Product: Fallback,
+  Product,
   Service: Fallback,
   Guide: Fallback,
   Form: Fallback,

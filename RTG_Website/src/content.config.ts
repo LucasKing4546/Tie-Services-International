@@ -178,7 +178,7 @@ const pages = defineCollection({
            *  Meta Tag Rules sheet: "Applications" is shown only on equipment
            *  pages, "Sectors" stays the top-level term. */
           applications: z.array(z.string()).default([]),
-          datasheetPageId: z.string().default('R-01'),
+          datasheetPageId: knownId('product.datasheetPageId').default('R-01'),
         })
         .optional(),
 

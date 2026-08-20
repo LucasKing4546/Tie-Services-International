@@ -1,0 +1,104 @@
+---
+/**
+ * The Product template — equipment detail pages (winches, LARS, cranes,
+ * power units...). Composition per the template plan: hero -> .two
+ * (sticky-rail spec table(s) + "why it is built this way" prose) ->
+ * applications -> gated-datasheet CTA -> closing CTA. "Proven"/proof-point
+ * copy lives inside the MDX body itself (it needs inline <Fig> figures, so
+ * it can't be split into a frontmatter field without losing that) and so
+ * scrolls past alongside the spec rail rather than as a separate block.
+ */
+import { render } from 'astro:content';
+import { page as lookupPage, type PageMeta } from '@data/pages';
+import type { PageEntry } from '@lib/blocks';
+import Base from '@layouts/Base.astro';
+import PageHero from '@components/blocks/PageHero.astro';
+import Section from '@components/blocks/Section.astro';
+import SectionHead from '@components/blocks/SectionHead.astro';
+import Prose from '@components/blocks/Prose.astro';
+import SpecTable from '@components/blocks/SpecTable.astro';
+import TagList from '@components/blocks/TagList.astro';
+import CtaBand from '@components/blocks/CtaBand.astro';
+import DraftPanel from '@components/blocks/DraftPanel.astro';
+import { mdxComponents } from '@lib/mdx';
+
+interface Props {
+  page: PageMeta;
+  entry: PageEntry;
+}
+
+const { page, entry } = Astro.props;
+const { data } = entry;
+const { Content } = await render(entry);
+
+// Every published spec row becomes a schema.org additionalProperty on the
+// Product node — except rows marked TO SUPPLY, which render <Gap> on the
+// page and have nothing confirmed to publish as structured data either.
+// Deliberately no `offers`: a made-to-order machine has no price, and
+// inventing one to chase a rich result is the brochure behaviour CLAUDE.md
+// forbids.
+const additionalProperty = data.specs
+  .flatMap((s) => s.rows)
+  .filter((r) => r.v !== 'TO SUPPLY')
+  .map((r) => ({ '@type': 'PropertyValue', name: r.k, value: r.v }));
+
+const datasheetPage = data.product?.datasheetPageId ? lookupPage(data.product.datasheetPageId) : undefined;
+---
+
+<Base
+  pageId={page.id}
+  jsonLdPage={{
+    ...(data.product?.category ? { category: data.product.category } : {}),
+    ...(additionalProperty.length > 0 ? { additionalProperty } : {}),
+  }}
+>
+  <PageHero
+    page={page}
+    eyebrow={data.eyebrow}
+    lede={data.lede}
+    media={data.hero.media}
+    ctas={data.hero.ctas}
+  />
+
+  <Section>
+    <div class="two">
+      <div data-motion="sticky">
+        {data.specs.map((s) => (
+          <SpecTable caption={s.caption} rows={s.rows} footnote={s.footnote} />
+        ))}
+        {datasheetPage && (
+          <p style="margin-top:28px">
+            <a class="btn b-navy" href={datasheetPage.slug}>Request the full datasheet →</a>
+          </p>
+        )}
+      </div>
+      <Prose>
+        <Content components={mdxComponents} />
+      </Prose>
+    </div>
+  </Section>
+
+  {data.product && data.product.applications.length > 0 && (
+    <Section tone="off">
+      <SectionHead eyebrow="Applications" heading="Where this runs" level={2} />
+      <TagList items={data.product.applications} />
+    </Section>
+  )}
+
+  {data.cta && (
+    <Section tone="off">
+      <CtaBand
+        heading={data.cta.heading}
+        body={data.cta.body}
+        primary={data.cta.primary}
+        secondary={data.cta.secondary}
+      />
+    </Section>
+  )}
+
+  {data.draft && (
+    <Section size="sm">
+      <DraftPanel page={page} items={data.outline} />
+    </Section>
+  )}
+</Base>
