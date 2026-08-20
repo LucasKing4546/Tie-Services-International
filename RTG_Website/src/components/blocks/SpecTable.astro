@@ -10,6 +10,13 @@
  * A row whose value is the literal string "TO SUPPLY" renders <Gap> instead
  * of the raw text — frontmatter never carries HTML, so this is the one
  * place that convention gets interpreted.
+ *
+ * Known gap, not enforced here: the Proof template uses this component as
+ * a certifications/credentials table (Y-03), where the plan's stated rule
+ * is "every certificate number is a Gap". Nothing checks that — an author
+ * who types a real certificate number as a row value instead of writing
+ * "TO SUPPLY" gets a clean build with no warning. This is a content
+ * discipline the schema and this scan do not currently enforce.
  */
 import type { SpecRow } from '@lib/blocks';
 import Gap from './Gap.astro';

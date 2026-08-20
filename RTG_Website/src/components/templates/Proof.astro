@@ -1,0 +1,75 @@
+---
+/**
+ * The Proof template — Y-03 (certifications), P-06 (test facility), P-07
+ * (references), P-08 (testimonials). Composition per the template plan:
+ * SpecTable as a credentials table -> proof bar -> quotes.
+ *
+ * The four pages lean on different parts of this shape: Y-03 wants
+ * `specs` as a literal credentials table ("every item a vendor form asks
+ * for"); P-08 wants `quotes` as three attributed testimonials; P-06, the
+ * one page with real content today, wants none of either — its test
+ * suite is flowing prose plus the site-wide proof bar. Every block below
+ * is optional and renders only when a page actually populates it.
+ */
+import { render } from 'astro:content';
+import type { PageMeta } from '@data/pages';
+import type { PageEntry } from '@lib/blocks';
+import { articleJsonLd } from '@lib/seo';
+import Base from '@layouts/Base.astro';
+import PageHero from '@components/blocks/PageHero.astro';
+import Section from '@components/blocks/Section.astro';
+import SectionHead from '@components/blocks/SectionHead.astro';
+import Prose from '@components/blocks/Prose.astro';
+import SpecTable from '@components/blocks/SpecTable.astro';
+import Quote from '@components/blocks/Quote.astro';
+import ProofBar from '@components/blocks/ProofBar.astro';
+import PageEnding from '@components/blocks/PageEnding.astro';
+import { mdxComponents } from '@lib/mdx';
+
+interface Props {
+  page: PageMeta;
+  entry: PageEntry;
+}
+
+const { page, entry } = Astro.props;
+const { data } = entry;
+const { Content } = await render(entry);
+const jsonLdPage = articleJsonLd(data);
+---
+
+<Base pageId={page.id} jsonLdPage={jsonLdPage}>
+  <PageHero
+    page={page}
+    eyebrow={data.eyebrow}
+    lede={data.lede}
+    media={data.hero.media}
+    ctas={data.hero.ctas}
+  />
+
+  <Section>
+    <Prose>
+      <Content components={mdxComponents} />
+    </Prose>
+  </Section>
+
+  {data.specs.length > 0 && (
+    <Section tone="off">
+      <SectionHead eyebrow="Credentials" heading="What can be checked" level={2} />
+      {data.specs.map((s) => <SpecTable caption={s.caption} rows={s.rows} footnote={s.footnote} />)}
+    </Section>
+  )}
+
+  {data.proofBar && (
+    <Section tone="off" size="sm">
+      <ProofBar />
+    </Section>
+  )}
+
+  {data.quotes.length > 0 && (
+    <Section>
+      {data.quotes.map((q) => <Quote text={q.text} attribution={q.attribution} context={q.context} />)}
+    </Section>
+  )}
+
+  <PageEnding page={page} cta={data.cta} draft={data.draft} outline={data.outline} />
+</Base>

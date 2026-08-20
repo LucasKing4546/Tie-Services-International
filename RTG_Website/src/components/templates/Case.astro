@@ -16,6 +16,7 @@ import { render } from 'astro:content';
 import type { PageMeta } from '@data/pages';
 import type { PageEntry, CardItem } from '@lib/blocks';
 import { cardFrom } from '@lib/content';
+import { articleJsonLd } from '@lib/seo';
 import Base from '@layouts/Base.astro';
 import PageHero from '@components/blocks/PageHero.astro';
 import Section from '@components/blocks/Section.astro';
@@ -42,13 +43,7 @@ const meta = data.caseStudy
   ? [data.caseStudy.client, data.caseStudy.vessel, data.caseStudy.year].filter(Boolean).join(' · ')
   : '';
 
-const jsonLdPage = data.article
-  ? {
-      author: { '@type': 'Organization', name: data.article.author },
-      ...(data.article.published ? { datePublished: data.article.published.toISOString() } : {}),
-      ...(data.article.revised ? { dateModified: data.article.revised.toISOString() } : {}),
-    }
-  : {};
+const jsonLdPage = articleJsonLd(data);
 ---
 
 <Base pageId={page.id} jsonLdPage={jsonLdPage}>
