@@ -1,0 +1,91 @@
+---
+/**
+ * The Hub template — section landing pages (Sectors, Equipment, Winches,
+ * Lifecycle, Proof, Resources...). Composition per the template plan:
+ * intro -> ChildCards from childrenOf(slug) -> proof bar -> CTA. Children
+ * are derived, never a hand-written list — a new Page Map row under a
+ * hub's slug appears here automatically (ChildCards.astro).
+ *
+ * A couple of hubs (R-00, R-03) have no children of their own — they're
+ * leaf landing pages one level under /resources/ — so the child grid is
+ * only rendered when childrenOf() actually returns something. A hub may
+ * also curate `cards` in frontmatter for a cross-link outside its own
+ * branch (P-00's Proof hub linking to Y-03 Certifications, which lives
+ * under /yards-integrators/) — those are appended into the same grid via
+ * ChildCards' `extra` prop rather than a second, disconnected one.
+ */
+import { render } from 'astro:content';
+import { childrenOf, type PageMeta } from '@data/pages';
+import type { PageEntry } from '@lib/blocks';
+import { cardFrom } from '@lib/content';
+import { absolute } from '@lib/seo';
+import Base from '@layouts/Base.astro';
+import PageHero from '@components/blocks/PageHero.astro';
+import Section from '@components/blocks/Section.astro';
+import Prose from '@components/blocks/Prose.astro';
+import ChildCards from '@components/blocks/ChildCards.astro';
+import PageEnding from '@components/blocks/PageEnding.astro';
+import { mdxComponents } from '@lib/mdx';
+
+interface Props {
+  page: PageMeta;
+  entry: PageEntry;
+}
+
+const { page, entry } = Astro.props;
+const { data } = entry;
+const { Content } = await render(entry);
+
+const children = childrenOf(page.slug);
+const extraCards = data.cards.map(cardFrom);
+
+// An ItemList of every card the grid below actually renders — derived
+// children plus any curated `cards` cross-link — built from the exact same
+// two sources ChildCards does, so the structured data and the visible grid
+// can never disagree. mainEntity is a property of CreativeWork/WebPage; a
+// couple of Hub-template pages carry a workbook schema of "Service" instead
+// of "CollectionPage" (L-00, Y-00), so this only fires for pages actually
+// typed CollectionPage rather than attaching a CreativeWork-only property
+// to a Service node.
+const gridItems = [
+  ...children.map((c) => ({ name: c.name, url: absolute(c.slug) })),
+  ...extraCards.map((c) => ({ name: c.title, url: absolute(c.href) })),
+];
+const jsonLdPage =
+  gridItems.length > 0 && page.schema === 'CollectionPage'
+    ? {
+        mainEntity: {
+          '@type': 'ItemList',
+          itemListElement: gridItems.map((item, i) => ({
+            '@type': 'ListItem',
+            position: i + 1,
+            ...item,
+          })),
+        },
+      }
+    : {};
+---
+
+<Base pageId={page.id} jsonLdPage={jsonLdPage}>
+  <PageHero
+    page={page}
+    eyebrow={data.eyebrow}
+    lede={data.lede}
+    media={data.hero.media}
+    ctas={data.hero.ctas}
+  />
+
+  <Section>
+    <Prose>
+      <Content components={mdxComponents} />
+    </Prose>
+  </Section>
+
+  {gridItems.length > 0 && (
+    <Section tone="off">
+      <ChildCards of={page.slug} extra={extraCards} />
+    </Section>
+  )}
+
+  <PageEnding page={page} proofBar={data.proofBar} cta={data.cta} draft={data.draft} outline={data.outline} />
+</Base>

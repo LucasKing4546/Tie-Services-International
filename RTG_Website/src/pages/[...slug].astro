@@ -17,9 +17,10 @@ import { entryFor } from '@lib/content';
 import Fallback from '@components/templates/Fallback.astro';
 import Sector from '@components/templates/Sector.astro';
 import Product from '@components/templates/Product.astro';
+import Hub from '@components/templates/Hub.astro';
 
 const TEMPLATES: Record<Exclude<TemplateName, 'Home'>, typeof Fallback> = {
-  Hub: Fallback,
+  Hub,
   Sector,
   Product,
   Service: Fallback,
