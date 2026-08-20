@@ -1,0 +1,61 @@
+---
+/**
+ * Routes every workbook page except Home (src/pages/index.astro handles '/'
+ * explicitly) and 404 (src/pages/404.astro). getStaticPaths() dispatches on
+ * PageMeta.template so a page needing bespoke markup can still get an
+ * explicit file of its own later, exactly as index.astro already does —
+ * that override path is never lost by routing the rest through here.
+ *
+ * All 17 template names currently point at Fallback.astro (Step 6 of the
+ * template plan); real templates get swapped in one at a time (Step 7).
+ * Static imports only, so the template set stays statically analysable —
+ * no import.meta.glob.
+ */
+import type { GetStaticPaths } from 'astro';
+import { PAGES, type TemplateName } from '@data/pages';
+import { entryFor } from '@lib/content';
+import Fallback from '@components/templates/Fallback.astro';
+
+const TEMPLATES: Record<Exclude<TemplateName, 'Home'>, typeof Fallback> = {
+  Hub: Fallback,
+  Sector: Fallback,
+  Product: Fallback,
+  Service: Fallback,
+  Guide: Fallback,
+  Form: Fallback,
+  Ladder: Fallback,
+  Tier: Fallback,
+  Policy: Fallback,
+  Article: Fallback,
+  Proof: Fallback,
+  Case: Fallback,
+  About: Fallback,
+  Careers: Fallback,
+  Contact: Fallback,
+  Legal: Fallback,
+};
+
+export const getStaticPaths = (async () => {
+  // Home owns '/' via index.astro — a rest param would collide with it,
+  // so H-01 is the one workbook page this dispatcher never generates a
+  // path for.
+  const routed = PAGES.filter((p) => p.template !== 'Home');
+  return Promise.all(
+    routed.map(async (page) => {
+      // entryFor() throws, naming the page id, if src/content/pages/ has no
+      // matching MDX file — every workbook page must have one (Step 6).
+      const entry = await entryFor(page.id);
+      // slug is absolute with both slashes, e.g. '/sectors/marine-geotechnical/';
+      // [...slug] wants the un-slashed inner path — trailingSlash:'always' and
+      // build.format:'directory' (astro.config.mjs) restore the rest.
+      const slug = page.slug.replace(/^\/|\/$/g, '');
+      return { params: { slug }, props: { page, entry } };
+    }),
+  );
+}) satisfies GetStaticPaths;
+
+const { page, entry } = Astro.props;
+const Template = TEMPLATES[page.template as Exclude<TemplateName, 'Home'>];
+---
+
+<Template page={page} entry={entry} />

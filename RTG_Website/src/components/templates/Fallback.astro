@@ -1,0 +1,72 @@
+---
+/**
+ * Temporary stand-in for all 16 non-Home templates (Step 6 of the template
+ * plan). [...slug].astro points every TemplateName at this one component so
+ * the site is buildable and every workbook page has a real URL — real
+ * templates get built and swapped in one at a time (Step 7), in the order
+ * the plan sets out, starting with Sector (S-02).
+ *
+ * Composition is deliberately generic — the shared shape every template
+ * will keep once it has its own body: PageHero → the MDX body → CtaBand
+ * (only when the page defines one) → DraftPanel (only while draft: true).
+ * No per-template blocks (spec tables, step lists, form…) render here; that
+ * structure is what each real template adds.
+ */
+import { render } from 'astro:content';
+import type { PageMeta } from '@data/pages';
+import type { PageEntry } from '@lib/blocks';
+import Base from '@layouts/Base.astro';
+import PageHero from '@components/blocks/PageHero.astro';
+import Prose from '@components/blocks/Prose.astro';
+import CtaBand from '@components/blocks/CtaBand.astro';
+import DraftPanel from '@components/blocks/DraftPanel.astro';
+import { mdxComponents } from '@lib/mdx';
+
+interface Props {
+  page: PageMeta;
+  entry: PageEntry;
+}
+
+const { page, entry } = Astro.props;
+const { data } = entry;
+const { Content } = await render(entry);
+---
+
+<Base pageId={page.id}>
+  <PageHero
+    page={page}
+    eyebrow={data.eyebrow}
+    lede={data.lede}
+    media={data.hero.media}
+    ctas={data.hero.ctas}
+  />
+
+  <section class="sec">
+    <div class="wrap">
+      <Prose>
+        <Content components={mdxComponents} />
+      </Prose>
+    </div>
+  </section>
+
+  {data.cta && (
+    <section class="sec off">
+      <div class="wrap">
+        <CtaBand
+          heading={data.cta.heading}
+          body={data.cta.body}
+          primary={data.cta.primary}
+          secondary={data.cta.secondary}
+        />
+      </div>
+    </section>
+  )}
+
+  {data.draft && (
+    <section class="sec sm">
+      <div class="wrap">
+        <DraftPanel page={page} items={data.outline} />
+      </div>
+    </section>
+  )}
+</Base>

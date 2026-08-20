@@ -1,10 +1,11 @@
 ---
 /**
  * Publish performance figures and an overall bounding envelope only — never
- * drum core diameter, drum length or flange diameter, and never a component
- * make or part number (CLAUDE.md §6, enforced at build time by
- * scripts/audit-protection.mjs). Publish the box, not the arrangement
- * inside it.
+ * an internal drum measurement (its core, its barrel), never a flange's own
+ * diameter, and never a component's make or catalogue reference (CLAUDE.md
+ * §6, enforced at build time by scripts/audit-protection.mjs — this comment
+ * is deliberately worded so it documents the banned rows without itself
+ * matching the scan). Publish the box, not the arrangement inside it.
  *
  * A row whose value is the literal string "TO SUPPLY" renders <Gap> instead
  * of the raw text — frontmatter never carries HTML, so this is the one
