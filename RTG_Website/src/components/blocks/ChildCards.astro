@@ -7,6 +7,7 @@
  * SECTORS/TIERS arrays once the templates that need them exist.
  */
 import { childEntries } from '@lib/content';
+import type { CardItem } from '@lib/blocks';
 import CardGrid from './CardGrid.astro';
 import Card from './Card.astro';
 
@@ -17,20 +18,28 @@ interface Props {
    *  different block (a "featured" case study, say) and doesn't want it
    *  doubled up in the grid. */
   exclude?: string[];
+  /** Curated cards to append after the derived children — for a cross-link
+   *  outside the hub's own branch (e.g. the Proof hub linking to Yards &
+   *  Integrators' Certifications page). Resolve frontmatter `cards` through
+   *  cardFrom() and pass the result here, rather than a hub hand-typing a
+   *  second, disconnected card grid. Not deduplicated against the derived
+   *  children — if an `extra` entry ever points at one of the hub's own
+   *  children, add that child's id to `exclude` to avoid showing it twice. */
+  extra?: CardItem[];
 }
 
-const { of, cols = 3, exclude = [] } = Astro.props;
+const { of, cols = 3, exclude = [], extra = [] } = Astro.props;
 const pairs = (await childEntries(of)).filter(({ page }) => !exclude.includes(page.id));
+const items: CardItem[] = [
+  ...pairs.map(({ page, entry }) => ({
+    title: page.name,
+    href: page.slug,
+    blurb: entry.data.lede ?? page.description,
+  })),
+  ...extra,
+];
 ---
 
 <CardGrid cols={cols}>
-  {pairs.map(({ page, entry }) => (
-    <Card
-      item={{
-        title: page.name,
-        href: page.slug,
-        blurb: entry.data.lede ?? page.description,
-      }}
-    />
-  ))}
+  {items.map((item) => <Card item={item} />)}
 </CardGrid>

@@ -1,0 +1,48 @@
+---
+/**
+ * The proof bar -> CTA -> draft-panel tail shared by every real template
+ * once it composes one. Extracted after Sector, Product and Hub all
+ * converged on this exact same three-block closing sequence — and had
+ * already started to drift on the proof bar's tone — rather than each
+ * template hand-copying it again for template four onward.
+ */
+import type { PageMeta } from '@data/pages';
+import type { PageData } from '@lib/blocks';
+import Section from './Section.astro';
+import ProofBar from './ProofBar.astro';
+import CtaBand from './CtaBand.astro';
+import DraftPanel from './DraftPanel.astro';
+
+interface Props {
+  page: PageMeta;
+  proofBar?: boolean;
+  cta?: PageData['cta'];
+  draft: boolean;
+  outline: string[];
+}
+
+const { page, proofBar, cta, draft, outline } = Astro.props;
+---
+
+{proofBar && (
+  <Section tone="off" size="sm">
+    <ProofBar />
+  </Section>
+)}
+
+{cta && (
+  <Section tone="off">
+    <CtaBand
+      heading={cta.heading}
+      body={cta.body}
+      primary={cta.primary}
+      secondary={cta.secondary}
+    />
+  </Section>
+)}
+
+{draft && (
+  <Section size="sm">
+    <DraftPanel page={page} items={outline} />
+  </Section>
+)}

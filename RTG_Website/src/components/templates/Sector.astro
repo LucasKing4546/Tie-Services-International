@@ -18,9 +18,7 @@ import ImageSlot from '@components/blocks/ImageSlot.astro';
 import CardGrid from '@components/blocks/CardGrid.astro';
 import Card from '@components/blocks/Card.astro';
 import FeaturedCase from '@components/blocks/FeaturedCase.astro';
-import ProofBar from '@components/blocks/ProofBar.astro';
-import CtaBand from '@components/blocks/CtaBand.astro';
-import DraftPanel from '@components/blocks/DraftPanel.astro';
+import PageEnding from '@components/blocks/PageEnding.astro';
 import { mdxComponents } from '@lib/mdx';
 
 interface Props {
@@ -82,26 +80,5 @@ const problemMedia = data.media[0];
     </Section>
   )}
 
-  {data.proofBar && (
-    <Section tone="off" size="sm">
-      <ProofBar />
-    </Section>
-  )}
-
-  {data.cta && (
-    <Section tone="off">
-      <CtaBand
-        heading={data.cta.heading}
-        body={data.cta.body}
-        primary={data.cta.primary}
-        secondary={data.cta.secondary}
-      />
-    </Section>
-  )}
-
-  {data.draft && (
-    <Section size="sm">
-      <DraftPanel page={page} items={data.outline} />
-    </Section>
-  )}
+  <PageEnding page={page} proofBar={data.proofBar} cta={data.cta} draft={data.draft} outline={data.outline} />
 </Base>

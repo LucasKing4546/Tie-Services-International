@@ -18,8 +18,7 @@ import SectionHead from '@components/blocks/SectionHead.astro';
 import Prose from '@components/blocks/Prose.astro';
 import SpecTable from '@components/blocks/SpecTable.astro';
 import TagList from '@components/blocks/TagList.astro';
-import CtaBand from '@components/blocks/CtaBand.astro';
-import DraftPanel from '@components/blocks/DraftPanel.astro';
+import PageEnding from '@components/blocks/PageEnding.astro';
 import { mdxComponents } from '@lib/mdx';
 
 interface Props {
@@ -85,20 +84,5 @@ const datasheetPage = data.product?.datasheetPageId ? lookupPage(data.product.da
     </Section>
   )}
 
-  {data.cta && (
-    <Section tone="off">
-      <CtaBand
-        heading={data.cta.heading}
-        body={data.cta.body}
-        primary={data.cta.primary}
-        secondary={data.cta.secondary}
-      />
-    </Section>
-  )}
-
-  {data.draft && (
-    <Section size="sm">
-      <DraftPanel page={page} items={data.outline} />
-    </Section>
-  )}
+  <PageEnding page={page} proofBar={data.proofBar} cta={data.cta} draft={data.draft} outline={data.outline} />
 </Base>
