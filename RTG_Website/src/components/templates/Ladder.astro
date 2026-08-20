@@ -1,0 +1,84 @@
+---
+/**
+ * The Ladder template — the contract-manufacturing scope ladder (C-00),
+ * the only page on this template. Composition per the template plan: four
+ * tiers -> references -> CTA to C-09 (send documentation).
+ *
+ * The plan describes each tier's points as read from that tier's own MDX
+ * frontmatter, but the tier pages (C-01…C-04) actually carry that detail
+ * as prose/<Note> in their bodies, not a structured points list — C-00's
+ * own frontmatter already carries the four-tier summary as a ready-made
+ * Step[] instead. Rendering that directly, with `related` resolved into a
+ * reference grid linking out to each tier's own page, delivers the same
+ * shape the plan describes without a mismatch against how the content was
+ * actually authored.
+ *
+ * Known debt from that choice: C-00's steps are a hand-written summary of
+ * what each tier page says in its own prose, and nothing keeps the two in
+ * sync — C-01's body already covers detail (specific certifications, the
+ * 12 m / 10 t machining envelope) its Tier-1 summary here doesn't mention.
+ * If a tier's scope changes, both places need updating by hand. Revisit if
+ * that drift becomes a real maintenance problem — e.g. by adding `points`
+ * to C-01…C-04's own frontmatter and having this template read from
+ * `related` entries' data instead of C-00's separate copy.
+ */
+import { render } from 'astro:content';
+import type { PageMeta } from '@data/pages';
+import type { PageEntry, CardItem } from '@lib/blocks';
+import { cardFrom } from '@lib/content';
+import Base from '@layouts/Base.astro';
+import PageHero from '@components/blocks/PageHero.astro';
+import Section from '@components/blocks/Section.astro';
+import SectionHead from '@components/blocks/SectionHead.astro';
+import Prose from '@components/blocks/Prose.astro';
+import StepList from '@components/blocks/StepList.astro';
+import CardGrid from '@components/blocks/CardGrid.astro';
+import Card from '@components/blocks/Card.astro';
+import PageEnding from '@components/blocks/PageEnding.astro';
+import { mdxComponents } from '@lib/mdx';
+
+interface Props {
+  page: PageMeta;
+  entry: PageEntry;
+}
+
+const { page, entry } = Astro.props;
+const { data } = entry;
+const { Content } = await render(entry);
+
+const references: CardItem[] = data.related.map((id) => cardFrom({ pageId: id }));
+---
+
+<Base pageId={page.id}>
+  <PageHero
+    page={page}
+    eyebrow={data.eyebrow}
+    lede={data.lede}
+    media={data.hero.media}
+    ctas={data.hero.ctas}
+  />
+
+  <Section>
+    <Prose>
+      <Content components={mdxComponents} />
+    </Prose>
+  </Section>
+
+  {data.steps.length > 0 && (
+    <Section tone="off">
+      <SectionHead eyebrow="The scope ladder" heading="Four tiers, cumulative" level={2} />
+      <StepList steps={data.steps} label="Tier" />
+    </Section>
+  )}
+
+  {references.length > 0 && (
+    <Section>
+      <SectionHead eyebrow="References" heading="Each tier in detail" level={2} />
+      <CardGrid cols={2}>
+        {references.map((item) => <Card item={item} />)}
+      </CardGrid>
+    </Section>
+  )}
+
+  <PageEnding page={page} proofBar={data.proofBar} cta={data.cta} draft={data.draft} outline={data.outline} />
+</Base>
