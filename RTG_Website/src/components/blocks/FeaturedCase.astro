@@ -1,0 +1,44 @@
+---
+/**
+ * The "read the case study" band — an image/pull-quote pairing (.case,
+ * promoted from home.css's ProofCase.astro) pointing at one Case-template
+ * page. Media, lede and pull quote all come from that page's own MDX entry
+ * rather than being retyped by the linking page, so the band can never
+ * drift out of sync with the case study it features — a template only
+ * chooses which page to feature (frontmatter's `featured` card), not what
+ * the band says.
+ */
+import type { PageMeta } from '@data/pages';
+import type { PageEntry } from '@lib/blocks';
+import ImageSlot from './ImageSlot.astro';
+import Quote from './Quote.astro';
+
+interface Props {
+  page: PageMeta;
+  entry: PageEntry;
+  eyebrow?: string;
+  ctaLabel?: string;
+}
+
+const { page, entry, eyebrow = 'Proof', ctaLabel = 'Read the case study' } = Astro.props;
+const { data } = entry;
+const media = data.hero.media;
+const quote = data.quotes[0];
+const teaser = data.lede ?? page.description;
+---
+
+<div class="wrap case">
+  {media && <ImageSlot ref={media.ref} brief={media.brief} ratio={media.ratio} />}
+  <div>
+    <p class="mono red" style="margin:0 0 24px">{eyebrow}</p>
+    <h2 class="d3" style="margin-bottom:24px;max-width:20ch">{page.h1}</h2>
+    {teaser && <p class="lede">{teaser}</p>}
+    <p style="margin-top:20px"><a class="arw" href={page.slug}>{ctaLabel} →</a></p>
+    {quote && (
+      <>
+        <hr style="border:0;border-top:1px solid var(--line);margin:44px 0" />
+        <Quote text={quote.text} attribution={quote.attribution} context={quote.context} />
+      </>
+    )}
+  </div>
+</div>

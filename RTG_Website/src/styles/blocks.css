@@ -32,6 +32,10 @@
 /* ---------- two-column layout ---------- */
 .two{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}
 @media (max-width:900px){.two{grid-template-columns:1fr;gap:34px}}
+/* Collapses to one column when a template renders only one child (e.g. a
+   Sector page with no second "problem" image) — lets a template always emit
+   the same wrapper instead of branching its markup to avoid an empty track. */
+.two:has(> :only-child){grid-template-columns:1fr}
 
 /* ---------- stats / proof bar ---------- */
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);
@@ -85,9 +89,11 @@
 .lc-band div{font-size:16px;color:var(--muted);max-width:72ch}
 .lc-band b{color:var(--navy);font-family:var(--f-d);font-weight:800;letter-spacing:-.02em}
 
-/* ---------- case / quote (Quote.astro) ---------- */
+/* ---------- case / quote (Quote.astro, FeaturedCase.astro) ---------- */
 .case{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
 @media (max-width:900px){.case{grid-template-columns:1fr;gap:34px}}
+/* Collapses to one column when a featured case has no hero image yet. */
+.case:has(> :only-child){grid-template-columns:1fr}
 .quote{font-family:var(--f-d);font-weight:600;font-size:clamp(21px,2.5vw,30px);line-height:1.22;
   letter-spacing:-.028em;color:var(--navy);margin:0 0 22px;max-width:20ch}
 .quote-c{font-family:var(--f-m);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
