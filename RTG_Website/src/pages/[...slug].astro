@@ -18,6 +18,7 @@ import Fallback from '@components/templates/Fallback.astro';
 import Sector from '@components/templates/Sector.astro';
 import Product from '@components/templates/Product.astro';
 import Hub from '@components/templates/Hub.astro';
+import Form from '@components/templates/Form.astro';
 
 const TEMPLATES: Record<Exclude<TemplateName, 'Home'>, typeof Fallback> = {
   Hub,
@@ -25,7 +26,7 @@ const TEMPLATES: Record<Exclude<TemplateName, 'Home'>, typeof Fallback> = {
   Product,
   Service: Fallback,
   Guide: Fallback,
-  Form: Fallback,
+  Form,
   Ladder: Fallback,
   Tier: Fallback,
   Policy: Fallback,

@@ -63,6 +63,9 @@ const formField = z
   .object({
     label: z.string(),
     name: z.string().regex(/^[a-z][a-z0-9_]*$/, 'field name must be lower_snake_case'),
+    // No 'file'/'upload' type yet — C-09 (send-documentation)'s workbook block
+    // list calls for an "upload form" and will need one added here before its
+    // real content can be written. A stub today, so not yet a live gap.
     type: z.enum(['text', 'email', 'tel', 'number', 'date', 'textarea', 'select']).default('text'),
     /** Populated only when type is 'select'. */
     options: z.array(z.string()).default([]),

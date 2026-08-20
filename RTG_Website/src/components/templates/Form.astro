@@ -1,0 +1,64 @@
+---
+/**
+ * The Form template — the eight gated enquiry/request forms. Composition
+ * per the template plan: hero -> .two (what it covers + EnquiryForm).
+ * EnquiryForm.astro itself guarantees the honeypot field and the no-backend
+ * action="#" default (CLAUDE.md §5.2) — this template only ever passes
+ * frontmatter through, never hand-rolls a field or the honeypot again.
+ *
+ * Gated access doesn't change anything here: CLAUDE.md is explicit that a
+ * Gated page stays indexable (the form stands in front of the asset, not
+ * the page describing it), and Base.astro's robots logic already only
+ * withholds indexing for off-map pages — nothing template-specific to add.
+ */
+import { render } from 'astro:content';
+import type { PageMeta } from '@data/pages';
+import type { PageEntry } from '@lib/blocks';
+import Base from '@layouts/Base.astro';
+import PageHero from '@components/blocks/PageHero.astro';
+import Section from '@components/blocks/Section.astro';
+import Prose from '@components/blocks/Prose.astro';
+import EnquiryForm from '@components/blocks/EnquiryForm.astro';
+import PageEnding from '@components/blocks/PageEnding.astro';
+import { mdxComponents } from '@lib/mdx';
+
+interface Props {
+  page: PageMeta;
+  entry: PageEntry;
+}
+
+const { page, entry } = Astro.props;
+const { data } = entry;
+const { Content } = await render(entry);
+---
+
+<Base pageId={page.id}>
+  <PageHero
+    page={page}
+    eyebrow={data.eyebrow}
+    lede={data.lede}
+    media={data.hero.media}
+    ctas={data.hero.ctas}
+  />
+
+  <Section>
+    <div class="two">
+      <Prose>
+        <Content components={mdxComponents} />
+      </Prose>
+      {data.form && (
+        <div>
+          {data.form.intro && <p class="lede" style="margin-bottom:28px">{data.form.intro}</p>}
+          <EnquiryForm
+            fields={data.form.fields}
+            submit={data.form.submit}
+            action={data.form.action}
+            consent={data.form.consent}
+          />
+        </div>
+      )}
+    </div>
+  </Section>
+
+  <PageEnding page={page} proofBar={data.proofBar} cta={data.cta} draft={data.draft} outline={data.outline} />
+</Base>
