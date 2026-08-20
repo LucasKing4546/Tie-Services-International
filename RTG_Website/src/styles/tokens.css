@@ -113,13 +113,7 @@ html.js .stag.in > *{opacity:1;transform:none}
 .hdr.on::before{opacity:1}
 .hdr-in{position:relative;display:flex;align-items:center;justify-content:space-between;gap:20px}
 .brand{display:flex;align-items:center;gap:12px}
-.brand .mk{width:34px;height:34px;border-radius:8px;background:var(--navy);position:relative;flex:none}
-.brand .mk::before{content:"";position:absolute;inset:9px;border-radius:50%;border:2px solid var(--red)}
-.brand .mk::after{content:"";position:absolute;left:50%;top:50%;width:3px;height:3px;border-radius:50%;
-  background:#fff;transform:translate(-50%,-50%)}
-.brand b{font-family:var(--f-d);font-weight:800;font-size:19px;letter-spacing:-.03em;line-height:1;color:var(--navy)}
-.brand small{display:block;font-family:var(--f-m);font-size:8.5px;letter-spacing:.14em;color:var(--muted);
-  text-transform:uppercase;font-weight:400;margin-top:3px}
+.brand .logo{height:34px;width:auto;display:block}
 .nav{display:flex;align-items:center;gap:4px}
 .nav a{font-family:var(--f-d);font-weight:600;font-size:14px;letter-spacing:-.01em;padding:9px 15px;
   border-radius:100px;color:var(--navy);transition:background .25s,color .25s}
