@@ -1,0 +1,100 @@
+---
+/**
+ * The Case template — P-02…P-05, the four case studies. Composition per
+ * the template plan: headline-number band -> situation/constraint/result
+ * -> Quote -> related. Article schema + dates.
+ *
+ * P-03, the one page with real content today, deliberately has no
+ * `caseStudy.headline` set — its own "Result" section is written entirely
+ * as <Gap> markers because the real figures (rebuild cost vs. replacement,
+ * turnaround time) aren't confirmed yet. CLAUDE.md #5.7/#8 forbid inventing
+ * one to fill the band, so it — and the client/vessel/year meta line,
+ * `caseStudy` being optional throughout — only renders once a page has a
+ * genuinely confirmed figure to show, same as every other optional block.
+ */
+import { render } from 'astro:content';
+import type { PageMeta } from '@data/pages';
+import type { PageEntry, CardItem } from '@lib/blocks';
+import { cardFrom } from '@lib/content';
+import Base from '@layouts/Base.astro';
+import PageHero from '@components/blocks/PageHero.astro';
+import Section from '@components/blocks/Section.astro';
+import SectionHead from '@components/blocks/SectionHead.astro';
+import Prose from '@components/blocks/Prose.astro';
+import Quote from '@components/blocks/Quote.astro';
+import CardGrid from '@components/blocks/CardGrid.astro';
+import Card from '@components/blocks/Card.astro';
+import PageEnding from '@components/blocks/PageEnding.astro';
+import { mdxComponents } from '@lib/mdx';
+
+interface Props {
+  page: PageMeta;
+  entry: PageEntry;
+}
+
+const { page, entry } = Astro.props;
+const { data } = entry;
+const { Content } = await render(entry);
+
+const related: CardItem[] = data.related.map((id) => cardFrom({ pageId: id }));
+
+const meta = data.caseStudy
+  ? [data.caseStudy.client, data.caseStudy.vessel, data.caseStudy.year].filter(Boolean).join(' · ')
+  : '';
+
+const jsonLdPage = data.article
+  ? {
+      author: { '@type': 'Organization', name: data.article.author },
+      ...(data.article.published ? { datePublished: data.article.published.toISOString() } : {}),
+      ...(data.article.revised ? { dateModified: data.article.revised.toISOString() } : {}),
+    }
+  : {};
+---
+
+<Base pageId={page.id} jsonLdPage={jsonLdPage}>
+  <PageHero
+    page={page}
+    eyebrow={data.eyebrow}
+    lede={data.lede}
+    media={data.hero.media}
+    ctas={data.hero.ctas}
+  />
+
+  {meta && (
+    <Section size="sm">
+      <p class="mono">{meta}</p>
+    </Section>
+  )}
+
+  {data.caseStudy?.headline && (
+    <Section tone="navy" size="sm">
+      <div style="text-align:center">
+        <p class="headline-num" style="color:#fff">{data.caseStudy.headline.value}</p>
+        <p class="mono on-navy" style="margin-top:12px">{data.caseStudy.headline.label}</p>
+      </div>
+    </Section>
+  )}
+
+  <Section>
+    <Prose>
+      <Content components={mdxComponents} />
+    </Prose>
+  </Section>
+
+  {data.quotes.length > 0 && (
+    <Section tone="off">
+      {data.quotes.map((q) => <Quote text={q.text} attribution={q.attribution} context={q.context} />)}
+    </Section>
+  )}
+
+  {related.length > 0 && (
+    <Section>
+      <SectionHead eyebrow="Related" heading="More evidence" level={2} />
+      <CardGrid cols={3}>
+        {related.map((item) => <Card item={item} />)}
+      </CardGrid>
+    </Section>
+  )}
+
+  <PageEnding page={page} proofBar={data.proofBar} cta={data.cta} draft={data.draft} outline={data.outline} />
+</Base>

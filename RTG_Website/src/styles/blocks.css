@@ -53,6 +53,12 @@
 .stat b em{font-style:normal;color:var(--red)}
 .stat > span{font-size:14.5px;color:var(--muted);display:block;max-width:26ch}
 
+/* ---------- standalone headline figure (Case.astro) ----------
+   Same number scale as .stat b, for a single stat shown on its own rather
+   than tiled in a .stats grid — a case study's headline number, say. */
+.headline-num{font-family:var(--f-d);font-weight:800;font-size:clamp(44px,5.4vw,68px);
+  letter-spacing:-.045em;line-height:.9;margin:0}
+
 /* ---------- card grid (CardGrid.astro + Card.astro) ---------- */
 .eq{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .eq.eq-2{grid-template-columns:repeat(2,1fr)}
