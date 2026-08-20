@@ -12,11 +12,28 @@
   margin-top:52px;padding-top:18px;flex-wrap:wrap}
 
 /* 3D stages */
-.artbox{position:relative;aspect-ratio:1/1;max-height:66vh;margin-left:auto;width:100%}
+/* The hero model sits on its own layer, centred on the right half of the
+   viewport (not the grid cell), so it reads in the same place regardless of
+   how tall the copy column runs. .hero's own box grows past one screen once
+   the copy is bottom-anchored inside it, so centring is done in viewport
+   units (50svh/75vw) against .hero's top edge — which sits at document y:0
+   — rather than a percentage of .hero's (taller) box.
+   The centring transform lives on .artbox itself, and the .fu fade-up
+   (which sets its own transform once revealed — see tokens.css) lives on
+   the nested .artbox-in, so the shared motion system never overwrites the
+   positioning transform the way it did with .rl/.stag. */
+.artbox{position:absolute;top:50svh;left:75vw;transform:translate(-50%,-50%);
+  aspect-ratio:1/1;width:42%;max-width:560px;max-height:60svh}
+.artbox-in{width:100%;height:100%}
 .artbox canvas{width:100%;height:100%;display:block}
-.artbox .cap{position:absolute;left:0;bottom:2px;font-family:var(--f-m);font-size:9.5px;
+.artbox .cap{position:absolute;left:0;bottom:-22px;font-family:var(--f-m);font-size:9.5px;
   letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 .artbox .cap b{color:var(--red);font-weight:500}
+@media (max-width:980px){
+  .artbox{position:relative;top:auto;left:auto;transform:none;width:100%;
+    max-width:none;margin-left:0}
+  .artbox .cap{bottom:2px}
+}
 
 /* ---------- zoom-into-frame showcase ---------- */
 .zw{position:relative;background:var(--white)}

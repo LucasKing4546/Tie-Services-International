@@ -132,7 +132,11 @@ export function initHome(): void {
     el.addEventListener('pointerdown', e => { down = true; lastX = e.clientX;
       el.style.cursor = 'grabbing'; el.setPointerCapture(e.pointerId); });
     el.addEventListener('pointermove', e => { if (!down) return;
-      stage.drag += (e.clientX - lastX) * 0.008; lastX = e.clientX; });
+      stage.drag += (e.clientX - lastX) * 0.008; lastX = e.clientX;
+      // frame() (hoisted below) only otherwise runs on scroll — without this
+      // call, dragging while the page hasn't scrolled updates stage.drag but
+      // is never painted, so the model looks inert until the user scrolls.
+      frame(); });
     const up = () => { down = false; el.style.cursor = 'grab'; };
     el.addEventListener('pointerup', up); el.addEventListener('pointercancel', up);
   })();
