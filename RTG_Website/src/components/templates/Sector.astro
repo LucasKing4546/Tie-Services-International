@@ -1,0 +1,107 @@
+---
+/**
+ * The Sector template — S-01…S-07. The market the buyer identifies with;
+ * P1 in the workbook. Composition per the template plan: parallax hero ->
+ * problem (sticky media) -> equipment from related[] -> featured case band
+ * -> proof bar -> CTA.
+ */
+import { render } from 'astro:content';
+import { page as lookupPage, type PageMeta } from '@data/pages';
+import type { PageEntry, CardItem } from '@lib/blocks';
+import { cardFrom, entryFor } from '@lib/content';
+import Base from '@layouts/Base.astro';
+import PageHero from '@components/blocks/PageHero.astro';
+import Section from '@components/blocks/Section.astro';
+import SectionHead from '@components/blocks/SectionHead.astro';
+import Prose from '@components/blocks/Prose.astro';
+import ImageSlot from '@components/blocks/ImageSlot.astro';
+import CardGrid from '@components/blocks/CardGrid.astro';
+import Card from '@components/blocks/Card.astro';
+import FeaturedCase from '@components/blocks/FeaturedCase.astro';
+import ProofBar from '@components/blocks/ProofBar.astro';
+import CtaBand from '@components/blocks/CtaBand.astro';
+import DraftPanel from '@components/blocks/DraftPanel.astro';
+import { mdxComponents } from '@lib/mdx';
+
+interface Props {
+  page: PageMeta;
+  entry: PageEntry;
+}
+
+const { page, entry } = Astro.props;
+const { data } = entry;
+const { Content } = await render(entry);
+
+const equipment: CardItem[] = data.related.map((id) => cardFrom({ pageId: id }));
+
+// A featured case links to a specific Case-template page — everything the
+// band shows is read from that page's own entry (see FeaturedCase.astro).
+// A `featured` card without a pageId (title+href only) has nothing to
+// resolve here, so the band is simply skipped rather than guessed at.
+const featured = data.featured?.pageId
+  ? { page: lookupPage(data.featured.pageId), entry: await entryFor(data.featured.pageId), ctaLabel: data.featured.cta }
+  : undefined;
+
+// The second frontmatter media entry, if a page has supplied one, runs
+// alongside the opening prose as a sticky companion image.
+const problemMedia = data.media[0];
+---
+
+<Base pageId={page.id}>
+  <PageHero
+    page={page}
+    eyebrow={data.eyebrow}
+    lede={data.lede}
+    media={data.hero.media}
+    ctas={data.hero.ctas}
+  />
+
+  <Section>
+    <div class="two">
+      <Prose>
+        <Content components={mdxComponents} />
+      </Prose>
+      {problemMedia && (
+        <ImageSlot ref={problemMedia.ref} brief={problemMedia.brief} ratio={problemMedia.ratio} motion="sticky" />
+      )}
+    </div>
+  </Section>
+
+  {equipment.length > 0 && (
+    <Section tone="off">
+      <SectionHead eyebrow="Equipment" heading="Built for this sector" level={2} />
+      <CardGrid cols={3}>
+        {equipment.map((item) => <Card item={item} />)}
+      </CardGrid>
+    </Section>
+  )}
+
+  {featured && (
+    <Section wrap={false}>
+      <FeaturedCase page={featured.page} entry={featured.entry} ctaLabel={featured.ctaLabel} />
+    </Section>
+  )}
+
+  {data.proofBar && (
+    <Section tone="off" size="sm">
+      <ProofBar />
+    </Section>
+  )}
+
+  {data.cta && (
+    <Section tone="off">
+      <CtaBand
+        heading={data.cta.heading}
+        body={data.cta.body}
+        primary={data.cta.primary}
+        secondary={data.cta.secondary}
+      />
+    </Section>
+  )}
+
+  {data.draft && (
+    <Section size="sm">
+      <DraftPanel page={page} items={data.outline} />
+    </Section>
+  )}
+</Base>

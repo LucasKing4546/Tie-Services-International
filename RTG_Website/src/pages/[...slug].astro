@@ -6,19 +6,20 @@
  * explicit file of its own later, exactly as index.astro already does —
  * that override path is never lost by routing the rest through here.
  *
- * All 17 template names currently point at Fallback.astro (Step 6 of the
- * template plan); real templates get swapped in one at a time (Step 7).
- * Static imports only, so the template set stays statically analysable —
- * no import.meta.glob.
+ * Template names still on Fallback.astro get swapped for a real template
+ * one at a time (Step 7 of the template plan), in the plan's stated order —
+ * Sector first. Static imports only, so the template set stays statically
+ * analysable — no import.meta.glob.
  */
 import type { GetStaticPaths } from 'astro';
 import { PAGES, type TemplateName } from '@data/pages';
 import { entryFor } from '@lib/content';
 import Fallback from '@components/templates/Fallback.astro';
+import Sector from '@components/templates/Sector.astro';
 
 const TEMPLATES: Record<Exclude<TemplateName, 'Home'>, typeof Fallback> = {
   Hub: Fallback,
-  Sector: Fallback,
+  Sector,
   Product: Fallback,
   Service: Fallback,
   Guide: Fallback,
