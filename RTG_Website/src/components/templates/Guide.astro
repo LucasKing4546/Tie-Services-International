@@ -9,15 +9,15 @@
  * authored once, as `faqs[]` (q/a pairs) — rendering it through both
  * StepList AND Faq.astro would show the same six questions twice. Instead
  * the same data drives both: StepList gives the visible numbered
- * treatment the plan calls for, and the FAQPage JSON-LD (mainEntity of
- * Question/Answer nodes) is built directly from data.faqs as a second,
- * independent representation of the same source — never re-typed.
- * "When not to refurbish" is an inline <Note tone="warn"> in the MDX body.
+ * treatment the plan calls for, and faqPageJsonLd() (lib/seo.ts) builds
+ * the FAQPage node from the same data as a second, independent
+ * representation — never re-typed. "When not to refurbish" is an inline
+ * <Note tone="warn"> in the MDX body.
  */
 import { render } from 'astro:content';
 import type { PageMeta } from '@data/pages';
 import type { PageEntry, Step } from '@lib/blocks';
-import { articleJsonLd } from '@lib/seo';
+import { articleJsonLd, faqPageJsonLd } from '@lib/seo';
 import Base from '@layouts/Base.astro';
 import PageHero from '@components/blocks/PageHero.astro';
 import Section from '@components/blocks/Section.astro';
@@ -42,23 +42,9 @@ const questions: Step[] = data.faqs.map((f, i) => ({
   body: f.a,
   points: [],
 }));
-
-const faqPage =
-  data.faqs.length > 0
-    ? [
-        {
-          '@type': 'FAQPage',
-          mainEntity: data.faqs.map((f) => ({
-            '@type': 'Question',
-            name: f.q,
-            acceptedAnswer: { '@type': 'Answer', text: f.a },
-          })),
-        },
-      ]
-    : [];
 ---
 
-<Base pageId={page.id} jsonLd={faqPage} jsonLdPage={articleJsonLd(data)}>
+<Base pageId={page.id} jsonLd={faqPageJsonLd(data)} jsonLdPage={articleJsonLd(data)}>
   <PageHero
     page={page}
     eyebrow={data.eyebrow}

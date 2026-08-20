@@ -91,3 +91,23 @@ export function articleJsonLd(data: { article?: PageData['article'] }): Record<s
     ...(data.article.revised ? { dateModified: data.article.revised.toISOString() } : {}),
   };
 }
+
+/**
+ * An FAQPage graph node from frontmatter `faqs[]`, for buildJsonLd's `extra`
+ * param — Faq.astro's own doc comment states every template rendering faqs
+ * also emits this from the same data. Returns [] (spread away to nothing)
+ * when a page has no faqs, so a template can always pass this through.
+ */
+export function faqPageJsonLd(data: { faqs: PageData['faqs'] }): Record<string, unknown>[] {
+  if (data.faqs.length === 0) return [];
+  return [
+    {
+      '@type': 'FAQPage',
+      mainEntity: data.faqs.map((f) => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a },
+      })),
+    },
+  ];
+}

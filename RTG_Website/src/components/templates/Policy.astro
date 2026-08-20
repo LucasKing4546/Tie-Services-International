@@ -1,0 +1,59 @@
+---
+/**
+ * The Policy template — C-06, "Your IP, protected" (the only page on this
+ * template). Composition per the template plan: commitment ->
+ * segregation steps -> the competitor question as Faq -> NDA CTA.
+ *
+ * C-06's content writes "the competitor question" as flowing prose under
+ * its own heading rather than populating `faqs[]` — Faq.astro renders
+ * only when a page actually has faqs, same defensive pattern as every
+ * other optional block; it's simply unused for C-06 today. Article
+ * schema via articleJsonLd(); FAQPage schema via faqPageJsonLd() — same
+ * two lib/seo.ts helpers Guide.astro uses, so a future Policy page that
+ * does populate faqs[] gets matching structured data with no extra work.
+ */
+import { render } from 'astro:content';
+import type { PageMeta } from '@data/pages';
+import type { PageEntry } from '@lib/blocks';
+import { articleJsonLd, faqPageJsonLd } from '@lib/seo';
+import Base from '@layouts/Base.astro';
+import PageHero from '@components/blocks/PageHero.astro';
+import Section from '@components/blocks/Section.astro';
+import Prose from '@components/blocks/Prose.astro';
+import Faq from '@components/blocks/Faq.astro';
+import PageEnding from '@components/blocks/PageEnding.astro';
+import { mdxComponents } from '@lib/mdx';
+
+interface Props {
+  page: PageMeta;
+  entry: PageEntry;
+}
+
+const { page, entry } = Astro.props;
+const { data } = entry;
+const { Content } = await render(entry);
+---
+
+<Base pageId={page.id} jsonLd={faqPageJsonLd(data)} jsonLdPage={articleJsonLd(data)}>
+  <PageHero
+    page={page}
+    eyebrow={data.eyebrow}
+    lede={data.lede}
+    media={data.hero.media}
+    ctas={data.hero.ctas}
+  />
+
+  <Section>
+    <Prose>
+      <Content components={mdxComponents} />
+    </Prose>
+  </Section>
+
+  {data.faqs.length > 0 && (
+    <Section tone="off">
+      <Faq items={data.faqs} />
+    </Section>
+  )}
+
+  <PageEnding page={page} proofBar={data.proofBar} cta={data.cta} draft={data.draft} outline={data.outline} />
+</Base>
