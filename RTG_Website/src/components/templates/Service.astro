@@ -1,0 +1,81 @@
+---
+/**
+ * The Service template — six lifecycle/manufacturing service pages
+ * (refurbishment, class renewal, spares, bespoke design, structural
+ * subcontracting, deck equipment packages). Composition per the template
+ * plan: prose -> StepList -> notes -> related cards -> CTA.
+ *
+ * L-01, the one page with real content today, writes its process as
+ * numbered ### subheadings in flowing prose rather than the structured
+ * `steps` field, and its one aside is an inline <Note> rather than
+ * frontmatter `notes` — both render fine as part of the MDX body, so
+ * StepList/notes below are rendered only when a page actually populates
+ * those frontmatter fields, for whichever future Service page prefers
+ * structured data over prose for its process or asides.
+ */
+import { render } from 'astro:content';
+import type { PageMeta } from '@data/pages';
+import type { PageEntry, CardItem } from '@lib/blocks';
+import { cardFrom } from '@lib/content';
+import Base from '@layouts/Base.astro';
+import PageHero from '@components/blocks/PageHero.astro';
+import Section from '@components/blocks/Section.astro';
+import SectionHead from '@components/blocks/SectionHead.astro';
+import Prose from '@components/blocks/Prose.astro';
+import StepList from '@components/blocks/StepList.astro';
+import Note from '@components/blocks/Note.astro';
+import CardGrid from '@components/blocks/CardGrid.astro';
+import Card from '@components/blocks/Card.astro';
+import PageEnding from '@components/blocks/PageEnding.astro';
+import { mdxComponents } from '@lib/mdx';
+
+interface Props {
+  page: PageMeta;
+  entry: PageEntry;
+}
+
+const { page, entry } = Astro.props;
+const { data } = entry;
+const { Content } = await render(entry);
+
+const related: CardItem[] = data.related.map((id) => cardFrom({ pageId: id }));
+---
+
+<Base pageId={page.id}>
+  <PageHero
+    page={page}
+    eyebrow={data.eyebrow}
+    lede={data.lede}
+    media={data.hero.media}
+    ctas={data.hero.ctas}
+  />
+
+  <Section>
+    <Prose>
+      <Content components={mdxComponents} />
+    </Prose>
+  </Section>
+
+  {data.steps.length > 0 && (
+    <Section tone="off">
+      <StepList steps={data.steps} />
+    </Section>
+  )}
+
+  {data.notes.length > 0 && (
+    <Section>
+      {data.notes.map((n) => <Note heading={n.heading}>{n.body}</Note>)}
+    </Section>
+  )}
+
+  {related.length > 0 && (
+    <Section tone="off">
+      <SectionHead eyebrow="Related" heading="Where to go next" level={2} />
+      <CardGrid cols={3}>
+        {related.map((item) => <Card item={item} />)}
+      </CardGrid>
+    </Section>
+  )}
+
+  <PageEnding page={page} proofBar={data.proofBar} cta={data.cta} draft={data.draft} outline={data.outline} />
+</Base>
