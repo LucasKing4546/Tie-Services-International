@@ -103,5 +103,30 @@ const robots = offMap ? 'noindex, follow' : 'index, follow, max-image-preview:la
       document.addEventListener('astro:page-load', initMotion);
       document.addEventListener('astro:page-load', initFormPrefill);
     </script>
+
+    {/* Chatra live chat — same embed and ID as the current production site
+       (www.romicatiegroup.com), loaded on every page. Chatra appends its
+       own script to <head> asynchronously; is:inline so Astro ships it
+       verbatim rather than bundling it. Guarded on w.ChatraID rather than
+       run unconditionally like the reference snippet: under ClientRouter
+       this script rides along on every page's markup, and if it ever runs
+       more than once (server-rendered HTML on first load, then again on a
+       client-side navigation) it would inject a second chatra.js and a
+       second widget instance — the guard makes re-running it a no-op.
+       Flag (CLAUDE.md §5.4): no consent gate exists yet for ANY third
+       party on this site, analytics included — this matches what the
+       current site already does, not a new gap this introduces. Revisit
+       once real consent management lands. */}
+    <script is:inline>
+      (function (d, w, c) {
+        if (w.ChatraID) return;
+        w.ChatraID = 'iraKxKmohhNY38Mu9';
+        var s = d.createElement('script');
+        w[c] = w[c] || function () { (w[c].q = w[c].q || []).push(arguments); };
+        s.async = true;
+        s.src = 'https://call.chatra.io/chatra.js';
+        if (d.head) d.head.appendChild(s);
+      })(document, window, 'Chatra');
+    </script>
   </body>
 </html>
