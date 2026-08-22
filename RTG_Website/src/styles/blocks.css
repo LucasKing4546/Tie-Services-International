@@ -13,6 +13,12 @@
 .sec{padding:112px 0}
 .sec.sm{padding:96px 0}
 .sec.off{background:var(--off)}
+/* Where two sections of the same tone meet there is no visible seam, so
+   both paying full padding just banks up one very large empty band — the
+   proof bar sitting above a CTA (PageEnding) was doing exactly that, at
+   over 200px of dead space. Collapse the join; the tone change is what
+   earns the padding. */
+.sec.off + .sec.off,.sec.navy + .sec.navy{padding-top:0}
 .navy{background:var(--navy);color:#fff}
 .navy h1,.navy h2,.navy h3{color:#fff}
 .sechd{max-width:900px;margin-bottom:52px}
@@ -282,9 +288,13 @@ table.spec .foot{margin-top:16px;font-size:13.5px;color:var(--muted)}
    says "issued on request" reads as controlled, where a pink error chip
    reads as broken. Set as a quiet mono value so it sits in a table of real
    figures without shouting, with the red dash as the only accent. */
-.gap{font-family:var(--f-m);font-size:.8em;letter-spacing:.1em;text-transform:uppercase;
+.gap{font-family:var(--f-m);font-size:.84em;letter-spacing:.02em;
   font-weight:500;color:var(--muted);border-bottom:1px dashed var(--line);padding-bottom:2px}
 .gap::before{content:"— ";color:var(--red)}
+/* Uppercase suits a short table value ("TO BE CONFIRMED"); it does not
+   suit the sentence-length gaps that sit inline in prose, which become an
+   unreadable shouted run. So the crisp treatment is scoped to the table. */
+table.spec .gap{text-transform:uppercase;letter-spacing:.1em;font-size:.8em}
 
 /* ---------- draft outline panel (DraftPanel.astro) ---------- */
 .draftnote{border:1px dashed var(--red);border-radius:16px;padding:26px 28px;background:#FBEEEF}
@@ -332,6 +342,18 @@ table.spec .foot{margin-top:16px;font-size:13.5px;color:var(--muted)}
 }
 [data-motion="sticky"]{position:sticky;top:112px;align-self:start}
 @media (max-width:900px){[data-motion="sticky"]{position:static;top:auto}}
+
+/* A sticky companion image is a supporting note, not a co-star. Left at its
+   natural ratio a portrait plate parks a half-page block beside four
+   screens of prose, which is the largest dead area on a Sector page. Give
+   the text the majority of the measure, and size the plate to the viewport
+   so it is always fully visible and never dominant. */
+.two:has(> .imgslot[data-motion="sticky"]){grid-template-columns:1.32fr .68fr}
+.imgslot[data-motion="sticky"]{aspect-ratio:auto;height:min(56svh,500px)}
+@media (max-width:900px){
+  .two:has(> .imgslot[data-motion="sticky"]){grid-template-columns:1fr}
+  .imgslot[data-motion="sticky"]{height:auto;aspect-ratio:var(--imgslot-ratio,4/3)}
+}
 
 /* ---------- MDX prose rhythm (Prose.astro) ---------- */
 .prose h2{font-size:clamp(26px,3vw,36px);letter-spacing:-.03em;margin:56px 0 20px}
