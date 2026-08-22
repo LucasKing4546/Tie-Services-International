@@ -22,7 +22,7 @@ export const NAV = [
   { label: 'Equipment', href: '/equipment/' },
   { label: 'Lifecycle', href: '/lifecycle/' },
   { label: 'Manufacturing', href: '/contract-manufacturing/' },
-  { label: 'Yards', href: '/yards-integrators/' },
+  { label: 'Shipyards', href: '/yards-integrators/' },
   { label: 'Proof', href: '/proof/' },
 ];
 
@@ -34,7 +34,7 @@ export const FOOTER_NAV = [
       { label: 'Equipment', href: '/equipment/' },
       { label: 'Lifecycle', href: '/lifecycle/' },
       { label: 'Contract manufacturing', href: '/contract-manufacturing/' },
-      { label: 'Yards & integrators', href: '/yards-integrators/' },
+      { label: 'Shipyards & integrators', href: '/yards-integrators/' },
     ],
   },
   {
