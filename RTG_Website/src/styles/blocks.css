@@ -130,6 +130,47 @@ html.js .car-nav{display:flex}
 .info-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
 @media (max-width:700px){.info-grid{grid-template-columns:1fr}}
 
+/* ---------- scroll track (ScrollTrack.astro) ----------
+   A pinned full-height navy band where vertical scroll drives the cards
+   sideways. The homepage has had this since day one (.hz-* in home.css,
+   driven by id from home-scroll.ts); this is the generic, id-free version
+   every template can use, driven by initScrollTracks() in lib/motion.ts.
+
+   Progressive enhancement in three steps, each usable on its own:
+     no JS      -> .strack-rail is a native horizontally scrollable row
+     JS         -> .strack.on pins the section and drives the rail by
+                   transform, with a progress rail
+     reduced motion / under 900px -> stays the native scrollable row
+   Content is reachable in every one of those states. */
+.strack{position:relative;background:var(--navy);color:#fff}
+.strack-stick{padding:96px 0}
+.strack.on .strack-stick{position:sticky;top:0;height:100svh;padding:0;
+  display:flex;flex-direction:column;justify-content:center;overflow:hidden}
+.strack-head{display:flex;justify-content:space-between;align-items:flex-end;gap:26px;
+  flex-wrap:wrap;margin-bottom:44px}
+.strack-head h2{color:#fff;max-width:16ch}
+.strack-head .lede{color:rgba(255,255,255,.66);max-width:36ch;margin:0}
+.strack-rail{display:flex;gap:22px;overflow-x:auto;overscroll-behavior-x:contain;
+  scroll-snap-type:x proximity;scrollbar-width:none;
+  padding-inline:max(var(--gut),calc((100vw - var(--wrap))/2 + var(--gut)))}
+.strack-rail::-webkit-scrollbar{display:none}
+.strack-rail > *{flex:none;width:330px;scroll-snap-align:start}
+.strack.on .strack-rail{overflow-x:hidden;scroll-snap-type:none;will-change:transform}
+.strack-prog{margin-top:44px;display:none}
+.strack.on .strack-prog{display:block}
+.strack-prog .rail{height:2px;background:rgba(255,255,255,.18);border-radius:2px;position:relative}
+.strack-prog .fill{position:absolute;inset:0 auto 0 0;width:0;background:var(--red);border-radius:2px}
+/* Cards on the navy ground reuse .ecard.inv rather than a second card style. */
+.strack .ecard{min-height:390px}
+@media (max-width:900px){
+  .strack{height:auto!important}
+  .strack.on .strack-stick{position:static;height:auto;padding:76px 0;overflow:visible}
+  .strack-rail{padding-inline:var(--gut)}
+  .strack.on .strack-rail{overflow-x:auto;transform:none!important}
+  .strack-rail > *{width:min(78vw,330px)}
+  .strack-prog,.strack.on .strack-prog{display:none}
+}
+
 /* ---------- card grid (CardGrid.astro + Card.astro) ---------- */
 .ecard{border:1px solid var(--line);border-radius:16px;padding:34px 30px;background:var(--white);
   transition:border-color .35s var(--e),transform .35s var(--e),box-shadow .35s var(--e);

@@ -45,6 +45,7 @@ export function initMotion(): void {
   initCounters(rm);
   if (!rm) initParallax();
   initCarousels(rm);
+  if (!rm) initScrollTracks();
 
   booted = true;
 }
@@ -207,5 +208,95 @@ function initCarousels(rm: boolean): void {
     update();
 
     teardownFns.push(() => track.removeEventListener('scroll', update));
+  });
+}
+
+// ----------------------------------------------------------- scroll tracks
+/**
+ * [data-scroll-track] (ScrollTrack.astro): the section pins for as long as
+ * it takes to pull its rail sideways, so vertical scroll reads the cards
+ * horizontally. The homepage has done this since day one via ids hard-wired
+ * into home-scroll.ts; this is the generic version, so a template gets the
+ * same set-piece by composing a component rather than by writing a scroll
+ * module of its own.
+ *
+ * Not called at all under prefers-reduced-motion, and it bails under 900px:
+ * in both cases the rail stays the native horizontally scrollable row it is
+ * without any JS, so the cards are always reachable.
+ */
+function initScrollTracks(): void {
+  const tracks = document.querySelectorAll<HTMLElement>('[data-scroll-track]');
+  if (!tracks.length) return;
+
+  const items: { wrap: HTMLElement; rail: HTMLElement; fill: HTMLElement | null; dist: number }[] = [];
+
+  const measure = () => {
+    items.length = 0;
+    tracks.forEach((wrap) => {
+      const rail = wrap.querySelector<HTMLElement>('.strack-rail');
+      if (!rail) return;
+      // Under 900px the CSS reverts to a plain scrollable row — drop the
+      // pinning class and every inline style this function set, so a resize
+      // down to mobile cannot strand the section at a stale height.
+      if (innerWidth < 900) {
+        wrap.classList.remove('on');
+        wrap.style.height = '';
+        rail.style.transform = '';
+        return;
+      }
+      // Only pin when there is genuinely something to travel. A track whose
+      // cards already fit — three equipment cards on a wide desktop, say —
+      // would otherwise hold a whole viewport hostage and move nothing,
+      // which is worse than not pinning at all. It stays a static full-bleed
+      // navy band in that case, which is still doing the tonal job.
+      const dist = Math.max(0, rail.scrollWidth - innerWidth);
+      if (dist === 0) {
+        wrap.classList.remove('on');
+        wrap.style.height = '';
+        rail.style.transform = '';
+        return;
+      }
+      wrap.classList.add('on');
+      wrap.style.height = `${innerHeight + dist}px`;
+      items.push({ wrap, rail, fill: wrap.querySelector<HTMLElement>('.strack-prog .fill'), dist });
+    });
+  };
+
+  let ticking = false;
+  let live = true;
+  const apply = () => {
+    ticking = false;
+    if (!live) return;
+    for (const { wrap, rail, fill, dist } of items) {
+      if (dist <= 0) continue;
+      const r = wrap.getBoundingClientRect();
+      const p = Math.min(1, Math.max(0, -r.top / (r.height - innerHeight)));
+      rail.style.transform = `translate3d(${-p * dist}px,0,0)`;
+      if (fill) fill.style.width = `${p * 100}%`;
+    }
+  };
+  const onScroll = () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(apply);
+  };
+  const onResize = () => { measure(); apply(); };
+
+  measure();
+  apply();
+  addEventListener('scroll', onScroll, { passive: true });
+  addEventListener('resize', onResize);
+
+  teardownFns.push(() => {
+    live = false;
+    removeEventListener('scroll', onScroll);
+    removeEventListener('resize', onResize);
+    // Leave no inline height or transform behind for the next page.
+    tracks.forEach((wrap) => {
+      wrap.classList.remove('on');
+      wrap.style.height = '';
+      const rail = wrap.querySelector<HTMLElement>('.strack-rail');
+      if (rail) rail.style.transform = '';
+    });
   });
 }

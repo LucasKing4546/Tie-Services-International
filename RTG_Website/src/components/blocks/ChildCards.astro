@@ -9,6 +9,7 @@
 import { childEntries } from '@lib/content';
 import type { CardItem } from '@lib/blocks';
 import CardGrid from './CardGrid.astro';
+import ScrollTrack from './ScrollTrack.astro';
 import Card from './Card.astro';
 
 interface Props {
@@ -28,9 +29,18 @@ interface Props {
    *  children — if an `extra` entry ever points at one of the hub's own
    *  children, add that child's id to `exclude` to avoid showing it twice. */
   extra?: CardItem[];
+  /** Render as a full-bleed navy ScrollTrack instead of a light carousel.
+   *  A hub's children are the page's main event and there are often enough
+   *  of them to earn the set-piece, so this is what Hub.astro uses. */
+  track?: boolean;
+  eyebrow?: string;
+  heading?: string;
 }
 
-const { of, cols = 3, label = 'Related pages', exclude = [], extra = [] } = Astro.props;
+const {
+  of, cols = 3, label = 'Related pages', exclude = [], extra = [],
+  track = false, eyebrow, heading,
+} = Astro.props;
 const pairs = (await childEntries(of)).filter(({ page }) => !exclude.includes(page.id));
 const items: CardItem[] = [
   ...pairs.map(({ page, entry }) => ({
@@ -42,6 +52,12 @@ const items: CardItem[] = [
 ];
 ---
 
-<CardGrid cols={cols} label={label}>
-  {items.map((item) => <Card item={item} />)}
-</CardGrid>
+{track ? (
+  <ScrollTrack eyebrow={eyebrow} heading={heading ?? label}>
+    {items.map((item) => <Card item={item} tone="dark" />)}
+  </ScrollTrack>
+) : (
+  <CardGrid cols={cols} label={label}>
+    {items.map((item) => <Card item={item} />)}
+  </CardGrid>
+)}

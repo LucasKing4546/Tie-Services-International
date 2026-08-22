@@ -82,9 +82,14 @@ const jsonLdPage =
   </Section>
 
   {gridItems.length > 0 && (
-    <Section tone="off">
-      <ChildCards of={page.slug} extra={extraCards} label={`Pages under ${page.h1}`} />
-    </Section>
+    <ChildCards
+      of={page.slug}
+      extra={extraCards}
+      track
+      eyebrow={page.section}
+      heading={page.h1}
+      label={`Pages under ${page.h1}`}
+    />
   )}
 
   <PageEnding page={page} proofBar={data.proofBar} cta={data.cta} draft={data.draft} outline={data.outline} />
