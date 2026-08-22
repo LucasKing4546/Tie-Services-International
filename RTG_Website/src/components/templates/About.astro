@@ -21,6 +21,7 @@
 import { render } from 'astro:content';
 import { childrenOf, type PageMeta } from '@data/pages';
 import type { PageEntry } from '@lib/blocks';
+import { articleJsonLd } from '@lib/seo';
 import Base from '@layouts/Base.astro';
 import PageHero from '@components/blocks/PageHero.astro';
 import Section from '@components/blocks/Section.astro';
@@ -42,9 +43,13 @@ const { data } = entry;
 const { Content } = await render(entry);
 
 const siblings = childrenOf('/about/').filter((p) => p.id !== page.id);
+// A-03/A-04's workbook schema is Article — matches every other Article-
+// schema template (Case, Guide, Policy, Article) in wiring this through,
+// even though neither page sets `article` frontmatter yet.
+const jsonLdPage = articleJsonLd(data);
 ---
 
-<Base pageId={page.id}>
+<Base pageId={page.id} jsonLdPage={jsonLdPage}>
   <PageHero
     page={page}
     eyebrow={data.eyebrow}
