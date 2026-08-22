@@ -632,8 +632,8 @@ export const PAGES: PageMeta[] = [
     source: "New", status: "Not started",
   },
   {
-    id: "Y-04", section: "Yards", name: "Vendor Qualification Pack",
-    slug: "/yards-integrators/vendor-qualification-pack/", template: "Form", avatar: "AV03",
+    id: "Y-04", section: "Proof", name: "Vendor Qualification Pack",
+    slug: "/proof/vendor-qualification-pack/", template: "Form", avatar: "AV03",
     access: "Gated", priority: "P1",
     title: "Download Our Vendor Qualification Pack | RTG",
     description: "Everything your procurement and quality teams need to assess RTG as an approved fabricator, in one document. Tell us the yard and the programme it is for.",
