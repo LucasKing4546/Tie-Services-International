@@ -66,7 +66,8 @@
    display:none until html.js confirms initCarousels() (lib/motion.ts) can
    actually drive them, same progressive-enhancement gate .fu/.stag use. */
 .car{position:relative}
-.car-track{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x proximity;
+.car-track{display:flex;gap:20px;overflow-x:auto;overscroll-behavior-x:contain;
+  scroll-snap-type:x proximity;scroll-behavior:smooth;
   scroll-padding-inline-start:2px;padding:2px 2px 6px;margin:-2px -2px -6px;
   scrollbar-width:none}
 .car-track::-webkit-scrollbar{display:none}
