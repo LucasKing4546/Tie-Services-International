@@ -1,0 +1,85 @@
+---
+/**
+ * The Careers template — A-05, the only page on this template. Composition
+ * per the template plan: vacancy cards, CollectionPage + a JobPosting node
+ * per vacancy, emitting nothing when there are none.
+ *
+ * The workbook's own Schema column for A-05 is "JobPosting" (wrong for a
+ * landing page listing several roles, not one) — flagged in the template
+ * plan rather than hand-edited into pages.ts. Fixed here via jsonLdPage's
+ * '@type' override (buildJsonLd/seo.ts spreads pageNode last, so this wins
+ * over the workbook value) rather than touching the generated file.
+ *
+ * `data.vacancies` is empty until RTG supplies real openings with real
+ * posted/validThrough dates — content.config.ts's own comment is explicit
+ * that a JobPosting with no real dates is a Search Console error, not a
+ * harmless placeholder, so this renders nothing (no card, no JobPosting
+ * node) rather than an invented "example" role.
+ */
+import { render } from 'astro:content';
+import type { PageMeta } from '@data/pages';
+import { SITE } from '@data/site.js';
+import type { PageEntry } from '@lib/blocks';
+import Base from '@layouts/Base.astro';
+import PageHero from '@components/blocks/PageHero.astro';
+import Section from '@components/blocks/Section.astro';
+import SectionHead from '@components/blocks/SectionHead.astro';
+import Prose from '@components/blocks/Prose.astro';
+import PageEnding from '@components/blocks/PageEnding.astro';
+import { mdxComponents } from '@lib/mdx';
+
+interface Props {
+  page: PageMeta;
+  entry: PageEntry;
+}
+
+const { page, entry } = Astro.props;
+const { data } = entry;
+const { Content } = await render(entry);
+
+const jobPostings = data.vacancies.map((v) => ({
+  '@type': 'JobPosting',
+  title: v.title,
+  description: v.summary,
+  employmentType: v.employmentType,
+  hiringOrganization: { '@id': `${SITE.origin}/#org` },
+  jobLocation: { '@type': 'Place', address: { '@type': 'PostalAddress', addressLocality: v.location } },
+  ...(v.posted ? { datePosted: v.posted.toISOString() } : {}),
+  ...(v.validThrough ? { validThrough: v.validThrough.toISOString() } : {}),
+}));
+---
+
+<Base pageId={page.id} jsonLd={jobPostings} jsonLdPage={{ '@type': 'CollectionPage' }}>
+  <PageHero
+    page={page}
+    eyebrow={data.eyebrow}
+    lede={data.lede}
+    media={data.hero.media}
+    ctas={data.hero.ctas}
+  />
+
+  <Section>
+    <Prose>
+      <Content components={mdxComponents} />
+    </Prose>
+  </Section>
+
+  {data.vacancies.length > 0 && (
+    <Section tone="off">
+      <SectionHead eyebrow="Careers" heading="Current vacancies" level={2} />
+      <div class="info-grid">
+        {data.vacancies.map((v) => (
+          <div class="ecard">
+            <div>
+              <p class="lc-n" style="margin-bottom:8px">{v.discipline} · {v.location}</p>
+              <h3>{v.title}</h3>
+              <p>{v.summary}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </Section>
+  )}
+
+  <PageEnding page={page} proofBar={data.proofBar} cta={data.cta} draft={data.draft} outline={data.outline} />
+</Base>

@@ -1,0 +1,131 @@
+---
+/**
+ * The Contact template — X-01 (offices) and X-02 (agents by region).
+ * Composition per the template plan: offices/agents -> enquiry routing
+ * from pagesByTemplate('Form') -> contactPoint.
+ *
+ * X-01 populates `offices`, X-02 populates `agents` — both sections render
+ * only when their own frontmatter array is non-empty, same discipline as
+ * Case.astro's optional headline/meta line, so one template serves both
+ * pages without a per-page branch. Neither array has real data yet
+ * (no street address, phone, email or named contact is confirmed anywhere
+ * — CLAUDE.md §5/§7): both stay [] and the page renders as a draft outline
+ * until RTG supplies them.
+ *
+ * The one real, confirmed fact available today is EnquiryForm.astro's own
+ * response-time line ("We reply to enquiries within one working day") —
+ * reused as-is in X-01's MDX body rather than a new invented figure.
+ */
+import { render } from 'astro:content';
+import { pagesByTemplate, type PageMeta } from '@data/pages';
+import type { PageEntry, CardItem } from '@lib/blocks';
+import { cardFrom } from '@lib/content';
+import Base from '@layouts/Base.astro';
+import PageHero from '@components/blocks/PageHero.astro';
+import Section from '@components/blocks/Section.astro';
+import SectionHead from '@components/blocks/SectionHead.astro';
+import Prose from '@components/blocks/Prose.astro';
+import CardGrid from '@components/blocks/CardGrid.astro';
+import Card from '@components/blocks/Card.astro';
+import PageEnding from '@components/blocks/PageEnding.astro';
+import { mdxComponents } from '@lib/mdx';
+
+interface Props {
+  page: PageMeta;
+  entry: PageEntry;
+}
+
+const { page, entry } = Astro.props;
+const { data } = entry;
+const { Content } = await render(entry);
+
+const forms: CardItem[] = pagesByTemplate('Form').map((p) => cardFrom({ pageId: p.id }));
+
+const contactPoints = [
+  ...data.offices.map((o) => ({
+    '@type': 'ContactPoint',
+    contactType: 'sales',
+    areaServed: o.country,
+    ...(o.phone ? { telephone: o.phone } : {}),
+    ...(o.email ? { email: o.email } : {}),
+  })),
+  ...data.agents.map((a) => ({
+    '@type': 'ContactPoint',
+    contactType: 'sales',
+    areaServed: a.region,
+    ...(a.phone ? { telephone: a.phone } : {}),
+    ...(a.email ? { email: a.email } : {}),
+  })),
+];
+const jsonLdPage = contactPoints.length > 0 ? { contactPoint: contactPoints } : {};
+---
+
+<Base pageId={page.id} jsonLdPage={jsonLdPage}>
+  <PageHero
+    page={page}
+    eyebrow={data.eyebrow}
+    lede={data.lede}
+    media={data.hero.media}
+    ctas={data.hero.ctas}
+  />
+
+  <Section>
+    <Prose>
+      <Content components={mdxComponents} />
+    </Prose>
+  </Section>
+
+  {data.offices.length > 0 && (
+    <Section tone="off">
+      <SectionHead eyebrow="Offices" heading="Two offices, named people" level={2} />
+      <div class="two">
+        {data.offices.map((o) => (
+          <div class="ecard">
+            <div>
+              <p class="lc-n" style="margin-bottom:8px">{o.country}</p>
+              <h3>{o.name}</h3>
+              {o.addressLines.map((line) => <p style="margin:0">{line}</p>)}
+              {o.phone && <p style="margin-top:12px">{o.phone}</p>}
+              {o.email && <p style="margin:0"><a href={`mailto:${o.email}`}>{o.email}</a></p>}
+              {o.people.length > 0 && (
+                <ul class="lc-l" style="margin-top:16px">
+                  {o.people.map((person) => <li>{person.name} — {person.role}</li>)}
+                </ul>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </Section>
+  )}
+
+  {data.agents.length > 0 && (
+    <Section tone="off">
+      <SectionHead eyebrow="Agents" heading="By region" level={2} />
+      <div class="info-grid">
+        {data.agents.map((a) => (
+          <div class="ecard">
+            <div>
+              <p class="lc-n" style="margin-bottom:8px">{a.region}</p>
+              <h3>{a.company}</h3>
+              <p style="margin:0">{a.country}</p>
+              {a.phone && <p style="margin-top:12px">{a.phone}</p>}
+              {a.email && <p style="margin:0"><a href={`mailto:${a.email}`}>{a.email}</a></p>}
+            </div>
+          </div>
+        ))}
+      </div>
+    </Section>
+  )}
+
+  {forms.length > 0 && (
+    <Section>
+      <SectionHead eyebrow="Or go straight there" heading="What are you trying to do?" level={2} />
+      <CardGrid cols={3} label="Enquiry forms">
+        {forms.map((item) => <Card item={item} />)}
+      </CardGrid>
+    </Section>
+  )}
+
+  <PageEnding page={page} proofBar={data.proofBar} cta={data.cta} draft={data.draft} outline={data.outline} />
+</Base>

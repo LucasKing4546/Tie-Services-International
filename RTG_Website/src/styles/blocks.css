@@ -50,7 +50,7 @@
 .stats.inv .stat > span{color:rgba(255,255,255,.66)}
 .stat b{display:block;font-family:var(--f-d);font-weight:800;font-size:clamp(44px,5.4vw,68px);
   letter-spacing:-.045em;line-height:.9;color:var(--navy);margin-bottom:14px}
-.stat b em{font-style:normal;color:var(--red)}
+.stat b em,.stat b.accent{font-style:normal;color:var(--red)}
 .stat > span{font-size:14.5px;color:var(--muted);display:block;max-width:26ch}
 
 /* ---------- standalone headline figure (Case.astro) ----------
@@ -93,6 +93,10 @@ html.js .car-nav{display:flex}
 .eq{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 @media (max-width:920px){.eq{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:600px){.eq{grid-template-columns:1fr}}
+
+/* ---------- info card grid (Careers.astro vacancies, Contact.astro agents) ---------- */
+.info-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+@media (max-width:700px){.info-grid{grid-template-columns:1fr}}
 
 /* ---------- card grid (CardGrid.astro + Card.astro) ---------- */
 .ecard{border:1px solid var(--line);border-radius:16px;padding:34px 30px;background:var(--white);

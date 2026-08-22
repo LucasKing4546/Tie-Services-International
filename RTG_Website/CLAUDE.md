@@ -197,14 +197,14 @@ Build order follows workbook priority: **P1 earns revenue or unblocks a sale.**
 | `Form` | 8 | **Done** | Eight forms. See §5 — none of them have a backend yet. |
 | `Case` | 4 | **Done** | Case studies. P-03 has real data; the rest need RTG input. |
 | `Proof` | 4 | **Done** | Certifications, test facility, references, testimonials. |
-| `About` | 4 | To do | Company, people & facility, QHSE, sustainability. |
-| `Legal` | 4 | To do | Privacy, cookies, terms, accessibility. Needs legal review. |
-| `Contact` | 2 | To do | Contact and agents. |
+| `About` | 4 | **Done** | Company, people & facility, QHSE, sustainability. Only A-01 has real prose; A-02–A-04 stay draft — RTG-only facts (headcount, facility, certificate numbers). |
+| `Legal` | 4 | **Done** | Privacy, cookies, terms, accessibility. All four still draft — needs legal review, none have real policy text yet. |
+| `Contact` | 2 | **Done** | Contact and agents. Both still draft — no office address, phone, email or named contact confirmed anywhere. |
 | `Ladder` | 1 | **Done** | Contract-manufacturing hub — the scope ladder. |
 | `Guide` | 1 | **Done** | "Refurbish, upgrade or replace?" decision guide. |
 | `Policy` | 1 | **Done** | "Your IP, protected". Commercially important. |
-| `Article` | 1 | To do | EU-origin fabrication. `Article` schema. |
-| `Careers` | 1 | To do | |
+| `Article` | 1 | **Done** | EU-origin fabrication. `Article` schema. |
+| `Careers` | 1 | **Done** | No real vacancies yet — `vacancies: []` until RTG supplies real openings; a JobPosting node is only ever emitted per vacancy, never for an empty list. |
 
 Get the exact page list for a template with `pagesByTemplate('Sector')`. A
 template's own component doc comment records where it deliberately diverges

@@ -1,0 +1,85 @@
+---
+/**
+ * The About template — A-01…A-04. Composition per the template plan:
+ * prose -> stats -> facility media slots -> siblings from
+ * childrenOf('/about/').
+ *
+ * There is no separate About hub page — A-01 sits at '/about/' itself and
+ * doubles as the section landing page, so "siblings" is read from the
+ * fixed '/about/' path rather than each page's own slug (childrenOf(own
+ * slug) would return nothing for A-02…A-04, which have no children of
+ * their own). That also means A-01's own sibling grid surfaces all of
+ * A-02…A-05 — including A-05, Careers, a different template but still
+ * slugged under /about/ — exactly like a Hub's ChildCards would.
+ *
+ * Only A-01 has real, confirmed prose today (its MDX body + `stats`).
+ * A-02…A-04 stay `draft: true` with a lede and PageEnding's DraftPanel
+ * doing the honest "working outline" job — CLAUDE.md §5/§7 is explicit
+ * that headcount details, facility specifics, named people and QHSE
+ * certificate numbers are RTG-only-supplied facts, not to be invented.
+ */
+import { render } from 'astro:content';
+import { childrenOf, type PageMeta } from '@data/pages';
+import type { PageEntry } from '@lib/blocks';
+import Base from '@layouts/Base.astro';
+import PageHero from '@components/blocks/PageHero.astro';
+import Section from '@components/blocks/Section.astro';
+import SectionHead from '@components/blocks/SectionHead.astro';
+import Prose from '@components/blocks/Prose.astro';
+import StatsStrip from '@components/blocks/StatsStrip.astro';
+import ImageSlot from '@components/blocks/ImageSlot.astro';
+import ChildCards from '@components/blocks/ChildCards.astro';
+import PageEnding from '@components/blocks/PageEnding.astro';
+import { mdxComponents } from '@lib/mdx';
+
+interface Props {
+  page: PageMeta;
+  entry: PageEntry;
+}
+
+const { page, entry } = Astro.props;
+const { data } = entry;
+const { Content } = await render(entry);
+
+const siblings = childrenOf('/about/').filter((p) => p.id !== page.id);
+---
+
+<Base pageId={page.id}>
+  <PageHero
+    page={page}
+    eyebrow={data.eyebrow}
+    lede={data.lede}
+    media={data.hero.media}
+    ctas={data.hero.ctas}
+  />
+
+  <Section>
+    <Prose>
+      <Content components={mdxComponents} />
+    </Prose>
+  </Section>
+
+  {data.stats.length > 0 && (
+    <Section tone="off" size="sm">
+      <StatsStrip items={data.stats} />
+    </Section>
+  )}
+
+  {data.media.length > 0 && (
+    <Section>
+      <SectionHead eyebrow="The facility" heading="Where the work happens" level={2} />
+      <div class="two">
+        {data.media.map((m) => <ImageSlot ref={m.ref} brief={m.brief} ratio={m.ratio} />)}
+      </div>
+    </Section>
+  )}
+
+  {siblings.length > 0 && (
+    <Section tone="off">
+      <SectionHead eyebrow="About" heading="More about RTG" level={2} />
+      <ChildCards of="/about/" exclude={[page.id]} label="More about RTG" />
+    </Section>
+  )}
+
+  <PageEnding page={page} proofBar={data.proofBar} cta={data.cta} draft={data.draft} outline={data.outline} />
+</Base>

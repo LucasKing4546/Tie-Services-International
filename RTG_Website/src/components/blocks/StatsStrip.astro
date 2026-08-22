@@ -1,0 +1,34 @@
+---
+/**
+ * A `stats[]` frontmatter block (content.config.ts) rendered as the same
+ * .stats/.stat strip ProofBar.astro uses for the site-wide PROOF figures —
+ * for a template's own page-specific confirmed numbers instead (About's
+ * headcount, say), which have nowhere else to come from. First consumer:
+ * About.astro.
+ */
+import type { PageData } from '@lib/blocks';
+import { isNumericStat, statDigits, statSuffix } from '@lib/blocks';
+
+interface Props {
+  items: PageData['stats'];
+  tone?: 'light' | 'dark';
+}
+
+const { items, tone = 'light' } = Astro.props;
+---
+
+<div class:list={['stats', 'stag', { inv: tone === 'dark' }]}>
+  {items.map((item) => (
+    <div class="stat">
+      <b class:list={{ accent: item.accent }}>
+        {isNumericStat(item.value) ? (
+          <>
+            <span class="ct" data-to={statDigits(item.value)}>0</span>
+            {statSuffix(item.value)}
+          </>
+        ) : item.value}
+      </b>
+      <span>{item.label}</span>
+    </div>
+  ))}
+</div>

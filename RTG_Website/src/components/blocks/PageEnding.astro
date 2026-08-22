@@ -19,9 +19,12 @@ interface Props {
   cta?: PageData['cta'];
   draft: boolean;
   outline: string[];
+  /** Passed through to DraftPanel's own `note` — Legal's "legal review
+   *  required" wording instead of the generic default. */
+  draftNote?: string;
 }
 
-const { page, proofBar, cta, draft, outline } = Astro.props;
+const { page, proofBar, cta, draft, outline, draftNote } = Astro.props;
 ---
 
 {proofBar && (
@@ -43,6 +46,6 @@ const { page, proofBar, cta, draft, outline } = Astro.props;
 
 {draft && (
   <Section size="sm">
-    <DraftPanel page={page} items={outline} />
+    <DraftPanel page={page} items={outline} note={draftNote} />
   </Section>
 )}
