@@ -70,6 +70,12 @@
 .stat b{display:block;font-family:var(--f-d);font-weight:800;font-size:clamp(44px,5.4vw,68px);
   letter-spacing:-.045em;line-height:.9;color:var(--navy);margin-bottom:14px}
 .stat b em,.stat b.accent{font-style:normal;color:var(--red)}
+/* The unit ("m", "Te", "+") in red, at a smaller size than the figure —
+   the 5% accent doing real work, and it stops the unit competing with the
+   number for weight. */
+.stat b .u{font-style:normal;color:var(--red);font-size:.46em;letter-spacing:-.01em;
+  margin-left:.06em;vertical-align:.42em}
+.stats.inv .stat b .u{color:#fff;opacity:.75}
 .stat > span{font-size:14.5px;color:var(--muted);display:block;max-width:26ch}
 @media (max-width:560px){.stat{padding:30px 24px}.stats.compact .stat{padding:24px 20px}}
 
@@ -123,6 +129,16 @@ html.js .car-nav{display:flex}
   transition:border-color .35s var(--e),transform .35s var(--e),box-shadow .35s var(--e);
   display:flex;flex-direction:column;min-height:250px;justify-content:space-between}
 .ecard:hover{border-color:var(--navy);transform:translateY(-5px);box-shadow:0 18px 44px rgba(3,29,91,.09)}
+/* Hovering one card quietens the rest. The most premium effect available
+   under a no-shadow, no-gradient rule, and it needs no JS. Pointer devices
+   only — on touch there is no hover state to leave, and every card would
+   stay dimmed after a tap. */
+@media (hover:hover){
+  .eq:has(.ecard:hover) .ecard:not(:hover),
+  .car-track:has(.ecard:hover) .ecard:not(:hover){opacity:.5}
+  .ecard{transition:border-color .35s var(--e),transform .35s var(--e),
+    box-shadow .35s var(--e),opacity .35s var(--e)}
+}
 .ecard.inv{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.14);color:#fff}
 .ecard.inv:hover{border-color:var(--red);background:rgba(255,255,255,.08)}
 .ecard.inv h3{color:#fff}
@@ -140,7 +156,7 @@ html.js .car-nav{display:flex}
 .steps{display:flex;flex-direction:column;gap:0}
 .step{display:grid;grid-template-columns:64px 1fr;gap:24px;padding:30px 0;border-top:1px solid var(--line)}
 .step:last-child{padding-bottom:0}
-.lc-n{font-family:var(--f-m);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--red)}
+.lc-n{font-family:var(--f-m);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--red)}
 .step .num{font-family:var(--f-d);font-weight:800;font-size:22px;color:var(--off-2)}
 .lc-l{list-style:none;margin:0 0 24px;padding:0;display:flex;flex-direction:column;gap:8px}
 .lc-l li{font-size:14px;color:var(--muted);display:flex;gap:10px;align-items:baseline}
@@ -162,7 +178,10 @@ html.js .car-nav{display:flex}
    fill the card behind a scrim rather than an invented photo. */
 .tier-card{position:relative;border-radius:16px;overflow:hidden;min-height:360px;background:var(--navy);
   display:flex;align-items:flex-end;isolation:isolate}
-.tier-card .imgslot{position:absolute;inset:0;border-radius:0;border:none;aspect-ratio:auto}
+.tier-card .imgslot{position:absolute;inset:0;border-radius:0;border:none;aspect-ratio:auto;padding:0}
+/* The card carries its own tier title and body, so the plate's caption and
+   registration mark would only compete with them under the scrim. */
+.tier-card .imgslot b,.tier-card .imgslot span,.tier-card .imgslot::after{display:none}
 .tier-card::after{content:"";position:absolute;inset:0;z-index:0;
   background:linear-gradient(180deg,rgba(3,29,91,.1) 0%,rgba(3,29,91,.55) 55%,rgba(3,29,91,.94) 100%)}
 .tier-card-body{position:relative;z-index:1;padding:30px}
@@ -195,14 +214,26 @@ html.js .car-nav{display:flex}
    make or part number - see CLAUDE.md section 6. Publish the box, not the
    arrangement inside it. A row whose value is the literal "TO SUPPLY"
    renders <Gap> instead of the raw text. */
+/* Drawing-sheet hierarchy: one heavy navy rule under the caption, hairlines
+   between rows, and no outer box or zebra fill. The weight difference is
+   what gives a plain key/value table structure without adding decoration. */
 table.spec{width:100%;border-collapse:collapse}
+table.spec + table.spec{margin-top:44px}
 table.spec caption{text-align:left;font-family:var(--f-m);font-size:11px;letter-spacing:.14em;
-  text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+  text-transform:uppercase;color:var(--navy);padding-bottom:14px;border-bottom:1px solid var(--navy)}
 table.spec tr{border-top:1px solid var(--line)}
-table.spec tr:last-child{border-bottom:1px solid var(--line)}
-table.spec th,table.spec td{padding:14px 4px;text-align:left;font-size:15px;vertical-align:baseline}
+table.spec tr:first-child{border-top:0}
+table.spec th,table.spec td{padding:15px 4px;text-align:left;font-size:15px;vertical-align:baseline;
+  transition:background .2s var(--e),color .2s var(--e)}
 table.spec th{font-weight:500;color:var(--muted);width:56%}
 table.spec td{font-family:var(--f-d);font-weight:700;color:var(--navy);letter-spacing:-.01em}
+/* Hovering a row dims the others — restrained emphasis with no shadow and
+   no movement, and it costs no JS. */
+@media (hover:hover){
+  table.spec tbody tr:hover th{color:var(--navy)}
+  table.spec:has(tbody tr:hover) tbody tr:not(:hover) td{color:color-mix(in oklab,var(--navy) 45%,var(--white))}
+  table.spec:has(tbody tr:hover) tbody tr:not(:hover) th{color:color-mix(in oklab,var(--muted) 55%,var(--white))}
+}
 table.spec td em{display:block;font-family:var(--f-b);font-weight:400;font-style:normal;font-size:12.5px;
   color:var(--muted);margin-top:3px}
 table.spec .foot{margin-top:16px;font-size:13.5px;color:var(--muted)}
@@ -223,15 +254,37 @@ table.spec .foot{margin-top:16px;font-size:13.5px;color:var(--muted)}
    No <img> until real photography exists - a <figure role="img"
    aria-label> so the alt-text audit is satisfied honestly rather than
    faked. Swapping in a real photo is a one-file change. */
-.imgslot{border-radius:16px;background:var(--off);border:1px dashed var(--line);
-  display:flex;flex-direction:column;justify-content:flex-end;gap:6px;padding:20px;
+.imgslot{position:relative;overflow:hidden;border-radius:16px;background:var(--white);
+  border:1px solid var(--line);
+  display:flex;flex-direction:column;justify-content:flex-end;gap:6px;padding:22px;
   aspect-ratio:var(--imgslot-ratio,4/3)}
-.imgslot b{font-family:var(--f-m);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
+/* A drawing sheet rather than a missing photograph. A dashed grey box reads
+   as broken; a hairline plate with a registration mark reads as deliberate,
+   which is the honest thing to show while the photography does not exist.
+   Drawn on ::before so it sits behind the caption and can be faded at the
+   edges without touching the border or the text. */
+.imgslot::before{content:"";position:absolute;inset:0;opacity:.65;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),
+                   linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:34px 34px;background-position:center}
+@supports (mask-image:radial-gradient(#000,#000)){
+  .imgslot::before{mask-image:radial-gradient(125% 125% at 50% 45%,#000 38%,transparent 100%)}
+}
+/* Registration tick, top right — the detail that says "drawing", not "gap". */
+.imgslot::after{content:"";position:absolute;top:16px;right:16px;width:13px;height:13px;
+  border-top:1px solid var(--red);border-right:1px solid var(--red);opacity:.7}
+.imgslot b,.imgslot span{position:relative}
+.imgslot b{font-family:var(--f-m);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--red)}
 .imgslot span{font-size:13px;color:var(--muted);max-width:42ch}
 
 /* ---------- RTG-to-supply marker (Gap.astro) ---------- */
-.gap{background:#FBEEEF;color:var(--red-dk);border:1px dashed #D79AA2;border-radius:6px;
-  padding:1px 7px;font-size:.92em}
+/* An unconfirmed figure is a discipline, not an error — a spec sheet that
+   says "issued on request" reads as controlled, where a pink error chip
+   reads as broken. Set as a quiet mono value so it sits in a table of real
+   figures without shouting, with the red dash as the only accent. */
+.gap{font-family:var(--f-m);font-size:.8em;letter-spacing:.1em;text-transform:uppercase;
+  font-weight:500;color:var(--muted);border-bottom:1px dashed var(--line);padding-bottom:2px}
+.gap::before{content:"— ";color:var(--red)}
 
 /* ---------- draft outline panel (DraftPanel.astro) ---------- */
 .draftnote{border:1px dashed var(--red);border-radius:16px;padding:26px 28px;background:#FBEEEF}

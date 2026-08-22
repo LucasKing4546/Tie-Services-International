@@ -24,7 +24,7 @@ const { items, tone = 'light' } = Astro.props;
         {isNumericStat(item.value) ? (
           <>
             <span class="ct" data-to={statDigits(item.value)}>0</span>
-            {statSuffix(item.value)}
+            <i class="u">{statSuffix(item.value)}</i>
           </>
         ) : item.value}
       </b>
