@@ -31,10 +31,19 @@ export function initFormPrefill(): void {
       el.readOnly = true;
     } else if (el instanceof HTMLSelectElement) {
       const match = [...el.options].some((o) => o.value === value);
-      if (match) {
-        el.value = value;
-        el.disabled = true;
-      }
+      if (!match) return;
+      el.value = value;
+      // `disabled` (unlike `readOnly` on input/textarea above) is excluded
+      // from form submission entirely — a disabled select's value would
+      // never reach the payload. Disable it for the correct locked-looking
+      // UI, but carry the real value on a same-named hidden input instead,
+      // so the disabled select and its stand-in never collide on submit.
+      el.disabled = true;
+      const hidden = document.createElement('input');
+      hidden.type = 'hidden';
+      hidden.name = name;
+      hidden.value = value;
+      el.insertAdjacentElement('afterend', hidden);
     }
   });
 }
