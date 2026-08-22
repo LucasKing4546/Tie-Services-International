@@ -19,6 +19,7 @@ const { step, label } = Astro.props;
 
 <div class="tier-card">
   {step.media && <ImageSlot ref={step.media.ref} brief={step.media.brief} ratio={step.media.ratio} />}
+  {step.n && <span class="tier-num" aria-hidden="true">{step.n}</span>}
   <div class="tier-card-body">
     {label && <p class="lc-n">{label} {step.n}</p>}
     <h3 class="d3" style="font-size:22px">{step.title}</h3>

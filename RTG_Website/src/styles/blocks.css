@@ -184,10 +184,25 @@ html.js .car-nav{display:flex}
    fill the card behind a scrim rather than an invented photo. */
 .tier-card{position:relative;border-radius:16px;overflow:hidden;min-height:360px;background:var(--navy);
   display:flex;align-items:flex-end;isolation:isolate}
-.tier-card .imgslot{position:absolute;inset:0;border-radius:0;border:none;aspect-ratio:auto;padding:0}
+.tier-card .imgslot{position:absolute;inset:0;border-radius:0;border:none;aspect-ratio:auto;
+  padding:0;background:transparent}
 /* The card carries its own tier title and body, so the plate's caption and
    registration mark would only compete with them under the scrim. */
 .tier-card .imgslot b,.tier-card .imgslot span,.tier-card .imgslot::after{display:none}
+/* The plate's own white ground and edge-faded grid read as a washed-out
+   box under the scrim. Behind a photograph this card works; until the
+   photography exists the grid becomes light-on-navy texture instead, so
+   the card is a deliberate technical surface rather than a veiled blank.
+   Dropping a real image in later needs no change here. */
+.tier-card .imgslot::before{opacity:.14;mask-image:none;background-size:30px 30px;
+  background-image:linear-gradient(rgba(255,255,255,.75) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(255,255,255,.75) 1px,transparent 1px)}
+/* The tier number as a graphic element, not a label — sized as texture and
+   set well back so the title stays the thing you read first. */
+.tier-num{position:absolute;top:16px;right:24px;z-index:1;
+  font-family:var(--f-d);font-weight:800;font-size:120px;line-height:.78;
+  letter-spacing:-.06em;color:rgba(255,255,255,.13);font-variant-numeric:tabular-nums;
+  pointer-events:none}
 .tier-card::after{content:"";position:absolute;inset:0;z-index:0;
   background:linear-gradient(180deg,rgba(3,29,91,.1) 0%,rgba(3,29,91,.55) 55%,rgba(3,29,91,.94) 100%)}
 .tier-card-body{position:relative;z-index:1;padding:30px}
@@ -356,6 +371,13 @@ table.spec .gap{text-transform:uppercase;letter-spacing:.1em;font-size:.8em}
 }
 
 /* ---------- MDX prose rhythm (Prose.astro) ---------- */
+/* A run of body copy sits at its own measure, centred in the page, rather
+   than pinned to the left edge of a 1320px container with half a screen of
+   nothing beside it — which was the largest source of dead space on every
+   prose-led template (Ladder, Hub, Proof, Legal, Policy, Article, Guide…).
+   Scoped to prose that is the section's own child: prose inside a .two
+   column is already set to a column measure and must not be touched. */
+.wrap > .prose{max-width:var(--wrap-prose);margin-inline:auto}
 .prose h2{font-size:clamp(26px,3vw,36px);letter-spacing:-.03em;margin:56px 0 20px}
 .prose h2:first-child{margin-top:0}
 .prose h3{font-size:21px;letter-spacing:-.02em;margin:34px 0 14px}
