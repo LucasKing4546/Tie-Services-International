@@ -6,7 +6,10 @@
    .ecard.lc) stays there.
    ========================================================================== */
 
-/* ---------- generic section ---------- */
+/* ---------- generic section ----------
+   Section rhythm is set in vertical space, so it has to scale with the
+   viewport: 112px of padding above and below reads as considered on a
+   desktop and as an empty screen on a phone. */
 .sec{padding:112px 0}
 .sec.sm{padding:96px 0}
 .sec.off{background:var(--off)}
@@ -14,11 +17,27 @@
 .navy h1,.navy h2,.navy h3{color:#fff}
 .sechd{max-width:900px;margin-bottom:52px}
 .sechd .mono{display:block;margin-bottom:22px}
+@media (max-width:900px){
+  .sec{padding:76px 0}
+  .sec.sm{padding:64px 0}
+  .sechd{margin-bottom:38px}
+  .sechd .mono{margin-bottom:16px}
+}
+@media (max-width:560px){
+  .sec{padding:60px 0}
+  .sec.sm{padding:48px 0}
+  .sechd{margin-bottom:30px}
+}
 
-/* ---------- page hero (PageHero.astro) ---------- */
+/* ---------- page hero (PageHero.astro) ----------
+   The top padding is fixed-header clearance plus breathing room, so it
+   tracks the header's own shrink at narrow widths rather than leaving the
+   h1 stranded halfway down the screen. */
 .phero{padding:168px 0 64px}
 .phero .crumbs{margin-bottom:22px}
 .phero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+@media (max-width:900px){.phero{padding:132px 0 48px}}
+@media (max-width:560px){.phero{padding:116px 0 40px}.phero-cta{margin-top:26px}}
 
 /* ---------- breadcrumbs (Breadcrumbs.astro) ---------- */
 .crumbs ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;align-items:center;gap:8px}
@@ -52,6 +71,7 @@
   letter-spacing:-.045em;line-height:.9;color:var(--navy);margin-bottom:14px}
 .stat b em,.stat b.accent{font-style:normal;color:var(--red)}
 .stat > span{font-size:14.5px;color:var(--muted);display:block;max-width:26ch}
+@media (max-width:560px){.stat{padding:30px 24px}.stats.compact .stat{padding:24px 20px}}
 
 /* ---------- standalone headline figure (Case.astro) ----------
    Same number scale as .stat b, for a single stat shown on its own rather
@@ -114,6 +134,7 @@ html.js .car-nav{display:flex}
 .ecard:hover .ic svg{stroke:#fff}
 .ecard h3{font-size:21px;letter-spacing:-.025em;margin-bottom:10px}
 .ecard p{font-size:14.5px;color:var(--muted);margin:0 0 22px}
+@media (max-width:560px){.ecard{padding:26px 22px;min-height:0}.ecard .ic{margin-bottom:18px}}
 
 /* ---------- step list (StepList.astro) ---------- */
 .steps{display:flex;flex-direction:column;gap:0}
@@ -129,6 +150,10 @@ html.js .car-nav{display:flex}
   padding:28px 32px;display:flex;align-items:center;justify-content:space-between;gap:26px;flex-wrap:wrap}
 .lc-band div{font-size:16px;color:var(--muted);max-width:72ch}
 .lc-band b{color:var(--navy);font-family:var(--f-d);font-weight:800;letter-spacing:-.02em}
+@media (max-width:560px){
+  .step{grid-template-columns:48px 1fr;gap:16px;padding:24px 0}
+  .lc-band{padding:24px 22px;gap:20px}
+}
 
 /* ---------- tier card (TierCard.astro) ----------
    The scope-ladder carousel on the manufacturing page (Ladder.astro): a
