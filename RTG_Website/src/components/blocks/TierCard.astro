@@ -1,0 +1,27 @@
+---
+/**
+ * One tier in the manufacturing scope-ladder carousel (Ladder.astro / C-00
+ * only). Distinct from Card.astro/CardItem — a tier is numbered prose over
+ * a picture background rather than an icon-topped link card, so it gets its
+ * own small component rather than overloading CardItem's shape.
+ */
+import ImageSlot from './ImageSlot.astro';
+import type { Step } from '@lib/blocks';
+
+interface Props {
+  step: Step;
+  /** Mono label shown above the tier number, e.g. "Tier". */
+  label?: string;
+}
+
+const { step, label } = Astro.props;
+---
+
+<div class="tier-card">
+  {step.media && <ImageSlot ref={step.media.ref} brief={step.media.brief} ratio={step.media.ratio} />}
+  <div class="tier-card-body">
+    {label && <p class="lc-n">{label} {step.n}</p>}
+    <h3 class="d3" style="font-size:22px">{step.title}</h3>
+    {step.body && <p>{step.body}</p>}
+  </div>
+</div>

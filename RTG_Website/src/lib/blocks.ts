@@ -56,6 +56,10 @@ export interface Step {
   title: string;
   body?: string;
   points: string[];
+  /** Optional picture-background treatment — used by Ladder.astro's scope-
+   *  ladder carousel (TierCard.astro). Absent for every other StepList
+   *  consumer (Service, Tier, Guide), which render the plain numbered row. */
+  media?: ImgBrief;
 }
 
 export type SectionTone = 'default' | 'off' | 'navy';

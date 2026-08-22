@@ -42,6 +42,10 @@ const additionalProperty = data.specs
   .map((r) => ({ '@type': 'PropertyValue', name: r.k, value: r.v }));
 
 const datasheetPage = data.product?.datasheetPageId ? lookupPage(data.product.datasheetPageId) : undefined;
+// Carries this product's name into R-01's "Equipment" field so the visitor
+// never has to retype what the link they clicked already told us — see
+// lib/forms.ts's generic name-matched prefill.
+const datasheetHref = datasheetPage ? `${datasheetPage.slug}?equipment=${encodeURIComponent(page.h1)}` : undefined;
 ---
 
 <Base
@@ -65,9 +69,9 @@ const datasheetPage = data.product?.datasheetPageId ? lookupPage(data.product.da
         {data.specs.map((s) => (
           <SpecTable caption={s.caption} rows={s.rows} footnote={s.footnote} />
         ))}
-        {datasheetPage && (
+        {datasheetHref && (
           <p style="margin-top:28px">
-            <a class="btn b-navy" href={datasheetPage.slug}>Request the full datasheet →</a>
+            <a class="btn b-navy" href={datasheetHref}>Request the full datasheet →</a>
           </p>
         )}
       </div>

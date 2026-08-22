@@ -59,7 +59,7 @@ const siblingTiers: CardItem[] = data.related.map((id) => cardFrom({ pageId: id 
   {siblingTiers.length > 0 && (
     <Section tone="off">
       <SectionHead eyebrow="The scope ladder" heading="The other tiers" level={2} />
-      <CardGrid cols={3}>
+      <CardGrid cols={3} label="The other contract-manufacturing tiers">
         {siblingTiers.map((item) => <Card item={item} />)}
       </CardGrid>
     </Section>

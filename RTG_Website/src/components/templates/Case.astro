@@ -85,7 +85,7 @@ const jsonLdPage = articleJsonLd(data);
   {related.length > 0 && (
     <Section>
       <SectionHead eyebrow="Related" heading="More evidence" level={2} />
-      <CardGrid cols={3}>
+      <CardGrid cols={3} label="Related case studies">
         {related.map((item) => <Card item={item} />)}
       </CardGrid>
     </Section>

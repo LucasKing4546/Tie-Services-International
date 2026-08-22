@@ -21,6 +21,12 @@
  * that drift becomes a real maintenance problem — e.g. by adding `points`
  * to C-01…C-04's own frontmatter and having this template read from
  * `related` entries' data instead of C-00's separate copy.
+ *
+ * The four tiers render as TierCard.astro (picture-background) in a
+ * Carousel, not StepList's plain numbered rows — each step's optional
+ * `media` (content.config.ts) supplies the background image brief. Every
+ * other Step[] consumer (Service, Tier, Guide) still renders through
+ * StepList; only Ladder wants the carousel/picture treatment.
  */
 import { render } from 'astro:content';
 import type { PageMeta } from '@data/pages';
@@ -31,7 +37,8 @@ import PageHero from '@components/blocks/PageHero.astro';
 import Section from '@components/blocks/Section.astro';
 import SectionHead from '@components/blocks/SectionHead.astro';
 import Prose from '@components/blocks/Prose.astro';
-import StepList from '@components/blocks/StepList.astro';
+import Carousel from '@components/blocks/Carousel.astro';
+import TierCard from '@components/blocks/TierCard.astro';
 import CardGrid from '@components/blocks/CardGrid.astro';
 import Card from '@components/blocks/Card.astro';
 import PageEnding from '@components/blocks/PageEnding.astro';
@@ -67,14 +74,16 @@ const references: CardItem[] = data.related.map((id) => cardFrom({ pageId: id })
   {data.steps.length > 0 && (
     <Section tone="off">
       <SectionHead eyebrow="The scope ladder" heading="Four tiers, cumulative" level={2} />
-      <StepList steps={data.steps} label="Tier" />
+      <Carousel label="The four-tier scope ladder" perView={3}>
+        {data.steps.map((s) => <TierCard step={s} label="Tier" />)}
+      </Carousel>
     </Section>
   )}
 
   {references.length > 0 && (
     <Section>
       <SectionHead eyebrow="References" heading="Each tier in detail" level={2} />
-      <CardGrid cols={2}>
+      <CardGrid cols={2} label="Each tier in detail">
         {references.map((item) => <Card item={item} />)}
       </CardGrid>
     </Section>

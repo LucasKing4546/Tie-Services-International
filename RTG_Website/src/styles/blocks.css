@@ -59,11 +59,32 @@
 .headline-num{font-family:var(--f-d);font-weight:800;font-size:clamp(44px,5.4vw,68px);
   letter-spacing:-.045em;line-height:.9;margin:0}
 
+/* ---------- carousel (Carousel.astro) ----------
+   Native CSS scroll-snap does the work with no JS at all — a no-JS visit
+   still gets a swipeable/scrollable track via touch, trackpad or scrollbar.
+   The prev/next buttons are a JS-driven enhancement on top: they stay
+   display:none until html.js confirms initCarousels() (lib/motion.ts) can
+   actually drive them, same progressive-enhancement gate .fu/.stag use. */
+.car{position:relative}
+.car-track{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x proximity;
+  scroll-padding-inline-start:2px;padding:2px 2px 6px;margin:-2px -2px -6px;
+  scrollbar-width:none}
+.car-track::-webkit-scrollbar{display:none}
+.car-track > *{scroll-snap-align:start;flex:0 0 calc((100% - 20px*2)/3);min-width:0}
+.car-2 .car-track > *{flex-basis:calc((100% - 20px)/2)}
+@media (max-width:920px){.car-track > *{flex-basis:calc((100% - 20px)/2)}}
+@media (max-width:600px){.car-track > *{flex-basis:86%}}
+.car-nav{display:none;justify-content:flex-end;gap:10px;margin-top:18px}
+html.js .car-nav{display:flex}
+.car-btn{width:44px;height:44px;flex:none;border-radius:50%;border:1px solid var(--line);
+  background:var(--white);display:grid;place-items:center;font-size:19px;line-height:1;
+  color:var(--navy);cursor:pointer;transition:border-color .25s var(--e),background .25s var(--e),color .25s var(--e)}
+.car-btn:hover{border-color:var(--navy);background:var(--navy);color:#fff}
+.car-btn:disabled{opacity:.32;cursor:default}
+.car-btn:disabled:hover{border-color:var(--line);background:var(--white);color:var(--navy)}
+@media (prefers-reduced-motion:reduce){.car-track{scroll-behavior:auto}}
+
 /* ---------- card grid (CardGrid.astro + Card.astro) ---------- */
-.eq{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.eq.eq-2{grid-template-columns:repeat(2,1fr)}
-@media (max-width:920px){.eq,.eq.eq-2{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:600px){.eq,.eq.eq-2{grid-template-columns:1fr}}
 .ecard{border:1px solid var(--line);border-radius:16px;padding:34px 30px;background:var(--white);
   transition:border-color .35s var(--e),transform .35s var(--e),box-shadow .35s var(--e);
   display:flex;flex-direction:column;min-height:250px;justify-content:space-between}
@@ -94,6 +115,21 @@
   padding:28px 32px;display:flex;align-items:center;justify-content:space-between;gap:26px;flex-wrap:wrap}
 .lc-band div{font-size:16px;color:var(--muted);max-width:72ch}
 .lc-band b{color:var(--navy);font-family:var(--f-d);font-weight:800;letter-spacing:-.02em}
+
+/* ---------- tier card (TierCard.astro) ----------
+   The scope-ladder carousel on the manufacturing page (Ladder.astro): a
+   picture-background card per tier. The picture is ImageSlot's honest
+   placeholder (CLAUDE.md #5.5 - no real photography yet), positioned to
+   fill the card behind a scrim rather than an invented photo. */
+.tier-card{position:relative;border-radius:16px;overflow:hidden;min-height:360px;background:var(--navy);
+  display:flex;align-items:flex-end;isolation:isolate}
+.tier-card .imgslot{position:absolute;inset:0;border-radius:0;border:none;aspect-ratio:auto}
+.tier-card::after{content:"";position:absolute;inset:0;z-index:0;
+  background:linear-gradient(180deg,rgba(3,29,91,.1) 0%,rgba(3,29,91,.55) 55%,rgba(3,29,91,.94) 100%)}
+.tier-card-body{position:relative;z-index:1;padding:30px}
+.tier-card-body .lc-n{color:rgba(255,255,255,.7)}
+.tier-card-body h3{color:#fff}
+.tier-card-body p{color:rgba(255,255,255,.78);margin:10px 0 0}
 
 /* ---------- case / quote (Quote.astro, FeaturedCase.astro) ---------- */
 .case{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
@@ -181,6 +217,10 @@ table.spec .foot{margin-top:16px;font-size:13.5px;color:var(--muted)}
   border:1px solid var(--line);border-radius:10px;padding:13px 15px;background:var(--white);width:100%}
 .field textarea{min-height:110px;resize:vertical}
 .field input:focus,.field select:focus,.field textarea:focus{outline:3px solid var(--red);outline-offset:1px}
+/* Set by initFormPrefill() (lib/forms.ts) when a field arrives pre-filled
+   from a referring page (e.g. Product.astro's datasheet-request link) — a
+   visual cue that the field is intentionally locked, not broken. */
+.field input:read-only,.field select:disabled{background:var(--off);color:var(--muted)}
 .hint{font-size:13px;color:var(--muted);margin:0}
 .consent{display:flex;align-items:flex-start;gap:10px}
 .consent label{font-size:14px;color:var(--muted);text-transform:none;letter-spacing:0;font-family:var(--f-b)}

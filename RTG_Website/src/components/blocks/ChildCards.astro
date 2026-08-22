@@ -14,6 +14,8 @@ import Card from './Card.astro';
 interface Props {
   of: string;
   cols?: 2 | 3;
+  /** Accessible name for the carousel — see CardGrid.astro. */
+  label?: string;
   /** Page ids to leave out — rare, for a hub that surfaces one child via a
    *  different block (a "featured" case study, say) and doesn't want it
    *  doubled up in the grid. */
@@ -28,7 +30,7 @@ interface Props {
   extra?: CardItem[];
 }
 
-const { of, cols = 3, exclude = [], extra = [] } = Astro.props;
+const { of, cols = 3, label = 'Related pages', exclude = [], extra = [] } = Astro.props;
 const pairs = (await childEntries(of)).filter(({ page }) => !exclude.includes(page.id));
 const items: CardItem[] = [
   ...pairs.map(({ page, entry }) => ({
@@ -40,6 +42,6 @@ const items: CardItem[] = [
 ];
 ---
 
-<CardGrid cols={cols}>
+<CardGrid cols={cols} label={label}>
   {items.map((item) => <Card item={item} />)}
 </CardGrid>

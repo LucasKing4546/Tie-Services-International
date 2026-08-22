@@ -10,11 +10,13 @@
  * code costs to maintain, and this file exists so the other 17 templates
  * never repeat that.
  *
- * Three behaviours, one shared observer/rAF budget:
+ * Four behaviours, one shared observer/rAF budget:
  *   1. reveals (.rl / .fu / .stag) + PROOF-figure count-ups (.ct)
  *   2. parallax media (data-motion="parallax")
  *   3. sticky media / sticky spec rail — pure CSS (position: sticky), no
  *      JS involved; documented here because it is part of the same system.
+ *   4. carousels ([data-carousel], Carousel.astro) — prev/next buttons
+ *      driving the track's native scroll-snap.
  *
  * Progressive enhancement: elements are visible by default (see the
  * `html.js` gate in tokens.css). Nothing here can make content that was
@@ -42,6 +44,7 @@ export function initMotion(): void {
   initReveals(rm);
   initCounters(rm);
   if (!rm) initParallax();
+  initCarousels(rm);
 
   booted = true;
 }
@@ -166,5 +169,43 @@ function initParallax(): void {
     live = false;
     io.disconnect();
     removeEventListener('scroll', onScroll);
+  });
+}
+
+// --------------------------------------------------------------- carousels
+/**
+ * Every [data-carousel] (Carousel.astro) gets prev/next buttons that scroll
+ * its track by one card-width. The track itself needs no JS at all — CSS
+ * scroll-snap already makes it swipe/scroll/drag natively; this only drives
+ * the two buttons and keeps their disabled state honest at each scroll end.
+ * Buttons stay display:none (blocks.css) until this runs, so a no-JS visit
+ * never sees a button that does nothing.
+ */
+function initCarousels(rm: boolean): void {
+  const cars = document.querySelectorAll<HTMLElement>('[data-carousel]');
+  if (!cars.length) return;
+
+  cars.forEach((car) => {
+    const track = car.querySelector<HTMLElement>('.car-track');
+    const prev = car.querySelector<HTMLButtonElement>('.car-prev');
+    const next = car.querySelector<HTMLButtonElement>('.car-next');
+    if (!track || !prev || !next) return;
+
+    const cardWidth = () => (track.firstElementChild as HTMLElement | null)?.getBoundingClientRect().width ?? track.clientWidth;
+    const gap = () => parseFloat(getComputedStyle(track).columnGap || '20') || 20;
+    const go = (dir: number) => track.scrollBy({ left: dir * (cardWidth() + gap()), behavior: rm ? 'auto' : 'smooth' });
+
+    const update = () => {
+      const max = track.scrollWidth - track.clientWidth;
+      prev.disabled = track.scrollLeft <= 2;
+      next.disabled = track.scrollLeft >= max - 2;
+    };
+
+    prev.addEventListener('click', () => go(-1));
+    next.addEventListener('click', () => go(1));
+    track.addEventListener('scroll', update, { passive: true });
+    update();
+
+    teardownFns.push(() => track.removeEventListener('scroll', update));
   });
 }

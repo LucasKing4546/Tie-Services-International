@@ -1,12 +1,20 @@
 ---
-/** .eq / .eq.eq-2 grid — promoted from home.css (blocks.css). */
+/** .ecard cards rendered in a Carousel rather than a static grid — every
+ *  card-list template (Hub, Sector, Case, Ladder, Tier, Service) composes
+ *  through this one component, so the grid-to-carousel change was a single
+ *  file. `cols` becomes "cards visible per view" (see Carousel.astro). */
+import Carousel from './Carousel.astro';
+
 interface Props {
   cols?: 2 | 3;
-  stagger?: boolean;
+  /** Accessible name for the carousel region — pass the section's own
+   *  heading text where one exists. */
+  label: string;
 }
-const { cols = 3, stagger = true } = Astro.props;
+
+const { cols = 3, label } = Astro.props;
 ---
 
-<div class:list={['eq', { 'eq-2': cols === 2, stag: stagger }]}>
+<Carousel label={label} perView={cols}>
   <slot />
-</div>
+</Carousel>

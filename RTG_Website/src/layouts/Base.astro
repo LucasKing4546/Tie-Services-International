@@ -94,12 +94,14 @@ const robots = offMap ? 'noindex, follow' : 'index, follow, max-image-preview:la
 
     <script>
       import { initMotion } from '@lib/motion';
+      import { initFormPrefill } from '@lib/forms';
       // Fires on first load AND after every client-side navigation under
       // ClientRouter — the one place every template's reveals, counters
       // and parallax hooks get booted. Do not call initMotion() a second
       // time from a template; home-scroll.ts relies on this already having
       // run and only adds the homepage's 3D on top of it.
       document.addEventListener('astro:page-load', initMotion);
+      document.addEventListener('astro:page-load', initFormPrefill);
     </script>
   </body>
 </html>

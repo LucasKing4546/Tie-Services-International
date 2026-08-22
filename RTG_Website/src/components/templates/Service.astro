@@ -71,7 +71,7 @@ const related: CardItem[] = data.related.map((id) => cardFrom({ pageId: id }));
   {related.length > 0 && (
     <Section tone="off">
       <SectionHead eyebrow="Related" heading="Where to go next" level={2} />
-      <CardGrid cols={3}>
+      <CardGrid cols={3} label="Where to go next">
         {related.map((item) => <Card item={item} />)}
       </CardGrid>
     </Section>

@@ -132,6 +132,10 @@ const pages = defineCollection({
             title: z.string(),
             body: z.string().optional(),
             points: z.array(z.string()).default([]),
+            /** Picture-background treatment for a step rendered as a
+             *  carousel card (Ladder.astro's scope ladder). Unset for every
+             *  other StepList consumer's plain numbered rows. */
+            media: imgBrief.optional(),
           }),
         )
         .default([]),

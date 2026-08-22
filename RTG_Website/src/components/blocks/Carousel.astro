@@ -1,0 +1,41 @@
+---
+/**
+ * The shared carousel track — CardGrid.astro and Ladder.astro's tier cards
+ * both compose from this rather than each wiring their own scroll/nav
+ * plumbing. CSS scroll-snap does the actual work; this only supplies the
+ * markup the CSS (blocks.css: .car/.car-track/.car-nav) and the JS
+ * (initCarousels() in lib/motion.ts) hook onto.
+ *
+ * No-JS: the track scrolls natively (touch, trackpad, scrollbar) with no
+ * script at all. The prev/next buttons exist in the markup unconditionally
+ * but stay display:none until html.js confirms initCarousels() can drive
+ * them — same progressive-enhancement gate .fu/.stag already use, so a
+ * script-disabled visit never sees dead buttons.
+ *
+ * Cards reveal via the same .stag stagger transition every other card list
+ * on the site uses (tokens.css) — IntersectionObserver correctly treats
+ * cards clipped by the track's own horizontal scrolling as not-yet-
+ * intersecting (clipping ancestors count, not just the viewport), so a card
+ * still reveals the first time it is actually scrolled into view.
+ */
+interface Props {
+  /** Accessible name for the scrollable region and its nav buttons, e.g.
+   *  "Equipment for this sector". */
+  label: string;
+  /** Cards visible at the widest breakpoint. */
+  perView?: 2 | 3;
+  reveal?: boolean;
+}
+
+const { label, perView = 3, reveal = true } = Astro.props;
+---
+
+<div class:list={['car', { 'car-2': perView === 2 }]} data-carousel>
+  <div class:list={['car-track', { stag: reveal }]} role="region" aria-label={label} tabindex="0">
+    <slot />
+  </div>
+  <div class="car-nav">
+    <button type="button" class="car-btn car-prev" aria-label={`Previous — ${label}`}>‹</button>
+    <button type="button" class="car-btn car-next" aria-label={`Next — ${label}`}>›</button>
+  </div>
+</div>
