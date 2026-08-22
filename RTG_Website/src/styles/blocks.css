@@ -85,6 +85,15 @@ html.js .car-nav{display:flex}
 .car-btn:disabled:hover{border-color:var(--line);background:var(--white);color:var(--navy)}
 @media (prefers-reduced-motion:reduce){.car-track{scroll-behavior:auto}}
 
+/* ---------- static equal-column grid (Home's EquipmentGrid/LifecycleSteps) ----------
+   Was also CardGrid.astro's own layout before it became a carousel — Home's
+   two sections (the only remaining consumers) stay a plain grid on
+   purpose, matching the rest of Home's hand-choreographed sections rather
+   than picking up the carousel treatment meant for template card lists. */
+.eq{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media (max-width:920px){.eq{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:600px){.eq{grid-template-columns:1fr}}
+
 /* ---------- card grid (CardGrid.astro + Card.astro) ---------- */
 .ecard{border:1px solid var(--line);border-radius:16px;padding:34px 30px;background:var(--white);
   transition:border-color .35s var(--e),transform .35s var(--e),box-shadow .35s var(--e);
