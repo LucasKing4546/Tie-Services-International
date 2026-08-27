@@ -15,6 +15,30 @@ const isActive = (href: string) => currentPath === href || (href !== '/' && curr
       ))}
       <a class="btn b-red" href="/contact/">Talk to an engineer</a>
     </nav>
+
+    {/* Mobile navigation. A <details> disclosure rather than a JS-driven
+       button, so the menu opens, closes and is keyboard operable with no
+       script at all — the same progressive-enhancement stance the motion
+       system takes (src/lib/motion.ts). The script below only adds the
+       niceties: Escape, click-away, and closing on navigation.
+
+       This duplicates NAV rather than moving one nav between two places,
+       which no CSS can do. Only ever one of the two is rendered — the
+       other is display:none, so it is removed from the accessibility tree
+       entirely and screen readers never meet a duplicate landmark. */}
+    <details class="mnav" id="mnav">
+      <summary class="mnav-btn" aria-label="Menu">
+        <span class="mnav-bars" aria-hidden="true"><i></i></span>
+      </summary>
+      <div class="mnav-panel">
+        <nav aria-label="Primary">
+          {NAV.map((item) => (
+            <a href={item.href} aria-current={isActive(item.href) ? 'page' : undefined}>{item.label}</a>
+          ))}
+          <a class="btn b-red" href="/contact/">Talk to an engineer</a>
+        </nav>
+      </div>
+    </details>
   </div>
 </header>
 <script>
@@ -25,10 +49,11 @@ const isActive = (href: string) => currentPath === href || (href !== '/' && curr
   // navigation this DOM node is kept rather than replaced — the freshly
   // rendered aria-current from the new page's server render is discarded
   // along with it. Recompute it from the URL on every navigation instead,
-  // mirroring Header.astro's own isActive() prefix match.
+  // mirroring Header.astro's own isActive() prefix match. Covers the
+  // mobile panel's copy of the links as well as the desktop bar's.
   function syncNav() {
     const path = location.pathname;
-    document.querySelectorAll<HTMLAnchorElement>('#hdr .nav a[href]').forEach((a) => {
+    document.querySelectorAll<HTMLAnchorElement>('#hdr .nav a[href], #hdr .mnav-panel a[href]').forEach((a) => {
       const href = a.getAttribute('href');
       if (!href) return;
       const active = path === href || (href !== '/' && path.startsWith(href));
@@ -37,4 +62,27 @@ const isActive = (href: string) => currentPath === href || (href !== '/' && curr
     });
   }
   document.addEventListener('astro:page-load', syncNav);
+
+  // Mobile menu enhancements. The <details> already opens, closes and
+  // takes focus without any of this; these only cover what markup alone
+  // cannot. Closing on navigation matters specifically because the header
+  // persists across view transitions — without it the panel would stay
+  // open over the page the visitor just chose.
+  const mnav = document.getElementById('mnav') as HTMLDetailsElement | null;
+  if (mnav) {
+    const close = () => mnav.removeAttribute('open');
+
+    addEventListener('keydown', (e) => {
+      if (e.key !== 'Escape' || !mnav.open) return;
+      close();
+      mnav.querySelector<HTMLElement>('.mnav-btn')?.focus();
+    });
+
+    addEventListener('click', (e) => {
+      if (mnav.open && !mnav.contains(e.target as Node)) close();
+    });
+
+    mnav.querySelectorAll('a[href]').forEach((a) => a.addEventListener('click', close));
+    document.addEventListener('astro:page-load', close);
+  }
 </script>

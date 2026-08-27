@@ -37,7 +37,7 @@ import PageHero from '@components/blocks/PageHero.astro';
 import Section from '@components/blocks/Section.astro';
 import SectionHead from '@components/blocks/SectionHead.astro';
 import Prose from '@components/blocks/Prose.astro';
-import Carousel from '@components/blocks/Carousel.astro';
+import ScrollTrack from '@components/blocks/ScrollTrack.astro';
 import TierCard from '@components/blocks/TierCard.astro';
 import CardGrid from '@components/blocks/CardGrid.astro';
 import Card from '@components/blocks/Card.astro';
@@ -72,12 +72,13 @@ const references: CardItem[] = data.related.map((id) => cardFrom({ pageId: id })
   </Section>
 
   {data.steps.length > 0 && (
-    <Section tone="off">
-      <SectionHead eyebrow="The scope ladder" heading="Four tiers, cumulative" level={2} />
-      <Carousel label="The four-tier scope ladder" perView={3}>
-        {data.steps.map((s) => <TierCard step={s} label="Tier" />)}
-      </Carousel>
-    </Section>
+    <ScrollTrack
+      eyebrow="The scope ladder"
+      heading="Four tiers, cumulative"
+      lede="Each one contains everything below it. Most relationships start at Tier 1 with a single sub-assembly and move up as trust is earned."
+    >
+      {data.steps.map((s) => <TierCard step={s} label="Tier" />)}
+    </ScrollTrack>
   )}
 
   {references.length > 0 && (

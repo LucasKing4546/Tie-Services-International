@@ -1,0 +1,63 @@
+---
+/**
+ * The scroll-driven horizontal track — a pinned full-height navy band whose
+ * cards move sideways as the page scrolls down, with a red progress rail.
+ *
+ * This is the homepage's own sector set-piece (.hz-* in home.css, driven by
+ * hard-wired ids in home-scroll.ts) generalised so every template can use
+ * it. The original template plan deliberately kept pinned and horizontal
+ * set-pieces homepage-only; that call is what left the other sixteen
+ * templates reading as a flat white wall, so it has been reversed — the
+ * homepage keeps its own copy untouched, and this one is id-free and driven
+ * by initScrollTracks() in lib/motion.ts.
+ *
+ * It is also the site's tonal punctuation: a full-bleed navy band carrying
+ * cards rather than body prose, which is what stops a page being one white
+ * section after another.
+ *
+ * Degrades in three steps, each usable on its own: with no JS the rail is a
+ * native horizontally scrollable, scroll-snapped row; under
+ * prefers-reduced-motion or below 900px it stays that row deliberately; only
+ * with JS on a wide pointer screen does it pin and drive by transform.
+ *
+ * The native-scroll row has no visible affordance beyond a hidden scrollbar
+ * drag/swipe, so the prev/next buttons (initScrollTracks() in lib/motion.ts,
+ * same pattern as Carousel.astro's .car-nav) give reduced-motion, narrow-
+ * viewport and mouse-only visitors an obvious, always-working way to reach
+ * every card rather than just the first few. They stay display:none until
+ * html.js confirms the script can drive them.
+ */
+interface Props {
+  eyebrow?: string;
+  heading: string;
+  lede?: string;
+}
+
+const { eyebrow, heading, lede } = Astro.props;
+---
+
+<section class="strack" data-scroll-track>
+  <div class="strack-stick">
+    <div class="wrap strack-head">
+      <div>
+        {eyebrow && <p class="mono on-navy fu" style="margin:0 0 18px">{eyebrow}</p>}
+        <h2 class="d3"><span class="rl"><span>{heading}</span></span></h2>
+      </div>
+      {lede && <p class="lede">{lede}</p>}
+    </div>
+
+    <div class="strack-rail" role="region" aria-label={heading} tabindex="0">
+      <slot />
+    </div>
+
+    <div class="wrap strack-foot">
+      <div class="strack-prog" aria-hidden="true">
+        <div class="rail"><div class="fill"></div></div>
+      </div>
+      <div class="strack-nav">
+        <button type="button" class="strack-btn strack-prev" aria-label={`Previous — ${heading}`}>‹</button>
+        <button type="button" class="strack-btn strack-next" aria-label={`Next — ${heading}`}>›</button>
+      </div>
+    </div>
+  </div>
+</section>

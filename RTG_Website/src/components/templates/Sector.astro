@@ -12,10 +12,9 @@ import { cardFrom, entryFor } from '@lib/content';
 import Base from '@layouts/Base.astro';
 import PageHero from '@components/blocks/PageHero.astro';
 import Section from '@components/blocks/Section.astro';
-import SectionHead from '@components/blocks/SectionHead.astro';
 import Prose from '@components/blocks/Prose.astro';
 import ImageSlot from '@components/blocks/ImageSlot.astro';
-import CardGrid from '@components/blocks/CardGrid.astro';
+import ScrollTrack from '@components/blocks/ScrollTrack.astro';
 import Card from '@components/blocks/Card.astro';
 import FeaturedCase from '@components/blocks/FeaturedCase.astro';
 import PageEnding from '@components/blocks/PageEnding.astro';
@@ -66,12 +65,9 @@ const problemMedia = data.media[0];
   </Section>
 
   {equipment.length > 0 && (
-    <Section tone="off">
-      <SectionHead eyebrow="Equipment" heading="Built for this sector" level={2} />
-      <CardGrid cols={3} label="Equipment for this sector">
-        {equipment.map((item) => <Card item={item} />)}
-      </CardGrid>
-    </Section>
+    <ScrollTrack eyebrow="Equipment" heading="Built for this sector">
+      {equipment.map((item) => <Card item={item} tone="dark" />)}
+    </ScrollTrack>
   )}
 
   {featured && (
