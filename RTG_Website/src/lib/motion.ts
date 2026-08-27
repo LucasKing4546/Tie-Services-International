@@ -291,7 +291,18 @@ function initScrollTracks(rm: boolean): void {
       // rail needs to travel by exactly that much — the tail end of the
       // last card never quite reaches the visible edge.
       const dist = Math.max(0, rail.scrollWidth - rail.clientWidth);
-      if (dist === 0) {
+      // MIN_PIN_DIST, not dist === 0: the pin lasts exactly `dist` px of
+      // scroll (that's the whole point of the sticky-container-height
+      // trick), so a small dist — a 4-tile track missing the last tile by
+      // only a sliver, say — buys a pin so brief a normal scroll gesture
+      // blows straight through it. The release and the reveal happen close
+      // enough together that the last card never registers as shown; it
+      // just reads as the section vanishing with the last card still cut
+      // off. Below this floor it isn't a real scroll-driven "moment" either
+      // way, so it stays the static row (native scroll + the prev/next
+      // buttons) rather than pinning for a fraction of a second.
+      const MIN_PIN_DIST = 200;
+      if (dist < MIN_PIN_DIST) {
         wrap.classList.remove('on');
         wrap.style.height = '';
         rail.style.transform = '';
