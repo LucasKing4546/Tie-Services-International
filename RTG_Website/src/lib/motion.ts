@@ -348,10 +348,27 @@ function initScrollTracks(rm: boolean): void {
   addEventListener('scroll', onScroll, { passive: true });
   addEventListener('resize', onResize);
 
+  // window 'resize' alone is not enough: it does not fire reliably for
+  // browser zoom in every engine, but the rail's own layout — including its
+  // responsive side padding (a calc() against 100vw) — recomputes live from
+  // CSS regardless. Left to the resize listener only, a zoom change leaves
+  // `dist` and the wrap's inline height stale against a rail that has
+  // already relaid-out at the new effective width, so the transform moves
+  // it by the wrong amount relative to where the cards actually now sit —
+  // a card correctly positioned, then a stretch of blank track where the
+  // rest should be. A ResizeObserver on the rail catches any actual size
+  // change regardless of what caused it.
+  const ro = new ResizeObserver(onResize);
+  tracks.forEach((wrap) => {
+    const rail = wrap.querySelector<HTMLElement>('.strack-rail');
+    if (rail) ro.observe(rail);
+  });
+
   teardownFns.push(() => {
     live = false;
     removeEventListener('scroll', onScroll);
     removeEventListener('resize', onResize);
+    ro.disconnect();
     // Leave no inline height or transform behind for the next page.
     tracks.forEach((wrap) => {
       wrap.classList.remove('on');
