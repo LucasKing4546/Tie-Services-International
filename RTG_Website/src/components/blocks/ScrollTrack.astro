@@ -19,6 +19,13 @@
  * native horizontally scrollable, scroll-snapped row; under
  * prefers-reduced-motion or below 900px it stays that row deliberately; only
  * with JS on a wide pointer screen does it pin and drive by transform.
+ *
+ * The native-scroll row has no visible affordance beyond a hidden scrollbar
+ * drag/swipe, so the prev/next buttons (initScrollTracks() in lib/motion.ts,
+ * same pattern as Carousel.astro's .car-nav) give reduced-motion, narrow-
+ * viewport and mouse-only visitors an obvious, always-working way to reach
+ * every card rather than just the first few. They stay display:none until
+ * html.js confirms the script can drive them.
  */
 interface Props {
   eyebrow?: string;
@@ -43,8 +50,14 @@ const { eyebrow, heading, lede } = Astro.props;
       <slot />
     </div>
 
-    <div class="wrap strack-prog" aria-hidden="true">
-      <div class="rail"><div class="fill"></div></div>
+    <div class="wrap strack-foot">
+      <div class="strack-prog" aria-hidden="true">
+        <div class="rail"><div class="fill"></div></div>
+      </div>
+      <div class="strack-nav">
+        <button type="button" class="strack-btn strack-prev" aria-label={`Previous — ${heading}`}>‹</button>
+        <button type="button" class="strack-btn strack-next" aria-label={`Next — ${heading}`}>›</button>
+      </div>
     </div>
   </div>
 </section>

@@ -156,10 +156,22 @@ html.js .car-nav{display:flex}
 .strack-rail::-webkit-scrollbar{display:none}
 .strack-rail > *{flex:none;width:330px;scroll-snap-align:start}
 .strack.on .strack-rail{overflow-x:hidden;scroll-snap-type:none;will-change:transform}
-.strack-prog{margin-top:44px;display:none}
+/* .strack-foot: the progress rail (pinned state only) and the prev/next
+   buttons (every state — see the doc comment above ScrollTrack.astro for
+   why the buttons can't wait for .on). Either can be the row's only child,
+   so justify-content:space-between degrades to "the one visible item",
+   never a lone element stranded mid-row. */
+.strack-foot{margin-top:44px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.strack-prog{flex:1;display:none}
 .strack.on .strack-prog{display:block}
 .strack-prog .rail{height:2px;background:rgba(255,255,255,.18);border-radius:2px;position:relative}
 .strack-prog .fill{position:absolute;inset:0 auto 0 0;width:0;background:var(--red);border-radius:2px}
+.strack-nav{display:none;gap:10px;flex:none;margin-left:auto}
+html.js .strack-nav{display:flex}
+.strack-btn{width:44px;height:44px;flex:none;border-radius:50%;border:1px solid rgba(255,255,255,.28);
+  background:transparent;display:grid;place-items:center;font-size:19px;line-height:1;color:#fff;
+  cursor:pointer;transition:border-color .25s var(--e),background .25s var(--e)}
+.strack-btn:hover{border-color:var(--red);background:var(--red)}
 /* Cards on the navy ground reuse .ecard.inv rather than a second card style. */
 .strack .ecard{min-height:390px}
 @media (max-width:900px){

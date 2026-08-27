@@ -12,7 +12,8 @@
     "pagemap": "node scripts/build-page-map.mjs",
     "audit:seo": "node scripts/audit-seo.mjs",
     "audit:protection": "node scripts/audit-protection.mjs",
-    "audit": "npm run audit:seo && npm run audit:protection"
+    "audit": "npm run audit:seo && npm run audit:protection",
+    "screenshot:pages": "node scripts/screenshot-pages.mjs"
   },
   "dependencies": {
     "astro": "^5.2.5",

@@ -45,7 +45,7 @@ export function initMotion(): void {
   initCounters(rm);
   if (!rm) initParallax();
   initCarousels(rm);
-  if (!rm) initScrollTracks();
+  initScrollTracks(rm);
 
   booted = true;
 }
@@ -220,13 +220,49 @@ function initCarousels(rm: boolean): void {
  * same set-piece by composing a component rather than by writing a scroll
  * module of its own.
  *
- * Not called at all under prefers-reduced-motion, and it bails under 900px:
- * in both cases the rail stays the native horizontally scrollable row it is
- * without any JS, so the cards are always reachable.
+ * The pin/transform machinery bails under 900px and is skipped entirely
+ * under prefers-reduced-motion (rm) — in both cases the rail stays the
+ * native horizontally scrollable row it is without any JS. But that
+ * fallback has no visible affordance beyond a hidden-scrollbar drag/swipe,
+ * which reduced-motion and mouse-only desktop visitors have no obvious way
+ * to discover — so unlike the pin machinery, the prev/next buttons are
+ * wired unconditionally (mirroring initCarousels()'s .car-nav), and mirror
+ * whichever mode the track is actually in:
+ *   pinned  -> stepping a card means scrolling the page, not the rail — see
+ *              the 1:1 scroll-to-transform mapping below
+ *   fallback -> steps the rail's own native scroll, exactly like a Carousel
  */
-function initScrollTracks(): void {
+function initScrollTracks(rm: boolean): void {
   const tracks = document.querySelectorAll<HTMLElement>('[data-scroll-track]');
   if (!tracks.length) return;
+
+  tracks.forEach((wrap) => {
+    const rail = wrap.querySelector<HTMLElement>('.strack-rail');
+    const prev = wrap.querySelector<HTMLButtonElement>('.strack-prev');
+    const next = wrap.querySelector<HTMLButtonElement>('.strack-next');
+    if (!rail || !prev || !next) return;
+    const step = () => {
+      const card = rail.firstElementChild as HTMLElement | null;
+      const gap = parseFloat(getComputedStyle(rail).columnGap || '22') || 22;
+      return (card?.getBoundingClientRect().width ?? rail.clientWidth) + gap;
+    };
+    const go = (dir: 1 | -1) => {
+      const behavior = rm ? 'auto' : 'smooth';
+      // Pinned: the transform is exactly `wrapTop - scrollY` (dist cancels
+      // out of the p = -rectTop/dist, transform = -p*dist algebra), so one
+      // page-scroll pixel always moves the rail by one pixel — stepping a
+      // card is just scrolling the window by a card's width.
+      if (wrap.classList.contains('on')) scrollBy({ top: dir * step(), behavior });
+      else rail.scrollBy({ left: dir * step(), behavior });
+    };
+    prev.addEventListener('click', () => go(-1));
+    next.addEventListener('click', () => go(1));
+  });
+
+  // The pin/transform choreography itself still has no reason to run under
+  // reduced motion or to touch a track with no JS-driven state — the
+  // buttons above already cover both.
+  if (rm) return;
 
   const items: { wrap: HTMLElement; rail: HTMLElement; fill: HTMLElement | null; dist: number }[] = [];
 
@@ -249,7 +285,12 @@ function initScrollTracks(): void {
       // would otherwise hold a whole viewport hostage and move nothing,
       // which is worse than not pinning at all. It stays a static full-bleed
       // navy band in that case, which is still doing the tonal job.
-      const dist = Math.max(0, rail.scrollWidth - innerWidth);
+      // rail.clientWidth, not innerWidth: clientWidth already excludes the
+      // page's vertical scrollbar the way innerWidth does not (~15-17px on
+      // Windows/Chrome), so using innerWidth here understates how far the
+      // rail needs to travel by exactly that much — the tail end of the
+      // last card never quite reaches the visible edge.
+      const dist = Math.max(0, rail.scrollWidth - rail.clientWidth);
       if (dist === 0) {
         wrap.classList.remove('on');
         wrap.style.height = '';
@@ -257,6 +298,15 @@ function initScrollTracks(): void {
         return;
       }
       wrap.classList.add('on');
+      // .strack-rail is a native scroll container in the fallback state (for
+      // no-JS and the sub-900px row) so it can pick up a real scrollLeft
+      // before this ever runs — a page-load scroll tick, a focus, a
+      // diagonal trackpad gesture. Once pinned, position is 100% owned by
+      // the transform below (this is how the homepage's .hz-track avoids
+      // the problem entirely: it is never a scroll container in the first
+      // place), so any leftover native offset must be zeroed here or it
+      // silently stacks with the transform and the cards render offset.
+      rail.scrollLeft = 0;
       wrap.style.height = `${innerHeight + dist}px`;
       items.push({ wrap, rail, fill: wrap.querySelector<HTMLElement>('.strack-prog .fill'), dist });
     });

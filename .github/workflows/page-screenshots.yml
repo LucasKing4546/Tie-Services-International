@@ -1,0 +1,68 @@
+name: Page Screenshots
+
+# Captures a full-page screenshot of every built page (read from the
+# generated sitemap, so it always matches whatever the build actually
+# produced) and uploads them as a downloadable Actions artifact.
+#
+# Trigger manually from the Actions tab with "Run workflow" if you want a
+# set of screenshots from a branch other than main.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+jobs:
+  screenshots:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: RTG_Website
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: RTG_Website/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright (this run only — not saved to package.json)
+        run: |
+          npm install --no-save playwright@^1.48.0
+          npx playwright install --with-deps chromium
+
+      - name: Build site
+        run: npm run build
+
+      - name: Start preview server
+        run: |
+          npm run preview -- --host 127.0.0.1 --port 4321 &
+          for i in $(seq 1 30); do
+            if curl -sf http://127.0.0.1:4321/ > /dev/null; then
+              echo "Preview server is up"
+              exit 0
+            fi
+            sleep 1
+          done
+          echo "Preview server did not start in time" >&2
+          exit 1
+
+      - name: Capture page screenshots
+        run: node scripts/screenshot-pages.mjs
+        env:
+          BASE_URL: http://127.0.0.1:4321
+
+      - name: Upload screenshots artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: page-screenshots
+          path: RTG_Website/page-screenshots
+          retention-days: 14
+          if-no-files-found: error
