@@ -28,9 +28,20 @@ import '@/styles/home.css';
     <script>
       // three.js is ~600 kB — fetch it only once the browser is idle, and only
       // on this page. Everything above renders and is readable without it.
-      const start = () => import('@lib/home-scroll').then((m) => m.initHome());
-      if ('requestIdleCallback' in window) requestIdleCallback(start, { timeout: 1500 });
-      else addEventListener('load', start);
+      //
+      // Booted from 'astro:page-load', not from here directly: this module's
+      // top-level code runs once per document, and ClientRouter never re-runs
+      // it, so a client-side return trip to / would arrive with no 3D and no
+      // homepage motion at all. The event fires on first load and again after
+      // every navigation. initHome() is idempotent — it tears the previous
+      // page's stages down first, and bails when the homepage isn't in the
+      // document, which is what releases the WebGL contexts on the way out.
+      const boot = () => {
+        const start = () => import('@lib/home-scroll').then((m) => m.initHome());
+        if ('requestIdleCallback' in window) requestIdleCallback(start, { timeout: 1500 });
+        else setTimeout(start, 200);
+      };
+      document.addEventListener('astro:page-load', boot);
     </script>
   </Fragment>
 </Base>

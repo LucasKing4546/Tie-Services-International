@@ -10,6 +10,16 @@
  *
  * The 3D stages are created lazily by the caller so three.js is only fetched
  * on pages that actually need it.
+ *
+ * Lifecycle: initHome() runs once per navigation, not once per document. The
+ * homepage boots it from 'astro:page-load' (index.astro) for the same reason
+ * motion.ts does — under ClientRouter a module's top-level code runs once and
+ * never again, so a return trip to / would otherwise land on a dead page. That
+ * makes teardown mandatory rather than optional: every listener, observer,
+ * timer, rAF loop and WebGL context created here is registered for cleanup and
+ * released the next time initHome() runs, on this page or any other. Without
+ * it, three navigations would leave three rAF loops and fifteen live WebGL
+ * contexts fighting over the browser's cap.
  */
 import * as THREE from 'three';
 import { buildWinch, buildAFrame, buildHPU, buildCrane, createViewer } from './rtg3d';
@@ -47,7 +57,30 @@ interface Machine {
   yOff: number;
 }
 
+/** Cleanup for the currently-booted homepage, or null when none is live. */
+let teardown: (() => void) | null = null;
+
+/** Release everything the last initHome() built. Safe to call at any time. */
+export function destroyHome(): void {
+  if (!teardown) return;
+  const fn = teardown;
+  teardown = null;
+  fn();
+}
+
 export function initHome(): void {
+  // Whatever the last navigation left running goes first — including when
+  // this call turns out to be on some other page, which is how leaving the
+  // homepage releases its WebGL contexts.
+  destroyHome();
+
+  // The idle callback that schedules this can outlive the page that queued
+  // it, so confirm the homepage is actually in the document before building
+  // anything. Every stage below is keyed to an id that only index.astro has.
+  if (!document.getElementById('heroGL')) return;
+
+  const cleanups: (() => void)[] = [];
+
   // Reveals and count-ups are booted site-wide by initMotion() (src/lib/
   // motion.ts) via Base.astro, before this module is even fetched — this
   // function only adds the homepage's 3D on top of that. The header scroll
@@ -83,8 +116,10 @@ export function initHome(): void {
     v.frame(dist, height, lookY);
     v.baseDist = dist; v.baseH = height; v.lookY = lookY;
     v.el = cv; v.spin = 0; v.drag = 0; v.onScreen = false;
-    new IntersectionObserver(es => es.forEach(e => v.onScreen = e.isIntersecting),
-      { rootMargin: '120px' }).observe(cv);
+    const io = new IntersectionObserver(es => es.forEach(e => v.onScreen = e.isIntersecting),
+      { rootMargin: '120px' });
+    io.observe(cv);
+    cleanups.push(() => { io.disconnect(); v.dispose(); });
     stages.push(v);
     return v;
   }
@@ -271,9 +306,12 @@ export function initHome(): void {
 
   let ticking = false;
   function onScroll(){ if (!ticking) { ticking = true; requestAnimationFrame(frame); } }
+  function onResize(){ sizeHz(); stages.forEach(v => v.resize()); onScroll(); }
   addEventListener('scroll', onScroll, {passive:true});
-  addEventListener('resize', () => {
-    sizeHz(); stages.forEach(v => v.resize()); onScroll();
+  addEventListener('resize', onResize);
+  cleanups.push(() => {
+    removeEventListener('scroll', onScroll);
+    removeEventListener('resize', onResize);
   });
 
   /* continuous render loop — only draws stages that are on screen */
@@ -284,8 +322,9 @@ export function initHome(): void {
   const smooth = (t: number) => t * t * (3 - 2 * t);
 
   let lastT = performance.now();
+  let raf = 0;
   function loop(){
-    requestAnimationFrame(loop);
+    raf = requestAnimationFrame(loop);
     const nowT = performance.now();
     const dt = Math.min(0.05, (nowT - lastT) / 1000); lastT = nowT;
     const aMove = 1 - Math.exp(-dt * 6.0);
@@ -343,4 +382,9 @@ export function initHome(): void {
   frame();
   if (stages.length) loop();
 
+  teardown = () => {
+    if (raf) cancelAnimationFrame(raf);
+    clearTimeout(textTimer);
+    cleanups.forEach((fn) => fn());
+  };
 }

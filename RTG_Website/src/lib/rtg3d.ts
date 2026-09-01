@@ -491,6 +491,19 @@ function createViewer(canvas: HTMLCanvasElement, opts?: ViewerOpts) {
       camera.lookAt(0, lookY || 0, 0);
     },
     render() { renderer.render(scene, camera); },
+    /* Hand the WebGL context back. Each viewer owns one context and browsers
+       cap how many can be live at once (Chrome drops the oldest at ~16), so a
+       viewer that is thrown away must release rather than wait for GC — under
+       client-side navigation the homepage can be built several times in one
+       document lifetime. Only the environment map is disposed alongside it:
+       geometries are rebuilt per model, but the materials in M are shared
+       module-wide and disposing those would break the next build. */
+    dispose() {
+      const env = scene.environment;
+      if (env) env.dispose();
+      renderer.dispose();
+      renderer.forceContextLoss();
+    },
     /* where an object lands on the canvas, as 0..1 fractions — used to hang
        DOM content off a point in the 3D scene */
     project(obj: THREE.Object3D) {
