@@ -1,0 +1,80 @@
+---
+/**
+ * A pinned multi-stage reveal — the section holds the viewport while its
+ * stages cross-fade one at a time, driven by scroll position.
+ *
+ * This is the homepage's own manufacturing-tier set-piece (.pin-* in
+ * home.css, driven by hard-wired ids in home-scroll.ts) generalised so every
+ * template can use it, exactly as ScrollTrack.astro did for the horizontal
+ * sector track. The homepage keeps its own copy untouched — it drives a 3D
+ * model in lockstep with the stage index, which this deliberately does not:
+ * this one is DOM-only, so a template with no 3D can still have the moment.
+ *
+ * Each direct child of the slot is one stage. That matches how ScrollTrack's
+ * rail and CardGrid's card list already work — no per-item wrapper component
+ * to import, and initPinStages() (lib/motion.ts) just walks list.children.
+ *
+ * The left column carries a live index of every stage, not a bare progress
+ * bar. Two reasons: a pinned section showing one short stage at a time
+ * otherwise leaves most of the viewport empty, which is the exact "too much
+ * white space" failure this whole design pass exists to fix; and a reader
+ * part-way through a sequence needs to see where they are in it and what is
+ * still coming. The dashes remain underneath as the compact progress cue.
+ *
+ * Degrades in three steps, each usable on its own: with no JS every stage is
+ * simply stacked in normal flow and fully readable; under
+ * prefers-reduced-motion or below 900px it stays that stack deliberately;
+ * only with JS on a wide screen does it pin and cross-fade. Nothing is ever
+ * hidden by CSS alone — the absolute-stacking rules are scoped to .on, which
+ * only initPinStages() adds, so content can never be lost to a dead script.
+ *
+ * Do not nest this inside an ancestor carrying transform, overflow or
+ * contain: any of those creates a new containing block, which silently
+ * breaks the sticky pin or clips the tall wrapper.
+ */
+interface Props {
+  eyebrow?: string;
+  heading: string;
+  lede?: string;
+  /** One label per stage, same order as the slotted children — drives the
+   *  index list and the progress dashes. Omit for dashes only. */
+  index?: string[];
+  /** Tonal band. Defaults to off-white; navy is the strong punctuation. */
+  tone?: 'default' | 'off' | 'navy';
+}
+
+const { eyebrow, heading, lede, index = [], tone = 'off' } = Astro.props;
+const toneClass = tone === 'default' ? '' : tone;
+---
+
+<section class:list={['pstage', toneClass]} data-pin-stages>
+  <div class="pstage-stick">
+    <div class="wrap pstage-grid">
+      <div class="pstage-head">
+        {eyebrow && <p class="mono red fu" style="margin:0 0 22px">{eyebrow}</p>}
+        <h2 class="d3"><span class="rl"><span>{heading}</span></span></h2>
+        {lede && <p class="lede">{lede}</p>}
+
+        {index.length > 1 && (
+          <>
+            <ol class="pstage-index" aria-hidden="true">
+              {index.map((label, i) => (
+                <li class={i === 0 ? 'on' : ''}>
+                  <span class="n">{String(i + 1).padStart(2, '0')}</span>
+                  <span class="t">{label}</span>
+                </li>
+              ))}
+            </ol>
+            <div class="pstage-bar" aria-hidden="true">
+              {index.map((_, i) => <i class={i === 0 ? 'on' : ''}></i>)}
+            </div>
+          </>
+        )}
+      </div>
+
+      <div class="pstage-list" role="group" aria-label={heading}>
+        <slot />
+      </div>
+    </div>
+  </div>
+</section>

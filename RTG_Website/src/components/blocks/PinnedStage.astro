@@ -1,0 +1,39 @@
+---
+/**
+ * One stage inside PinnedStages — the Step-shaped presentation (big number,
+ * heading, body, bullet points) shared by Guide's six questions and
+ * Service's process steps. Product slots plain <SpecTable> markup instead,
+ * which is why this is a separate optional component rather than something
+ * PinnedStages renders itself: a stage is "whatever the template slots in",
+ * and this is just the common case.
+ *
+ * Deliberately mirrors StepList.astro's shape so a template can move
+ * between the two without rewriting its content — the difference is
+ * presentation (a stacked list vs. one stage at a time), never data.
+ */
+import type { Step } from '@lib/blocks';
+
+interface Props {
+  step: Step;
+  /** 1-based position, used for the fallback number when step.n is unset. */
+  n: number;
+  /** Small mono label above the number, e.g. "Question" or "Step". */
+  label?: string;
+}
+
+const { step, n, label } = Astro.props;
+---
+
+<article class="pstage-item">
+  <p class="pstage-num">
+    {label && <span class="lc-n">{label}</span>}
+    {step.n ?? String(n).padStart(2, '0')}
+  </p>
+  <h3 class="d3">{step.title}</h3>
+  {step.body && <p class="pstage-body">{step.body}</p>}
+  {step.points.length > 0 && (
+    <ul class="lc-l">
+      {step.points.map((p) => <li>{p}</li>)}
+    </ul>
+  )}
+</article>

@@ -10,13 +10,21 @@
  * code costs to maintain, and this file exists so the other 17 templates
  * never repeat that.
  *
- * Four behaviours, one shared observer/rAF budget:
+ * Six behaviours, one shared observer/rAF budget:
  *   1. reveals (.rl / .fu / .stag) + PROOF-figure count-ups (.ct)
  *   2. parallax media (data-motion="parallax")
  *   3. sticky media / sticky spec rail — pure CSS (position: sticky), no
  *      JS involved; documented here because it is part of the same system.
  *   4. carousels ([data-carousel], Carousel.astro) — prev/next buttons
  *      driving the track's native scroll-snap.
+ *   5. scroll tracks ([data-scroll-track], ScrollTrack.astro) — a pinned
+ *      band whose cards move sideways as the page scrolls down.
+ *   6. pinned stages ([data-pin-stages], PinnedStages.astro) — a pinned
+ *      section whose stages cross-fade one at a time as the page scrolls.
+ *
+ * 5 and 6 are the homepage's own set-pieces generalised out of
+ * home-scroll.ts so any template can compose them; the homepage keeps its
+ * own 3D-coupled copies.
  *
  * Progressive enhancement: elements are visible by default (see the
  * `html.js` gate in tokens.css). Nothing here can make content that was
@@ -46,6 +54,7 @@ export function initMotion(): void {
   if (!rm) initParallax();
   initCarousels(rm);
   initScrollTracks(rm);
+  initPinStages(rm);
 
   booted = true;
 }
@@ -393,5 +402,156 @@ function initScrollTracks(rm: boolean): void {
       const rail = wrap.querySelector<HTMLElement>('.strack-rail');
       if (rail) rail.style.transform = '';
     });
+  });
+}
+
+// ------------------------------------------------------------ pinned stages
+/**
+ * [data-pin-stages] (PinnedStages.astro): the section holds the viewport
+ * while scroll position selects which of its stages is showing, one at a
+ * time. This is the homepage's pinned manufacturing-tier walkthrough
+ * (home-scroll.ts, hard-wired to #tiers/.tier/.pin-bar) generalised — the
+ * scroll-fraction-to-index maths below is the same, minus the 3D model it
+ * drives in lockstep there. DOM only, so a template with no 3D still gets
+ * the set-piece.
+ *
+ * Bails to the plain stacked column under reduced motion, below 900px, or
+ * with too little to walk through. Unlike initScrollTracks() there is no
+ * prev/next affordance to wire in the fallback state, because the fallback
+ * is not a hidden-overflow rail — every stage is simply on the page.
+ */
+function initPinStages(rm: boolean): void {
+  const wraps = document.querySelectorAll<HTMLElement>('[data-pin-stages]');
+  if (!wraps.length) return;
+
+  const MIN_STAGES = 2;
+  // Scroll length granted to each stage. The pin lasts (STAGE_VH * n - 100)vh,
+  // so this also sets how brisk the walkthrough feels; 70 gives a six-stage
+  // section roughly half a viewport of scroll per stage.
+  const STAGE_VH = 70;
+  // Same reasoning as ScrollTrack's MIN_PIN_DIST: a pin shorter than this is
+  // over before it registers as one, which reads worse than not pinning.
+  const MIN_PIN_TRAVEL = 240;
+
+  const items: {
+    wrap: HTMLElement;
+    stages: HTMLElement[];
+    /** The progress dashes and the index rows are marked in lockstep with
+     *  the active stage, so they're carried together as one list of "things
+     *  that track the index" rather than queried separately per frame. */
+    marks: HTMLElement[][];
+  }[] = [];
+
+  const marksOf = (wrap: HTMLElement) => [
+    [...wrap.querySelectorAll<HTMLElement>('.pstage-bar i')],
+    [...wrap.querySelectorAll<HTMLElement>('.pstage-index li')],
+  ];
+
+  const reset = (wrap: HTMLElement) => {
+    const list = wrap.querySelector<HTMLElement>('.pstage-list');
+    wrap.classList.remove('on');
+    wrap.style.height = '';
+    if (list) {
+      list.style.minHeight = '';
+      [...list.children].forEach((s) => s.classList.remove('on'));
+    }
+    marksOf(wrap).forEach((row) => row.forEach((m) => m.classList.remove('on')));
+  };
+
+  // Guards the ResizeObserver below against its own writes: measure() sets
+  // the list's min-height, and the observer watches the list, so without
+  // this the two would drive each other in a loop.
+  let measuring = false;
+
+  const measure = () => {
+    measuring = true;
+    items.length = 0;
+    wraps.forEach((wrap) => {
+      const list = wrap.querySelector<HTMLElement>('.pstage-list');
+      if (!list) return;
+      // Measure in the unpinned state — reset() puts every stage back into
+      // normal flow first, so the heights read here are the real content
+      // heights rather than whatever the previous pin left behind.
+      reset(wrap);
+      const stages = [...list.children] as HTMLElement[];
+      const marks = marksOf(wrap);
+      if (rm || innerWidth < 900 || stages.length < MIN_STAGES) return;
+      if (innerHeight * (STAGE_VH / 100) * stages.length - innerHeight < MIN_PIN_TRAVEL) return;
+
+      // Stages are not hand-length-matched copy the way the homepage's four
+      // tiers are — a Product spec table can be two rows or twelve. Every
+      // stage is absolutely positioned once pinned, so the box needs an
+      // explicit height, and it has to be the tallest stage's or the
+      // longest one is clipped by the pinned section's overflow:hidden.
+      const tallest = Math.max(...stages.map((s) => s.getBoundingClientRect().height));
+      list.style.minHeight = `${Math.ceil(tallest)}px`;
+      wrap.classList.add('on');
+      wrap.style.height = `${STAGE_VH * stages.length}vh`;
+      stages.forEach((s, i) => s.classList.toggle('on', i === 0));
+      marks.forEach((row) => row.forEach((m, i) => m.classList.toggle('on', i === 0)));
+      items.push({ wrap, stages, marks });
+    });
+    requestAnimationFrame(() => { measuring = false; });
+  };
+
+  measure();
+
+  // Under reduced motion measure() has already reset every section to the
+  // stacked column; there is nothing to drive, so bind no listeners at all.
+  if (rm) {
+    teardownFns.push(() => wraps.forEach(reset));
+    return;
+  }
+
+  let ticking = false;
+  let live = true;
+  const apply = () => {
+    ticking = false;
+    if (!live) return;
+    for (const { wrap, stages, marks } of items) {
+      const r = wrap.getBoundingClientRect();
+      const travel = r.height - innerHeight;
+      if (travel <= 0) continue;
+      const p = Math.min(1, Math.max(0, -r.top / travel));
+      // The 0.999 keeps p === 1 (the very last pixel of the pin) from
+      // indexing one past the end — lifted from home-scroll.ts, same reason.
+      const idx = Math.min(stages.length - 1, Math.floor(p * stages.length * 0.999));
+      stages.forEach((s, i) => s.classList.toggle('on', i === idx));
+      // Dashes fill cumulatively (how far through you are); the index marks
+      // only the stage you are actually on.
+      marks[0].forEach((m, i) => m.classList.toggle('on', i <= idx));
+      marks[1].forEach((m, i) => m.classList.toggle('on', i === idx));
+    }
+  };
+  const onScroll = () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(apply);
+  };
+  const onResize = () => { measure(); apply(); };
+
+  apply();
+  addEventListener('scroll', onScroll, { passive: true });
+  addEventListener('resize', onResize);
+
+  // Same reasoning as the scroll-track observer above: a web font swapping
+  // in or an image reflowing changes a stage's height without firing
+  // 'resize', which would leave the measured min-height too short and clip
+  // the tallest stage.
+  const ro = new ResizeObserver(() => {
+    if (measuring) return;
+    onResize();
+  });
+  wraps.forEach((wrap) => {
+    const list = wrap.querySelector<HTMLElement>('.pstage-list');
+    if (list) ro.observe(list);
+  });
+
+  teardownFns.push(() => {
+    live = false;
+    removeEventListener('scroll', onScroll);
+    removeEventListener('resize', onResize);
+    ro.disconnect();
+    wraps.forEach(reset);
   });
 }

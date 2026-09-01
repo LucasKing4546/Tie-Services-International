@@ -8,11 +8,19 @@
  * The plan describes this as "StepList -> Faq", but the content is
  * authored once, as `faqs[]` (q/a pairs) — rendering it through both
  * StepList AND Faq.astro would show the same six questions twice. Instead
- * the same data drives both: StepList gives the visible numbered
- * treatment the plan calls for, and faqPageJsonLd() (lib/seo.ts) builds
- * the FAQPage node from the same data as a second, independent
- * representation — never re-typed. "When not to refurbish" is an inline
- * <Note tone="warn"> in the MDX body.
+ * the same data drives both: the numbered treatment the plan calls for is
+ * visible on the page, and faqPageJsonLd() (lib/seo.ts) builds the FAQPage
+ * node from the same data as a second, independent representation — never
+ * re-typed. "When not to refurbish" is an inline <Note tone="warn"> in the
+ * MDX body.
+ *
+ * The six questions render as PinnedStages rather than a plain StepList: a
+ * decision walkthrough is the one piece of content on the site that is
+ * genuinely sequential — you are meant to work through it in order, and any
+ * single question can settle the answer — which is exactly what a pinned
+ * one-at-a-time reveal is for. StepList stays the fallback for the
+ * degenerate single-question case, and PinnedStages itself falls back to a
+ * plain stacked column with no JS, under reduced motion, or below 900px.
  */
 import { render } from 'astro:content';
 import type { PageMeta } from '@data/pages';
@@ -24,6 +32,8 @@ import Section from '@components/blocks/Section.astro';
 import SectionHead from '@components/blocks/SectionHead.astro';
 import Prose from '@components/blocks/Prose.astro';
 import StepList from '@components/blocks/StepList.astro';
+import PinnedStages from '@components/blocks/PinnedStages.astro';
+import PinnedStage from '@components/blocks/PinnedStage.astro';
 import PageEnding from '@components/blocks/PageEnding.astro';
 import { mdxComponents } from '@lib/mdx';
 
@@ -53,7 +63,17 @@ const questions: Step[] = data.faqs.map((f, i) => ({
     ctas={data.hero.ctas}
   />
 
-  {questions.length > 0 && (
+  {questions.length > 1 ? (
+    <PinnedStages
+      eyebrow="Six questions"
+      heading="Before you decide"
+      lede="Work through them in order. Any one of them can settle the decision on its own."
+      index={questions.map((q) => q.title)}
+      tone="navy"
+    >
+      {questions.map((q, i) => <PinnedStage step={q} n={i + 1} label="Question" />)}
+    </PinnedStages>
+  ) : questions.length === 1 && (
     <Section>
       <SectionHead eyebrow="Six questions" heading="Before you decide" level={2} />
       <StepList steps={questions} label="Question" />

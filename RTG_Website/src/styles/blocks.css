@@ -194,6 +194,98 @@ html.js .strack-nav{display:flex}
   .strack-prog,.strack.on .strack-prog{display:none}
 }
 
+/* ---------- pinned stages (PinnedStages.astro + PinnedStage.astro) ----------
+   The section holds the viewport while its stages cross-fade one at a time.
+   This is the homepage's manufacturing-tier set-piece (.pin-* in home.css)
+   generalised, minus the 3D column — see the component's doc comment.
+
+   Everything that hides a stage is scoped to .pstage.on, and only
+   initPinStages() (lib/motion.ts) ever adds that class. With no JS, under
+   prefers-reduced-motion, below 900px, or with too few stages to be worth a
+   pin, the list below stays an ordinary stacked column with every stage
+   visible — the fallback is today's baseline, not a degraded version of it. */
+.pstage{position:relative;background:var(--white)}
+.pstage.off{background:var(--off)}
+.pstage.navy{background:var(--navy);color:#fff}
+.pstage.navy h2,.pstage.navy h3{color:#fff}
+.pstage.navy .lede{color:rgba(255,255,255,.72)}
+.pstage-stick{padding:112px 0}
+.pstage.on .pstage-stick{position:sticky;top:0;height:100svh;padding:0;
+  display:flex;align-items:center;overflow:hidden}
+.pstage-grid{display:grid;grid-template-columns:.72fr 1fr;gap:70px;align-items:center}
+.pstage-head .lede{margin-top:20px}
+
+/* The live index — see the component's doc comment for why a pinned section
+   needs one rather than a bare progress bar. */
+.pstage-index{list-style:none;margin:38px 0 0;padding:0;display:flex;flex-direction:column;gap:2px;
+  border-top:1px solid var(--line)}
+.pstage.navy .pstage-index{border-top-color:rgba(255,255,255,.18)}
+.pstage-index li{display:flex;gap:16px;align-items:baseline;padding:13px 0;
+  border-bottom:1px solid var(--line);opacity:.42;
+  transition:opacity .4s var(--e),padding-left .4s var(--e)}
+.pstage.navy .pstage-index li{border-bottom-color:rgba(255,255,255,.18)}
+.pstage-index li.on{opacity:1;padding-left:10px}
+.pstage-index .n{font-family:var(--f-m);font-size:11px;letter-spacing:.14em;flex:none;
+  color:var(--muted);font-variant-numeric:tabular-nums}
+.pstage.navy .pstage-index .n{color:rgba(255,255,255,.6)}
+.pstage-index li.on .n{color:var(--red)}
+.pstage.navy .pstage-index li.on .n{color:#fff}
+.pstage-index .t{font-family:var(--f-d);font-weight:600;font-size:15px;letter-spacing:-.01em;
+  line-height:1.25}
+
+.pstage-bar{display:flex;gap:6px;margin-top:26px}
+.pstage-bar i{height:2.5px;flex:1;background:var(--line);border-radius:2px;transition:background .4s var(--e)}
+.pstage.navy .pstage-bar i{background:rgba(255,255,255,.2)}
+.pstage-bar i.on{background:var(--red)}
+.pstage.navy .pstage-bar i.on{background:#fff}
+
+/* Unpinned: a plain stacked column. Pinned: one stage in the box at a time. */
+.pstage-list{position:relative;display:flex;flex-direction:column;gap:52px}
+.pstage.on .pstage-list{display:block;gap:0}
+/* Every stage is absolutely positioned once pinned, including the active
+   one, so the box height is decided solely by the min-height initPinStages()
+   measures from the tallest stage — an active stage left in normal flow
+   would resize the box on every change and shunt the whole pinned layout
+   up and down as you scroll.
+   visibility, not just opacity: an opacity:0 stage stays focusable and stays
+   in the accessibility tree, so a keyboard visitor would tab into five
+   invisible stages. Transitioning visibility with a delay equal to the fade
+   keeps it present until the fade finishes, then removes it properly. */
+.pstage.on .pstage-list > *{position:absolute;inset:0 0 auto 0;opacity:0;visibility:hidden;
+  transform:translateY(24px);pointer-events:none;
+  transition:opacity .55s var(--e),transform .55s var(--e),visibility 0s linear .55s}
+.pstage.on .pstage-list > *.on{opacity:1;visibility:visible;transform:none;pointer-events:auto;
+  transition:opacity .55s var(--e),transform .55s var(--e),visibility 0s}
+
+.pstage-num{font-family:var(--f-d);font-weight:800;font-size:clamp(64px,8vw,128px);line-height:.8;
+  color:var(--off-2);letter-spacing:-.05em;margin:0 0 14px;font-variant-numeric:tabular-nums lining-nums}
+.pstage.off .pstage-num{color:#E2E6EE}
+.pstage.navy .pstage-num{color:rgba(255,255,255,.22)}
+.pstage.on .pstage-list > *.on .pstage-num{color:var(--red)}
+.pstage.navy.on .pstage-list > *.on .pstage-num{color:#fff}
+.pstage-num .lc-n{display:block;margin-bottom:14px}
+.pstage.navy .pstage-num .lc-n{color:rgba(255,255,255,.6)}
+.pstage-item h3{margin-bottom:16px;max-width:20ch;font-size:clamp(26px,3.2vw,42px)}
+.pstage-body{margin:0;color:var(--muted);font-size:clamp(16.5px,1.35vw,19px);line-height:1.6;max-width:52ch}
+.pstage.navy .pstage-body{color:rgba(255,255,255,.72)}
+.pstage-item .lc-l{margin-top:22px}
+.pstage.navy .lc-l li{color:rgba(255,255,255,.72)}
+
+@media (max-width:900px){
+  .pstage{height:auto!important}
+  .pstage.on .pstage-stick{position:static;height:auto;padding:76px 0;overflow:visible}
+  .pstage-grid{grid-template-columns:1fr;gap:34px}
+  .pstage.on .pstage-list{display:flex;gap:52px}
+  .pstage.on .pstage-list > *{position:relative;inset:auto;opacity:1;visibility:visible;
+    transform:none;pointer-events:auto}
+  .pstage.on .pstage-list > * .pstage-num{color:var(--red)}
+  .pstage.navy.on .pstage-list > * .pstage-num{color:#fff}
+  /* Every stage is on the page in the stacked fallback, so an index of what
+     is coming next is redundant — and repeating all six titles immediately
+     above the six stages themselves reads as a duplicate. */
+  .pstage-index,.pstage-bar{display:none}
+}
+
 /* ---------- card grid (CardGrid.astro + Card.astro) ---------- */
 .ecard{border:1px solid var(--line);border-radius:16px;padding:34px 30px;background:var(--white);
   transition:border-color .35s var(--e),transform .35s var(--e),box-shadow .35s var(--e);
