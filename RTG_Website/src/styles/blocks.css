@@ -90,6 +90,12 @@
    than tiled in a .stats grid — a case study's headline number, say. */
 .headline-num{font-family:var(--f-d);font-weight:800;font-size:clamp(44px,5.4vw,68px);
   letter-spacing:-.045em;line-height:.9;margin:0}
+/* The site's single boldest number, on its own in a navy band. Same narrow
+   monochrome-vignette exception as the pinned stages above: it gives the
+   figure a centre to sit in rather than floating on a flat slab. Scoped to
+   the band that actually contains one. */
+.sec.navy:has(> .wrap .headline-num){background:
+  radial-gradient(90% 130% at 50% 50%,var(--navy-2) 0%,var(--navy) 68%)}
 
 /* ---------- carousel (Carousel.astro) ----------
    Native CSS scroll-snap does the work with no JS at all — a no-JS visit
@@ -207,6 +213,15 @@ html.js .strack-nav{display:flex}
 .pstage{position:relative;background:var(--white)}
 .pstage.off{background:var(--off)}
 .pstage.navy{background:var(--navy);color:#fff}
+/* A deliberate, narrow exception to "no gradients" (CLAUDE.md §7): a single
+   monochrome navy-to-navy-2 vignette, no colour shift, sitting behind the
+   stage that currently has focus. On a full-viewport pinned band a flat
+   fill reads as a slab; this gives the active stage somewhere to sit
+   without introducing a second hue or a decorative effect. Only applied
+   while pinned — the stacked fallback has no single active stage to centre
+   it on. */
+.pstage.navy.on .pstage-stick{background:
+  radial-gradient(120% 90% at 68% 50%,var(--navy-2) 0%,var(--navy) 62%)}
 .pstage.navy h2,.pstage.navy h3{color:#fff}
 .pstage.navy .lede{color:rgba(255,255,255,.72)}
 .pstage-stick{padding:112px 0}
