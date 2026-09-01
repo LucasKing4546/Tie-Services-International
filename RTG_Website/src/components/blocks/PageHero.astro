@@ -36,7 +36,7 @@ const { page, eyebrow, lede, ctas = [], media, crumbs = true } = Astro.props;
           {ctas.length > 0 && (
             <div class="phero-cta">
               {ctas.map((c, i) => (
-                <a class={i === 0 ? 'btn b-red' : 'btn btn-o'} href={c.href}>{c.label}</a>
+                <a class={i === 0 ? 'btn b-red' : 'btn btn-o inv'} href={c.href}>{c.label}</a>
               ))}
             </div>
           )}
@@ -52,7 +52,7 @@ const { page, eyebrow, lede, ctas = [], media, crumbs = true } = Astro.props;
         {ctas.length > 0 && (
           <div class="phero-cta">
             {ctas.map((c, i) => (
-              <a class={i === 0 ? 'btn b-red' : 'btn btn-o'} href={c.href}>{c.label}</a>
+              <a class={i === 0 ? 'btn b-red' : 'btn btn-o inv'} href={c.href}>{c.label}</a>
             ))}
           </div>
         )}

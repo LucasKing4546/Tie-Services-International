@@ -16,7 +16,7 @@
 import { render } from 'astro:content';
 import type { PageMeta } from '@data/pages';
 import type { PageEntry, CardItem } from '@lib/blocks';
-import { cardFrom } from '@lib/content';
+import { cardFrom, hasBody } from '@lib/content';
 import Base from '@layouts/Base.astro';
 import PageHero from '@components/blocks/PageHero.astro';
 import Section from '@components/blocks/Section.astro';
@@ -50,11 +50,13 @@ const related: CardItem[] = data.related.map((id) => cardFrom({ pageId: id }));
     ctas={data.hero.ctas}
   />
 
-  <Section>
-    <Prose>
-      <Content components={mdxComponents} />
-    </Prose>
-  </Section>
+  {hasBody(entry) && (
+    <Section>
+      <Prose>
+        <Content components={mdxComponents} />
+      </Prose>
+    </Section>
+  )}
 
   {data.steps.length > 0 && (
     <Section tone="off">

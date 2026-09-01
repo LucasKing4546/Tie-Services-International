@@ -16,6 +16,7 @@
 import { render } from 'astro:content';
 import type { PageMeta } from '@data/pages';
 import type { PageEntry } from '@lib/blocks';
+import { hasBody } from '@lib/content';
 import { articleJsonLd } from '@lib/seo';
 import Base from '@layouts/Base.astro';
 import PageHero from '@components/blocks/PageHero.astro';
@@ -58,11 +59,13 @@ const byline = data.article
     </Section>
   )}
 
-  <Section>
-    <Prose>
-      <Content components={mdxComponents} />
-    </Prose>
-  </Section>
+  {hasBody(entry) && (
+    <Section>
+      <Prose>
+        <Content components={mdxComponents} />
+      </Prose>
+    </Section>
+  )}
 
   <PageEnding page={page} proofBar={data.proofBar} cta={data.cta} draft={data.draft} outline={data.outline} />
 </Base>

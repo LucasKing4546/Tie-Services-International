@@ -66,3 +66,21 @@ export function cardFrom(item: PageData['cards'][number]): CardItem {
     cta: item.cta,
   };
 }
+
+/**
+ * Does this page have a body worth rendering a section for?
+ *
+ * Most of the site is still outlines: the MDX file exists and carries real
+ * frontmatter, but the body below it is empty. Templates render their prose
+ * section unconditionally, so those pages showed a heading, then a full
+ * section's worth of padding wrapped around nothing, then the draft panel —
+ * roughly 220px of dead space in the middle of the page. That was the single
+ * largest source of emptiness on the site, and it is on every draft page.
+ *
+ * Checked here rather than in CSS: :empty does not match an element
+ * containing whitespace, and Astro's rendered <div class="prose"> always
+ * contains at least a newline, so no :has()/:empty selector can see it.
+ */
+export function hasBody(entry: PageEntry): boolean {
+  return (entry.body ?? '').trim().length > 0;
+}

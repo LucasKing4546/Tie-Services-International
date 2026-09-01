@@ -11,6 +11,7 @@
 import { render } from 'astro:content';
 import { page as lookupPage, type PageMeta } from '@data/pages';
 import type { PageEntry } from '@lib/blocks';
+import { hasBody } from '@lib/content';
 import Base from '@layouts/Base.astro';
 import PageHero from '@components/blocks/PageHero.astro';
 import Section from '@components/blocks/Section.astro';
@@ -63,23 +64,25 @@ const datasheetHref = datasheetPage ? `${datasheetPage.slug}?equipment=${encodeU
     ctas={data.hero.ctas}
   />
 
-  <Section>
-    <div class="two">
-      <div data-motion="sticky">
-        {data.specs.map((s) => (
-          <SpecTable caption={s.caption} rows={s.rows} footnote={s.footnote} />
-        ))}
-        {datasheetHref && (
-          <p style="margin-top:28px">
-            <a class="btn b-navy" href={datasheetHref}>Request the full datasheet →</a>
-          </p>
-        )}
+  {(data.specs.length > 0 || hasBody(entry)) && (
+    <Section>
+      <div class="two">
+        <div data-motion="sticky">
+          {data.specs.map((s) => (
+            <SpecTable caption={s.caption} rows={s.rows} footnote={s.footnote} />
+          ))}
+          {datasheetHref && (
+            <p style="margin-top:28px">
+              <a class="btn b-navy" href={datasheetHref}>Request the full datasheet →</a>
+            </p>
+          )}
+        </div>
+        <Prose>
+          <Content components={mdxComponents} />
+        </Prose>
       </div>
-      <Prose>
-        <Content components={mdxComponents} />
-      </Prose>
-    </div>
-  </Section>
+    </Section>
+  )}
 
   {data.product && data.product.applications.length > 0 && (
     <Section tone="off">

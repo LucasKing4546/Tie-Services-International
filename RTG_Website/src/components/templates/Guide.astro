@@ -25,6 +25,7 @@
 import { render } from 'astro:content';
 import type { PageMeta } from '@data/pages';
 import type { PageEntry, Step } from '@lib/blocks';
+import { hasBody } from '@lib/content';
 import { articleJsonLd, faqPageJsonLd } from '@lib/seo';
 import Base from '@layouts/Base.astro';
 import PageHero from '@components/blocks/PageHero.astro';
@@ -80,11 +81,13 @@ const questions: Step[] = data.faqs.map((f, i) => ({
     </Section>
   )}
 
-  <Section tone="off">
-    <Prose>
-      <Content components={mdxComponents} />
-    </Prose>
-  </Section>
+  {hasBody(entry) && (
+    <Section tone="off">
+      <Prose>
+        <Content components={mdxComponents} />
+      </Prose>
+    </Section>
+  )}
 
   <PageEnding page={page} proofBar={data.proofBar} cta={data.cta} draft={data.draft} outline={data.outline} />
 </Base>

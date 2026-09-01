@@ -17,7 +17,7 @@
 import { render } from 'astro:content';
 import { childrenOf, type PageMeta } from '@data/pages';
 import type { PageEntry } from '@lib/blocks';
-import { cardFrom } from '@lib/content';
+import { cardFrom, hasBody } from '@lib/content';
 import { absolute } from '@lib/seo';
 import Base from '@layouts/Base.astro';
 import PageHero from '@components/blocks/PageHero.astro';
@@ -75,11 +75,13 @@ const jsonLdPage =
     ctas={data.hero.ctas}
   />
 
-  <Section>
-    <Prose>
-      <Content components={mdxComponents} />
-    </Prose>
-  </Section>
+  {hasBody(entry) && (
+    <Section>
+      <Prose>
+        <Content components={mdxComponents} />
+      </Prose>
+    </Section>
+  )}
 
   {gridItems.length > 0 && (
     <ChildCards

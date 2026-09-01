@@ -146,6 +146,27 @@ html.js .stag.in > *{opacity:1;transform:none}
 .nav .btn{margin-left:10px;padding:12px 22px;font-size:13.5px}
 .nav .btn[aria-current="page"]{background:var(--red);color:#fff}
 
+/* ---------- header over a dark hero ----------
+   The header is transparent until it is scrolled, so on a page whose hero
+   is navy (every inner page — see .phero in blocks.css) the default navy
+   link colour is navy-on-navy and the nav simply disappears. Detected from
+   the page itself rather than by passing a prop down, because the header
+   carries transition:persist: it is NOT re-rendered on client-side
+   navigation, so anything server-rendered into it would be stale the moment
+   the visitor moved between a dark-hero page and a light one. :has() is
+   evaluated live against whatever main currently holds, so it stays correct
+   across view transitions with no script.
+
+   The fix is to bring the white backdrop in immediately on those pages
+   rather than to recolour the header's contents. Reversing the type would
+   also mean reversing the logo, and the logo is a two-colour mark — red
+   monogram, navy wordmark — so flattening it to white to survive a navy
+   ground loses the brand red and fills in the monogram's counters at 34px.
+   That needs a properly drawn reversed asset, which is RTG's to supply, not
+   something to approximate with a CSS filter. A white header bar above a
+   navy hero is the honest version of this until that asset exists. */
+body:has(.phero) .hdr::before{opacity:1}
+
 /* ---------- mobile navigation ----------
    A <details> disclosure (Header.astro), so it works with no JS. Only one
    of the two navs is ever rendered: below 1080px the desktop links go,

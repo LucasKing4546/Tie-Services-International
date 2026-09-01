@@ -19,6 +19,16 @@
    over 200px of dead space. Collapse the join; the tone change is what
    earns the padding. */
 .sec.off + .sec.off,.sec.navy + .sec.navy{padding-top:0}
+/* A section whose only content is an empty MDX body still paid 112px top
+   and bottom, which is where the ~220px hole in the middle of every draft
+   page came from: a heading, then a screen of nothing, then the draft
+   panel. Most pages on the site are still outlines, so this was the single
+   biggest source of dead space anywhere.
+   :has() cannot ask "is this subtree visually empty", but it can ask the
+   question that actually matters here — a section that wraps a .prose with
+   no rendered children is a section with nothing to say. */
+.sec:has(> .wrap > .prose:empty):not(:has(> .wrap > :not(.prose))){padding:0}
+.sec:has(> .wrap > .two > .prose:empty):not(:has(> .wrap > .two > :not(.prose))){padding:0}
 .navy{background:var(--navy);color:#fff}
 .navy h1,.navy h2,.navy h3{color:#fff}
 .sechd{max-width:900px;margin-bottom:52px}
@@ -36,14 +46,59 @@
 }
 
 /* ---------- page hero (PageHero.astro) ----------
+   Navy, on every inner page. This is the single highest-leverage tonal
+   decision on the site: the hero is the one section all 68 non-home pages
+   render, so a white one made every page open the same flat white way no
+   matter what the template did further down. Navy here gives every page a
+   tonal anchor at the top for free, and turns the standing rhythm into
+   navy -> white -> (off) -> navy CTA rather than white all the way to the
+   footer.
+
    The top padding is fixed-header clearance plus breathing room, so it
    tracks the header's own shrink at narrow widths rather than leaving the
    h1 stranded halfway down the screen. */
-.phero{padding:168px 0 64px}
-.phero .crumbs{margin-bottom:22px}
-.phero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
-@media (max-width:900px){.phero{padding:132px 0 48px}}
-@media (max-width:560px){.phero{padding:116px 0 40px}.phero-cta{margin-top:26px}}
+.phero{position:relative;overflow:hidden;padding:190px 0 92px;
+  background:var(--navy);color:#fff}
+/* A drawing-sheet grid, at the threshold of visible. The brand's own
+   reference points are technical drawings and machine data plates, so the
+   texture that stops a large navy field reading as a slab is a survey grid
+   rather than anything decorative. Same family as .imgslot's placeholder
+   plate, deliberately — they are the same visual language. */
+.phero::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:
+    linear-gradient(to right,rgba(255,255,255,.055) 1px,transparent 1px),
+    linear-gradient(to bottom,rgba(255,255,255,.055) 1px,transparent 1px);
+  background-size:72px 72px;
+  /* Fades out before the type starts, so the grid never fights the words. */
+  mask-image:radial-gradient(115% 100% at 88% 12%,#000 0%,transparent 72%)}
+.phero::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(85% 120% at 12% 0%,var(--navy-2) 0%,transparent 60%)}
+.phero > *{position:relative;z-index:1}
+.phero h1{color:#fff}
+.phero .lede{color:rgba(255,255,255,.74);max-width:56ch}
+.phero .mono.red{color:#fff}
+/* One red mark in the hero, and it is a rule rather than a word — the
+   accent stays at roughly 5% and the eyebrow keeps full contrast on navy,
+   which #AB3241 on #031d5b does not have. */
+.phero .mono.red::before{content:"";display:inline-block;width:26px;height:2px;
+  background:var(--red);vertical-align:.28em;margin-right:12px}
+.phero .crumbs li{color:rgba(255,255,255,.56)}
+.phero .crumbs a{color:rgba(255,255,255,.56)}
+.phero .crumbs a:hover{color:#fff}
+.phero .crumbs li:not(:last-child)::after{color:rgba(255,255,255,.28)}
+.phero .crumbs li[aria-current] span{color:#fff}
+.phero .crumbs{margin-bottom:26px}
+.phero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:36px}
+/* The placeholder plate has to invert too, or it stays a white card
+   punched into the navy. */
+.phero .imgslot{background:rgba(255,255,255,.045);border-color:rgba(255,255,255,.22)}
+.phero .imgslot::before{
+  background-image:linear-gradient(rgba(255,255,255,.16) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(255,255,255,.16) 1px,transparent 1px)}
+.phero .imgslot b{color:#fff}
+.phero .imgslot span{color:rgba(255,255,255,.66)}
+@media (max-width:900px){.phero{padding:150px 0 64px}.phero::before{background-size:56px 56px}}
+@media (max-width:560px){.phero{padding:130px 0 52px}.phero-cta{margin-top:28px}}
 
 /* ---------- breadcrumbs (Breadcrumbs.astro) ---------- */
 .crumbs ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;align-items:center;gap:8px}

@@ -15,6 +15,7 @@
 import { render } from 'astro:content';
 import type { PageMeta } from '@data/pages';
 import type { PageEntry } from '@lib/blocks';
+import { hasBody } from '@lib/content';
 import { articleJsonLd, faqPageJsonLd } from '@lib/seo';
 import Base from '@layouts/Base.astro';
 import PageHero from '@components/blocks/PageHero.astro';
@@ -43,11 +44,13 @@ const { Content } = await render(entry);
     ctas={data.hero.ctas}
   />
 
-  <Section>
-    <Prose>
-      <Content components={mdxComponents} />
-    </Prose>
-  </Section>
+  {hasBody(entry) && (
+    <Section>
+      <Prose>
+        <Content components={mdxComponents} />
+      </Prose>
+    </Section>
+  )}
 
   {data.faqs.length > 0 && (
     <Section tone="off">
