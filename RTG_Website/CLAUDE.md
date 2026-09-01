@@ -278,7 +278,9 @@ Palette taken from the live RTG stylesheet. Roughly **70% white, 25% navy, 5% re
 | `--line` | `#DFE3EA` | Hairline borders. |
 | `--muted` | `#5A6478` | Body text on white. |
 
-- **Type**: Archivo 800 for display (letter-spacing −3.5%, line-height 0.92),
+- **Type**: Archivo 800 for display (letter-spacing −3.5%, line-height 1.06 — it
+  was 0.92, which is tight enough that a descender nearly touches the cap of
+  the line below on any two-line heading),
   Inter for body, JetBrains Mono for small technical labels. Sentence case,
   never all-caps headings.
 - **No gradients, no drop shadows on cards, no stock-photo collages.** Cards use
