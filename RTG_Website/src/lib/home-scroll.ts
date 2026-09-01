@@ -68,6 +68,20 @@ export function destroyHome(): void {
   fn();
 }
 
+// Release on the way out, not on the way in. initHome() tears the previous
+// page down before it builds, which is enough on paper — but that only
+// happens when the *next* page's idle callback runs, up to 1.5s after the
+// navigation. In that window the old page's five WebGL contexts are still
+// live while the new page's five are being created, and a browser that is
+// near its context cap (~16 per renderer, shared with the user's other tabs)
+// resolves that by silently killing the oldest live contexts — which by then
+// can be the ones the new page just made. The canvases stay in the document
+// at full size and the scroll heights are still set, so the page looks
+// present but renders nothing. Software rendering has no such cap, which is
+// why this never shows up in a headless test. Swapping the DOM away is the
+// honest moment to hand the contexts back, and it is synchronous.
+document.addEventListener('astro:before-swap', () => destroyHome());
+
 export function initHome(): void {
   // Whatever the last navigation left running goes first — including when
   // this call turns out to be on some other page, which is how leaving the
