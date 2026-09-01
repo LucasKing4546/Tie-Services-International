@@ -28,9 +28,18 @@ interface Props {
   class?: string;
   /** Skip lazy-loading — set on anything above the fold. */
   eager?: boolean;
+  /** How wide this slot actually renders, for srcset selection. The default
+   *  assumes a column of roughly half the page; a caller whose layout knows
+   *  better (MediaBand sizes its tiles by aspect ratio) should say so, or
+   *  the browser picks a candidate narrower than the box and the picture is
+   *  scaled up to fit. */
+  sizes?: string;
 }
 
-const { ref, brief, ratio, motion = 'none', class: cls, eager = false } = Astro.props;
+const {
+  ref, brief, ratio, motion = 'none', class: cls, eager = false,
+  sizes = '(max-width: 900px) 100vw, 55vw',
+} = Astro.props;
 const motionAttr = motion !== 'none' ? motion : undefined;
 const photo = mediaFor(ref);
 
@@ -74,7 +83,7 @@ const orient = photo
       src={photo}
       alt={brief}
       widths={[640, 1024, 1600, 2200]}
-      sizes="(max-width: 900px) 100vw, 55vw"
+      sizes={sizes}
       loading={eager ? 'eager' : 'lazy'}
       decoding="async"
     />
