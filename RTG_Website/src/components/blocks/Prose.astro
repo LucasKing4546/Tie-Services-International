@@ -1,4 +1,8 @@
 ---
 /** Typographic rhythm for an MDX body — .prose (blocks.css). */
+interface Props {
+  class?: string;
+}
+const { class: cls } = Astro.props;
 ---
-<div class="prose"><slot /></div>
+<div class:list={['prose', cls]}><slot /></div>

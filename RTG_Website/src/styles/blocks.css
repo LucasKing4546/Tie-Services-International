@@ -192,11 +192,19 @@
 .frow-copy .prose{max-width:none}
 .frow-copy .prose p{max-width:54ch}
 .frow-cta{margin:30px 0 0}
-.frow-media{align-self:stretch;display:flex;min-height:clamp(320px,42vw,560px)}
-/* The plate has to fill the column rather than keep ImageSlot's default
-   aspect-ratio, which is what makes the row read as a picture beside copy
-   instead of a thumbnail beside copy. */
-.frow-media .frow-plate{width:100%;height:100%;aspect-ratio:auto}
+/* The picture keeps its own shape, whatever that is. Stretching the plate to
+   fill a fixed-height column meant object-fit:cover cropped a 596x335 wide
+   photograph into a tall sliver — a landscape subject shown as a portrait,
+   which is the opposite of matching the box to the image. The column is
+   sized by the picture now, capped so a tall one cannot run away with the
+   row. */
+.frow-media{align-self:center;display:flex;align-items:center;justify-content:center}
+.frow-media .frow-plate{width:100%;height:auto;
+  aspect-ratio:var(--imgslot-ratio,4/3);max-height:min(78svh,660px)}
+/* A portrait or square picture would otherwise be as wide as the column and
+   therefore enormously tall; hold it to its own width instead. */
+.frow-media .frow-plate[data-orient="portrait"],
+.frow-media .frow-plate[data-orient="square"]{width:auto;max-width:100%}
 .frow.navy .frow-plate{background:rgba(255,255,255,.045);border-color:rgba(255,255,255,.22)}
 .frow.navy .frow-plate::before{
   background-image:linear-gradient(rgba(255,255,255,.16) 1px,transparent 1px),
@@ -219,16 +227,96 @@
 .mband-grid{display:grid;gap:20px;
   grid-template-columns:repeat(var(--mband-cols,3),minmax(0,1fr))}
 .mband-grid[data-count="1"]{--mband-cols:1}
+/* One picture on its own, and a small one at that, leaves half the row
+   empty with the caption tucked underneath. Set the caption beside it
+   instead: the row fills, and the caption gets room to be read. */
+.mband-grid[data-count="1"] .mband-item{flex-direction:row;align-items:flex-end;
+  gap:clamp(24px,3vw,48px)}
+.mband-grid[data-count="1"] .mband-item figcaption{flex:1;min-width:0;padding-bottom:4px}
+@media (max-width:700px){
+  .mband-grid[data-count="1"] .mband-item{flex-direction:column;align-items:start}
+}
 .mband-grid[data-count="2"]{--mband-cols:2}
 .mband-lead .mband-grid[data-count="3"]{grid-template-columns:1.6fr 1fr 1fr}
-.mband-item{margin:0;display:flex;flex-direction:column;gap:14px}
-.mband-plate{aspect-ratio:4/3;width:100%}
-.mband-grid[data-count="1"] .mband-plate{aspect-ratio:21/9}
+/* Tiles align to the top and keep their own shape rather than being cropped
+   to a shared box: a portrait, a square and a panorama in the same row are
+   what the supplied set actually contains, and forcing them all to 4/3 threw
+   most of two of them away. The row is ragged along the bottom by design —
+   the captions sit under each picture, not on a shared baseline. */
+.mband-grid{align-items:start}
+.mband-item{margin:0;display:flex;flex-direction:column;align-items:start;gap:14px}
+.mband-plate{width:100%}
+/* A portrait beside two landscapes would tower over them, so cap its height
+   to roughly what a landscape tile in the same row comes to. */
+.mband-plate[data-orient="portrait"]{max-height:520px}
 .mband-item figcaption{font-size:13px;line-height:1.45;color:var(--muted);max-width:44ch}
 .navy .mband-item figcaption{color:rgba(255,255,255,.6)}
 @media (max-width:900px){
   .mband-grid,.mband-lead .mband-grid[data-count="3"]{grid-template-columns:1fr;gap:26px}
   .mband-grid[data-count="1"] .mband-plate{aspect-ratio:16/9}
+}
+
+/* ---------- index rows (IndexRows.astro) ----------
+   A short list of destinations as a register. Replaces the scroll track
+   wherever there are too few items to scroll — see the component's note. */
+.irows-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.irows.navy .irows-list{border-top-color:rgba(255,255,255,.22)}
+.irows-list li{border-bottom:1px solid var(--line)}
+.irows.navy .irows-list li{border-bottom-color:rgba(255,255,255,.22)}
+.irows-list a{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr) 44px;
+  align-items:baseline;gap:clamp(20px,3vw,52px);padding:30px 0;
+  transition:padding-left .45s var(--e-heavy)}
+.irows-list a:hover{padding-left:18px}
+.irows-title{font-family:var(--f-d);font-weight:800;letter-spacing:-.03em;line-height:1.02;
+  font-size:clamp(23px,2.5vw,34px);color:var(--navy)}
+.irows.navy .irows-title{color:#fff}
+.irows-blurb{font-size:15px;line-height:1.5;color:var(--muted);max-width:52ch}
+.irows.navy .irows-blurb{color:rgba(255,255,255,.66)}
+.irows-go{justify-self:end;font-family:var(--f-d);font-weight:700;font-size:20px;
+  color:var(--red);transition:transform .45s var(--e-heavy)}
+.irows.navy .irows-go{color:#fff}
+.irows-list a:hover .irows-go{transform:translateX(8px)}
+@media (max-width:820px){
+  .irows-list a{grid-template-columns:1fr 30px;gap:10px 16px;padding:24px 0}
+  .irows-blurb{grid-column:1;max-width:none}
+  .irows-go{grid-column:2;grid-row:1;align-self:start}
+  .irows-list a:hover{padding-left:0}
+}
+@media (prefers-reduced-motion:reduce){
+  .irows-list a,.irows-go{transition:none}
+  .irows-list a:hover{padding-left:0}
+}
+
+/* ---------- skeleton (Skeleton.astro) ----------
+   A block that has no copy yet, drawn rather than omitted. Same hairline and
+   grid language as the ImageSlot plate — a marked-up drawing, not a loading
+   shimmer: nothing here is loading, and a pulsing bar would say the page is
+   broken rather than unwritten. */
+.skel{--skel-ink:rgba(3,29,91,.1)}
+.skel-tag{font-family:var(--f-m);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--red);margin:0 0 26px;display:flex;align-items:center;gap:12px}
+.skel-tag::after{content:"";flex:1;height:1px;background:var(--line)}
+.skel-copy{display:flex;flex-direction:column;gap:14px;max-width:var(--wrap-prose)}
+.skel-bar{display:block;height:13px;border-radius:3px;background:var(--skel-ink);width:100%}
+.skel-bar.skel-head{height:30px;width:58%;margin-bottom:12px;
+  background:color-mix(in oklab,var(--navy) 22%,transparent)}
+.skel-w-70{width:70%}
+.skel-w-60{width:60%}
+.skel-w-40{width:40%}
+.skel-plate{position:relative;border:1px solid var(--line);border-radius:16px;
+  aspect-ratio:4/3;background:
+    linear-gradient(var(--line) 1px,transparent 1px) 0 0/34px 34px,
+    linear-gradient(90deg,var(--line) 1px,transparent 1px) 0 0/34px 34px}
+.skel-plate::after{content:"";position:absolute;top:16px;right:16px;width:13px;height:13px;
+  border-top:1px solid var(--red);border-right:1px solid var(--red);opacity:.55}
+.skel-split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);
+  gap:clamp(40px,5vw,84px);align-items:start}
+.skel-split .skel-plate{aspect-ratio:16/10}
+.skel-rows{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.skel-rows li{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;
+  padding:26px 0;border-bottom:1px solid var(--line);align-items:center}
+@media (max-width:900px){
+  .skel-split,.skel-rows li{grid-template-columns:1fr;gap:26px}
 }
 
 /* ---------- breadcrumbs (Breadcrumbs.astro) ---------- */
@@ -565,7 +653,10 @@ html.js .cmp.sweep .cmp-handle{transition:left .8s var(--e-heavy)}
 .step{display:grid;grid-template-columns:64px 1fr;gap:24px;padding:30px 0;border-top:1px solid var(--line)}
 .step:last-child{padding-bottom:0}
 .lc-n{font-family:var(--f-m);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--red)}
-.step .num{font-family:var(--f-d);font-weight:800;font-size:22px;color:var(--off-2)}
+/* The step number is the one place a reader's eye lands when scanning a
+   sequence, so it carries the accent rather than sitting in near-invisible
+   grey — it is doing navigational work, which is what the 5% red is for. */
+.step .num{font-family:var(--f-d);font-weight:800;font-size:22px;color:var(--red)}
 .lc-l{list-style:none;margin:0 0 24px;padding:0;display:flex;flex-direction:column;gap:8px}
 .lc-l li{font-size:14px;color:var(--muted);display:flex;gap:10px;align-items:baseline}
 .lc-l li::before{content:"";width:4px;height:4px;border-radius:50%;flex:none;transform:translateY(-2px);
@@ -677,7 +768,11 @@ table.spec .foot{margin-top:16px;font-size:13.5px;color:var(--muted)}
    No <img> until real photography exists - a <figure role="img"
    aria-label> so the alt-text audit is satisfied honestly rather than
    faked. Swapping in a real photo is a one-file change. */
-.imgslot{position:relative;overflow:hidden;border-radius:16px;background:var(--white);
+/* margin:0 first. <figure> carries a UA default of `1em 40px`, so a plate
+   set to width:100% sat 40px right of its own parent and pushed the page
+   sideways — which is exactly what it did on every sector page carrying a
+   media band at 390px. */
+.imgslot{margin:0;position:relative;overflow:hidden;border-radius:16px;background:var(--white);
   border:1px solid var(--line);
   display:flex;flex-direction:column;justify-content:flex-end;gap:6px;padding:22px;
   aspect-ratio:var(--imgslot-ratio,4/3)}
@@ -698,7 +793,8 @@ table.spec .foot{margin-top:16px;font-size:13.5px;color:var(--muted)}
   border-top:1px solid var(--red);border-right:1px solid var(--red);opacity:.7}
 /* A slot holding a real photograph is a picture, not a drawing sheet: drop
    the plate's border, grid and registration tick and let the image fill it. */
-.imgslot-shot{padding:0;border:0;background:none}
+.imgslot-shot{padding:0;border:0;background:none;
+  max-width:min(100%,var(--imgslot-maxw,100%))}
 .imgslot-shot::before,.imgslot-shot::after{display:none}
 .imgslot-shot img{width:100%;height:100%;object-fit:cover;border-radius:inherit}
 .imgslot b,.imgslot span{position:relative}
@@ -785,6 +881,36 @@ table.spec .gap{text-transform:uppercase;letter-spacing:.1em;font-size:.8em}
    Scoped to prose that is the section's own child: prose inside a .two
    column is already set to a column measure and must not be touched. */
 .wrap > .prose{max-width:var(--wrap-prose);margin-inline:auto}
+/* A body with a lead paragraph is the page's main content, not an aside, so
+   it takes the two-column treatment rather than a single centred column
+   with a third of the page empty either side. */
+.wrap > .prose.lead-para{max-width:none;margin-inline:0}
+/* An opening paragraph set at display scale. Editorial typography doing the
+   work an image would otherwise have to: it gives a prose-only section a
+   focal point and a reason to look, without a word of new copy or a
+   photograph that does not exist yet. Scoped to the first paragraph only —
+   applied to a whole body it would just be shouting. */
+.lead-para > p:first-child{font-size:clamp(21px,2.2vw,30px);line-height:1.3;
+  letter-spacing:-.018em;color:var(--navy);font-weight:450;
+  margin:0 0 30px;text-wrap:balance}
+/* In a section of its own the intro runs as two columns — the opening line
+   at display scale on the left, the rest at reading measure on the right —
+   rather than one centred column with a third of the page empty either
+   side. Inside a feature row the copy already has a column, so it stacks. */
+/* Row gap 0: each paragraph in the right column is its own grid row, so a
+   shared gap would space paragraphs as far apart as the columns are. Their
+   own margins do the vertical rhythm. */
+.sec > .wrap > .lead-para{max-width:none;display:grid;align-items:start;
+  grid-template-columns:1.05fr 1fr;column-gap:clamp(36px,4.5vw,78px);row-gap:0}
+.sec > .wrap > .lead-para > p:first-child{grid-column:1;grid-row:1;margin-bottom:0}
+.sec > .wrap > .lead-para > *:not(:first-child){grid-column:2;max-width:56ch}
+@media (max-width:900px){
+  .sec > .wrap > .lead-para{grid-template-columns:1fr;column-gap:0;row-gap:0}
+  .sec > .wrap > .lead-para > p:first-child{grid-column:1;grid-row:auto;margin-bottom:8px}
+  .sec > .wrap > .lead-para > *:not(:first-child){grid-column:1}
+}
+.frow-copy .lead-para > p:first-child{max-width:20ch}
+
 .prose h2{font-size:clamp(26px,3vw,36px);letter-spacing:-.03em;margin:56px 0 20px}
 .prose h2:first-child{margin-top:0}
 .prose h3{font-size:21px;letter-spacing:-.02em;margin:34px 0 14px}
