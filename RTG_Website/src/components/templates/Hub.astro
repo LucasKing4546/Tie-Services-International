@@ -17,7 +17,7 @@
 import { render } from 'astro:content';
 import { childrenOf, type PageMeta } from '@data/pages';
 import type { PageEntry } from '@lib/blocks';
-import { cardFrom, hasBody } from '@lib/content';
+import { cardFrom, hasBody, isIntro } from '@lib/content';
 import { absolute } from '@lib/seo';
 import Base from '@layouts/Base.astro';
 import PageHero from '@components/blocks/PageHero.astro';
@@ -47,6 +47,14 @@ const extraCards = data.cards.map(cardFrom);
 // outline. The track is a list of what is inside this section, so it says
 // that instead; the eyebrow above it already carries the section name.
 const introMedia = data.media[0];
+
+// The picture that stands beside a long body, drawn empty when the page has
+// none yet — same rule the sector pages follow.
+const tallSlot = introMedia ?? {
+  ref: `IMG-${page.id}-V`,
+  brief: 'Vertical shot — equipment in build or rigged on deck, full height of the machine.',
+  ratio: '3/4',
+};
 
 const trackHeading = children.length > 0 ? `Everything in ${page.section.toLowerCase()}` : 'Where to go next';
 
@@ -92,19 +100,25 @@ const jsonLdPage =
       a feature row against the page's own picture where one exists, and as
       a toned band with its opening sentence set at display scale where one
       does not. Neither needs a word of new copy. */}
-  {hasBody(entry) && introMedia && (
-    <FeatureRow media={introMedia} tone="off" reverse>
-      <Prose class="lead-para">
-        <Content components={mdxComponents} />
-      </Prose>
-    </FeatureRow>
-  )}
-  {hasBody(entry) && !introMedia && (
+  {/* A short intro takes the two-column treatment, its opening line at
+      display scale. A body with its own sections is a document, not an
+      intro: given two columns it puts one heading on the left and stacks
+      everything else on the right, leaving most of a screen empty. That one
+      runs beside a tall picture instead — drawn whether or not the
+      photograph exists yet, so the page keeps its shape either way. */}
+  {hasBody(entry) && isIntro(entry) && (
     <Section tone="off">
       <Prose class="lead-para">
         <Content components={mdxComponents} />
       </Prose>
     </Section>
+  )}
+  {hasBody(entry) && !isIntro(entry) && (
+    <FeatureRow media={tallSlot}>
+      <Prose>
+        <Content components={mdxComponents} />
+      </Prose>
+    </FeatureRow>
   )}
 
   {gridItems.length > 0 && (

@@ -9,6 +9,7 @@ import { render } from 'astro:content';
 import { page as lookupPage, type PageMeta } from '@data/pages';
 import type { PageEntry, CardItem } from '@lib/blocks';
 import { cardFrom, entryFor } from '@lib/content';
+import { orientationOf } from '@data/media';
 import Base from '@layouts/Base.astro';
 import PageHero from '@components/blocks/PageHero.astro';
 import Section from '@components/blocks/Section.astro';
@@ -16,6 +17,7 @@ import Prose from '@components/blocks/Prose.astro';
 import MediaBand from '@components/blocks/MediaBand.astro';
 import StepList from '@components/blocks/StepList.astro';
 import SectionHead from '@components/blocks/SectionHead.astro';
+import FeatureRow from '@components/blocks/FeatureRow.astro';
 import ScrollTrack from '@components/blocks/ScrollTrack.astro';
 import IndexRows from '@components/blocks/IndexRows.astro';
 import Card from '@components/blocks/Card.astro';
@@ -45,10 +47,27 @@ const featured = data.featured?.pageId
 
 // The second frontmatter media entry, if a page has supplied one, runs
 // alongside the opening prose as the feature row's picture.
-// Every photograph the page carries beyond the hero. They all go to the
-// band, which gives them the full page width, rather than one of them being
-// spent as a column beside prose.
-const restMedia = data.media;
+// A photograph goes where its shape fits. Most of RTG's own equipment
+// photographs are portrait — they are camera originals with EXIF rotation —
+// and a tall picture standing beside the copy is the best thing on these
+// pages. A wide one in that same column has to be cropped to a sliver to
+// fill it, which is what made one sector page look broken, so wide ones go
+// to the full-width band below instead.
+const tallMedia = data.media.find((m) => {
+  const o = orientationOf(m.ref);
+  return o === 'portrait' || o === 'square';
+});
+const bandMedia = data.media.filter((m) => m !== tallMedia);
+
+// The column is drawn whether or not there is a picture for it yet. An empty
+// plate carrying the brief is how the page says what still needs shooting —
+// and it keeps every sector page the same shape while the photography is
+// being gathered.
+const tallSlot = tallMedia ?? {
+  ref: `IMG-${page.id}-V`,
+  brief: 'Vertical shot — the machine at full height, on the shop floor or rigged on deck.',
+  ratio: '3/4',
+};
 ---
 
 <Base pageId={page.id}>
@@ -69,11 +88,11 @@ const restMedia = data.media;
       one empty, which was the dead space down the right of every sector
       page. The photographs are better spent in the band below, where they
       get the full width. */}
-  <Section>
+  <FeatureRow media={tallSlot}>
     <Prose>
       <Content components={mdxComponents} />
     </Prose>
-  </Section>
+  </FeatureRow>
 
   {equipment.length >= 5 ? (
     <ScrollTrack eyebrow="Equipment" heading="Built for this sector">
@@ -103,7 +122,7 @@ const restMedia = data.media;
   {/* No heading: each picture carries its own caption, and a fixed one
       ("Equipment for this sector") is wrong the moment a page's photograph
       is a diagram or a vessel rather than a machine. */}
-  <MediaBand items={restMedia} lead />
+  <MediaBand items={bandMedia} lead />
 
   {/* Where a block has no content yet, draw its shape rather than omit it —
       the page then shows what it will look like filled in, which is the
@@ -111,7 +130,7 @@ const restMedia = data.media;
   {data.draft && data.steps.length === 0 && (
     <Skeleton label="Technical note" kind="rows" count={3} tone="off" />
   )}
-  {data.draft && restMedia.length === 0 && (
+  {data.draft && bandMedia.length === 0 && (
     <Skeleton label="Equipment photography" kind="media" />
   )}
 

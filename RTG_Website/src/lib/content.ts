@@ -84,3 +84,18 @@ export function cardFrom(item: PageData['cards'][number]): CardItem {
 export function hasBody(entry: PageEntry): boolean {
   return (entry.body ?? '').trim().length > 0;
 }
+
+/**
+ * Is this body a short introduction, or a document?
+ *
+ * The difference decides its layout. An intro — a few paragraphs, no
+ * headings — reads well as two columns with its opening line at display
+ * scale. A body with its own `##` sections does not: only the first heading
+ * moves into the left column and every later section stacks in the right
+ * one, leaving most of a screen of empty white beside a single line. That is
+ * a document, and a document runs as one column at its own measure.
+ */
+export function isIntro(entry: PageEntry): boolean {
+  const body = entry.body ?? '';
+  return !/^##\s/m.test(body) && body.trim().length > 0;
+}

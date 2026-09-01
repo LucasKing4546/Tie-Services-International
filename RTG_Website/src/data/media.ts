@@ -68,3 +68,23 @@ export const MEDIA: Record<string, ImageMetadata> = {
 export function mediaFor(ref: string): ImageMetadata | undefined {
   return MEDIA[ref];
 }
+
+/**
+ * The shape of a photograph, so a template can put it where it belongs.
+ *
+ * Worth knowing: most of RTG's own equipment photographs are portrait. They
+ * are camera originals carrying EXIF rotation (orientation 6 and 8), so the
+ * raw pixel dimensions read as landscape and only the corrected ones are
+ * true — Astro applies the rotation, so the width and height here are the
+ * real ones. A template that assumes landscape will crop the machine in
+ * half.
+ *
+ * Returns undefined when there is no photograph yet, which a caller should
+ * read as "unknown", not as "landscape".
+ */
+export function orientationOf(ref: string): 'portrait' | 'square' | 'landscape' | undefined {
+  const m = MEDIA[ref];
+  if (!m) return undefined;
+  const r = m.width / m.height;
+  return r < 0.95 ? 'portrait' : r < 1.15 ? 'square' : 'landscape';
+}

@@ -183,7 +183,7 @@
    The media column stretches to the row's height rather than holding an
    aspect box, so the picture is sized by the copy beside it and a short
    paragraph can never strand a letterboxed plate. */
-.frow-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);
+.frow-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);
   gap:clamp(40px,5vw,84px);align-items:center}
 .frow-rev .frow-grid{direction:rtl}
 .frow-rev .frow-grid > *{direction:ltr}
@@ -198,13 +198,22 @@
    which is the opposite of matching the box to the image. The column is
    sized by the picture now, capped so a tall one cannot run away with the
    row. */
-.frow-media{align-self:center;display:flex;align-items:center;justify-content:center}
+/* The column is sized by the picture and the picture keeps its own shape —
+   it is never stretched to fill a fixed height, which is what cropped a wide
+   photograph into a tall sliver. It is capped so a very tall one cannot run
+   away with the row, and the sticky behaviour lets a tall picture hold
+   station while a long body scrolls past it. */
+.frow-media{align-self:start;position:sticky;top:112px;
+  display:flex;align-items:flex-start;justify-content:center}
 .frow-media .frow-plate{width:100%;height:auto;
-  aspect-ratio:var(--imgslot-ratio,4/3);max-height:min(78svh,660px)}
-/* A portrait or square picture would otherwise be as wide as the column and
-   therefore enormously tall; hold it to its own width instead. */
+  aspect-ratio:var(--imgslot-ratio,3/4);max-height:min(78svh,720px)}
+/* A portrait picture at full column width would be enormously tall, so it is
+   held to whatever width its capped height allows. */
 .frow-media .frow-plate[data-orient="portrait"],
 .frow-media .frow-plate[data-orient="square"]{width:auto;max-width:100%}
+@media (max-width:900px){
+  .frow-media{position:static}
+}
 .frow.navy .frow-plate{background:rgba(255,255,255,.045);border-color:rgba(255,255,255,.22)}
 .frow.navy .frow-plate::before{
   background-image:linear-gradient(rgba(255,255,255,.16) 1px,transparent 1px),
