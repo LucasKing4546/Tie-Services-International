@@ -1,4 +1,86 @@
 ---
 pageId: "S-01"
-draft: true
+eyebrow: "Sectors · Ocean survey & hydrography"
+lede: "The survey is not limited by the sensor. It is limited by everything between the sensor and the ship."
+hero:
+  media:
+    ref: "IMG-S01-B"
+    brief: "Survey winch on the shop floor, grooved drum and level wind visible."
+    ratio: "16/9"
+  ctas:
+    - { label: "Request the survey range datasheets", href: "/resources/datasheets/?equipment=Survey%20and%20oceanographic%20winches" }
+    - { label: "Talk to an engineer", href: "/contact/" }
+media:
+  - ref: "IMG-S01-A"
+    brief: "Survey winch assembled and under test, drum and level wind in shot."
+    ratio: "4/3"
+  - ref: "IMG-S01-C"
+    brief: "Containerised survey spread rigged on deck, ready for mobilisation."
+    ratio: "4/3"
+related:
+  - "E-02"
+  - "E-07"
+  - "E-05"
+featured:
+  pageId: "P-02"
+  cta: "Read the fleet standardisation case"
+steps:
+  - n: "01"
+    title: "Drive resolution"
+    body: "At two metres a minute a hydraulic drive runs on a very small fraction of full flow, the least linear part of a proportional valve's characteristic. Add seal friction and you get stick-slip: the motor holds, breaks free, holds again. On deck it looks like a slight shudder. On the record it is periodic noise at a frequency that has nothing to do with the water column."
+    points:
+      - "A closed-loop electric drive with position feedback holds low speed more precisely"
+      - "Which is much of why research vessels specify electric — not because it is better in general, but because it is better there"
+  - n: "02"
+    title: "Level wind placement and reversal"
+    body: "At speed a level wind has momentum on its side and the rope more or less falls where it should. At two metres a minute the rope has to be actively placed, turn by turn, and every mechanism's backlash shows up as a small lateral hesitation."
+    points:
+      - "The moment that matters is the reversal at the flange, where the level wind changes direction and the rope steps across"
+      - "Done with slop it puts a tension transient into the cable at every flange, once per wrap, for the whole cast"
+      - "Which is precisely the kind of periodic artefact that survives into a processed record"
+  - n: "03"
+    title: "Layer change"
+    body: "As the drum fills, effective radius grows and line pull and speed change with it. What is less discussed is the transition: the moment the rope steps up a layer, effective radius changes abruptly rather than smoothly."
+    points:
+      - "At working speeds that transient is lost in the noise"
+      - "At two metres a minute it is a visible step in tension — and if you are holding a sensor at a fixed altitude, a step in altitude"
+cta:
+  heading: "Send us your spec and we will answer the three questions"
+  body: "Minimum controllable line speed, level wind behaviour through the reversal, and how cable out is derived. If you are writing a survey winch specification, those are the lines we would want to see — send us what you have and we will tell you what is missing."
+  primary: { label: "Request the survey range datasheets", href: "/resources/datasheets/?equipment=Survey%20and%20oceanographic%20winches" }
+  secondary: { label: "Talk to an engineer", href: "/contact/" }
 ---
+
+## The problem, as it usually gets described to us
+
+**Cable out is a measurement, not a readout.** Layback depends on it, and so does
+the position of every sounding line you have paid to acquire — but the number comes
+off a counter that drifts, or a wheel that slips, or a cable that stretches under
+load in a way nobody has accounted for. You find out in QC, three days after the
+line was run.
+
+Then there is how the cable behaves once it is in the water. Strum reaches the
+sensor. Speed that will not hold steady at two metres a minute shows up as noise in
+the record. A winch that cannot pay out smoothly at survey speed is not an
+inconvenience — it is producing worse data than the sensor is capable of.
+
+And the cable itself is the part that actually costs money. Armoured tow cable and
+its termination are not cheap, and terminations fail at the join. Poor spooling
+shortens cable life quietly, layer crushing layer, until the day it stops being
+quiet.
+
+Meanwhile the equipment has to move. Different hull next charter, different deck,
+different seating, a lead-off angle that only works if the sheave sits somewhere the
+vessel does not have. Every one of those is quay time nobody bills for.
+
+None of it stops the campaign. That is the problem — it just erodes it.
+
+## What we build for it
+
+- Survey and oceanographic winches from <Fig of="cptDepthM" /> down to 4,000 m,
+  electric or hydraulic, with or without level wind
+- Lebus shell grooving and controlled level wind on every survey winch we make
+- Deck seating and loading supplied with the equipment, not commissioned separately
+- Class appraisal, survey during build and certification where the vessel requires it
+
+Configured around the sensor and the cast rather than a catalogue number.
