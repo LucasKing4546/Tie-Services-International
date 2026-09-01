@@ -60,15 +60,28 @@ main{counter-reset:sechd}
 /* All three section-heading treatments share the counter, or the numbering
    would skip whenever a page's structure came from a set-piece rather than
    a plain SectionHead — which is most of the interesting pages. */
-.sechd,.strack-head,.pstage-head{position:relative;counter-increment:sechd;
+.sechd,.strack-head{position:relative;counter-increment:sechd;
   border-top:1px solid var(--line);padding-top:28px}
-.sechd{max-width:900px;margin-bottom:52px}
-.sechd::after,.strack-head::after,.pstage-head::after{
+/* The rule and its number mark the SECTION, so they span the content
+   column. Only the words inside are held to a reading measure — putting the
+   max-width on .sechd itself stopped the rule and stranded the number in
+   the middle of the page, a third of the way in from the right edge. */
+.sechd{margin-bottom:52px}
+.sechd > *{max-width:900px}
+.sechd::after,.strack-head::after{
   content:counter(sechd,decimal-leading-zero);position:absolute;top:28px;right:0;
   font-family:var(--f-m);font-size:11px;letter-spacing:.16em;color:var(--muted);
   font-variant-numeric:tabular-nums}
-.navy .sechd,.strack-head,.pstage.navy .pstage-head{border-top-color:rgba(255,255,255,.2)}
-.navy .sechd::after,.strack-head::after,.pstage.navy .pstage-head::after{color:rgba(255,255,255,.5)}
+.navy .sechd,.strack-head{border-top-color:rgba(255,255,255,.2)}
+.navy .sechd::after,.strack-head::after{color:rgba(255,255,255,.5)}
+/* Deliberately NOT on .pstage-head. A pinned section already numbers itself
+   twice over — the stage's own display figure and the index list beside it
+   — and .pstage-head sits in the left column of a two-column grid, so a
+   section number would land against the column edge mid-page and read as a
+   third, competing count. The stage index is that section's structure
+   marker; it does not need another one. It stays out of the counter as well
+   as out of the rule, so the sections that DO show a number stay in an
+   unbroken sequence rather than skipping one. */
 /* The track head is a two-column row, so its number would land on top of
    the lede in the right-hand column — give it the row's own top-right
    corner instead, above both columns. */
