@@ -1,0 +1,54 @@
+---
+/**
+ * A full-bleed strip of photographs, edge to edge, with the brief under each.
+ *
+ * The site had exactly one place a picture could go per section — beside a
+ * column of copy — so a page with four good photographs could only ever show
+ * one of them. This is the block that spends the rest: it takes whatever
+ * media a page has left over and gives it the full width of the page rather
+ * than a column of it.
+ *
+ * A gallery, not a card list, so the boss's carousel-not-grid rule does not
+ * apply here — nothing in it is a link or a destination. Tiles share one
+ * height and crop to fill, which is what lets a 6016x4000 camera original
+ * and a 596x335 web image sit in the same row without one of them looking
+ * broken.
+ */
+import type { ImgBrief } from '@lib/blocks';
+import ImageSlot from './ImageSlot.astro';
+
+interface Props {
+  items: ImgBrief[];
+  eyebrow?: string;
+  heading?: string;
+  tone?: 'default' | 'off' | 'navy';
+  /** Give the first tile double width — for a row with one clear lead shot. */
+  lead?: boolean;
+}
+
+const { items, eyebrow, heading, tone = 'off', lead = false } = Astro.props;
+const toneClass = tone === 'off' ? 'off' : tone === 'navy' ? 'navy' : '';
+---
+
+{items.length > 0 && (
+  <section class:list={['sec', 'mband', toneClass, { 'mband-lead': lead }]}>
+    {(eyebrow || heading) && (
+      <div class="wrap">
+        <div class="sechd">
+          {eyebrow && <p class="mono red">{eyebrow}</p>}
+          {heading && <h2 class="d3"><span class="rl"><span>{heading}</span></span></h2>}
+        </div>
+      </div>
+    )}
+    <div class="wrap">
+      <div class="mband-grid stag" data-count={items.length}>
+        {items.map((m) => (
+          <figure class="mband-item">
+            <ImageSlot ref={m.ref} brief={m.brief} ratio={m.ratio} class="mband-plate" />
+            <figcaption>{m.brief}</figcaption>
+          </figure>
+        ))}
+      </div>
+    </div>
+  </section>
+)}

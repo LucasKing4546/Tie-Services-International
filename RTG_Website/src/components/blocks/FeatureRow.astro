@@ -1,0 +1,51 @@
+---
+/**
+ * Copy one side, media the other, sides alternating down the page.
+ *
+ * The plainest block in the library and the most important one. Studying
+ * iCOMAT page by page, this row — not any of the scroll set-pieces — is what
+ * carries the whole design: it repeats four or five times per page and it is
+ * the reason those pages read as 60% visual while RTG's read as documents.
+ * Three of these down a page changes the ratio without a single new line of
+ * copy being written.
+ *
+ * The media column is full-height rather than a fixed aspect box, so the row
+ * is sized by its copy and the picture fills whatever that comes to. That is
+ * what stops a short paragraph leaving a letterboxed plate stranded beside
+ * it, which is what the old `.two` + ImageSlot pairing did.
+ *
+ * Copy goes in the default slot so an MDX body can be passed straight in.
+ */
+import type { ImgBrief, Link } from '@lib/blocks';
+import ImageSlot from './ImageSlot.astro';
+
+interface Props {
+  eyebrow?: string;
+  heading?: string;
+  media?: ImgBrief;
+  /** Puts the media on the left. Alternate it down a page. */
+  reverse?: boolean;
+  tone?: 'default' | 'off' | 'navy';
+  cta?: Link;
+}
+
+const { eyebrow, heading, media, reverse = false, tone = 'default', cta } = Astro.props;
+const toneClass = tone === 'off' ? 'off' : tone === 'navy' ? 'navy' : '';
+---
+
+<section class:list={['sec', 'frow', toneClass, { 'frow-rev': reverse }]}>
+  <div class="wrap frow-grid">
+    <div class="frow-copy">
+      {eyebrow && <p class="mono red fu">{eyebrow}</p>}
+      {heading && <h2 class="d2"><span class="rl"><span>{heading}</span></span></h2>}
+      <slot />
+      {cta && <p class="frow-cta"><a class="arw" href={cta.href}>{cta.label} →</a></p>}
+    </div>
+
+    {media && (
+      <div class="frow-media">
+        <ImageSlot ref={media.ref} brief={media.brief} ratio={media.ratio} class="frow-plate" />
+      </div>
+    )}
+  </div>
+</section>

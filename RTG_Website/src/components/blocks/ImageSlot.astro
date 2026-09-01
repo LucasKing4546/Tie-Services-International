@@ -1,11 +1,21 @@
 ---
 /**
- * Placeholder for a real photograph — no <img> until photography exists
- * (CLAUDE.md §5.5). A <figure role="img" aria-label> so the alt-text audit
- * (scripts/audit-seo.mjs) is satisfied honestly, not faked with an empty
- * alt on an element with no image behind it. Swapping in a real photo later
- * is a one-file change to this component.
+ * A photograph where one exists, and an honest placeholder where one does
+ * not (CLAUDE.md §5.5).
+ *
+ * The ref is looked up in src/data/media.ts. A hit renders an optimised
+ * <Image> — responsive widths, AVIF/WebP, explicit dimensions so nothing
+ * shifts as it loads. A miss renders the drawing-sheet plate: a <figure
+ * role="img" aria-label> carrying the brief, so the alt-text audit
+ * (scripts/audit-seo.mjs) is satisfied honestly rather than faked with an
+ * empty alt on an element with no image behind it.
+ *
+ * The consequence worth stating: a page never changes when its photograph
+ * arrives. It keeps the same ref in frontmatter, and the slot switches from
+ * plate to picture on its own.
  */
+import { Image } from 'astro:assets';
+import { mediaFor } from '@data/media';
 import type { MotionHint } from '@lib/blocks';
 
 interface Props {
@@ -16,14 +26,30 @@ interface Props {
   ratio?: string;
   motion?: MotionHint;
   class?: string;
+  /** Skip lazy-loading — set on anything above the fold. */
+  eager?: boolean;
 }
 
-const { ref, brief, ratio, motion = 'none', class: cls } = Astro.props;
+const { ref, brief, ratio, motion = 'none', class: cls, eager = false } = Astro.props;
 const style = ratio ? `--imgslot-ratio:${ratio}` : undefined;
 const motionAttr = motion !== 'none' ? motion : undefined;
+const photo = mediaFor(ref);
 ---
 
-<figure class:list={['imgslot', cls]} role="img" aria-label={brief} style={style} data-motion={motionAttr}>
-  <b>{ref}</b>
-  <span>{brief}</span>
-</figure>
+{photo ? (
+  <figure class:list={['imgslot', 'imgslot-shot', cls]} style={style} data-motion={motionAttr}>
+    <Image
+      src={photo}
+      alt={brief}
+      widths={[640, 1024, 1600, 2200]}
+      sizes="(max-width: 900px) 100vw, 55vw"
+      loading={eager ? 'eager' : 'lazy'}
+      decoding="async"
+    />
+  </figure>
+) : (
+  <figure class:list={['imgslot', cls]} role="img" aria-label={brief} style={style} data-motion={motionAttr}>
+    <b>{ref}</b>
+    <span>{brief}</span>
+  </figure>
+)}

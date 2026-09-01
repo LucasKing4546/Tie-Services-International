@@ -45,54 +45,29 @@
   mask-image:radial-gradient(100% 80% at 92% 0%,#000 0%,transparent 70%)}
 
 /* ---------- section head (SectionHead.astro) ----------
-   Every section is numbered and ruled, counted automatically by CSS rather
-   than by anything a template passes in — so the numbering is always
-   sequential down the page and never has to be maintained by hand as
-   sections come and go behind their own conditionals.
+   A rule, and NO number.
 
-   This is the site's one borrowed device, and it is borrowed from the
-   buyer's own documents rather than from a website: a drawing sheet numbers
-   its views, and a procedure numbers its stages. It gives a page of stacked
-   white sections an obvious structure and a sense of being a controlled
-   document, which is the impression this particular buyer is meant to
-   form. */
-main{counter-reset:sechd}
-/* All three section-heading treatments share the counter, or the numbering
-   would skip whenever a page's structure came from a set-piece rather than
-   a plain SectionHead — which is most of the interesting pages. */
-.sechd,.strack-head{position:relative;counter-increment:sechd;
-  border-top:1px solid var(--line);padding-top:28px}
-/* The rule and its number mark the SECTION, so they span the content
-   column. Only the words inside are held to a reading measure — putting the
-   max-width on .sechd itself stopped the rule and stranded the number in
-   the middle of the page, a third of the way in from the right edge. */
-.sechd{margin-bottom:52px}
+   Numbering was applied to every section head across the site and then taken
+   back off, deliberately. A numbered marker is only honest where the content
+   is genuinely a sequence — where the order carries information the reader
+   needs. A Sector page runs problem, then equipment, then a case study;
+   those are three different kinds of thing, not steps 01 to 03, and counting
+   them was decoration wearing the costume of structure.
+
+   The site still numbers, in the three places where order is real and the
+   reader is meant to follow it: StepList's process steps, the Ladder's four
+   cumulative tiers, and PinnedStages' walkthrough. Those keep their figures.
+   The rule stays here, because a hairline above a section head is a division
+   rather than a claim about sequence. */
+.sechd{position:relative;margin-bottom:52px;border-top:1px solid var(--line);padding-top:28px}
 .sechd > *{max-width:900px}
-.sechd::after,.strack-head::after{
-  content:counter(sechd,decimal-leading-zero);position:absolute;top:28px;right:0;
-  font-family:var(--f-m);font-size:11px;letter-spacing:.16em;color:var(--muted);
-  font-variant-numeric:tabular-nums}
-.navy .sechd,.strack-head{border-top-color:rgba(255,255,255,.2)}
-.navy .sechd::after,.strack-head::after{color:rgba(255,255,255,.5)}
-/* Deliberately NOT on .pstage-head. A pinned section already numbers itself
-   twice over — the stage's own display figure and the index list beside it
-   — and .pstage-head sits in the left column of a two-column grid, so a
-   section number would land against the column edge mid-page and read as a
-   third, competing count. The stage index is that section's structure
-   marker; it does not need another one. It stays out of the counter as well
-   as out of the rule, so the sections that DO show a number stay in an
-   unbroken sequence rather than skipping one. */
-/* The track head is a two-column row, so its number would land on top of
-   the lede in the right-hand column — give it the row's own top-right
-   corner instead, above both columns. */
+.navy .sechd{border-top-color:rgba(255,255,255,.2)}
 /* .strack-head is itself a .wrap, so an inset-0 pseudo-element spans its
    padding box and the rule would start a gutter to the left of the cards it
-   sits above. Inset both the rule and the number by the gutter so they line
-   up with the content column. */
-.strack-head{padding-top:0;border-top:0;margin-top:26px}
+   sits above. Inset it by the gutter to line up with the content column. */
+.strack-head{position:relative;margin-top:26px}
 .strack-head::before{content:"";position:absolute;top:-26px;left:var(--gut);right:var(--gut);
   height:1px;background:rgba(255,255,255,.2)}
-.strack-head::after{top:-38px;right:var(--gut)}
 .sechd .mono{display:block;margin-bottom:22px}
 @media (max-width:900px){
   .sec{padding:76px 0}
@@ -107,83 +82,154 @@ main{counter-reset:sechd}
 }
 
 /* ---------- page hero (PageHero.astro) ----------
-   Navy, on every inner page. This is the single highest-leverage tonal
-   decision on the site: the hero is the one section all 68 non-home pages
-   render, so a white one made every page open the same flat white way no
-   matter what the template did further down. Navy here gives every page a
-   tonal anchor at the top for free, and turns the standing rhythm into
-   navy -> white -> (off) -> navy CTA rather than white all the way to the
-   footer.
+   Full-bleed. The media fills the band and the heading sits over it behind a
+   scrim, which is the single decision that changes how every one of the 68
+   inner pages opens. Previously the hero shared a two-column row with a
+   plate, so a page whose plate was empty — every page today — opened with a
+   headline beside a grey rectangle.
 
-   The top padding is fixed-header clearance plus breathing room, so it
-   tracks the header's own shrink at narrow widths rather than leaving the
-   h1 stranded halfway down the screen. */
-.phero{position:relative;overflow:hidden;padding:190px 0 56px;
-  background:var(--navy);color:#fff}
-/* A drawing-sheet grid, at the threshold of visible. The brand's own
-   reference points are technical drawings and machine data plates, so the
-   texture that stops a large navy field reading as a slab is a survey grid
-   rather than anything decorative. Same family as .imgslot's placeholder
-   plate, deliberately — they are the same visual language. */
-.phero::before{content:"";position:absolute;inset:0;pointer-events:none;
+   Where there is no photograph the drawing-sheet plate shows through the
+   scrim instead. That is the honest version: the page looks composed, and
+   the plate is visibly a plate rather than a broken image. */
+.phero{position:relative;isolation:isolate;overflow:hidden;
+  min-height:clamp(520px,74svh,860px);padding:190px 0 0;
+  background:var(--navy);color:#fff;
+  display:flex;flex-direction:column;justify-content:flex-end}
+
+/* The media layer. A real <img>/<video> drops in here and needs only
+   object-fit:cover; everything above it already accounts for its presence. */
+.phero-media{position:absolute;inset:0;z-index:-2;overflow:hidden}
+.phero-media::before{content:"";position:absolute;inset:-10% 0;
   background-image:
-    linear-gradient(to right,rgba(255,255,255,.055) 1px,transparent 1px),
-    linear-gradient(to bottom,rgba(255,255,255,.055) 1px,transparent 1px);
-  background-size:72px 72px;
-  /* Fades out before the type starts, so the grid never fights the words. */
-  mask-image:radial-gradient(115% 100% at 88% 12%,#000 0%,transparent 72%)}
-.phero::after{content:"";position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(85% 120% at 12% 0%,var(--navy-2) 0%,transparent 60%)}
-.phero > *{position:relative;z-index:1}
-.phero h1{color:#fff}
-.phero .lede{color:rgba(255,255,255,.74);max-width:56ch}
-.phero .mono.red{color:#fff}
-/* One red mark in the hero, and it is a rule rather than a word — the
-   accent stays at roughly 5% and the eyebrow keeps full contrast on navy,
-   which #AB3241 on #031d5b does not have. */
-.phero .mono.red::before{content:"";display:inline-block;width:26px;height:2px;
-  background:var(--red);vertical-align:.28em;margin-right:12px}
-.phero .crumbs li{color:rgba(255,255,255,.56)}
-.phero .crumbs a{color:rgba(255,255,255,.56)}
+    linear-gradient(to right,rgba(255,255,255,.06) 1px,transparent 1px),
+    linear-gradient(to bottom,rgba(255,255,255,.06) 1px,transparent 1px);
+  background-size:78px 78px;
+  transform:translateY(var(--parallax-y,0))}
+.phero-media img,.phero-media video{width:100%;height:100%;object-fit:cover;display:block}
+/* With a photograph in the band the drawing grid would sit on top of it as
+   a second texture. The grid is the stand-in for the picture, not a layer
+   over one. */
+.phero-media-shot::before{display:none}
+
+/* Angled, not a flat wash: the type sits on the dense end and the far corner
+   stays open, so a photograph survives underneath instead of being greyed
+   out by an even overlay. */
+.phero::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:linear-gradient(104deg,
+    rgba(3,29,91,.94) 0%,rgba(3,29,91,.86) 38%,rgba(3,29,91,.58) 72%,rgba(3,29,91,.42) 100%)}
+
+.phero-in{padding-bottom:56px}
+.phero .crumbs{margin-bottom:30px}
+.phero .crumbs li,.phero .crumbs a{color:rgba(255,255,255,.58)}
 .phero .crumbs a:hover{color:#fff}
 .phero .crumbs li:not(:last-child)::after{color:rgba(255,255,255,.28)}
 .phero .crumbs li[aria-current] span{color:#fff}
-.phero .crumbs{margin-bottom:26px}
-.phero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:36px}
-/* .two defaults to align-items:start, which is right for a sticky column
-   scrolling past prose but wrong here: the media plate is usually taller
-   than the copy, so top-aligning left a column of empty navy under the
-   lede that read as dead space rather than as composition. */
-.phero .two{align-items:center}
-/* The placeholder plate has to invert too, or it stays a white card
-   punched into the navy. */
-.phero .imgslot{background:rgba(255,255,255,.045);border-color:rgba(255,255,255,.22)}
-.phero .imgslot::before{
+.phero .mono.red{color:#fff;margin:0 0 22px}
+/* One red mark in the hero, and it is a rule rather than a word — #AB3241 on
+   #031d5b has nowhere near enough contrast to set type in. */
+.phero .mono.red::before{content:"";display:inline-block;width:26px;height:2px;
+  background:var(--red);vertical-align:.28em;margin-right:12px}
+.phero h1{color:#fff;max-width:17ch}
+.phero .lede{color:rgba(255,255,255,.76);max-width:54ch;margin-top:26px}
+.phero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:38px}
+
+/* ---------- the title block ----------
+   A drawing's title block and a machine's data plate both sit at the foot,
+   both in mono, and both answer the same questions. This one carries the
+   page's section, the route it is written for (the workbook's avatar, shown
+   to a reader for the first time), the revision date where one exists, and
+   the plate reference when the hero is carrying one. Real metadata, all of
+   it already in the Page Map. */
+/* The rule goes on the dl, not on .phero-block: .phero-block is a .wrap, so
+   a border on it would span the padding box and start a gutter to the left
+   of the h1 it sits under. */
+.phero-block{padding-top:0;padding-bottom:0}
+.phero-block dl{display:flex;flex-wrap:wrap;gap:0;margin:0;
+  border-top:1px solid rgba(255,255,255,.22)}
+.phero-block dl > div{flex:1 1 0;min-width:150px;padding:20px 26px 22px;
+  border-right:1px solid rgba(255,255,255,.14)}
+.phero-block dl > div:first-child{padding-left:0}
+.phero-block dl > div:last-child{border-right:0}
+.phero-block dt{font-family:var(--f-m);font-size:10.5px;letter-spacing:.18em;
+  text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:9px}
+.phero-block dd{margin:0;font-family:var(--f-d);font-weight:600;font-size:15px;
+  letter-spacing:-.01em;color:#fff}
+
+@media (max-width:900px){
+  .phero{min-height:0;padding:150px 0 0}
+  .phero-media::before{background-size:56px 56px}
+  .phero-in{padding-bottom:42px}
+  .phero-block dl > div{flex-basis:50%;padding:16px 18px 18px}
+  .phero-block dl > div:nth-child(2n){border-right:0}
+}
+@media (max-width:560px){
+  .phero{padding:130px 0 0}
+  .phero-cta{margin-top:28px}
+  .phero-block dl > div{flex-basis:100%;border-right:0;padding-left:0;
+    border-bottom:1px solid rgba(255,255,255,.14)}
+  .phero-block dl > div:last-child{border-bottom:0}
+}
+
+/* The hero already ends on a hard tone change into whatever follows, so the
+   next section only has to breathe rather than pay full padding as well. */
+.phero + .sec,.phero + .sec.sm{padding-top:76px}
+@media (max-width:900px){.phero + .sec,.phero + .sec.sm{padding-top:56px}}
+/* Against a navy set-piece there is no tone change at all to mark the seam,
+   and a pinned band already arrives with a screen of its own leading space. */
+.phero + .strack .strack-stick,.phero + .pstage .pstage-stick{padding-top:24px}
+
+/* ---------- feature row (FeatureRow.astro) ----------
+   The backbone. Copy one side, media the other, alternating down the page.
+   The media column stretches to the row's height rather than holding an
+   aspect box, so the picture is sized by the copy beside it and a short
+   paragraph can never strand a letterboxed plate. */
+.frow-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);
+  gap:clamp(40px,5vw,84px);align-items:center}
+.frow-rev .frow-grid{direction:rtl}
+.frow-rev .frow-grid > *{direction:ltr}
+.frow-copy > .mono{margin:0 0 22px}
+.frow-copy h2{margin-bottom:26px;max-width:18ch}
+.frow-copy .prose{max-width:none}
+.frow-copy .prose p{max-width:54ch}
+.frow-cta{margin:30px 0 0}
+.frow-media{align-self:stretch;display:flex;min-height:clamp(320px,42vw,560px)}
+/* The plate has to fill the column rather than keep ImageSlot's default
+   aspect-ratio, which is what makes the row read as a picture beside copy
+   instead of a thumbnail beside copy. */
+.frow-media .frow-plate{width:100%;height:100%;aspect-ratio:auto}
+.frow.navy .frow-plate{background:rgba(255,255,255,.045);border-color:rgba(255,255,255,.22)}
+.frow.navy .frow-plate::before{
   background-image:linear-gradient(rgba(255,255,255,.16) 1px,transparent 1px),
                    linear-gradient(90deg,rgba(255,255,255,.16) 1px,transparent 1px)}
-.phero .imgslot b{color:#fff}
-.phero .imgslot span{color:rgba(255,255,255,.66)}
-@media (max-width:900px){.phero{padding:150px 0 56px}.phero::before{background-size:56px 56px}}
-@media (max-width:560px){.phero{padding:130px 0 46px}.phero-cta{margin-top:28px}}
-/* The hero's own bottom padding and the next section's top padding were
-   both paying full price against a seam that is already marked by a hard
-   tone change from navy to white — 204px of nothing between the last line
-   of the hero and the first thing under it, on every page. The tone change
-   is what separates them; the padding only has to breathe. */
-.phero + .sec,.phero + .sec.sm{padding-top:52px}
-@media (max-width:900px){.phero + .sec,.phero + .sec.sm{padding-top:48px}}
-/* A hub whose body is still an outline puts the navy hero directly against
-   the navy card track, and with no tone change to mark the seam the two
-   full-price paddings read as one enormous empty navy field rather than as
-   two sections. Same reasoning as .sec.off + .sec.off above, applied to the
-   set-pieces that carry their own navy ground. */
-.phero + .strack .strack-stick,.phero + .pstage .pstage-stick{padding-top:24px}
-/* And the hero gives up most of its own bottom padding into that seam. A
-   pinned set-piece centres its content in a full viewport, so it already
-   arrives with a screen's worth of its own leading space above the heading;
-   the hero paying full padding on top of that is what made a hub with no
-   body open with a third of a screen of empty navy. */
-.phero:has(+ .strack),.phero:has(+ .pstage){padding-bottom:28px}
+.frow.navy .frow-plate b{color:#fff}
+.frow.navy .frow-plate span{color:rgba(255,255,255,.66)}
+@media (max-width:900px){
+  .frow-grid{grid-template-columns:1fr;gap:32px}
+  /* Copy first on a phone regardless of which side the picture takes on a
+     desktop — an alternating layout must not alternate the reading order. */
+  .frow-rev .frow-grid{direction:ltr}
+  .frow-media{min-height:0}
+  .frow-media .frow-plate{aspect-ratio:var(--imgslot-ratio,4/3);height:auto}
+}
+
+/* ---------- media band (MediaBand.astro) ----------
+   The block that spends a page's remaining photographs. Tiles share a height
+   and crop to fill, so a 6016x4000 camera original and a 596x335 web image
+   sit in one row without either looking broken. */
+.mband-grid{display:grid;gap:20px;
+  grid-template-columns:repeat(var(--mband-cols,3),minmax(0,1fr))}
+.mband-grid[data-count="1"]{--mband-cols:1}
+.mband-grid[data-count="2"]{--mband-cols:2}
+.mband-lead .mband-grid[data-count="3"]{grid-template-columns:1.6fr 1fr 1fr}
+.mband-item{margin:0;display:flex;flex-direction:column;gap:14px}
+.mband-plate{aspect-ratio:4/3;width:100%}
+.mband-grid[data-count="1"] .mband-plate{aspect-ratio:21/9}
+.mband-item figcaption{font-size:13px;line-height:1.45;color:var(--muted);max-width:44ch}
+.navy .mband-item figcaption{color:rgba(255,255,255,.6)}
+@media (max-width:900px){
+  .mband-grid,.mband-lead .mband-grid[data-count="3"]{grid-template-columns:1fr;gap:26px}
+  .mband-grid[data-count="1"] .mband-plate{aspect-ratio:16/9}
+}
 
 /* ---------- breadcrumbs (Breadcrumbs.astro) ---------- */
 .crumbs ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;align-items:center;gap:8px}
@@ -650,6 +696,11 @@ table.spec .foot{margin-top:16px;font-size:13.5px;color:var(--muted)}
 /* Registration tick, top right — the detail that says "drawing", not "gap". */
 .imgslot::after{content:"";position:absolute;top:16px;right:16px;width:13px;height:13px;
   border-top:1px solid var(--red);border-right:1px solid var(--red);opacity:.7}
+/* A slot holding a real photograph is a picture, not a drawing sheet: drop
+   the plate's border, grid and registration tick and let the image fill it. */
+.imgslot-shot{padding:0;border:0;background:none}
+.imgslot-shot::before,.imgslot-shot::after{display:none}
+.imgslot-shot img{width:100%;height:100%;object-fit:cover;border-radius:inherit}
 .imgslot b,.imgslot span{position:relative}
 .imgslot b{font-family:var(--f-m);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--red)}
 .imgslot span{font-size:13px;color:var(--muted);max-width:42ch}
