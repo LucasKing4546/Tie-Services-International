@@ -1,0 +1,61 @@
+---
+/**
+ * A short list of destinations, as full-width ruled rows.
+ *
+ * Built because 14 of the site's 19 scroll tracks carried fewer than five
+ * cards, and a carousel with three cards in it is a carousel with nothing to
+ * scroll: the prev/next buttons do nothing, the rail never moves, and the
+ * pin refuses to engage. It read as a set-piece that had failed rather than
+ * as a deliberate layout.
+ *
+ * The obvious replacement — three cards in a three-column grid — is both the
+ * generic default and against the standing "carousels, not grids" rule. So
+ * this is neither. Two to four related pages is a short list of routes, and
+ * the form that fits is the one the buyer already reads all day: a register.
+ * Ruled rows, one per line, title left, description right, read top to
+ * bottom.
+ *
+ * The type does the work. Each title is set at section-heading scale rather
+ * than card scale, so three rows hold a full-width band with presence, where
+ * three cards would have left two thirds of it empty. No numbering: these
+ * are alternatives, not steps, and the order carries nothing.
+ */
+import type { CardItem } from '@lib/blocks';
+
+interface Props {
+  items: CardItem[];
+  eyebrow?: string;
+  heading?: string;
+  lede?: string;
+  tone?: 'default' | 'off' | 'navy';
+}
+
+const { items, eyebrow, heading, lede, tone = 'navy' } = Astro.props;
+const toneClass = tone === 'off' ? 'off' : tone === 'navy' ? 'navy' : '';
+---
+
+{items.length > 0 && (
+  <section class:list={['sec', 'irows', toneClass]}>
+    <div class="wrap">
+      {(eyebrow || heading) && (
+        <div class="sechd">
+          {eyebrow && <p class="mono red">{eyebrow}</p>}
+          {heading && <h2 class="d3"><span class="rl"><span>{heading}</span></span></h2>}
+          {lede && <p class="lede">{lede}</p>}
+        </div>
+      )}
+
+      <ul class="irows-list stag">
+        {items.map((item) => (
+          <li>
+            <a href={item.href}>
+              <span class="irows-title">{item.title}</span>
+              {item.blurb && <span class="irows-blurb">{item.blurb}</span>}
+              <span class="irows-go" aria-hidden="true">→</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+)}

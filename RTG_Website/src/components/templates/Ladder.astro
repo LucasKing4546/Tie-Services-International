@@ -41,6 +41,7 @@ import ScrollTrack from '@components/blocks/ScrollTrack.astro';
 import TierCard from '@components/blocks/TierCard.astro';
 import CardGrid from '@components/blocks/CardGrid.astro';
 import Card from '@components/blocks/Card.astro';
+import Skeleton from '@components/blocks/Skeleton.astro';
 import PageEnding from '@components/blocks/PageEnding.astro';
 import { mdxComponents } from '@lib/mdx';
 
@@ -91,6 +92,10 @@ const references: CardItem[] = data.related.map((id) => cardFrom({ pageId: id })
         {references.map((item) => <Card item={item} />)}
       </CardGrid>
     </Section>
+  )}
+
+  {data.draft && !hasBody(entry) && (
+    <Skeleton label="Tier detail" kind="rows" count={4} />
   )}
 
   <PageEnding page={page} proofBar={data.proofBar} cta={data.cta} draft={data.draft} outline={data.outline} />

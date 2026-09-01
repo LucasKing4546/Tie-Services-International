@@ -26,6 +26,7 @@ import Quote from '@components/blocks/Quote.astro';
 import CompareSlot from '@components/blocks/CompareSlot.astro';
 import CardGrid from '@components/blocks/CardGrid.astro';
 import Card from '@components/blocks/Card.astro';
+import Skeleton from '@components/blocks/Skeleton.astro';
 import PageEnding from '@components/blocks/PageEnding.astro';
 import { mdxComponents } from '@lib/mdx';
 
@@ -94,6 +95,10 @@ const jsonLdPage = articleJsonLd(data);
         <Content components={mdxComponents} />
       </Prose>
     </Section>
+  )}
+
+  {data.draft && data.media.length < 2 && (
+    <Skeleton label="Before and after photography" kind="split" count={3} tone="off" />
   )}
 
   {data.quotes.length > 0 && (

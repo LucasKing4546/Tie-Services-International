@@ -24,6 +24,8 @@ import PageHero from '@components/blocks/PageHero.astro';
 import Section from '@components/blocks/Section.astro';
 import Prose from '@components/blocks/Prose.astro';
 import ChildCards from '@components/blocks/ChildCards.astro';
+import FeatureRow from '@components/blocks/FeatureRow.astro';
+import Skeleton from '@components/blocks/Skeleton.astro';
 import PageEnding from '@components/blocks/PageEnding.astro';
 import { mdxComponents } from '@lib/mdx';
 
@@ -44,6 +46,8 @@ const extraCards = data.cards.map(cardFrom);
 // pixels below it, with nothing in between on a hub whose body is still an
 // outline. The track is a list of what is inside this section, so it says
 // that instead; the eyebrow above it already carries the section name.
+const introMedia = data.media[0];
+
 const trackHeading = children.length > 0 ? `Everything in ${page.section.toLowerCase()}` : 'Where to go next';
 
 // An ItemList of every card the grid below actually renders — derived
@@ -83,9 +87,21 @@ const jsonLdPage =
     updated={data.updated}
   />
 
-  {hasBody(entry) && (
-    <Section>
-      <Prose>
+  {/* A hub's intro was a centred column of prose on white — the least
+      designed thing on the site, and it opens eleven pages. It now runs as
+      a feature row against the page's own picture where one exists, and as
+      a toned band with its opening sentence set at display scale where one
+      does not. Neither needs a word of new copy. */}
+  {hasBody(entry) && introMedia && (
+    <FeatureRow media={introMedia} tone="off" reverse>
+      <Prose class="lead-para">
+        <Content components={mdxComponents} />
+      </Prose>
+    </FeatureRow>
+  )}
+  {hasBody(entry) && !introMedia && (
+    <Section tone="off">
+      <Prose class="lead-para">
         <Content components={mdxComponents} />
       </Prose>
     </Section>
@@ -100,6 +116,10 @@ const jsonLdPage =
       heading={trackHeading}
       label={`Pages under ${page.h1}`}
     />
+  )}
+
+  {data.draft && !hasBody(entry) && (
+    <Skeleton label="Section introduction" kind="copy" count={4} />
   )}
 
   <PageEnding page={page} proofBar={data.proofBar} cta={data.cta} draft={data.draft} outline={data.outline} />

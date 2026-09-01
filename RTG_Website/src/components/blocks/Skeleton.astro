@@ -1,0 +1,63 @@
+---
+/**
+ * A drawn placeholder for a block that has no content yet — so a page in
+ * progress shows the shape it is going to take rather than a gap where a
+ * section will eventually be.
+ *
+ * Most of the site is still outlines, and until now an unwritten block
+ * simply did not render: the page collapsed to a headline and a draft note,
+ * and nobody could see what it would look like filled in. This puts the
+ * layout on screen with the content missing, which is the thing worth
+ * looking at while the copy is being written.
+ *
+ * Drawn in the same hairline-and-grid language as ImageSlot's plate, and
+ * labelled with what belongs there, so it reads as a marked-up drawing
+ * rather than as a loading state. It is deliberately NOT a shimmer: nothing
+ * here is loading, and a pulsing grey bar would say the page is broken.
+ *
+ * Never shown on a finished page — every caller gates it on `draft`.
+ */
+interface Props {
+  /** What goes here, e.g. "Applications" or "Specification table". */
+  label: string;
+  /** copy — text lines. media — a picture plate. rows — a list. split — both. */
+  kind?: 'copy' | 'media' | 'rows' | 'split';
+  /** Number of text lines or rows to draw. */
+  count?: number;
+  tone?: 'default' | 'off';
+}
+
+const { label, kind = 'copy', count = 3, tone = 'default' } = Astro.props;
+const lines = Array.from({ length: count });
+---
+
+<section class:list={['sec', 'skel', tone === 'off' ? 'off' : '']} data-skeleton>
+  <div class="wrap">
+    <p class="skel-tag">{label} — to be written</p>
+
+    {kind === 'media' ? (
+      <div class="skel-plate" aria-hidden="true"></div>
+    ) : kind === 'rows' ? (
+      <ul class="skel-rows" aria-hidden="true">
+        {lines.map(() => (
+          <li><span class="skel-bar skel-w-40"></span><span class="skel-bar skel-w-70"></span></li>
+        ))}
+      </ul>
+    ) : kind === 'split' ? (
+      <div class="skel-split" aria-hidden="true">
+        <div class="skel-copy">
+          <span class="skel-bar skel-head"></span>
+          {lines.map(() => <span class="skel-bar"></span>)}
+          <span class="skel-bar skel-w-60"></span>
+        </div>
+        <div class="skel-plate"></div>
+      </div>
+    ) : (
+      <div class="skel-copy" aria-hidden="true">
+        <span class="skel-bar skel-head"></span>
+        {lines.map(() => <span class="skel-bar"></span>)}
+        <span class="skel-bar skel-w-60"></span>
+      </div>
+    )}
+  </div>
+</section>

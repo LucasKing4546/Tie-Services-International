@@ -26,6 +26,7 @@ import StepList from '@components/blocks/StepList.astro';
 import Note from '@components/blocks/Note.astro';
 import CardGrid from '@components/blocks/CardGrid.astro';
 import Card from '@components/blocks/Card.astro';
+import Skeleton from '@components/blocks/Skeleton.astro';
 import PageEnding from '@components/blocks/PageEnding.astro';
 import { mdxComponents } from '@lib/mdx';
 
@@ -63,6 +64,10 @@ const related: CardItem[] = data.related.map((id) => cardFrom({ pageId: id }));
     <Section tone="off">
       <StepList steps={data.steps} />
     </Section>
+  )}
+
+  {data.draft && data.steps.length === 0 && (
+    <Skeleton label="How the work runs" kind="rows" count={4} tone="off" />
   )}
 
   {data.notes.length > 0 && (

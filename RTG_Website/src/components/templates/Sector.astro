@@ -13,13 +13,14 @@ import Base from '@layouts/Base.astro';
 import PageHero from '@components/blocks/PageHero.astro';
 import Section from '@components/blocks/Section.astro';
 import Prose from '@components/blocks/Prose.astro';
-import FeatureRow from '@components/blocks/FeatureRow.astro';
 import MediaBand from '@components/blocks/MediaBand.astro';
 import StepList from '@components/blocks/StepList.astro';
 import SectionHead from '@components/blocks/SectionHead.astro';
 import ScrollTrack from '@components/blocks/ScrollTrack.astro';
+import IndexRows from '@components/blocks/IndexRows.astro';
 import Card from '@components/blocks/Card.astro';
 import FeaturedCase from '@components/blocks/FeaturedCase.astro';
+import Skeleton from '@components/blocks/Skeleton.astro';
 import PageEnding from '@components/blocks/PageEnding.astro';
 import { mdxComponents } from '@lib/mdx';
 
@@ -44,10 +45,10 @@ const featured = data.featured?.pageId
 
 // The second frontmatter media entry, if a page has supplied one, runs
 // alongside the opening prose as the feature row's picture.
-const problemMedia = data.media[0];
-// Everything the page has left after the hero and the feature row. Without
-// this a sector with four good photographs could only ever show two.
-const restMedia = data.media.slice(1);
+// Every photograph the page carries beyond the hero. They all go to the
+// band, which gives them the full page width, rather than one of them being
+// spent as a column beside prose.
+const restMedia = data.media;
 ---
 
 <Base pageId={page.id}>
@@ -60,16 +61,31 @@ const restMedia = data.media.slice(1);
     updated={data.updated}
   />
 
-  <FeatureRow eyebrow="The problem" media={problemMedia}>
+  {/* The body runs at its own measure rather than in a feature row.
+      A feature row is for a short block — a heading and a few sentences
+      beside a picture, which is how it is used on the reference site. Given
+      a whole MDX body it does the opposite of its job: the copy is squeezed
+      into a narrow column while a short picture leaves most of the other
+      one empty, which was the dead space down the right of every sector
+      page. The photographs are better spent in the band below, where they
+      get the full width. */}
+  <Section>
     <Prose>
       <Content components={mdxComponents} />
     </Prose>
-  </FeatureRow>
+  </Section>
 
-  {equipment.length > 0 && (
+  {equipment.length >= 5 ? (
     <ScrollTrack eyebrow="Equipment" heading="Built for this sector">
       {equipment.map((item) => <Card item={item} tone="dark" />)}
     </ScrollTrack>
+  ) : equipment.length > 0 && (
+    <IndexRows
+      items={equipment}
+      eyebrow="Equipment"
+      heading="Built for this sector"
+      lede="The machines this sector's work actually turns on."
+    />
   )}
 
   {data.steps.length > 0 && (
@@ -84,7 +100,20 @@ const restMedia = data.media.slice(1);
     </Section>
   )}
 
-  <MediaBand items={restMedia} eyebrow="On the floor" heading="Equipment for this sector" lead />
+  {/* No heading: each picture carries its own caption, and a fixed one
+      ("Equipment for this sector") is wrong the moment a page's photograph
+      is a diagram or a vessel rather than a machine. */}
+  <MediaBand items={restMedia} lead />
+
+  {/* Where a block has no content yet, draw its shape rather than omit it —
+      the page then shows what it will look like filled in, which is the
+      thing worth seeing while the copy is still being written. */}
+  {data.draft && data.steps.length === 0 && (
+    <Skeleton label="Technical note" kind="rows" count={3} tone="off" />
+  )}
+  {data.draft && restMedia.length === 0 && (
+    <Skeleton label="Equipment photography" kind="media" />
+  )}
 
   {featured && (
     <Section wrap={false}>

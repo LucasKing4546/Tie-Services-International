@@ -19,6 +19,7 @@ import SectionHead from '@components/blocks/SectionHead.astro';
 import Prose from '@components/blocks/Prose.astro';
 import SpecTable from '@components/blocks/SpecTable.astro';
 import TagList from '@components/blocks/TagList.astro';
+import Skeleton from '@components/blocks/Skeleton.astro';
 import PageEnding from '@components/blocks/PageEnding.astro';
 import { mdxComponents } from '@lib/mdx';
 
@@ -85,11 +86,19 @@ const datasheetHref = datasheetPage ? `${datasheetPage.slug}?equipment=${encodeU
     </Section>
   )}
 
+  {data.draft && data.specs.length === 0 && (
+    <Skeleton label="Specification table" kind="split" count={4} />
+  )}
+
   {data.product && data.product.applications.length > 0 && (
     <Section tone="off">
       <SectionHead eyebrow="Applications" heading="Where this runs" level={2} />
       <TagList items={data.product.applications} />
     </Section>
+  )}
+
+  {data.draft && (!data.product || data.product.applications.length === 0) && (
+    <Skeleton label="Applications" kind="rows" count={2} tone="off" />
   )}
 
   <PageEnding page={page} proofBar={data.proofBar} cta={data.cta} draft={data.draft} outline={data.outline} />

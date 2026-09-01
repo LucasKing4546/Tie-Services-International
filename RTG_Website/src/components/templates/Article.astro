@@ -22,6 +22,7 @@ import Base from '@layouts/Base.astro';
 import PageHero from '@components/blocks/PageHero.astro';
 import Section from '@components/blocks/Section.astro';
 import Prose from '@components/blocks/Prose.astro';
+import Skeleton from '@components/blocks/Skeleton.astro';
 import PageEnding from '@components/blocks/PageEnding.astro';
 import { mdxComponents } from '@lib/mdx';
 
@@ -66,6 +67,10 @@ const byline = data.article
         <Content components={mdxComponents} />
       </Prose>
     </Section>
+  )}
+
+  {data.draft && !hasBody(entry) && (
+    <Skeleton label="Article body" kind="copy" count={5} />
   )}
 
   <PageEnding page={page} proofBar={data.proofBar} cta={data.cta} draft={data.draft} outline={data.outline} />

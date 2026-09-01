@@ -35,6 +35,7 @@ import Prose from '@components/blocks/Prose.astro';
 import StepList from '@components/blocks/StepList.astro';
 import PinnedStages from '@components/blocks/PinnedStages.astro';
 import PinnedStage from '@components/blocks/PinnedStage.astro';
+import Skeleton from '@components/blocks/Skeleton.astro';
 import PageEnding from '@components/blocks/PageEnding.astro';
 import { mdxComponents } from '@lib/mdx';
 
@@ -88,6 +89,10 @@ const questions: Step[] = data.faqs.map((f, i) => ({
         <Content components={mdxComponents} />
       </Prose>
     </Section>
+  )}
+
+  {data.draft && !hasBody(entry) && (
+    <Skeleton label="Guidance" kind="copy" count={4} />
   )}
 
   <PageEnding page={page} proofBar={data.proofBar} cta={data.cta} draft={data.draft} outline={data.outline} />

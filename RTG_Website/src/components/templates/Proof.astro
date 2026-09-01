@@ -31,7 +31,9 @@ import SpecTable from '@components/blocks/SpecTable.astro';
 import Quote from '@components/blocks/Quote.astro';
 import ProofBar from '@components/blocks/ProofBar.astro';
 import ScrollTrack from '@components/blocks/ScrollTrack.astro';
+import IndexRows from '@components/blocks/IndexRows.astro';
 import Card from '@components/blocks/Card.astro';
+import Skeleton from '@components/blocks/Skeleton.astro';
 import PageEnding from '@components/blocks/PageEnding.astro';
 import { mdxComponents } from '@lib/mdx';
 
@@ -83,13 +85,17 @@ const cases: CardItem[] = data.related.map((id) => cardFrom({ pageId: id }));
     </Section>
   )}
 
+  {data.draft && data.specs.length === 0 && (
+    <Skeleton label="Credentials table" kind="rows" count={5} tone="off" />
+  )}
+
   {data.quotes.length > 0 && (
     <Section>
       {data.quotes.map((q) => <Quote text={q.text} attribution={q.attribution} context={q.context} />)}
     </Section>
   )}
 
-  {cases.length > 0 && (
+  {cases.length >= 5 ? (
     <ScrollTrack
       eyebrow="Case studies"
       heading="Where this was used"
@@ -97,6 +103,13 @@ const cases: CardItem[] = data.related.map((id) => cardFrom({ pageId: id }));
     >
       {cases.map((item) => <Card item={item} tone="dark" />)}
     </ScrollTrack>
+  ) : cases.length > 0 && (
+    <IndexRows
+      items={cases}
+      eyebrow="Case studies"
+      heading="Where this was used"
+      lede="The same claims, on named jobs, with the numbers attached."
+    />
   )}
 
   <PageEnding page={page} cta={data.cta} draft={data.draft} outline={data.outline} />
