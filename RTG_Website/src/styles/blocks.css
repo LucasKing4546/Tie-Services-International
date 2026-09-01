@@ -155,7 +155,18 @@ html.js .car-nav{display:flex}
   padding-inline:max(var(--gut),calc((100vw - var(--wrap))/2 + var(--gut)))}
 .strack-rail::-webkit-scrollbar{display:none}
 .strack-rail > *{flex:none;width:330px;scroll-snap-align:start}
-.strack.on .strack-rail{overflow-x:hidden;scroll-snap-type:none;will-change:transform}
+/* overflow:visible, NOT hidden. The pinned rail is the element the transform
+   moves, and an element's own overflow clip is applied in its untransformed
+   box and then carried along by the transform. Clipping here therefore does
+   two wrong things at once: every card past clientWidth (cards 5-7 of a
+   seven-card track) is cut away and can never be scrolled into view, and the
+   surviving cards slide out of a clip window that travels left with them,
+   leaving a growing blank band on the right — the "card cut off with a large
+   gap where the rest should be" report. The clip belongs on .strack-stick
+   above, which is full-width and does not move; that is exactly how the
+   homepage's .hz-track/.hz-stick pair has always done it. The rail only needs
+   to be a scroll container in the unpinned fallback state. */
+.strack.on .strack-rail{overflow:visible;scroll-snap-type:none;will-change:transform}
 /* .strack-foot: the progress rail (pinned state only) and the prev/next
    buttons (every state — see the doc comment above ScrollTrack.astro for
    why the buttons can't wait for .on). Either can be the row's only child,

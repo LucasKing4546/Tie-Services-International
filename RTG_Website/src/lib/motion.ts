@@ -290,7 +290,24 @@ function initScrollTracks(rm: boolean): void {
       // Windows/Chrome), so using innerWidth here understates how far the
       // rail needs to travel by exactly that much — the tail end of the
       // last card never quite reaches the visible edge.
-      const dist = Math.max(0, rail.scrollWidth - rail.clientWidth);
+      //
+      // Measured from geometry rather than rail.scrollWidth: once pinned the
+      // rail is overflow:visible (blocks.css explains why the clip has to sit
+      // on .strack-stick instead), and scrollWidth on an element with no
+      // scrolling box omits the trailing padding in Chrome — which would stop
+      // the last card one side-inset short of where it belongs. The rail and
+      // its last card carry the same translation, so it cancels out of the
+      // difference between them; scrollLeft can only be non-zero on the first
+      // pass, before this track has ever been pinned and zeroed below.
+      const last = rail.lastElementChild;
+      const padRight = parseFloat(getComputedStyle(rail).paddingRight) || 0;
+      const content = last
+        ? last.getBoundingClientRect().right -
+          rail.getBoundingClientRect().left +
+          rail.scrollLeft +
+          padRight
+        : 0;
+      const dist = Math.max(0, content - rail.clientWidth);
       // MIN_PIN_DIST, not dist === 0: the pin lasts exactly `dist` px of
       // scroll (that's the whole point of the sticky-container-height
       // trick), so a small dist — a 4-tile track missing the last tile by
