@@ -230,39 +230,37 @@
 }
 
 /* ---------- media band (MediaBand.astro) ----------
-   The block that spends a page's remaining photographs. Tiles share a height
-   and crop to fill, so a 6016x4000 camera original and a 596x335 web image
-   sit in one row without either looking broken. */
-.mband-grid{display:grid;gap:20px;
-  grid-template-columns:repeat(var(--mband-cols,3),minmax(0,1fr))}
-.mband-grid[data-count="1"]{--mband-cols:1}
-/* One picture on its own, and a small one at that, leaves half the row
-   empty with the caption tucked underneath. Set the caption beside it
-   instead: the row fills, and the caption gets room to be read. */
+   A justified row. Every tile is laid out to the same height and its width
+   follows its own shape, so a 0.66 portrait and a 1.66 landscape sit in one
+   band without either being cropped and without one dwarfing the other.
+   The proportional flex-grow is set per tile in the component; from a zero
+   basis that makes widths proportional to ratio, and since each plate holds
+   that same ratio the heights come out equal. */
+.mband-grid{display:flex;flex-wrap:wrap;gap:22px;align-items:flex-start}
+.mband-item{margin:0;display:flex;flex-direction:column;gap:14px;
+  flex-basis:0;min-width:min(280px,100%)}
+/* The band overrides the global no-upscale cap. A justified row only works
+   if every tile can reach the row height, and holding a small file to its
+   intrinsic width is what left one tile half the height of its neighbour
+   with a hole under it. The trade is deliberate: a modest upscale on a flat
+   diagram is far less noticeable than a row that looks broken. */
+.mband-grid .mband-plate{width:100%;max-width:none}
+/* One picture on its own has no row to justify against, so it is held to a
+   sensible share of the width rather than stretched across all of it, with
+   the caption beside it. */
 .mband-grid[data-count="1"] .mband-item{flex-direction:row;align-items:flex-end;
-  gap:clamp(24px,3vw,48px)}
+  gap:clamp(24px,3vw,48px);max-width:100%}
+.mband-grid[data-count="1"] .mband-plate{max-width:min(62%,720px)}
+/* (both of the above outrank .imgslot-shot's no-upscale cap, which is
+   declared later in this file and would otherwise win on source order.) */
 .mband-grid[data-count="1"] .mband-item figcaption{flex:1;min-width:0;padding-bottom:4px}
-@media (max-width:700px){
-  .mband-grid[data-count="1"] .mband-item{flex-direction:column;align-items:start}
-}
-.mband-grid[data-count="2"]{--mband-cols:2}
-.mband-lead .mband-grid[data-count="3"]{grid-template-columns:1.6fr 1fr 1fr}
-/* Tiles align to the top and keep their own shape rather than being cropped
-   to a shared box: a portrait, a square and a panorama in the same row are
-   what the supplied set actually contains, and forcing them all to 4/3 threw
-   most of two of them away. The row is ragged along the bottom by design —
-   the captions sit under each picture, not on a shared baseline. */
-.mband-grid{align-items:start}
-.mband-item{margin:0;display:flex;flex-direction:column;align-items:start;gap:14px}
-.mband-plate{width:100%}
-/* A portrait beside two landscapes would tower over them, so cap its height
-   to roughly what a landscape tile in the same row comes to. */
-.mband-plate[data-orient="portrait"]{max-height:520px}
 .mband-item figcaption{font-size:13px;line-height:1.45;color:var(--muted);max-width:44ch}
 .navy .mband-item figcaption{color:rgba(255,255,255,.6)}
-@media (max-width:900px){
-  .mband-grid,.mband-lead .mband-grid[data-count="3"]{grid-template-columns:1fr;gap:26px}
-  .mband-grid[data-count="1"] .mband-plate{aspect-ratio:16/9}
+@media (max-width:700px){
+  .mband-grid{gap:26px}
+  .mband-item{min-width:100%}
+  .mband-grid[data-count="1"] .mband-item{flex-direction:column;align-items:start}
+  .mband-grid[data-count="1"] .mband-plate{max-width:100%}
 }
 
 /* ---------- index rows (IndexRows.astro) ----------

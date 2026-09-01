@@ -15,6 +15,7 @@
  * broken.
  */
 import type { ImgBrief } from '@lib/blocks';
+import { mediaFor } from '@data/media';
 import ImageSlot from './ImageSlot.astro';
 
 interface Props {
@@ -28,6 +29,18 @@ interface Props {
 
 const { items, eyebrow, heading, tone = 'off', lead = false } = Astro.props;
 const toneClass = tone === 'off' ? 'off' : tone === 'navy' ? 'navy' : '';
+
+// A justified row: every tile is laid out to the same height and its width
+// follows its own shape. Letting each picture size itself independently is
+// what put a huge portrait next to a small landscape with the row half
+// empty underneath. Growing each tile in proportion to its aspect ratio,
+// from a zero basis, makes the heights come out equal without cropping
+// anything — width = k x ratio, and height = width / ratio = k for all of
+// them.
+const tiles = items.map((m) => {
+  const photo = mediaFor(m.ref);
+  return { media: m, ratio: photo ? photo.width / photo.height : 4 / 3 };
+});
 ---
 
 {items.length > 0 && (
@@ -42,8 +55,8 @@ const toneClass = tone === 'off' ? 'off' : tone === 'navy' ? 'navy' : '';
     )}
     <div class="wrap">
       <div class="mband-grid stag" data-count={items.length}>
-        {items.map((m) => (
-          <figure class="mband-item">
+        {tiles.map(({ media: m, ratio }) => (
+          <figure class="mband-item" style={`flex-grow:${ratio.toFixed(4)}`}>
             <ImageSlot ref={m.ref} brief={m.brief} ratio={m.ratio} class="mband-plate" />
             <figcaption>{m.brief}</figcaption>
           </figure>
