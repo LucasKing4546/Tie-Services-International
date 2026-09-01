@@ -21,10 +21,14 @@
  *      band whose cards move sideways as the page scrolls down.
  *   6. pinned stages ([data-pin-stages], PinnedStages.astro) — a pinned
  *      section whose stages cross-fade one at a time as the page scrolls.
+ *   7. before/after compare ([data-compare], CompareSlot.astro) — a
+ *      draggable divider revealing one image over another.
  *
  * 5 and 6 are the homepage's own set-pieces generalised out of
  * home-scroll.ts so any template can compose them; the homepage keeps its
- * own 3D-coupled copies.
+ * own 3D-coupled copies. 7 is the one behaviour here that is a control
+ * rather than an animation, which is why it alone still runs under
+ * prefers-reduced-motion.
  *
  * Progressive enhancement: elements are visible by default (see the
  * `html.js` gate in tokens.css). Nothing here can make content that was
@@ -55,6 +59,7 @@ export function initMotion(): void {
   initCarousels(rm);
   initScrollTracks(rm);
   initPinStages(rm);
+  initCompare(rm);
 
   booted = true;
 }
@@ -553,5 +558,133 @@ function initPinStages(rm: boolean): void {
     removeEventListener('resize', onResize);
     ro.disconnect();
     wraps.forEach(reset);
+  });
+}
+
+// ------------------------------------------------------- before/after compare
+/**
+ * [data-compare] (CompareSlot.astro): a divider the visitor drags to reveal
+ * one image over another.
+ *
+ * The only behaviour here that is not visitor-driven is a one-shot entrance
+ * sweep, so the control announces itself as draggable rather than reading as
+ * a static image. Everything else is pointer or keyboard.
+ *
+ * Runs under prefers-reduced-motion too, unlike the pin and track
+ * choreography above — this is a control, not an animation, and removing it
+ * would take away function rather than movement. Only the entrance sweep is
+ * suppressed (the CSS transition it relies on is disabled in the same media
+ * query), so a reduced-motion visitor gets a divider that simply starts at
+ * the halfway point.
+ */
+function initCompare(rm: boolean): void {
+  const wraps = document.querySelectorAll<HTMLElement>('[data-compare]');
+  if (!wraps.length) return;
+
+  wraps.forEach((wrap) => {
+    const frame = wrap.querySelector<HTMLElement>('.cmp-frame');
+    const reveal = wrap.querySelector<HTMLElement>('.cmp-reveal');
+    const handle = wrap.querySelector<HTMLButtonElement>('.cmp-handle');
+    if (!frame || !reveal || !handle) return;
+
+    const beforeLabel = wrap.querySelector('.cmp-tag-before')?.textContent?.trim() ?? 'before';
+    const afterLabel = wrap.querySelector('.cmp-tag-after')?.textContent?.trim() ?? 'after';
+
+    wrap.classList.add('on');
+
+    // The clipped plate is absolutely positioned, so it no longer inherits
+    // the frame's width — pin it explicitly, or the revealed image squashes
+    // as the divider moves rather than being uncovered by it.
+    const sizeReveal = () => {
+      reveal.style.setProperty('--cmp-w', `${frame.clientWidth}px`);
+    };
+    sizeReveal();
+
+    let pct = 50;
+    const setPct = (next: number) => {
+      // Never let either side disappear completely: a fully-collapsed plate
+      // reads as a broken image rather than as a comparison at its extreme.
+      pct = Math.min(96, Math.max(4, next));
+      reveal.style.width = `${pct}%`;
+      handle.style.left = `${pct}%`;
+      handle.setAttribute('aria-valuenow', String(Math.round(pct)));
+      handle.setAttribute(
+        'aria-valuetext',
+        `${Math.round(pct)}% ${beforeLabel.toLowerCase()}, ${100 - Math.round(pct)}% ${afterLabel.toLowerCase()}`,
+      );
+    };
+
+    const pctFromX = (x: number) => {
+      const r = frame.getBoundingClientRect();
+      return r.width ? ((x - r.left) / r.width) * 100 : 50;
+    };
+
+    // Dragging is only ever started by an explicit pointerdown on the
+    // handle. The move listener sits on the frame so the pointer can stray
+    // off the 46px handle mid-drag without dropping it, but it does nothing
+    // until `dragging` is set — otherwise a plain swipe across the image on
+    // a phone would feel like it had hijacked the page scroll.
+    let dragging = false;
+    const down = (e: PointerEvent) => {
+      dragging = true;
+      handle.setPointerCapture(e.pointerId);
+      wrap.classList.remove('sweep');
+      setPct(pctFromX(e.clientX));
+      e.preventDefault();
+    };
+    const move = (e: PointerEvent) => {
+      if (dragging) setPct(pctFromX(e.clientX));
+    };
+    const up = () => { dragging = false; };
+
+    const onKey = (e: KeyboardEvent) => {
+      const step = e.shiftKey ? 10 : 4;
+      let handled = true;
+      if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') setPct(pct - step);
+      else if (e.key === 'ArrowRight' || e.key === 'ArrowUp') setPct(pct + step);
+      else if (e.key === 'Home') setPct(0);
+      else if (e.key === 'End') setPct(100);
+      else handled = false;
+      if (handled) {
+        wrap.classList.remove('sweep');
+        e.preventDefault();
+      }
+    };
+
+    handle.addEventListener('pointerdown', down);
+    frame.addEventListener('pointermove', move);
+    handle.addEventListener('pointerup', up);
+    handle.addEventListener('pointercancel', up);
+    handle.addEventListener('keydown', onKey);
+    addEventListener('resize', sizeReveal);
+
+    setPct(50);
+
+    teardownFns.push(() => {
+      handle.removeEventListener('pointerdown', down);
+      frame.removeEventListener('pointermove', move);
+      handle.removeEventListener('pointerup', up);
+      handle.removeEventListener('pointercancel', up);
+      handle.removeEventListener('keydown', onKey);
+      removeEventListener('resize', sizeReveal);
+      wrap.classList.remove('on', 'sweep');
+    });
+
+    if (rm) return;
+
+    // Entrance sweep: open from one side to the middle the first time the
+    // control comes on screen, so it is visibly a divider. Same
+    // observe-once-then-unobserve shape as initReveals().
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        io.unobserve(entry.target);
+        wrap.classList.add('sweep');
+        setPct(88);
+        requestAnimationFrame(() => requestAnimationFrame(() => setPct(50)));
+      });
+    }, { threshold: 0.35 });
+    io.observe(wrap);
+    teardownFns.push(() => io.disconnect());
   });
 }

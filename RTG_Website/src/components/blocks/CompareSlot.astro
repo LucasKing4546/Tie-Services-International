@@ -1,0 +1,80 @@
+---
+/**
+ * A before/after comparison — one image revealed over another by a divider
+ * the visitor drags.
+ *
+ * Deliberately not scroll-driven, unlike every other set-piece in this
+ * library. A direct A/B comparison is something a reader operates, not
+ * something that happens at them: they want to stop halfway, go back, and
+ * look again. That makes it closer to <input type="range"> than to parallax,
+ * so it is pointer- and keyboard-driven with role="slider", and scroll is
+ * used only for a one-shot entrance sweep so the control announces itself as
+ * draggable rather than reading as a static image.
+ *
+ * Composes two ImageSlots unmodified — it drags a box over a box and does
+ * not care what is inside either one. That matters while every image on the
+ * site is still a placeholder figure (CLAUDE.md §5.5): when real photography
+ * lands, ImageSlot's documented one-file <img> swap upgrades every
+ * CompareSlot with no template edit.
+ *
+ * Honest limitation until then: two placeholder plates of the same size look
+ * identical wherever the divider sits, so today this reads through its
+ * labels rather than through the images. It is built now because the seam
+ * belongs in the template, not because the page already looks right.
+ *
+ * With no JS, both images stay stacked in normal flow with their labels —
+ * the comparison is still legible, just not interactive. The clip and the
+ * handle are scoped to .on, which only initCompare() adds.
+ */
+import ImageSlot from './ImageSlot.astro';
+
+interface Props {
+  before: { ref: string; brief: string };
+  after: { ref: string; brief: string };
+  /** CSS aspect-ratio shared by both plates — they must match, or the
+   *  divider would reveal a differently-shaped image underneath. */
+  ratio?: string;
+  beforeLabel?: string;
+  afterLabel?: string;
+}
+
+const {
+  before,
+  after,
+  ratio = '16/9',
+  beforeLabel = 'Before',
+  afterLabel = 'After',
+} = Astro.props;
+---
+
+<figure class="cmp" data-compare>
+  <div class="cmp-frame">
+    <div class="cmp-base">
+      <ImageSlot ref={after.ref} brief={after.brief} ratio={ratio} />
+      <span class="cmp-tag cmp-tag-after">{afterLabel}</span>
+    </div>
+    <div class="cmp-reveal">
+      <ImageSlot ref={before.ref} brief={before.brief} ratio={ratio} />
+      <span class="cmp-tag cmp-tag-before">{beforeLabel}</span>
+    </div>
+    <button
+      type="button"
+      class="cmp-handle"
+      role="slider"
+      aria-label={`Reveal ${beforeLabel.toLowerCase()} or ${afterLabel.toLowerCase()}`}
+      aria-valuemin="0"
+      aria-valuemax="100"
+      aria-valuenow="50"
+      aria-valuetext={`Half ${beforeLabel.toLowerCase()}, half ${afterLabel.toLowerCase()}`}
+      aria-orientation="horizontal"
+    >
+      <span class="cmp-grip" aria-hidden="true"></span>
+    </button>
+  </div>
+</figure>
+<!--
+  No <figcaption>: each ImageSlot already carries its own ref and brief on
+  the plate, and each half is labelled by its own tag, so a caption
+  repeating both briefs underneath was saying everything twice. Both plates
+  are role="img" with an aria-label, so nothing is lost non-visually.
+-->

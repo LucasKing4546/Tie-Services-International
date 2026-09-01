@@ -286,6 +286,51 @@ html.js .strack-nav{display:flex}
   .pstage-index,.pstage-bar{display:none}
 }
 
+/* ---------- before/after comparison (CompareSlot.astro) ----------
+   Un-enhanced (no JS, or before initCompare() runs) both plates sit stacked
+   in normal flow with their own labels — the comparison still reads, it just
+   isn't draggable. Every rule that turns it into a clipped overlay is scoped
+   to .on, which only initCompare() adds. */
+.cmp{margin:0}
+.cmp-frame{position:relative;border-radius:16px;overflow:hidden;background:var(--off)}
+.cmp-base,.cmp-reveal{position:relative}
+.cmp-frame .imgslot{border-radius:0;margin:0}
+.cmp-tag{position:absolute;top:16px;z-index:2;font-family:var(--f-m);font-size:11px;
+  letter-spacing:.14em;text-transform:uppercase;padding:7px 13px;border-radius:100px;
+  background:var(--navy);color:#fff}
+.cmp-tag-before{left:16px}
+.cmp-tag-after{right:16px}
+.cmp-handle{display:none}
+
+html.js .cmp.on .cmp-reveal{position:absolute;inset:0;width:50%;overflow:hidden;
+  border-right:2px solid var(--white)}
+/* The inner plate must keep the FRAME's width, not the clip's, or the
+   revealed image squashes as the divider moves instead of being uncovered.
+   Scoped to the plate itself: the label is also a direct child, and pinning
+   it to the frame width stretches a pill that should shrink to its text. */
+html.js .cmp.on .cmp-reveal > .imgslot{width:var(--cmp-w,100%);max-width:none}
+html.js .cmp.on .cmp-handle{display:flex;position:absolute;top:0;bottom:0;left:50%;z-index:3;
+  width:46px;margin-left:-23px;align-items:center;justify-content:center;
+  background:none;border:0;padding:0;cursor:ew-resize;touch-action:none}
+/* A deliberate exception to "no drop shadows" (CLAUDE.md §7). This is an
+   interactive control that has to read as liftable against a photograph, not
+   a card — the same reasoning already applied to the mobile nav popover in
+   tokens.css. Cards themselves keep their flat hairline border. */
+.cmp-grip{width:44px;height:44px;border-radius:50%;background:var(--white);
+  box-shadow:0 6px 18px rgba(3,29,91,.22);position:relative;flex:none}
+.cmp-grip::before,.cmp-grip::after{content:"";position:absolute;top:50%;width:0;height:0;
+  border-block:5px solid transparent}
+.cmp-grip::before{left:12px;transform:translateY(-50%);border-right:6px solid var(--navy)}
+.cmp-grip::after{right:12px;transform:translateY(-50%);border-left:6px solid var(--navy)}
+.cmp-handle:focus-visible .cmp-grip{outline:3px solid var(--red);outline-offset:3px}
+/* Only the one-shot entrance sweep is animated; dragging must track the
+   pointer exactly, with no easing between frames. */
+html.js .cmp.sweep .cmp-reveal{transition:width .8s var(--e-heavy)}
+html.js .cmp.sweep .cmp-handle{transition:left .8s var(--e-heavy)}
+@media (prefers-reduced-motion:reduce){
+  html.js .cmp.sweep .cmp-reveal,html.js .cmp.sweep .cmp-handle{transition:none}
+}
+
 /* ---------- card grid (CardGrid.astro + Card.astro) ---------- */
 .ecard{border:1px solid var(--line);border-radius:16px;padding:34px 30px;background:var(--white);
   transition:border-color .35s var(--e),transform .35s var(--e),box-shadow .35s var(--e);

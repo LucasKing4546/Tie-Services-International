@@ -23,6 +23,7 @@ import Section from '@components/blocks/Section.astro';
 import SectionHead from '@components/blocks/SectionHead.astro';
 import Prose from '@components/blocks/Prose.astro';
 import Quote from '@components/blocks/Quote.astro';
+import CompareSlot from '@components/blocks/CompareSlot.astro';
 import CardGrid from '@components/blocks/CardGrid.astro';
 import Card from '@components/blocks/Card.astro';
 import PageEnding from '@components/blocks/PageEnding.astro';
@@ -67,6 +68,22 @@ const jsonLdPage = articleJsonLd(data);
         <p class="headline-num" style="color:#fff">{data.caseStudy.headline.value}</p>
         <p class="mono on-navy" style="margin-top:12px">{data.caseStudy.headline.label}</p>
       </div>
+    </Section>
+  )}
+
+  {data.media.length >= 2 && (
+    <Section tone="off">
+      <SectionHead
+        eyebrow="Condition"
+        heading="The same machine, before and after"
+        level={2}
+        lede="Drag the divider. Both frames are shot at a matched angle, so what changes is the machine, not the camera."
+      />
+      <CompareSlot
+        before={{ ref: data.media[0].ref, brief: data.media[0].brief }}
+        after={{ ref: data.media[1].ref, brief: data.media[1].brief }}
+        ratio={data.media[0].ratio ?? '16/9'}
+      />
     </Section>
   )}
 
