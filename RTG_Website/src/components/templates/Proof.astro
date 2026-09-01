@@ -10,10 +10,17 @@
  * one page with real content today, wants none of either — its test
  * suite is flowing prose plus the site-wide proof bar. Every block below
  * is optional and renders only when a page actually populates it.
+ *
+ * The closing case-study track is the piece the original plan missed: a
+ * proof page asserting a capability had no way to point at the job where it
+ * was used, so the section that is meant to carry the evidence linked to
+ * none of it. It reads `related`, so which case study belongs on which
+ * proof page stays an editorial decision in the content file.
  */
 import { render } from 'astro:content';
 import type { PageMeta } from '@data/pages';
-import type { PageEntry } from '@lib/blocks';
+import type { PageEntry, CardItem } from '@lib/blocks';
+import { cardFrom } from '@lib/content';
 import { articleJsonLd } from '@lib/seo';
 import Base from '@layouts/Base.astro';
 import PageHero from '@components/blocks/PageHero.astro';
@@ -23,6 +30,8 @@ import Prose from '@components/blocks/Prose.astro';
 import SpecTable from '@components/blocks/SpecTable.astro';
 import Quote from '@components/blocks/Quote.astro';
 import ProofBar from '@components/blocks/ProofBar.astro';
+import ScrollTrack from '@components/blocks/ScrollTrack.astro';
+import Card from '@components/blocks/Card.astro';
 import PageEnding from '@components/blocks/PageEnding.astro';
 import { mdxComponents } from '@lib/mdx';
 
@@ -35,6 +44,12 @@ const { page, entry } = Astro.props;
 const { data } = entry;
 const { Content } = await render(entry);
 const jsonLdPage = articleJsonLd(data);
+
+// A proof page that asserts a capability should be able to point at the job
+// where it was used. Sourced from `related` so the choice of which case
+// study belongs on which proof page stays editorial, in the content file,
+// rather than being hardcoded per template.
+const cases: CardItem[] = data.related.map((id) => cardFrom({ pageId: id }));
 ---
 
 <Base pageId={page.id} jsonLdPage={jsonLdPage}>
@@ -69,6 +84,16 @@ const jsonLdPage = articleJsonLd(data);
     <Section>
       {data.quotes.map((q) => <Quote text={q.text} attribution={q.attribution} context={q.context} />)}
     </Section>
+  )}
+
+  {cases.length > 0 && (
+    <ScrollTrack
+      eyebrow="Case studies"
+      heading="Where this was used"
+      lede="The same claims, on named jobs, with the numbers attached."
+    >
+      {cases.map((item) => <Card item={item} tone="dark" />)}
+    </ScrollTrack>
   )}
 
   <PageEnding page={page} cta={data.cta} draft={data.draft} outline={data.outline} />
