@@ -31,13 +31,45 @@ interface Props {
 }
 
 const { ref, brief, ratio, motion = 'none', class: cls, eager = false } = Astro.props;
-const style = ratio ? `--imgslot-ratio:${ratio}` : undefined;
 const motionAttr = motion !== 'none' ? motion : undefined;
 const photo = mediaFor(ref);
+
+// The box takes the photograph's own shape. A ratio written by hand in
+// frontmatter is a guess about a picture nobody has seen yet, and a wrong
+// guess crops the subject out: the supplied set runs from a 0.71 portrait to
+// a 2.80 panorama, and forcing either into a 16/9 box throws away most of
+// it. An explicit `ratio` still wins where a fixed crop is genuinely wanted
+// (a card face, a tile that has to line up with its neighbours); otherwise
+// the image decides, and a slot with no photograph yet falls back to the
+// brief's ratio or 4/3 so the placeholder plate still reserves the space.
+const naturalRatio = photo ? `${photo.width}/${photo.height}` : undefined;
+const boxRatio = ratio ?? naturalRatio;
+// Never paint a photograph larger than it actually is. Several supplied
+// files are small (791x445, 596x335); stretched across a full-width band
+// they go soft, and a soft picture reads as a cheap one. Capping at the
+// intrinsic width makes a small image sit smaller, which looks deliberate.
+const style = [
+  boxRatio ? `--imgslot-ratio:${boxRatio}` : '',
+  photo ? `--imgslot-maxw:${photo.width}px` : '',
+].filter(Boolean).join(';') || undefined;
+
+/** portrait | square | landscape — lets a caller lay tiles out by shape. */
+const orient = photo
+  ? photo.width / photo.height < 0.95
+    ? 'portrait'
+    : photo.width / photo.height < 1.15
+      ? 'square'
+      : 'landscape'
+  : undefined;
 ---
 
 {photo ? (
-  <figure class:list={['imgslot', 'imgslot-shot', cls]} style={style} data-motion={motionAttr}>
+  <figure
+    class:list={['imgslot', 'imgslot-shot', cls]}
+    style={style}
+    data-motion={motionAttr}
+    data-orient={orient}
+  >
     <Image
       src={photo}
       alt={brief}
