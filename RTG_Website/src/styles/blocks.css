@@ -31,7 +31,55 @@
 .sec:has(> .wrap > .two > .prose:empty):not(:has(> .wrap > .two > :not(.prose))){padding:0}
 .navy{background:var(--navy);color:#fff}
 .navy h1,.navy h2,.navy h3{color:#fff}
+
+/* An off-white section is a surface, not an absence of colour. The same
+   drawing-sheet grid the hero and the placeholder plates use, one more step
+   toward invisible — enough that the band reads as a drawn area rather than
+   as a grey gap between two white ones. */
+.sec.off{position:relative;isolation:isolate}
+.sec.off::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background-image:
+    linear-gradient(to right,rgba(3,29,91,.035) 1px,transparent 1px),
+    linear-gradient(to bottom,rgba(3,29,91,.035) 1px,transparent 1px);
+  background-size:64px 64px;
+  mask-image:radial-gradient(100% 80% at 92% 0%,#000 0%,transparent 70%)}
+
+/* ---------- section head (SectionHead.astro) ----------
+   Every section is numbered and ruled, counted automatically by CSS rather
+   than by anything a template passes in — so the numbering is always
+   sequential down the page and never has to be maintained by hand as
+   sections come and go behind their own conditionals.
+
+   This is the site's one borrowed device, and it is borrowed from the
+   buyer's own documents rather than from a website: a drawing sheet numbers
+   its views, and a procedure numbers its stages. It gives a page of stacked
+   white sections an obvious structure and a sense of being a controlled
+   document, which is the impression this particular buyer is meant to
+   form. */
+main{counter-reset:sechd}
+/* All three section-heading treatments share the counter, or the numbering
+   would skip whenever a page's structure came from a set-piece rather than
+   a plain SectionHead — which is most of the interesting pages. */
+.sechd,.strack-head,.pstage-head{position:relative;counter-increment:sechd;
+  border-top:1px solid var(--line);padding-top:28px}
 .sechd{max-width:900px;margin-bottom:52px}
+.sechd::after,.strack-head::after,.pstage-head::after{
+  content:counter(sechd,decimal-leading-zero);position:absolute;top:28px;right:0;
+  font-family:var(--f-m);font-size:11px;letter-spacing:.16em;color:var(--muted);
+  font-variant-numeric:tabular-nums}
+.navy .sechd,.strack-head,.pstage.navy .pstage-head{border-top-color:rgba(255,255,255,.2)}
+.navy .sechd::after,.strack-head::after,.pstage.navy .pstage-head::after{color:rgba(255,255,255,.5)}
+/* The track head is a two-column row, so its number would land on top of
+   the lede in the right-hand column — give it the row's own top-right
+   corner instead, above both columns. */
+/* .strack-head is itself a .wrap, so an inset-0 pseudo-element spans its
+   padding box and the rule would start a gutter to the left of the cards it
+   sits above. Inset both the rule and the number by the gutter so they line
+   up with the content column. */
+.strack-head{padding-top:0;border-top:0;margin-top:26px}
+.strack-head::before{content:"";position:absolute;top:-26px;left:var(--gut);right:var(--gut);
+  height:1px;background:rgba(255,255,255,.2)}
+.strack-head::after{top:-38px;right:var(--gut)}
 .sechd .mono{display:block;margin-bottom:22px}
 @media (max-width:900px){
   .sec{padding:76px 0}
@@ -57,7 +105,7 @@
    The top padding is fixed-header clearance plus breathing room, so it
    tracks the header's own shrink at narrow widths rather than leaving the
    h1 stranded halfway down the screen. */
-.phero{position:relative;overflow:hidden;padding:190px 0 92px;
+.phero{position:relative;overflow:hidden;padding:190px 0 56px;
   background:var(--navy);color:#fff}
 /* A drawing-sheet grid, at the threshold of visible. The brand's own
    reference points are technical drawings and machine data plates, so the
@@ -89,6 +137,11 @@
 .phero .crumbs li[aria-current] span{color:#fff}
 .phero .crumbs{margin-bottom:26px}
 .phero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:36px}
+/* .two defaults to align-items:start, which is right for a sticky column
+   scrolling past prose but wrong here: the media plate is usually taller
+   than the copy, so top-aligning left a column of empty navy under the
+   lede that read as dead space rather than as composition. */
+.phero .two{align-items:center}
 /* The placeholder plate has to invert too, or it stays a white card
    punched into the navy. */
 .phero .imgslot{background:rgba(255,255,255,.045);border-color:rgba(255,255,255,.22)}
@@ -97,8 +150,27 @@
                    linear-gradient(90deg,rgba(255,255,255,.16) 1px,transparent 1px)}
 .phero .imgslot b{color:#fff}
 .phero .imgslot span{color:rgba(255,255,255,.66)}
-@media (max-width:900px){.phero{padding:150px 0 64px}.phero::before{background-size:56px 56px}}
-@media (max-width:560px){.phero{padding:130px 0 52px}.phero-cta{margin-top:28px}}
+@media (max-width:900px){.phero{padding:150px 0 56px}.phero::before{background-size:56px 56px}}
+@media (max-width:560px){.phero{padding:130px 0 46px}.phero-cta{margin-top:28px}}
+/* The hero's own bottom padding and the next section's top padding were
+   both paying full price against a seam that is already marked by a hard
+   tone change from navy to white — 204px of nothing between the last line
+   of the hero and the first thing under it, on every page. The tone change
+   is what separates them; the padding only has to breathe. */
+.phero + .sec,.phero + .sec.sm{padding-top:52px}
+@media (max-width:900px){.phero + .sec,.phero + .sec.sm{padding-top:48px}}
+/* A hub whose body is still an outline puts the navy hero directly against
+   the navy card track, and with no tone change to mark the seam the two
+   full-price paddings read as one enormous empty navy field rather than as
+   two sections. Same reasoning as .sec.off + .sec.off above, applied to the
+   set-pieces that carry their own navy ground. */
+.phero + .strack .strack-stick,.phero + .pstage .pstage-stick{padding-top:24px}
+/* And the hero gives up most of its own bottom padding into that seam. A
+   pinned set-piece centres its content in a full viewport, so it already
+   arrives with a screen's worth of its own leading space above the heading;
+   the hero paying full padding on top of that is what made a hub with no
+   body open with a third of a screen of empty navy. */
+.phero:has(+ .strack),.phero:has(+ .pstage){padding-bottom:28px}
 
 /* ---------- breadcrumbs (Breadcrumbs.astro) ---------- */
 .crumbs ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;align-items:center;gap:8px}

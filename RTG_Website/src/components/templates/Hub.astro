@@ -39,6 +39,13 @@ const { Content } = await render(entry);
 const children = childrenOf(page.slug);
 const extraCards = data.cards.map(cardFrom);
 
+// The card track used to be headed with page.h1, which put the page's own
+// title on screen twice in a row — once in the hero and again a few hundred
+// pixels below it, with nothing in between on a hub whose body is still an
+// outline. The track is a list of what is inside this section, so it says
+// that instead; the eyebrow above it already carries the section name.
+const trackHeading = children.length > 0 ? `Everything in ${page.section.toLowerCase()}` : 'Where to go next';
+
 // An ItemList of every card the grid below actually renders — derived
 // children plus any curated `cards` cross-link — built from the exact same
 // two sources ChildCards does, so the structured data and the visible grid
@@ -89,7 +96,7 @@ const jsonLdPage =
       extra={extraCards}
       track
       eyebrow={page.section}
-      heading={page.h1}
+      heading={trackHeading}
       label={`Pages under ${page.h1}`}
     />
   )}
