@@ -6,11 +6,27 @@
  * makes "exactly one <h1> per page, matching the workbook" a property of
  * the architecture (scripts/audit-seo.mjs enforces the count; this is why
  * the count is always right).
+ *
+ * Full-bleed: the media fills the band and the heading sits over it behind a
+ * scrim, rather than sharing a two-column row with it. Where there is no
+ * photograph — which is every page today — the drawing-sheet plate shows
+ * through instead, so a page with no art still reads as composed rather than
+ * as a page missing its picture. `.phero-media` is the layer a real <img> or
+ * <video> drops into; nothing else about the hero changes when it does.
+ *
+ * The title block at the foot is this design's signature. Every machine RTG
+ * builds carries a data plate and every drawing carries a title block, both
+ * in the same place and both saying the same kind of thing: what this is,
+ * who it is for, when it was last revised. It is not decoration — it is the
+ * first thing on the site to surface `avatar`, which the Page Map has always
+ * carried for all 70 pages and which has never once been shown to a reader,
+ * despite being the most useful orientation available on a site this size.
  */
+import { Image } from 'astro:assets';
 import type { PageMeta } from '@data/pages';
 import type { ImgBrief, Link } from '@lib/blocks';
+import { mediaFor } from '@data/media';
 import Breadcrumbs from './Breadcrumbs.astro';
-import ImageSlot from './ImageSlot.astro';
 
 interface Props {
   page: PageMeta;
@@ -19,44 +35,83 @@ interface Props {
   ctas?: Link[];
   media?: ImgBrief;
   crumbs?: boolean;
+  /** Rendered into the title block when a page carries one. */
+  updated?: Date;
 }
 
-const { page, eyebrow, lede, ctas = [], media, crumbs = true } = Astro.props;
+/** The workbook's avatar codes, said the way a reader would say them. */
+const AUDIENCE: Record<PageMeta['avatar'], string> = {
+  AV01: 'Vessel operators',
+  AV02: 'Design authorities',
+  AV03: 'Yards & integrators',
+  ALL: 'Every route',
+};
+
+const { page, eyebrow, lede, ctas = [], media, crumbs = true, updated } = Astro.props;
+
+const photo = media ? mediaFor(media.ref) : undefined;
+
+const revised = updated
+  ? updated.toLocaleDateString('en-GB', { month: 'short', year: 'numeric' })
+  : undefined;
 ---
 
-<section class="sec phero">
-  <div class="wrap">
-    {media ? (
-      <div class="two">
-        <div>
-          {crumbs && <Breadcrumbs page={page} />}
-          {eyebrow && <p class="mono red fu" style="margin:0 0 20px">{eyebrow}</p>}
-          <h1 class="d2"><span class="rl"><span>{page.h1}</span></span></h1>
-          {lede && <p class="lede fu" style="margin-top:24px">{lede}</p>}
-          {ctas.length > 0 && (
-            <div class="phero-cta">
-              {ctas.map((c, i) => (
-                <a class={i === 0 ? 'btn b-red' : 'btn btn-o inv'} href={c.href}>{c.label}</a>
-              ))}
-            </div>
-          )}
-        </div>
-        <ImageSlot ref={media.ref} brief={media.brief} ratio={media.ratio} motion="parallax" />
-      </div>
-    ) : (
-      <div>
-        {crumbs && <Breadcrumbs page={page} />}
-        {eyebrow && <p class="mono red fu" style="margin:0 0 20px">{eyebrow}</p>}
-        <h1 class="d2"><span class="rl"><span>{page.h1}</span></span></h1>
-        {lede && <p class="lede fu" style="margin-top:24px">{lede}</p>}
-        {ctas.length > 0 && (
-          <div class="phero-cta">
-            {ctas.map((c, i) => (
-              <a class={i === 0 ? 'btn b-red' : 'btn btn-o inv'} href={c.href}>{c.label}</a>
-            ))}
-          </div>
-        )}
+<section class="phero">
+  <div
+    class:list={['phero-media', { 'phero-media-shot': photo }]}
+    data-motion="parallax"
+    role={media && !photo ? 'img' : undefined}
+    aria-label={media && !photo ? media.brief : undefined}
+  >
+    {photo && (
+      <Image
+        src={photo}
+        alt={media!.brief}
+        widths={[900, 1440, 2000, 2600]}
+        sizes="100vw"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+      />
+    )}
+  </div>
+
+  <div class="wrap phero-in">
+    {crumbs && <Breadcrumbs page={page} />}
+    {eyebrow && <p class="mono red fu">{eyebrow}</p>}
+    <h1 class="d-hero"><span class="rl"><span>{page.h1}</span></span></h1>
+    {lede && <p class="lede fu">{lede}</p>}
+    {ctas.length > 0 && (
+      <div class="phero-cta">
+        {ctas.map((c, i) => (
+          <a class={i === 0 ? 'btn b-red' : 'btn btn-o inv'} href={c.href}>{c.label}</a>
+        ))}
       </div>
     )}
+  </div>
+
+  <div class="wrap phero-block">
+    <dl>
+      <div>
+        <dt>Section</dt>
+        <dd>{page.section}</dd>
+      </div>
+      <div>
+        <dt>For</dt>
+        <dd>{AUDIENCE[page.avatar]}</dd>
+      </div>
+      {revised && (
+        <div>
+          <dt>Revised</dt>
+          <dd>{revised}</dd>
+        </div>
+      )}
+      {media && (
+        <div>
+          <dt>Plate</dt>
+          <dd>{media.ref}</dd>
+        </div>
+      )}
+    </dl>
   </div>
 </section>

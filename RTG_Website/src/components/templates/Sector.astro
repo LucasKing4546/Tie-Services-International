@@ -13,7 +13,10 @@ import Base from '@layouts/Base.astro';
 import PageHero from '@components/blocks/PageHero.astro';
 import Section from '@components/blocks/Section.astro';
 import Prose from '@components/blocks/Prose.astro';
-import ImageSlot from '@components/blocks/ImageSlot.astro';
+import FeatureRow from '@components/blocks/FeatureRow.astro';
+import MediaBand from '@components/blocks/MediaBand.astro';
+import StepList from '@components/blocks/StepList.astro';
+import SectionHead from '@components/blocks/SectionHead.astro';
 import ScrollTrack from '@components/blocks/ScrollTrack.astro';
 import Card from '@components/blocks/Card.astro';
 import FeaturedCase from '@components/blocks/FeaturedCase.astro';
@@ -40,8 +43,11 @@ const featured = data.featured?.pageId
   : undefined;
 
 // The second frontmatter media entry, if a page has supplied one, runs
-// alongside the opening prose as a sticky companion image.
+// alongside the opening prose as the feature row's picture.
 const problemMedia = data.media[0];
+// Everything the page has left after the hero and the feature row. Without
+// this a sector with four good photographs could only ever show two.
+const restMedia = data.media.slice(1);
 ---
 
 <Base pageId={page.id}>
@@ -51,18 +57,14 @@ const problemMedia = data.media[0];
     lede={data.lede}
     media={data.hero.media}
     ctas={data.hero.ctas}
+    updated={data.updated}
   />
 
-  <Section>
-    <div class="two">
-      <Prose>
-        <Content components={mdxComponents} />
-      </Prose>
-      {problemMedia && (
-        <ImageSlot ref={problemMedia.ref} brief={problemMedia.brief} ratio={problemMedia.ratio} motion="sticky" />
-      )}
-    </div>
-  </Section>
+  <FeatureRow eyebrow="The problem" media={problemMedia}>
+    <Prose>
+      <Content components={mdxComponents} />
+    </Prose>
+  </FeatureRow>
 
   {equipment.length > 0 && (
     <ScrollTrack eyebrow="Equipment" heading="Built for this sector">
@@ -70,11 +72,31 @@ const problemMedia = data.media[0];
     </ScrollTrack>
   )}
 
+  {data.steps.length > 0 && (
+    <Section>
+      <SectionHead
+        eyebrow="Technical note"
+        heading="What actually goes wrong"
+        level={2}
+        lede="The failure modes behind the specification, in the order you meet them."
+      />
+      <StepList steps={data.steps} />
+    </Section>
+  )}
+
+  <MediaBand items={restMedia} eyebrow="On the floor" heading="Equipment for this sector" lead />
+
   {featured && (
     <Section wrap={false}>
       <FeaturedCase page={featured.page} entry={featured.entry} ctaLabel={featured.ctaLabel} />
     </Section>
   )}
 
-  <PageEnding page={page} proofBar={data.proofBar} cta={data.cta} draft={data.draft} outline={data.outline} />
+  {/* No proof bar here. The six site-wide PROOF figures are a general claim
+      about RTG; a sector page's job is to be specific to one buyer's problem,
+      and closing it with the same boxed grid of numbers that every other
+      template shows undercut that. The figures still appear where they are
+      the point — the Proof section, and inline via <Fig> where a sector's own
+      copy cites one. */}
+  <PageEnding page={page} cta={data.cta} draft={data.draft} outline={data.outline} />
 </Base>
