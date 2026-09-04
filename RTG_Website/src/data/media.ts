@@ -23,6 +23,33 @@
  * illustration) and are deliberately left out until provenance is confirmed
  * — publishing them would be a copyright exposure, and CLAUDE.md §6 already
  * flags that this matters commercially as well as legally.
+ *
+ * IMG-H01-A (the homepage hero) shows a client's vessel with the client's
+ * name visible on the wheelhouse — published on the user's explicit
+ * instruction ("we can use the Fugro picture"). That authorises the
+ * photograph. It does not authorise naming the client in copy anywhere on
+ * the site — CLAUDE.md §5.7 still requires written permission for that, and
+ * none exists yet, so no page text names them.
+ *
+ * IMG-S02-C and IMG-S05-C replace what had been S-02's and S-05's only
+ * hero/media photographs — both of the originals (IMG-S02-A/B,
+ * IMG-S05-A/B) are on the pre-launch reverse-image-search list, one of them
+ * literally a named third-party research vessel's own photo. The new pair
+ * carries no visible branding and is a materially safer default while that
+ * search hasn't been done; the old refs stay registered rather than
+ * deleted, since the search may still clear them.
+ *
+ * IMG-E00-A is a full-vessel cutaway CAD render, not a photograph. It
+ * carries no visible branding, but it is not confirmed as RTG's own
+ * commissioned artwork either — add it to the pre-launch provenance check
+ * alongside the rest of the non-photographic material.
+ *
+ * IMG-X01-A (four RTG staff, named) is registered but not currently placed
+ * on any page. It is a finished graphic — names and roles already set into
+ * the image — not a plain photo, and PageHero's H1/lede/scrim treatment
+ * overlaps its own captions when tried as a full-bleed hero. It needs a
+ * plain, non-overlaid placement (a "meet the team" block) rather than
+ * hero.media; that block does not exist yet.
  */
 import type { ImageMetadata } from 'astro';
 
@@ -31,37 +58,52 @@ import s01b from '../assets/sectors/s01-equipment-b.jpg';
 import s01c from '../assets/sectors/s01-deck-spread.jpg';
 import s02a from '../assets/sectors/s02-pipeline-survey.jpg';
 import s02b from '../assets/sectors/s02-seabed-tool.jpg';
+import s02c from '../assets/sectors/s02-deck-installation.jpg';
 import s03a from '../assets/sectors/s03-wind-array.jpg';
 import s03b from '../assets/sectors/s03-cable-work.jpg';
 import s04a from '../assets/sectors/s04-equipment-a.jpg';
 import s04b from '../assets/sectors/s04-equipment-b.jpg';
 import s04c from '../assets/sectors/s04-equipment-c.jpg';
 import s04d from '../assets/sectors/s04-acquisition.jpg';
+import s04e from '../assets/sectors/s04-reel-deck.jpg';
 import s05a from '../assets/sectors/s05-research-deck.jpg';
 import s05b from '../assets/sectors/s05-research-vessel.jpg';
+import s05c from '../assets/sectors/s05-instrument-deployment.jpg';
 import s06a from '../assets/sectors/s06-equipment-a.png';
 import s06b from '../assets/sectors/s06-rov-launch.webp';
 import s06c from '../assets/sectors/s06-dive-spread.jpg';
 import s07a from '../assets/sectors/s07-naval-vessel.webp';
 
+import homeA from '../assets/home/home-fleet-vessel.jpg';
+import e00a from '../assets/equipment/e00-system-overview.jpg';
+import l00a from '../assets/lifecycle/l00-deck-work.jpg';
+import x01a from '../assets/contact/x01-team.jpg';
+
 export const MEDIA: Record<string, ImageMetadata> = {
+  'IMG-H01-A': homeA,
   'IMG-S01-A': s01a,
   'IMG-S01-B': s01b,
   'IMG-S01-C': s01c,
   'IMG-S02-A': s02a,
   'IMG-S02-B': s02b,
+  'IMG-S02-C': s02c,
   'IMG-S03-A': s03a,
   'IMG-S03-B': s03b,
   'IMG-S04-A': s04a,
   'IMG-S04-B': s04b,
   'IMG-S04-C': s04c,
   'IMG-S04-D': s04d,
+  'IMG-S04-E': s04e,
   'IMG-S05-A': s05a,
   'IMG-S05-B': s05b,
+  'IMG-S05-C': s05c,
   'IMG-S06-A': s06a,
   'IMG-S06-B': s06b,
   'IMG-S06-C': s06c,
   'IMG-S07-A': s07a,
+  'IMG-E00-A': e00a,
+  'IMG-L00-A': l00a,
+  'IMG-X01-A': x01a,
 };
 
 /** The photograph for an Image Brief ref, or undefined while it is unshot. */

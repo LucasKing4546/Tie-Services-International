@@ -48,6 +48,18 @@ const ratioSum = tiles.reduce((n, t) => n + t.ratio, 0) || 1;
 // being available. The container is about 88vw at the page's max width.
 const sizesFor = (ratio: number) =>
   `(max-width: 900px) 100vw, ${Math.max(20, Math.round((ratio / ratioSum) * 92))}vw`;
+
+// Three tiles, one of them upright: a justified row stretches the two
+// landscape tiles as tall as the portrait, which reads as oddly wide rather
+// than composed. The shape a person reaches for by hand is the portrait at
+// full height on one side with the two landscapes stacked against it — so
+// detect that case and lay it out as a 2x2 grid instead, the portrait tile
+// first regardless of the order it was authored in.
+const uprightCount = tiles.filter((t) => t.ratio < 1.15).length;
+const stacked = tiles.length === 3 && uprightCount === 1;
+const orderedTiles = stacked
+  ? [...tiles].sort((a, b) => (a.ratio < 1.15 ? -1 : 0) - (b.ratio < 1.15 ? -1 : 0))
+  : tiles;
 ---
 
 {items.length > 0 && (
@@ -61,8 +73,8 @@ const sizesFor = (ratio: number) =>
       </div>
     )}
     <div class="wrap">
-      <div class="mband-grid stag" data-count={items.length}>
-        {tiles.map(({ media: m, ratio }) => (
+      <div class="mband-grid stag" data-count={items.length} data-shape={stacked ? 'stack' : 'row'}>
+        {orderedTiles.map(({ media: m, ratio }) => (
           <figure class="mband-item" style={`flex-grow:${ratio.toFixed(4)}`}>
             <ImageSlot ref={m.ref} brief={m.brief} ratio={m.ratio} class="mband-plate" sizes={sizesFor(ratio)} />
             <figcaption>{m.brief}</figcaption>

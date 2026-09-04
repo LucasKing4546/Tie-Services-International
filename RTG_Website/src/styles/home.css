@@ -35,6 +35,17 @@
   .artbox .cap{bottom:2px}
 }
 
+/* ---------- fleet (full-bleed photo, straight after the hero) ---------- */
+.fleet{position:relative;background:var(--navy)}
+.fleet img{display:block;width:100%;height:76svh;object-fit:cover}
+.fleet-cap{position:absolute;left:clamp(20px,4vw,64px);right:20px;top:14%;
+  display:flex;flex-direction:column;gap:8px}
+.fleet-cap .mono{margin:0;color:#fff;text-shadow:0 1px 10px rgba(0,0,0,.7)}
+.fleet-line{margin:0;max-width:34ch;font-family:var(--f-d);font-weight:700;
+  font-size:clamp(19px,2.3vw,27px);letter-spacing:-.01em;color:#fff;
+  text-shadow:0 2px 18px rgba(0,0,0,.75)}
+@media (max-width:640px){.fleet img{height:56svh}}
+
 /* ---------- zoom-into-frame showcase ---------- */
 .zw{position:relative;background:var(--white)}
 .zs{position:sticky;top:0;height:100svh;overflow:hidden}
