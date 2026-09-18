@@ -1,4 +1,146 @@
 ---
 pageId: "E-10"
-draft: true
+eyebrow: "Equipment · Handling systems"
+lede: "Squeeze tension is not line tension, and confusing them is the most common way to specify the wrong machine — and one of the more common ways to damage a cable."
+hero:
+  media:
+    ref: "IMG-E10-A"
+    brief: "Tensioner tracks gripping a pipe, close and mechanical."
+  ctas:
+    - { label: "Request a quotation", href: "/contact/request-a-quotation/" }
+    - { label: "Talk to an engineer", href: "/contact/" }
+product:
+  category: "Cable and pipe tensioner"
+  drive: ["Electro-hydraulic"]
+  applications: ["Inter-array cable lay", "Export cable and interconnector lay", "Cable pull-in and J-tube entry", "Shore-end and landfall pulls", "Cable recovery and repair", "Umbilical and dynamic cable handling", "Flexible pipe and umbilical lay", "Spooling and factory acceptance", "Recovery and abandonment"]
+  datasheetPageId: "R-01"
+specs:
+  - caption: "10 Te unit, self-contained on one skid"
+    rows:
+      - { k: "Maximum tension (bi-directional)", v: "0 to 10 Te", note: "manually varied" }
+      - { k: "Linear speed", v: "0 to 1,200 m/hr (20 m/min)" }
+      - { k: "Squeeze tension", v: "0.5 to 25 Te" }
+      - { k: "Static parking brake", v: "18 Te maximum holding", note: "fail-safe, minimum 1.8 × SWL" }
+      - { k: "Hydraulic drives", v: "2 off fail-safe braked hydraulic geared motors" }
+      - { k: "Track configuration", v: "Dual track, vertically aligned, 600 mm stroke" }
+      - { k: "Track length", v: "2.5 m, symmetrical guide opening" }
+      - { k: "Product diameter (standard pad)", v: "50 to 450 mm" }
+      - { k: "Controls", v: "Local, and remote within a control cabin" }
+      - { k: "Supply required", v: "3-phase 380/480 V, 50/60 Hz, dual supply" }
+      - { k: "Tensioner dry weight", v: "17,500 kg", note: "without cable" }
+      - { k: "Tensioner envelope L×W×H", v: "5,900 × 2,400 × 2,950 mm" }
+      - { k: "Control cabin dry weight", v: "2,580 kg" }
+      - { k: "Control cabin envelope L×W×H", v: "1,500 × 1,500 × 2,000 mm" }
+    footnote: "One real configuration in this family — 5 to 20 tonne units share the same architecture. Full specifications including the general arrangement drawing are issued on request."
+media:
+  - ref: "IMG-E10-B"
+    brief: "Self-contained skid with integrated HPU, drive motors and control cabinet."
+related: ["S-03", "E-06", "P-06"]
+cta:
+  heading: "Bring the cable's data sheet"
+  body: "Outside diameter, construction, minimum bend radius and permitted crush load — plus the vessel and the date. Send those and we can tell you which capacity fits and what the track and pad configuration should be."
+  primary: { label: "Request a quotation", href: "/contact/request-a-quotation/" }
+  secondary: { label: "Talk to the engineer who designed it", href: "/contact/" }
 ---
+
+## How it is built
+
+Self-contained, on one common skid. Two-track electro-hydraulic tensioners
+from 5 to 20 tonnes, with an integrated hydraulic power unit on the same
+frame — the system needs an electrical supply and nothing else. Controlled
+from a remote console over a single twenty-metre Ethernet cable, with
+rotary controllers, illuminated push buttons and a nine-inch HMI carrying
+full alarm and monitoring. Road transportable, craned on, running the same
+day — not a vessel integration project.
+
+Tension and squeeze are both measured, not inferred: four load pins
+interfaced with calibrated weighing modules on each track. V-grooved
+rubber-bonded pads, bolted rather than fixed, so the pad profile can be
+matched to the product rather than the other way round.
+
+## Squeeze versus line tension, explained
+
+Two numbers on a tensioner datasheet, sitting next to each other, measuring
+completely different things. Confusing them is the most common way to
+specify the wrong machine, and one of the more common ways to damage a
+cable.
+
+**Line tension** is the load carried along the cable — what the tensioner
+holds back against, set by the weight of suspended product between the
+vessel and the seabed, the lay angle, the water depth and the dynamics of
+the vessel. **Squeeze tension** is the force the tracks apply across the
+cable to grip it. It acts at ninety degrees to the line tension and has
+nothing to do with the weight being held — it is what stops the product
+slipping through the machine.
+
+On the 10-tonne unit, line tension is variable up to 10 tonnes. Squeeze is
+variable from 0.5 to 25 tonnes — well beyond the line figure, and
+deliberately so. The tracks hold the cable by friction, and friction gives
+only a fraction of what is squeezed with: at a coefficient of around 0.2
+between pad and cable sheath, holding one tonne of line tension needs
+roughly five tonnes of squeeze before the cable begins to slip. That ratio
+falls when the sheath is wet, muddy, cold, when the pads are worn, or when
+the product is smooth-jacketed rather than textured — conditions that occur
+during a normal lay, which is why the squeeze range has to be generous
+enough to cover the worst combination actually met at three in the morning
+in February.
+
+And the reason it cannot simply be wound up: a cable is not a solid bar.
+Underneath the sheath are conductors, insulation, water blocking, armour
+and often fibre, and all of it has a permitted crush loading. Exceed it and
+the geometry flattens, the water blocking is disturbed, or the insulation
+is stressed — and nothing visible happens. The cable emerges from the
+tracks the same shape it went in, the lay completes, and the fault appears
+when the array is energised or some time after.
+
+Setting the squeeze correctly is a conversation about the product, not the
+machine: its permitted crush loading, diameter and construction, the pad
+profile and contact area, and the line tension actually needed at the lay
+depth. Those are the manufacturer's numbers, not ours — which is why we
+would rather discuss it before the vessel sails. What to check on any
+tensioner being compared: the squeeze range, not just its maximum. A
+machine with a high top figure and a coarse bottom end cannot hold a
+light-construction cable gently, and the low end of the range is usually
+where a specification is won or lost.
+
+## Fail-safe braking
+
+A brake that needs power to hold is not a brake. It is a machine that will
+let go of a cable at the worst possible moment.
+
+These tensioners use fail-safe braked hydraulic motors: the brake is
+applied by spring and released by pressure. Under normal running,
+hydraulic pressure holds the brake off and the motor controls the product.
+Lose pressure — power failure, hose burst, pump failure, emergency stop,
+someone pulling the plug — and the springs apply the brake immediately,
+without a command and without anything having to work. The default state
+is held; everything the system does to run the cable is an active
+departure from that. Static parking brake holds at a minimum of 1.8 times
+safe working load, because the load at the moment of failure is not the
+load on the datasheet — a vessel movement, a snatch, or a surge as the
+drive drops out all arrive on top of the static figure.
+
+Consider what is being held at the moment the power goes: suspended cable
+between the vessel and the seabed, under tension, with its own weight
+pulling it over the side. If the tracks release, the product runs — and a
+running cable in a track system cannot be caught by hand, by reflex or by
+a good decision. So the question worth asking any supplier is not whether
+the brake is reliable. It is: with no power at all, what is the machine
+doing? If the answer requires a battery, an accumulator, a UPS or an
+operator, it is not fail-safe — it is a system with a backup, which is a
+weaker proposition because it depends on a second thing working at the
+exact moment the first one did not.
+
+Every one of these machines has its brake holding proven on our own
+stands before dispatch, with calibrated equipment and certified test
+weights.
+
+## What decides which unit
+
+Not the length of the campaign. Four properties of the product itself:
+outside diameter and construction (armoured, unarmoured, bundled); minimum
+bend radius, static and dynamic; permitted crush loading, which sets the
+squeeze band before anything else does; and required line tension at the
+water depth and lay angle actually worked at. Send those four and the
+vessel, and we can say which capacity fits and what the track and pad
+configuration should be.
