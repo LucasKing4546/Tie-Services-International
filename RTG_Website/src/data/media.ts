@@ -35,9 +35,12 @@
  * hero/media photographs — both of the originals (IMG-S02-A/B,
  * IMG-S05-A/B) are on the pre-launch reverse-image-search list, one of them
  * literally a named third-party research vessel's own photo. The new pair
- * carries no visible branding and is a materially safer default while that
- * search hasn't been done; the old refs stay registered rather than
- * deleted, since the search may still clear them.
+ * carries no visible branding and is a materially safer default. CLAUDE.md
+ * §9.3's 2026-09-18 drop confirms both S02-A/B and S05-A/B as third-party
+ * (a stock filename, a journal cover, a named institute's own vessel) with
+ * no replacement photography supplied — neither page references A/B any
+ * more. The refs stay registered here rather than deleted, since real
+ * RTG photography for either sector would slot straight into these ids.
  *
  * IMG-E00-A is a full-vessel cutaway CAD render, not a photograph. It
  * carries no visible branding, but it is not confirmed as RTG's own
