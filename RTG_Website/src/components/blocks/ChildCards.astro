@@ -1,10 +1,8 @@
 ---
 /**
- * A hub's children, rendered as a CardGrid — no hand-written child list.
- * Items come from childrenOf() (src/data/pages.ts), one path segment
- * deeper than `of`, so a new Page Map row under a hub's slug appears here
- * automatically. This is what replaces src/data/home.ts's hand-typed
- * SECTORS/TIERS arrays once the templates that need them exist.
+ * A hub's children, rendered as a CardGrid. Items come from childEntries(),
+ * one path segment deeper than `of`, so a new Page Map row under a hub's
+ * slug appears here automatically with no hand-written child list.
  */
 import { childEntries } from '@lib/content';
 import type { CardItem } from '@lib/blocks';
@@ -18,32 +16,21 @@ interface Props {
   cols?: 2 | 3;
   /** Accessible name for the carousel — see CardGrid.astro. */
   label?: string;
-  /** Page ids to leave out — rare, for a hub that surfaces one child via a
-   *  different block (a "featured" case study, say) and doesn't want it
-   *  doubled up in the grid. */
+  /** Page ids to leave out, e.g. one already surfaced via a "featured" block. */
   exclude?: string[];
-  /** Curated cards to append after the derived children — for a cross-link
-   *  outside the hub's own branch (e.g. the Proof hub linking to Yards &
-   *  Integrators' Certifications page). Resolve frontmatter `cards` through
-   *  cardFrom() and pass the result here, rather than a hub hand-typing a
-   *  second, disconnected card grid. Not deduplicated against the derived
-   *  children — if an `extra` entry ever points at one of the hub's own
-   *  children, add that child's id to `exclude` to avoid showing it twice. */
+  /** Curated cards to append after the derived children (resolve frontmatter
+   *  `cards` through cardFrom() first). Not deduplicated against the derived
+   *  children — add an id to `exclude` if an `extra` entry would double up. */
   extra?: CardItem[];
-  /** Ask for the full-bleed navy set-piece rather than a light carousel.
-   *  A hub's children are the page's main event, so this is what Hub.astro
-   *  uses — but see TRACK_MIN below: asking is not the same as getting one. */
+  /** Ask for the full-bleed navy set-piece rather than a light carousel —
+   *  see TRACK_MIN below: asking is not the same as getting one. */
   track?: boolean;
   eyebrow?: string;
   heading?: string;
 }
 
-/** Below this a track has nothing to scroll: the rail never moves, the
- *  prev/next buttons do nothing and the pin refuses to engage, so it reads
- *  as a set-piece that failed rather than as a layout. Fourteen of the
- *  site's nineteen tracks were under it. Those get IndexRows instead — see
- *  that component for why a register beats both a carousel and a grid at
- *  this size. */
+/** Below this a track has nothing to scroll — the rail never moves and the
+ *  pin refuses to engage — so it falls back to IndexRows instead. */
 const TRACK_MIN = 5;
 
 const {

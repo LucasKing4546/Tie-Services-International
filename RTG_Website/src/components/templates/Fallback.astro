@@ -1,16 +1,12 @@
 ---
 /**
- * Temporary stand-in for all 16 non-Home templates (Step 6 of the template
- * plan). [...slug].astro points every TemplateName at this one component so
- * the site is buildable and every workbook page has a real URL — real
- * templates get built and swapped in one at a time (Step 7), in the order
- * the plan sets out, starting with Sector (S-02).
+ * Temporary stand-in for any template not yet built. [...slug].astro points
+ * every unbuilt TemplateName here so the site stays buildable and every
+ * workbook page has a real URL.
  *
- * Composition is deliberately generic — the shared shape every template
- * will keep once it has its own body: PageHero → the MDX body → CtaBand
- * (only when the page defines one) → DraftPanel (only while draft: true).
- * No per-template blocks (spec tables, step lists, form…) render here; that
- * structure is what each real template adds.
+ * Composition is deliberately generic: PageHero -> MDX body -> CtaBand
+ * (only when the page defines one) -> DraftPanel (only while draft: true).
+ * No per-template blocks render here — that's what a real template adds.
  */
 import { render } from 'astro:content';
 import type { PageMeta } from '@data/pages';

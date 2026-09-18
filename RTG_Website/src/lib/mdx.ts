@@ -1,10 +1,9 @@
 /**
- * Components every MDX body gets without an import. Passed as
- * `<Content components={mdxComponents} />` by every template. This is the
- * mechanism that keeps two rules real rather than aspirational:
- *   - no MDX file ever hardcodes a PROOF figure (use <Fig>)
- *   - no MDX file ever contains raw HTML for a spec table, note, quote,
- *     tag list or "RTG to supply" marker (use the matching component)
+ * Components every MDX body gets without an import, via
+ * `<Content components={mdxComponents} />` in every template. Keeps two
+ * rules enforceable: no MDX file hardcodes a PROOF figure (use <Fig>), and
+ * none contains raw HTML for a spec table, note, quote, tag list or
+ * "RTG to supply" marker (use the matching component instead).
  */
 import Gap from '@components/blocks/Gap.astro';
 import Fig from '@components/blocks/Fig.astro';

@@ -1,11 +1,8 @@
-// Pages that exist in the built site but are deliberately NOT part of the
-// Page Map workbook — there is no URL slug to sell, no keyword to target, no
-// meta description a copywriter should tune. Right now that is just the 404.
-//
-// Kept separate from src/data/pages.ts (auto-generated — never hand-edit) so
-// npm run pagemap can never touch this file, and so scripts/audit-seo.mjs
-// (which regex-scans pages.ts for duplicate titles/slugs) never sees these
-// records and can't raise a false duplicate against a real workbook page.
+// Pages that exist in the built site but aren't part of the Page Map workbook
+// (currently just the 404). Kept separate from src/data/pages.ts (auto-generated
+// — never hand-edit) so npm run pagemap never touches this file, and so
+// scripts/audit-seo.mjs — which regex-scans pages.ts for duplicate titles/slugs —
+// can't raise a false duplicate against these records.
 import type { PageMeta } from './pages';
 
 export const OFF_MAP_PAGES: PageMeta[] = [

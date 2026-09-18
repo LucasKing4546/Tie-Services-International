@@ -1,11 +1,7 @@
 ---
-/**
- * Base layout. Every page in the site renders through this.
- *
- * It takes a page id from the Page Map and derives the entire <head> from it,
- * so title tags, meta descriptions, canonicals, Open Graph and JSON-LD can
- * never drift from the workbook. Templates supply body content only.
- */
+// Base layout every page renders through. Derives the whole <head> (title,
+// meta, canonical, Open Graph, JSON-LD) from the page's Page Map entry, so
+// it can never drift from the workbook. Templates supply body content only.
 import { ClientRouter } from 'astro:transitions';
 import { SITE } from '@data/site.js';
 import { absolute, ogImageFor, buildJsonLd } from '@lib/seo';
@@ -31,9 +27,8 @@ const canonical = absolute(p.slug);
 const ogImage = ogImageFor(p);
 const schema = buildJsonLd(p, jsonLd, jsonLdPage);
 
-// Off-map pages (404) are never indexed. Every real workbook page stays
-// indexable even when Gated — the form stands in front of the asset, not
-// the page describing it.
+// Off-map pages (404) are never indexed; every real workbook page stays
+// indexable even when Gated, since the form gates the asset, not the page.
 const robots = offMap ? 'noindex, follow' : 'index, follow, max-image-preview:large';
 ---
 
@@ -43,10 +38,9 @@ const robots = offMap ? 'noindex, follow' : 'index, follow, max-image-preview:la
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    {/* Synchronous and blocking, on purpose: this must land before first
-       paint so JS-enabled browsers never show a flash of revealed content
-       that then hides. A no-JS visit never runs it, so .rl/.fu/.stag stay
-       visible by default — see tokens.css. */}
+    {/* Blocking on purpose: must land before first paint so JS-enabled
+       browsers never flash revealed content that then hides. A no-JS visit
+       never runs it, so .rl/.fu/.stag stay visible by default (tokens.css). */}
     <script is:inline>document.documentElement.classList.add('js');</script>
 
     <title>{p.title}</title>
@@ -95,28 +89,21 @@ const robots = offMap ? 'noindex, follow' : 'index, follow, max-image-preview:la
     <script>
       import { initMotion } from '@lib/motion';
       import { initFormPrefill } from '@lib/forms';
-      // Fires on first load AND after every client-side navigation under
-      // ClientRouter — the one place every template's reveals, counters
-      // and parallax hooks get booted. Do not call initMotion() a second
-      // time from a template; home-scroll.ts relies on this already having
-      // run and only adds the homepage's 3D on top of it.
+      // astro:page-load fires on first load and after every client-side
+      // navigation — the one place reveals, counters and parallax get
+      // booted. Don't call initMotion() again from a template: home-scroll.ts
+      // relies on this having already run and only layers the homepage's
+      // 3D on top.
       document.addEventListener('astro:page-load', initMotion);
       document.addEventListener('astro:page-load', initFormPrefill);
     </script>
 
-    {/* Chatra live chat — same embed and ID as the current production site
-       (www.romicatiegroup.com), loaded on every page. Chatra appends its
-       own script to <head> asynchronously; is:inline so Astro ships it
-       verbatim rather than bundling it. Guarded on w.ChatraID rather than
-       run unconditionally like the reference snippet: under ClientRouter
-       this script rides along on every page's markup, and if it ever runs
-       more than once (server-rendered HTML on first load, then again on a
-       client-side navigation) it would inject a second chatra.js and a
-       second widget instance — the guard makes re-running it a no-op.
-       Flag (CLAUDE.md §5.4): no consent gate exists yet for ANY third
-       party on this site, analytics included — this matches what the
-       current site already does, not a new gap this introduces. Revisit
-       once real consent management lands. */}
+    {/* Chatra live chat, same ID as production. is:inline so Astro ships it
+       verbatim. Guarded on w.ChatraID because this script's markup rides
+       along on every ClientRouter navigation — without the guard, a
+       client-side nav would inject a second chatra.js and widget instance.
+       Flag: no consent gate exists yet for any third party here, matching
+       the current site — revisit once consent management lands (CLAUDE.md §5.4). */}
     <script is:inline>
       (function (d, w, c) {
         if (w.ChatraID) return;

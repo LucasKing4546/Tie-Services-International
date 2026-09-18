@@ -1,32 +1,22 @@
 ---
 /**
- * The Ladder template — the contract-manufacturing scope ladder (C-00),
- * the only page on this template. Composition per the template plan: four
- * tiers -> references -> CTA to C-09 (send documentation).
+ * The Ladder template — the contract-manufacturing scope ladder (C-00), the
+ * only page on this template. Composition: four tiers -> references -> CTA
+ * to C-09 (send documentation).
  *
  * The plan describes each tier's points as read from that tier's own MDX
- * frontmatter, but the tier pages (C-01…C-04) actually carry that detail
- * as prose/<Note> in their bodies, not a structured points list — C-00's
- * own frontmatter already carries the four-tier summary as a ready-made
- * Step[] instead. Rendering that directly, with `related` resolved into a
- * reference grid linking out to each tier's own page, delivers the same
- * shape the plan describes without a mismatch against how the content was
- * actually authored.
+ * frontmatter, but C-01…C-04 carry that detail as prose, not a structured
+ * points list — so this reads C-00's own frontmatter `steps` (a hand-written
+ * summary) instead, with `related` resolved into a reference grid linking
+ * to each tier page.
  *
- * Known debt from that choice: C-00's steps are a hand-written summary of
- * what each tier page says in its own prose, and nothing keeps the two in
- * sync — C-01's body already covers detail (specific certifications, the
- * 12 m / 10 t machining envelope) its Tier-1 summary here doesn't mention.
- * If a tier's scope changes, both places need updating by hand. Revisit if
- * that drift becomes a real maintenance problem — e.g. by adding `points`
- * to C-01…C-04's own frontmatter and having this template read from
- * `related` entries' data instead of C-00's separate copy.
+ * Known debt: nothing keeps C-00's step summary in sync with what each tier
+ * page's own prose says. If a tier's scope changes, both need updating by
+ * hand.
  *
- * The four tiers render as TierCard.astro (picture-background) in a
- * Carousel, not StepList's plain numbered rows — each step's optional
- * `media` (content.config.ts) supplies the background image brief. Every
- * other Step[] consumer (Service, Tier, Guide) still renders through
- * StepList; only Ladder wants the carousel/picture treatment.
+ * The four tiers render as TierCard (picture-background) in a ScrollTrack,
+ * not StepList's plain rows — every other Step[] consumer (Service, Tier,
+ * Guide) still uses StepList; only Ladder wants the carousel treatment.
  */
 import { render } from 'astro:content';
 import type { PageMeta } from '@data/pages';

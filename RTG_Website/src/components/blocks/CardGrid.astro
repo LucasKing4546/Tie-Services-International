@@ -1,8 +1,6 @@
 ---
-/** .ecard cards rendered in a Carousel rather than a static grid — every
- *  card-list template (Hub, Sector, Case, Ladder, Tier, Service) composes
- *  through this one component, so the grid-to-carousel change was a single
- *  file. `cols` becomes "cards visible per view" (see Carousel.astro). */
+/** .ecard cards rendered in a Carousel. `cols` maps to "cards visible per
+ *  view" (see Carousel.astro's `perView`). */
 import Carousel from './Carousel.astro';
 
 interface Props {

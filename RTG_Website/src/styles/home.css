@@ -12,16 +12,14 @@
   margin-top:52px;padding-top:18px;flex-wrap:wrap}
 
 /* 3D stages */
-/* The hero model sits on its own layer, centred on the right half of the
-   viewport (not the grid cell), so it reads in the same place regardless of
-   how tall the copy column runs. .hero's own box grows past one screen once
-   the copy is bottom-anchored inside it, so centring is done in viewport
-   units (50svh/75vw) against .hero's top edge — which sits at document y:0
-   — rather than a percentage of .hero's (taller) box.
-   The centring transform lives on .artbox itself, and the .fu fade-up
-   (which sets its own transform once revealed — see tokens.css) lives on
-   the nested .artbox-in, so the shared motion system never overwrites the
-   positioning transform the way it did with .rl/.stag. */
+/* The hero model is centred on the right half of the viewport, not the grid
+   cell, so it reads in the same place regardless of copy column height.
+   .hero's box grows past one screen once the copy is bottom-anchored, so
+   centring uses viewport units (50svh/75vw) against .hero's top edge
+   (document y:0) rather than a percentage of .hero's taller box.
+   The centring transform lives on .artbox; the .fu fade-up transform (see
+   tokens.css) lives on the nested .artbox-in — so the shared motion system
+   never overwrites the positioning transform. */
 .artbox{position:absolute;top:50svh;left:75vw;transform:translate(-50%,-50%);
   aspect-ratio:1/1;width:42%;max-width:560px;max-height:60svh}
 .artbox-in{width:100%;height:100%}

@@ -1,12 +1,11 @@
 ---
 /**
  * The Product template — equipment detail pages (winches, LARS, cranes,
- * power units...). Composition per the template plan: hero -> .two
- * (sticky-rail spec table(s) + "why it is built this way" prose) ->
- * applications -> gated-datasheet CTA -> closing CTA. "Proven"/proof-point
- * copy lives inside the MDX body itself (it needs inline <Fig> figures, so
- * it can't be split into a frontmatter field without losing that) and so
- * scrolls past alongside the spec rail rather than as a separate block.
+ * power units...). Composition: hero -> .two (sticky-rail spec table(s) +
+ * "why it is built this way" prose) -> applications -> gated-datasheet CTA
+ * -> closing CTA. Proof-point copy lives inline in the MDX body (it needs
+ * <Fig> figures), so it scrolls past alongside the spec rail rather than
+ * as a separate block.
  */
 import { render } from 'astro:content';
 import { page as lookupPage, type PageMeta } from '@data/pages';
@@ -32,12 +31,11 @@ const { page, entry } = Astro.props;
 const { data } = entry;
 const { Content } = await render(entry);
 
-// Every published spec row becomes a schema.org additionalProperty on the
-// Product node — except rows marked TO SUPPLY, which render <Gap> on the
-// page and have nothing confirmed to publish as structured data either.
-// Deliberately no `offers`: a made-to-order machine has no price, and
-// inventing one to chase a rich result is the brochure behaviour CLAUDE.md
-// forbids.
+// Every published spec row becomes a schema.org additionalProperty — except
+// TO SUPPLY rows, which render <Gap> on the page and have nothing confirmed
+// to publish either. Deliberately no `offers`: a made-to-order machine has
+// no price, and inventing one to chase a rich result is the brochure
+// behaviour CLAUDE.md forbids.
 const additionalProperty = data.specs
   .flatMap((s) => s.rows)
   .filter((r) => r.v !== 'TO SUPPLY')
@@ -45,8 +43,7 @@ const additionalProperty = data.specs
 
 const datasheetPage = data.product?.datasheetPageId ? lookupPage(data.product.datasheetPageId) : undefined;
 // Carries this product's name into R-01's "Equipment" field so the visitor
-// never has to retype what the link they clicked already told us — see
-// lib/forms.ts's generic name-matched prefill.
+// never has to retype it — see lib/forms.ts's generic name-matched prefill.
 const datasheetHref = datasheetPage ? `${datasheetPage.slug}?equipment=${encodeURIComponent(page.h1)}` : undefined;
 ---
 

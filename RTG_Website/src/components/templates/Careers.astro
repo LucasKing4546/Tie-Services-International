@@ -1,20 +1,17 @@
 ---
 /**
- * The Careers template — A-05, the only page on this template. Composition
- * per the template plan: vacancy cards, CollectionPage + a JobPosting node
- * per vacancy, emitting nothing when there are none.
+ * The Careers template — A-05, the only page on this template. Composition:
+ * vacancy cards, CollectionPage + one JobPosting node per vacancy (nothing
+ * emitted when there are none).
  *
- * The workbook's own Schema column for A-05 is "JobPosting" (wrong for a
- * landing page listing several roles, not one) — flagged in the template
- * plan rather than hand-edited into pages.ts. Fixed here via jsonLdPage's
- * '@type' override (buildJsonLd/seo.ts spreads pageNode last, so this wins
- * over the workbook value) rather than touching the generated file.
+ * The workbook's Schema column for A-05 says "JobPosting", which is wrong
+ * for a listing page. Overridden here via jsonLdPage's '@type' — buildJsonLd
+ * spreads pageNode last (lib/seo.ts), so this wins over the workbook value,
+ * rather than hand-editing the generated pages.ts.
  *
- * `data.vacancies` is empty until RTG supplies real openings with real
- * posted/validThrough dates — content.config.ts's own comment is explicit
- * that a JobPosting with no real dates is a Search Console error, not a
- * harmless placeholder, so this renders nothing (no card, no JobPosting
- * node) rather than an invented "example" role.
+ * `data.vacancies` stays empty until RTG supplies real openings with real
+ * dates: a JobPosting with no real posted/validThrough dates is a Search
+ * Console error, not a harmless placeholder (content.config.ts).
  */
 import { render } from 'astro:content';
 import type { PageMeta } from '@data/pages';

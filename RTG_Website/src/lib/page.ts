@@ -1,8 +1,7 @@
 /**
  * Resolves a page id against the workbook first, then the off-map records
  * (currently just 404). Base.astro uses this instead of calling page()
- * directly so it can tell the two apart — an off-map page always renders
- * noindex, regardless of its (unused) `access` field.
+ * directly so it can tell the two apart and force noindex on off-map pages.
  */
 import { page as lookupPage, type PageMeta } from '@data/pages';
 import { OFF_MAP_PAGES, OFF_MAP_IDS } from '@data/pages-extra';

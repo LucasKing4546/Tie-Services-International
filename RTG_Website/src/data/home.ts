@@ -1,8 +1,4 @@
-/**
- * Homepage content. Kept as data rather than markup so the sector, equipment
- * and tier lists stay in step with the Page Map — and so a copywriter can edit
- * them without touching a component.
- */
+// Homepage content as data, so a copywriter can edit it without touching a component.
 import { PROOF } from './site.js';
 
 export interface Stat { value: string; label: string; accent?: boolean }

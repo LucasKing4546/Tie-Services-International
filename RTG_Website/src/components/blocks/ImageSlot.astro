@@ -1,18 +1,13 @@
 ---
 /**
  * A photograph where one exists, and an honest placeholder where one does
- * not (CLAUDE.md §5.5).
- *
- * The ref is looked up in src/data/media.ts. A hit renders an optimised
- * <Image> — responsive widths, AVIF/WebP, explicit dimensions so nothing
- * shifts as it loads. A miss renders the drawing-sheet plate: a <figure
- * role="img" aria-label> carrying the brief, so the alt-text audit
- * (scripts/audit-seo.mjs) is satisfied honestly rather than faked with an
- * empty alt on an element with no image behind it.
- *
- * The consequence worth stating: a page never changes when its photograph
- * arrives. It keeps the same ref in frontmatter, and the slot switches from
- * plate to picture on its own.
+ * not (CLAUDE.md §5.5). The ref is looked up in src/data/media.ts: a hit
+ * renders an optimised <Image> (responsive widths, AVIF/WebP, explicit
+ * dimensions); a miss renders a <figure role="img" aria-label> carrying
+ * the brief, so the alt-text audit is satisfied honestly rather than faked
+ * with an empty alt on an element with no image behind it. Either way the
+ * ref in frontmatter stays the same — a page needs no edit when its
+ * photograph arrives.
  */
 import { Image } from 'astro:assets';
 import { mediaFor } from '@data/media';
@@ -43,26 +38,22 @@ const {
 const motionAttr = motion !== 'none' ? motion : undefined;
 const photo = mediaFor(ref);
 
-// The box takes the photograph's own shape. A ratio written by hand in
-// frontmatter is a guess about a picture nobody has seen yet, and a wrong
-// guess crops the subject out: the supplied set runs from a 0.71 portrait to
-// a 2.80 panorama, and forcing either into a 16/9 box throws away most of
-// it. An explicit `ratio` still wins where a fixed crop is genuinely wanted
-// (a card face, a tile that has to line up with its neighbours); otherwise
-// the image decides, and a slot with no photograph yet falls back to the
-// brief's ratio or 4/3 so the placeholder plate still reserves the space.
+// The box takes the photograph's own shape by default — an explicit `ratio`
+// wins only where a fixed crop is genuinely wanted (a card face, a tile that
+// must line up with its neighbours). Without one, a wrong hand-written guess
+// would crop the subject: the supplied set runs from a 0.71 portrait to a
+// 2.80 panorama. A slot with no photograph yet falls back to the brief's
+// ratio, or 4/3, so the placeholder plate still reserves the space.
 const naturalRatio = photo ? `${photo.width}/${photo.height}` : undefined;
 const boxRatio = ratio ?? naturalRatio;
-// Never paint a photograph larger than it actually is. Several supplied
-// files are small (791x445, 596x335); stretched across a full-width band
-// they go soft, and a soft picture reads as a cheap one. Capping at the
-// intrinsic width makes a small image sit smaller, which looks deliberate.
+// Cap width at the photo's intrinsic size — several source files are small
+// (791x445, 596x335) and go soft if stretched across a full-width band.
 const style = [
   boxRatio ? `--imgslot-ratio:${boxRatio}` : '',
   photo ? `--imgslot-maxw:${photo.width}px` : '',
 ].filter(Boolean).join(';') || undefined;
 
-/** portrait | square | landscape — lets a caller lay tiles out by shape. */
+// portrait | square | landscape — lets a caller lay tiles out by shape.
 const orient = photo
   ? photo.width / photo.height < 0.95
     ? 'portrait'

@@ -23,26 +23,21 @@
   --f-m:"JetBrains Mono",ui-monospace,monospace;
 
   --e:cubic-bezier(.16,.9,.2,1);
-  /* A slow start and a long settle — it reads as mass, which is the right
-     character for heavy deck machinery. For large elements only (panels,
-     media, section reveals); --e stays the curve for buttons and links. */
+  /* Slow-start, long-settle curve for large elements only (panels, media,
+     section reveals). --e stays the curve for buttons and links. */
   --e-heavy:cubic-bezier(.625,.05,0,1);
 
-  /* Two content widths, not one. --wrap is the page container; --wrap-prose
-     is the measure a run of body copy is actually set to, so a figure or a
-     table can break wider than the text it belongs to (see .prose). */
+  /* --wrap is the page container; --wrap-prose is the measure body copy is
+     actually set to, so a figure or table can break wider than the text
+     it belongs to (see .prose). */
   --wrap-prose:680px;
 
-  /* Reserved for the full-bleed hero h1 only. It runs larger than .d1 at the
-     small end and stops short of it at the large end: over media it needs to
-     hold the frame on a phone, and it must not outgrow the scrim on a wide
-     desktop. */
+  /* Full-bleed hero h1 only: larger than .d1 at the small end (must hold
+     the frame on a phone) and stops short of it at the large end (must not
+     outgrow the scrim on a wide desktop). */
   --d-hero:clamp(44px,7.5vw,116px);
 }
 
-/* The page gutter is the single highest-leverage responsive value on the
-   site: at 32px a side it eats 18% of a 360px phone screen, squeezing every
-   line of body copy. Everything using .wrap picks this up at once. */
 @media (max-width:700px){:root{--gut:20px}}
 
 *,*::before,*::after{box-sizing:border-box}
@@ -60,21 +55,17 @@ a{color:inherit;text-decoration:none}
 .skip:focus{left:0;top:0}
 
 /* ---------- type ---------- */
-/* Archivo 800 at display sizes was set to 0.92, which is tight enough that a
-   descender in one line very nearly touches the cap of the next — visible on
-   any two-line heading ("handling" over "for"). Loosened to 1.06: still
-   clearly display typography rather than body copy, but the lines are
-   separate objects. Applies to every heading on the site at once. */
+/* line-height 1.06, not tighter: at display sizes a descender on one line
+   can otherwise touch the cap height of the line below on a two-line
+   heading. Applies to every heading on the site. */
 h1,h2,h3{font-family:var(--f-d);font-weight:800;letter-spacing:-.035em;line-height:1.06;
   margin:0;color:var(--navy);text-transform:none}
-/* balance stops a heading dropping one orphaned word onto its last line;
-   pretty stops a paragraph doing the same. Both are widely supported and
-   degrade to normal wrapping where they are not. */
+/* balance/pretty prevent an orphaned last word; both degrade gracefully
+   where unsupported. */
 h1,h2,h3,.d-hero,.d1,.d2,.d3{text-wrap:balance}
 p,.lede{text-wrap:pretty}
-/* Figures must not shuffle sideways as digits change width — this is what
-   makes a column of numbers read as engineering data rather than as typed
-   text, and it is also what stops the .ct count-up shuddering as it runs. */
+/* tabular-nums so figures don't shuffle sideways as digits change width —
+   needed for the .ct count-up animation and for numbers read as data. */
 .d-hero,.d1,.d2,.d3,.stat b,.headline-num,.ct,table.spec td,.step .num{
   font-variant-numeric:tabular-nums lining-nums}
 .d-hero{font-size:var(--d-hero)}
@@ -108,12 +99,13 @@ p{margin:0 0 1em;max-width:62ch}
 .arw:hover{gap:15px}
 
 /* ---------- masked line reveal + motion primitives ----------
-   .rl / .fu / .stag start the page transition-ready but visible. An inline
-   head script (Base.astro) adds a "js" class to <html> before first paint;
-   only then do these rules hide the elements, and initMotion() (src/lib/
-   motion.ts) adds .in once each is observed on screen to reveal them. A
-   no-JS visit never gets the html.js class, so it renders everything
-   plainly with no animation — content is never lost to a missing script. */
+   .rl / .fu / .stag start visible. An inline head script (Base.astro) adds
+   a "js" class to <html> before first paint; only then do these rules hide
+   the elements, and initMotion() (src/lib/motion.ts) adds .in once each is
+   observed on screen to reveal them. A no-JS visit never gets html.js, so
+   content renders plainly and is never lost to a missing script. */
+/* padding-bottom/margin-bottom offset: the mask (overflow:hidden) would
+   otherwise clip descenders on the last line. */
 .rl{display:block;overflow:hidden;padding-bottom:.14em;margin-bottom:-.14em}
 .rl > span{display:block;transition:transform 1s var(--e)}
 html.js .rl > span{transform:translateY(105%)}
@@ -159,31 +151,24 @@ html.js .stag.in > *{opacity:1;transform:none}
 .nav .btn[aria-current="page"]{background:var(--red);color:#fff}
 
 /* ---------- header over a dark hero ----------
-   The header is transparent until it is scrolled, so on a page whose hero
-   is navy (every inner page — see .phero in blocks.css) the default navy
-   link colour is navy-on-navy and the nav simply disappears. Detected from
-   the page itself rather than by passing a prop down, because the header
-   carries transition:persist: it is NOT re-rendered on client-side
-   navigation, so anything server-rendered into it would be stale the moment
-   the visitor moved between a dark-hero page and a light one. :has() is
-   evaluated live against whatever main currently holds, so it stays correct
-   across view transitions with no script.
-
-   The fix is to bring the white backdrop in immediately on those pages
-   rather than to recolour the header's contents. Reversing the type would
-   also mean reversing the logo, and the logo is a two-colour mark — red
-   monogram, navy wordmark — so flattening it to white to survive a navy
-   ground loses the brand red and fills in the monogram's counters at 34px.
-   That needs a properly drawn reversed asset, which is RTG's to supply, not
-   something to approximate with a CSS filter. A white header bar above a
-   navy hero is the honest version of this until that asset exists. */
+   The header is transparent until scrolled, so on a navy-hero page (every
+   inner page — .phero in blocks.css) the default navy nav links go
+   navy-on-navy. Fixed by forcing the white backdrop in immediately, not by
+   recolouring the header contents — reversing the type would also need a
+   reversed logo asset (two-colour mark: red monogram, navy wordmark) that
+   doesn't exist yet.
+   Detected via :has() on body rather than a passed-down prop because the
+   header carries transition:persist and is NOT re-rendered on client-side
+   navigation — server-rendered state would go stale the moment the visitor
+   moved between a dark-hero page and a light one. :has() re-evaluates live
+   against whatever <main> currently holds, so it stays correct across view
+   transitions with no script. */
 body:has(.phero) .hdr::before{opacity:1}
 
 /* ---------- mobile navigation ----------
    A <details> disclosure (Header.astro), so it works with no JS. Only one
-   of the two navs is ever rendered: below 1080px the desktop links go,
-   above it the whole .mnav does — display:none, so the hidden one leaves
-   the accessibility tree rather than duplicating landmarks. */
+   of the two navs is ever rendered: display:none removes the hidden one
+   from the accessibility tree, avoiding duplicate landmarks. */
 .mnav{display:none;position:relative;flex:none}
 .mnav-btn{list-style:none;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);
   background:var(--white);display:grid;place-items:center;cursor:pointer}
@@ -216,15 +201,11 @@ body:has(.phero) .hdr::before{opacity:1}
   .nav a:not(.btn){display:none}
   .mnav{display:block}
 }
-/* Below this the logo and a pill button and a menu button stop fitting on
-   one line — the CTA is the one that goes, because the panel carries it. */
+/* Logo + pill button + menu button stop fitting one line below this — the
+   CTA goes, since the mobile panel still carries it. */
 @media (max-width:560px){.nav{display:none}}
 
 /* ---------- footer ---------- */
-/* Dark. Every page on the site ends here, and ending each one on a flat
-   white panel undid the tonal rhythm the rest of the page had just built.
-   Carries the same drawing-sheet grid as the hero, so the page closes in the
-   same material it opened in. */
 .ftr{position:relative;isolation:isolate;overflow:hidden;
   padding:96px 0 34px;background:var(--navy);color:#fff}
 .ftr::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
@@ -233,12 +214,10 @@ body:has(.phero) .hdr::before{opacity:1}
     linear-gradient(to bottom,rgba(255,255,255,.05) 1px,transparent 1px);
   background-size:78px 78px;
   mask-image:radial-gradient(110% 90% at 88% 0%,#000 0%,transparent 74%)}
-/* The mark is red monogram + red wordmark + a navy "GROUP" that vanishes on
-   navy. Inverting the whole thing to white would flatten the brand red and
-   fill the monogram's counters, so instead only the navy word is lifted:
-   a soft white drop-shadow behind the mark keeps the dark glyphs legible
-   while the red stays red. Replace with a proper reversed asset when RTG
-   supplies one. */
+/* The logo's navy "GROUP" word vanishes on the navy footer. Inverting the
+   whole mark to white would flatten the brand red and fill the monogram's
+   counters, so only a white drop-shadow lifts the dark glyphs instead.
+   Replace with a proper reversed asset when RTG supplies one. */
 .ftr .brand .logo{filter:drop-shadow(0 0 1px rgba(255,255,255,.95))
   drop-shadow(0 0 3px rgba(255,255,255,.75)) drop-shadow(0 0 7px rgba(255,255,255,.5))}
 .ftr-g{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:44px;margin-bottom:60px}

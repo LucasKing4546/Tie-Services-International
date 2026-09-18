@@ -1,19 +1,14 @@
 ---
 /**
  * The Tier template — C-01…C-04, the four contract-manufacturing scope
- * tiers. Composition per the template plan: scope -> "what we need from
- * you" -> sibling tier strip -> CTA. "Scope" and "what we need from you"
- * both live in the MDX body as flowing prose (the latter via an inline
- * <Note>, same convention as C-00's Ladder template links to), so both
- * render together through Prose rather than as separate structured blocks.
+ * tiers. Composition: scope -> "what we need from you" -> sibling tier
+ * strip -> CTA. Both sections live in the MDX body as prose (the latter
+ * via an inline <Note>), rendered together through Prose.
  *
  * The plan describes the sibling strip as childrenOf('/contract-manufacturing/'),
- * but that hub's children are all nine C-01…C-09 pages — the four tiers
- * plus Policy/Article/Form pages sitting alongside them, not just the
- * tiers. Each tier page's own `related` frontmatter already lists exactly
- * its three sibling tiers (itself excluded), authored that way from the
- * start, so that's what this reads instead — the same cardFrom() pattern
- * Sector and Ladder already use for their own related-page strips.
+ * but that hub's children are all nine C-01…C-09 pages, not just the four
+ * tiers — so this reads each tier page's own `related` frontmatter instead,
+ * which already lists exactly its three sibling tiers.
  */
 import { render } from 'astro:content';
 import type { PageMeta } from '@data/pages';

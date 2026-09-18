@@ -42,14 +42,14 @@ const breadcrumbNode = (p: PageMeta) => {
 };
 
 /**
- * Page-level JSON-LD graph. Organization on every page (per Meta Tag Rules),
- * BreadcrumbList site-wide, plus the page's own schema type from the workbook.
+ * Page-level JSON-LD graph: Organization on every page, BreadcrumbList
+ * site-wide, plus the page's own schema type from the workbook.
  *
  * `extra` appends independent graph nodes (Product offers, FAQPage, per-
  * vacancy JobPosting…). `pageNode` instead *extends* the page's own node —
- * spread last, so a template's fields win over the defaults — for cases like
- * Product's `additionalProperty` or Case's `datePublished` that belong on
- * the page node itself rather than as a sibling.
+ * spread last, so a template's fields win over the defaults — for fields
+ * like Product's `additionalProperty` that belong on the page node itself
+ * rather than as a sibling.
  */
 export function buildJsonLd(
   p: PageMeta,
@@ -79,9 +79,7 @@ export function buildJsonLd(
 /**
  * jsonLdPage fields for any template rendering an Article-family node
  * (Case, Guide, Policy, Article — content.config.ts's `article` field).
- * Author defaults to 'Romica Tie Group' at the schema level whenever
- * `article` is set at all, so it's always present once a page opts in;
- * dates are included only when actually confirmed, never invented.
+ * Dates are included only when actually confirmed, never invented.
  */
 export function articleJsonLd(data: { article?: PageData['article'] }): Record<string, unknown> {
   if (!data.article) return {};
@@ -92,12 +90,9 @@ export function articleJsonLd(data: { article?: PageData['article'] }): Record<s
   };
 }
 
-/**
- * An FAQPage graph node from frontmatter `faqs[]`, for buildJsonLd's `extra`
- * param — Faq.astro's own doc comment states every template rendering faqs
- * also emits this from the same data. Returns [] (spread away to nothing)
- * when a page has no faqs, so a template can always pass this through.
- */
+/** An FAQPage graph node from frontmatter `faqs[]`, for buildJsonLd's
+ *  `extra` param. Returns [] when a page has no faqs, so a template can
+ *  always pass this through unconditionally. */
 export function faqPageJsonLd(data: { faqs: PageData['faqs'] }): Record<string, unknown>[] {
   if (data.faqs.length === 0) return [];
   return [

@@ -1,17 +1,14 @@
 ---
 /**
  * The Hub template — section landing pages (Sectors, Equipment, Winches,
- * Lifecycle, Proof, Resources...). Composition per the template plan:
- * intro -> ChildCards from childrenOf(slug) -> proof bar -> CTA. Children
- * are derived, never a hand-written list — a new Page Map row under a
- * hub's slug appears here automatically (ChildCards.astro).
+ * Lifecycle, Proof, Resources...). Composition: intro -> ChildCards from
+ * childrenOf(slug) -> proof bar -> CTA. Children are derived, never
+ * hand-written, so a new Page Map row under a hub's slug appears here
+ * automatically.
  *
- * A couple of hubs (R-00, R-03) have no children of their own — they're
- * leaf landing pages one level under /resources/ — so the child grid is
- * only rendered when childrenOf() actually returns something. A hub may
- * also curate `cards` in frontmatter for a cross-link outside its own
- * branch (P-00's Proof hub linking to Y-03 Certifications, which lives
- * under /yards-integrators/) — those are appended into the same grid via
+ * A hub may also curate `cards` in frontmatter for a cross-link outside its
+ * own branch (P-00's Proof hub linking to Y-03 Certifications, which lives
+ * under /yards-integrators/) — those append into the same grid via
  * ChildCards' `extra` prop rather than a second, disconnected one.
  */
 import { render } from 'astro:content';
@@ -41,15 +38,10 @@ const { Content } = await render(entry);
 const children = childrenOf(page.slug);
 const extraCards = data.cards.map(cardFrom);
 
-// The card track used to be headed with page.h1, which put the page's own
-// title on screen twice in a row — once in the hero and again a few hundred
-// pixels below it, with nothing in between on a hub whose body is still an
-// outline. The track is a list of what is inside this section, so it says
-// that instead; the eyebrow above it already carries the section name.
 const introMedia = data.media[0];
 
-// The picture that stands beside a long body, drawn empty when the page has
-// none yet — same rule the sector pages follow.
+// Drawn empty (with the shoot brief) when no picture exists yet, same rule
+// the sector pages follow.
 const tallSlot = introMedia ?? {
   ref: `IMG-${page.id}-V`,
   brief: 'Vertical shot — equipment in build or rigged on deck, full height of the machine.',
@@ -58,14 +50,10 @@ const tallSlot = introMedia ?? {
 
 const trackHeading = children.length > 0 ? `Everything in ${page.section.toLowerCase()}` : 'Where to go next';
 
-// An ItemList of every card the grid below actually renders — derived
-// children plus any curated `cards` cross-link — built from the exact same
-// two sources ChildCards does, so the structured data and the visible grid
-// can never disagree. mainEntity is a property of CreativeWork/WebPage; a
-// couple of Hub-template pages carry a workbook schema of "Service" instead
-// of "CollectionPage" (L-00, Y-00), so this only fires for pages actually
-// typed CollectionPage rather than attaching a CreativeWork-only property
-// to a Service node.
+// gridItems mirrors exactly what ChildCards renders below, built from the
+// same two sources, so the ItemList structured data can never disagree with
+// the visible grid. Only emitted for pages typed CollectionPage — a couple
+// of Hub pages (L-00, Y-00) carry a workbook schema of "Service" instead.
 const gridItems = [
   ...children.map((c) => ({ name: c.name, url: absolute(c.slug) })),
   ...extraCards.map((c) => ({ name: c.title, url: absolute(c.href) })),
@@ -95,17 +83,10 @@ const jsonLdPage =
     updated={data.updated}
   />
 
-  {/* A hub's intro was a centred column of prose on white — the least
-      designed thing on the site, and it opens eleven pages. It now runs as
-      a feature row against the page's own picture where one exists, and as
-      a toned band with its opening sentence set at display scale where one
-      does not. Neither needs a word of new copy. */}
-  {/* A short intro takes the two-column treatment, its opening line at
-      display scale. A body with its own sections is a document, not an
-      intro: given two columns it puts one heading on the left and stacks
-      everything else on the right, leaving most of a screen empty. That one
-      runs beside a tall picture instead — drawn whether or not the
-      photograph exists yet, so the page keeps its shape either way. */}
+  {/* A short intro gets the two-column treatment, opening line at display
+      scale. A body with its own sections runs beside a tall picture instead
+      — in two columns it would put one heading on the left and stack
+      everything else on the right, leaving most of the screen empty. */}
   {hasBody(entry) && isIntro(entry) && (
     <Section tone="off">
       <Prose class="lead-para">

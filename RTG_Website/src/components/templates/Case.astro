@@ -1,16 +1,13 @@
 ---
 /**
- * The Case template — P-02…P-05, the four case studies. Composition per
- * the template plan: headline-number band -> situation/constraint/result
- * -> Quote -> related. Article schema + dates.
+ * The Case template — P-02…P-05, the four case studies. Composition:
+ * headline-number band -> situation/constraint/result -> Quote -> related.
  *
- * P-03, the one page with real content today, deliberately has no
- * `caseStudy.headline` set — its own "Result" section is written entirely
- * as <Gap> markers because the real figures (rebuild cost vs. replacement,
- * turnaround time) aren't confirmed yet. CLAUDE.md #5.7/#8 forbid inventing
- * one to fill the band, so it — and the client/vessel/year meta line,
- * `caseStudy` being optional throughout — only renders once a page has a
- * genuinely confirmed figure to show, same as every other optional block.
+ * `caseStudy` is optional throughout: P-03, the page with real content
+ * today, has no confirmed headline figure yet (rebuild cost vs.
+ * replacement, turnaround time), so the headline band and the
+ * client/vessel/year meta line simply don't render for it — CLAUDE.md
+ * §5.7/§8 forbid inventing one to fill the gap.
  */
 import { render } from 'astro:content';
 import type { PageMeta } from '@data/pages';

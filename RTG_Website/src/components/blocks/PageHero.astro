@@ -1,26 +1,9 @@
 ---
 /**
- * Every inner-page hero. This is the ONLY place in the entire site allowed
- * to render an <h1> — it always renders page.h1 from the Page Map, verbatim.
- * No template and no MDX body may write one; MDX bodies start at ##. That
- * makes "exactly one <h1> per page, matching the workbook" a property of
- * the architecture (scripts/audit-seo.mjs enforces the count; this is why
- * the count is always right).
- *
- * Full-bleed: the media fills the band and the heading sits over it behind a
- * scrim, rather than sharing a two-column row with it. Where there is no
- * photograph — which is every page today — the drawing-sheet plate shows
- * through instead, so a page with no art still reads as composed rather than
- * as a page missing its picture. `.phero-media` is the layer a real <img> or
- * <video> drops into; nothing else about the hero changes when it does.
- *
- * The title block at the foot is this design's signature. Every machine RTG
- * builds carries a data plate and every drawing carries a title block, both
- * in the same place and both saying the same kind of thing: what this is,
- * who it is for, when it was last revised. It is not decoration — it is the
- * first thing on the site to surface `avatar`, which the Page Map has always
- * carried for all 70 pages and which has never once been shown to a reader,
- * despite being the most useful orientation available on a site this size.
+ * Every inner-page hero. The ONLY place in the site allowed to render an
+ * <h1> — always page.h1 from the Page Map, verbatim. MDX bodies start at ##.
+ * scripts/audit-seo.mjs enforces exactly one <h1> per page; that check
+ * relies on this being the single source, so don't add an <h1> elsewhere.
  */
 import { Image } from 'astro:assets';
 import type { PageMeta } from '@data/pages';

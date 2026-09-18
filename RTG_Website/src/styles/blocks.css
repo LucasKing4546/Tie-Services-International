@@ -6,36 +6,24 @@
    .ecard.lc) stays there.
    ========================================================================== */
 
-/* ---------- generic section ----------
-   Section rhythm is set in vertical space, so it has to scale with the
-   viewport: 112px of padding above and below reads as considered on a
-   desktop and as an empty screen on a phone. */
+/* ---------- generic section ---------- */
 .sec{padding:112px 0}
 .sec.sm{padding:96px 0}
 .sec.off{background:var(--off)}
-/* Where two sections of the same tone meet there is no visible seam, so
-   both paying full padding just banks up one very large empty band — the
-   proof bar sitting above a CTA (PageEnding) was doing exactly that, at
-   over 200px of dead space. Collapse the join; the tone change is what
-   earns the padding. */
+/* Where two sections of the same tone meet, collapse the join so they don't
+   bank up one oversized empty band — the tone change is what earns the
+   padding, not the section boundary itself. */
 .sec.off + .sec.off,.sec.navy + .sec.navy{padding-top:0}
-/* A section whose only content is an empty MDX body still paid 112px top
-   and bottom, which is where the ~220px hole in the middle of every draft
-   page came from: a heading, then a screen of nothing, then the draft
-   panel. Most pages on the site are still outlines, so this was the single
-   biggest source of dead space anywhere.
-   :has() cannot ask "is this subtree visually empty", but it can ask the
-   question that actually matters here — a section that wraps a .prose with
-   no rendered children is a section with nothing to say. */
+/* :has() can't ask "is this subtree visually empty", but it can ask the
+   question that matters here: a section wrapping a .prose with no rendered
+   children has nothing to say, so it gets no padding either. */
 .sec:has(> .wrap > .prose:empty):not(:has(> .wrap > :not(.prose))){padding:0}
 .sec:has(> .wrap > .two > .prose:empty):not(:has(> .wrap > .two > :not(.prose))){padding:0}
 .navy{background:var(--navy);color:#fff}
 .navy h1,.navy h2,.navy h3{color:#fff}
 
-/* An off-white section is a surface, not an absence of colour. The same
-   drawing-sheet grid the hero and the placeholder plates use, one more step
-   toward invisible — enough that the band reads as a drawn area rather than
-   as a grey gap between two white ones. */
+/* Same drawing-sheet grid as the hero and placeholder plates, faded further
+   so the band reads as a drawn area rather than a grey gap. */
 .sec.off{position:relative;isolation:isolate}
 .sec.off::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
   background-image:
@@ -45,20 +33,9 @@
   mask-image:radial-gradient(100% 80% at 92% 0%,#000 0%,transparent 70%)}
 
 /* ---------- section head (SectionHead.astro) ----------
-   A rule, and NO number.
-
-   Numbering was applied to every section head across the site and then taken
-   back off, deliberately. A numbered marker is only honest where the content
-   is genuinely a sequence — where the order carries information the reader
-   needs. A Sector page runs problem, then equipment, then a case study;
-   those are three different kinds of thing, not steps 01 to 03, and counting
-   them was decoration wearing the costume of structure.
-
-   The site still numbers, in the three places where order is real and the
-   reader is meant to follow it: StepList's process steps, the Ladder's four
-   cumulative tiers, and PinnedStages' walkthrough. Those keep their figures.
-   The rule stays here, because a hairline above a section head is a division
-   rather than a claim about sequence. */
+   A hairline rule, deliberately no number — numbering is reserved for the
+   three places order is a real sequence: StepList, the Ladder's tiers, and
+   PinnedStages. Elsewhere a section head's content isn't a numbered step. */
 .sechd{position:relative;margin-bottom:52px;border-top:1px solid var(--line);padding-top:28px}
 .sechd > *{max-width:900px}
 .navy .sechd{border-top-color:rgba(255,255,255,.2)}
@@ -82,22 +59,15 @@
 }
 
 /* ---------- page hero (PageHero.astro) ----------
-   Full-bleed. The media fills the band and the heading sits over it behind a
-   scrim, which is the single decision that changes how every one of the 68
-   inner pages opens. Previously the hero shared a two-column row with a
-   plate, so a page whose plate was empty — every page today — opened with a
-   headline beside a grey rectangle.
-
-   Where there is no photograph the drawing-sheet plate shows through the
-   scrim instead. That is the honest version: the page looks composed, and
-   the plate is visibly a plate rather than a broken image. */
+   Full-bleed: media fills the band, heading sits over it behind a scrim.
+   Where there's no photograph yet, the drawing-sheet plate shows through
+   the scrim instead of a broken image. */
 .phero{position:relative;isolation:isolate;overflow:hidden;
   min-height:clamp(520px,74svh,860px);padding:190px 0 0;
   background:var(--navy);color:#fff;
   display:flex;flex-direction:column;justify-content:flex-end}
 
-/* The media layer. A real <img>/<video> drops in here and needs only
-   object-fit:cover; everything above it already accounts for its presence. */
+/* A real <img>/<video> drops in here and needs only object-fit:cover. */
 .phero-media{position:absolute;inset:0;z-index:-2;overflow:hidden}
 .phero-media::before{content:"";position:absolute;inset:-10% 0;
   background-image:
@@ -134,15 +104,11 @@
 .phero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:38px}
 
 /* ---------- the title block ----------
-   A drawing's title block and a machine's data plate both sit at the foot,
-   both in mono, and both answer the same questions. This one carries the
-   page's section, the route it is written for (the workbook's avatar, shown
-   to a reader for the first time), the revision date where one exists, and
-   the plate reference when the hero is carrying one. Real metadata, all of
-   it already in the Page Map. */
+   Carries the page's section, avatar route, revision date and plate
+   reference — a drawing title block / machine data plate, in mono. */
 /* The rule goes on the dl, not on .phero-block: .phero-block is a .wrap, so
-   a border on it would span the padding box and start a gutter to the left
-   of the h1 it sits under. */
+   a border on it would span the padding box and start a gutter left of the
+   h1 it sits under. */
 .phero-block{padding-top:0;padding-bottom:0}
 .phero-block dl{display:flex;flex-wrap:wrap;gap:0;margin:0;
   border-top:1px solid rgba(255,255,255,.22)}
@@ -170,19 +136,16 @@
   .phero-block dl > div:last-child{border-bottom:0}
 }
 
-/* The hero already ends on a hard tone change into whatever follows, so the
-   next section only has to breathe rather than pay full padding as well. */
+/* The hero already ends on a hard tone change, so the next section only
+   needs to breathe rather than pay full padding too. */
 .phero + .sec,.phero + .sec.sm{padding-top:76px}
 @media (max-width:900px){.phero + .sec,.phero + .sec.sm{padding-top:56px}}
-/* Against a navy set-piece there is no tone change at all to mark the seam,
-   and a pinned band already arrives with a screen of its own leading space. */
+/* Against a navy set-piece there's no tone change to mark the seam, and a
+   pinned band already arrives with its own leading space. */
 .phero + .strack .strack-stick,.phero + .pstage .pstage-stick{padding-top:24px}
 
 /* ---------- feature row (FeatureRow.astro) ----------
-   The backbone. Copy one side, media the other, alternating down the page.
-   The media column stretches to the row's height rather than holding an
-   aspect box, so the picture is sized by the copy beside it and a short
-   paragraph can never strand a letterboxed plate. */
+   Copy one side, media the other, alternating down the page. */
 .frow-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);
   gap:clamp(40px,5vw,84px);align-items:center}
 .frow-rev .frow-grid{direction:rtl}
@@ -192,17 +155,10 @@
 .frow-copy .prose{max-width:none}
 .frow-copy .prose p{max-width:54ch}
 .frow-cta{margin:30px 0 0}
-/* The picture keeps its own shape, whatever that is. Stretching the plate to
-   fill a fixed-height column meant object-fit:cover cropped a 596x335 wide
-   photograph into a tall sliver — a landscape subject shown as a portrait,
-   which is the opposite of matching the box to the image. The column is
-   sized by the picture now, capped so a tall one cannot run away with the
-   row. */
-/* The column is sized by the picture and the picture keeps its own shape —
-   it is never stretched to fill a fixed height, which is what cropped a wide
-   photograph into a tall sliver. It is capped so a very tall one cannot run
-   away with the row, and the sticky behaviour lets a tall picture hold
-   station while a long body scrolls past it. */
+/* The column is sized by the picture, and the picture keeps its own shape —
+   never stretched to fill a fixed height (that crops a wide photograph into
+   a tall sliver) — capped so a very tall one can't run away with the row.
+   Sticky lets a tall picture hold station while a long body scrolls past. */
 .frow-media{align-self:start;position:sticky;top:112px;
   display:flex;align-items:flex-start;justify-content:center}
 .frow-media .frow-plate{width:100%;height:auto;
@@ -230,24 +186,20 @@
 }
 
 /* ---------- media band (MediaBand.astro) ----------
-   A justified row. Every tile is laid out to the same height and its width
-   follows its own shape, so a 0.66 portrait and a 1.66 landscape sit in one
-   band without either being cropped and without one dwarfing the other.
-   The proportional flex-grow is set per tile in the component; from a zero
-   basis that makes widths proportional to ratio, and since each plate holds
-   that same ratio the heights come out equal. */
+   A justified row: every tile shares the row height, width follows its own
+   shape, so a portrait and a landscape tile sit together without either
+   being cropped or dwarfing the other. Per-tile flex-grow (set in the
+   component) is proportional to image ratio from a zero flex-basis, which
+   is what makes the heights come out equal. */
 .mband-grid{display:flex;flex-wrap:wrap;gap:22px;align-items:flex-start}
 .mband-item{margin:0;display:flex;flex-direction:column;gap:14px;
   flex-basis:0;min-width:min(280px,100%)}
-/* The band overrides the global no-upscale cap. A justified row only works
-   if every tile can reach the row height, and holding a small file to its
-   intrinsic width is what left one tile half the height of its neighbour
-   with a hole under it. The trade is deliberate: a modest upscale on a flat
-   diagram is far less noticeable than a row that looks broken. */
+/* Overrides the global no-upscale cap: a justified row only reaches the row
+   height if every tile can be upscaled, otherwise a small file leaves a
+   short tile with a gap beside it. A modest upscale is the lesser evil. */
 .mband-grid .mband-plate{width:100%;max-width:none}
-/* One picture on its own has no row to justify against, so it is held to a
-   sensible share of the width rather than stretched across all of it, with
-   the caption beside it. */
+/* A single picture has no row to justify against, so it's held to a
+   sensible width share instead, with the caption beside it. */
 .mband-grid[data-count="1"] .mband-item{flex-direction:row;align-items:flex-end;
   gap:clamp(24px,3vw,48px);max-width:100%}
 .mband-grid[data-count="1"] .mband-plate{max-width:min(62%,720px)}
@@ -256,11 +208,10 @@
 .mband-grid[data-count="1"] .mband-item figcaption{flex:1;min-width:0;padding-bottom:4px}
 .mband-item figcaption{font-size:13px;line-height:1.45;color:var(--muted);max-width:44ch}
 .navy .mband-item figcaption{color:rgba(255,255,255,.6)}
-/* Portrait tile beside two landscapes: a justified row stretches the two
-   landscapes as tall as the portrait, wider than either wants to be. This
-   is the shape it should take instead — the portrait at full height on the
-   left, the two landscapes stacked to match it on the right. The component
-   orders the portrait tile first regardless of authored order. */
+/* Portrait tile beside two landscapes: a justified row would stretch the
+   landscapes as tall (and wide) as the portrait. Instead, portrait at full
+   height on the left, two landscapes stacked to match on the right — the
+   component orders the portrait tile first regardless of authored order. */
 .mband-grid[data-shape="stack"]{display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:1fr;gap:22px}
 .mband-grid[data-shape="stack"] .mband-item{flex-basis:auto;min-width:0;height:100%}
 .mband-grid[data-shape="stack"] .mband-item:first-child{grid-row:1 / span 2}
@@ -306,10 +257,9 @@
 }
 
 /* ---------- skeleton (Skeleton.astro) ----------
-   A block that has no copy yet, drawn rather than omitted. Same hairline and
-   grid language as the ImageSlot plate — a marked-up drawing, not a loading
-   shimmer: nothing here is loading, and a pulsing bar would say the page is
-   broken rather than unwritten. */
+   A block with no copy yet, drawn rather than omitted — same hairline/grid
+   language as the ImageSlot plate. Not a loading shimmer: nothing here is
+   loading, it's unwritten. */
 .skel{--skel-ink:rgba(3,29,91,.1)}
 .skel-tag{font-family:var(--f-m);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
   color:var(--red);margin:0 0 26px;display:flex;align-items:center;gap:12px}
@@ -390,11 +340,10 @@
   radial-gradient(90% 130% at 50% 50%,var(--navy-2) 0%,var(--navy) 68%)}
 
 /* ---------- carousel (Carousel.astro) ----------
-   Native CSS scroll-snap does the work with no JS at all — a no-JS visit
-   still gets a swipeable/scrollable track via touch, trackpad or scrollbar.
-   The prev/next buttons are a JS-driven enhancement on top: they stay
-   display:none until html.js confirms initCarousels() (lib/motion.ts) can
-   actually drive them, same progressive-enhancement gate .fu/.stag use. */
+   CSS scroll-snap does the work with no JS — a no-JS visit still gets a
+   swipeable/scrollable track. Prev/next buttons are a JS enhancement on
+   top, staying display:none until html.js confirms initCarousels()
+   (lib/motion.ts) can drive them — same gate .fu/.stag use. */
 .car{position:relative}
 .car-track{display:flex;gap:20px;overflow-x:auto;overscroll-behavior-x:contain;
   scroll-snap-type:x proximity;scroll-behavior:smooth;
@@ -416,10 +365,8 @@ html.js .car-nav{display:flex}
 @media (prefers-reduced-motion:reduce){.car-track{scroll-behavior:auto}}
 
 /* ---------- static equal-column grid (Home's EquipmentGrid/LifecycleSteps) ----------
-   Was also CardGrid.astro's own layout before it became a carousel — Home's
-   two sections (the only remaining consumers) stay a plain grid on
-   purpose, matching the rest of Home's hand-choreographed sections rather
-   than picking up the carousel treatment meant for template card lists. */
+   Home's two sections stay a plain grid on purpose, rather than picking up
+   the carousel treatment meant for template card lists. */
 .eq{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 @media (max-width:920px){.eq{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:600px){.eq{grid-template-columns:1fr}}
@@ -430,16 +377,14 @@ html.js .car-nav{display:flex}
 
 /* ---------- scroll track (ScrollTrack.astro) ----------
    A pinned full-height navy band where vertical scroll drives the cards
-   sideways. The homepage has had this since day one (.hz-* in home.css,
-   driven by id from home-scroll.ts); this is the generic, id-free version
-   every template can use, driven by initScrollTracks() in lib/motion.ts.
+   sideways — the generic, id-free version of the homepage's .hz-*, driven
+   by initScrollTracks() in lib/motion.ts.
 
-   Progressive enhancement in three steps, each usable on its own:
+   Progressive enhancement, each state usable on its own:
      no JS      -> .strack-rail is a native horizontally scrollable row
-     JS         -> .strack.on pins the section and drives the rail by
+     JS         -> .strack.on pins the section, drives the rail by
                    transform, with a progress rail
-     reduced motion / under 900px -> stays the native scrollable row
-   Content is reachable in every one of those states. */
+     reduced motion / under 900px -> stays the native scrollable row */
 .strack{position:relative;background:var(--navy);color:#fff}
 .strack-stick{padding:96px 0}
 .strack.on .strack-stick{position:sticky;top:0;height:100svh;padding:0;
@@ -453,17 +398,14 @@ html.js .car-nav{display:flex}
   padding-inline:max(var(--gut),calc((100vw - var(--wrap))/2 + var(--gut)))}
 .strack-rail::-webkit-scrollbar{display:none}
 .strack-rail > *{flex:none;width:330px;scroll-snap-align:start}
-/* overflow:visible, NOT hidden. The pinned rail is the element the transform
-   moves, and an element's own overflow clip is applied in its untransformed
-   box and then carried along by the transform. Clipping here therefore does
-   two wrong things at once: every card past clientWidth (cards 5-7 of a
-   seven-card track) is cut away and can never be scrolled into view, and the
-   surviving cards slide out of a clip window that travels left with them,
-   leaving a growing blank band on the right — the "card cut off with a large
-   gap where the rest should be" report. The clip belongs on .strack-stick
-   above, which is full-width and does not move; that is exactly how the
-   homepage's .hz-track/.hz-stick pair has always done it. The rail only needs
-   to be a scroll container in the unpinned fallback state. */
+/* overflow:visible, NOT hidden. An element's own overflow clip is applied in
+   its untransformed box and then carried along by the transform, so
+   clipping the rail (the element the transform moves) would cut away any
+   card past clientWidth and travel the clip window left with the cards as
+   they slide, permanently hiding the tail of the track. The clip belongs on
+   .strack-stick instead, which is full-width and doesn't move — same as the
+   homepage's .hz-track/.hz-stick pair. The rail is only a scroll container
+   in the unpinned fallback state. */
 .strack.on .strack-rail{overflow:visible;scroll-snap-type:none;will-change:transform}
 /* .strack-foot: the progress rail (pinned state only) and the prev/next
    buttons (every state — see the doc comment above ScrollTrack.astro for
@@ -493,25 +435,22 @@ html.js .strack-nav{display:flex}
 }
 
 /* ---------- pinned stages (PinnedStages.astro + PinnedStage.astro) ----------
-   The section holds the viewport while its stages cross-fade one at a time.
-   This is the homepage's manufacturing-tier set-piece (.pin-* in home.css)
-   generalised, minus the 3D column — see the component's doc comment.
+   The section holds the viewport while its stages cross-fade one at a time
+   — the homepage's manufacturing-tier set-piece (.pin-* in home.css)
+   generalised, minus the 3D column.
 
-   Everything that hides a stage is scoped to .pstage.on, and only
-   initPinStages() (lib/motion.ts) ever adds that class. With no JS, under
-   prefers-reduced-motion, below 900px, or with too few stages to be worth a
-   pin, the list below stays an ordinary stacked column with every stage
-   visible — the fallback is today's baseline, not a degraded version of it. */
+   Everything that hides a stage is scoped to .pstage.on, added only by
+   initPinStages() (lib/motion.ts). With no JS, under reduced-motion, below
+   900px, or with too few stages, it stays an ordinary stacked column with
+   every stage visible. */
 .pstage{position:relative;background:var(--white)}
 .pstage.off{background:var(--off)}
 .pstage.navy{background:var(--navy);color:#fff}
-/* A deliberate, narrow exception to "no gradients" (CLAUDE.md §7): a single
-   monochrome navy-to-navy-2 vignette, no colour shift, sitting behind the
-   stage that currently has focus. On a full-viewport pinned band a flat
-   fill reads as a slab; this gives the active stage somewhere to sit
-   without introducing a second hue or a decorative effect. Only applied
-   while pinned — the stacked fallback has no single active stage to centre
-   it on. */
+/* Narrow exception to "no gradients" (CLAUDE.md §7): a monochrome
+   navy-to-navy-2 vignette (no colour shift) behind the focused stage, so a
+   full-viewport pinned band doesn't read as a flat slab. Only while
+   pinned — the stacked fallback has no single active stage to centre it
+   on. */
 .pstage.navy.on .pstage-stick{background:
   radial-gradient(120% 90% at 68% 50%,var(--navy-2) 0%,var(--navy) 62%)}
 .pstage.navy h2,.pstage.navy h3{color:#fff}
@@ -550,14 +489,14 @@ html.js .strack-nav{display:flex}
 .pstage-list{position:relative;display:flex;flex-direction:column;gap:52px}
 .pstage.on .pstage-list{display:block;gap:0}
 /* Every stage is absolutely positioned once pinned, including the active
-   one, so the box height is decided solely by the min-height initPinStages()
+   one, so box height comes solely from the min-height initPinStages()
    measures from the tallest stage — an active stage left in normal flow
-   would resize the box on every change and shunt the whole pinned layout
-   up and down as you scroll.
-   visibility, not just opacity: an opacity:0 stage stays focusable and stays
-   in the accessibility tree, so a keyboard visitor would tab into five
-   invisible stages. Transitioning visibility with a delay equal to the fade
-   keeps it present until the fade finishes, then removes it properly. */
+   would resize the box on every change and shunt the whole layout up and
+   down as you scroll.
+   visibility, not just opacity: an opacity:0 stage stays focusable and in
+   the accessibility tree, so a keyboard visitor would tab into invisible
+   stages. Delaying the visibility transition until the fade finishes keeps
+   it present through the fade, then removes it properly. */
 .pstage.on .pstage-list > *{position:absolute;inset:0 0 auto 0;opacity:0;visibility:hidden;
   transform:translateY(24px);pointer-events:none;
   transition:opacity .55s var(--e),transform .55s var(--e),visibility 0s linear .55s}
@@ -700,11 +639,9 @@ html.js .cmp.sweep .cmp-handle{transition:left .8s var(--e-heavy)}
 /* The card carries its own tier title and body, so the plate's caption and
    registration mark would only compete with them under the scrim. */
 .tier-card .imgslot b,.tier-card .imgslot span,.tier-card .imgslot::after{display:none}
-/* The plate's own white ground and edge-faded grid read as a washed-out
-   box under the scrim. Behind a photograph this card works; until the
-   photography exists the grid becomes light-on-navy texture instead, so
-   the card is a deliberate technical surface rather than a veiled blank.
-   Dropping a real image in later needs no change here. */
+/* The plate's default white ground/grid would read as a washed-out box
+   under the scrim, so it's recoloured to a light-on-navy texture instead —
+   dropping in a real photograph later needs no change here. */
 .tier-card .imgslot::before{opacity:.14;mask-image:none;background-size:30px 30px;
   background-image:linear-gradient(rgba(255,255,255,.75) 1px,transparent 1px),
                    linear-gradient(90deg,rgba(255,255,255,.75) 1px,transparent 1px)}
@@ -730,7 +667,7 @@ html.js .cmp.sweep .cmp-handle{transition:left .8s var(--e-heavy)}
   letter-spacing:-.028em;color:var(--navy);margin:0 0 22px;max-width:20ch}
 .quote-c{font-family:var(--f-m);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 
-/* ---------- cta band (CtaBand.astro) - previously dead CSS, now the site-wide closer ---------- */
+/* ---------- cta band (CtaBand.astro) - site-wide closer ---------- */
 .cta{background:var(--navy);color:#fff;border-radius:24px;padding:80px 64px;position:relative;overflow:hidden;
   display:flex;justify-content:space-between;align-items:center;gap:40px;flex-wrap:wrap}
 .cta h1,.cta h2,.cta h3{color:#fff}
@@ -786,19 +723,16 @@ table.spec .foot{margin-top:16px;font-size:13.5px;color:var(--muted)}
    No <img> until real photography exists - a <figure role="img"
    aria-label> so the alt-text audit is satisfied honestly rather than
    faked. Swapping in a real photo is a one-file change. */
-/* margin:0 first. <figure> carries a UA default of `1em 40px`, so a plate
-   set to width:100% sat 40px right of its own parent and pushed the page
-   sideways — which is exactly what it did on every sector page carrying a
-   media band at 390px. */
+/* margin:0 first: <figure> carries a UA default of `1em 40px`, which would
+   otherwise push a width:100% plate 40px right of its own parent. */
 .imgslot{margin:0;position:relative;overflow:hidden;border-radius:16px;background:var(--white);
   border:1px solid var(--line);
   display:flex;flex-direction:column;justify-content:flex-end;gap:6px;padding:22px;
   aspect-ratio:var(--imgslot-ratio,4/3)}
-/* A drawing sheet rather than a missing photograph. A dashed grey box reads
-   as broken; a hairline plate with a registration mark reads as deliberate,
-   which is the honest thing to show while the photography does not exist.
-   Drawn on ::before so it sits behind the caption and can be faded at the
-   edges without touching the border or the text. */
+/* A hairline plate with a registration mark, not a dashed "broken image"
+   box — the honest placeholder while photography doesn't exist yet. Drawn
+   on ::before so it sits behind the caption and can fade at the edges
+   without touching the border or text. */
 .imgslot::before{content:"";position:absolute;inset:0;opacity:.65;
   background-image:linear-gradient(var(--line) 1px,transparent 1px),
                    linear-gradient(90deg,var(--line) 1px,transparent 1px);
@@ -879,11 +813,9 @@ table.spec .gap{text-transform:uppercase;letter-spacing:.1em;font-size:.8em}
 [data-motion="sticky"]{position:sticky;top:112px;align-self:start}
 @media (max-width:900px){[data-motion="sticky"]{position:static;top:auto}}
 
-/* A sticky companion image is a supporting note, not a co-star. Left at its
-   natural ratio a portrait plate parks a half-page block beside four
-   screens of prose, which is the largest dead area on a Sector page. Give
-   the text the majority of the measure, and size the plate to the viewport
-   so it is always fully visible and never dominant. */
+/* A sticky companion image is a supporting note, not a co-star: give the
+   text the majority of the measure, and size the plate to the viewport so
+   it's always fully visible and never dominant. */
 .two:has(> .imgslot[data-motion="sticky"]){grid-template-columns:1.32fr .68fr}
 .imgslot[data-motion="sticky"]{aspect-ratio:auto;height:min(56svh,500px)}
 @media (max-width:900px){
@@ -892,32 +824,26 @@ table.spec .gap{text-transform:uppercase;letter-spacing:.1em;font-size:.8em}
 }
 
 /* ---------- MDX prose rhythm (Prose.astro) ---------- */
-/* A run of body copy sits at its own measure, centred in the page, rather
-   than pinned to the left edge of a 1320px container with half a screen of
-   nothing beside it — which was the largest source of dead space on every
-   prose-led template (Ladder, Hub, Proof, Legal, Policy, Article, Guide…).
-   Scoped to prose that is the section's own child: prose inside a .two
-   column is already set to a column measure and must not be touched. */
+/* Body copy sits at its own measure, centred in the page, rather than
+   pinned to the left edge of the 1320px container. Scoped to prose that is
+   the section's own child: prose inside a .two column already has a column
+   measure and must not be touched here. */
 .wrap > .prose{max-width:var(--wrap-prose);margin-inline:auto}
 /* A body with a lead paragraph is the page's main content, not an aside, so
    it takes the two-column treatment rather than a single centred column
    with a third of the page empty either side. */
 .wrap > .prose.lead-para{max-width:none;margin-inline:0}
-/* An opening paragraph set at display scale. Editorial typography doing the
-   work an image would otherwise have to: it gives a prose-only section a
-   focal point and a reason to look, without a word of new copy or a
-   photograph that does not exist yet. Scoped to the first paragraph only —
+/* Opening paragraph at display scale — scoped to the first paragraph only,
    applied to a whole body it would just be shouting. */
 .lead-para > p:first-child{font-size:clamp(21px,2.2vw,30px);line-height:1.3;
   letter-spacing:-.018em;color:var(--navy);font-weight:450;
   margin:0 0 30px;text-wrap:balance}
-/* In a section of its own the intro runs as two columns — the opening line
-   at display scale on the left, the rest at reading measure on the right —
-   rather than one centred column with a third of the page empty either
-   side. Inside a feature row the copy already has a column, so it stacks. */
+/* In a section of its own the intro runs as two columns — display-scale
+   opening line on the left, reading measure on the right. Inside a feature
+   row the copy already has a column, so it stacks instead. */
 /* Row gap 0: each paragraph in the right column is its own grid row, so a
-   shared gap would space paragraphs as far apart as the columns are. Their
-   own margins do the vertical rhythm. */
+   shared gap would space paragraphs as far apart as the columns are — their
+   own margins do the vertical rhythm instead. */
 .sec > .wrap > .lead-para{max-width:none;display:grid;align-items:start;
   grid-template-columns:1.05fr 1fr;column-gap:clamp(36px,4.5vw,78px);row-gap:0}
 .sec > .wrap > .lead-para > p:first-child{grid-column:1;grid-row:1;margin-bottom:0}

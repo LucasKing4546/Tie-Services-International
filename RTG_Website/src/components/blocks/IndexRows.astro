@@ -1,24 +1,11 @@
 ---
 /**
- * A short list of destinations, as full-width ruled rows.
- *
- * Built because 14 of the site's 19 scroll tracks carried fewer than five
- * cards, and a carousel with three cards in it is a carousel with nothing to
- * scroll: the prev/next buttons do nothing, the rail never moves, and the
- * pin refuses to engage. It read as a set-piece that had failed rather than
- * as a deliberate layout.
- *
- * The obvious replacement — three cards in a three-column grid — is both the
- * generic default and against the standing "carousels, not grids" rule. So
- * this is neither. Two to four related pages is a short list of routes, and
- * the form that fits is the one the buyer already reads all day: a register.
- * Ruled rows, one per line, title left, description right, read top to
- * bottom.
- *
- * The type does the work. Each title is set at section-heading scale rather
- * than card scale, so three rows hold a full-width band with presence, where
- * three cards would have left two thirds of it empty. No numbering: these
- * are alternatives, not steps, and the order carries nothing.
+ * A short list of destinations (2-4), as full-width ruled rows — the
+ * fallback for a set of children too small for a carousel to have anything
+ * to scroll (see ChildCards.astro's TRACK_MIN), and deliberately not a
+ * grid either (site rule: carousels, not grids). Each title is set at
+ * section-heading scale so a handful of rows still fill the band. No
+ * numbering: these are alternatives, not steps.
  */
 import type { CardItem } from '@lib/blocks';
 

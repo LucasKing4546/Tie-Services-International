@@ -1,22 +1,17 @@
 ---
 /**
- * The About template — A-01…A-04. Composition per the template plan:
- * prose -> stats -> facility media slots -> siblings from
- * childrenOf('/about/').
+ * The About template — A-01…A-04. Composition: prose -> stats -> facility
+ * media slots -> siblings from childrenOf('/about/').
  *
- * There is no separate About hub page — A-01 sits at '/about/' itself and
- * doubles as the section landing page, so "siblings" is read from the
- * fixed '/about/' path rather than each page's own slug (childrenOf(own
- * slug) would return nothing for A-02…A-04, which have no children of
- * their own). That also means A-01's own sibling grid surfaces all of
- * A-02…A-05 — including A-05, Careers, a different template but still
- * slugged under /about/ — exactly like a Hub's ChildCards would.
+ * There's no separate About hub — A-01 sits at '/about/' and doubles as the
+ * section landing page, so siblings are read from the fixed '/about/' path
+ * rather than each page's own slug (childrenOf(own slug) would return
+ * nothing for A-02…A-04). This also surfaces A-05 (Careers, a different
+ * template but slugged under /about/) in A-01's sibling grid.
  *
- * Only A-01 has real, confirmed prose today (its MDX body + `stats`).
- * A-02…A-04 stay `draft: true` with a lede and PageEnding's DraftPanel
- * doing the honest "working outline" job — CLAUDE.md §5/§7 is explicit
- * that headcount details, facility specifics, named people and QHSE
- * certificate numbers are RTG-only-supplied facts, not to be invented.
+ * Only A-01 has real, confirmed prose; A-02…A-04 stay `draft: true` —
+ * CLAUDE.md §5/§7 treats headcount, facility specifics and certificate
+ * numbers as RTG-only-supplied facts, not to be invented.
  */
 import { render } from 'astro:content';
 import { childrenOf, type PageMeta } from '@data/pages';
@@ -44,9 +39,9 @@ const { data } = entry;
 const { Content } = await render(entry);
 
 const siblings = childrenOf('/about/').filter((p) => p.id !== page.id);
-// A-03/A-04's workbook schema is Article — matches every other Article-
-// schema template (Case, Guide, Policy, Article) in wiring this through,
-// even though neither page sets `article` frontmatter yet.
+// A-03/A-04's workbook schema is Article, matching every other
+// Article-schema template — wired through even though neither sets
+// `article` frontmatter yet.
 const jsonLdPage = articleJsonLd(data);
 ---
 

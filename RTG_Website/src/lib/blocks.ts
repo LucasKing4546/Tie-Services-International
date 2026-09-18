@@ -1,10 +1,8 @@
 /**
  * Shared prop types for src/components/blocks/*. Kept independent of the
- * Zod schema in content.config.ts (rather than inferred via z.infer) because
- * these describe what a block COMPONENT accepts, not what frontmatter must
- * contain — a template composes blocks from several sources (frontmatter,
- * PageMeta, other MDX entries via lib/content.ts), and a block should not
- * care which.
+ * Zod schema in content.config.ts — these describe what a block component
+ * accepts, not what frontmatter must contain, since a template composes
+ * blocks from several sources (frontmatter, PageMeta, other MDX entries).
  */
 import type { CollectionEntry } from 'astro:content';
 
@@ -69,12 +67,8 @@ export type SectionSize = 'lg' | 'sm';
  *  see src/lib/motion.ts. */
 export type MotionHint = 'parallax' | 'sticky' | 'none';
 
-/**
- * Splits a stat value like "1,500" or "250+" into the leading digits (for
- * the .ct count-up span) and a trailing suffix rendered as plain text next
- * to it. Shared by Stats.astro and ProofBar.astro so the split logic — and
- * any future fix to it — exists in exactly one place.
- */
+/** Splits a stat value like "1,500" or "250+" into the leading digits (for
+ *  the .ct count-up span) and a trailing suffix rendered as plain text. */
 export const isNumericStat = (v: string): boolean => /^[\d,]+/.test(v);
 export const statDigits = (v: string): string => v.replace(/[^\d]/g, '');
 export const statSuffix = (v: string): string => v.replace(/^[\d,]+/, '');

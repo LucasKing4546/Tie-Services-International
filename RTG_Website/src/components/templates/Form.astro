@@ -1,15 +1,14 @@
 ---
 /**
- * The Form template — the eight gated enquiry/request forms. Composition
- * per the template plan: hero -> .two (what it covers + EnquiryForm).
- * EnquiryForm.astro itself guarantees the honeypot field and the no-backend
- * action="#" default (CLAUDE.md §5.2) — this template only ever passes
- * frontmatter through, never hand-rolls a field or the honeypot again.
+ * The Form template — the eight gated enquiry/request forms. Composition:
+ * hero -> .two (what it covers + EnquiryForm). EnquiryForm.astro itself
+ * guarantees the honeypot field and the no-backend action="#" default
+ * (CLAUDE.md §5.2) — this template only ever passes frontmatter through.
  *
- * Gated access doesn't change anything here: CLAUDE.md is explicit that a
- * Gated page stays indexable (the form stands in front of the asset, not
- * the page describing it), and Base.astro's robots logic already only
- * withholds indexing for off-map pages — nothing template-specific to add.
+ * Gated access doesn't change indexing here: CLAUDE.md is explicit that a
+ * gated page stays indexable (the form gates the asset, not the page
+ * describing it), and Base.astro's robots logic already only withholds
+ * indexing for off-map pages.
  */
 import { render } from 'astro:content';
 import type { PageMeta } from '@data/pages';

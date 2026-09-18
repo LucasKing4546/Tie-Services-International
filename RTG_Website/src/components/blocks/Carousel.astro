@@ -1,26 +1,21 @@
 ---
 /**
- * The shared carousel track — CardGrid.astro and Ladder.astro's tier cards
- * both compose from this rather than each wiring their own scroll/nav
- * plumbing. CSS scroll-snap does the actual work; this only supplies the
- * markup the CSS (blocks.css: .car/.car-track/.car-nav) and the JS
- * (initCarousels() in lib/motion.ts) hook onto.
+ * The shared carousel track. CSS scroll-snap does the actual work; this
+ * supplies the markup that blocks.css (.car/.car-track/.car-nav) and
+ * initCarousels() (lib/motion.ts) hook onto.
  *
- * No-JS: the track scrolls natively (touch, trackpad, scrollbar) with no
- * script at all. The prev/next buttons exist in the markup unconditionally
- * but stay display:none until html.js confirms initCarousels() can drive
- * them — same progressive-enhancement gate .fu/.stag already use, so a
- * script-disabled visit never sees dead buttons.
+ * The prev/next buttons are always in the markup but stay display:none
+ * until html.js confirms initCarousels() can drive them, so a script-
+ * disabled visit (where the track still scrolls natively) never sees dead
+ * buttons — the same gate .fu/.stag use.
  *
- * Cards reveal via the same .stag stagger transition every other card list
- * on the site uses (tokens.css) — IntersectionObserver correctly treats
- * cards clipped by the track's own horizontal scrolling as not-yet-
- * intersecting (clipping ancestors count, not just the viewport), so a card
- * still reveals the first time it is actually scrolled into view.
+ * The .stag reveal still works inside the track: IntersectionObserver
+ * treats cards clipped by the track's own horizontal scrolling as
+ * not-yet-intersecting (clipping ancestors count, not just the viewport),
+ * so a card reveals the first time it's actually scrolled into view.
  */
 interface Props {
-  /** Accessible name for the scrollable region and its nav buttons, e.g.
-   *  "Equipment for this sector". */
+  /** Accessible name for the scrollable region and its nav buttons. */
   label: string;
   /** Cards visible at the widest breakpoint. */
   perView?: 2 | 3;

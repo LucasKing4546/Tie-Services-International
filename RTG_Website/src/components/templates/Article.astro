@@ -1,17 +1,12 @@
 ---
 /**
  * The Article template — C-07, "EU-origin fabrication" (the only page on
- * this template). Composition per the template plan: byline -> prose ->
- * .warn disclaimer. Article schema + dates.
+ * this template). Composition: byline -> prose -> .warn disclaimer.
  *
- * This is the first template to render a visible byline — every other
- * Article-schema template (Case, Proof, Guide, Policy) only feeds
- * data.article into structured data via articleJsonLd(). Article is framed
- * as a single-author piece rather than a page structured around blocks, so
- * the byline earns a visible line here. The ".warn disclaimer" is an
- * inline <Note tone="warn"> already in the MDX body (CLAUDE.md #5.7: RTG's
- * tariff/origin position must be confirmed before any definitive claim —
- * the page is deliberately still draft:true for exactly that reason).
+ * This is the only Article-schema template with a visible byline — Case,
+ * Proof, Guide and Policy only feed data.article into articleJsonLd(). The
+ * page stays draft: true because RTG's tariff/origin position isn't
+ * confirmed yet (CLAUDE.md §5.7).
  */
 import { render } from 'astro:content';
 import type { PageMeta } from '@data/pages';

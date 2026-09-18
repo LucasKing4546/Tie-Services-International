@@ -1,60 +1,42 @@
 /**
- * Real photography, keyed by the same Image Brief ref an MDX file already
- * uses. ImageSlot looks a ref up here: a hit renders an optimised <Image>,
- * a miss renders the drawing-sheet placeholder plate exactly as before.
- *
- * Provenance: the `s01/s04/s06-equipment-*` files are camera originals and
- * are unambiguously RTG's own. Several of the rest read as third-party press
- * or stock (a defence-investment article image, what appears to be a journal
- * cover, another firm's wind illustration) and are published here on RTG's
- * instruction — confirm ownership or licence for those before launch.
- *
- * That is why filling a slot needs no schema change and no template edit —
- * a page keeps writing `ref: "IMG-S01-A"` whether the photograph exists yet
- * or not, and the day it lands the page starts showing it.
+ * Real photography, keyed by the same Image Brief ref an MDX file uses.
+ * ImageSlot looks a ref up here: a hit renders an optimised <Image>, a miss
+ * renders the placeholder plate.
  *
  * Imported rather than served from public/, so Astro fingerprints each file
- * and sharp emits responsive AVIF/WebP at several widths. The originals are
- * camera files up to 6016x4000 and 6.7 MB; none of them ships raw.
+ * and sharp emits responsive AVIF/WebP. Originals are camera files up to
+ * 6016x4000 and 6.7 MB; none ships raw.
  *
- * Only photographs RTG demonstrably owns are listed here. Several other
- * files supplied alongside these read as third-party press or stock imagery
- * (a defence-news article image, a journal cover, another firm's
- * illustration) and are deliberately left out until provenance is confirmed
- * — publishing them would be a copyright exposure, and CLAUDE.md §6 already
- * flags that this matters commercially as well as legally.
+ * PROVENANCE (copyright-sensitive — check this before adding or re-enabling
+ * any entry): only photographs RTG demonstrably owns are listed here. The
+ * `s01/s04/s06-equipment-*` files are camera originals, unambiguously RTG's
+ * own. Other files supplied alongside these read as third-party press or
+ * stock (a defence-news article image, a journal cover, another firm's
+ * wind-turbine illustration) and are deliberately left out until ownership
+ * or licence is confirmed — publishing them would be a copyright exposure
+ * (CLAUDE.md §6).
  *
- * IMG-H01-A (the homepage hero) shows a client's vessel with the client's
- * name visible on the wheelhouse — published on the user's explicit
- * instruction ("we can use the Fugro picture"). That authorises the
- * photograph. It does not authorise naming the client in copy anywhere on
- * the site — CLAUDE.md §5.7 still requires written permission for that, and
- * none exists yet, so no page text names them.
+ * IMG-H01-A (homepage hero) shows a client's vessel with the client's name
+ * visible on the wheelhouse, published on the user's explicit instruction
+ * ("we can use the Fugro picture"). That authorises the photograph only —
+ * it does not authorise naming the client in copy; no written permission
+ * exists (CLAUDE.md §5.7), so no page text names them.
  *
- * IMG-S02-C and IMG-S05-C replace what had been S-02's and S-05's only
- * hero/media photographs — both of the originals (IMG-S02-A/B,
- * IMG-S05-A/B) are on the pre-launch reverse-image-search list, one of them
- * literally a named third-party research vessel's own photo. The new pair
- * carries no visible branding and is a materially safer default. CLAUDE.md
- * §9.3's 2026-09-18 drop confirms both S02-A/B and S05-A/B as third-party
- * (a stock filename, a journal cover, a named institute's own vessel) with
- * no replacement photography supplied — neither page references A/B any
- * more. The refs stay registered here rather than deleted, since real
- * RTG photography for either sector would slot straight into these ids.
+ * IMG-S02-A/B and IMG-S05-A/B are confirmed third-party (a stock filename,
+ * a journal cover, a named institute's own vessel) and are unused by any
+ * page. IMG-S02-C and IMG-S05-C replaced them as S-02's and S-05's hero and
+ * carry no visible branding. The A/B refs stay registered in case real RTG
+ * photography for either sector arrives.
  *
- * IMG-E00-A is a full-vessel cutaway CAD render, not a photograph. It
- * carries no visible branding, but it is not confirmed as RTG's own
- * commissioned artwork either — add it to the pre-launch provenance check
- * alongside the rest of the non-photographic material. IMG-E00-B (a real
- * camera photo of a full afterdeck spread underway) replaced it as E-00's
- * hero for that reason; A stays on the page as a supporting image.
+ * IMG-E00-A is a full-vessel cutaway CAD render, not a photograph, and its
+ * ownership is unconfirmed — check it alongside the rest of the
+ * non-photographic material before launch. IMG-E00-B (a real camera photo)
+ * is used as E-00's hero instead; A stays on the page as a supporting image.
  *
- * IMG-X01-A (four RTG staff, named) is registered but not currently placed
- * on any page. It is a finished graphic — names and roles already set into
- * the image — not a plain photo, and PageHero's H1/lede/scrim treatment
- * overlaps its own captions when tried as a full-bleed hero. It needs a
- * plain, non-overlaid placement (a "meet the team" block) rather than
- * hero.media; that block does not exist yet.
+ * IMG-X01-A (four RTG staff, named) is registered but not placed on any
+ * page: it's a finished graphic with names and roles baked into the image,
+ * so PageHero's caption/scrim treatment overlaps it when used as a hero.
+ * It needs a plain "meet the team" block, which doesn't exist yet.
  */
 import type { ImageMetadata } from 'astro';
 
@@ -64,11 +46,9 @@ import s01c from '../assets/sectors/s01-deck-spread.jpg';
 import s02a from '../assets/sectors/s02-pipeline-survey.jpg';
 import s02b from '../assets/sectors/s02-seabed-tool.jpg';
 import s02c from '../assets/sectors/s02-deck-installation.jpg';
-// s03a/s03b are stock illustration, not RTG photography (a wind-turbine/
-// subsea-cable graphic and a generic cable-cross-section render) — per
-// CLAUDE.md §9.3, the 2026-09-18 drop confirms both as third-party. Kept
-// registered for reference but not wired into s-03.mdx; S-03 has no real
-// photography yet and shows the honest placeholder plate until it does.
+// s03a/s03b are stock illustration, not RTG photography — confirmed
+// third-party (CLAUDE.md §9.3). Not wired into s-03.mdx; S-03 shows the
+// placeholder plate until real photography exists.
 import s03a from '../assets/sectors/s03-wind-array.jpg';
 import s03b from '../assets/sectors/s03-cable-work.jpg';
 import s04a from '../assets/sectors/s04-equipment-a.jpg';
@@ -156,15 +136,12 @@ export function mediaFor(ref: string): ImageMetadata | undefined {
 /**
  * The shape of a photograph, so a template can put it where it belongs.
  *
- * Worth knowing: most of RTG's own equipment photographs are portrait. They
- * are camera originals carrying EXIF rotation (orientation 6 and 8), so the
- * raw pixel dimensions read as landscape and only the corrected ones are
- * true — Astro applies the rotation, so the width and height here are the
- * real ones. A template that assumes landscape will crop the machine in
- * half.
+ * Most of RTG's own equipment photographs are portrait despite raw pixel
+ * dimensions suggesting landscape — they carry EXIF rotation (orientation 6
+ * and 8), and Astro applies it, so width/height here are already correct.
+ * A template that assumes landscape will crop the machine in half.
  *
- * Returns undefined when there is no photograph yet, which a caller should
- * read as "unknown", not as "landscape".
+ * Returns undefined ("unknown", not "landscape") when there is no photograph yet.
  */
 export function orientationOf(ref: string): 'portrait' | 'square' | 'landscape' | undefined {
   const m = MEDIA[ref];

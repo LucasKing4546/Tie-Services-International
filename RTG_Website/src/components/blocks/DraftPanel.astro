@@ -1,11 +1,8 @@
 ---
 /**
- * The dashed-red "this page is a working outline" panel — mirrors the
- * reference build's draft() convention (site_build/site_data.py:72), so
- * nothing provisional reaches production unnoticed. Every template renders
- * this when the entry's frontmatter has draft: true. Defaults its block
- * list to PageMeta.blocks (the workbook's own content-block brief) so a
- * stub MDX file needs no outline of its own to get a useful panel.
+ * The dashed-red "this page is a working outline" panel, rendered when the
+ * entry's frontmatter has draft: true. Defaults its block list to
+ * PageMeta.blocks so a stub MDX file needs no outline of its own.
  */
 import type { PageMeta } from '@data/pages';
 

@@ -1,18 +1,10 @@
 ---
 /**
- * A full-bleed strip of photographs, edge to edge, with the brief under each.
- *
- * The site had exactly one place a picture could go per section — beside a
- * column of copy — so a page with four good photographs could only ever show
- * one of them. This is the block that spends the rest: it takes whatever
- * media a page has left over and gives it the full width of the page rather
- * than a column of it.
- *
- * A gallery, not a card list, so the boss's carousel-not-grid rule does not
- * apply here — nothing in it is a link or a destination. Tiles share one
- * height and crop to fill, which is what lets a 6016x4000 camera original
- * and a 596x335 web image sit in the same row without one of them looking
- * broken.
+ * A full-bleed strip of photographs, edge to edge, with the brief under
+ * each. A gallery, not a card list — nothing in it links anywhere, so the
+ * site's carousel-not-grid rule doesn't apply. Tiles share one height and
+ * crop to fill, so a 6016x4000 camera original and a 596x335 web image can
+ * sit in the same row without either looking broken.
  */
 import type { ImgBrief } from '@lib/blocks';
 import { mediaFor } from '@data/media';
@@ -30,31 +22,25 @@ interface Props {
 const { items, eyebrow, heading, tone = 'off', lead = false } = Astro.props;
 const toneClass = tone === 'off' ? 'off' : tone === 'navy' ? 'navy' : '';
 
-// A justified row: every tile is laid out to the same height and its width
-// follows its own shape. Letting each picture size itself independently is
-// what put a huge portrait next to a small landscape with the row half
-// empty underneath. Growing each tile in proportion to its aspect ratio,
-// from a zero basis, makes the heights come out equal without cropping
-// anything — width = k x ratio, and height = width / ratio = k for all of
-// them.
+// A justified row: every tile shares one height and its width follows its
+// own aspect ratio, growing from a zero basis (flex-grow: ratio), so
+// width = k * ratio and height = width / ratio = k for every tile — heights
+// come out equal with no cropping needed.
 const tiles = items.map((m) => {
   const photo = mediaFor(m.ref);
   return { media: m, ratio: photo ? photo.width / photo.height : 4 / 3 };
 });
 const ratioSum = tiles.reduce((n, t) => n + t.ratio, 0) || 1;
-// Each tile's real share of the row, so the browser picks a srcset candidate
-// at least as wide as the box rather than one narrower than it — which is
-// what left a picture being scaled up on the page despite a larger file
-// being available. The container is about 88vw at the page's max width.
+// Each tile's real share of the row (container is ~88vw at max page width),
+// so the browser picks a srcset candidate at least as wide as the box
+// rather than one narrower that gets scaled up.
 const sizesFor = (ratio: number) =>
   `(max-width: 900px) 100vw, ${Math.max(20, Math.round((ratio / ratioSum) * 92))}vw`;
 
-// Three tiles, one of them upright: a justified row stretches the two
-// landscape tiles as tall as the portrait, which reads as oddly wide rather
-// than composed. The shape a person reaches for by hand is the portrait at
-// full height on one side with the two landscapes stacked against it — so
-// detect that case and lay it out as a 2x2 grid instead, the portrait tile
-// first regardless of the order it was authored in.
+// Three tiles, one upright: a justified row would stretch the two landscape
+// tiles as tall as the portrait, reading as oddly wide. Detect that case and
+// lay it out as a 2x2 grid instead, with the portrait tile first regardless
+// of authored order.
 const uprightCount = tiles.filter((t) => t.ratio < 1.15).length;
 const stacked = tiles.length === 3 && uprightCount === 1;
 const orderedTiles = stacked

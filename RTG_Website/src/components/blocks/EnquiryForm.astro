@@ -1,10 +1,9 @@
 ---
 /**
- * Every gated form on the site renders through this — one place that
- * guarantees the honeypot exists (CLAUDE.md §5.2: a field named "website",
- * reject any submission that fills it) rather than leaving eight templates
- * to each remember it. No backend exists yet (§5.2) — `action` defaults to
- * '#' and submission is otherwise inert until one is built.
+ * Every form on the site renders through this so the honeypot field
+ * (name="website" — reject any submission that fills it, CLAUDE.md §5.2)
+ * is guaranteed present rather than left for each template to remember.
+ * No backend exists yet — `action` defaults to '#' and submission is inert.
  */
 import type { FieldSpec } from '@lib/blocks';
 import FormField from './FormField.astro';

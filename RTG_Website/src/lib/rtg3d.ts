@@ -4,6 +4,7 @@
    · Traction / storage winch  (WINCHES → Mooring, Traction)
    · A-frame LARS              (A-FRAMES, CRANES AND LIFTING)
    · Hydraulic power unit      (HYDRAULIC POWER UNITS, 15–110 KW)
+   · Deck / boom crane         (A-FRAMES, CRANES AND LIFTING)
  Palette matches the RTG brand: navy #031d5b, crimson #AB3241, steel greys.
  ========================================================================== */
 import * as THREE from 'three';
@@ -322,6 +323,8 @@ function buildCrane(opts?: { rig?: boolean }) {
   const g = new THREE.Group();
   root.add(g);
 
+  // boom pivots at (HX, HY); cx/cy is its midpoint (for the box mesh), tx/ty
+  // its tip — reused below for the sheave, hoist wire and hook.
   const ANG = 0.60, HX = 0.60, HY = -0.30, L = 5.9;
   const cx = HX + Math.cos(ANG) * L / 2, cy = HY + Math.sin(ANG) * L / 2;
   const tx = HX + Math.cos(ANG) * L,     ty = HY + Math.sin(ANG) * L;
@@ -406,6 +409,7 @@ function buildCrane(opts?: { rig?: boolean }) {
 /* ======================================================================
    Viewer — one WebGL context per canvas, renders only when on screen
    ====================================================================== */
+/** A vertical-gradient sky/ground map, prefiltered to a PMREM for material environment lighting. */
 function envTexture(renderer: THREE.WebGLRenderer) {
   const cv = document.createElement('canvas');
   cv.width = 16; cv.height = 256;
@@ -427,6 +431,7 @@ function envTexture(renderer: THREE.WebGLRenderer) {
 
 export interface ViewerOpts { fov?: number; shadow?: number }
 
+/** One WebGL context per canvas; caller drives resize/frame/render and must call dispose() on teardown. */
 function createViewer(canvas: HTMLCanvasElement, opts?: ViewerOpts) {
   opts = opts || {};
   const renderer = new THREE.WebGLRenderer({
@@ -491,13 +496,12 @@ function createViewer(canvas: HTMLCanvasElement, opts?: ViewerOpts) {
       camera.lookAt(0, lookY || 0, 0);
     },
     render() { renderer.render(scene, camera); },
-    /* Hand the WebGL context back. Each viewer owns one context and browsers
-       cap how many can be live at once (Chrome drops the oldest at ~16), so a
-       viewer that is thrown away must release rather than wait for GC — under
-       client-side navigation the homepage can be built several times in one
-       document lifetime. Only the environment map is disposed alongside it:
-       geometries are rebuilt per model, but the materials in M are shared
-       module-wide and disposing those would break the next build. */
+    /* Hand the WebGL context back explicitly rather than wait for GC —
+       browsers cap live contexts (Chrome drops the oldest at ~16), and under
+       client-side navigation the homepage can be rebuilt several times in
+       one document lifetime. Only the environment map is disposed alongside
+       it: geometries are rebuilt per model, but the materials in M are
+       shared module-wide and disposing those would break the next build. */
     dispose() {
       const env = scene.environment;
       if (env) env.dispose();

@@ -1,16 +1,13 @@
 ---
 /**
  * The Policy template — C-06, "Your IP, protected" (the only page on this
- * template). Composition per the template plan: commitment ->
- * segregation steps -> the competitor question as Faq -> NDA CTA.
+ * template). Composition: commitment -> segregation steps -> the
+ * competitor question as Faq -> NDA CTA.
  *
- * C-06's content writes "the competitor question" as flowing prose under
- * its own heading rather than populating `faqs[]` — Faq.astro renders
- * only when a page actually has faqs, same defensive pattern as every
- * other optional block; it's simply unused for C-06 today. Article
- * schema via articleJsonLd(); FAQPage schema via faqPageJsonLd() — same
- * two lib/seo.ts helpers Guide.astro uses, so a future Policy page that
- * does populate faqs[] gets matching structured data with no extra work.
+ * C-06 writes "the competitor question" as flowing prose rather than
+ * populating `faqs[]`, so Faq.astro simply doesn't render for it — same
+ * optional-block pattern used throughout. Article + FAQPage schema via the
+ * same lib/seo.ts helpers Guide.astro uses.
  */
 import { render } from 'astro:content';
 import type { PageMeta } from '@data/pages';

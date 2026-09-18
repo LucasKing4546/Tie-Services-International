@@ -3,28 +3,14 @@
  * A before/after comparison — one image revealed over another by a divider
  * the visitor drags.
  *
- * Deliberately not scroll-driven, unlike every other set-piece in this
- * library. A direct A/B comparison is something a reader operates, not
- * something that happens at them: they want to stop halfway, go back, and
- * look again. That makes it closer to <input type="range"> than to parallax,
- * so it is pointer- and keyboard-driven with role="slider", and scroll is
- * used only for a one-shot entrance sweep so the control announces itself as
- * draggable rather than reading as a static image.
- *
- * Composes two ImageSlots unmodified — it drags a box over a box and does
- * not care what is inside either one. That matters while every image on the
- * site is still a placeholder figure (CLAUDE.md §5.5): when real photography
- * lands, ImageSlot's documented one-file <img> swap upgrades every
- * CompareSlot with no template edit.
- *
- * Honest limitation until then: two placeholder plates of the same size look
- * identical wherever the divider sits, so today this reads through its
- * labels rather than through the images. It is built now because the seam
- * belongs in the template, not because the page already looks right.
+ * Pointer- and keyboard-driven with role="slider" rather than scroll-driven
+ * like the site's other set-pieces: a reader operating an A/B comparison
+ * wants to stop halfway and go back, which is closer to <input type="range">
+ * than to parallax.
  *
  * With no JS, both images stay stacked in normal flow with their labels —
- * the comparison is still legible, just not interactive. The clip and the
- * handle are scoped to .on, which only initCompare() adds.
+ * still legible, just not interactive. The clip and the drag handle are
+ * scoped to .on, which only initCompare() adds.
  */
 import ImageSlot from './ImageSlot.astro';
 
@@ -72,9 +58,5 @@ const {
     </button>
   </div>
 </figure>
-<!--
-  No <figcaption>: each ImageSlot already carries its own ref and brief on
-  the plate, and each half is labelled by its own tag, so a caption
-  repeating both briefs underneath was saying everything twice. Both plates
-  are role="img" with an aria-label, so nothing is lost non-visually.
--->
+<!-- No <figcaption>: each half already carries its own tag, and each
+     ImageSlot is role="img" with an aria-label, so nothing is lost. -->

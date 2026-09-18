@@ -8,18 +8,16 @@
  *   2. horizontal sector track
  *   3. the crane hoisting the machine frame in, then the zoom into it
  *
- * The 3D stages are created lazily by the caller so three.js is only fetched
- * on pages that actually need it.
+ * 3D stages are created lazily by the caller so three.js is only fetched on
+ * pages that need it.
  *
- * Lifecycle: initHome() runs once per navigation, not once per document. The
- * homepage boots it from 'astro:page-load' (index.astro) for the same reason
- * motion.ts does — under ClientRouter a module's top-level code runs once and
- * never again, so a return trip to / would otherwise land on a dead page. That
- * makes teardown mandatory rather than optional: every listener, observer,
- * timer, rAF loop and WebGL context created here is registered for cleanup and
- * released the next time initHome() runs, on this page or any other. Without
- * it, three navigations would leave three rAF loops and fifteen live WebGL
- * contexts fighting over the browser's cap.
+ * Lifecycle: initHome() runs once per navigation, not once per document —
+ * under ClientRouter a module's top-level code runs once and never again, so
+ * a return trip to / would otherwise land on a dead page. That makes
+ * teardown mandatory: every listener, observer, timer, rAF loop and WebGL
+ * context created here is registered for cleanup and released the next time
+ * initHome() runs, on this page or any other, or navigations would leave
+ * stacking rAF loops and WebGL contexts fighting over the browser's cap.
  */
 import * as THREE from 'three';
 import { buildWinch, buildAFrame, buildHPU, buildCrane, createViewer } from './rtg3d';
@@ -68,18 +66,17 @@ export function destroyHome(): void {
   fn();
 }
 
-// Release on the way out, not on the way in. initHome() tears the previous
-// page down before it builds, which is enough on paper — but that only
-// happens when the *next* page's idle callback runs, up to 1.5s after the
-// navigation. In that window the old page's five WebGL contexts are still
-// live while the new page's five are being created, and a browser that is
-// near its context cap (~16 per renderer, shared with the user's other tabs)
-// resolves that by silently killing the oldest live contexts — which by then
-// can be the ones the new page just made. The canvases stay in the document
-// at full size and the scroll heights are still set, so the page looks
-// present but renders nothing. Software rendering has no such cap, which is
-// why this never shows up in a headless test. Swapping the DOM away is the
-// honest moment to hand the contexts back, and it is synchronous.
+// Release on the way out, not on the way in: initHome() tears the previous
+// page down before building, but that only fires when the *next* page's
+// idle callback runs, up to 1.5s after navigation. In that window the old
+// page's five WebGL contexts are still live while the new page's five are
+// being created — near the browser's context cap (~16 per renderer, shared
+// with other tabs), the browser resolves that by silently killing the
+// oldest contexts, which by then can be the new page's. Canvases stay in
+// the document at full size and scroll heights stay set, so the page looks
+// present but renders nothing (software rendering has no cap, so this never
+// shows in a headless test). Swapping the DOM away is the honest,
+// synchronous moment to hand the contexts back.
 document.addEventListener('astro:before-swap', () => destroyHome());
 
 export function initHome(): void {
@@ -95,10 +92,8 @@ export function initHome(): void {
 
   const cleanups: (() => void)[] = [];
 
-  // Reveals and count-ups are booted site-wide by initMotion() (src/lib/
-  // motion.ts) via Base.astro, before this module is even fetched — this
-  // function only adds the homepage's 3D on top of that. The header scroll
-  // toggle lives in Header.astro's own script, which every page already gets.
+  // This function only adds the homepage's 3D on top of the shared motion
+  // system Base.astro already booted.
   const rm = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ─────────── 3D stages ─────────── */
@@ -182,9 +177,9 @@ export function initHome(): void {
       el.style.cursor = 'grabbing'; el.setPointerCapture(e.pointerId); });
     el.addEventListener('pointermove', e => { if (!down) return;
       stage.drag += (e.clientX - lastX) * 0.008; lastX = e.clientX;
-      // frame() (hoisted below) only otherwise runs on scroll — without this
-      // call, dragging while the page hasn't scrolled updates stage.drag but
-      // is never painted, so the model looks inert until the user scrolls.
+      // frame() otherwise only runs on scroll — without this call, dragging
+      // on an unscrolled page updates stage.drag but never paints, so the
+      // model looks inert until the user scrolls.
       frame(); });
     const up = () => { down = false; el.style.cursor = 'grab'; };
     el.addEventListener('pointerup', up); el.addEventListener('pointercancel', up);
@@ -262,7 +257,7 @@ export function initHome(): void {
   }
 
   function frame(){
-    /* hero: scroll turns the winch and lifts the camera slightly */
+    /* hero: scroll turns the crane and lifts the camera slightly */
     if (heroV) {
       heroV.pivot.rotation.y = -0.7 + scrollY * 0.0016 + heroV.drag;
       heroV.frame(heroV.baseDist, heroV.baseH + Math.min(scrollY * 0.0016, 1.1), heroV.lookY);

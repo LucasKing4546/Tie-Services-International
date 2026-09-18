@@ -2,16 +2,14 @@
 /**
  * The Service template — six lifecycle/manufacturing service pages
  * (refurbishment, class renewal, spares, bespoke design, structural
- * subcontracting, deck equipment packages). Composition per the template
- * plan: prose -> StepList -> notes -> related cards -> CTA.
+ * subcontracting, deck equipment packages). Composition: prose -> StepList
+ * -> notes -> related cards -> CTA.
  *
- * L-01, the one page with real content today, writes its process as
- * numbered ### subheadings in flowing prose rather than the structured
- * `steps` field, and its one aside is an inline <Note> rather than
- * frontmatter `notes` — both render fine as part of the MDX body, so
- * StepList/notes below are rendered only when a page actually populates
- * those frontmatter fields, for whichever future Service page prefers
- * structured data over prose for its process or asides.
+ * L-01, the page with real content today, writes its process as numbered
+ * headings in prose rather than the structured `steps` field, and its one
+ * aside as an inline <Note> rather than `notes` — both render fine inside
+ * the MDX body, so StepList/notes below stay optional, for a future
+ * Service page that prefers structured data.
  */
 import { render } from 'astro:content';
 import type { PageMeta } from '@data/pages';

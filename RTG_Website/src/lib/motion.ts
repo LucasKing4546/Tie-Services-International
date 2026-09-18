@@ -1,20 +1,15 @@
 /**
- * Shared motion system. Every page boots this — Base.astro runs it on
- * 'astro:page-load', which fires on first load and again after every
- * client-side navigation under the view-transitions router (the listener
- * itself is only ever registered once, per Astro's script-processing model,
- * but the function it calls runs on every navigation). Templates opt in
- * declaratively (a CSS class, or a `data-motion` attribute) rather than
- * writing their own scroll module — see CLAUDE.md and the template plan for
- * why: src/lib/home-scroll.ts shows what 364 lines of DOM-id-coupled scroll
- * code costs to maintain, and this file exists so the other 17 templates
- * never repeat that.
+ * Shared motion system, booted once per navigation from 'astro:page-load'
+ * (Base.astro) — including client-side navigations under the view-transitions
+ * router, where a module's top-level code runs once but this function must
+ * run again. Templates opt in declaratively (a CSS class or a `data-motion`
+ * attribute) rather than writing their own scroll module.
  *
- * Six behaviours, one shared observer/rAF budget:
+ * Seven behaviours, one shared observer/rAF budget:
  *   1. reveals (.rl / .fu / .stag) + PROOF-figure count-ups (.ct)
  *   2. parallax media (data-motion="parallax")
- *   3. sticky media / sticky spec rail — pure CSS (position: sticky), no
- *      JS involved; documented here because it is part of the same system.
+ *   3. sticky media / sticky spec rail — pure CSS (position: sticky), no JS
+ *      involved; documented here because it is part of the same system.
  *   4. carousels ([data-carousel], Carousel.astro) — prev/next buttons
  *      driving the track's native scroll-snap.
  *   5. scroll tracks ([data-scroll-track], ScrollTrack.astro) — a pinned
@@ -24,21 +19,18 @@
  *   7. before/after compare ([data-compare], CompareSlot.astro) — a
  *      draggable divider revealing one image over another.
  *
- * 5 and 6 are the homepage's own set-pieces generalised out of
- * home-scroll.ts so any template can compose them; the homepage keeps its
- * own 3D-coupled copies. 7 is the one behaviour here that is a control
- * rather than an animation, which is why it alone still runs under
- * prefers-reduced-motion.
+ * 5 and 6 generalise the homepage's own set-pieces (home-scroll.ts keeps its
+ * own 3D-coupled copies). 7 is a control, not an animation, so it alone
+ * still runs under prefers-reduced-motion.
  *
- * Progressive enhancement: elements are visible by default (see the
- * `html.js` gate in tokens.css). Nothing here can make content that was
- * visible become permanently invisible — only add a transition it already
- * had.
+ * Progressive enhancement: elements are visible by default (the `html.js`
+ * gate in tokens.css) — nothing here can make visible content permanently
+ * invisible, only add a transition it already had.
  *
- * Teardown: initMotion() runs once per navigation, not once per document —
- * every IntersectionObserver and the parallax scroll listener from the
- * PREVIOUS page must be torn down first, or they accumulate for the life of
- * the tab. teardownFns holds exactly the cleanup for the current page.
+ * Teardown: every IntersectionObserver and scroll listener from the
+ * PREVIOUS page must be torn down before this runs again, or they
+ * accumulate for the life of the tab. teardownFns holds exactly the current
+ * page's cleanup.
  */
 
 let booted = false;
@@ -131,11 +123,10 @@ function initCounters(rm: boolean): void {
 // ---------------------------------------------------------------- parallax
 /**
  * data-motion="parallax" drifts an element against scroll. CSS-first: where
- * `animation-timeline: view()` is supported (see blocks.css / motion.css),
- * the browser drives it and this function only tags eligible elements with
- * a class so the CSS can target them — no JS runs per frame. Where it is
- * not supported, a single shared rAF loop updates only elements currently
- * near the viewport, tracked by one IntersectionObserver.
+ * `animation-timeline: view()` is supported (blocks.css / motion.css), the
+ * browser drives it and this just tags elements with a class — no JS per
+ * frame. Otherwise a single shared rAF loop updates only elements near the
+ * viewport, tracked by one IntersectionObserver.
  */
 function initParallax(): void {
   const els = document.querySelectorAll<HTMLElement>('[data-motion="parallax"]');
@@ -189,12 +180,11 @@ function initParallax(): void {
 
 // --------------------------------------------------------------- carousels
 /**
- * Every [data-carousel] (Carousel.astro) gets prev/next buttons that scroll
- * its track by one card-width. The track itself needs no JS at all — CSS
- * scroll-snap already makes it swipe/scroll/drag natively; this only drives
- * the two buttons and keeps their disabled state honest at each scroll end.
- * Buttons stay display:none (blocks.css) until this runs, so a no-JS visit
- * never sees a button that does nothing.
+ * [data-carousel] (Carousel.astro): CSS scroll-snap handles the actual
+ * swipe/scroll/drag natively — this only drives the prev/next buttons and
+ * keeps their disabled state honest at each scroll end. Buttons stay
+ * display:none (blocks.css) until this runs, so a no-JS visit never sees a
+ * button that does nothing.
  */
 function initCarousels(rm: boolean): void {
   const cars = document.querySelectorAll<HTMLElement>('[data-carousel]');
@@ -227,24 +217,16 @@ function initCarousels(rm: boolean): void {
 
 // ----------------------------------------------------------- scroll tracks
 /**
- * [data-scroll-track] (ScrollTrack.astro): the section pins for as long as
- * it takes to pull its rail sideways, so vertical scroll reads the cards
- * horizontally. The homepage has done this since day one via ids hard-wired
- * into home-scroll.ts; this is the generic version, so a template gets the
- * same set-piece by composing a component rather than by writing a scroll
- * module of its own.
- *
- * The pin/transform machinery bails under 900px and is skipped entirely
- * under prefers-reduced-motion (rm) — in both cases the rail stays the
- * native horizontally scrollable row it is without any JS. But that
- * fallback has no visible affordance beyond a hidden-scrollbar drag/swipe,
- * which reduced-motion and mouse-only desktop visitors have no obvious way
- * to discover — so unlike the pin machinery, the prev/next buttons are
- * wired unconditionally (mirroring initCarousels()'s .car-nav), and mirror
- * whichever mode the track is actually in:
- *   pinned  -> stepping a card means scrolling the page, not the rail — see
- *              the 1:1 scroll-to-transform mapping below
- *   fallback -> steps the rail's own native scroll, exactly like a Carousel
+ * [data-scroll-track] (ScrollTrack.astro): the section pins while its rail
+ * is pulled sideways, so vertical scroll reads the cards horizontally — the
+ * generic version of the homepage's hard-wired .hz-track. The pin/transform
+ * machinery bails under 900px and under prefers-reduced-motion (rm), leaving
+ * the rail as a native horizontally scrollable row. That fallback has no
+ * visible affordance beyond a hidden-scrollbar drag/swipe, so unlike the pin
+ * machinery, the prev/next buttons are wired unconditionally (mirroring
+ * initCarousels()) and adapt to whichever mode is active:
+ *   pinned   -> stepping a card scrolls the page (1:1 scroll-to-transform)
+ *   fallback -> steps the rail's own native scroll, like a Carousel
  */
 function initScrollTracks(rm: boolean): void {
   const tracks = document.querySelectorAll<HTMLElement>('[data-scroll-track]');
@@ -273,9 +255,7 @@ function initScrollTracks(rm: boolean): void {
     next.addEventListener('click', () => go(1));
   });
 
-  // The pin/transform choreography itself still has no reason to run under
-  // reduced motion or to touch a track with no JS-driven state — the
-  // buttons above already cover both.
+  // Buttons above already cover the rm/no-JS-state case; nothing below need run.
   if (rm) return;
 
   const items: { wrap: HTMLElement; rail: HTMLElement; fill: HTMLElement | null; dist: number }[] = [];
@@ -294,25 +274,23 @@ function initScrollTracks(rm: boolean): void {
         rail.style.transform = '';
         return;
       }
-      // Only pin when there is genuinely something to travel. A track whose
-      // cards already fit — three equipment cards on a wide desktop, say —
-      // would otherwise hold a whole viewport hostage and move nothing,
-      // which is worse than not pinning at all. It stays a static full-bleed
-      // navy band in that case, which is still doing the tonal job.
-      // rail.clientWidth, not innerWidth: clientWidth already excludes the
-      // page's vertical scrollbar the way innerWidth does not (~15-17px on
-      // Windows/Chrome), so using innerWidth here understates how far the
-      // rail needs to travel by exactly that much — the tail end of the
-      // last card never quite reaches the visible edge.
+      // Only pin when there's genuinely something to travel — a track whose
+      // cards already fit (e.g. three cards on a wide desktop) would
+      // otherwise hold a whole viewport hostage and move nothing; it stays
+      // a static full-bleed navy band instead, which still does the tonal job.
       //
-      // Measured from geometry rather than rail.scrollWidth: once pinned the
-      // rail is overflow:visible (blocks.css explains why the clip has to sit
-      // on .strack-stick instead), and scrollWidth on an element with no
-      // scrolling box omits the trailing padding in Chrome — which would stop
-      // the last card one side-inset short of where it belongs. The rail and
-      // its last card carry the same translation, so it cancels out of the
-      // difference between them; scrollLeft can only be non-zero on the first
-      // pass, before this track has ever been pinned and zeroed below.
+      // rail.clientWidth, not innerWidth: clientWidth already excludes the
+      // page's vertical scrollbar (~15-17px on Windows/Chrome) the way
+      // innerWidth does not, so innerWidth would understate the travel
+      // distance by exactly that much and strand the last card short of
+      // the visible edge.
+      //
+      // Measured from geometry, not rail.scrollWidth: once pinned the rail
+      // is overflow:visible (blocks.css), and Chrome's scrollWidth on such
+      // an element omits trailing padding — which would clip the last card
+      // short. Rail and last card share the same translation so it cancels
+      // out of the difference between them; scrollLeft is only ever
+      // non-zero before this track has first been pinned and zeroed below.
       const last = rail.lastElementChild;
       const padRight = parseFloat(getComputedStyle(rail).paddingRight) || 0;
       const content = last
@@ -323,15 +301,11 @@ function initScrollTracks(rm: boolean): void {
         : 0;
       const dist = Math.max(0, content - rail.clientWidth);
       // MIN_PIN_DIST, not dist === 0: the pin lasts exactly `dist` px of
-      // scroll (that's the whole point of the sticky-container-height
-      // trick), so a small dist — a 4-tile track missing the last tile by
-      // only a sliver, say — buys a pin so brief a normal scroll gesture
-      // blows straight through it. The release and the reveal happen close
-      // enough together that the last card never registers as shown; it
-      // just reads as the section vanishing with the last card still cut
-      // off. Below this floor it isn't a real scroll-driven "moment" either
-      // way, so it stays the static row (native scroll + the prev/next
-      // buttons) rather than pinning for a fraction of a second.
+      // scroll, so a small dist buys a pin so brief a normal scroll gesture
+      // blows straight through it — the section just reads as vanishing
+      // with the last card still cut off. Below this floor it stays the
+      // static row (native scroll + prev/next buttons) instead of pinning
+      // for a fraction of a second.
       const MIN_PIN_DIST = 200;
       if (dist < MIN_PIN_DIST) {
         wrap.classList.remove('on');
@@ -340,14 +314,11 @@ function initScrollTracks(rm: boolean): void {
         return;
       }
       wrap.classList.add('on');
-      // .strack-rail is a native scroll container in the fallback state (for
-      // no-JS and the sub-900px row) so it can pick up a real scrollLeft
-      // before this ever runs — a page-load scroll tick, a focus, a
-      // diagonal trackpad gesture. Once pinned, position is 100% owned by
-      // the transform below (this is how the homepage's .hz-track avoids
-      // the problem entirely: it is never a scroll container in the first
-      // place), so any leftover native offset must be zeroed here or it
-      // silently stacks with the transform and the cards render offset.
+      // The rail is a native scroll container in the fallback state, so it
+      // can pick up a real scrollLeft before this runs (page-load, focus, a
+      // diagonal trackpad gesture). Once pinned, position is 100% owned by
+      // the transform below, so any leftover offset must be zeroed here or
+      // it stacks with the transform and the cards render offset.
       rail.scrollLeft = 0;
       wrap.style.height = `${innerHeight + dist}px`;
       items.push({ wrap, rail, fill: wrap.querySelector<HTMLElement>('.strack-prog .fill'), dist });
@@ -379,16 +350,12 @@ function initScrollTracks(rm: boolean): void {
   addEventListener('scroll', onScroll, { passive: true });
   addEventListener('resize', onResize);
 
-  // window 'resize' alone is not enough: it does not fire reliably for
-  // browser zoom in every engine, but the rail's own layout — including its
-  // responsive side padding (a calc() against 100vw) — recomputes live from
-  // CSS regardless. Left to the resize listener only, a zoom change leaves
-  // `dist` and the wrap's inline height stale against a rail that has
-  // already relaid-out at the new effective width, so the transform moves
-  // it by the wrong amount relative to where the cards actually now sit —
-  // a card correctly positioned, then a stretch of blank track where the
-  // rest should be. A ResizeObserver on the rail catches any actual size
-  // change regardless of what caused it.
+  // window 'resize' alone misses browser zoom in some engines, but the
+  // rail's CSS layout (including a calc()-based side padding) recomputes
+  // regardless — leaving `dist` and the wrap's inline height stale against
+  // the rail's new width, so the transform moves it the wrong amount and
+  // blank track shows past the last correctly-placed card. A ResizeObserver
+  // on the rail catches any actual size change regardless of cause.
   const ro = new ResizeObserver(onResize);
   tracks.forEach((wrap) => {
     const rail = wrap.querySelector<HTMLElement>('.strack-rail');
@@ -414,16 +381,12 @@ function initScrollTracks(rm: boolean): void {
 /**
  * [data-pin-stages] (PinnedStages.astro): the section holds the viewport
  * while scroll position selects which of its stages is showing, one at a
- * time. This is the homepage's pinned manufacturing-tier walkthrough
- * (home-scroll.ts, hard-wired to #tiers/.tier/.pin-bar) generalised — the
- * scroll-fraction-to-index maths below is the same, minus the 3D model it
- * drives in lockstep there. DOM only, so a template with no 3D still gets
- * the set-piece.
+ * time — the generic version of the homepage's pinned manufacturing-tier
+ * walkthrough (home-scroll.ts), minus the 3D model it drives there.
  *
  * Bails to the plain stacked column under reduced motion, below 900px, or
- * with too little to walk through. Unlike initScrollTracks() there is no
- * prev/next affordance to wire in the fallback state, because the fallback
- * is not a hidden-overflow rail — every stage is simply on the page.
+ * with too little to walk through. Unlike initScrollTracks() there's no
+ * prev/next fallback affordance needed — every stage is simply on the page.
  */
 function initPinStages(rm: boolean): void {
   const wraps = document.querySelectorAll<HTMLElement>('[data-pin-stages]');
@@ -483,11 +446,10 @@ function initPinStages(rm: boolean): void {
       if (rm || innerWidth < 900 || stages.length < MIN_STAGES) return;
       if (innerHeight * (STAGE_VH / 100) * stages.length - innerHeight < MIN_PIN_TRAVEL) return;
 
-      // Stages are not hand-length-matched copy the way the homepage's four
-      // tiers are — a Product spec table can be two rows or twelve. Every
-      // stage is absolutely positioned once pinned, so the box needs an
-      // explicit height, and it has to be the tallest stage's or the
-      // longest one is clipped by the pinned section's overflow:hidden.
+      // Stages aren't hand-length-matched like the homepage's four tiers —
+      // a Product spec table can be two rows or twelve. Every stage is
+      // absolutely positioned once pinned, so the box needs an explicit
+      // height: the tallest stage's, or a longer one clips against overflow:hidden.
       const tallest = Math.max(...stages.map((s) => s.getBoundingClientRect().height));
       list.style.minHeight = `${Math.ceil(tallest)}px`;
       wrap.classList.add('on');
@@ -564,18 +526,14 @@ function initPinStages(rm: boolean): void {
 // ------------------------------------------------------- before/after compare
 /**
  * [data-compare] (CompareSlot.astro): a divider the visitor drags to reveal
- * one image over another.
+ * one image over another. The only non-visitor-driven behaviour is a
+ * one-shot entrance sweep, announcing the control as draggable.
  *
- * The only behaviour here that is not visitor-driven is a one-shot entrance
- * sweep, so the control announces itself as draggable rather than reading as
- * a static image. Everything else is pointer or keyboard.
- *
- * Runs under prefers-reduced-motion too, unlike the pin and track
- * choreography above — this is a control, not an animation, and removing it
- * would take away function rather than movement. Only the entrance sweep is
- * suppressed (the CSS transition it relies on is disabled in the same media
- * query), so a reduced-motion visitor gets a divider that simply starts at
- * the halfway point.
+ * Runs under prefers-reduced-motion too, unlike the pin/track choreography
+ * above — this is a control, not an animation. Only the entrance sweep is
+ * suppressed (its CSS transition is disabled in the same media query), so a
+ * reduced-motion visitor gets a divider that simply starts at the halfway
+ * point.
  */
 function initCompare(rm: boolean): void {
   const wraps = document.querySelectorAll<HTMLElement>('[data-compare]');
@@ -619,11 +577,11 @@ function initCompare(rm: boolean): void {
       return r.width ? ((x - r.left) / r.width) * 100 : 50;
     };
 
-    // Dragging is only ever started by an explicit pointerdown on the
-    // handle. The move listener sits on the frame so the pointer can stray
-    // off the 46px handle mid-drag without dropping it, but it does nothing
-    // until `dragging` is set — otherwise a plain swipe across the image on
-    // a phone would feel like it had hijacked the page scroll.
+    // Dragging starts only on pointerdown on the handle. The move listener
+    // sits on the frame instead, so the pointer can stray off the 46px
+    // handle mid-drag without dropping it — but it does nothing until
+    // `dragging` is set, or a plain swipe across the image on a phone
+    // would hijack scroll.
     let dragging = false;
     const down = (e: PointerEvent) => {
       dragging = true;

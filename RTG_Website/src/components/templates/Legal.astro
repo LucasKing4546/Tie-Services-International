@@ -1,22 +1,16 @@
 ---
 /**
  * The Legal template — Z-01…Z-04 (privacy, cookies, terms, accessibility).
- * Composition per the template plan: narrow prose, TOC from the h2s,
- * last-updated. DraftPanel carries "LEGAL REVIEW REQUIRED" until reviewed.
+ * Composition: narrow prose, TOC from the h2s, last-updated. DraftPanel
+ * carries "legal review required" until reviewed.
  *
- * `.prose` already caps body text at 68ch (blocks.css) — that's the "narrow
- * prose" the plan asks for, nothing extra needed. The TOC comes straight
- * from render()'s own `headings` array (astro:content), filtered to depth
- * 2 — the MDX body is the single source for both the rendered content and
- * its own table of contents, so they can never drift apart. `updated`
- * (content.config.ts, top-level, unused until now) drives both a visible
- * "last updated" line and `dateModified` in JSON-LD.
+ * The TOC comes from render()'s own `headings` array (astro:content),
+ * filtered to depth 2 — so it's read from the same source as the rendered
+ * content and can never drift from it.
  *
- * None of these four pages have real policy text yet (CLAUDE.md §5: every
- * page here needs an actual legal review) — PageEnding's `draftNote`
- * carries the reference build's own "legal review required" wording
- * (site_build/site_data.py's draft() convention) instead of the generic
- * "content to be supplied" default every other draft template gets.
+ * None of these four pages have real policy text yet, so PageEnding's
+ * `draftNote` here overrides the generic default with wording specific to
+ * needing legal review (CLAUDE.md §5).
  */
 import { render } from 'astro:content';
 import type { PageMeta } from '@data/pages';

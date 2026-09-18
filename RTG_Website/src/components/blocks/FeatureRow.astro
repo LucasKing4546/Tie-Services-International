@@ -1,20 +1,12 @@
 ---
 /**
- * Copy one side, media the other, sides alternating down the page.
+ * Copy one side, media the other, sides alternating down the page. Copy
+ * goes in the default slot so an MDX body can be passed straight in.
  *
- * The plainest block in the library and the most important one. Studying
- * iCOMAT page by page, this row — not any of the scroll set-pieces — is what
- * carries the whole design: it repeats four or five times per page and it is
- * the reason those pages read as 60% visual while RTG's read as documents.
- * Three of these down a page changes the ratio without a single new line of
- * copy being written.
- *
- * The media column is full-height rather than a fixed aspect box, so the row
- * is sized by its copy and the picture fills whatever that comes to. That is
- * what stops a short paragraph leaving a letterboxed plate stranded beside
- * it, which is what the old `.two` + ImageSlot pairing did.
- *
- * Copy goes in the default slot so an MDX body can be passed straight in.
+ * The media column is full-height rather than a fixed aspect box, so the
+ * row is sized by its copy and the picture fills whatever height that
+ * comes to — a short paragraph no longer leaves a letterboxed plate
+ * stranded beside it.
  */
 import type { ImgBrief, Link } from '@lib/blocks';
 import ImageSlot from './ImageSlot.astro';

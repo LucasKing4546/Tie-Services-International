@@ -1,20 +1,13 @@
 ---
 /**
  * The Contact template — X-01 (offices) and X-02 (agents by region).
- * Composition per the template plan: offices/agents -> enquiry routing
- * from pagesByTemplate('Form') -> contactPoint.
+ * Composition: offices/agents -> enquiry routing from
+ * pagesByTemplate('Form') -> contactPoint.
  *
- * X-01 populates `offices`, X-02 populates `agents` — both sections render
- * only when their own frontmatter array is non-empty, same discipline as
- * Case.astro's optional headline/meta line, so one template serves both
- * pages without a per-page branch. Neither array has real data yet
- * (no street address, phone, email or named contact is confirmed anywhere
- * — CLAUDE.md §5/§7): both stay [] and the page renders as a draft outline
- * until RTG supplies them.
- *
- * The one real, confirmed fact available today is EnquiryForm.astro's own
- * response-time line ("We reply to enquiries within one working day") —
- * reused as-is in X-01's MDX body rather than a new invented figure.
+ * X-01 populates `offices`, X-02 populates `agents`; each section only
+ * renders when its own array is non-empty, so one template serves both
+ * pages with no per-page branch. Neither has real data yet (no address,
+ * phone, email or named contact confirmed anywhere — CLAUDE.md §5/§7).
  */
 import { render } from 'astro:content';
 import { pagesByTemplate, type PageMeta } from '@data/pages';

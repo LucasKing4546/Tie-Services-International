@@ -1,22 +1,18 @@
 ---
 /**
  * Publish performance figures and an overall bounding envelope only — never
- * an internal drum measurement (its core, its barrel), never a flange's own
- * diameter, and never a component's make or catalogue reference (CLAUDE.md
- * §6, enforced at build time by scripts/audit-protection.mjs — this comment
- * is deliberately worded so it documents the banned rows without itself
- * matching the scan). Publish the box, not the arrangement inside it.
+ * an internal drum measurement, a flange's own diameter, or a component's
+ * make or catalogue reference (CLAUDE.md §6, enforced at build time by
+ * scripts/audit-protection.mjs — this comment is worded so it documents the
+ * banned rows without itself matching the scan).
  *
  * A row whose value is the literal string "TO SUPPLY" renders <Gap> instead
  * of the raw text — frontmatter never carries HTML, so this is the one
  * place that convention gets interpreted.
  *
- * Known gap, not enforced here: the Proof template uses this component as
- * a certifications/credentials table (Y-03), where the plan's stated rule
- * is "every certificate number is a Gap". Nothing checks that — an author
- * who types a real certificate number as a row value instead of writing
- * "TO SUPPLY" gets a clean build with no warning. This is a content
- * discipline the schema and this scan do not currently enforce.
+ * Known gap: Proof (Y-03) uses this as a certifications table, where every
+ * certificate number should be "TO SUPPLY" too, but nothing enforces that —
+ * a real certificate number typed as a row value builds clean with no warning.
  */
 import type { SpecRow } from '@lib/blocks';
 import Gap from './Gap.astro';

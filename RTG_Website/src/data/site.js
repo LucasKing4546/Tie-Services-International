@@ -76,12 +76,10 @@ export const PROOF = {
 };
 
 /**
- * Plain display form of each PROOF figure — value pre-formatted for the .ct
- * count-up (see src/lib/motion.ts) plus a generic label. Used by
- * ProofBar.astro and Fig.astro on every template. The homepage's own
- * HERO_STATS (src/data/home.ts) composes richer, page-specific sentences
- * from these same PROOF numbers; this is the reusable version everywhere
- * else — one edit to PROOF still propagates to both.
+ * Display form of each PROOF figure — pre-formatted value for the .ct
+ * count-up (src/lib/motion.ts) plus a generic label. Used by ProofBar.astro
+ * and Fig.astro. HERO_STATS (src/data/home.ts) composes its own richer
+ * sentences from the same PROOF numbers instead of using this directly.
  */
 export const PROOF_DISPLAY = {
   years: { value: `${PROOF.years}`, label: 'Years designing and building deck equipment' },

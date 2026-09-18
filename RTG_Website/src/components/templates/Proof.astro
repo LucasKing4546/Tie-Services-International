@@ -1,21 +1,15 @@
 ---
 /**
  * The Proof template — Y-03 (certifications), P-06 (test facility), P-07
- * (references), P-08 (testimonials). Composition per the template plan:
- * SpecTable as a credentials table -> proof bar -> quotes.
+ * (references), P-08 (testimonials). Composition: SpecTable as a
+ * credentials table -> proof bar -> quotes -> case-study track.
  *
- * The four pages lean on different parts of this shape: Y-03 wants
- * `specs` as a literal credentials table ("every item a vendor form asks
- * for"); P-08 wants `quotes` as three attributed testimonials; P-06, the
- * one page with real content today, wants none of either — its test
- * suite is flowing prose plus the site-wide proof bar. Every block below
- * is optional and renders only when a page actually populates it.
+ * Each page leans on a different part of this shape — Y-03 uses `specs` as
+ * a credentials table, P-08 uses `quotes`, P-06 uses neither. Every block
+ * is optional and renders only when a page populates it.
  *
- * The closing case-study track is the piece the original plan missed: a
- * proof page asserting a capability had no way to point at the job where it
- * was used, so the section that is meant to carry the evidence linked to
- * none of it. It reads `related`, so which case study belongs on which
- * proof page stays an editorial decision in the content file.
+ * The closing case-study track reads `related`, so which case study backs
+ * which proof page stays an editorial decision in the content file.
  */
 import { render } from 'astro:content';
 import type { PageMeta } from '@data/pages';
@@ -47,10 +41,6 @@ const { data } = entry;
 const { Content } = await render(entry);
 const jsonLdPage = articleJsonLd(data);
 
-// A proof page that asserts a capability should be able to point at the job
-// where it was used. Sourced from `related` so the choice of which case
-// study belongs on which proof page stays editorial, in the content file,
-// rather than being hardcoded per template.
 const cases: CardItem[] = data.related.map((id) => cardFrom({ pageId: id }));
 ---
 

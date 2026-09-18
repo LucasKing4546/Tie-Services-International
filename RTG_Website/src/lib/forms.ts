@@ -3,16 +3,10 @@
  * Form-template page can carry a query param matching a field's `name` —
  * e.g. Product.astro's "Request the full datasheet" link appends
  * `?equipment=<product name>` — and that field arrives pre-filled and
- * read-only, rather than asking the visitor to retype what the site
- * already knows. A field reached with no matching param stays normal and
- * editable, same as today.
- *
- * Matches generically on `field.name` against the query string rather than
- * a schema flag naming which pages may prefill which field, so any future
- * gated form gets the same behaviour for free by simply linking to it with
- * `?<field name>=<value>`. No backend exists yet (CLAUDE.md §5.2) — this is
- * purely a client-side convenience, run once per navigation like the rest
- * of the motion system (see Base.astro).
+ * read-only instead of asking the visitor to retype what the site already
+ * knows. Matches generically on `field.name` rather than a schema flag
+ * naming which pages may prefill which field, so any gated form gets this
+ * for free by linking to it with `?<field name>=<value>`.
  */
 export function initFormPrefill(): void {
   const params = new URLSearchParams(location.search);
@@ -33,11 +27,9 @@ export function initFormPrefill(): void {
       const match = [...el.options].some((o) => o.value === value);
       if (!match) return;
       el.value = value;
-      // `disabled` (unlike `readOnly` on input/textarea above) is excluded
-      // from form submission entirely — a disabled select's value would
-      // never reach the payload. Disable it for the correct locked-looking
-      // UI, but carry the real value on a same-named hidden input instead,
-      // so the disabled select and its stand-in never collide on submit.
+      // `disabled` (unlike `readOnly` on input/textarea) is excluded from
+      // form submission entirely, so the value has to travel on a same-
+      // named hidden input instead, or it would never reach the payload.
       el.disabled = true;
       const hidden = document.createElement('input');
       hidden.type = 'hidden';

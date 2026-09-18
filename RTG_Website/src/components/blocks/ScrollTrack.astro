@@ -1,31 +1,16 @@
 ---
 /**
  * The scroll-driven horizontal track — a pinned full-height navy band whose
- * cards move sideways as the page scrolls down, with a red progress rail.
+ * cards move sideways as the page scrolls, with a red progress rail. Distinct
+ * from the homepage's own hard-wired version (home.css/home-scroll.ts); this
+ * one is id-free and driven by initScrollTracks() in lib/motion.ts.
  *
- * This is the homepage's own sector set-piece (.hz-* in home.css, driven by
- * hard-wired ids in home-scroll.ts) generalised so every template can use
- * it. The original template plan deliberately kept pinned and horizontal
- * set-pieces homepage-only; that call is what left the other sixteen
- * templates reading as a flat white wall, so it has been reversed — the
- * homepage keeps its own copy untouched, and this one is id-free and driven
- * by initScrollTracks() in lib/motion.ts.
- *
- * It is also the site's tonal punctuation: a full-bleed navy band carrying
- * cards rather than body prose, which is what stops a page being one white
- * section after another.
- *
- * Degrades in three steps, each usable on its own: with no JS the rail is a
- * native horizontally scrollable, scroll-snapped row; under
- * prefers-reduced-motion or below 900px it stays that row deliberately; only
- * with JS on a wide pointer screen does it pin and drive by transform.
- *
- * The native-scroll row has no visible affordance beyond a hidden scrollbar
- * drag/swipe, so the prev/next buttons (initScrollTracks() in lib/motion.ts,
- * same pattern as Carousel.astro's .car-nav) give reduced-motion, narrow-
- * viewport and mouse-only visitors an obvious, always-working way to reach
- * every card rather than just the first few. They stay display:none until
- * html.js confirms the script can drive them.
+ * Degrades to a native horizontally-scrollable, scroll-snapped row with no
+ * JS, under prefers-reduced-motion, or below 900px; only pins and drives by
+ * transform with JS on a wide pointer screen. The prev/next buttons stay
+ * display:none until html.js confirms the script can drive them — the
+ * native row itself has no visible scroll affordance beyond a hidden
+ * scrollbar drag/swipe.
  */
 interface Props {
   eyebrow?: string;
