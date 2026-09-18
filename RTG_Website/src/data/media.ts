@@ -45,7 +45,9 @@
  * IMG-E00-A is a full-vessel cutaway CAD render, not a photograph. It
  * carries no visible branding, but it is not confirmed as RTG's own
  * commissioned artwork either — add it to the pre-launch provenance check
- * alongside the rest of the non-photographic material.
+ * alongside the rest of the non-photographic material. IMG-E00-B (a real
+ * camera photo of a full afterdeck spread underway) replaced it as E-00's
+ * hero for that reason; A stays on the page as a supporting image.
  *
  * IMG-X01-A (four RTG staff, named) is registered but not currently placed
  * on any page. It is a finished graphic — names and roles already set into
@@ -86,6 +88,7 @@ import s07c from '../assets/sectors/s07-lars-build-b.jpg';
 
 import homeA from '../assets/home/home-fleet-vessel.jpg';
 import e00a from '../assets/equipment/e00-system-overview.jpg';
+import e00b from '../assets/equipment/e00-deck-spread.jpg';
 import e02a from '../assets/equipment/e02-winch-drum.jpg';
 import e02b from '../assets/equipment/e02-deployment-frame.jpg';
 import e02c from '../assets/equipment/e02-hpu.jpg';
@@ -127,6 +130,7 @@ export const MEDIA: Record<string, ImageMetadata> = {
   'IMG-S07-B': s07b,
   'IMG-S07-C': s07c,
   'IMG-E00-A': e00a,
+  'IMG-E00-B': e00b,
   'IMG-E02-A': e02a,
   'IMG-E02-B': e02b,
   'IMG-E02-C': e02c,

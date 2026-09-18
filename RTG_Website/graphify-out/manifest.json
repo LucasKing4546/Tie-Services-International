@@ -1,10 +1,4 @@
 {
-  ".claude/settings.json": {
-    "mtime": 1789731382.9944372,
-    "seen": 1789731804.2681696,
-    "ast_hash": "4276caf1448ff4676d099d8d83c7c67b",
-    "semantic_hash": ""
-  },
   "astro.config.mjs": {
     "mtime": 1787013703.8930736,
     "seen": 1789731804.2681696,
@@ -474,9 +468,9 @@
     "semantic_hash": ""
   },
   "src/data/media.ts": {
-    "mtime": 1788527439.6761248,
-    "seen": 1789731804.2681696,
-    "ast_hash": "538e27557e8993e132b0404a233e0a9a",
+    "mtime": 1789733541.573173,
+    "seen": 1789733656.3331387,
+    "ast_hash": "4697670952d14f525319113f3434b9fc",
     "semantic_hash": ""
   },
   "src/data/pages-extra.ts": {
@@ -1140,9 +1134,9 @@
     "semantic_hash": ""
   },
   "src/content/pages/e-00.mdx": {
-    "mtime": 1788527439.664059,
-    "seen": 1789731804.2681696,
-    "ast_hash": "381af2ae42a80a666e63412646d24818",
+    "mtime": 1789733534.1495118,
+    "seen": 1789733656.3331387,
+    "ast_hash": "c9c096f96467000e60afc4f704daf406",
     "semantic_hash": ""
   },
   "src/content/pages/e-01.mdx": {
@@ -1152,45 +1146,45 @@
     "semantic_hash": ""
   },
   "src/content/pages/e-02.mdx": {
-    "mtime": 1787243316.786551,
-    "seen": 1789731804.2681696,
-    "ast_hash": "99c7cba815dd2331d3b29e423268096c",
+    "mtime": 1789732771.0654135,
+    "seen": 1789733656.3331387,
+    "ast_hash": "4eaddfbc98fbc35863212211644f612d",
     "semantic_hash": ""
   },
   "src/content/pages/e-03.mdx": {
-    "mtime": 1787243316.786551,
-    "seen": 1789731804.2681696,
-    "ast_hash": "a15929e184becf76fb74119754bf6738",
+    "mtime": 1789733253.7987096,
+    "seen": 1789733656.3331387,
+    "ast_hash": "0057f5066beb9dde92bd078b2c8e78c8",
     "semantic_hash": ""
   },
   "src/content/pages/e-04.mdx": {
-    "mtime": 1787243316.7875514,
-    "seen": 1789731804.2681696,
-    "ast_hash": "f16bd030ade2592993b943d23119c6e9",
+    "mtime": 1789733322.3799224,
+    "seen": 1789733656.3331387,
+    "ast_hash": "351fa7d52501bf422a4485bc3cea9e87",
     "semantic_hash": ""
   },
   "src/content/pages/e-05.mdx": {
-    "mtime": 1787243316.7886918,
-    "seen": 1789731804.2681696,
-    "ast_hash": "c49073572ff2404ee67a33f380f276b2",
+    "mtime": 1789733381.4670055,
+    "seen": 1789733656.3331387,
+    "ast_hash": "fac24decacf2034495c665c0a155458c",
     "semantic_hash": ""
   },
   "src/content/pages/e-06.mdx": {
-    "mtime": 1787243316.7886918,
-    "seen": 1789731804.2681696,
-    "ast_hash": "1f9dc53c9cabe8b47fff9dcd8f0f0cd8",
+    "mtime": 1789733443.1494496,
+    "seen": 1789733656.3331387,
+    "ast_hash": "516a808a702c252255f8d932db9010bf",
     "semantic_hash": ""
   },
   "src/content/pages/e-07.mdx": {
-    "mtime": 1787243316.7886918,
-    "seen": 1789731804.2681696,
-    "ast_hash": "3944a04099297853d70bca78dfdd5363",
+    "mtime": 1789733015.65422,
+    "seen": 1789733656.3331387,
+    "ast_hash": "19b3cbbe07d39c2210b75ef7790cf24c",
     "semantic_hash": ""
   },
   "src/content/pages/e-08.mdx": {
-    "mtime": 1787243316.7896955,
-    "seen": 1789731804.2681696,
-    "ast_hash": "66359d652c2d206a8563a2e754fd3888",
+    "mtime": 1789732937.253427,
+    "seen": 1789733656.3331387,
+    "ast_hash": "13fff10e796ee3d978466ade503dfa41",
     "semantic_hash": ""
   },
   "src/content/pages/e-09.mdx": {
@@ -1200,9 +1194,9 @@
     "semantic_hash": ""
   },
   "src/content/pages/e-10.mdx": {
-    "mtime": 1787243316.7906933,
-    "seen": 1789731804.2681696,
-    "ast_hash": "ebf615f435fae9f0d8c200adc34eb92e",
+    "mtime": 1789733114.637653,
+    "seen": 1789733656.3331387,
+    "ast_hash": "8cbeeff7f12cea58fb0da81c2e1347e5",
     "semantic_hash": ""
   },
   "src/content/pages/e-11.mdx": {
@@ -1350,45 +1344,45 @@
     "semantic_hash": ""
   },
   "src/content/pages/s-01.mdx": {
-    "mtime": 1788527439.668564,
-    "seen": 1789731804.2681696,
-    "ast_hash": "064f7913ca536d33a74fbd01bfa09a0f",
+    "mtime": 1789732465.5136507,
+    "seen": 1789733656.3331387,
+    "ast_hash": "57f08244ed327ed1c54bd16438b94a55",
     "semantic_hash": ""
   },
   "src/content/pages/s-02.mdx": {
-    "mtime": 1788527439.6701176,
-    "seen": 1789731804.2681696,
-    "ast_hash": "6db92cba1c9398b39573496622081eb1",
+    "mtime": 1789732561.474371,
+    "seen": 1789733656.3331387,
+    "ast_hash": "1adbd73710f85a6554b8059a76cfb6d4",
     "semantic_hash": ""
   },
   "src/content/pages/s-03.mdx": {
-    "mtime": 1788527439.6711254,
-    "seen": 1789731804.2681696,
-    "ast_hash": "4a1e3bdaf64df91079fed670501a77a4",
+    "mtime": 1789732131.0174396,
+    "seen": 1789733656.3331387,
+    "ast_hash": "8f449e6f615377e21c22bdd9852a92a0",
     "semantic_hash": ""
   },
   "src/content/pages/s-04.mdx": {
-    "mtime": 1788527439.672125,
-    "seen": 1789731804.2681696,
-    "ast_hash": "9b8c18c04d10c76c9017c3b16b9fbfe4",
+    "mtime": 1789732145.828547,
+    "seen": 1789733656.3331387,
+    "ast_hash": "c6507eaa64c8881babaa097df8bbb420",
     "semantic_hash": ""
   },
   "src/content/pages/s-05.mdx": {
-    "mtime": 1788527439.672125,
-    "seen": 1789731804.2681696,
-    "ast_hash": "685e33a65eac01784fb951645453936b",
+    "mtime": 1789732532.1204524,
+    "seen": 1789733656.3331387,
+    "ast_hash": "2a4dba1338a29d717042637739d657f3",
     "semantic_hash": ""
   },
   "src/content/pages/s-06.mdx": {
-    "mtime": 1788527439.6731236,
-    "seen": 1789731804.2681696,
-    "ast_hash": "bdf905f4d234522f21acf89fc0587aa0",
+    "mtime": 1789732176.1307342,
+    "seen": 1789733656.3331387,
+    "ast_hash": "28bc82873c0581c8b05aa6c643247ebb",
     "semantic_hash": ""
   },
   "src/content/pages/s-07.mdx": {
-    "mtime": 1788527439.674123,
-    "seen": 1789731804.2681696,
-    "ast_hash": "db99476e7db5c4292b988b9c5651be31",
+    "mtime": 1789732302.7731614,
+    "seen": 1789733656.3331387,
+    "ast_hash": "bc9d26d9ec97b26538f68eb6b2829957",
     "semantic_hash": ""
   },
   "src/content/pages/x-01.mdx": {
@@ -1623,6 +1617,102 @@
     "mtime": 1788527439.638556,
     "seen": 1789731804.2681696,
     "ast_hash": "b3e34420611ce0a451a524ae41441048",
+    "semantic_hash": ""
+  },
+  "src/assets/equipment/e00-deck-spread.jpg": {
+    "mtime": 1789733506.2477007,
+    "seen": 1789733656.3341398,
+    "ast_hash": "ec90f6d3bf867b8ed747255c62691783",
+    "semantic_hash": ""
+  },
+  "src/assets/equipment/e02-deployment-frame.jpg": {
+    "mtime": 1789732729.4450743,
+    "seen": 1789733656.3341398,
+    "ast_hash": "ccd48d0d0ba75fbd386a98881ef26aa8",
+    "semantic_hash": ""
+  },
+  "src/assets/equipment/e02-hpu.jpg": {
+    "mtime": 1789732729.7851338,
+    "seen": 1789733656.3341398,
+    "ast_hash": "91f52f4f917bb6b394a702f25b2b2330",
+    "semantic_hash": ""
+  },
+  "src/assets/equipment/e02-winch-drum.jpg": {
+    "mtime": 1789732729.2711344,
+    "seen": 1789733656.3341398,
+    "ast_hash": "c2c7a6f4ded64df9229f5b4d9561ecce",
+    "semantic_hash": ""
+  },
+  "src/assets/equipment/e03-compact-winch.jpg": {
+    "mtime": 1789733218.887208,
+    "seen": 1789733656.3341398,
+    "ast_hash": "186e9b711f924752e72198fc7f7c2971",
+    "semantic_hash": ""
+  },
+  "src/assets/equipment/e04-reel-winch.jpg": {
+    "mtime": 1789733297.0759299,
+    "seen": 1789733656.3341398,
+    "ast_hash": "d9c8ec828f9d3beb731a43b407d43492",
+    "semantic_hash": ""
+  },
+  "src/assets/equipment/e05-umbilical-winch.jpg": {
+    "mtime": 1789733355.5530543,
+    "seen": 1789733656.3341398,
+    "ast_hash": "c3c536bca3163a3e33d02e5cb5d92bb1",
+    "semantic_hash": ""
+  },
+  "src/assets/equipment/e06-mooring-winch.jpg": {
+    "mtime": 1789733413.910891,
+    "seen": 1789733656.3341398,
+    "ast_hash": "3c79cd137e76b856a69136ccfd698c50",
+    "semantic_hash": ""
+  },
+  "src/assets/equipment/e07-aframe-deployment.jpg": {
+    "mtime": 1789732982.0137944,
+    "seen": 1789733656.3341398,
+    "ast_hash": "a3f9c70bfe52593e1bf86c0069068ee4",
+    "semantic_hash": ""
+  },
+  "src/assets/equipment/e07-aframe-dusk.jpg": {
+    "mtime": 1789732982.115016,
+    "seen": 1789733656.3341398,
+    "ast_hash": "348e63109bebc87497a2120be48796fe",
+    "semantic_hash": ""
+  },
+  "src/assets/equipment/e08-knuckle-boom.jpg": {
+    "mtime": 1789732901.8958993,
+    "seen": 1789733656.3341398,
+    "ast_hash": "635f26b576107eeb43310dc85782790b",
+    "semantic_hash": ""
+  },
+  "src/assets/equipment/e08-proof-load-test.jpg": {
+    "mtime": 1789732902.015827,
+    "seen": 1789733656.3341398,
+    "ast_hash": "f46d7604e1a9c8940a2097b6f9cc1955",
+    "semantic_hash": ""
+  },
+  "src/assets/equipment/e10-skid-hpu.jpg": {
+    "mtime": 1789733070.2498438,
+    "seen": 1789733656.3341398,
+    "ast_hash": "ac321355525548a00bfb806844950eb1",
+    "semantic_hash": ""
+  },
+  "src/assets/equipment/e10-tracks-gripping.jpg": {
+    "mtime": 1789733070.1556776,
+    "seen": 1789733656.3341398,
+    "ast_hash": "7adc7c114947584230d3d14329b1052d",
+    "semantic_hash": ""
+  },
+  "src/assets/sectors/s07-lars-build-a.jpg": {
+    "mtime": 1789732251.7075424,
+    "seen": 1789733656.3341398,
+    "ast_hash": "78147619ff9d8772e4b09ef49ccc434a",
+    "semantic_hash": ""
+  },
+  "src/assets/sectors/s07-lars-build-b.jpg": {
+    "mtime": 1789732251.7457883,
+    "seen": 1789733656.3341398,
+    "ast_hash": "1cf2b5720ced5fff606c5ff0eb9ea031",
     "semantic_hash": ""
   }
 }

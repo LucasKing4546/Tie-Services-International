@@ -88,5 +88,8 @@
   "86": "z-01.mdx",
   "87": "z-02.mdx",
   "88": "z-03.mdx",
-  "89": "z-04.mdx"
+  "89": "z-04.mdx",
+  "90": "ImageSlot.astro",
+  "91": "astro:assets",
+  "92": "orientationOf"
 }
