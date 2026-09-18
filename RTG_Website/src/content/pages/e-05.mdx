@@ -1,4 +1,72 @@
 ---
 pageId: "E-05"
-draft: true
+eyebrow: "Equipment · Winches"
+lede: "An ROV is only as available as its umbilical winch. The winch is built to accept the slip ring your vehicle needs, not the one we would prefer to sell."
+hero:
+  media:
+    ref: "IMG-E05-A"
+    brief: "Umbilical winch on a skid, integrated A-frame folded alongside."
+  ctas:
+    - { label: "Request the full datasheet", href: "/resources/datasheets/?equipment=ROV%2C%20tow%20and%20umbilical%20winches" }
+    - { label: "Talk to an engineer", href: "/contact/" }
+product:
+  category: "Marine winch"
+  drive: ["Hydraulic"]
+  applications: ["ROV launch and recovery", "Deep tow", "Umbilical handling"]
+  datasheetPageId: "R-01"
+specs:
+  - caption: "3.5 Te WLL, 1,600 m hydraulic umbilical winch — one configuration in this family"
+    rows:
+      - { k: "Working load limit, first layer", v: "3,586 kg" }
+      - { k: "Working load limit, top layer", v: "2,314 kg" }
+      - { k: "Line speed", v: "40 m/min" }
+      - { k: "Cable capacity", v: "1,600 m at 32 mm", note: "umbilical" }
+      - { k: "Static brake holding, first layer", v: "7,510 kg", note: "minimum 1.5 × WLL" }
+      - { k: "Static brake holding, top layer", v: "4,847 kg", note: "minimum 1.5 × WLL" }
+      - { k: "Cable lead-off angle", v: "±15° horizontal, 30° to 60° vertical" }
+      - { k: "Drive", v: "Hydraulic, bi-directional proportional control" }
+      - { k: "Level wind", v: "Electrically actuated, automatic with manual override" }
+      - { k: "Overall envelope L×W×H", v: "1,750 × 2,436 × 1,756 mm", note: "without level wind" }
+      - { k: "Dry weight, without cable", v: "3,677 kg" }
+    footnote: "One real configuration in this family. Every unit is engineered to the vehicle, the umbilical and the deck; full specifications including the general arrangement drawing are issued on request."
+related: ["S-06", "E-07", "E-02"]
+cta:
+  heading: "Tell us the vehicle and the sea state"
+  body: "The tether, the launch window that has to be kept, and whether the system carries people. Those three set the design, and two of them are usually missing from the enquiry."
+  primary: { label: "Talk to an engineer", href: "/contact/" }
+  secondary: { label: "Launch and recovery systems", href: "/equipment/launch-recovery-systems/" }
 ---
+
+## The slip ring boundary, explained
+
+It looks like a gap in the scope. It is the opposite.
+
+The slip ring is where the winch joins the vehicle's data and power
+architecture — fibre count, conductors, voltage, protocol, tether
+termination. All of that is set by the vehicle, not by the drum. A
+supplier who picks it for the buyer is guessing, and the guess does not
+show up in the factory — it shows up at commissioning, or on the first
+dive. A failing slip ring is also one of the few faults that costs a day
+twice: intermittent video and telemetry look like a vehicle problem, so
+the search starts in the wrong place.
+
+So the winch is designed to accept the unit specified. We procure it, fit
+it and function-test it with the machine, so one tested assembly still
+ships from one supplier — we just do not decide which slip ring the ROV
+should be talking through.
+
+## Cable protection
+
+Lebus shell grooving and controlled level wind on every winch in this
+family, because the umbilical is usually worth more than the winch that
+handles it. A plain drum lets rope wander, cross over and crush the layers
+beneath it — the fastest way to destroy an expensive umbilical. A Lebus
+grooved shell forces each turn into a parallel path and moves the
+crossover into a controlled zone; the level wind places the rope rather
+than letting it fall, which matters most at the speeds an ROV deployment
+actually runs at.
+
+The level wind is electrically actuated, PLC controlled, automatic with a
+manual override, and adjustable to accept a range of cable diameters — so
+the same frame can be set up for the umbilical actually being run rather
+than the one the winch happened to ship with.

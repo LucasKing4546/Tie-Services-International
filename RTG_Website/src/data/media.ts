@@ -95,6 +95,10 @@ import e07a from '../assets/equipment/e07-aframe-deployment.jpg';
 import e07b from '../assets/equipment/e07-aframe-dusk.jpg';
 import e10a from '../assets/equipment/e10-tracks-gripping.jpg';
 import e10b from '../assets/equipment/e10-skid-hpu.jpg';
+import e03a from '../assets/equipment/e03-compact-winch.jpg';
+import e04a from '../assets/equipment/e04-reel-winch.jpg';
+import e05a from '../assets/equipment/e05-umbilical-winch.jpg';
+import e06a from '../assets/equipment/e06-mooring-winch.jpg';
 import l00a from '../assets/lifecycle/l00-deck-work.jpg';
 import x01a from '../assets/contact/x01-team.jpg';
 
@@ -132,6 +136,10 @@ export const MEDIA: Record<string, ImageMetadata> = {
   'IMG-E07-B': e07b,
   'IMG-E10-A': e10a,
   'IMG-E10-B': e10b,
+  'IMG-E03-A': e03a,
+  'IMG-E04-A': e04a,
+  'IMG-E05-A': e05a,
+  'IMG-E06-A': e06a,
   'IMG-L00-A': l00a,
   'IMG-X01-A': x01a,
 };
