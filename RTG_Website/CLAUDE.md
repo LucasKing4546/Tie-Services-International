@@ -321,3 +321,141 @@ Write the way the buyer talks, not the way a brochure does.
 - British English throughout: "recognised", "metre", "programme", "tonne".
 - Never claim a certification, approval, client name or figure that is not
   confirmed in `research/`. If it is unconfirmed, mark it and flag it.
+
+---
+
+## 9. Bringing in a content drop (photography, copy, specs)
+
+RTG periodically hands over a folder of real material — camera photography,
+docx write-ups, datasheet PDFs, sometimes video — organised by sector or
+equipment family rather than by page id. This section is the fixed workflow
+for turning that into page content, and §9.3 is the current intake.
+
+### 9.1 How the site actually takes real content
+
+Three content types, three fixed destinations. None of them need a template
+change — every template already renders real content the moment it exists
+and falls back to an honest placeholder until then.
+
+**Body copy.** Every page's `<Gap>...</Gap>` marker in its `.mdx` (see
+`src/components/blocks/Gap.astro`) states in plain English exactly what is
+missing there — run `grep -rn "<Gap>" src/content/pages` to list them all.
+RTG's own docx write-ups already use the same convention (`RTG TO SUPPLY:
+...`, sometimes literally marked `<span class="gap">`), so treat each docx
+as a drop-in draft for the block it names: adapt it to the page's existing
+voice (§8) and structure (its `blocks` list in `src/data/pages.ts`), replace
+the `<Gap>` with the real prose, and leave any part the docx doesn't cover
+as a `<Gap>` still. Never delete a `<Gap>` without replacing it with the
+thing it asked for.
+
+**Photography.** Import the chosen file into `src/assets/<section>/` and
+register it in `src/data/media.ts` under a ref matching what the page
+frontmatter already asks for — sector pages use `IMG-<PAGE-ID>-<letter>`
+(e.g. `IMG-S03-B`), a convention introduced after the original workbook's
+generic `IMG-NN` numbering (§9.2 Image Brief) and now the pattern to follow
+for new pages. `ImageSlot.astro` looks the ref up in `MEDIA` — a hit
+renders the real photo, a miss keeps the drawing-sheet placeholder, so
+adding the entry is the only step; no page or template edit. Before
+registering anything, check it's actually RTG's own: `media.ts`'s file
+header already documents which supplied images read as third-party
+press/stock and are deliberately excluded pending a reverse-image-search
+before launch — apply the same test to anything new, and never include a
+recognisable vessel or client name in the alt text / brief without the
+written permission §5.7 and §8 already require.
+
+**Specs and datasheets.** A docx spec table (e.g. a "Specification Table" or
+numbered datasheet like `DS57`) is the source for the `specs` rows in that
+page's frontmatter — use it to replace `TO SUPPLY` placeholders
+(`grep -rn "TO SUPPLY" src/content/pages`) with real, publishable figures:
+working load limit, line speed, envelope, weight, supply requirements. Pull
+only what §6 allows onto a public page — never drum core diameter, drum
+length or flange diameter, never a part number or make. The PDFs themselves
+are not published anywhere yet: gated datasheet delivery (§5.3) doesn't
+exist, so they stay out of `public/` and are only ever the source for the
+figures above, not a static file to link to.
+
+### 9.2 Steps, per page
+
+1. Find the page id(s) the folder maps to — §9.3 for the current drop, or
+   `pagesByTemplate()` / `src/data/pages.ts` generally.
+2. Open that page's `.mdx`, read its `<Gap>` markers and its `blocks` list
+   in `pages.ts` — that is the outline the new copy has to fill.
+3. Draft the body against that outline from the supplied docx, closing every
+   `<Gap>` the material actually answers.
+4. Pick the photography, import and register it, matching or introducing
+   the `IMG-<PAGE-ID>-<letter>` refs the frontmatter needs.
+5. Pull real figures from the datasheet into `specs`, clearing the
+   `TO SUPPLY` rows that are now answered.
+6. `npm run build && npm run audit` — the Definition of Done in §2 still
+   applies to a content-only change.
+7. Route through `/feature-dev` (§2 Step 2) only if the page needs a
+   structural change (new block type, new template). A straight content
+   backfill into an already-built template doesn't need the full 7-phase
+   workflow, but still gets a final read-through against §6 and §8 before
+   it's called done.
+
+### 9.3 Current intake — folder received 2026-09-18
+
+Source: `Claude website/` (Sectors, Equipment, plus a duplicate
+`RTG_Website_Page_Map.xlsx` — checked cell-for-cell identical to
+`research/RTG_Website_Page_Map.xlsx`, so it changes nothing and needs no
+`npm run pagemap` run).
+
+**Sectors** — text and hero/media photography already exist for all seven
+sector pages (`IMG-S0X-*` registered in `media.ts`); this drop mostly
+confirms or extends that rather than starting from nothing.
+
+| Folder | Page(s) | Already there | This drop adds | Still open |
+|---|---|---|---|---|
+| `Sectors/Intro.docx` | S-00 | Full body, no `<Gap>` | Cross-check only | — |
+| `Sectors/Ocean survey&Hydrography/` | S-01 | Full body + 3 photos wired | Matching docx set (CTAs, proof, technical note) — spot-check against current copy | — |
+| `Sectors/Marine Geotechnical/` | S-02 | Full body + 3 photos wired | Nothing new for the open gap | `<Gap>`: operator/vessel/year for the 3,000 m depth record — needs RTG's direct, clearance-checked answer, not in this folder |
+| `Sectors/Ofshore wind subsea cables/` | S-03 | Draft; hero/media wired | **"The problem of the sector in buyer's words.docx" directly closes the open `<Gap>`** (verified — matches almost word for word); `Cable handling`, `Lead times`, `Self-contained skids`, `Site Investigation` docx cover the rest of the page's blocks | The two images in this folder (`Exsto-illustration…`, `Renewable-with-DBM…`) are third-party stock, not RTG's — don't register them; still needs real RTG photography |
+| `Sectors/Seismic/` | S-04 | Full body + 5 photos wired | Extra photography (7 files) — spare/replacement stock only, no open gap to close | — |
+| `Sectors/Oceanographic Research/` | S-05 | Draft; hero/media wired | No direct "buyer's words" docx here — `Why the winch is part of the instrument`, `The range`, `Slow speed control`, `Institutions served` are source material to draft the `<Gap>` from, not a drop-in | Still needs drafting, not just pasting |
+| `Sectors/Subsea, ROV & Diving/` | S-06 | Full body + 3 photos wired | — | — |
+| `Sectors/Defence & Government/` | S-07 | Draft; 1 photo wired | **"Traceability and documentation.docx" directly closes the open `<Gap>`** (verified match); `Class`, `Programme requirements`, `Security of supply` docx cover the rest; 2 unused real defence-vessel photos available | Extra care on what's shown/named — defence sector, §5.7 permission rule applies in full |
+
+**Equipment** — the hub and most product pages are still bare stubs
+(`draft: true`, frontmatter only, no body). This is where most of the new
+work is.
+
+| Folder | Page(s) | Already there | This drop adds | Still open |
+|---|---|---|---|---|
+| `Equipment/Section introduction.docx`, `Range tiles-Main .docx` | E-00 | 8-line stub, `draft: true` | Both docx map straight onto this page — the range-tiles doc already lists the same six families/URLs as the site nav. Cleanest, lowest-risk page to close first | — |
+| `Equipment/Winches/` (top level) | E-01 | Full body, not draft | — | — |
+| `Equipment/Winches/Geotechnical Coring/` | E-02 | Full body + specs, but hero/media still uses unregistered generic refs (`IMG-05`, `IMG-07`); 2 `TO SUPPLY` spec rows | 11 real photos + 3 datasheets (`DS01`, `DS38`, `DS61`) — enough to register real `IMG-E02-*` photography and fill the envelope/weight specs | — |
+| `Equipment/Winches/Survey Oceanographic/` | E-03 | 4-line stub, `draft: true` | `Applications.docx` + 1 datasheet (`DS83`) + 3 photos | Needs a full page draft, not just a media/spec fix |
+| `Equipment/Winches/Seismic/` | E-04 | 4-line stub, `draft: true` | 1 datasheet (`DS11`) + 7 photos, no copy docx | Needs drafting — cross-reference S-04's sector copy, no dedicated Equipment write-up supplied |
+| `Equipment/Winches/ROV Tow Umbilical/` | E-05 | 4-line stub, `draft: true` | 1 datasheet (`DS63`) + 2 photos, no copy docx | Needs drafting |
+| `Equipment/Winches/Mooring Utility/` | E-06 | 4-line stub, `draft: true` | 2 datasheets (`DS74`, `DS80`) + 7 photos, no copy docx | Needs drafting |
+| `Equipment/Launch & Recovery Systems/` | E-07 | 4-line stub, `draft: true` | **Folder is empty** | Nothing supplied yet — flag to RTG |
+| `Equipment/Cranes & Lifting/` | E-08 | Frontmatter only (`pageId` + `draft: true`), the barest page on the site | `Applications`, `Class and proof load`, `Range` docx (all verified, publication-ready) + 2 datasheets (`DS33`, `DS96`) + 9 photos. The `Range.docx` itself carries its own `RTG TO SUPPLY` marker for capacity/reach ranges per crane family — carry that through as this page's `<Gap>` rather than guessing figures | Build this page from scratch off these three docx |
+| `Equipment/Handling Systems/` (hub level) | E-09 | Frontmatter only, `draft: true` | No hub-level docx supplied | Needs drafting |
+| `Equipment/Handling Systems/Cable pipe tensioners/` | E-10 | 4-line stub, `draft: true` | `Applications`, `Failsafe braking`, `Squeeze vs line tension explained` docx + a `Specification Table.docx` (verified — a complete numbered 10 Te datasheet, ready to drop into `specs` almost as-is) + 2 photos + 1 large datasheet docx (`DS57`, has embedded diagrams — extract text only, don't reuse the diagrams per §6) | Build this page from scratch |
+| `Equipment/Power Units/` | E-11 | 4-line stub, `draft: true` | **Folder is empty** | Nothing supplied yet |
+| `Equipment/Portable & Containerised/` | E-12 | 4-line stub, `draft: true` | **Folder is empty** | Nothing supplied yet |
+| `Equipment/1003040004.JPG` (loose, top level) | — | — | One unsorted general equipment photo | Needs a look before it's assigned anywhere |
+
+**Datasheet PDFs generally** (11 across the folders above: `DS33`, `DS96`,
+`DS57`, `DS74`, `DS80`, `DS63`, `DS11`, `DS83`, `DS01`, `DS61`, `DS38`) —
+each is the source for the numeric rows on its product page's `specs`
+table, never a file to publish directly (§5.3, §6).
+
+**Video** — `Sectors/Marine Geotechnical/RTG_traction_winch_refurbishment
+(1).mp4` is a candidate for L-01's refurbishment content and/or P-06's open
+`<Gap>` asking for a 60–90 s load-test clip — watch it first to see which
+it actually is before assigning it; it isn't an automatic fit for either.
+
+Delete a row from this table once its page is built and closes the gap it
+names, so this section stays a live to-do rather than a permanent record.
+
+## graphify
+
+This project has a knowledge graph at graphify-out/ with god nodes, community structure, and cross-file relationships.
+
+Rules:
+- For codebase questions, first run `graphify query "<question>"` when graphify-out/graph.json exists. Use `graphify path "<A>" "<B>"` for relationships and `graphify explain "<concept>"` for focused concepts. These return a scoped subgraph, usually much smaller than GRAPH_REPORT.md or raw grep output.
+- If graphify-out/wiki/index.md exists, use it for broad navigation instead of raw source browsing.
+- Read graphify-out/GRAPH_REPORT.md only for broad architecture review or when query/path/explain do not surface enough context.
+- After modifying code, run `graphify update .` to keep the graph current (AST-only, no API cost).

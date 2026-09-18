@@ -59,6 +59,11 @@ import s01c from '../assets/sectors/s01-deck-spread.jpg';
 import s02a from '../assets/sectors/s02-pipeline-survey.jpg';
 import s02b from '../assets/sectors/s02-seabed-tool.jpg';
 import s02c from '../assets/sectors/s02-deck-installation.jpg';
+// s03a/s03b are stock illustration, not RTG photography (a wind-turbine/
+// subsea-cable graphic and a generic cable-cross-section render) — per
+// CLAUDE.md §9.3, the 2026-09-18 drop confirms both as third-party. Kept
+// registered for reference but not wired into s-03.mdx; S-03 has no real
+// photography yet and shows the honest placeholder plate until it does.
 import s03a from '../assets/sectors/s03-wind-array.jpg';
 import s03b from '../assets/sectors/s03-cable-work.jpg';
 import s04a from '../assets/sectors/s04-equipment-a.jpg';
@@ -73,6 +78,8 @@ import s06a from '../assets/sectors/s06-equipment-a.png';
 import s06b from '../assets/sectors/s06-rov-launch.webp';
 import s06c from '../assets/sectors/s06-dive-spread.jpg';
 import s07a from '../assets/sectors/s07-naval-vessel.webp';
+import s07b from '../assets/sectors/s07-lars-build-a.jpg';
+import s07c from '../assets/sectors/s07-lars-build-b.jpg';
 
 import homeA from '../assets/home/home-fleet-vessel.jpg';
 import e00a from '../assets/equipment/e00-system-overview.jpg';
@@ -101,6 +108,8 @@ export const MEDIA: Record<string, ImageMetadata> = {
   'IMG-S06-B': s06b,
   'IMG-S06-C': s06c,
   'IMG-S07-A': s07a,
+  'IMG-S07-B': s07b,
+  'IMG-S07-C': s07c,
   'IMG-E00-A': e00a,
   'IMG-L00-A': l00a,
   'IMG-X01-A': x01a,

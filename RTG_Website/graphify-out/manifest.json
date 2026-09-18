@@ -1,0 +1,1628 @@
+{
+  ".claude/settings.json": {
+    "mtime": 1789731382.9944372,
+    "seen": 1789731804.2681696,
+    "ast_hash": "4276caf1448ff4676d099d8d83c7c67b",
+    "semantic_hash": ""
+  },
+  "astro.config.mjs": {
+    "mtime": 1787013703.8930736,
+    "seen": 1789731804.2681696,
+    "ast_hash": "6150b7925432c29dcee5c1dc7ffcf6ab",
+    "semantic_hash": ""
+  },
+  "package.json": {
+    "mtime": 1788255175.1973758,
+    "seen": 1789731804.2681696,
+    "ast_hash": "eaa85ea4da5079560e012fbc2aa32d17",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/assets/js/rtg.js": {
+    "mtime": 1787006557.5368156,
+    "seen": 1789731804.2681696,
+    "ast_hash": "2611f4168dca8d6a1e0a98dd0f4445d6",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/site_build/build.py": {
+    "mtime": 1787006557.879265,
+    "seen": 1789731804.2681696,
+    "ast_hash": "bab517a3cd37358b692c9f3e9db28634",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/site_build/site_data.py": {
+    "mtime": 1787006557.857677,
+    "seen": 1789731804.2681696,
+    "ast_hash": "ab9496a277cd051f0f4557121c9a72e4",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/site_build/validate.py": {
+    "mtime": 1787006557.8687139,
+    "seen": 1789731804.2681696,
+    "ast_hash": "73d18898a439ea4f787ec70b09568455",
+    "semantic_hash": ""
+  },
+  "scripts/audit-protection.mjs": {
+    "mtime": 1787243316.7464383,
+    "seen": 1789731804.2681696,
+    "ast_hash": "6ceb5fc6f02fe2b75294891850a66744",
+    "semantic_hash": ""
+  },
+  "scripts/audit-seo.mjs": {
+    "mtime": 1787013706.9716349,
+    "seen": 1789731804.2681696,
+    "ast_hash": "aa8a7390478b69ab87789c3491b0aa80",
+    "semantic_hash": ""
+  },
+  "scripts/build-page-map.mjs": {
+    "mtime": 1787243316.7474377,
+    "seen": 1789731804.2681696,
+    "ast_hash": "e42ca038db592ce9c0987cd99215d708",
+    "semantic_hash": ""
+  },
+  "scripts/gen-stubs.mjs": {
+    "mtime": 1787243316.7484417,
+    "seen": 1789731804.2681696,
+    "ast_hash": "d06d4b3871f35cbe9711c26bbe7eda5d",
+    "semantic_hash": ""
+  },
+  "scripts/screenshot-pages.mjs": {
+    "mtime": 1787840495.6204505,
+    "seen": 1789731804.2681696,
+    "ast_hash": "8bd00365acf818eb5e1a1815744de899",
+    "semantic_hash": ""
+  },
+  "src/components/blocks/Breadcrumbs.astro": {
+    "mtime": 1787243316.7494438,
+    "seen": 1789731804.2681696,
+    "ast_hash": "b87bc1f0f385320ac438400632610187",
+    "semantic_hash": ""
+  },
+  "src/components/blocks/Card.astro": {
+    "mtime": 1787243316.7494438,
+    "seen": 1789731804.2681696,
+    "ast_hash": "c0b7e5d24c55e4b1848fb37fee4f822f",
+    "semantic_hash": ""
+  },
+  "src/components/blocks/CardGrid.astro": {
+    "mtime": 1787388574.8517861,
+    "seen": 1789731804.2681696,
+    "ast_hash": "3b3fd378164f362ab44f973a5f5fa89d",
+    "semantic_hash": ""
+  },
+  "src/components/blocks/Carousel.astro": {
+    "mtime": 1787388574.8528864,
+    "seen": 1789731804.2681696,
+    "ast_hash": "e61a4592b3ae310d810d523d4726920e",
+    "semantic_hash": ""
+  },
+  "src/components/blocks/ChildCards.astro": {
+    "mtime": 1788527439.6395555,
+    "seen": 1789731804.2681696,
+    "ast_hash": "22f75861125fc19dda9a28b9107b8751",
+    "semantic_hash": ""
+  },
+  "src/components/blocks/CompareSlot.astro": {
+    "mtime": 1788527439.6405566,
+    "seen": 1789731804.2681696,
+    "ast_hash": "f98ff272ba72dc2fb3c7d20b5c141c7c",
+    "semantic_hash": ""
+  },
+  "src/components/blocks/CtaBand.astro": {
+    "mtime": 1787243316.751444,
+    "seen": 1789731804.2681696,
+    "ast_hash": "0649ebed95416f553786bcdaab7fc98b",
+    "semantic_hash": ""
+  },
+  "src/components/blocks/DraftPanel.astro": {
+    "mtime": 1787243316.7524426,
+    "seen": 1789731804.2681696,
+    "ast_hash": "b523e335c2efa5e0b543927799d6ce2a",
+    "semantic_hash": ""
+  },
+  "src/components/blocks/EnquiryForm.astro": {
+    "mtime": 1787243316.7524426,
+    "seen": 1789731804.2681696,
+    "ast_hash": "12463ae8bfc8d07e2d8d7f33caad29cd",
+    "semantic_hash": ""
+  },
+  "src/components/blocks/Faq.astro": {
+    "mtime": 1787243316.75344,
+    "seen": 1789731804.2681696,
+    "ast_hash": "9327ee0a072063dca68ffaf00dbaba91",
+    "semantic_hash": ""
+  },
+  "src/components/blocks/FeatureRow.astro": {
+    "mtime": 1788527439.6405566,
+    "seen": 1789731804.2681696,
+    "ast_hash": "640c28bf9b1b08fb7be8f60b53bf14d0",
+    "semantic_hash": ""
+  },
+  "src/components/blocks/FeaturedCase.astro": {
+    "mtime": 1787243316.75344,
+    "seen": 1789731804.2681696,
+    "ast_hash": "8895279c6e17b98e528f51683e757c43",
+    "semantic_hash": ""
+  },
+  "src/components/blocks/Fig.astro": {
+    "mtime": 1787243316.75444,
+    "seen": 1789731804.2681696,
+    "ast_hash": "bdcf981c9e09b2f948e284938585e99e",
+    "semantic_hash": ""
+  },
+  "src/components/blocks/FormField.astro": {
+    "mtime": 1787243316.7554386,
+    "seen": 1789731804.2681696,
+    "ast_hash": "9ceea67894745c986272fc960ff8d0bb",
+    "semantic_hash": ""
+  },
+  "src/components/blocks/Gap.astro": {
+    "mtime": 1787243316.7554386,
+    "seen": 1789731804.2681696,
+    "ast_hash": "2c3a13f5b2b841130ae7a4a241364c9a",
+    "semantic_hash": ""
+  },
+  "src/components/blocks/ImageSlot.astro": {
+    "mtime": 1788527439.6419885,
+    "seen": 1789731804.2681696,
+    "ast_hash": "62c027ab6cebb16dd5f5224f29469e09",
+    "semantic_hash": ""
+  },
+  "src/components/blocks/IndexRows.astro": {
+    "mtime": 1788527439.6429894,
+    "seen": 1789731804.2681696,
+    "ast_hash": "9bd0e55b0ae76a2c0e1975af043d77c2",
+    "semantic_hash": ""
+  },
+  "src/components/blocks/MediaBand.astro": {
+    "mtime": 1788527439.643988,
+    "seen": 1789731804.2681696,
+    "ast_hash": "169636e8adc9839aa16897a3b660ebd4",
+    "semantic_hash": ""
+  },
+  "src/components/blocks/Note.astro": {
+    "mtime": 1787243316.7564414,
+    "seen": 1789731804.2681696,
+    "ast_hash": "be35cccf5c3e0eddb45b195d03376592",
+    "semantic_hash": ""
+  },
+  "src/components/blocks/PageEnding.astro": {
+    "mtime": 1787388574.8538923,
+    "seen": 1789731804.2681696,
+    "ast_hash": "23c723a60d7aa6086921c85b40c85bff",
+    "semantic_hash": ""
+  },
+  "src/components/blocks/PageHero.astro": {
+    "mtime": 1788527439.6449883,
+    "seen": 1789731804.2681696,
+    "ast_hash": "bce9d20ca8fe8d6a5e3c885233d42d95",
+    "semantic_hash": ""
+  },
+  "src/components/blocks/PinnedStage.astro": {
+    "mtime": 1788527439.6449883,
+    "seen": 1789731804.2681696,
+    "ast_hash": "8b2639240c3b5d0f53745cf5c29aeabe",
+    "semantic_hash": ""
+  },
+  "src/components/blocks/PinnedStages.astro": {
+    "mtime": 1788527439.6459868,
+    "seen": 1789731804.2681696,
+    "ast_hash": "78f53955d93ffe42deb9387c45758b4b",
+    "semantic_hash": ""
+  },
+  "src/components/blocks/ProofBar.astro": {
+    "mtime": 1787840495.6228328,
+    "seen": 1789731804.2681696,
+    "ast_hash": "038e1d831bba4b81cd31d41bf87fdfb2",
+    "semantic_hash": ""
+  },
+  "src/components/blocks/Prose.astro": {
+    "mtime": 1788527439.6469882,
+    "seen": 1789731804.2681696,
+    "ast_hash": "dd85797bf24ddd53c3281c4f712aca76",
+    "semantic_hash": ""
+  },
+  "src/components/blocks/Quote.astro": {
+    "mtime": 1787243316.7589478,
+    "seen": 1789731804.2681696,
+    "ast_hash": "a9c1309a0db70eee722255c1ecf97b27",
+    "semantic_hash": ""
+  },
+  "src/components/blocks/ScrollTrack.astro": {
+    "mtime": 1787840495.6228328,
+    "seen": 1789731804.2681696,
+    "ast_hash": "c2374e6aebc95878665f1546db28d794",
+    "semantic_hash": ""
+  },
+  "src/components/blocks/Section.astro": {
+    "mtime": 1787243316.760514,
+    "seen": 1789731804.2681696,
+    "ast_hash": "cf770facea37914ca8b1ade183949460",
+    "semantic_hash": ""
+  },
+  "src/components/blocks/SectionHead.astro": {
+    "mtime": 1787243316.760514,
+    "seen": 1789731804.2681696,
+    "ast_hash": "3e958d621262a17c0400de2bfd971897",
+    "semantic_hash": ""
+  },
+  "src/components/blocks/Skeleton.astro": {
+    "mtime": 1788527439.6479867,
+    "seen": 1789731804.2681696,
+    "ast_hash": "5dde49d99f926ef59d3e84dec5352f52",
+    "semantic_hash": ""
+  },
+  "src/components/blocks/SpecTable.astro": {
+    "mtime": 1787243316.7620392,
+    "seen": 1789731804.2681696,
+    "ast_hash": "cb717953f960e34f6b1bd6a746d903df",
+    "semantic_hash": ""
+  },
+  "src/components/blocks/StatsStrip.astro": {
+    "mtime": 1787840495.6242971,
+    "seen": 1789731804.2681696,
+    "ast_hash": "616a632e2188ebf0a92499f788cc5736",
+    "semantic_hash": ""
+  },
+  "src/components/blocks/StepList.astro": {
+    "mtime": 1787243316.7626503,
+    "seen": 1789731804.2681696,
+    "ast_hash": "bb3f6c7fc2c23025204c59e5210199b0",
+    "semantic_hash": ""
+  },
+  "src/components/blocks/TagList.astro": {
+    "mtime": 1787243316.7626503,
+    "seen": 1789731804.2681696,
+    "ast_hash": "f10496a5d8465b0c39bab86b536a0f3b",
+    "semantic_hash": ""
+  },
+  "src/components/blocks/TierCard.astro": {
+    "mtime": 1787840495.6242971,
+    "seen": 1789731804.2681696,
+    "ast_hash": "468884528736933725b9015c78cf8ce4",
+    "semantic_hash": ""
+  },
+  "src/components/home/EquipmentGrid.astro": {
+    "mtime": 1787243316.7636592,
+    "seen": 1789731804.2681696,
+    "ast_hash": "fa7db7a7b624e77a73e70d6f2374be62",
+    "semantic_hash": ""
+  },
+  "src/components/home/Fleet.astro": {
+    "mtime": 1788527439.6479867,
+    "seen": 1789731804.2681696,
+    "ast_hash": "6fed940478b35ced9b0691bb9d6b28e5",
+    "semantic_hash": ""
+  },
+  "src/components/home/Hero.astro": {
+    "mtime": 1787243316.7636592,
+    "seen": 1789731804.2681696,
+    "ast_hash": "e1d43bbb75ce731cc8bb03b8dcb9e6c6",
+    "semantic_hash": ""
+  },
+  "src/components/home/LifecycleSteps.astro": {
+    "mtime": 1787013742.341876,
+    "seen": 1789731804.2681696,
+    "ast_hash": "1ed4e088ac0ea67ea1ad8c99b1458643",
+    "semantic_hash": ""
+  },
+  "src/components/home/MachineLift.astro": {
+    "mtime": 1787013741.0671084,
+    "seen": 1789731804.2681696,
+    "ast_hash": "a6797c7d1c247d9b7cf0bd6d06d83933",
+    "semantic_hash": ""
+  },
+  "src/components/home/Marquee.astro": {
+    "mtime": 1787013738.9094067,
+    "seen": 1789731804.2681696,
+    "ast_hash": "f2af89f6c69abd45e79341d2c7dd2cc5",
+    "semantic_hash": ""
+  },
+  "src/components/home/ProofCase.astro": {
+    "mtime": 1787013741.9650714,
+    "seen": 1789731804.2681696,
+    "ast_hash": "a2b98647323fbccd010567cc6cfcc54a",
+    "semantic_hash": ""
+  },
+  "src/components/home/SectorTrack.astro": {
+    "mtime": 1787013740.6807756,
+    "seen": 1789731804.2681696,
+    "ast_hash": "59bc5a8a56dd6a8f1ba18680093b106b",
+    "semantic_hash": ""
+  },
+  "src/components/home/Statement.astro": {
+    "mtime": 1787013739.328969,
+    "seen": 1789731804.2681696,
+    "ast_hash": "f9548e9784bf193154e29e7c54b59ac0",
+    "semantic_hash": ""
+  },
+  "src/components/home/Stats.astro": {
+    "mtime": 1787243316.764659,
+    "seen": 1789731804.2681696,
+    "ast_hash": "f597f8e1eb0521ca61b51cb3c5d84102",
+    "semantic_hash": ""
+  },
+  "src/components/home/TierLadder.astro": {
+    "mtime": 1787013740.2433212,
+    "seen": 1789731804.2681696,
+    "ast_hash": "10c3792647665e867ef532874c65b138",
+    "semantic_hash": ""
+  },
+  "src/components/site/Footer.astro": {
+    "mtime": 1788292874.789635,
+    "seen": 1789731804.2681696,
+    "ast_hash": "056e140e06f820f76b938469a9a04541",
+    "semantic_hash": ""
+  },
+  "src/components/site/Header.astro": {
+    "mtime": 1787840495.6259067,
+    "seen": 1789731804.2681696,
+    "ast_hash": "ba45a1667a36ac547760783af4ecc6c6",
+    "semantic_hash": ""
+  },
+  "src/components/templates/About.astro": {
+    "mtime": 1788527439.6489878,
+    "seen": 1789731804.2681696,
+    "ast_hash": "e6c43a582464ed6ce7767396e0ba41d7",
+    "semantic_hash": ""
+  },
+  "src/components/templates/Article.astro": {
+    "mtime": 1788527439.649988,
+    "seen": 1789731804.2681696,
+    "ast_hash": "6aaa74243d135365c1f8f9b58f322b77",
+    "semantic_hash": ""
+  },
+  "src/components/templates/Careers.astro": {
+    "mtime": 1788527439.6514933,
+    "seen": 1789731804.2681696,
+    "ast_hash": "fa3fbbc4d8bdd7c98bb310f8e07a8d11",
+    "semantic_hash": ""
+  },
+  "src/components/templates/Case.astro": {
+    "mtime": 1788527439.6514933,
+    "seen": 1789731804.2681696,
+    "ast_hash": "8e757846445aa29a49eb998a097704d0",
+    "semantic_hash": ""
+  },
+  "src/components/templates/Contact.astro": {
+    "mtime": 1788527439.6530528,
+    "seen": 1789731804.2681696,
+    "ast_hash": "3c617c0b019b3dca70f46d707b6e678b",
+    "semantic_hash": ""
+  },
+  "src/components/templates/Fallback.astro": {
+    "mtime": 1788527439.6540596,
+    "seen": 1789731804.2681696,
+    "ast_hash": "167793144f470837680202665164fb14",
+    "semantic_hash": ""
+  },
+  "src/components/templates/Form.astro": {
+    "mtime": 1788527439.6550596,
+    "seen": 1789731804.2681696,
+    "ast_hash": "76d56dce735cfad5fdd9075839f65330",
+    "semantic_hash": ""
+  },
+  "src/components/templates/Guide.astro": {
+    "mtime": 1788527439.6560597,
+    "seen": 1789731804.2681696,
+    "ast_hash": "d04b0f8c3c43b168140f76a2ddfc955d",
+    "semantic_hash": ""
+  },
+  "src/components/templates/Hub.astro": {
+    "mtime": 1788527439.65706,
+    "seen": 1789731804.2681696,
+    "ast_hash": "06a0cc7e35a67d7c492af46f08798724",
+    "semantic_hash": ""
+  },
+  "src/components/templates/Ladder.astro": {
+    "mtime": 1788527439.65706,
+    "seen": 1789731804.2681696,
+    "ast_hash": "e7f4c43f53269af8c24e354502be2ee0",
+    "semantic_hash": ""
+  },
+  "src/components/templates/Legal.astro": {
+    "mtime": 1788527439.6580598,
+    "seen": 1789731804.2681696,
+    "ast_hash": "e532a3e3f4e449ca245feb2daa287104",
+    "semantic_hash": ""
+  },
+  "src/components/templates/Policy.astro": {
+    "mtime": 1788527439.6590588,
+    "seen": 1789731804.2681696,
+    "ast_hash": "d7405fabb5364e549ab694ecb72a0d78",
+    "semantic_hash": ""
+  },
+  "src/components/templates/Product.astro": {
+    "mtime": 1788527439.6600611,
+    "seen": 1789731804.2681696,
+    "ast_hash": "dfc8fafd00bf467adebc130c1e79a5ed",
+    "semantic_hash": ""
+  },
+  "src/components/templates/Proof.astro": {
+    "mtime": 1788527439.6610622,
+    "seen": 1789731804.2681696,
+    "ast_hash": "fb43ef1af0ebc771524d10369f24c77c",
+    "semantic_hash": ""
+  },
+  "src/components/templates/Sector.astro": {
+    "mtime": 1788527439.6620607,
+    "seen": 1789731804.2681696,
+    "ast_hash": "9f7187700a0d9e835b7a9e8e6000c78f",
+    "semantic_hash": ""
+  },
+  "src/components/templates/Service.astro": {
+    "mtime": 1788527439.6620607,
+    "seen": 1789731804.2681696,
+    "ast_hash": "f05651d86658433027331b6628239868",
+    "semantic_hash": ""
+  },
+  "src/components/templates/Tier.astro": {
+    "mtime": 1788527439.66306,
+    "seen": 1789731804.2681696,
+    "ast_hash": "25e61e9cab912bd8ec27db72b4babe6f",
+    "semantic_hash": ""
+  },
+  "src/content.config.ts": {
+    "mtime": 1787388574.861526,
+    "seen": 1789731804.2681696,
+    "ast_hash": "92dc390ebb6c408a7603d100b88e901b",
+    "semantic_hash": ""
+  },
+  "src/data/home.ts": {
+    "mtime": 1787387528.2253852,
+    "seen": 1789731804.2681696,
+    "ast_hash": "c36f2ab8c4f11cde6fab10a13be67e77",
+    "semantic_hash": ""
+  },
+  "src/data/media.ts": {
+    "mtime": 1788527439.6761248,
+    "seen": 1789731804.2681696,
+    "ast_hash": "538e27557e8993e132b0404a233e0a9a",
+    "semantic_hash": ""
+  },
+  "src/data/pages-extra.ts": {
+    "mtime": 1787243316.8169575,
+    "seen": 1789731804.2681696,
+    "ast_hash": "2b67c5db271353409dfdfdbf49ce94ad",
+    "semantic_hash": ""
+  },
+  "src/data/pages.ts": {
+    "mtime": 1787388574.8669765,
+    "seen": 1789731804.2681696,
+    "ast_hash": "cc933c16b55f849f67b5a658d4f27563",
+    "semantic_hash": ""
+  },
+  "src/data/site.js": {
+    "mtime": 1787388574.8682451,
+    "seen": 1789731804.2681696,
+    "ast_hash": "19ae9424eaa641c2cd931761b6316ac2",
+    "semantic_hash": ""
+  },
+  "src/layouts/Base.astro": {
+    "mtime": 1787388574.8682451,
+    "seen": 1789731804.2681696,
+    "ast_hash": "456606217a1240540420e4f606870ab6",
+    "semantic_hash": ""
+  },
+  "src/lib/blocks.ts": {
+    "mtime": 1787388574.8682451,
+    "seen": 1789731804.2681696,
+    "ast_hash": "f1ff4bca1057044b2115a913f8dc94e8",
+    "semantic_hash": ""
+  },
+  "src/lib/content.ts": {
+    "mtime": 1788527439.6771235,
+    "seen": 1789731804.2681696,
+    "ast_hash": "e3087312079c10ebcc9a7fb35b1fae24",
+    "semantic_hash": ""
+  },
+  "src/lib/forms.ts": {
+    "mtime": 1787388574.869749,
+    "seen": 1789731804.2681696,
+    "ast_hash": "85a838830f4183de7a6aa0c872b331f1",
+    "semantic_hash": ""
+  },
+  "src/lib/home-scroll.ts": {
+    "mtime": 1788527439.6781218,
+    "seen": 1789731804.2681696,
+    "ast_hash": "a5a69d9371e27db359abbdb1a2d1fc99",
+    "semantic_hash": ""
+  },
+  "src/lib/mdx.ts": {
+    "mtime": 1787243316.8219564,
+    "seen": 1789731804.2681696,
+    "ast_hash": "9659be098dd2743683b88565eca59665",
+    "semantic_hash": ""
+  },
+  "src/lib/motion.ts": {
+    "mtime": 1788527439.6791234,
+    "seen": 1789731804.2681696,
+    "ast_hash": "13a71f632e7172e608c99e13457cff4d",
+    "semantic_hash": ""
+  },
+  "src/lib/page.ts": {
+    "mtime": 1787243316.8229568,
+    "seen": 1789731804.2681696,
+    "ast_hash": "e18c7c209fe61931176f0f403bde21c0",
+    "semantic_hash": ""
+  },
+  "src/lib/rtg3d.ts": {
+    "mtime": 1788527439.680124,
+    "seen": 1789731804.2681696,
+    "ast_hash": "6a8360abe048bb72f1cedc20d4a32f9a",
+    "semantic_hash": ""
+  },
+  "src/lib/seo.ts": {
+    "mtime": 1787244522.4236932,
+    "seen": 1789731804.2681696,
+    "ast_hash": "b61eabd17e09f5dc779fead0768b3fa4",
+    "semantic_hash": ""
+  },
+  "src/pages/404.astro": {
+    "mtime": 1787243316.8249564,
+    "seen": 1789731804.2681696,
+    "ast_hash": "86a67c30ab9fb226891ee7bd49722ae6",
+    "semantic_hash": ""
+  },
+  "src/pages/[...slug].astro": {
+    "mtime": 1787388574.8707542,
+    "seen": 1789731804.2681696,
+    "ast_hash": "303e90fbf2513472350c2bf1bf87009b",
+    "semantic_hash": ""
+  },
+  "src/pages/index.astro": {
+    "mtime": 1788527439.6811244,
+    "seen": 1789731804.2681696,
+    "ast_hash": "911aa7aa4db19c96cba4116f0dad2e81",
+    "semantic_hash": ""
+  },
+  "tsconfig.json": {
+    "mtime": 1787013704.3625069,
+    "seen": 1789731804.2681696,
+    "ast_hash": "3d01deb9e2e36f6abd5294f767d64c80",
+    "semantic_hash": ""
+  },
+  "CLAUDE.md": {
+    "mtime": 1789731382.9716082,
+    "seen": 1789731804.2681696,
+    "ast_hash": "d1c13ef2ed070da64b10947122184cd0",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1787013702.8849492,
+    "seen": 1789731804.2681696,
+    "ast_hash": "8913a2fd0c3db04153f9757541d9f208",
+    "semantic_hash": ""
+  },
+  "docs/design-language.md": {
+    "mtime": 1788527439.4446487,
+    "seen": 1789731804.2681696,
+    "ast_hash": "f61609477b4e8293c54dc1dd1b7a5acb",
+    "semantic_hash": ""
+  },
+  "docs/templates.md": {
+    "mtime": 1787013705.2259238,
+    "seen": 1789731804.2681696,
+    "ast_hash": "ecfef6dc1f604142764e970787c14503",
+    "semantic_hash": ""
+  },
+  "public/robots.txt": {
+    "mtime": 1787013706.1619432,
+    "seen": 1789731804.2681696,
+    "ast_hash": "1e914e83fd61cb84dba3f48096d0a898",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/README.md": {
+    "mtime": 1787006557.3631637,
+    "seen": 1789731804.2681696,
+    "ast_hash": "46b33ce702a256531544565e113c7872",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/about/careers/index.html": {
+    "mtime": 1787006558.3985784,
+    "seen": 1789731804.2681696,
+    "ast_hash": "7fae5f9de4ab45322bc56448dc497b14",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/about/index.html": {
+    "mtime": 1787006558.3688402,
+    "seen": 1789731804.2681696,
+    "ast_hash": "8121ea55d5d3a543d305e22430117789",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/about/people-facility/index.html": {
+    "mtime": 1787006558.4243536,
+    "seen": 1789731804.2681696,
+    "ast_hash": "a9e5fe22124f225fc27cea47e50e76fd",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/about/qhse/index.html": {
+    "mtime": 1787006558.3824427,
+    "seen": 1789731804.2681696,
+    "ast_hash": "b08ee6328080d3cf90a1be99e4e04bec",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/about/sustainability/index.html": {
+    "mtime": 1787006558.4112449,
+    "seen": 1789731804.2681696,
+    "ast_hash": "01136eef93c51c91547b7c15b2a2a63c",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/accessibility/index.html": {
+    "mtime": 1787006557.5021405,
+    "seen": 1789731804.2681696,
+    "ast_hash": "b1d09a09b2d025ac3fc1de3fdc6150d2",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/contact/aftersales/index.html": {
+    "mtime": 1787006557.82099,
+    "seen": 1789731804.2681696,
+    "ast_hash": "ddbaa835ff6976675dd7145d2dfbb7ec",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/contact/agents/index.html": {
+    "mtime": 1787006557.810849,
+    "seen": 1789731804.2681696,
+    "ast_hash": "2fa2aadbe89ce7ad51e0ee17b680f95d",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/contact/index.html": {
+    "mtime": 1787006557.8023007,
+    "seen": 1789731804.2681696,
+    "ast_hash": "5dffa9eeca1f6aaf6ef28f13d3c04a1f",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/contact/request-a-quotation/index.html": {
+    "mtime": 1787006557.836567,
+    "seen": 1789731804.2681696,
+    "ast_hash": "edf4c5240fc5362e2a50b3a3aac7fb5f",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/contract-manufacturing/automation-test-commissioning/index.html": {
+    "mtime": 1787006557.7569458,
+    "seen": 1789731804.2681696,
+    "ast_hash": "bdf8401c1ae5762f2bfbf331b352689c",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/contract-manufacturing/bespoke-design/index.html": {
+    "mtime": 1787006557.735271,
+    "seen": 1789731804.2681696,
+    "ast_hash": "8f8358778cbbb64e775003c47973be5f",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/contract-manufacturing/capacity-lead-times/index.html": {
+    "mtime": 1787006557.7131562,
+    "seen": 1789731804.2681696,
+    "ast_hash": "e2227b39b8575f84c1854eca2684200d",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/contract-manufacturing/eu-origin-fabrication/index.html": {
+    "mtime": 1787006557.7685666,
+    "seen": 1789731804.2681696,
+    "ast_hash": "4e3ea857270bde934766bdf6c66cad74",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/contract-manufacturing/hydraulic-electrical-build/index.html": {
+    "mtime": 1787006557.790186,
+    "seen": 1789731804.2681696,
+    "ast_hash": "89d5a0ce90fde40e766d8b1bc6fb840e",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/contract-manufacturing/index.html": {
+    "mtime": 1787006557.6869519,
+    "seen": 1789731804.2681696,
+    "ast_hash": "9160175986da644aba6903d48547533f",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/contract-manufacturing/mechanical-assembly/index.html": {
+    "mtime": 1787006557.7791278,
+    "seen": 1789731804.2681696,
+    "ast_hash": "964766c4f0d1f34adb35dd6f683a0b90",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/contract-manufacturing/send-documentation/index.html": {
+    "mtime": 1787006557.7453222,
+    "seen": 1789731804.2681696,
+    "ast_hash": "41007f31417a37130e395c9650429843",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/contract-manufacturing/structural-fabrication/index.html": {
+    "mtime": 1787006557.725208,
+    "seen": 1789731804.2681696,
+    "ast_hash": "8a6f3350196adf7a1b9e0a9d998eaeac",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/contract-manufacturing/your-ip-protected/index.html": {
+    "mtime": 1787006557.700074,
+    "seen": 1789731804.2681696,
+    "ast_hash": "891c3ee8b5b342a7f6085c24ed0b02c8",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/cookies/index.html": {
+    "mtime": 1787006557.9053395,
+    "seen": 1789731804.2681696,
+    "ast_hash": "3e3e7f4d7498e68a65d5fa23da23ee73",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/equipment/cranes-lifting/index.html": {
+    "mtime": 1787006558.2383833,
+    "seen": 1789731804.2681696,
+    "ast_hash": "16bacb98d21b0f9fb3bf60b493a6e2f7",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/equipment/handling-systems/cable-pipe-tensioners/index.html": {
+    "mtime": 1787006558.3486562,
+    "seen": 1789731804.2681696,
+    "ast_hash": "85e8f7641f7401ea612e152d2a7f6942",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/equipment/handling-systems/index.html": {
+    "mtime": 1787006558.3313975,
+    "seen": 1789731804.2681696,
+    "ast_hash": "17d41b49d405f783f58cfbefa9ecb511",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/equipment/index.html": {
+    "mtime": 1787006558.117788,
+    "seen": 1789731804.2681696,
+    "ast_hash": "dee404cf57b0c8043369ee94bf1e3be0",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/equipment/launch-recovery-systems/index.html": {
+    "mtime": 1787006558.2812219,
+    "seen": 1789731804.2681696,
+    "ast_hash": "8da44e0e916718962e691b8b6f1e109e",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/equipment/portable-containerised/index.html": {
+    "mtime": 1787006558.2648058,
+    "seen": 1789731804.2681696,
+    "ast_hash": "6afdf48d1f2cfd6d0aaeee0dffcf780e",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/equipment/power-units/index.html": {
+    "mtime": 1787006558.2915637,
+    "seen": 1789731804.2681696,
+    "ast_hash": "8edff094cd4162b0057a19ab30d8eb96",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/equipment/winches/geotechnical-coring/index.html": {
+    "mtime": 1787006558.1420274,
+    "seen": 1789731804.2681696,
+    "ast_hash": "1d756468eb0163553878e7e4cbcb79f6",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/equipment/winches/index.html": {
+    "mtime": 1787006558.131395,
+    "seen": 1789731804.2681696,
+    "ast_hash": "fd997c0c375c0b02e5f7b15db8444ac4",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/equipment/winches/mooring-utility/index.html": {
+    "mtime": 1787006558.154073,
+    "seen": 1789731804.2681696,
+    "ast_hash": "fa9d2e0700e2071b49c00f081fc72602",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/equipment/winches/rov-tow-umbilical/index.html": {
+    "mtime": 1787006558.1688757,
+    "seen": 1789731804.2681696,
+    "ast_hash": "80718b9e8505ee761d153d2c8f32e272",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/equipment/winches/seismic/index.html": {
+    "mtime": 1787006558.1840947,
+    "seen": 1789731804.2681696,
+    "ast_hash": "7e5cb61a5acb2427dae6a7dcd95251d7",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/equipment/winches/survey-oceanographic/index.html": {
+    "mtime": 1787006558.204084,
+    "seen": 1789731804.2681696,
+    "ast_hash": "145abaaf4f5f140583294ff9edf0636a",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/index.html": {
+    "mtime": 1787006557.3792248,
+    "seen": 1789731804.2681696,
+    "ast_hash": "0dc0f53734ded1d4d0078aea10c102a9",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/lifecycle/condition-assessment/index.html": {
+    "mtime": 1787006558.4645848,
+    "seen": 1789731804.2681696,
+    "ast_hash": "7b8fb5af74411d41f14d95a652802306",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/lifecycle/index.html": {
+    "mtime": 1787006558.4387407,
+    "seen": 1789731804.2681696,
+    "ast_hash": "6f69d58f96dce1390908da1a00216fad",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/lifecycle/recertification-class-renewal/index.html": {
+    "mtime": 1787006558.4945724,
+    "seen": 1789731804.2681696,
+    "ast_hash": "db5b90045ec57bb9ff17fb29f19e681b",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/lifecycle/refurbish-upgrade-or-replace/index.html": {
+    "mtime": 1787006558.5084555,
+    "seen": 1789731804.2681696,
+    "ast_hash": "392ba32fe449bdc41580503333899a5b",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/lifecycle/refurbishment-upgrade/index.html": {
+    "mtime": 1787006558.4820008,
+    "seen": 1789731804.2681696,
+    "ast_hash": "82cfbdc84809b65946193213462c0b36",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/lifecycle/spares-support/index.html": {
+    "mtime": 1787006558.4514513,
+    "seen": 1789731804.2681696,
+    "ast_hash": "d592f2367c74b5b1b2009e2c2bddbfc1",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/privacy/index.html": {
+    "mtime": 1787006558.106222,
+    "seen": 1789731804.2681696,
+    "ast_hash": "4bde7f375ee75e8f4d92ddbaf54b7ba7",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/proof/case-studies/contract-manufacturing/index.html": {
+    "mtime": 1787006558.029286,
+    "seen": 1789731804.2681696,
+    "ast_hash": "d6381491216f4b3325fb819aec7b5578",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/proof/case-studies/fleet-standardisation/index.html": {
+    "mtime": 1787006557.9950745,
+    "seen": 1789731804.2681696,
+    "ast_hash": "f4268e24fd6940a06169468a822dbbc7",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/proof/case-studies/index.html": {
+    "mtime": 1787006557.9788077,
+    "seen": 1789731804.2681696,
+    "ast_hash": "9cef96a90cc6ed16dcd84d035462e0df",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/proof/case-studies/newbuild-yard-programme/index.html": {
+    "mtime": 1787006558.0424006,
+    "seen": 1789731804.2681696,
+    "ast_hash": "438939deaa86aab6b095df5b08c422e2",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/proof/case-studies/traction-winch-refurbishment/index.html": {
+    "mtime": 1787006558.015225,
+    "seen": 1789731804.2681696,
+    "ast_hash": "9c7cded0484767bc3ba87f6fef5f5e9b",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/proof/index.html": {
+    "mtime": 1787006557.9169514,
+    "seen": 1789731804.2681696,
+    "ast_hash": "f6cb18b29f30fb32996f0babc53319d9",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/proof/references/index.html": {
+    "mtime": 1787006557.9330914,
+    "seen": 1789731804.2681696,
+    "ast_hash": "2e3d0fa14f5dd9afe23f195d6b177bb0",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/proof/test-facility/index.html": {
+    "mtime": 1787006557.9652414,
+    "seen": 1789731804.2681696,
+    "ast_hash": "95e6745bccf3fe0cb706535d38750976",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/proof/testimonials/index.html": {
+    "mtime": 1787006557.9491704,
+    "seen": 1789731804.2681696,
+    "ast_hash": "fad5b02739ecacdb5839b70285976776",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/redirects-apache.txt": {
+    "mtime": 1787006557.4118607,
+    "seen": 1789731804.2681696,
+    "ast_hash": "8e180b95af0402901021a0edb1ba3b27",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/redirects-nginx.txt": {
+    "mtime": 1787006557.403294,
+    "seen": 1789731804.2681696,
+    "ast_hash": "881816bd302e3e4c1b1f99c0f135c659",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/resources/catalogues/index.html": {
+    "mtime": 1787006558.0821514,
+    "seen": 1789731804.2681696,
+    "ast_hash": "1bdbed4e40abb3f92ea7ee88b3c16e10",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/resources/datasheets/index.html": {
+    "mtime": 1787006558.0951862,
+    "seen": 1789731804.2681696,
+    "ast_hash": "77c2ffa437086ab828c43556bc75e5e5",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/resources/news/index.html": {
+    "mtime": 1787006558.067537,
+    "seen": 1789731804.2681696,
+    "ast_hash": "96501f8fc82830f989ab65cabd852a79",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/resources/technical-notes/index.html": {
+    "mtime": 1787006558.056957,
+    "seen": 1789731804.2681696,
+    "ast_hash": "7be2016b1e592f1c872149928dcf7939",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/robots.txt": {
+    "mtime": 1787006557.4210176,
+    "seen": 1789731804.2681696,
+    "ast_hash": "7aa24035ae1574d55aa7c57a5128e149",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/sectors/defence-government/index.html": {
+    "mtime": 1787006557.6153243,
+    "seen": 1789731804.2681696,
+    "ast_hash": "43cf12cbe74a1d3650f9593a72297f8a",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/sectors/index.html": {
+    "mtime": 1787006557.5600302,
+    "seen": 1789731804.2681696,
+    "ast_hash": "7f2586fe77240b6e5e760665a42f0d4e",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/sectors/marine-geotechnical/index.html": {
+    "mtime": 1787006557.65518,
+    "seen": 1789731804.2681696,
+    "ast_hash": "05eb52f76448d86af0c1e3fa68adae88",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/sectors/ocean-survey-hydrography/index.html": {
+    "mtime": 1787006557.6652458,
+    "seen": 1789731804.2681696,
+    "ast_hash": "d2cd5e55174dd45a63494b115d6b6997",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/sectors/oceanographic-research/index.html": {
+    "mtime": 1787006557.642131,
+    "seen": 1789731804.2681696,
+    "ast_hash": "e45c011ff8f8132c4f10253b01ca08ae",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/sectors/offshore-wind-subsea-cables/index.html": {
+    "mtime": 1787006557.5786448,
+    "seen": 1789731804.2681696,
+    "ast_hash": "fa1a8b7570e98d380121ee27aab5162f",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/sectors/seismic/index.html": {
+    "mtime": 1787006557.676312,
+    "seen": 1789731804.2681696,
+    "ast_hash": "642afa1ac2ef06629d534c4793f1a81f",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/sectors/subsea-rov-diving/index.html": {
+    "mtime": 1787006557.5992513,
+    "seen": 1789731804.2681696,
+    "ast_hash": "a201568c0b159c4a6564863da8292fd4",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/terms/index.html": {
+    "mtime": 1787006557.8913054,
+    "seen": 1789731804.2681696,
+    "ast_hash": "651ce7d09b70fe0546be052685e29b11",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/yards-integrators/certifications-approvals/index.html": {
+    "mtime": 1787006557.4404817,
+    "seen": 1789731804.2681696,
+    "ast_hash": "cbd270d6c6083acffcf811d5b3bfe302",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/yards-integrators/deck-equipment-packages/index.html": {
+    "mtime": 1787006557.4602354,
+    "seen": 1789731804.2681696,
+    "ast_hash": "501d6b90f7dac90462c722e7db2b6c8d",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/yards-integrators/index.html": {
+    "mtime": 1787006557.4311166,
+    "seen": 1789731804.2681696,
+    "ast_hash": "06fd9b3721db93bf129611db3d7629b8",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/yards-integrators/structural-subcontracting/index.html": {
+    "mtime": 1787006557.47328,
+    "seen": 1789731804.2681696,
+    "ast_hash": "0a2d5f143426f6f7edd3d936df046cf1",
+    "semantic_hash": ""
+  },
+  "research/rtg-website/rtg-website/yards-integrators/vendor-qualification-pack/index.html": {
+    "mtime": 1787006557.4900966,
+    "seen": 1789731804.2681696,
+    "ast_hash": "afdfcbfeb082be4d128d8fe3412f4d81",
+    "semantic_hash": ""
+  },
+  "src/content/pages/a-01.mdx": {
+    "mtime": 1787388574.861526,
+    "seen": 1789731804.2681696,
+    "ast_hash": "0396b35fe287a6fac4e241ebc950464f",
+    "semantic_hash": ""
+  },
+  "src/content/pages/a-02.mdx": {
+    "mtime": 1787388574.861526,
+    "seen": 1789731804.2681696,
+    "ast_hash": "f79c5304095cf4bd8ff36c0b6d8fcd51",
+    "semantic_hash": ""
+  },
+  "src/content/pages/a-03.mdx": {
+    "mtime": 1787388574.8629718,
+    "seen": 1789731804.2681696,
+    "ast_hash": "3d2324adea81786444a58d3aa873f87e",
+    "semantic_hash": ""
+  },
+  "src/content/pages/a-04.mdx": {
+    "mtime": 1787388574.8629718,
+    "seen": 1789731804.2681696,
+    "ast_hash": "0b949ee6dd160b234dfa82c0482cce93",
+    "semantic_hash": ""
+  },
+  "src/content/pages/a-05.mdx": {
+    "mtime": 1787388574.8639777,
+    "seen": 1789731804.2681696,
+    "ast_hash": "3979d1c6ed4d2e648c17941e8ddfbb83",
+    "semantic_hash": ""
+  },
+  "src/content/pages/c-00.mdx": {
+    "mtime": 1787388574.8649776,
+    "seen": 1789731804.2681696,
+    "ast_hash": "57c769bfe1bf6b549f1d10bdae7a10ee",
+    "semantic_hash": ""
+  },
+  "src/content/pages/c-01.mdx": {
+    "mtime": 1787243316.7794693,
+    "seen": 1789731804.2681696,
+    "ast_hash": "68a57905ce5fcfcbc91a60db9e64f2b6",
+    "semantic_hash": ""
+  },
+  "src/content/pages/c-02.mdx": {
+    "mtime": 1787243316.7800117,
+    "seen": 1789731804.2681696,
+    "ast_hash": "fa587432722fe743d76c34cbefd94aca",
+    "semantic_hash": ""
+  },
+  "src/content/pages/c-03.mdx": {
+    "mtime": 1787243316.7800117,
+    "seen": 1789731804.2681696,
+    "ast_hash": "1bef85695b2c9be4371b7ac9fd702ea7",
+    "semantic_hash": ""
+  },
+  "src/content/pages/c-04.mdx": {
+    "mtime": 1787243316.7815375,
+    "seen": 1789731804.2681696,
+    "ast_hash": "85c236bac41a94a464630b0f2e777075",
+    "semantic_hash": ""
+  },
+  "src/content/pages/c-05.mdx": {
+    "mtime": 1787243316.7815375,
+    "seen": 1789731804.2681696,
+    "ast_hash": "adb973ddae329729649824488c861da7",
+    "semantic_hash": ""
+  },
+  "src/content/pages/c-06.mdx": {
+    "mtime": 1787244522.4191813,
+    "seen": 1789731804.2681696,
+    "ast_hash": "1729f909b9a452f942c4ad83e3794389",
+    "semantic_hash": ""
+  },
+  "src/content/pages/c-07.mdx": {
+    "mtime": 1787244522.420687,
+    "seen": 1789731804.2681696,
+    "ast_hash": "79b846e26989eed1699e43dfd7acecf6",
+    "semantic_hash": ""
+  },
+  "src/content/pages/c-08.mdx": {
+    "mtime": 1787243316.7835522,
+    "seen": 1789731804.2681696,
+    "ast_hash": "71e52c4957fa6a0ee6887959348d8661",
+    "semantic_hash": ""
+  },
+  "src/content/pages/c-09.mdx": {
+    "mtime": 1787243316.7845478,
+    "seen": 1789731804.2681696,
+    "ast_hash": "859a611d5115b2b09676c63fc6c45ff1",
+    "semantic_hash": ""
+  },
+  "src/content/pages/e-00.mdx": {
+    "mtime": 1788527439.664059,
+    "seen": 1789731804.2681696,
+    "ast_hash": "381af2ae42a80a666e63412646d24818",
+    "semantic_hash": ""
+  },
+  "src/content/pages/e-01.mdx": {
+    "mtime": 1787243316.7855525,
+    "seen": 1789731804.2681696,
+    "ast_hash": "655f0d63429cacd372147780915c68ac",
+    "semantic_hash": ""
+  },
+  "src/content/pages/e-02.mdx": {
+    "mtime": 1787243316.786551,
+    "seen": 1789731804.2681696,
+    "ast_hash": "99c7cba815dd2331d3b29e423268096c",
+    "semantic_hash": ""
+  },
+  "src/content/pages/e-03.mdx": {
+    "mtime": 1787243316.786551,
+    "seen": 1789731804.2681696,
+    "ast_hash": "a15929e184becf76fb74119754bf6738",
+    "semantic_hash": ""
+  },
+  "src/content/pages/e-04.mdx": {
+    "mtime": 1787243316.7875514,
+    "seen": 1789731804.2681696,
+    "ast_hash": "f16bd030ade2592993b943d23119c6e9",
+    "semantic_hash": ""
+  },
+  "src/content/pages/e-05.mdx": {
+    "mtime": 1787243316.7886918,
+    "seen": 1789731804.2681696,
+    "ast_hash": "c49073572ff2404ee67a33f380f276b2",
+    "semantic_hash": ""
+  },
+  "src/content/pages/e-06.mdx": {
+    "mtime": 1787243316.7886918,
+    "seen": 1789731804.2681696,
+    "ast_hash": "1f9dc53c9cabe8b47fff9dcd8f0f0cd8",
+    "semantic_hash": ""
+  },
+  "src/content/pages/e-07.mdx": {
+    "mtime": 1787243316.7886918,
+    "seen": 1789731804.2681696,
+    "ast_hash": "3944a04099297853d70bca78dfdd5363",
+    "semantic_hash": ""
+  },
+  "src/content/pages/e-08.mdx": {
+    "mtime": 1787243316.7896955,
+    "seen": 1789731804.2681696,
+    "ast_hash": "66359d652c2d206a8563a2e754fd3888",
+    "semantic_hash": ""
+  },
+  "src/content/pages/e-09.mdx": {
+    "mtime": 1787243316.7906933,
+    "seen": 1789731804.2681696,
+    "ast_hash": "2bc9bef64deb955f2c03fbbad35d9a82",
+    "semantic_hash": ""
+  },
+  "src/content/pages/e-10.mdx": {
+    "mtime": 1787243316.7906933,
+    "seen": 1789731804.2681696,
+    "ast_hash": "ebf615f435fae9f0d8c200adc34eb92e",
+    "semantic_hash": ""
+  },
+  "src/content/pages/e-11.mdx": {
+    "mtime": 1787243316.791693,
+    "seen": 1789731804.2681696,
+    "ast_hash": "4c518e31f809bd05015ab2a50f6de555",
+    "semantic_hash": ""
+  },
+  "src/content/pages/e-12.mdx": {
+    "mtime": 1787243316.7926939,
+    "seen": 1789731804.2681696,
+    "ast_hash": "f35008de2c4ff677b2a708d532480476",
+    "semantic_hash": ""
+  },
+  "src/content/pages/h-01.mdx": {
+    "mtime": 1787243316.7926939,
+    "seen": 1789731804.2681696,
+    "ast_hash": "7713c69f585552930850679387366e6e",
+    "semantic_hash": ""
+  },
+  "src/content/pages/l-00.mdx": {
+    "mtime": 1788527439.6650603,
+    "seen": 1789731804.2681696,
+    "ast_hash": "b8a30099e29a95ebeacabb6ca98d53bc",
+    "semantic_hash": ""
+  },
+  "src/content/pages/l-01.mdx": {
+    "mtime": 1787243316.794593,
+    "seen": 1789731804.2681696,
+    "ast_hash": "94c205143d7de1c413ab89e7e4d7af79",
+    "semantic_hash": ""
+  },
+  "src/content/pages/l-02.mdx": {
+    "mtime": 1787244522.4226978,
+    "seen": 1789731804.2681696,
+    "ast_hash": "84835f0c863ab102ab6edc7a36986faf",
+    "semantic_hash": ""
+  },
+  "src/content/pages/l-03.mdx": {
+    "mtime": 1787243316.7956026,
+    "seen": 1789731804.2681696,
+    "ast_hash": "7a7f87be52202b4fa203696fe7039e0f",
+    "semantic_hash": ""
+  },
+  "src/content/pages/l-04.mdx": {
+    "mtime": 1787243316.7956026,
+    "seen": 1789731804.2681696,
+    "ast_hash": "f71e034cdd91df2beda772da199a2fd3",
+    "semantic_hash": ""
+  },
+  "src/content/pages/l-05.mdx": {
+    "mtime": 1787243316.7968302,
+    "seen": 1789731804.2681696,
+    "ast_hash": "92cc9bf27bc81bf5794c084b8f893c89",
+    "semantic_hash": ""
+  },
+  "src/content/pages/p-00.mdx": {
+    "mtime": 1787243316.7968302,
+    "seen": 1789731804.2681696,
+    "ast_hash": "fe84952b9f06a8602d241ce09f46d4d5",
+    "semantic_hash": ""
+  },
+  "src/content/pages/p-01.mdx": {
+    "mtime": 1787243316.7978287,
+    "seen": 1789731804.2681696,
+    "ast_hash": "6129cd36fb2c7d17c2ec04cda6bc563d",
+    "semantic_hash": ""
+  },
+  "src/content/pages/p-02.mdx": {
+    "mtime": 1787243316.7978287,
+    "seen": 1789731804.2681696,
+    "ast_hash": "f58c3c06308830107672f74840f2afe1",
+    "semantic_hash": ""
+  },
+  "src/content/pages/p-03.mdx": {
+    "mtime": 1788527439.6660595,
+    "seen": 1789731804.2681696,
+    "ast_hash": "df3aca3887cad4403c8346690f9e5a64",
+    "semantic_hash": ""
+  },
+  "src/content/pages/p-04.mdx": {
+    "mtime": 1787243316.7998323,
+    "seen": 1789731804.2681696,
+    "ast_hash": "9b1975fd66b36c77c1a8489de020a021",
+    "semantic_hash": ""
+  },
+  "src/content/pages/p-05.mdx": {
+    "mtime": 1787243316.7998323,
+    "seen": 1789731804.2681696,
+    "ast_hash": "a1478ec54bba058432aa7b03163cb743",
+    "semantic_hash": ""
+  },
+  "src/content/pages/p-06.mdx": {
+    "mtime": 1788527439.6670592,
+    "seen": 1789731804.2681696,
+    "ast_hash": "0fc76add77bb3e6eda5fd122c80199e1",
+    "semantic_hash": ""
+  },
+  "src/content/pages/p-07.mdx": {
+    "mtime": 1787243316.8008292,
+    "seen": 1789731804.2681696,
+    "ast_hash": "5eaccf65522ef944a5d12e6303ee7c8d",
+    "semantic_hash": ""
+  },
+  "src/content/pages/p-08.mdx": {
+    "mtime": 1787243316.8018334,
+    "seen": 1789731804.2681696,
+    "ast_hash": "96bc77a37b71e0a3a12865839a3fde0b",
+    "semantic_hash": ""
+  },
+  "src/content/pages/r-00.mdx": {
+    "mtime": 1787243316.8018334,
+    "seen": 1789731804.2681696,
+    "ast_hash": "568c04c6f41f878adc57d4a65f4ff3cd",
+    "semantic_hash": ""
+  },
+  "src/content/pages/r-01.mdx": {
+    "mtime": 1787243316.8018334,
+    "seen": 1789731804.2681696,
+    "ast_hash": "5066c4a38e9b5a074f29acc2049c9c0d",
+    "semantic_hash": ""
+  },
+  "src/content/pages/r-02.mdx": {
+    "mtime": 1787243316.8030279,
+    "seen": 1789731804.2681696,
+    "ast_hash": "66446f9f819e0c7a16352d39c321978e",
+    "semantic_hash": ""
+  },
+  "src/content/pages/r-03.mdx": {
+    "mtime": 1787243316.8030279,
+    "seen": 1789731804.2681696,
+    "ast_hash": "2a687ecb0b88e82030a6b1d3c198a5d5",
+    "semantic_hash": ""
+  },
+  "src/content/pages/r-04.mdx": {
+    "mtime": 1787243316.8040252,
+    "seen": 1789731804.2681696,
+    "ast_hash": "15d6fa01f56ae93319968399d5ac41c6",
+    "semantic_hash": ""
+  },
+  "src/content/pages/s-00.mdx": {
+    "mtime": 1788527439.668564,
+    "seen": 1789731804.2681696,
+    "ast_hash": "1a68e57d9d545d2701a7df207b149b0e",
+    "semantic_hash": ""
+  },
+  "src/content/pages/s-01.mdx": {
+    "mtime": 1788527439.668564,
+    "seen": 1789731804.2681696,
+    "ast_hash": "064f7913ca536d33a74fbd01bfa09a0f",
+    "semantic_hash": ""
+  },
+  "src/content/pages/s-02.mdx": {
+    "mtime": 1788527439.6701176,
+    "seen": 1789731804.2681696,
+    "ast_hash": "6db92cba1c9398b39573496622081eb1",
+    "semantic_hash": ""
+  },
+  "src/content/pages/s-03.mdx": {
+    "mtime": 1788527439.6711254,
+    "seen": 1789731804.2681696,
+    "ast_hash": "4a1e3bdaf64df91079fed670501a77a4",
+    "semantic_hash": ""
+  },
+  "src/content/pages/s-04.mdx": {
+    "mtime": 1788527439.672125,
+    "seen": 1789731804.2681696,
+    "ast_hash": "9b8c18c04d10c76c9017c3b16b9fbfe4",
+    "semantic_hash": ""
+  },
+  "src/content/pages/s-05.mdx": {
+    "mtime": 1788527439.672125,
+    "seen": 1789731804.2681696,
+    "ast_hash": "685e33a65eac01784fb951645453936b",
+    "semantic_hash": ""
+  },
+  "src/content/pages/s-06.mdx": {
+    "mtime": 1788527439.6731236,
+    "seen": 1789731804.2681696,
+    "ast_hash": "bdf905f4d234522f21acf89fc0587aa0",
+    "semantic_hash": ""
+  },
+  "src/content/pages/s-07.mdx": {
+    "mtime": 1788527439.674123,
+    "seen": 1789731804.2681696,
+    "ast_hash": "db99476e7db5c4292b988b9c5651be31",
+    "semantic_hash": ""
+  },
+  "src/content/pages/x-01.mdx": {
+    "mtime": 1788526046.1793833,
+    "seen": 1789731804.2681696,
+    "ast_hash": "665245306174b561079b7244ed2f168b",
+    "semantic_hash": ""
+  },
+  "src/content/pages/x-02.mdx": {
+    "mtime": 1787388574.8659773,
+    "seen": 1789731804.2681696,
+    "ast_hash": "29e5b5c2ea3cf9ab4d3352ef4080cc51",
+    "semantic_hash": ""
+  },
+  "src/content/pages/x-03.mdx": {
+    "mtime": 1787243316.80986,
+    "seen": 1789731804.2681696,
+    "ast_hash": "06e389c308db1496d97cccdbb45177a5",
+    "semantic_hash": ""
+  },
+  "src/content/pages/x-04.mdx": {
+    "mtime": 1787243316.80986,
+    "seen": 1789731804.2681696,
+    "ast_hash": "6fbf5077566f9d18eb4f00bffd1c4153",
+    "semantic_hash": ""
+  },
+  "src/content/pages/y-00.mdx": {
+    "mtime": 1787243316.811416,
+    "seen": 1789731804.2681696,
+    "ast_hash": "7c7400cc22e31fff9576fa578a3ef448",
+    "semantic_hash": ""
+  },
+  "src/content/pages/y-01.mdx": {
+    "mtime": 1787243316.811946,
+    "seen": 1789731804.2681696,
+    "ast_hash": "4ddf07088ce755054be66560d2dd82c3",
+    "semantic_hash": ""
+  },
+  "src/content/pages/y-02.mdx": {
+    "mtime": 1787243316.8129616,
+    "seen": 1789731804.2681696,
+    "ast_hash": "68988e2e8109feaeb08d58357b2f9ca5",
+    "semantic_hash": ""
+  },
+  "src/content/pages/y-03.mdx": {
+    "mtime": 1788527439.675124,
+    "seen": 1789731804.2681696,
+    "ast_hash": "a56552a637c2084028ac3a6bd444305b",
+    "semantic_hash": ""
+  },
+  "src/content/pages/y-04.mdx": {
+    "mtime": 1787243316.8139582,
+    "seen": 1789731804.2681696,
+    "ast_hash": "be025e88535714eec0a86ebe6d710f3b",
+    "semantic_hash": ""
+  },
+  "src/content/pages/z-01.mdx": {
+    "mtime": 1787243316.8139582,
+    "seen": 1789731804.2681696,
+    "ast_hash": "658b34c6b21ab1cc92249f15765779f0",
+    "semantic_hash": ""
+  },
+  "src/content/pages/z-02.mdx": {
+    "mtime": 1787243316.814956,
+    "seen": 1789731804.2681696,
+    "ast_hash": "a55cb9b06cd9d077915692f749d045bc",
+    "semantic_hash": ""
+  },
+  "src/content/pages/z-03.mdx": {
+    "mtime": 1787243316.8159573,
+    "seen": 1789731804.2681696,
+    "ast_hash": "c4afc3deeab477179e75c9dc1dda4806",
+    "semantic_hash": ""
+  },
+  "src/content/pages/z-04.mdx": {
+    "mtime": 1787243316.8159573,
+    "seen": 1789731804.2681696,
+    "ast_hash": "c6464f450b37436b9a7b4671ae5e82ac",
+    "semantic_hash": ""
+  },
+  "public/favicon.svg": {
+    "mtime": 1787013705.6789894,
+    "seen": 1789731804.2681696,
+    "ast_hash": "bd15a79eb489d1612cfc931041cafe5a",
+    "semantic_hash": ""
+  },
+  "public/logo-rtg.png": {
+    "mtime": 1787245067.5694468,
+    "seen": 1789731804.2681696,
+    "ast_hash": "751b0c8fc354baf382ba99537c12dd85",
+    "semantic_hash": ""
+  },
+  "src/assets/contact/x01-team.jpg": {
+    "mtime": 1788527439.4462502,
+    "seen": 1789731804.2681696,
+    "ast_hash": "65d14f821257cb3f0cb3efb324841b74",
+    "semantic_hash": ""
+  },
+  "src/assets/equipment/e00-system-overview.jpg": {
+    "mtime": 1788527439.4477663,
+    "seen": 1789731804.2681696,
+    "ast_hash": "983e90f302322a4fa8136927f33c28e4",
+    "semantic_hash": ""
+  },
+  "src/assets/home/home-fleet-vessel.jpg": {
+    "mtime": 1788527439.4535859,
+    "seen": 1789731804.2681696,
+    "ast_hash": "e0378c11f51b0f39ae999e1434158208",
+    "semantic_hash": ""
+  },
+  "src/assets/lifecycle/l00-deck-work.jpg": {
+    "mtime": 1788527439.4551053,
+    "seen": 1789731804.2681696,
+    "ast_hash": "5135b23a0b1ed003241b36df5059adf8",
+    "semantic_hash": ""
+  },
+  "src/assets/sectors/s01-deck-spread.jpg": {
+    "mtime": 1788527439.4571059,
+    "seen": 1789731804.2681696,
+    "ast_hash": "e583d42c2381d23a0186acbc2f8aac74",
+    "semantic_hash": ""
+  },
+  "src/assets/sectors/s01-equipment-a.jpg": {
+    "mtime": 1788527439.465239,
+    "seen": 1789731804.2681696,
+    "ast_hash": "cb00d3f132bf8a7bf29d54be00273981",
+    "semantic_hash": ""
+  },
+  "src/assets/sectors/s01-equipment-b.jpg": {
+    "mtime": 1788527439.488137,
+    "seen": 1789731804.2681696,
+    "ast_hash": "ac79492b8142944904a6f2304592d9cf",
+    "semantic_hash": ""
+  },
+  "src/assets/sectors/s02-deck-installation.jpg": {
+    "mtime": 1788527439.4901314,
+    "seen": 1789731804.2681696,
+    "ast_hash": "151b701498fc5f5e936c13cabbeb96d1",
+    "semantic_hash": ""
+  },
+  "src/assets/sectors/s02-pipeline-survey.jpg": {
+    "mtime": 1788527439.4931278,
+    "seen": 1789731804.2681696,
+    "ast_hash": "cd2a39440ebbf333be09deadb9aff832",
+    "semantic_hash": ""
+  },
+  "src/assets/sectors/s02-seabed-tool.jpg": {
+    "mtime": 1788527439.495128,
+    "seen": 1789731804.2681696,
+    "ast_hash": "9306229c884f031cdada3b8a1c66a211",
+    "semantic_hash": ""
+  },
+  "src/assets/sectors/s03-cable-work.jpg": {
+    "mtime": 1788527439.497129,
+    "seen": 1789731804.2681696,
+    "ast_hash": "9eba36f102502b181fac36afe93afa7d",
+    "semantic_hash": ""
+  },
+  "src/assets/sectors/s03-wind-array.jpg": {
+    "mtime": 1788527439.4991326,
+    "seen": 1789731804.2681696,
+    "ast_hash": "3c187bd44141d674671f93e483624a66",
+    "semantic_hash": ""
+  },
+  "src/assets/sectors/s04-acquisition.jpg": {
+    "mtime": 1788527439.5001268,
+    "seen": 1789731804.2681696,
+    "ast_hash": "39bace7a9ca0c0d3ab3043fc78cdcad1",
+    "semantic_hash": ""
+  },
+  "src/assets/sectors/s04-equipment-a.jpg": {
+    "mtime": 1788527439.512483,
+    "seen": 1789731804.2681696,
+    "ast_hash": "bc352afbd0118a0f53b3e0b49a0f3f72",
+    "semantic_hash": ""
+  },
+  "src/assets/sectors/s04-equipment-b.jpg": {
+    "mtime": 1788527439.5340955,
+    "seen": 1789731804.2681696,
+    "ast_hash": "99efaf732f962cbada536f7f186231d0",
+    "semantic_hash": ""
+  },
+  "src/assets/sectors/s04-equipment-c.jpg": {
+    "mtime": 1788527439.5602713,
+    "seen": 1789731804.2681696,
+    "ast_hash": "4f7ec28044ecdd0ef270d9ffb88a65db",
+    "semantic_hash": ""
+  },
+  "src/assets/sectors/s04-reel-deck.jpg": {
+    "mtime": 1788527439.563787,
+    "seen": 1789731804.2681696,
+    "ast_hash": "d230b4918f0744b6989351e43e3b6910",
+    "semantic_hash": ""
+  },
+  "src/assets/sectors/s05-instrument-deployment.jpg": {
+    "mtime": 1788527439.565294,
+    "seen": 1789731804.2681696,
+    "ast_hash": "41f8d338eee77888d87f98919e9a3a15",
+    "semantic_hash": ""
+  },
+  "src/assets/sectors/s05-research-deck.jpg": {
+    "mtime": 1788527439.592523,
+    "seen": 1789731804.2681696,
+    "ast_hash": "6478f2e5e318d4d853ba7b5250313915",
+    "semantic_hash": ""
+  },
+  "src/assets/sectors/s05-research-vessel.jpg": {
+    "mtime": 1788527439.5965302,
+    "seen": 1789731804.2681696,
+    "ast_hash": "26d21e6033646b287c45529fe12f95a2",
+    "semantic_hash": ""
+  },
+  "src/assets/sectors/s06-dive-spread.jpg": {
+    "mtime": 1788527439.5975296,
+    "seen": 1789731804.2681696,
+    "ast_hash": "94a1d551ecf9861c1408398cfd3319f1",
+    "semantic_hash": ""
+  },
+  "src/assets/sectors/s06-equipment-a.png": {
+    "mtime": 1788527439.6342158,
+    "seen": 1789731804.2681696,
+    "ast_hash": "37e485797fcc60b6e480b1dd79ce1416",
+    "semantic_hash": ""
+  },
+  "src/assets/sectors/s06-rov-launch.webp": {
+    "mtime": 1788527439.636214,
+    "seen": 1789731804.2681696,
+    "ast_hash": "07c7db81961ef298fccd4277990894f2",
+    "semantic_hash": ""
+  },
+  "src/assets/sectors/s07-naval-vessel.webp": {
+    "mtime": 1788527439.638556,
+    "seen": 1789731804.2681696,
+    "ast_hash": "b3e34420611ce0a451a524ae41441048",
+    "semantic_hash": ""
+  }
+}
