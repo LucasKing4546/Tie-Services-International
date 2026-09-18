@@ -86,6 +86,9 @@ import s07c from '../assets/sectors/s07-lars-build-b.jpg';
 
 import homeA from '../assets/home/home-fleet-vessel.jpg';
 import e00a from '../assets/equipment/e00-system-overview.jpg';
+import e02a from '../assets/equipment/e02-winch-drum.jpg';
+import e02b from '../assets/equipment/e02-deployment-frame.jpg';
+import e02c from '../assets/equipment/e02-hpu.jpg';
 import l00a from '../assets/lifecycle/l00-deck-work.jpg';
 import x01a from '../assets/contact/x01-team.jpg';
 
@@ -114,6 +117,9 @@ export const MEDIA: Record<string, ImageMetadata> = {
   'IMG-S07-B': s07b,
   'IMG-S07-C': s07c,
   'IMG-E00-A': e00a,
+  'IMG-E02-A': e02a,
+  'IMG-E02-B': e02b,
+  'IMG-E02-C': e02c,
   'IMG-L00-A': l00a,
   'IMG-X01-A': x01a,
 };
