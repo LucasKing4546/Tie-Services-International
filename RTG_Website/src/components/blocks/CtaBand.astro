@@ -20,5 +20,8 @@ const { heading, body, primary, secondary } = Astro.props;
   <div style="display:flex;gap:12px;flex-wrap:wrap">
     <a class="btn b-red" href={primary.href}>{primary.label}</a>
     {secondary && <a class="btn btn-o inv" href={secondary.href}>{secondary.label}</a>}
+    {/quote|enquir|discuss/i.test(primary.label) && (
+      <p class="note-line" style="flex-basis:100%;margin:4px 0 0;color:rgba(255,255,255,.72)">A named engineer replies to size the duty.</p>
+    )}
   </div>
 </div>

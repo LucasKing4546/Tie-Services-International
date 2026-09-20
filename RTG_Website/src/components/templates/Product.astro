@@ -88,10 +88,21 @@ const datasheetHref = datasheetPage ? `${datasheetPage.slug}?equipment=${encodeU
     </Section>
   )}
 
+  {data.specs.length > 1 && (
+    <nav class="cfg-nav" aria-label="Configurations">
+      <ul class="wrap">
+        {data.specs.map((s, i) => (
+          <li><a href={`#config-${i + 1}`} title={s.caption}>{s.caption.split(',')[0]}</a></li>
+        ))}
+      </ul>
+    </nav>
+  )}
+
   {/* One row per configuration: its photo beside its own table. */}
   {data.specs.map((s, i) => (
     <>
       <FeatureRow
+        id={`config-${i + 1}`}
         heading={s.caption}
         media={s.media[0]}
         reverse={i % 2 === 1}
@@ -99,10 +110,20 @@ const datasheetHref = datasheetPage ? `${datasheetPage.slug}?equipment=${encodeU
       >
         {glance(s.rows).length >= 2 && <StatsStrip items={glance(s.rows)} />}
         <SpecTable caption="Specification" rows={s.rows} footnote={s.footnote} />
+        {s.rows.some((r) => /first layer/i.test(r.k)) && (
+          <p class="note-line">First layer is the innermost wrap of cable on the drum, top layer the outermost. Line pull falls and line speed rises as layers build.</p>
+        )}
       </FeatureRow>
       {s.media.length > 1 && <MediaBand items={s.media.slice(1)} tone={i % 2 === 1 ? 'off' : 'default'} />}
     </>
   ))}
+
+  {datasheetHref && data.specs.length > 0 && (
+    <div class="req-bar" data-req-bar hidden>
+      <span>Full specification, sent to you by name.</span>
+      <a class="btn b-navy" href={datasheetHref}>Request the datasheet →</a>
+    </div>
+  )}
 
   {datasheetHref && data.specs.length > 0 && (
     <Section>
@@ -128,3 +149,36 @@ const datasheetHref = datasheetPage ? `${datasheetPage.slug}?equipment=${encodeU
 
   <PageEnding page={page} proofBar={data.proofBar} cta={data.cta} draft={data.draft} outline={data.outline} />
 </Base>
+
+<style is:global>
+  .cfg-nav ul { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 0 auto; padding-block: 16px; }
+  .cfg-nav a { display: inline-block; padding: 8px 16px; border: 1px solid var(--line); border-radius: 999px; color: var(--navy); text-decoration: none; font-size: 14px; }
+  .cfg-nav a:hover { border-color: var(--navy); }
+  .frow[id^="config-"] { scroll-margin-top: 96px; }
+  .req-bar { position: fixed; inset: auto 0 0 0; z-index: 40; display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; padding: 10px 16px; background: #fff; border-top: 1px solid var(--line); color: var(--navy); font-size: 14px; }
+  .req-bar[hidden] { display: none; }
+  @media (max-width: 700px) { .req-bar span { display: none; } }
+  @media (prefers-reduced-motion: no-preference) {
+    .req-bar { animation: req-in .25s ease-out; }
+    @keyframes req-in { from { transform: translateY(100%); } }
+  }
+</style>
+
+<script>
+  // No JS = the bar stays hidden. Shown once the first spec table has entered
+  // the viewport, and stays shown after that.
+  const init = () => {
+    const bar = document.querySelector<HTMLElement>('[data-req-bar]');
+    const first = document.querySelector('.frow[id^="config-"] table, .frow[id^="config-"]');
+    if (!bar || !first || !('IntersectionObserver' in window)) return;
+    const io = new IntersectionObserver((es) => {
+      if (es.some((e) => e.isIntersecting)) {
+        bar.hidden = false;
+        document.body.style.paddingBottom = `${bar.offsetHeight}px`;
+        io.disconnect();
+      }
+    });
+    io.observe(first);
+  };
+  document.addEventListener('astro:page-load', init);
+</script>

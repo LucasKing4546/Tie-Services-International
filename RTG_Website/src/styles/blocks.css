@@ -85,8 +85,9 @@
    stays open, so a photograph survives underneath instead of being greyed
    out by an even overlay. */
 .phero::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
-  background:linear-gradient(104deg,
-    rgba(3,29,91,.94) 0%,rgba(3,29,91,.86) 38%,rgba(3,29,91,.58) 72%,rgba(3,29,91,.42) 100%)}
+  background:
+    linear-gradient(to top,rgba(2,14,44,.82) 0%,rgba(2,14,44,.55) 38%,rgba(2,14,44,.12) 72%,transparent 100%),
+    linear-gradient(to right,rgba(2,14,44,.45) 0%,rgba(2,14,44,.18) 45%,transparent 70%)}
 
 .phero-in{padding-bottom:64px}
 .phero .crumbs{margin-bottom:30px}
@@ -155,7 +156,7 @@
 .frow.navy .frow-plate b{color:#fff}
 .frow.navy .frow-plate span{color:rgba(255,255,255,.66)}
 @media (max-width:900px){
-  .frow-grid{grid-template-columns:1fr;gap:32px}
+  .frow-grid{grid-template-columns:minmax(0,1fr);gap:32px}
   /* Copy first on a phone regardless of which side the picture takes on a
      desktop — an alternating layout must not alternate the reading order. */
   .frow-rev .frow-grid{direction:ltr}
@@ -211,9 +212,9 @@
 .irows-list li{border-bottom:1px solid var(--line)}
 .irows.navy .irows-list li{border-bottom-color:rgba(255,255,255,.22)}
 .irows-list a{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr) 44px;
-  align-items:baseline;gap:clamp(20px,3vw,52px);padding:30px 0;
-  transition:padding-left .45s var(--e-heavy)}
-.irows-list a:hover{padding-left:18px}
+  align-items:baseline;gap:clamp(20px,3vw,52px);padding:30px 0}
+.irows-title{transition:transform .45s var(--e-heavy)}
+.irows-list a:hover .irows-title{transform:translateX(18px)}
 .irows-title{font-family:var(--f-d);font-weight:800;letter-spacing:-.03em;line-height:1.12;
   font-size:clamp(23px,2.5vw,34px);color:var(--navy)}
 .irows.navy .irows-title{color:#fff}
@@ -227,11 +228,11 @@
   .irows-list a{grid-template-columns:1fr 30px;gap:10px 16px;padding:24px 0}
   .irows-blurb{grid-column:1;max-width:none}
   .irows-go{grid-column:2;grid-row:1;align-self:start}
-  .irows-list a:hover{padding-left:0}
+  .irows-list a:hover .irows-title{transform:none}
 }
 @media (prefers-reduced-motion:reduce){
-  .irows-list a,.irows-go{transition:none}
-  .irows-list a:hover{padding-left:0}
+  .irows-title,.irows-go{transition:none}
+  .irows-list a:hover .irows-title{transform:none}
 }
 
 /* ---------- skeleton (Skeleton.astro) ----------
@@ -451,9 +452,9 @@ html.js .strack-nav{display:flex}
 .pstage.navy .pstage-index{border-top-color:rgba(255,255,255,.18)}
 .pstage-index li{display:flex;gap:16px;align-items:baseline;padding:13px 0;
   border-bottom:1px solid var(--line);opacity:.42;
-  transition:opacity .4s var(--e),padding-left .4s var(--e)}
+  transition:opacity .4s var(--e),transform .4s var(--e)}
 .pstage.navy .pstage-index li{border-bottom-color:rgba(255,255,255,.18)}
-.pstage-index li.on{opacity:1;padding-left:10px}
+.pstage-index li.on{opacity:1;transform:translateX(10px)}
 .pstage-index .n{font-family:var(--f-m);font-size:11px;letter-spacing:.14em;flex:none;
   color:var(--muted);font-variant-numeric:tabular-nums}
 .pstage.navy .pstage-index .n{color:rgba(255,255,255,.6)}
@@ -564,7 +565,7 @@ html.js .cmp.sweep .cmp-handle{transition:left .8s var(--e-heavy)}
 .ecard{border:1px solid var(--line);border-radius:16px;padding:34px 30px;background:var(--white);
   transition:border-color .35s var(--e),transform .35s var(--e),box-shadow .35s var(--e);
   display:flex;flex-direction:column;min-height:250px;justify-content:space-between}
-.ecard:hover{border-color:var(--navy);transform:translateY(-5px);box-shadow:0 18px 44px rgba(3,29,91,.09)}
+.ecard:hover{border-color:var(--navy);transform:translateY(-5px)}
 /* Hovering one card quietens the rest. The most premium effect available
    under a no-shadow, no-gradient rule, and it needs no JS. Pointer devices
    only — on touch there is no hover state to leave, and every card would
@@ -677,6 +678,8 @@ table.spec tr:first-child{border-top:0}
 table.spec th,table.spec td{padding:15px 4px;text-align:left;font-size:15px;vertical-align:baseline;
   transition:background .2s var(--e),color .2s var(--e)}
 table.spec th{font-weight:500;color:var(--muted);width:56%}
+table.spec th,table.spec td{overflow-wrap:anywhere}
+@media (max-width:520px){table.spec th{width:48%}}
 table.spec td{font-family:var(--f-d);font-weight:700;color:var(--navy);letter-spacing:-.01em}
 /* Hovering a row dims the others — restrained emphasis with no shadow and
    no movement, and it costs no JS. */

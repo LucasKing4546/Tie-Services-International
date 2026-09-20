@@ -19,13 +19,14 @@ interface Props {
   reverse?: boolean;
   tone?: 'default' | 'off' | 'navy';
   cta?: Link;
+  id?: string;
 }
 
-const { eyebrow, heading, media, reverse = false, tone = 'default', cta } = Astro.props;
+const { eyebrow, heading, media, reverse = false, tone = 'default', cta, id } = Astro.props;
 const toneClass = tone === 'off' ? 'off' : tone === 'navy' ? 'navy' : '';
 ---
 
-<section class:list={['sec', 'frow', toneClass, { 'frow-rev': reverse }]}>
+<section id={id} class:list={['sec', 'frow', toneClass, { 'frow-rev': reverse }]}>
   <div class="wrap frow-grid">
     <div class="frow-copy">
       {eyebrow && <p class="mono red fu">{eyebrow}</p>}

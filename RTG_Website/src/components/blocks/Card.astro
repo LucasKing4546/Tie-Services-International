@@ -19,5 +19,5 @@ const { item, tone = 'light' } = Astro.props;
     <h3>{item.title}</h3>
     {item.blurb && <p>{item.blurb}</p>}
   </div>
-  <span class="arw">{item.cta ?? 'Read more'} →</span>
+  <span class="arw">{item.cta && item.cta !== 'Read more' ? item.cta : `Read about ${item.title}`} →</span>
 </a>

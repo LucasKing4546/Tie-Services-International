@@ -87,6 +87,7 @@
   border-top:1px solid var(--red);border-bottom:1px solid var(--red)}
 .mq-in{display:inline-flex;gap:56px;align-items:center;animation:slide 34s linear infinite}
 @keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.mq-in{animation:none}}
 .mq span{font-family:var(--f-d);font-weight:700;font-size:15px;letter-spacing:-.01em;display:inline-flex;
   align-items:center;gap:56px}
 

@@ -18,7 +18,7 @@ import { LIFECYCLE } from '@data/home';
             <p>{l.blurb}</p>
             <ul class="lc-l">{l.points.map((pt) => <li>{pt}</li>)}</ul>
           </div>
-          <a class="arw" href={l.href}>{l.cta} →</a>
+          <a class="arw" href={l.href}>{l.cta === 'Read more' ? `Read about ${l.title.toLowerCase()}` : l.cta} →</a>
         </div>
       ))}
     </div>

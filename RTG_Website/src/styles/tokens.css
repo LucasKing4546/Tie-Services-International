@@ -134,7 +134,7 @@ html.js .stag.in > *{opacity:1;transform:none}
 }
 
 /* ---------- header ---------- */
-.hdr{position:fixed;inset:0 0 auto 0;z-index:400;padding:22px 0;transition:padding .4s var(--e)}
+.hdr{position:fixed;inset:0 0 auto 0;z-index:400;padding:22px 0}
 .hdr::before{content:"";position:absolute;inset:0;background:rgba(255,255,255,.82);
   backdrop-filter:blur(14px);border-bottom:1px solid var(--line);opacity:0;transition:opacity .4s var(--e)}
 .hdr.on{padding:12px 0}
@@ -163,7 +163,9 @@ html.js .stag.in > *{opacity:1;transform:none}
    moved between a dark-hero page and a light one. :has() re-evaluates live
    against whatever <main> currently holds, so it stays correct across view
    transitions with no script. */
-body:has(.phero) .hdr::before{opacity:1}
+body:has(.phero) .hdr::before{opacity:1;background:#fff;backdrop-filter:none}
+.nav .btn.b-red{background:var(--red);color:#fff}
+.nav .btn.b-red:hover{background:var(--red-dk);color:#fff}
 
 /* ---------- mobile navigation ----------
    A <details> disclosure (Header.astro), so it works with no JS. Only one
@@ -185,8 +187,7 @@ body:has(.phero) .hdr::before{opacity:1}
 .mnav[open] .mnav-bars i{opacity:0}
 .mnav[open] .mnav-bars::after{transform:translateY(-5px) rotate(-45deg)}
 .mnav-panel{position:absolute;top:calc(100% + 14px);right:0;width:min(320px,calc(100vw - 32px));
-  background:var(--white);border:1px solid var(--line);border-radius:18px;padding:14px;
-  box-shadow:0 24px 60px rgba(3,29,91,.14)}
+  background:var(--white);border:1px solid var(--navy);border-radius:18px;padding:14px}
 .mnav-panel nav{display:flex;flex-direction:column;gap:2px}
 .mnav-panel a{font-family:var(--f-d);font-weight:600;font-size:15px;letter-spacing:-.01em;
   padding:13px 16px;border-radius:12px;color:var(--navy);transition:background .25s,color .25s}
@@ -233,3 +234,14 @@ body:has(.phero) .hdr::before{opacity:1}
   justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;color:rgba(255,255,255,.55)}
 .ftr-b a{color:rgba(255,255,255,.55)}
 .ftr-b a:hover{color:#fff}
+
+/* ---------- touch targets (44px minimum on coarse pointers / phones) ---------- */
+@media (pointer:coarse),(max-width:560px){
+  .brand{min-height:44px}
+  .btn,.btn-o{min-height:44px}
+  .nav a,.mnav-panel a{display:inline-flex;align-items:center;min-height:44px}
+  .mnav-panel a{display:flex}
+  .ftr li a{display:inline-flex;align-items:center;min-height:44px}
+  .ftr ul{gap:0}
+  .ftr-b a{display:inline-block;padding:12px 4px;margin:-12px 0}
+}
