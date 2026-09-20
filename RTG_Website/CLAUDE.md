@@ -240,8 +240,8 @@ These are real and unresolved. Flag them; do not invent content to fill them.
    numbers and expiry dates; insurance limits; refurbishment lead times by scope
    band; current capacity by tier; the tariff and origin position confirmed with
    a customs adviser; overall envelope and dry weight per configuration.
-8. **Fonts load from Google.** Self-host before launch — performance cost and a
-   GDPR question in the EU.
+8. ~~Fonts load from Google.~~ Done: Archivo, Inter and JetBrains Mono are
+   self-hosted through @fontsource packages, imported in `Base.astro`.
 9. **The 301 map** from the legacy `.php` URLs must be deployed and verified with
    a crawl before and after launch.
 

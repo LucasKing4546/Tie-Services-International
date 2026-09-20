@@ -8,6 +8,12 @@ import { absolute, ogImageFor, buildJsonLd } from '@lib/seo';
 import { resolvePage } from '@lib/page';
 import Header from '@components/site/Header.astro';
 import Footer from '@components/site/Footer.astro';
+import '@fontsource-variable/archivo/wght.css';
+import '@fontsource-variable/inter/wght.css';
+import '@fontsource/jetbrains-mono/400.css';
+import '@fontsource/jetbrains-mono/500.css';
+import archivoLatin from '@fontsource-variable/archivo/files/archivo-latin-wght-normal.woff2?url';
+import interLatin from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
 import '@/styles/tokens.css';
 import '@/styles/blocks.css';
 import '@/styles/surfaces.css';
@@ -69,12 +75,8 @@ const robots = offMap ? 'noindex, follow' : 'index, follow, max-image-preview:la
     <meta name="twitter:description" content={p.description} />
     <meta name="twitter:image" content={ogImage} />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
-    />
+    <link rel="preload" as="font" type="font/woff2" href={archivoLatin} crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href={interLatin} crossorigin />
 
     <script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />
 

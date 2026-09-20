@@ -18,8 +18,8 @@
   --wrap:1320px;
   --gut:32px;
 
-  --f-d:"Archivo",Helvetica,Arial,sans-serif;
-  --f-b:"Inter",system-ui,-apple-system,sans-serif;
+  --f-d:"Archivo Variable","Archivo",Helvetica,Arial,sans-serif;
+  --f-b:"Inter Variable","Inter",system-ui,-apple-system,sans-serif;
   --f-m:"JetBrains Mono",ui-monospace,monospace;
 
   --e:cubic-bezier(.16,.9,.2,1);

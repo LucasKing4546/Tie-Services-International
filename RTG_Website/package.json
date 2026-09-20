@@ -16,9 +16,12 @@
     "screenshot:pages": "node scripts/screenshot-pages.mjs"
   },
   "dependencies": {
-    "astro": "^5.2.5",
     "@astrojs/mdx": "^4.0.8",
     "@astrojs/sitemap": "^3.2.1",
+    "@fontsource-variable/archivo": "^5.3.0",
+    "@fontsource-variable/inter": "^5.3.0",
+    "@fontsource/jetbrains-mono": "^5.3.0",
+    "astro": "^5.2.5",
     "three": "^0.173.0"
   },
   "devDependencies": {
