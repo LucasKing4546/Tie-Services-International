@@ -103,7 +103,7 @@ const datasheetHref = datasheetPage ? `${datasheetPage.slug}?equipment=${encodeU
     <>
       <FeatureRow
         id={`config-${i + 1}`}
-        heading={s.caption}
+        heading={s.caption.replace(/(\d) (m|kg|Te|kW)\b/g, '$1 $2')}
         media={s.media[0]}
         reverse={i % 2 === 1}
         tone={i % 2 === 1 ? 'off' : 'default'}
