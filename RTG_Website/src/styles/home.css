@@ -314,13 +314,14 @@
 
 /* pinned tiers: white surface for the copy, chunkier progress */
 #tiers .pin-copy{background:#fff;border:1px solid var(--line);border-radius:22px;padding:32px 34px;
-  box-shadow:0 30px 60px -32px rgba(3,29,91,.4);min-height:380px}
+  box-shadow:0 30px 60px -32px rgba(3,29,91,.4);min-height:500px}
+#tiers .tier .num{font-size:clamp(48px,5vw,72px)}
 #tiers .tier{inset:32px 34px}
 #tiers .tier li{color:var(--navy)}
 #tiers .pin-bar i{height:5px;border-radius:3px}
 #tiers .pin-vis{border-radius:22px;background:#fff;border:1px solid var(--line);
   box-shadow:0 30px 60px -34px rgba(3,29,91,.4)}
-@media (max-width:900px){#tiers .pin-copy{padding:24px 22px;min-height:420px}#tiers .tier{inset:24px 22px}}
+@media (max-width:900px){#tiers .pin-copy{padding:24px 22px;min-height:600px}#tiers .tier{inset:24px 22px}}
 
 /* machine lift: heading spacing and pick buttons */
 .zf-pick button{transition:transform .25s var(--e),background .25s var(--e),border-color .25s var(--e)}
@@ -343,3 +344,8 @@
   .ecard.lc:hover,.case-vis:hover,.zf-pick button:hover{transform:none}
   .ecard.lc:hover .lc-ph img{transform:none}
 }
+
+/* statement: title and lede as one balanced block, centred on each other */
+.stmt-grid{grid-template-columns:minmax(0,1fr) minmax(0,500px);gap:56px;align-items:center}
+.stmt .d2{font-size:clamp(38px,4.3vw,68px);max-width:none}
+@media (max-width:900px){.stmt-grid{grid-template-columns:minmax(0,1fr);align-items:start}}
