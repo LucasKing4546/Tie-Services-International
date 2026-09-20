@@ -22,21 +22,9 @@ interface Props {
   updated?: Date;
 }
 
-/** The workbook's avatar codes, said the way a reader would say them. */
-const AUDIENCE: Record<PageMeta['avatar'], string> = {
-  AV01: 'Vessel operators',
-  AV02: 'Design authorities',
-  AV03: 'Yards & integrators',
-  ALL: 'Every route',
-};
-
-const { page, eyebrow, lede, ctas = [], media, crumbs = true, updated } = Astro.props;
+const { page, eyebrow, lede, ctas = [], media, crumbs = true } = Astro.props;
 
 const photo = media ? mediaFor(media.ref) : undefined;
-
-const revised = updated
-  ? updated.toLocaleDateString('en-GB', { month: 'short', year: 'numeric' })
-  : undefined;
 ---
 
 <section class="phero">
@@ -73,22 +61,4 @@ const revised = updated
     )}
   </div>
 
-  <div class="wrap phero-block">
-    <dl>
-      <div>
-        <dt>Section</dt>
-        <dd>{page.section}</dd>
-      </div>
-      <div>
-        <dt>For</dt>
-        <dd>{AUDIENCE[page.avatar]}</dd>
-      </div>
-      {revised && (
-        <div>
-          <dt>Revised</dt>
-          <dd>{revised}</dd>
-        </div>
-      )}
-    </dl>
-  </div>
 </section>

@@ -88,7 +88,7 @@
   background:linear-gradient(104deg,
     rgba(3,29,91,.94) 0%,rgba(3,29,91,.86) 38%,rgba(3,29,91,.58) 72%,rgba(3,29,91,.42) 100%)}
 
-.phero-in{padding-bottom:56px}
+.phero-in{padding-bottom:64px}
 .phero .crumbs{margin-bottom:30px}
 .phero .crumbs li,.phero .crumbs a{color:rgba(255,255,255,.58)}
 .phero .crumbs a:hover{color:#fff}
@@ -103,37 +103,15 @@
 .phero .lede{color:rgba(255,255,255,.76);max-width:54ch;margin-top:26px}
 .phero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:38px}
 
-/* ---------- the title block ----------
-   Carries the page's section, avatar route, revision date and plate
-   reference — a drawing title block / machine data plate, in mono. */
-/* The rule goes on the dl, not on .phero-block: .phero-block is a .wrap, so
-   a border on it would span the padding box and start a gutter left of the
-   h1 it sits under. */
-.phero-block{padding-top:0;padding-bottom:0}
-.phero-block dl{display:flex;flex-wrap:wrap;gap:0;margin:0;
-  border-top:1px solid rgba(255,255,255,.22)}
-.phero-block dl > div{flex:1 1 0;min-width:150px;padding:20px 26px 22px;
-  border-right:1px solid rgba(255,255,255,.14)}
-.phero-block dl > div:first-child{padding-left:0}
-.phero-block dl > div:last-child{border-right:0}
-.phero-block dt{font-family:var(--f-m);font-size:10.5px;letter-spacing:.18em;
-  text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:9px}
-.phero-block dd{margin:0;font-family:var(--f-d);font-weight:600;font-size:15px;
-  letter-spacing:-.01em;color:#fff}
 
 @media (max-width:900px){
   .phero{min-height:0;padding:150px 0 0}
   .phero-media::before{background-size:56px 56px}
   .phero-in{padding-bottom:42px}
-  .phero-block dl > div{flex-basis:50%;padding:16px 18px 18px}
-  .phero-block dl > div:nth-child(2n){border-right:0}
 }
 @media (max-width:560px){
   .phero{padding:130px 0 0}
   .phero-cta{margin-top:28px}
-  .phero-block dl > div{flex-basis:100%;border-right:0;padding-left:0;
-    border-bottom:1px solid rgba(255,255,255,.14)}
-  .phero-block dl > div:last-child{border-bottom:0}
 }
 
 /* The hero already ends on a hard tone change, so the next section only
