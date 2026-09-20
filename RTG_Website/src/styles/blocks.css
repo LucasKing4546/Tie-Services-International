@@ -824,11 +824,10 @@ table.spec .gap{text-transform:uppercase;letter-spacing:.1em;font-size:.8em}
 }
 
 /* ---------- MDX prose rhythm (Prose.astro) ---------- */
-/* Body copy sits at its own measure, centred in the page, rather than
-   pinned to the left edge of the 1320px container. Scoped to prose that is
-   the section's own child: prose inside a .two column already has a column
-   measure and must not be touched here. */
-.wrap > .prose{max-width:var(--wrap-prose);margin-inline:auto}
+/* Prose that is the section's own child spans the full content width, so its
+   side margins match every other block. Prose inside a .two or .frow column
+   keeps that column's own measure. */
+.wrap > .prose,.wrap > .prose p,.wrap > .prose ul,.wrap > .prose ol{max-width:none}
 /* A body with a lead paragraph is the page's main content, not an aside, so
    it takes the two-column treatment rather than a single centred column
    with a third of the page empty either side. */
