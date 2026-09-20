@@ -23,14 +23,14 @@ cta:
 
 A CTD cast is a measurement. The winch is the only part of the system that
 decides where and how fast the sensor moves through the thing it is
-measuring — which makes it a component of the instrument, not the equipment
+measuring, which makes it a component of the instrument, not the equipment
 that deploys it. Nobody writes it that way in a specification, and the gap
 shows up in the data.
 
 **Descent rate is a sampling parameter.** The sensors have response times,
 and the conductivity and temperature sensors do not share them. Descend
 faster than the slower one can follow and you get thermal lag and salinity
-spiking at the thermocline — an artefact produced by how the instrument was
+spiking at the thermocline: an artefact produced by how the instrument was
 moved, not by the ocean it moved through. Descend at an inconsistent rate
 and the artefact varies within the same cast, which is harder to correct
 than a consistent error.
@@ -46,8 +46,8 @@ vibration on the wire travels down it. For a towed body it also changes the
 attitude and depth of the sensor, which means the position recorded and the
 position sampled are different.
 
-**Wire out is data.** For anything towed, layback comes from cable deployed
-— and a counter that drifts, a measuring wheel that slips, or stretch under
+**Wire out is data.** For anything towed, layback comes from cable deployed,
+and a counter that drifts, a measuring wheel that slips, or stretch under
 load that nobody accounts for puts error directly into the geo-referencing
 of everything acquired. It is discovered in QC, days later, if it is
 discovered at all.
@@ -58,7 +58,7 @@ deployments, or between operators, introduces variance that looks like
 oceanography.
 
 What that means when specifying one: ask what the slowest speed is that it
-will hold, with a tolerance attached — not the slowest speed it will turn.
+will hold, with a tolerance attached, not the slowest speed it will turn.
 Ask how the level wind behaves through the reversal at the flange, because
 at survey speeds it places each turn rather than letting it fall. Ask how
 wire out is derived, and from what. None of those questions appear on a
@@ -67,7 +67,7 @@ standard datasheet. All three affect the data.
 ## Slow-speed control
 
 The specification that matters on a research winch is not top speed. It is
-turndown — the span between the fastest the machine will run and the
+turndown: the span between the fastest the machine will run and the
 slowest it will hold steadily. A winch doing 90 m/min on the top layer and
 required to hold 2 m/min at depth is being asked for better than 45:1, and
 to hold it while the load changes: the vessel heaves, wire weight grows on
@@ -76,7 +76,7 @@ regulation is the ability to hold a commanded rate through all of that, and
 it is a different property from having a low minimum setting.
 
 Payout is the harder half. Descending, the load drives the drum and the
-drive is resisting rather than pulling — an overhauling load, a different
+drive is resisting rather than pulling: an overhauling load, a different
 control problem and often a different quality of result. Speed regulation on
 payout specifically is where the cast happens.
 
@@ -90,14 +90,14 @@ cannot create resolution the valve does not have.
 
 Electric drives hold low speed by measuring it. A closed-loop drive with
 encoder feedback produces full torque at near-zero speed and corrects
-continuously, which is why research vessels specify electric so often — not
+continuously, which is why research vessels specify electric so often, not
 because electric is better in general, but because it is better here. On
 payout it also has to absorb energy rather than deliver it, so the drive has
 to be specified to handle a regenerating load rather than trip on it.
 
 Then mechanical reality sets the real floor: seal and bearing friction
-produce a breakaway threshold — the drive builds torque, nothing moves, then
-it releases — and gearbox backlash shows up at every direction change. Gear
+produce a breakaway threshold: the drive builds torque, nothing moves, then
+it releases, and gearbox backlash shows up at every direction change. Gear
 ratio is a genuine trade: more reduction improves low-speed resolution and
 caps top speed. None of that is fixed by the control system, because it sits
 upstream of it.
@@ -107,13 +107,13 @@ preference, and we will say which one a cast profile argues for even when it
 is the less convenient answer. Level wind actuation specified for placement
 at low speed rather than for throughput. Gear ratios selected against the
 working speed, not the transit speed. And it is verified rather than
-asserted — every machine runs a speed test on our stands across the layers
+asserted: every machine runs a speed test on our stands across the layers
 before it ships, and the numbers are written into the test document.
 
 ## The range
 
 Cable capacities from 300 to <Fig of="cptDepthM" />, electric or hydraulic,
-with or without level wind — configured around the cast rather than a
+with or without level wind, configured around the cast rather than a
 catalogue number.
 
 - **Profiling and CTD winches**, for work where descent rate is a sampling
@@ -137,39 +137,39 @@ catalogue number.
   fleet. Certified lifting lugs, fork pockets, a stated footprint and one
   power supply. [Portable and containerised →](/equipment/portable-containerised/)
 
-Three choices shape everything else. **Electric or hydraulic** — electric for
+Three choices shape everything else. **Electric or hydraulic**: electric for
 precise slow-speed control and a clean installation, hydraulic where vessel
 power is limited, the duty is heavy, or the deck environment argues for it;
 we will say which a cast profile points to, including when it is the less
-convenient answer. **Level wind, and how it is actuated** — mechanical,
+convenient answer. **Level wind, and how it is actuated**: mechanical,
 electric or hydraulic behave very differently at two metres a minute, and
-the difference rarely appears on a datasheet. **Where the system stops** —
+the difference rarely appears on a datasheet. **Where the system stops**:
 we build the handling; the sensors, terminations and data architecture are
 supplied by the institution. We design to accept what has been specified
-rather than dictating it, and say clearly where our scope ends — a boundary
+rather than dictating it, and say clearly where our scope ends: a boundary
 drawn honestly at the outset is cheaper than one discovered at
 commissioning.
 
 ## Institutions we work with
 
-- National oceanographic and marine research institutes — state-funded
+- National oceanographic and marine research institutes: state-funded
   bodies operating research fleets, typically with long procurement cycles
   and demanding documentation requirements
-- University marine science departments and their research vessels — often
+- University marine science departments and their research vessels: often
   operating a single ship, frequently on shared or consortium access, where
   the equipment has to serve many different science parties
-- Hydrographic offices — national charting authorities, and the survey
+- Hydrographic offices: national charting authorities, and the survey
   vessels operating on their behalf
-- Fisheries and marine environmental agencies — stock assessment, habitat
+- Fisheries and marine environmental agencies: stock assessment, habitat
   mapping and environmental monitoring programmes
 - Polar and deep-ocean research programmes, where the environment sets the
   specification before anything else does
-- Ocean observatory and long-term monitoring networks — mooring deployment
+- Ocean observatory and long-term monitoring networks: mooring deployment
   and recovery, where repeatability across years matters more than peak
   capability
 - Government research and survey vessel operators, including agencies whose
   work sits between research and regulation
-- Vessel operators and managers acting for institutions — the commercial
+- Vessel operators and managers acting for institutions: the commercial
   crews who run and mobilise science tonnage on someone else's behalf
 - Naval hydrographic and oceanographic units, where the science is the same
   and the documentation regime is not

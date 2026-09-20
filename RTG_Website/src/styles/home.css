@@ -89,7 +89,6 @@
 @keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .mq span{font-family:var(--f-d);font-weight:700;font-size:15px;letter-spacing:-.01em;display:inline-flex;
   align-items:center;gap:56px}
-.mq span::after{content:"";width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.55);flex:none}
 
 /* ---------- statement ---------- */
 .stmt .d2{max-width:19ch}
@@ -111,9 +110,9 @@
   color:var(--off-2);letter-spacing:-.05em;margin-bottom:8px}
 .tier.on .num{color:var(--red)}
 .tier h3{margin-bottom:16px}
-.tier ul{list-style:none;margin:22px 0 0;padding:0;display:flex;flex-direction:column;gap:9px}
-.tier li{font-size:15px;color:var(--muted);display:flex;gap:11px;align-items:baseline}
-.tier li::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--red);flex:none;transform:translateY(-2px)}
+.tier ul{list-style:disc;margin:22px 0 0;padding:0 0 0 20px;display:flex;flex-direction:column;gap:9px}
+.tier li{font-size:15px;color:var(--muted);display:list-item}
+.tier li::marker{color:var(--red)}
 .pin-bar{display:flex;gap:6px;margin-top:34px}
 .pin-bar i{height:2.5px;flex:1;background:var(--line);border-radius:2px;transition:background .4s var(--e)}
 .pin-bar i.on{background:var(--red)}

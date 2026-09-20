@@ -17,7 +17,7 @@ const list = items && items.length > 0 ? items : page.blocks;
 ---
 
 <div class="draftnote">
-  <h4>Draft page — {note}</h4>
+  <h4>Draft page: {note}</h4>
   <p>This page is built, styled and carries its final metadata. The copy above is a working outline. The blocks it needs:</p>
   {list.length > 0 && <ul>{list.map((b) => <li>{b}</li>)}</ul>}
 </div>

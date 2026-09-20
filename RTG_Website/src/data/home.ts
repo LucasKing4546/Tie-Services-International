@@ -63,14 +63,14 @@ export const TIERS = [
 /** Machines shown in the lifted frame. Order drives the carousel. */
 export const MACHINES = [
   { key: 'winch', name: 'Traction &amp; storage winch',
-    desc: 'Grooved drum, level wind, hydraulic drive and fail-safe band brake — built as one machine on a single skid.',
-    spec: [['Tier 1–4', 'Scope available'], ['150 Te', 'Load tested'], ['3,000 m', 'Proven depth']] },
+    desc: 'Grooved drum, level wind, hydraulic drive and fail-safe band brake, built as one machine on a single skid.',
+    spec: [['Tier 1-4', 'Scope available'], ['150 Te', 'Load tested'], ['3,000 m', 'Proven depth']] },
   { key: 'aframe', name: 'A-frame launch &amp; recovery',
     desc: 'Twin-leg fabricated A-frame with luffing cylinders, head sheave and hook block. Class surveyed as a system.',
     spec: [['Twin ram', 'Luffing'], ['Class', 'Surveyed'], ['Bespoke', 'Geometry']] },
   { key: 'hpu', name: 'Hydraulic power unit',
-    desc: 'Tank, motor–pump group, valve manifold and air-blast cooling on one skid. Pipework flushed to class.',
-    spec: [['15–110 kW', 'Power range'], ['ATEX', 'On request'], ['Flushed', 'To class']] },
+    desc: 'Tank, motor-pump group, valve manifold and air-blast cooling on one skid. Pipework flushed to class.',
+    spec: [['15-110 kW', 'Power range'], ['ATEX', 'On request'], ['Flushed', 'To class']] },
 ];
 
 /** Equipment families — mirrors E-01…E-12. */
@@ -91,18 +91,18 @@ export const EQUIPMENT = [
     blurb: 'Hydraulic power units sized to the machine, not picked off a catalogue page.',
     icon: '<circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/>' },
   { name: 'Portable & containerised', href: '/equipment/portable-containerised/', cta: 'Read more',
-    blurb: 'Built to move between hulls — mobilise, demobilise, redeploy.',
+    blurb: 'Built to move between hulls: mobilise, demobilise, redeploy.',
     icon: '<rect x="3" y="6" width="18" height="12" rx="1.5"/><path d="M7 6v12M11 6v12M15 6v12"/>' },
 ];
 
 /** Lifecycle steps — L-05, L-01, L-03. */
 export const LIFECYCLE = [
   { step: 'Step 01', title: 'Condition assessment', href: '/lifecycle/condition-assessment/', cta: 'Book an assessment',
-    blurb: 'An honest report on what the machine has left in it — before anyone quotes you for a replacement.',
+    blurb: 'An honest report on what the machine has left in it, before anyone quotes you for a replacement.',
     points: ['Strip, measure and NDT', 'Reuse / rework / replace per component', 'Written report with costed options'],
     icon: '<circle cx="11" cy="11" r="7"/><path d="M16 16l5 5"/>' },
   { step: 'Step 02', title: 'Refurbishment & upgrade', href: '/lifecycle/refurbishment-upgrade/', cta: 'Read more',
-    blurb: "Rework, reuse and upgrade while it's apart — the cheapest time to improve the machine.",
+    blurb: "Rework, reuse and upgrade while it's apart: the cheapest time to improve the machine.",
     points: ['Drums, bearings, brakes and gearboxes', 'Control system and instrumentation', 'Documentation reissued'],
     icon: '<path d="M14.7 6.3a4 4 0 01-5 5L5 16v3h3l4.7-4.7a4 4 0 015-5z"/>' },
   { step: 'Step 03', title: 'Re-certification', href: '/lifecycle/recertification-class-renewal/', cta: 'Read more',

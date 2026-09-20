@@ -1,7 +1,7 @@
 /**
  * Referrer prefill for gated forms (EnquiryForm.astro). A link into a
  * Form-template page can carry a query param matching a field's `name` —
- * e.g. Product.astro's "Request the full datasheet" link appends
+ * e.g. Product.astro's "Request the datasheet" link appends
  * `?equipment=<product name>` — and that field arrives pre-filled and
  * read-only instead of asking the visitor to retype what the site already
  * knows. Matches generically on `field.name` rather than a schema flag

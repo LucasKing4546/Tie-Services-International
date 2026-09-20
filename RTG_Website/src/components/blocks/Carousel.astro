@@ -30,7 +30,7 @@ const { label, perView = 3, reveal = true } = Astro.props;
     <slot />
   </div>
   <div class="car-nav">
-    <button type="button" class="car-btn car-prev" aria-label={`Previous — ${label}`}>‹</button>
-    <button type="button" class="car-btn car-next" aria-label={`Next — ${label}`}>›</button>
+    <button type="button" class="car-btn car-prev" aria-label={`Previous: ${label}`}>‹</button>
+    <button type="button" class="car-btn car-next" aria-label={`Next: ${label}`}>›</button>
   </div>
 </div>

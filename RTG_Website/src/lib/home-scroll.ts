@@ -103,14 +103,14 @@ export function initHome(): void {
 
   const SPECS = [
     { name:'Traction &amp; storage winch',
-      desc:'Grooved drum, level wind, hydraulic drive and fail-safe band brake — built as one machine on a single skid.',
-      spec:[['Tier 1–4','Scope available'],['150 Te','Load tested'],['3,000 m','Proven depth']] },
+      desc:'Grooved drum, level wind, hydraulic drive and fail-safe band brake, built as one machine on a single skid.',
+      spec:[['Tier 1-4','Scope available'],['150 Te','Load tested'],['3,000 m','Proven depth']] },
     { name:'A-frame launch &amp; recovery',
       desc:'Twin-leg fabricated A-frame with luffing cylinders, head sheave and hook block. Class surveyed as a system.',
       spec:[['Twin ram','Luffing'],['Class','Surveyed'],['Bespoke','Geometry']] },
     { name:'Hydraulic power unit',
-      desc:'Tank, motor–pump group, valve manifold and air-blast cooling on one skid. Pipework flushed to class.',
-      spec:[['15–110 kW','Power range'],['ATEX','On request'],['Flushed','To class']] }
+      desc:'Tank, motor-pump group, valve manifold and air-blast cooling on one skid. Pipework flushed to class.',
+      spec:[['15-110 kW','Power range'],['ATEX','On request'],['Flushed','To class']] }
   ];
 
   const stages: Stage[] = [];

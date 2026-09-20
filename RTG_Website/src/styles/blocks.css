@@ -310,6 +310,9 @@
 @media (max-width:820px){.stats{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:520px){.stats{grid-template-columns:1fr}}
 .stats.compact .stat{padding:30px 26px}
+.frow-copy .stats{margin-bottom:30px;grid-auto-flow:column;grid-template-columns:none;grid-auto-columns:1fr}
+.frow-copy .stat{padding:22px 18px}
+.frow-copy .stat b{font-size:clamp(28px,2.8vw,40px)}
 .stat{background:var(--white);padding:44px 34px}
 .stats.inv{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.14)}
 .stats.inv .stat{background:transparent}
@@ -368,6 +371,9 @@ html.js .car-nav{display:flex}
    Home's two sections stay a plain grid on purpose, rather than picking up
    the carousel treatment meant for template card lists. */
 .eq{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+/* A scroll-snap row instead of a grid: the same cards, swiped or scrolled. */
+.eq.eq-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:14px}
+.eq-track > .ecard{flex:0 0 min(360px,82vw);scroll-snap-align:start}
 @media (max-width:920px){.eq{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:600px){.eq{grid-template-columns:1fr}}
 
@@ -389,8 +395,7 @@ html.js .car-nav{display:flex}
 .strack-stick{padding:96px 0}
 .strack.on .strack-stick{position:sticky;top:0;height:100svh;padding:0;
   display:flex;flex-direction:column;justify-content:center;overflow:hidden}
-.strack-head{display:flex;justify-content:space-between;align-items:flex-end;gap:26px;
-  flex-wrap:wrap;margin-bottom:44px}
+.strack-head{display:flex;flex-direction:column;align-items:flex-start;gap:18px;margin-bottom:44px}
 .strack-head h2{color:#fff;max-width:16ch}
 .strack-head .lede{color:rgba(255,255,255,.66);max-width:36ch;margin:0}
 .strack-rail{display:flex;gap:22px;overflow-x:auto;overscroll-behavior-x:contain;
@@ -614,10 +619,9 @@ html.js .cmp.sweep .cmp-handle{transition:left .8s var(--e-heavy)}
    sequence, so it carries the accent rather than sitting in near-invisible
    grey — it is doing navigational work, which is what the 5% red is for. */
 .step .num{font-family:var(--f-d);font-weight:800;font-size:22px;color:var(--red)}
-.lc-l{list-style:none;margin:0 0 24px;padding:0;display:flex;flex-direction:column;gap:8px}
-.lc-l li{font-size:14px;color:var(--muted);display:flex;gap:10px;align-items:baseline}
-.lc-l li::before{content:"";width:4px;height:4px;border-radius:50%;flex:none;transform:translateY(-2px);
-  background:var(--red);opacity:.5}
+.lc-l{list-style:disc;margin:0 0 24px;padding:0 0 0 18px;display:flex;flex-direction:column;gap:8px}
+.lc-l li{font-size:14px;color:var(--muted);display:list-item}
+.lc-l li::marker{color:var(--red)}
 .lc-band{margin-top:26px;border:1px solid var(--line);border-radius:16px;background:var(--off);
   padding:28px 32px;display:flex;align-items:center;justify-content:space-between;gap:26px;flex-wrap:wrap}
 .lc-band div{font-size:16px;color:var(--muted);max-width:72ch}
@@ -686,7 +690,7 @@ html.js .cmp.sweep .cmp-handle{transition:left .8s var(--e-heavy)}
 /* Drawing-sheet hierarchy: one heavy navy rule under the caption, hairlines
    between rows, and no outer box or zebra fill. The weight difference is
    what gives a plain key/value table structure without adding decoration. */
-table.spec{width:100%;border-collapse:collapse}
+table.spec{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
 table.spec + table.spec{margin-top:44px}
 table.spec caption{text-align:left;font-family:var(--f-m);font-size:11px;letter-spacing:.14em;
   text-transform:uppercase;color:var(--navy);padding-bottom:14px;border-bottom:1px solid var(--navy)}

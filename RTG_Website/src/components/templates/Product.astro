@@ -19,6 +19,7 @@ import Prose from '@components/blocks/Prose.astro';
 import SpecTable from '@components/blocks/SpecTable.astro';
 import FeatureRow from '@components/blocks/FeatureRow.astro';
 import MediaBand from '@components/blocks/MediaBand.astro';
+import StatsStrip from '@components/blocks/StatsStrip.astro';
 import TagList from '@components/blocks/TagList.astro';
 import Skeleton from '@components/blocks/Skeleton.astro';
 import PageEnding from '@components/blocks/PageEnding.astro';
@@ -48,6 +49,14 @@ const additionalProperty = data.specs.flatMap((s) =>
       value: r.v,
     })),
 );
+
+// Up to three headline figures per configuration (load, one duty figure,
+// weight), taken from its own table. Long values are skipped so the big type fits.
+const glance = (rows: { k: string; v: string }[]) =>
+  [/working load limit|maximum tension/i, /cable capacity|line speed|linear speed|sea state/i, /dry weight/i]
+    .map((re) => rows.find((r) => re.test(r.k) && r.v !== 'TO SUPPLY' && r.v.length <= 14))
+    .filter((r): r is { k: string; v: string } => Boolean(r))
+    .map((r) => ({ value: r.v, label: r.k, accent: false }));
 
 const datasheetPage = data.product?.datasheetPageId ? lookupPage(data.product.datasheetPageId) : undefined;
 // Carries this product's name into R-01's "Equipment" field so the visitor
@@ -83,12 +92,12 @@ const datasheetHref = datasheetPage ? `${datasheetPage.slug}?equipment=${encodeU
   {data.specs.map((s, i) => (
     <>
       <FeatureRow
-        eyebrow={data.specs.length > 1 ? `Configuration ${i + 1} of ${data.specs.length}` : 'Specification'}
         heading={s.caption}
         media={s.media[0]}
         reverse={i % 2 === 1}
         tone={i % 2 === 1 ? 'off' : 'default'}
       >
+        {glance(s.rows).length >= 2 && <StatsStrip items={glance(s.rows)} />}
         <SpecTable caption="Specification" rows={s.rows} footnote={s.footnote} />
       </FeatureRow>
       {s.media.length > 1 && <MediaBand items={s.media.slice(1)} tone={i % 2 === 1 ? 'off' : 'default'} />}
@@ -97,7 +106,7 @@ const datasheetHref = datasheetPage ? `${datasheetPage.slug}?equipment=${encodeU
 
   {datasheetHref && data.specs.length > 0 && (
     <Section>
-      <a class="btn b-navy" href={datasheetHref}>Request the full datasheet →</a>
+      <a class="btn b-navy" href={datasheetHref}>Request the datasheet →</a>
     </Section>
   )}
 

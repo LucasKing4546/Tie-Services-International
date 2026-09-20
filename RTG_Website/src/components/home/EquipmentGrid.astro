@@ -4,13 +4,13 @@ import { EQUIPMENT } from '@data/home';
 <section class="sec" id="equipment">
   <div class="wrap">
     <div class="sechd">
-      <span class="mono red fu">05 — The range</span>
+      <span class="mono red fu">The range</span>
       <h2 class="d2">
         <span class="rl"><span>Open specs.</span></span>
         <span class="rl"><span>Nothing hidden behind a catalogue code.</span></span>
       </h2>
     </div>
-    <div class="eq stag">
+    <div class="eq eq-track stag" role="region" aria-label="Equipment families" tabindex="0">
       {EQUIPMENT.map((e) => (
         <div class="ecard">
           <div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true" set:html={e.icon} /></div>
