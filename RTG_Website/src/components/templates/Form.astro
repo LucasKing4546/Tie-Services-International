@@ -43,9 +43,22 @@ const { Content } = await render(entry);
 
   <Section>
     <div class="two">
-      <Prose>
-        <Content components={mdxComponents} />
-      </Prose>
+      <div class="form-side">
+        <Prose>
+          <Content components={mdxComponents} />
+        </Prose>
+        {data.form && (
+          <aside class="form-next" aria-label="What happens next">
+            <h2>What happens next</h2>
+            <ol>
+              <li>An engineer reads your enquiry and replies to you directly.</li>
+              <li>Datasheets are issued to a named recipient, watermarked with a unique serial.</li>
+              <li>General arrangement drawings are issued only against a named project.</li>
+            </ol>
+            <p>Your details are used only as set out in the <a href="/privacy/">privacy notice</a>.</p>
+          </aside>
+        )}
+      </div>
       {data.form && (
         <div>
           {data.form.intro && <p class="lede" style="margin-bottom:28px">{data.form.intro}</p>}

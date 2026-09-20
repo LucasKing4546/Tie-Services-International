@@ -1,0 +1,157 @@
+/* parts-sections: component redesign layer, loaded after layout.css. */
+
+/* ---------- ImageSlot: photo + placeholder plates ---------- */
+.imgslot{border-radius:20px;box-shadow:0 1px 2px rgba(3,29,91,.08),0 18px 40px -16px rgba(3,29,91,.28)}
+.imgslot-shot img{border-radius:inherit;display:block}
+/* Placeholder: a navy drawing sheet rather than a pale box. */
+.imgslot:not(.imgslot-shot){background:var(--navy);border-color:rgba(255,255,255,.14);padding:26px}
+.imgslot:not(.imgslot-shot)::before{opacity:.16;mask-image:none;background-size:32px 32px;
+  background-image:linear-gradient(rgba(255,255,255,.8) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(255,255,255,.8) 1px,transparent 1px)}
+.imgslot:not(.imgslot-shot)::after{border-color:#fff;opacity:.6;width:18px;height:18px;top:20px;right:20px}
+.imgslot:not(.imgslot-shot) b{color:#fff;background:var(--red);align-self:flex-start;
+  padding:5px 10px;border-radius:999px;letter-spacing:.12em}
+.imgslot:not(.imgslot-shot) span{color:rgba(255,255,255,.86);font-size:14px;line-height:1.45}
+.tier-card .imgslot,.cmp-frame .imgslot{box-shadow:none}
+
+/* ---------- MediaBand: caption becomes an overlay plate on the photo ---------- */
+.mband-grid{gap:20px}
+.mband-item{position:relative;gap:0;border-radius:20px}
+.mband-item figcaption{position:absolute;left:12px;right:12px;bottom:12px;max-width:none;z-index:2;
+  padding:11px 15px;border-radius:12px;font-size:12.5px;line-height:1.4;font-weight:500;
+  color:var(--navy);background:rgba(255,255,255,.92);
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+  box-shadow:0 1px 2px rgba(3,29,91,.12),0 10px 24px -10px rgba(3,29,91,.35);
+  transform:translateY(0);transition:transform .45s var(--e-heavy)}
+.navy .mband-item figcaption{color:var(--navy)}
+.mband-grid[data-count="1"] .mband-item{flex-direction:column;align-items:stretch}
+.mband-grid[data-count="1"] .mband-plate{max-width:min(100%,var(--imgslot-maxw,1100px))}
+.mband-grid[data-count="1"] .mband-item figcaption{flex:none;padding:11px 15px}
+@media (hover:hover) and (prefers-reduced-motion:no-preference){
+  .mband-item img{transition:transform .8s var(--e-heavy)}
+  .mband-item:hover img{transform:scale(1.035)}
+  .mband-item:hover figcaption{transform:translateY(-4px)}
+}
+@media (max-width:700px){.mband-grid{gap:18px}}
+
+/* ---------- IndexRows: bigger type, hover reveal ---------- */
+.irows-list a{position:relative;padding:clamp(30px,4.5vw,52px) 0;
+  grid-template-columns:minmax(0,1.25fr) minmax(0,1fr) 56px;align-items:center;isolation:isolate}
+.irows-title{font-size:clamp(28px,4.2vw,58px);letter-spacing:-.035em;line-height:1.05}
+.irows-blurb{font-size:16px;color:var(--muted)}
+.irows-go{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;font-size:24px;
+  border:1px solid var(--line);background:var(--white);color:var(--navy);
+  transition:transform .45s var(--e-heavy),background .3s var(--e),color .3s var(--e),border-color .3s var(--e)}
+.irows.navy .irows-go{background:transparent;border-color:rgba(255,255,255,.3);color:#fff}
+.irows-list a::before{content:"";position:absolute;inset:0 -20px;z-index:-1;border-radius:18px;
+  background:var(--off);opacity:0;transform:scaleY(.92);transition:opacity .35s var(--e),transform .45s var(--e-heavy)}
+.irows.navy .irows-list a::before{background:rgba(255,255,255,.06)}
+.irows.off .irows-list a::before{background:var(--white)}
+.irows-list a:hover::before,.irows-list a:focus-visible::before{opacity:1;transform:none}
+.irows-list a:hover .irows-go,.irows-list a:focus-visible .irows-go{transform:translateX(6px);
+  background:var(--red);border-color:var(--red);color:#fff}
+.irows-list a:focus-visible{outline:3px solid var(--red);outline-offset:4px;border-radius:12px}
+.irows-blurb{transition:transform .45s var(--e-heavy)}
+.irows-list a:hover .irows-blurb{transform:translateX(8px)}
+@media (max-width:820px){
+  .irows-list a{grid-template-columns:1fr 44px;padding:28px 0}
+  .irows-go{width:44px;height:44px;font-size:20px}
+  .irows-list a::before{inset:0 -12px}
+  .irows-list a:hover .irows-blurb{transform:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .irows-list a::before,.irows-blurb,.irows-go{transition:none}
+  .irows-list a:hover .irows-blurb,.irows-list a:hover .irows-go{transform:none}
+}
+
+/* ---------- PinnedStage(s): larger numeral, panel-like stage ---------- */
+.pstage-grid{gap:clamp(40px,6vw,96px)}
+.pstage-head h2{max-width:14ch}
+.pstage-index li{padding:15px 0}
+.pstage-index .t{font-size:16px}
+.pstage-index li.on .t{color:var(--navy)}
+.pstage.navy .pstage-index li.on .t{color:#fff}
+.pstage-bar i{height:4px;border-radius:4px}
+.pstage-num{font-size:clamp(72px,9vw,96px);letter-spacing:-.04em}
+.pstage-item h3{font-size:clamp(28px,3.6vw,48px);letter-spacing:-.035em;line-height:1.08}
+.pstage-body{font-size:clamp(17px,1.4vw,20px)}
+.pstage-item .lc-l li::marker{color:var(--red)}
+.pstage.navy .pstage-item .lc-l li::marker{color:#fff}
+@media (min-width:901px){
+  .pstage:not(.navy) .pstage-item{background:var(--white);border:1px solid var(--line);border-radius:24px;
+    padding:clamp(28px,3.4vw,52px);box-shadow:0 1px 2px rgba(3,29,91,.06),0 24px 56px -22px rgba(3,29,91,.22)}
+  .pstage.navy .pstage-item{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);
+    border-radius:24px;padding:clamp(28px,3.4vw,52px);box-shadow:0 24px 56px -22px rgba(0,8,32,.6)}
+}
+
+/* ---------- TierCard: the four-tier ladder ---------- */
+.tier-card{min-height:440px;border-radius:24px;border:1px solid rgba(255,255,255,.12);
+  box-shadow:0 2px 4px rgba(3,29,91,.14),0 28px 56px -22px rgba(3,29,91,.55);
+  transition:transform .45s var(--e-heavy),box-shadow .45s var(--e)}
+.tier-card::after{background:linear-gradient(180deg,rgba(3,29,91,.05) 0%,rgba(3,29,91,.6) 50%,rgba(3,29,91,.96) 100%)}
+.tier-num{top:10px;right:20px;font-size:clamp(120px,14vw,168px);letter-spacing:-.04em;color:rgba(255,255,255,.16)}
+.tier-card-body{padding:32px}
+.tier-card-body .lc-n{display:inline-block;background:var(--red);color:#fff;padding:5px 12px;border-radius:999px;
+  letter-spacing:.12em;margin:0 0 16px}
+.tier-card-body h3{font-size:clamp(26px,2.6vw,32px)!important;letter-spacing:-.03em;line-height:1.1}
+.tier-card-body p{color:rgba(255,255,255,.9);font-size:15px;line-height:1.55}
+@media (hover:hover) and (prefers-reduced-motion:no-preference){
+  .tier-card:hover{transform:translateY(-8px);
+    box-shadow:0 2px 4px rgba(3,29,91,.14),0 40px 70px -24px rgba(3,29,91,.7)}
+}
+
+/* ---------- FeaturedCase ---------- */
+.case{gap:clamp(36px,6vw,96px)}
+.case > .imgslot{box-shadow:0 2px 4px rgba(3,29,91,.1),0 36px 72px -28px rgba(3,29,91,.45)}
+.case h2{font-size:clamp(34px,4.6vw,64px);letter-spacing:-.04em;line-height:1.04;max-width:16ch}
+.case .arw{display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:#fff;
+  padding:14px 26px;border-radius:999px;font-weight:600;text-decoration:none;
+  box-shadow:0 1px 2px rgba(3,29,91,.2),0 12px 24px -10px rgba(3,29,91,.5);
+  transition:transform .3s var(--e),background .3s var(--e)}
+.case .arw:hover{background:var(--red);transform:translateY(-2px)}
+.case .arw:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+.case .quote{font-size:clamp(22px,2.6vw,32px);max-width:24ch;letter-spacing:-.035em}
+@media (prefers-reduced-motion:reduce){.case .arw{transition:none}.case .arw:hover{transform:none}}
+
+/* ---------- Carousel / CardGrid / ChildCards: strack look on light ---------- */
+.car-track{gap:22px;padding:8px 4px 40px;margin:-8px -4px -40px;scroll-snap-type:x mandatory}
+.car-track > *{flex-basis:calc((100% - 22px*2)/3)}
+.car-2 .car-track > *{flex-basis:calc((100% - 22px)/2)}
+.car .ecard{min-height:340px;padding:30px;border-radius:20px;background:var(--white);
+  border:1px solid var(--line);
+  box-shadow:0 1px 2px rgba(3,29,91,.08),0 20px 44px -20px rgba(3,29,91,.28);
+  transition:background .35s var(--e),border-color .35s var(--e),transform .35s var(--e),box-shadow .35s var(--e)}
+.car .ecard:hover{background:var(--navy);border-color:var(--navy);transform:translateY(-8px);
+  box-shadow:0 2px 4px rgba(3,29,91,.14),0 34px 60px -22px rgba(3,29,91,.6)}
+.car .ecard:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+.car .ecard .lc-n{font-family:var(--f-d);font-weight:800;font-size:38px;letter-spacing:-.04em;line-height:1;
+  text-transform:none;color:var(--navy);margin-bottom:0}
+.car .ecard h3{font-size:clamp(22px,2.2vw,27px);letter-spacing:-.03em;line-height:1.14;margin:18px 0 12px;
+  transition:color .3s var(--e)}
+.car .ecard p{color:var(--muted);transition:color .3s var(--e)}
+.car .ecard .arw{color:var(--red);font-weight:700;transition:color .3s var(--e)}
+.car .ecard:hover h3,.car .ecard:hover .lc-n{color:#fff}
+.car .ecard:hover p{color:rgba(255,255,255,.86)}
+.car .ecard:hover .arw{color:#fff}
+.car .ecard:hover .ic{background:var(--red)}
+/* the global hover-dims-siblings rule fights the fill; drop it here */
+.car-track:has(.ecard:hover) .ecard:not(:hover){opacity:1}
+.car-btn{width:52px;height:52px;background:var(--navy);border-color:var(--navy);color:#fff;font-size:22px;
+  box-shadow:0 8px 20px -8px rgba(3,29,91,.5);transition:background .25s var(--e),border-color .25s var(--e),transform .25s var(--e)}
+.car-btn:hover{background:var(--red);border-color:var(--red);transform:translateY(-2px)}
+.car-btn:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+.car-btn:disabled,.car-btn:disabled:hover{background:var(--white);border-color:var(--line);color:var(--navy);
+  opacity:.4;transform:none;box-shadow:none}
+.car-nav{margin-top:28px}
+@media (max-width:920px){.car-track > *,.car-2 .car-track > *{flex-basis:calc((100% - 22px)/2)}}
+@media (max-width:600px){.car-track > *,.car-2 .car-track > *{flex-basis:84%}.car .ecard{min-height:280px;padding:24px}}
+@media (prefers-reduced-motion:reduce){
+  .car .ecard,.car .ecard h3,.car .ecard p,.car-btn{transition:none}
+  .car .ecard:hover,.car-btn:hover{transform:none}
+}
+
+/* ---------- Templates: composition polish (shared classes) ---------- */
+.sec.off .imgslot-shot{box-shadow:0 2px 4px rgba(3,29,91,.08),0 28px 56px -24px rgba(3,29,91,.35)}
+.lead-para{font-size:clamp(20px,2vw,26px);line-height:1.45;letter-spacing:-.015em}
+.two{gap:clamp(34px,6vw,96px);align-items:center}
+.lc-band{border-radius:20px;box-shadow:0 1px 2px rgba(3,29,91,.06),0 18px 40px -22px rgba(3,29,91,.22)}

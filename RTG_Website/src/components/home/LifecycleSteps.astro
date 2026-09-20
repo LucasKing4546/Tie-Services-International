@@ -1,5 +1,8 @@
 ---
+import { Image } from 'astro:assets';
 import { LIFECYCLE } from '@data/home';
+import { MEDIA } from '@data/media';
+const PHOTOS = ['IMG-E02-A', 'IMG-E04-A', 'IMG-E07-A'];
 ---
 <section class="sec" id="lifecycle" style="padding-bottom:76px">
   <div class="wrap">
@@ -8,8 +11,11 @@ import { LIFECYCLE } from '@data/home';
       <span class="rl"><span>Re-certify.</span></span></h2>
     </div>
     <div class="eq stag">
-      {LIFECYCLE.map((l) => (
+      {LIFECYCLE.map((l, i) => (
         <div class="ecard lc">
+          {MEDIA[PHOTOS[i]] && (
+            <div class="lc-ph"><Image src={MEDIA[PHOTOS[i]]} alt="" widths={[420, 640, 860]} sizes="(max-width:900px) 100vw, 380px" loading="lazy" decoding="async" /></div>
+          )}
           <div>
             <div class="lc-h">
               <div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true" set:html={l.icon} /></div>

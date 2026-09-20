@@ -287,3 +287,59 @@
 }
 .stmt + .sec.sm .stat{padding:34px 26px 30px}
 .stmt + .sec.sm .stat b .u{margin-left:.04em}
+
+/* ===== Bolder pass: tiers, machine lift, proof case, lifecycle, marquee ===== */
+/* lifecycle cards: photo header, lift on hover */
+.ecard.lc{padding:0;overflow:hidden;gap:0;transition:transform .35s var(--e),box-shadow .35s var(--e)}
+.ecard.lc > div:not(.lc-ph){padding:28px 28px 8px}
+.ecard.lc > .arw{padding:14px 28px 28px}
+.ecard.lc:hover{transform:translateY(-6px)}
+.lc-ph{aspect-ratio:16/9;overflow:hidden;background:var(--navy)}
+.lc-ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s var(--e)}
+.ecard.lc:hover .lc-ph img{transform:scale(1.05)}
+.lc-band{border-radius:20px;padding:34px 40px;box-shadow:0 28px 54px -26px rgba(3,29,91,.55)}
+.lc-band div{font-size:clamp(16px,1.5vw,19px);line-height:1.5;max-width:60ch}
+.lc-band .btn-o:hover{box-shadow:0 12px 26px -12px rgba(0,0,0,.5)}
+
+/* proof case: quote as a raised card */
+#proof .quote{background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px 30px 8px;margin:0;
+  box-shadow:0 22px 46px -28px rgba(3,29,91,.35);font-size:clamp(19px,1.9vw,24px);line-height:1.35;
+  letter-spacing:-.02em;color:var(--navy)}
+#proof .quote-c{background:#fff;border:1px solid var(--line);border-top:0;border-radius:0 0 20px 20px;
+  margin:-1px 0 0;padding:0 30px 24px;box-shadow:0 22px 46px -28px rgba(3,29,91,.35)}
+#proof .quote{border-bottom:0;border-radius:20px 20px 0 0}
+.case-vis{transition:transform .5s var(--e),box-shadow .5s var(--e)}
+.case-vis:hover{transform:translateY(-6px);box-shadow:0 44px 80px -30px rgba(3,29,91,.6)}
+.case-vis .tag{background:rgba(3,29,91,.6);padding:7px 12px;border-radius:999px;left:16px;bottom:16px}
+
+/* pinned tiers: white surface for the copy, chunkier progress */
+#tiers .pin-copy{background:#fff;border:1px solid var(--line);border-radius:22px;padding:32px 34px;
+  box-shadow:0 30px 60px -32px rgba(3,29,91,.4);min-height:380px}
+#tiers .tier{inset:32px 34px}
+#tiers .tier li{color:var(--navy)}
+#tiers .pin-bar i{height:5px;border-radius:3px}
+#tiers .pin-vis{border-radius:22px;background:#fff;border:1px solid var(--line);
+  box-shadow:0 30px 60px -34px rgba(3,29,91,.4)}
+@media (max-width:900px){#tiers .pin-copy{padding:24px 22px;min-height:420px}#tiers .tier{inset:24px 22px}}
+
+/* machine lift: heading spacing and pick buttons */
+.zf-pick button{transition:transform .25s var(--e),background .25s var(--e),border-color .25s var(--e)}
+.zf-pick button:hover{transform:translateY(-2px)}
+.zf .spec{background:rgba(3,29,91,.55);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:16px 22px}
+.zf .btn.b-red{box-shadow:0 16px 30px -14px rgba(171,50,65,.75)}
+@media (max-width:640px){.zf .spec{gap:18px;padding:14px 16px}}
+
+/* marquee: larger type, subtle depth */
+.mq{padding:20px 0;box-shadow:0 14px 30px -18px rgba(171,50,65,.6)}
+.mq span{font-size:clamp(16px,1.6vw,20px);font-weight:800;letter-spacing:-.02em}
+.mq-in:hover{animation-play-state:paused}
+
+/* stats: tactile hover */
+.stats .stat{transition:background .3s var(--e)}
+.stats .stat:hover{background:var(--off)}
+
+@media (prefers-reduced-motion:reduce){
+  .ecard.lc,.case-vis,.zf-pick button,.lc-ph img{transition:none}
+  .ecard.lc:hover,.case-vis:hover,.zf-pick button:hover{transform:none}
+  .ecard.lc:hover .lc-ph img{transform:none}
+}
