@@ -7,8 +7,8 @@ import { TIERS } from '@data/home';
       <div class="pin-vis"><canvas id="tierGL" role="img"
         aria-label="3D winch assembly building up one manufacturing tier at a time"></canvas></div>
       <div>
-        <p class="mono red" style="margin:0 0 24px">Contract manufacturing</p>
-        <h2 class="d3" style="margin-bottom:34px;max-width:16ch">How much of your machine would you like us to take?</h2>
+        <p class="mono red tier-eyebrow">Contract manufacturing</p>
+        <h2 class="d3 tier-h">How much of your machine would you like us to take?</h2>
         <div class="pin-copy">
           {TIERS.map((t, i) => (
             <article class={`tier${i === 0 ? ' on' : ''}`} data-t={i}>
@@ -19,7 +19,7 @@ import { TIERS } from '@data/home';
             </article>
           ))}
         </div>
-        <div class="pin-bar" aria-hidden="true">{TIERS.map((_, i) => <i class={i === 0 ? 'on' : ''}></i>)}</div>
+        <div class="pin-bar" aria-hidden="true">{TIERS.map((t, i) => <i class={i === 0 ? 'on' : ''}><b>{t.n}</b><span>{t.title}</span></i>)}</div>
         <p style="margin-top:30px"><a class="arw" href="/contract-manufacturing/">Your design. Your IP. Our factory. →</a></p>
       </div>
     </div>
