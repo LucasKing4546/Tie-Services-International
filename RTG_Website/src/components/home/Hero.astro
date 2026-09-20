@@ -1,6 +1,8 @@
 ---
+import { HERO_PROOF } from '@data/home';
 ---
 <section class="hero">
+  <div class="hero-glow" aria-hidden="true"></div>
   <div class="tick" aria-hidden="true"></div>
   <div class="wrap hero-grid">
     <div>
@@ -19,6 +21,9 @@
         <a class="btn b-navy" href="/sectors/">Find your sector<span class="dot"></span></a>
         <a class="btn btn-o" href="/proof/">See the evidence</a>
       </div>
+      <dl class="hero-proof fu">
+        {HERO_PROOF.map((p) => <div><dt>{p.label}</dt><dd>{p.value}</dd></div>)}
+      </dl>
     </div>
     <div class="artbox">
       <div class="artbox-in fu">

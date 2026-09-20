@@ -62,7 +62,7 @@ if (existsSync(dist)) {
       try { JSON.parse(ld[1]); } catch { fails.push(`${rel}: JSON-LD is not valid JSON`); }
     }
     // images must carry alt (empty alt is allowed for decorative)
-    const imgs = body.match(/<img(?![^>]*\balt=)[^>]*>/g);
+    const imgs = body.match(/<img(?![^>]*\balt(?:=|\s|>))[^>]*>/g);
     if (imgs) fails.push(`${rel}: ${imgs.length} <img> without an alt attribute`);
   }
   console.log(`Checked ${html.length} built pages.`);

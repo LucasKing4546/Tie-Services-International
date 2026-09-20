@@ -23,19 +23,19 @@ export const MARQUEE = [
 
 /** Mirrors S-01…S-07 in the Page Map. */
 export const SECTORS = [
-  { id: 'S-01', name: 'Ocean Survey & Hydrography', href: '/sectors/ocean-survey-hydrography/',
+  { id: 'S-01', ref: 'IMG-S01-C', name: 'Ocean Survey & Hydrography', href: '/sectors/ocean-survey-hydrography/',
     blurb: 'CTD, side scan, magnetometer, sub-bottom profiler and deep tow. 300 to 4,000 m.' },
-  { id: 'S-02', name: 'Marine Geotechnical', href: '/sectors/marine-geotechnical/',
+  { id: 'S-02', ref: 'IMG-S02-C', name: 'Marine Geotechnical', href: '/sectors/marine-geotechnical/',
     blurb: 'When the tool is fixed to the seabed and the ship is not. Corer, CPT and vibrocorer handling.' },
-  { id: 'S-03', name: 'Offshore Wind & Subsea Cables', href: '/sectors/offshore-wind-subsea-cables/',
+  { id: 'S-03', ref: '', name: 'Offshore Wind & Subsea Cables', href: '/sectors/offshore-wind-subsea-cables/',
     blurb: 'Every turbine starts with a core sample. Every array ends with a cable.' },
-  { id: 'S-04', name: 'Seismic', href: '/sectors/seismic/',
+  { id: 'S-04', ref: 'IMG-S04-D', name: 'Seismic', href: '/sectors/seismic/',
     blurb: 'Handling built for continuous duty, where the winch never really stops.' },
-  { id: 'S-05', name: 'Oceanographic Research', href: '/sectors/oceanographic-research/',
+  { id: 'S-05', ref: 'IMG-S05-C', name: 'Oceanographic Research', href: '/sectors/oceanographic-research/',
     blurb: 'A CTD cast is a measurement, not a lift. Controlled, repeatable, instrument-safe.' },
-  { id: 'S-06', name: 'Subsea, ROV & Diving', href: '/sectors/subsea-rov-diving/',
+  { id: 'S-06', ref: 'IMG-S06-B', name: 'Subsea, ROV & Diving', href: '/sectors/subsea-rov-diving/',
     blurb: 'An ROV is only as available as its umbilical winch.' },
-  { id: 'S-07', name: 'Defence & Government', href: '/sectors/defence-government/',
+  { id: 'S-07', ref: 'IMG-S07-B', name: 'Defence & Government', href: '/sectors/defence-government/',
     blurb: 'Built for government and naval programmes, with the documentation to match.' },
 ];
 
@@ -109,4 +109,12 @@ export const LIFECYCLE = [
     blurb: 'Class renewal and load testing, so it goes back to sea with paperwork that stands up.',
     points: [`Load tested to ${PROOF.loadTestTe} Te in house`, 'Class witnessed and certified', 'Full test and traceability pack'],
     icon: '<path d="M12 3l7 3v5c0 4.4-2.9 8.3-7 9.5C7.9 19.3 5 15.4 5 11V6z"/><path d="M9 12l2 2 4-4"/>' },
+];
+
+/** Compact proof row under the hero CTAs. Values come from PROOF only. */
+export const HERO_PROOF = [
+  { value: `${PROOF.years}`, label: 'years building' },
+  { value: PROOF.machines.toLocaleString('en-GB'), label: 'machines delivered' },
+  { value: `${PROOF.cptDepthM.toLocaleString('en-GB')} m`, label: 'CPT depth record' },
+  { value: `${PROOF.loadTestTe} Te`, label: 'in-house load test' },
 ];

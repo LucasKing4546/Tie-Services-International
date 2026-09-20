@@ -1,7 +1,10 @@
 ---
+import { Image } from 'astro:assets';
 import { SECTORS } from '@data/home';
+import { mediaFor } from '@data/media';
 ---
 <section class="hz-wrap" id="sectors">
+  <div class="glow-a" aria-hidden="true"></div>
   <div class="hz-stick">
     <div class="hz-head">
       <div>
@@ -11,13 +14,16 @@ import { SECTORS } from '@data/home';
         Seven sectors. Each one filters the equipment, the evidence and the engineer you talk to.</p>
     </div>
     <div class="hz-track" id="hzTrack">
-      {SECTORS.map((s) => (
-        <a class="scard" href={s.href}>
+      {SECTORS.map((s) => {
+        const photo = s.ref ? mediaFor(s.ref) : undefined;
+        return (
+        <a class={`scard${photo ? ' has-img' : ''}`} href={s.href}>
+          {photo && <Image src={photo} alt="" widths={[420, 760]} sizes="380px" loading="lazy" class="scard-img" />}
           <span class="n">{s.id}</span>
           <div><h3>{s.name}</h3><p>{s.blurb}</p></div>
           <span class="arw">Explore →</span>
         </a>
-      ))}
+      );})}
     </div>
     <div class="hz-prog"><div class="rail"><div class="fill" id="hzFill"></div></div></div>
   </div>

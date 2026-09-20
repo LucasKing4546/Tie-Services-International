@@ -27,7 +27,7 @@ const { page, eyebrow, lede, ctas = [], media, crumbs = true } = Astro.props;
 const photo = media ? mediaFor(media.ref) : undefined;
 ---
 
-<section class="phero">
+<section class="phero" data-tpl={page.template}>
   <div
     class:list={['phero-media', { 'phero-media-shot': photo }]}
     data-motion="parallax"

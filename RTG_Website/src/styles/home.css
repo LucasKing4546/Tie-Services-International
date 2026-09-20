@@ -119,29 +119,30 @@
 .pin-bar i.on{background:var(--red)}
 
 /* ---------- horizontal sectors ---------- */
-.hz-wrap{position:relative;background:var(--navy)}
+.hz-wrap{position:relative;background:var(--navy);overflow:clip}
 .hz-stick{position:sticky;top:0;height:100svh;display:flex;flex-direction:column;justify-content:center;
   overflow:hidden}
 .hz-head{padding:0 var(--gut);max-width:var(--wrap);margin:0 auto 44px;width:100%;
   display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
 .hz-track{display:flex;gap:22px;padding:0 max(var(--gut),calc((100vw - var(--wrap))/2 + var(--gut)));
   will-change:transform}
-.scard{flex:none;width:330px;min-height:390px;background:rgba(255,255,255,.05);
-  border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:32px 30px;display:flex;
+.scard{position:relative;overflow:hidden;isolation:isolate;box-shadow:0 24px 48px -18px rgba(0,8,32,.65);flex:none;width:370px;min-height:430px;background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.16);border-radius:20px;padding:32px 30px;display:flex;
   flex-direction:column;justify-content:space-between;transition:background .35s var(--e),border-color .35s var(--e),transform .35s var(--e)}
-.scard:hover{background:var(--red);border-color:var(--red);transform:translateY(-6px)}
-.scard .n{font-family:var(--f-m);font-size:11px;letter-spacing:.16em;color:rgba(255,255,255,.5)}
+.scard:hover{background:var(--red);border-color:var(--red);transform:translateY(-8px);box-shadow:0 34px 60px -20px rgba(171,50,65,.6)}
+.scard:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.scard .n{font-family:var(--f-d);font-weight:800;font-size:44px;letter-spacing:-.04em;line-height:1;color:rgba(255,255,255,.9)}
 .scard h3{font-size:29px;letter-spacing:-.03em;line-height:1.12;margin:20px 0 14px;color:#fff}
-.scard p{font-size:14.5px;color:rgba(255,255,255,.66);margin:0}
+.scard p{font-size:14.5px;color:rgba(255,255,255,.86);margin:0}
 .scard .arw{color:#fff;margin-top:26px}
 .hz-prog{max-width:var(--wrap);margin:44px auto 0;padding:0 var(--gut);width:100%}
 .hz-prog .rail{height:2px;background:rgba(255,255,255,.18);border-radius:2px;position:relative}
 .hz-prog .fill{position:absolute;left:0;top:0;bottom:0;background:var(--red);border-radius:2px;width:0}
 @media (max-width:900px){
   .hz-wrap{height:auto!important}
-  .hz-stick{position:static;height:auto;padding:96px 0}
+  .hz-stick{position:relative;height:auto;padding:72px 0}
   .hz-track{transform:none!important;flex-direction:column;padding:0 var(--gut);max-width:var(--wrap);margin:0 auto}
-  .scard{width:auto;min-height:0}
+  .scard{width:auto;min-height:300px}
   .hz-prog{display:none}
 }
 
@@ -166,3 +167,121 @@
   letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5)}
 .case-vis .badge{position:absolute;right:20px;top:20px;background:var(--red);color:#fff;
   font-family:var(--f-d);font-weight:700;font-size:11.5px;letter-spacing:.02em;padding:7px 14px;border-radius:100px}
+
+
+/* =====================================================================
+   Bolder pass: depth, rhythm, proof row, tactile cards
+   ===================================================================== */
+
+/* hero: soft navy glow behind the model, hairline grid, proof row */
+.hero-glow{position:absolute;inset:0;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(60% 55% at 75% 45%,rgba(3,29,91,.10),transparent 70%),
+    radial-gradient(35% 30% at 92% 92%,rgba(171,50,65,.08),transparent 70%),
+    linear-gradient(var(--line) 1px,transparent 1px) 0 0/100% 96px;
+  -webkit-mask-image:linear-gradient(90deg,transparent 45%,#000 75%);
+          mask-image:linear-gradient(90deg,transparent 45%,#000 75%);opacity:.7}
+.hero .wrap{position:relative;z-index:1}
+.hero .artbox{z-index:1}
+.hero .d1{letter-spacing:-.045em;font-size:clamp(48px,6.4vw,96px);max-width:14ch}
+.hero .lede{font-size:clamp(18px,1.6vw,22px);color:var(--navy);opacity:.82;max-width:44ch}
+.hero-sub{margin-top:30px}
+.hero-cta{margin-top:30px}
+.hero-cta .btn{padding:18px 32px;font-size:15.5px}
+.hero-proof{display:grid;grid-template-columns:repeat(4,auto);justify-content:start;gap:0;margin:44px 0 0;
+  border-top:2px solid var(--navy);padding:0}
+.hero-proof div{display:flex;flex-direction:column;gap:8px;padding:16px 30px 0 0;margin-right:30px;
+  border-right:1px solid var(--line)}
+.hero-proof div:last-child{border-right:0;margin-right:0}
+.hero-proof dd{margin:0;order:1;font-family:var(--f-d);font-weight:800;font-size:clamp(26px,2.6vw,38px);
+  letter-spacing:-.04em;line-height:1;color:var(--navy);font-variant-numeric:tabular-nums}
+.hero-proof dt{order:2;font-family:var(--f-m);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+@media (max-width:980px){.hero{padding-top:120px}}
+@media (max-width:640px){
+  .hero-proof{grid-template-columns:1fr 1fr;row-gap:20px}
+  .hero-proof div{margin-right:0;padding-right:12px}
+  .hero-proof div:nth-child(2){border-right:0}
+}
+
+/* fleet: photo beat gets a scrim so the caption holds AA */
+.fleet::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,rgba(3,29,91,.55),rgba(3,29,91,0) 45%,rgba(3,29,91,.35))}
+.fleet-cap{z-index:1}
+.fleet-line{font-size:clamp(22px,3vw,38px);max-width:26ch}
+
+/* statement: navy band with photo, glow and grid; tight */
+.stmt{position:relative;overflow:hidden;isolation:isolate;padding:84px 0}
+.stmt-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-3;opacity:.28}
+.stmt::before{content:"";position:absolute;inset:0;z-index:-2;
+  background:
+    radial-gradient(50% 80% at 12% 0%,rgba(171,50,65,.35),transparent 70%),
+    linear-gradient(90deg,rgba(3,29,91,.96) 35%,rgba(3,29,91,.7))}
+.stmt::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px) 0 0/100% 72px}
+.stmt .d2{color:#fff}
+.stmt .lede{color:rgba(255,255,255,.86)}
+.stmt .arw{color:#fff}
+@media (max-width:900px){.stmt{padding:60px 0}}
+
+/* stats: lifted off the statement band */
+.stmt + .sec.sm{padding-top:0;padding-bottom:64px}
+.stmt + .sec.sm .stats{margin-top:-44px;position:relative;z-index:2;border-radius:18px;overflow:hidden;
+  box-shadow:0 30px 60px -24px rgba(3,29,91,.35);border:1px solid var(--line)}
+.stmt + .sec.sm .stat b{font-size:clamp(40px,4.6vw,64px)}
+
+/* tiers: off band with a quiet glow */
+#tiers .pin-stick{background:var(--off);
+  background-image:radial-gradient(45% 60% at 20% 50%,rgba(3,29,91,.07),transparent 70%)}
+.tier:not(.on) .num{color:#D3D8E2}
+
+/* sectors: navy with glow + grid */
+.hz-wrap::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(45% 55% at 85% 10%,rgba(171,50,65,.22),transparent 70%),
+    radial-gradient(50% 60% at 5% 100%,rgba(10,42,107,.9),transparent 70%),
+    linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px) 0 0/100% 64px}
+.hz-stick{z-index:1}
+.scard-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;
+  transition:transform .6s var(--e),opacity .35s var(--e)}
+.scard.has-img::before{content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(180deg,rgba(3,29,91,.55) 0%,rgba(3,29,91,.82) 55%,rgba(3,29,91,.96) 100%);
+  transition:opacity .35s}
+.scard.has-img:hover .scard-img{transform:scale(1.06);opacity:.5}
+.scard.has-img:hover::before{opacity:.75}
+.scard .arw{font-weight:700}
+
+/* equipment and lifecycle: off bands, numbered tactile cards */
+#equipment,#lifecycle{background:var(--off)}
+#proof.off{background:var(--white)}
+#proof.off::before{display:none}
+#equipment.sec,#lifecycle.sec{padding-top:88px}
+.eq-track{counter-reset:eq}
+.eq-track > .ecard{flex:0 0 min(400px,82vw);min-height:340px;position:relative;counter-increment:eq;
+  border-radius:20px;padding:36px 32px;box-shadow:0 18px 40px -22px rgba(3,29,91,.28)}
+.eq-track > .ecard::after{content:counter(eq,decimal-leading-zero);position:absolute;top:26px;right:28px;
+  font-family:var(--f-d);font-weight:800;font-size:40px;letter-spacing:-.04em;line-height:1;color:var(--off-2);
+  transition:color .35s var(--e)}
+.eq-track > .ecard:hover{box-shadow:0 30px 54px -22px rgba(3,29,91,.42)}
+.eq-track > .ecard:hover::after{color:var(--red)}
+.eq-track > .ecard h3{font-size:24px}
+.ecard.lc{border-radius:20px;box-shadow:0 18px 40px -24px rgba(3,29,91,.25)}
+.ecard.lc:hover{box-shadow:0 28px 50px -24px rgba(3,29,91,.4)}
+.lc-band{background:var(--navy);border-color:var(--navy)}
+.lc-band div{color:rgba(255,255,255,.86)}
+.lc-band b{color:#fff}
+.lc-band .btn-o{border-color:rgba(255,255,255,.4);color:#fff}
+.lc-band .btn-o:hover{background:#fff;color:var(--navy)}
+
+/* case visual: depth on the navy panel */
+.case-vis{box-shadow:0 34px 70px -30px rgba(3,29,91,.55);
+  background-image:radial-gradient(60% 60% at 70% 30%,rgba(171,50,65,.28),transparent 70%),
+    linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px);
+  background-size:auto,100% 48px}
+.case-vis .tag{color:rgba(255,255,255,.75)}
+
+#equipment .sechd,#lifecycle .sechd{border-top-color:var(--navy)}
+
+@media (prefers-reduced-motion:reduce){
+  .scard,.scard-img,.eq-track > .ecard{transition:none}
+  .scard:hover,.eq-track > .ecard:hover{transform:none}
+}

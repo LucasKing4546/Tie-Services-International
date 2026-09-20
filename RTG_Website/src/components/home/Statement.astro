@@ -1,4 +1,10 @@
-<section class="sec stmt">
+---
+import { Image } from 'astro:assets';
+import { mediaFor } from '@data/media';
+const bg = mediaFor('IMG-L00-A');
+---
+<section class="sec stmt navy">
+  {bg && <Image src={bg} alt="" widths={[1200, 2000]} sizes="100vw" loading="lazy" class="stmt-bg" />}
   <div class="wrap stmt-grid">
     <div>
       <h2 class="d2">

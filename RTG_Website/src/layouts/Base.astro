@@ -10,6 +10,8 @@ import Header from '@components/site/Header.astro';
 import Footer from '@components/site/Footer.astro';
 import '@/styles/tokens.css';
 import '@/styles/blocks.css';
+import '@/styles/surfaces.css';
+import '@/styles/layout.css';
 
 interface Props {
   /** Page Map id, e.g. 'S-02'. Unknown ids throw at build time. */
@@ -97,6 +99,17 @@ const robots = offMap ? 'noindex, follow' : 'index, follow, max-image-preview:la
       // 3D on top.
       document.addEventListener('astro:page-load', initMotion);
       document.addEventListener('astro:page-load', initFormPrefill);
+    </script>
+
+    <script is:inline>
+      if (matchMedia('(pointer:fine) and (prefers-reduced-motion:no-preference)').matches)
+        document.addEventListener('pointermove', function (e) {
+          var c = e.target.closest && e.target.closest('.ecard');
+          if (!c) return;
+          var r = c.getBoundingClientRect();
+          c.style.setProperty('--mx', e.clientX - r.left + 'px');
+          c.style.setProperty('--my', e.clientY - r.top + 'px');
+        }, { passive: true });
     </script>
 
     {/* Chatra live chat, same ID as production. is:inline so Astro ships it
