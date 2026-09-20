@@ -270,7 +270,7 @@
 .crumbs li{display:flex;align-items:center;gap:8px;font-family:var(--f-m);font-size:11px;
   letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 .crumbs li:not(:last-child)::after{content:"/";color:var(--line)}
-.crumbs a{color:var(--muted);transition:color .2s}
+.crumbs a{color:var(--muted);transition:color .2s;display:inline-block;padding:13px 0}
 .crumbs a:hover{color:var(--red)}
 .crumbs li[aria-current] span{color:var(--navy)}
 
@@ -692,7 +692,7 @@ table.spec .foot{margin-top:16px;font-size:13.5px;color:var(--muted)}
 /* ---------- note callout (Note.astro) ---------- */
 .note{border:1px solid var(--line);border-radius:16px;padding:26px 28px;background:var(--off)}
 .note + .note{margin-top:20px}
-.note h4{font-size:16px;margin-bottom:10px}
+.note h3{font-size:16px;margin-bottom:10px}
 .note p{font-size:15px;color:var(--muted);margin:0}
 .note.warn{background:#FBEEEF;border-color:#EBC9CD}
 
@@ -750,7 +750,7 @@ table.spec .gap{text-transform:uppercase;letter-spacing:.1em;font-size:.8em}
 
 /* ---------- draft outline panel (DraftPanel.astro) ---------- */
 .draftnote{border:1px dashed var(--red);border-radius:16px;padding:26px 28px;background:#FBEEEF}
-.draftnote h4{font-size:15px;color:var(--red-dk);margin-bottom:10px}
+.draftnote h3{font-size:15px;color:var(--red-dk);margin-bottom:10px}
 .draftnote p{font-size:14.5px;color:var(--muted);margin:0 0 12px}
 .draftnote ul{margin:0;padding-left:20px;font-size:14.5px;color:var(--muted);display:flex;
   flex-direction:column;gap:6px}
@@ -844,3 +844,4 @@ table.spec .gap{text-transform:uppercase;letter-spacing:.1em;font-size:.8em}
 .prose li{margin-bottom:6px}
 .prose strong{color:var(--navy)}
 .prose a{color:var(--red);text-decoration:underline;text-underline-offset:3px}
+.note-line{margin:12px 0 0;font-size:14px;color:var(--muted)}

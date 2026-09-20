@@ -9,6 +9,6 @@ const { heading, tone = 'note' } = Astro.props;
 ---
 
 <div class:list={['note', { warn: tone === 'warn' }]}>
-  {heading && <h4>{heading}</h4>}
+  {heading && <h3>{heading}</h3>}
   <p><slot /></p>
 </div>
