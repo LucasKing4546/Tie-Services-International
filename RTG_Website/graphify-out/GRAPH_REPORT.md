@@ -1,17 +1,17 @@
-# Graph Report - RTG_Website  (2026-09-18)
+# Graph Report - RTG_Website  (2026-09-20)
 
 ## Corpus Check
-- 171 files · ~2,480,892 words
+- 171 files · ~3,636,507 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 5 file(s) not represented in the graph (top: .css 3, (none) 1, .xml 1)
 
 ## Summary
-- 681 nodes · 1144 edges · 93 communities (42 shown, 51 thin omitted)
+- 698 nodes · 1159 edges · 96 communities (42 shown, 54 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 11 edges (avg confidence: 0.88)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `d21d0247`
+- Built from commit: `a98439a3`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -68,8 +68,11 @@
 - e-08.mdx
 - e-10.mdx
 - ImageSlot.astro
-- astro:assets
+- src_assets_equipment_e04_reel_winch
 - orientationOf
+- src_assets_equipment_e07_aframe_dusk
+- src_assets_equipment_e08_knuckle_boom
+- src_assets_equipment_e08_proof_load_test
 
 ## God Nodes (most connected - your core abstractions)
 1. `[]` - 33 edges
@@ -98,19 +101,19 @@
 ## Import Cycles
 - None detected.
 
-## Communities (93 total, 51 thin omitted)
+## Communities (96 total, 54 thin omitted)
 
 ### Community 0 - "blocks.ts"
 Cohesion: 0.09
-Nodes (52): trail, jsonLdPage, siblings, jobPostings, [], jsonLdPage, [], contactPoints (+44 more)
+Nodes (53): trail, jsonLdPage, siblings, jobPostings, [], jsonLdPage, [], contactPoints (+45 more)
 
 ### Community 1 - "Base.astro"
-Cohesion: 0.10
-Nodes (21): year, ancestorsOf(), OFF_MAP_IDS, OFF_MAP_PAGES, canonical, ogImage, { p, offMap }, schema (+13 more)
+Cohesion: 0.07
+Nodes (29): ref_astro_config, @astrojs/mdx, @astrojs/sitemap, year, ancestorsOf(), OFF_MAP_IDS, OFF_MAP_PAGES, FOOTER_NAV (+21 more)
 
 ### Community 2 - "media.ts"
-Cohesion: 0.05
-Nodes (40): src_assets_contact_x01_team, src_assets_equipment_e00_deck_spread, src_assets_equipment_e00_system_overview, src_assets_equipment_e02_deployment_frame, src_assets_equipment_e02_hpu, src_assets_equipment_e02_winch_drum, src_assets_equipment_e03_compact_winch, src_assets_equipment_e04_reel_winch (+32 more)
+Cohesion: 0.04
+Nodes (53): src_assets_contact_x01_team, src_assets_equipment_e00_deck_spread, src_assets_equipment_e00_system_overview, src_assets_equipment_e02_deployment_frame, src_assets_equipment_e02_ds01_guarded, src_assets_equipment_e02_ds01_panel, src_assets_equipment_e02_ds38_hpu_b, src_assets_equipment_e02_ds38_winch (+45 more)
 
 ### Community 3 - "rtg3d.ts"
 Cohesion: 0.13
@@ -125,8 +128,8 @@ Cohesion: 0.06
 Nodes (30): 1. What this is, 2. The workflow — follow this for every feature and every page, 3. Stack and conventions, 3D, 4. The 17 templates, 5. Known gaps — do not paper over these, 6. What must never be published, 7. Design system (+22 more)
 
 ### Community 6 - "package.json"
-Cohesion: 0.05
-Nodes (39): dependencies, astro, @astrojs/mdx, @astrojs/sitemap, three, description, devDependencies, @astrojs/check (+31 more)
+Cohesion: 0.06
+Nodes (30): dependencies, astro, @astrojs/mdx, @astrojs/sitemap, three, description, devDependencies, @astrojs/check (+22 more)
 
 ### Community 7 - "home.ts"
 Cohesion: 0.10
@@ -265,28 +268,28 @@ Cohesion: 0.40
 Nodes (4): Fail-safe braking, How it is built, Squeeze versus line tension, explained, What decides which unit
 
 ### Community 90 - "ImageSlot.astro"
-Cohesion: 0.28
-Nodes (4): photo, tiles, mediaFor(), MotionHint
+Cohesion: 0.22
+Nodes (5): src_assets_home_home_fleet_vessel, photo, tiles, mediaFor(), MotionHint
 
 ## Knowledge Gaps
 - **297 isolated node(s):** `name`, `version`, `private`, `type`, `description` (+292 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 429 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **51 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 446 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **54 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `[]` connect `blocks.ts` to `Base.astro`, `ImageSlot.astro`, `media.ts`, `orientationOf`?**
-  _High betweenness centrality (0.054) - this node is a cross-community bridge._
+  _High betweenness centrality (0.059) - this node is a cross-community bridge._
 - **Why does `astro` connect `package.json` to `media.ts`?**
-  _High betweenness centrality (0.030) - this node is a cross-community bridge._
+  _High betweenness centrality (0.031) - this node is a cross-community bridge._
 - **What connects `name`, `version`, `private` to the rest of the system?**
   _297 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `blocks.ts` be split into smaller, more focused modules?**
-  _Cohesion score 0.08899642331159267 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.08686868686868687 - nodes in this community are weakly interconnected._
 - **Should `Base.astro` be split into smaller, more focused modules?**
-  _Cohesion score 0.09885057471264368 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.06659619450317125 - nodes in this community are weakly interconnected._
 - **Should `media.ts` be split into smaller, more focused modules?**
-  _Cohesion score 0.04878048780487805 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.037037037037037035 - nodes in this community are weakly interconnected._
 - **Should `rtg3d.ts` be split into smaller, more focused modules?**
   _Cohesion score 0.1251778093883357 - nodes in this community are weakly interconnected._

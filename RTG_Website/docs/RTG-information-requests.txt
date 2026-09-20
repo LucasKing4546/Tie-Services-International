@@ -1,0 +1,67 @@
+RTG WEBSITE - WHAT WE STILL NEED FROM RTG, AND WHAT LOOKS WRONG IN THE MATERIAL SUPPLIED
+Compiled 2026-09-20 from the content drop received 2026-09-18 ("Claude  website" folder).
+
+Please answer, correct or supply each item. Nothing below has been guessed or published as fact.
+
+
+A. ERRORS / INCONSISTENCIES IN THE DATASHEETS AND FILES
+
+A1. DS57 (cable/pipe tensioner) - titled "15 Te" but its maximum tension still reads "0 - 10 Te", identical to the 10 Te sheet (same speed, squeeze range and weight). What is the real maximum tension? The website currently shows this value as "to be confirmed".
+A2. DS80 (30 Te mooring winch without level wind) - overall height is printed as "19460 mm" (looks like a typo for about 1946). Its dry weight is not stated at all. Please give both.
+A3. DS83 (0.24 Te winch) - the file name says 700 m; the table says 750 m at 8.18 mm cable (1,250 m at 6 mm, 510 m at 10 mm, 330 m at 12 mm). The website uses the table. Please confirm.
+A4. DS61 (5 Te gravity corer chute) - the overall envelope is ambiguous (two sets of dimensions; unclear which is stowed and which is deployed). Please confirm both, labelled.
+A5. DS33 (40 Te A-frame) and DS96 (20 Te A-frame) were filed in the "Cranes & Lifting" folder. We treated them as launch-and-recovery A-frames (E-07). Please confirm that is right.
+A6. Mooring photos IMG_0287 and 3.jpg have "SWL 50TE" stencilled on the frame, but the datasheet (DS74) is 30 Te WLL. Is the 50 Te a lifting/base rating, or is this a different unit?
+A7. DS38 datasheet: the drawing title block says capacity "1,300 m" while the table and title say 2,300 m. Which is correct?
+A8. The datasheets say "Design: Lloyds" without saying what that means. Please state exactly which class rules each unit is designed to.
+
+
+B. PHOTOGRAPHS - MISSING, UNCONFIRMED OR UNUSABLE
+
+B1. Cranes (E-08): NO photograph of a crane was supplied. The "Cranes & Lifting" folder holds only A-frame and gantry photos. We removed the two photos we had wrongly shown on the crane page. Please supply real photos of each crane family RTG builds.
+B2. E-04 seismic: three photos (DSC_0526, 0528, 0573) show a white hydraulic winch WITH a level wind. It has no datasheet, and DS11 says no level wind. Please supply the datasheet for this unit, or tell us it should not be shown.
+B3. E-05 ROV/umbilical winch: the two photos show a winch in a flatrack frame with a hydraulic A-frame arm and power unit. The datasheet (DS63) does not include the flatrack or A-frame. Please confirm they are the same unit.
+B4. E-02 DS38 (12 Te winch): the photo of the winch with wire on the drum (20230516_085120) is low resolution and we could not confirm it is the DS38 unit. Please supply a clear photo of DS38 and confirm.
+B5. E-06: please confirm which photos are DS74 (with level wind, blue/yellow) and which are DS80 (no level wind, grey). We matched them by appearance only.
+B6. E-07: only the DS96 (20 Te) photos are confirmed to match a datasheet. The 40 Te (DS33) photo (IMG_1103) is matched by design only. Please supply confirmed photos of the 40 Te A-frame.
+B7. Photos with a burned-in date stamp (e.g. "2016/06/01") were cropped where used. Please supply clean originals if you have them.
+B8. Seismic at-sea photos (Image0052, P1080540, P1080545) show crew in third-party branded clothing and no winch. Not used. Please supply clean equipment-on-deck photos.
+B9. Mooring photo 2.jpg shows a third-party company sign in the background. Not used.
+B10. Ownership of images: two supplied images were third-party stock (a wind-turbine/cable illustration and a Royal Navy press photo), a journal cover and another organisation's research vessel photo were also in the sectors folder. None are used. Please confirm which supplied images RTG owns or is licensed to publish, in particular the vessel deck photographs and the seismic acquisition diagram (it carried a Sercel copyright notice before it was cropped - please confirm RTG may use it).
+B11. The team photo graphic (four named staff with QR codes) is not on the site yet. Please confirm each person agrees to being named and pictured publicly.
+B12. Sectors: S-03 (offshore wind and cables) and S-05 (oceanographic research) have no RTG photography at all. S-02 (marine geotechnical) has one hero photo only. Please supply real photos.
+B13. The homepage hero photo shows a client's vessel with the client's name visible. It is published on the instruction of the site owner, but please confirm RTG has the client's agreement.
+
+
+C. MISSING EQUIPMENT DATA
+
+C1. The page titles and descriptions promise ranges the datasheets do not cover: tensioners "5 to 20 Te" (only 10 Te and the 15/10 Te unit supplied; no 5 Te or 20 Te sheet), survey winches "300 to 4,000 m" (only a 0.24 Te / 750 m sheet supplied). Please supply a datasheet for every configuration RTG offers, or tell us to narrow the titles.
+C2. E-07 Launch and recovery: only two A-frames (20 Te, 40 Te). Please supply the rest of the range (stern and side A-frames, mini survey LARS, ROV and CTD LARS) and their datasheets.
+C3. E-08 Cranes: no datasheet at all. Please supply capacity range, reach range and drive options for each family (knuckle boom, telescopic boom, provision/utility, davits, personnel-rated), and confirm which families RTG builds as standard versus can build to order.
+C4. E-09 Handling systems (hub), E-11 Power units, E-12 Portable and containerised: no material supplied. Please supply copy, datasheets and photos.
+C5. E-04 seismic: duty cycle and reliability figures (S1 continuous or intermittent duty, thermal limit and ambient, continuous versus peak line pull, bearing life at seismic duty, gearbox service factor, filtration and service intervals). Left empty on purpose rather than invented.
+C6. E-07: which motion compensation is offered (active heave, constant tension, none) and on which A-frames.
+C7. E-10 tensioners: lead time by capacity (5, 10, 15, 20 Te) from order to factory acceptance test, with assumptions. Also S-03 needs the same table.
+C8. Every equipment page: confirm the winch datasheets' first-layer/top-layer figures (the website prints both).
+
+
+D. MISSING COMPANY / SECTOR FACTS
+
+D1. S-07 Defence: current class and approval details to state publicly - workshop recognition scheme, welding procedure approval bodies, welder and NDT personnel qualification standards - with current certificate references. The supplied text names some but gives no certificate numbers or dates, so they were held back.
+D2. S-02 marine geotechnical: operator, vessel and year of the 3,000 m CPT working depth record, and whether RTG may name the operator (written permission).
+D3. Written permission to name any client anywhere on the site. A press article names a survey company as a client; it is not named on the site.
+D4. Certificate numbers and expiry dates, insurance limits, refurbishment lead times by scope band, current capacity by manufacturing tier.
+D5. Proof figures on the site come from these numbers: 22 years, 1,500 machines, 250 projects, 50 clients, 3,000 m CPT depth record, 150 Te load test. Please confirm each is current and correct. "Seven vessels, fourteen years" (one survey operator's fleet) is also used - please confirm.
+D6. The statement on the defence page that RTG is "around eighty people, privately held, same ownership since 2003" needs confirming as current.
+D7. Contact details: office addresses, phone, email, named contacts and response times. The contact pages are still drafts. The "Talk to an engineer" and "Request the survey range datasheets" buttons need a destination email/phone/WhatsApp (marked TO BE DEFINED in the supplied documents).
+D8. Refurbishment case study (before/after slides and the traction winch refurbishment video in the Marine Geotechnical folder): please confirm the customer may be described, and whether the video is a refurbishment record or a load-test clip.
+D9. The other case studies (fleet standardisation, contract manufacturing, yard programme), the certifications page, test facility page, testimonials, careers vacancies and legal texts (privacy, cookies, terms, accessibility) still need real content.
+D10. Company text: the canonical web address (romicatiegroup.com vs the older Romica Engineering names), and whether "Romica Tie Group" or "Romica Engineering" is the trading name to use.
+
+
+E. THINGS THE WEBSITE DOES NOT YET DO (FOR RTG TO DECIDE)
+
+E1. Datasheet requests: the site has no form backend, CRM or email alert yet. Where should enquiries go, and who answers them?
+E2. Consent management for analytics and the chat widget is not built.
+E3. Fonts are loaded from Google and should be self-hosted before launch.
+E4. The old .php web addresses need a redirect map checked before and after launch.

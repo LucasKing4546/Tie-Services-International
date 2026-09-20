@@ -57,6 +57,8 @@ const specTable = z.object({
     )
     .min(1),
   footnote: z.string().optional(),
+  /** Photographs of this configuration; the first sits beside the table. */
+  media: z.array(imgBrief).default([]),
 });
 
 const formField = z

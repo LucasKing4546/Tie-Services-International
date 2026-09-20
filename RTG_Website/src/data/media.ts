@@ -72,16 +72,29 @@ import e00b from '../assets/equipment/e00-deck-spread.jpg';
 import e02a from '../assets/equipment/e02-winch-drum.jpg';
 import e02b from '../assets/equipment/e02-deployment-frame.jpg';
 import e02c from '../assets/equipment/e02-hpu.jpg';
-import e08a from '../assets/equipment/e08-knuckle-boom.jpg';
-import e08b from '../assets/equipment/e08-proof-load-test.jpg';
+import e02d from '../assets/equipment/e02-ds01-guarded.jpg';
+import e02e from '../assets/equipment/e02-ds01-panel.jpg';
+import e02f from '../assets/equipment/e02-ds38-hpu-b.jpg';
+import e02g from '../assets/equipment/e02-ds38-winch.jpg';
+import e03a from '../assets/equipment/e03-compact-winch.jpg';
+import e03b from '../assets/equipment/e03-ds83-unit.jpg';
+import e03c from '../assets/equipment/e03-ds83-pair.jpg';
+import e04a from '../assets/equipment/e04-ds11-overall.jpg';
+import e04b from '../assets/equipment/e04-ds11-drive.jpg';
+import e04c from '../assets/equipment/e04-ds11-detail.jpg';
+import e05a from '../assets/equipment/e05-umbilical-winch.jpg';
+import e05b from '../assets/equipment/e05-ds63-aframe.jpg';
+import e06a from '../assets/equipment/e06-mooring-winch.jpg';
+import e06b from '../assets/equipment/e06-ds80-side.jpg';
+import e06c from '../assets/equipment/e06-ds74-a.jpg';
+import e06d from '../assets/equipment/e06-ds74-b.jpg';
+import e06e from '../assets/equipment/e06-ds74-c.jpg';
 import e07a from '../assets/equipment/e07-aframe-deployment.jpg';
-import e07b from '../assets/equipment/e07-aframe-dusk.jpg';
+import e07b from '../assets/equipment/e07-ds96-a.jpg';
+import e07c from '../assets/equipment/e07-ds96-b.jpg';
+import e07d from '../assets/equipment/e07-ds96-c.jpg';
 import e10a from '../assets/equipment/e10-tracks-gripping.jpg';
 import e10b from '../assets/equipment/e10-skid-hpu.jpg';
-import e03a from '../assets/equipment/e03-compact-winch.jpg';
-import e04a from '../assets/equipment/e04-reel-winch.jpg';
-import e05a from '../assets/equipment/e05-umbilical-winch.jpg';
-import e06a from '../assets/equipment/e06-mooring-winch.jpg';
 import l00a from '../assets/lifecycle/l00-deck-work.jpg';
 import x01a from '../assets/contact/x01-team.jpg';
 
@@ -114,16 +127,29 @@ export const MEDIA: Record<string, ImageMetadata> = {
   'IMG-E02-A': e02a,
   'IMG-E02-B': e02b,
   'IMG-E02-C': e02c,
-  'IMG-E08-A': e08a,
-  'IMG-E08-B': e08b,
+  'IMG-E02-D': e02d,
+  'IMG-E02-E': e02e,
+  'IMG-E02-F': e02f,
+  'IMG-E02-G': e02g,
+  'IMG-E03-A': e03a,
+  'IMG-E03-B': e03b,
+  'IMG-E03-C': e03c,
+  'IMG-E04-A': e04a,
+  'IMG-E04-B': e04b,
+  'IMG-E04-C': e04c,
+  'IMG-E05-A': e05a,
+  'IMG-E05-B': e05b,
+  'IMG-E06-A': e06a,
+  'IMG-E06-B': e06b,
+  'IMG-E06-C': e06c,
+  'IMG-E06-D': e06d,
+  'IMG-E06-E': e06e,
   'IMG-E07-A': e07a,
   'IMG-E07-B': e07b,
+  'IMG-E07-C': e07c,
+  'IMG-E07-D': e07d,
   'IMG-E10-A': e10a,
   'IMG-E10-B': e10b,
-  'IMG-E03-A': e03a,
-  'IMG-E04-A': e04a,
-  'IMG-E05-A': e05a,
-  'IMG-E06-A': e06a,
   'IMG-L00-A': l00a,
   'IMG-X01-A': x01a,
 };

@@ -17,6 +17,8 @@ import Section from '@components/blocks/Section.astro';
 import SectionHead from '@components/blocks/SectionHead.astro';
 import Prose from '@components/blocks/Prose.astro';
 import SpecTable from '@components/blocks/SpecTable.astro';
+import FeatureRow from '@components/blocks/FeatureRow.astro';
+import MediaBand from '@components/blocks/MediaBand.astro';
 import TagList from '@components/blocks/TagList.astro';
 import Skeleton from '@components/blocks/Skeleton.astro';
 import PageEnding from '@components/blocks/PageEnding.astro';
@@ -36,10 +38,16 @@ const { Content } = await render(entry);
 // to publish either. Deliberately no `offers`: a made-to-order machine has
 // no price, and inventing one to chase a rich result is the brochure
 // behaviour CLAUDE.md forbids.
-const additionalProperty = data.specs
-  .flatMap((s) => s.rows)
-  .filter((r) => r.v !== 'TO SUPPLY')
-  .map((r) => ({ '@type': 'PropertyValue', name: r.k, value: r.v }));
+// With several configurations the caption is prefixed so identical row names don't collide.
+const additionalProperty = data.specs.flatMap((s) =>
+  s.rows
+    .filter((r) => r.v !== 'TO SUPPLY')
+    .map((r) => ({
+      '@type': 'PropertyValue',
+      name: data.specs.length > 1 ? `${s.caption}: ${r.k}` : r.k,
+      value: r.v,
+    })),
+);
 
 const datasheetPage = data.product?.datasheetPageId ? lookupPage(data.product.datasheetPageId) : undefined;
 // Carries this product's name into R-01's "Equipment" field so the visitor
@@ -63,23 +71,33 @@ const datasheetHref = datasheetPage ? `${datasheetPage.slug}?equipment=${encodeU
     updated={data.updated}
   />
 
-  {(data.specs.length > 0 || hasBody(entry)) && (
+  {hasBody(entry) && (
     <Section>
-      <div class="two">
-        <div data-motion="sticky">
-          {data.specs.map((s) => (
-            <SpecTable caption={s.caption} rows={s.rows} footnote={s.footnote} />
-          ))}
-          {datasheetHref && (
-            <p style="margin-top:28px">
-              <a class="btn b-navy" href={datasheetHref}>Request the full datasheet →</a>
-            </p>
-          )}
-        </div>
-        <Prose>
-          <Content components={mdxComponents} />
-        </Prose>
-      </div>
+      <Prose>
+        <Content components={mdxComponents} />
+      </Prose>
+    </Section>
+  )}
+
+  {/* One row per configuration: its photo beside its own table. */}
+  {data.specs.map((s, i) => (
+    <>
+      <FeatureRow
+        eyebrow={data.specs.length > 1 ? `Configuration ${i + 1} of ${data.specs.length}` : 'Specification'}
+        heading={s.caption}
+        media={s.media[0]}
+        reverse={i % 2 === 1}
+        tone={i % 2 === 1 ? 'off' : 'default'}
+      >
+        <SpecTable caption="Specification" rows={s.rows} footnote={s.footnote} />
+      </FeatureRow>
+      {s.media.length > 1 && <MediaBand items={s.media.slice(1)} tone={i % 2 === 1 ? 'off' : 'default'} />}
+    </>
+  ))}
+
+  {datasheetHref && data.specs.length > 0 && (
+    <Section>
+      <a class="btn b-navy" href={datasheetHref}>Request the full datasheet →</a>
     </Section>
   )}
 
