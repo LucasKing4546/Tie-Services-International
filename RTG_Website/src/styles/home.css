@@ -93,7 +93,7 @@
 
 /* ---------- statement ---------- */
 .stmt .d2{max-width:19ch}
-.stmt-grid{display:grid;grid-template-columns:1fr 400px;gap:64px;align-items:end}
+.stmt-grid{display:grid;grid-template-columns:1fr 400px;gap:64px;align-items:start}
 @media (max-width:900px){.stmt-grid{grid-template-columns:1fr;gap:34px}}
 
 /* ---------- pinned tiers ---------- */
@@ -174,14 +174,14 @@
    ===================================================================== */
 
 /* hero: soft navy glow behind the model, hairline grid, proof row */
-.hero-glow{position:absolute;inset:0;pointer-events:none;z-index:0;
+.hero-glow{position:absolute;inset:0;pointer-events:none;z-index:-1;
   background:
     radial-gradient(60% 55% at 75% 45%,rgba(3,29,91,.10),transparent 70%),
     radial-gradient(35% 30% at 92% 92%,rgba(171,50,65,.08),transparent 70%),
     linear-gradient(var(--line) 1px,transparent 1px) 0 0/100% 96px;
   -webkit-mask-image:linear-gradient(90deg,transparent 45%,#000 75%);
           mask-image:linear-gradient(90deg,transparent 45%,#000 75%);opacity:.7}
-.hero .wrap{position:relative;z-index:1}
+.hero{isolation:isolate}
 .hero .artbox{z-index:1}
 .hero .d1{letter-spacing:-.04em;font-size:clamp(48px,6.4vw,96px);max-width:14ch}
 .hero .lede{font-size:clamp(18px,1.6vw,22px);color:var(--navy);opacity:.82;max-width:44ch}
@@ -210,7 +210,7 @@
 .fleet-line{font-size:clamp(22px,3vw,38px);max-width:26ch}
 
 /* statement: navy band with photo, glow and grid; tight */
-.stmt{position:relative;overflow:hidden;isolation:isolate;padding:84px 0}
+.stmt{position:relative;overflow:hidden;isolation:isolate;padding:104px 0 128px}
 .stmt-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-3;opacity:.28}
 .stmt::before{content:"";position:absolute;inset:0;z-index:-2;
   background:
@@ -225,7 +225,7 @@
 
 /* stats: lifted off the statement band */
 .stmt + .sec.sm{padding-top:0;padding-bottom:64px}
-.stmt + .sec.sm .stats{margin-top:-44px;position:relative;z-index:2;border-radius:18px;overflow:hidden;background:#fff;
+.stmt + .sec.sm .stats{margin-top:-72px;position:relative;z-index:2;border-radius:18px;overflow:hidden;background:#fff;
   box-shadow:0 30px 60px -24px rgba(3,29,91,.35);border:1px solid var(--line)}
 .stmt + .sec.sm .stat b{font-size:clamp(28px,2.8vw,42px);white-space:nowrap}
 
