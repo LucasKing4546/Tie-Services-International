@@ -393,3 +393,12 @@
   #tiers .pin-bar{margin-top:16px}
   #tiers .pin-wrap p,#tiers .pin-stick p:last-child{margin-top:16px!important}
 }
+
+/* homepage stats card keeps its six-across layout and inner padding */
+.stmt + .sec.sm .stats{grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));column-gap:0;overflow:hidden;
+  box-shadow:0 30px 60px -24px rgba(3,29,91,.35)}
+.stmt + .sec.sm .stats .stat,.stmt + .sec.sm .stats .stat:first-child{padding:34px 26px 30px;margin-top:0;border-top:0;
+  border-left:1px solid var(--line)}
+.stmt + .sec.sm .stats .stat:first-child{border-left:0}
+.stmt + .sec.sm .stats .stat b{font-size:clamp(28px,2.8vw,42px)}
+.stmt + .sec.sm .stats:not(.frow-copy .stats){grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr))}

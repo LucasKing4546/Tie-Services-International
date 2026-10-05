@@ -113,3 +113,26 @@
 @media (max-width:900px){.strack-rail > *{width:min(78vw,340px)}.strack .ecard{min-height:320px}}
 @media (prefers-reduced-motion:reduce){.strack .ecard{transition:none}.strack .ecard:hover{transform:none}}
 .strack-rail{scroll-padding-inline:max(var(--gut),calc((100vw - var(--wrap))/2 + var(--gut)))}
+
+/* Stats strip: figures sized to their column so a six-stat strip never
+   overlaps. Rows are separated by hairlines, not vertical dividers, so the
+   left edge stays aligned whatever the column count. */
+.stats{grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));column-gap:32px;
+  box-shadow:none;overflow:visible}
+.stats .stat,.stats .stat:first-child{padding:32px 0 36px;border-left:0;border-bottom:0;border-top:1px solid var(--line);
+  margin-top:-1px}
+.stats .stat b{font-size:clamp(40px,4.4vw,64px);white-space:nowrap}
+.stats.inv .stat{border-top-color:rgba(255,255,255,.18)}
+.frow-copy .stats{grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));column-gap:20px}
+.frow-copy .stats .stat b{font-size:clamp(26px,2.4vw,36px)}
+.frow-copy .stats .stat,.frow-copy .stats .stat:first-child{padding:20px 0 22px}
+/* Three across by default (six stats make two even rows); two or four stats
+   get their own column count so no row is left with a single orphan. */
+.stats{border-top:0}
+.stats:not(.frow-copy .stats){grid-template-columns:repeat(3,minmax(0,1fr))}
+.stats:not(.frow-copy .stats):has(> .stat:nth-child(2):last-child){grid-template-columns:repeat(2,minmax(0,1fr))}
+.stats:not(.frow-copy .stats):has(> .stat:nth-child(4):last-child){grid-template-columns:repeat(4,minmax(0,1fr))}
+.stats .stat,.stats .stat:first-child{margin-top:0;border-top:2px solid var(--navy)}
+.stats.inv .stat,.stats.inv .stat:first-child{border-top-color:var(--red)}
+@media (max-width:900px){.stats:not(.frow-copy .stats),.stats:not(.frow-copy .stats):has(> .stat:nth-child(4):last-child){grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.stats:not(.frow-copy .stats),.stats:not(.frow-copy .stats):has(> .stat:nth-child(4):last-child),.stats:not(.frow-copy .stats):has(> .stat:nth-child(2):last-child){grid-template-columns:minmax(0,1fr)}}
