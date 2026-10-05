@@ -301,13 +301,13 @@
 .lc-band div{font-size:clamp(16px,1.5vw,19px);line-height:1.5;max-width:60ch}
 .lc-band .btn-o:hover{box-shadow:0 12px 26px -12px rgba(0,0,0,.5)}
 
-/* proof case: quote as a raised card */
-#proof .quote{background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px 30px 8px;margin:0;
-  box-shadow:0 22px 46px -28px rgba(3,29,91,.35);font-size:clamp(19px,1.9vw,24px);line-height:1.35;
-  letter-spacing:-.02em;color:var(--navy)}
-#proof .quote-c{background:#fff;border:1px solid var(--line);border-top:0;border-radius:0 0 20px 20px;
-  margin:-1px 0 0;padding:0 30px 24px;box-shadow:0 22px 46px -28px rgba(3,29,91,.35)}
-#proof .quote{border-bottom:0;border-radius:20px 20px 0 0}
+/* proof case: quote and attribution are one raised card */
+#proof .proof-quote{margin:0;background:#fff;border:1px solid var(--line);border-radius:20px;
+  box-shadow:0 22px 46px -28px rgba(3,29,91,.35);overflow:hidden;max-width:520px}
+#proof .proof-quote .quote{margin:0;padding:30px 32px 22px;border:0;background:none;box-shadow:none;
+  font-size:clamp(19px,1.9vw,24px);line-height:1.35;letter-spacing:-.02em;color:var(--navy)}
+#proof .proof-quote .quote-c{margin:0;padding:14px 32px;background:var(--off);border-top:1px solid var(--line);
+  font-family:var(--f-m);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 .case-vis{transition:transform .5s var(--e),box-shadow .5s var(--e)}
 .case-vis:hover{transform:translateY(-6px);box-shadow:0 44px 80px -30px rgba(3,29,91,.6)}
 .case-vis .tag{background:rgba(3,29,91,.6);padding:7px 12px;border-radius:999px;left:16px;bottom:16px}
