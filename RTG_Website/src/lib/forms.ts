@@ -4,19 +4,23 @@
  * e.g. Product.astro's "Request the datasheet" link appends
  * `?equipment=<product name>` — and that field arrives pre-filled and
  * read-only instead of asking the visitor to retype what the site already
- * knows. Matches generically on `field.name` rather than a schema flag
- * naming which pages may prefill which field, so any gated form gets this
- * for free by linking to it with `?<field name>=<value>`.
+ * knows.
+ *
+ * Only the names in PREFILL may be set this way. A link is written by
+ * whoever sends it, so anything it fills and locks is that person's choice,
+ * not the visitor's: an open match on every field name would let a crafted
+ * link lock the delivery email on a datasheet request to someone else's
+ * address. Add a name here only if it is safe for a stranger to choose it.
  */
+const PREFILL = new Set(['equipment']);
+
 export function initFormPrefill(): void {
   const params = new URLSearchParams(location.search);
   if (![...params.keys()].length) return;
 
   document.querySelectorAll<HTMLElement>('.form [name]').forEach((el) => {
     const name = el.getAttribute('name');
-    // Never let a query param fill (or lock) the honeypot — that would
-    // defeat its own purpose (CLAUDE.md §5.2).
-    if (!name || name === 'website') return;
+    if (!name || !PREFILL.has(name)) return;
     const value = params.get(name);
     if (!value) return;
 

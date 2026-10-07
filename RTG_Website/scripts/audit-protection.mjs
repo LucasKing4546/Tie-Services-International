@@ -24,10 +24,10 @@ const BANNED = [
 // Scans everything that can carry public-facing prose, not just the content
 // pipeline — a banned term written straight into a component (as
 // EquipmentGrid.astro's headline once nearly was) is just as real a leak.
-const roots = ['dist', 'src/content', 'src/data', 'src/components', 'src/layouts', 'src/pages', 'src/lib']
+const roots = ['dist', 'public', 'src/content', 'src/data', 'src/components', 'src/layouts', 'src/pages', 'src/lib']
   .map((d) => resolve(root, d)).filter(existsSync);
 const hits = [];
-const exts = ['.html', '.mdx', '.md', '.ts', '.astro', '.json'];
+const exts = ['.html', '.mdx', '.md', '.ts', '.js', '.css', '.svg', '.xml', '.txt', '.astro', '.json'];
 
 for (const r of roots) {
   (function walk(d) {
@@ -39,6 +39,22 @@ for (const r of roots) {
       for (const b of BANNED) {
         if (b.re.test(body)) hits.push(`${p.slice(root.length + 1)}: ${b.why} — matched ${b.re}`);
       }
+    }
+  })(r);
+}
+
+// Photographs must not carry camera metadata (GPS position, device, capture
+// time). Astro can emit an imported original unmodified, so the source file
+// itself has to be clean. Fix with: npm run strip-exif
+const EXIF = [Buffer.from('457869660000', 'hex'), Buffer.from('eXIf'), Buffer.from('EXIF')];
+for (const r of ['src/assets', 'public', 'dist'].map((d) => resolve(root, d)).filter(existsSync)) {
+  (function walk(d) {
+    for (const f of readdirSync(d)) {
+      const p = join(d, f);
+      if (statSync(p).isDirectory()) { walk(p); continue; }
+      if (!/\.(jpe?g|png|webp)$/i.test(f)) continue;
+      const buf = readFileSync(p);
+      if (EXIF.some((m) => buf.includes(m))) hits.push(`${p.slice(root.length + 1)}: image carries camera metadata — run npm run strip-exif`);
     }
   })(r);
 }

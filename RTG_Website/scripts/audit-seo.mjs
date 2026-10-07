@@ -32,7 +32,7 @@ dupes(titles).forEach((t) => fails.push(`duplicate title: "${t}"`));
 dupes(descs).forEach(() => fails.push('duplicate meta description'));
 dupes(slugs).forEach((s) => fails.push(`duplicate slug: ${s}`));
 slugs.forEach((s, i) => {
-  if (!s.startsWith('/') || !s.endsWith('/')) fails.push(`${ids[i]}: slug must start and end with "/" — ${s}`);
+  if (!s.startsWith('/') || !s.endsWith('/') || s.includes('//')) fails.push(`${ids[i]}: slug must start and end with "/" — ${s}`);
   if (s !== s.toLowerCase()) fails.push(`${ids[i]}: slug must be lower case — ${s}`);
   if (s.includes('.php') || s.includes('?')) fails.push(`${ids[i]}: slug must not contain .php or a query string`);
 });

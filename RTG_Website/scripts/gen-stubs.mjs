@@ -30,6 +30,8 @@ const SKIP = new Set([
 let written = 0;
 for (const p of PAGES) {
   if (SKIP.has(p.id)) continue;
+  // the id becomes a file name: never let a workbook value steer the path
+  if (!/^[A-Z]-\d+$/.test(p.id)) throw new Error(`Unexpected page id "${p.id}"`);
   const file = resolve(outDir, `${p.id.toLowerCase()}.mdx`);
   const content = `---\npageId: ${JSON.stringify(p.id)}\ndraft: true\n---\n`;
   writeFileSync(file, content);

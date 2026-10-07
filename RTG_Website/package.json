@@ -6,12 +6,13 @@
   "description": "Romica Tie Group — marine deck equipment. Static site, 69 pages across 17 templates.",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && npm run audit",
     "preview": "astro preview",
     "check": "astro check",
     "pagemap": "node scripts/build-page-map.mjs",
     "audit:seo": "node scripts/audit-seo.mjs",
     "audit:protection": "node scripts/audit-protection.mjs",
+    "strip-exif": "node scripts/strip-exif.mjs",
     "audit": "npm run audit:seo && npm run audit:protection",
     "screenshot:pages": "node scripts/screenshot-pages.mjs"
   },
@@ -27,7 +28,8 @@
   "devDependencies": {
     "@astrojs/check": "^0.9.4",
     "@types/three": "^0.173.0",
+    "playwright": "^1.63.0",
     "typescript": "^5.7.3",
-    "xlsx": "^0.18.5"
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz"
   }
 }

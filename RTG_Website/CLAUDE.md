@@ -174,7 +174,8 @@ routing change.
 
 ```bash
 npm run dev        # local dev server
-npm run build      # static build to dist/
+npm run build      # static build to dist/, then both audits — a failed audit fails the build
+npm run strip-exif # remove camera metadata (GPS, device) from photos — run after adding any image
 npm run check      # astro + TypeScript diagnostics
 npm run pagemap    # regenerate src/data/pages.ts from the workbook
 npm run audit      # SEO + content-protection gates — must pass before deploy
@@ -230,7 +231,16 @@ These are real and unresolved. Flag them; do not invent content to fill them.
    watermarked per recipient with a unique serial, rasterised, metadata
    stripped, and delivered by a short-lived signed URL. Never a static file path.
 4. **Consent management.** Analytics must be genuinely withheld until consent,
-   not merely declared to be. UK and EU GDPR both apply.
+   not merely declared to be. UK and EU GDPR both apply. The Chatra chat
+   script is the only third party and loads only when the visitor presses
+   "Chat with us" (`Base.astro`); there is still no general consent banner.
+5a. **No security headers.** The host is undecided (not Vercel), so no
+   `Content-Security-Policy`, `frame-ancestors` or `X-Content-Type-Options`
+   is set anywhere. They have to be configured on whichever host is chosen.
+5b. **Unfinished pages are noindexed.** Any page that is `draft: true` or
+   still carries a `<Gap>` / `TO SUPPLY` marker gets `noindex` and is left out
+   of the sitemap (`Base.astro`, `astro.config.mjs`). It clears itself when
+   the page is finished. The pages are still built and reachable by URL.
 5. **No photography yet.** Every image is a placeholder. 3D models in
    `lib/rtg3d.ts` are procedural stand-ins built from published product
    categories — they are **not CAD** and their proportions are indicative.

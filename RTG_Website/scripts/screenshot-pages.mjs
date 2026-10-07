@@ -56,7 +56,9 @@ async function main() {
 
   for (const url of urls) {
     const { pathname } = new URL(url);
-    const localUrl = new URL(pathname, BASE_URL).toString();
+    // origin + pathname, not new URL(pathname, BASE_URL): a pathname starting
+    // "//" would otherwise resolve to another host
+    const localUrl = new URL(BASE_URL).origin + pathname;
     const slug = slugFor(url);
     try {
       await page.goto(localUrl, { waitUntil: 'load', timeout: 30000 });

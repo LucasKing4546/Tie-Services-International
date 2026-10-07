@@ -11,6 +11,10 @@ import { getCollection } from 'astro:content';
 import { page as lookupPage, childrenOf, type PageMeta } from '@data/pages';
 import type { CardItem, PageData, PageEntry } from './blocks';
 
+/** Markers of a page that is still a working outline. Base.astro noindexes
+ *  on this; astro.config.mjs keeps the same pages out of the sitemap. */
+export const UNFINISHED = /<Gap\b|TO SUPPLY/;
+
 async function byId(pageId: string): Promise<PageEntry | undefined> {
   const entries = await getCollection('pages', (e) => e.data.pageId === pageId);
   return entries[0];

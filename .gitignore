@@ -1,0 +1,3 @@
+# Secrets and host config must never be committed from any folder in this repo.
+.env*
+.vercel

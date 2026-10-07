@@ -73,13 +73,18 @@ if (pagesStart === -1) {
 // `secondaryKeywords: string[];`, which also contains the substring "];" and
 // would otherwise be matched first, truncating the head and duplicating
 // everything from the interface's array fields onward into the tail.
-const closeIdx = current.indexOf('];', pagesStart);
+//
+// And match it at the START of a line ("\n];"), never anywhere else: cell
+// text is written below as JSON string literals, which can contain "];" but
+// can never contain a raw newline. A bare "];" search would stop inside such
+// a cell on the next run and write the rest of it out as code.
+const closeIdx = current.indexOf('\n];', pagesStart);
 if (closeIdx === -1) {
   console.error('Could not find the closing "];" of the PAGES array — aborting.');
   process.exit(1);
 }
 const head = current.slice(0, pagesStart);
-const tail = current.slice(closeIdx + 2);
+const tail = current.slice(closeIdx + 3);
 
 const body = pages
   .map(

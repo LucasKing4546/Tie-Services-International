@@ -6,6 +6,7 @@ import { ClientRouter } from 'astro:transitions';
 import { SITE } from '@data/site.js';
 import { absolute, ogImageFor, buildJsonLd } from '@lib/seo';
 import { resolvePage } from '@lib/page';
+import { entryFor, UNFINISHED } from '@lib/content';
 import Header from '@components/site/Header.astro';
 import Footer from '@components/site/Footer.astro';
 import '@fontsource-variable/archivo/wght.css';
@@ -38,9 +39,15 @@ const canonical = absolute(p.slug);
 const ogImage = ogImageFor(p);
 const schema = buildJsonLd(p, jsonLd, jsonLdPage);
 
-// Off-map pages (404) are never indexed; every real workbook page stays
-// indexable even when Gated, since the form gates the asset, not the page.
-const robots = offMap ? 'noindex, follow' : 'index, follow, max-image-preview:large';
+// Off-map pages (404) are never indexed. Neither is a page that is still a
+// working outline — draft: true, or carrying a <Gap> / TO SUPPLY marker —
+// so internal notes to RTG never reach a search index. The same test keeps
+// those pages out of the sitemap (astro.config.mjs); it clears itself the
+// moment the page is finished. A finished page stays indexable even when
+// Gated, since the form gates the asset, not the page.
+const entry = offMap ? undefined : await entryFor(pageId);
+const unfinished = !!entry && (entry.data.draft || UNFINISHED.test((entry.body ?? '') + JSON.stringify(entry.data)));
+const robots = offMap || unfinished ? 'noindex, follow' : 'index, follow, max-image-preview:large';
 ---
 
 <!DOCTYPE html>
@@ -78,7 +85,7 @@ const robots = offMap ? 'noindex, follow' : 'index, follow, max-image-preview:la
     <link rel="preload" as="font" type="font/woff2" href={archivoLatin} crossorigin />
     <link rel="preload" as="font" type="font/woff2" href={interLatin} crossorigin />
 
-    <script type="application/ld+json" set:html={JSON.stringify(schema)} is:inline />
+    <script type="application/ld+json" set:html={JSON.stringify(schema).replace(/</g, '\\u003c')} is:inline />
 
     <ClientRouter />
 
@@ -117,21 +124,33 @@ const robots = offMap ? 'noindex, follow' : 'index, follow, max-image-preview:la
         }, { passive: true });
     </script>
 
-    {/* Chatra live chat, same ID as production. is:inline so Astro ships it
-       verbatim. Guarded on w.ChatraID because this script's markup rides
-       along on every ClientRouter navigation — without the guard, a
-       client-side nav would inject a second chatra.js and widget instance.
-       Flag: no consent gate exists yet for any third party here, matching
-       the current site — revisit once consent management lands (CLAUDE.md §5.4). */}
+    {/* Chatra live chat, same ID as production — but nothing third-party
+       loads until the visitor presses this button, which is the consent
+       (CLAUDE.md §5.4). Hidden without JS, since it can do nothing there. */}
+    <button type="button" class="btn b-navy chat-open" id="chatOpen" hidden>Chat with us</button>
+
+    {/* is:inline so Astro ships it verbatim. Listeners are registered once
+       (w.__chat) because this markup rides along on every ClientRouter
+       navigation; w.ChatraID guards against a second chatra.js. Once the
+       widget is loaded it persists across client-side navigations, so the
+       button stays hidden on every later page. */}
     <script is:inline>
       (function (d, w, c) {
-        if (w.ChatraID) return;
-        w.ChatraID = 'iraKxKmohhNY38Mu9';
-        var s = d.createElement('script');
-        w[c] = w[c] || function () { (w[c].q = w[c].q || []).push(arguments); };
-        s.async = true;
-        s.src = 'https://call.chatra.io/chatra.js';
-        if (d.head) d.head.appendChild(s);
+        if (w.__chat) return;
+        w.__chat = true;
+        function sync() { var b = d.getElementById('chatOpen'); if (b) b.hidden = !!w.ChatraID; }
+        d.addEventListener('astro:page-load', sync);
+        d.addEventListener('click', function (e) {
+          if (!e.target.closest || !e.target.closest('#chatOpen') || w.ChatraID) return;
+          w.ChatraID = 'iraKxKmohhNY38Mu9';
+          var s = d.createElement('script');
+          w[c] = w[c] || function () { (w[c].q = w[c].q || []).push(arguments); };
+          w[c]('openChat', true);
+          s.async = true;
+          s.src = 'https://call.chatra.io/chatra.js';
+          d.head.appendChild(s);
+          sync();
+        });
       })(document, window, 'Chatra');
     </script>
   </body>

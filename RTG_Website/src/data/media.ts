@@ -4,8 +4,14 @@
  * renders the placeholder plate.
  *
  * Imported rather than served from public/, so Astro fingerprints each file
- * and sharp emits responsive AVIF/WebP. Originals are camera files up to
- * 6016x4000 and 6.7 MB; none ships raw.
+ * and sharp emits responsive AVIF/WebP.
+ *
+ * The ORIGINAL can ship too: Astro keeps an imported file in the build
+ * whenever code reads a property of it (width, height — ImageSlot, MediaBand
+ * and orientationOf below all do). So every file here must be safe to
+ * publish as-is: run `npm run strip-exif` after adding a photograph, which
+ * bakes in the rotation and removes camera metadata (GPS, device, time).
+ * `npm run audit:protection` fails on any image that still carries it.
  *
  * PROVENANCE (copyright-sensitive — check this before adding or re-enabling
  * any entry): only photographs RTG demonstrably owns are listed here. The
@@ -23,42 +29,33 @@
  * covers that one block; no written permission is on file (CLAUDE.md §5.7),
  * so no other page text names them.
  *
- * IMG-S02-A/B and IMG-S05-A/B are confirmed third-party (a stock filename,
- * a journal cover, a named institute's own vessel) and are unused by any
- * page. IMG-S02-C and IMG-S05-C replaced them as S-02's and S-05's hero and
- * carry no visible branding. The A/B refs stay registered in case real RTG
- * photography for either sector arrives.
+ * Third-party images once supplied for S-02, S-03 and S-05 (stock, a journal
+ * cover, a named institute's vessel) have been removed from the repo, not
+ * just left unused: an imported image is emitted into the build even when
+ * no page shows it. IMG-S02-C and IMG-S05-C are those sectors' heroes and
+ * carry no visible branding; S-03 has no photography of its own yet.
  *
  * IMG-E00-A is a full-vessel cutaway CAD render, not a photograph, and its
  * ownership is unconfirmed — check it alongside the rest of the
  * non-photographic material before launch. IMG-E00-B (a real camera photo)
  * is used as E-00's hero instead; A stays on the page as a supporting image.
  *
- * IMG-X01-A (four RTG staff, named) is registered but not placed on any
- * page: it's a finished graphic with names and roles baked into the image,
- * so PageHero's caption/scrim treatment overlaps it when used as a hero.
- * It needs a plain "meet the team" block, which doesn't exist yet.
+ * The four-staff team graphic (src/assets/contact/x01-team.jpg) is not
+ * registered: it has names and roles baked into the image, so PageHero's
+ * caption/scrim treatment overlaps it. Register it when a plain "meet the
+ * team" block exists.
  */
 import type { ImageMetadata } from 'astro';
 
 import s01a from '../assets/sectors/s01-equipment-a.jpg';
 import s01b from '../assets/sectors/s01-equipment-b.jpg';
 import s01c from '../assets/sectors/s01-deck-spread.jpg';
-import s02a from '../assets/sectors/s02-pipeline-survey.jpg';
-import s02b from '../assets/sectors/s02-seabed-tool.jpg';
 import s02c from '../assets/sectors/s02-deck-installation.jpg';
-// s03a/s03b are stock illustration, not RTG photography — confirmed
-// third-party (CLAUDE.md §9.3). Not wired into s-03.mdx; S-03 shows the
-// placeholder plate until real photography exists.
-import s03a from '../assets/sectors/s03-wind-array.jpg';
-import s03b from '../assets/sectors/s03-cable-work.jpg';
 import s04a from '../assets/sectors/s04-equipment-a.jpg';
 import s04b from '../assets/sectors/s04-equipment-b.jpg';
 import s04c from '../assets/sectors/s04-equipment-c.jpg';
 import s04d from '../assets/sectors/s04-acquisition.jpg';
 import s04e from '../assets/sectors/s04-reel-deck.jpg';
-import s05a from '../assets/sectors/s05-research-deck.jpg';
-import s05b from '../assets/sectors/s05-research-vessel.jpg';
 import s05c from '../assets/sectors/s05-instrument-deployment.jpg';
 import s06a from '../assets/sectors/s06-equipment-a.png';
 import s06b from '../assets/sectors/s06-rov-launch.webp';
@@ -97,25 +94,18 @@ import e07d from '../assets/equipment/e07-ds96-c.jpg';
 import e10a from '../assets/equipment/e10-tracks-gripping.jpg';
 import e10b from '../assets/equipment/e10-skid-hpu.jpg';
 import l00a from '../assets/lifecycle/l00-deck-work.jpg';
-import x01a from '../assets/contact/x01-team.jpg';
 
 export const MEDIA: Record<string, ImageMetadata> = {
   'IMG-H01-A': homeA,
   'IMG-S01-A': s01a,
   'IMG-S01-B': s01b,
   'IMG-S01-C': s01c,
-  'IMG-S02-A': s02a,
-  'IMG-S02-B': s02b,
   'IMG-S02-C': s02c,
-  'IMG-S03-A': s03a,
-  'IMG-S03-B': s03b,
   'IMG-S04-A': s04a,
   'IMG-S04-B': s04b,
   'IMG-S04-C': s04c,
   'IMG-S04-D': s04d,
   'IMG-S04-E': s04e,
-  'IMG-S05-A': s05a,
-  'IMG-S05-B': s05b,
   'IMG-S05-C': s05c,
   'IMG-S06-A': s06a,
   'IMG-S06-B': s06b,
@@ -152,7 +142,6 @@ export const MEDIA: Record<string, ImageMetadata> = {
   'IMG-E10-A': e10a,
   'IMG-E10-B': e10b,
   'IMG-L00-A': l00a,
-  'IMG-X01-A': x01a,
 };
 
 /** The photograph for an Image Brief ref, or undefined while it is unshot. */
@@ -164,8 +153,8 @@ export function mediaFor(ref: string): ImageMetadata | undefined {
  * The shape of a photograph, so a template can put it where it belongs.
  *
  * Most of RTG's own equipment photographs are portrait despite raw pixel
- * dimensions suggesting landscape — they carry EXIF rotation (orientation 6
- * and 8), and Astro applies it, so width/height here are already correct.
+ * dimensions suggesting landscape — camera files carry EXIF rotation, which
+ * `npm run strip-exif` bakes into the pixels, so width/height here are correct.
  * A template that assumes landscape will crop the machine in half.
  *
  * Returns undefined ("unknown", not "landscape") when there is no photograph yet.

@@ -6,9 +6,13 @@ const IDS = new Set(PAGES.map((p) => p.id));
 const knownId = (label: string) =>
   z.string().refine((v) => IDS.has(v), (v) => ({ message: `${label}: unknown page id "${v}"` }));
 
+/** A same-site path: one leading slash, so "//host" and "/\host" (which a
+ *  browser reads as another site) and "javascript:" can't be pasted in. */
+const sitePath = z.string().regex(/^\/(?![/\\])/, 'must be a same-site path starting with a single "/"');
+
 const link = z.object({
   label: z.string(),
-  href: z.string().startsWith('/'),
+  href: sitePath,
 });
 
 /** A card either points at a workbook page (preferred — title/href/blurb are
@@ -18,7 +22,7 @@ const card = z
     pageId: z.string().optional(),
     title: z.string().optional(),
     blurb: z.string().optional(),
-    href: z.string().optional(),
+    href: sitePath.optional(),
     meta: z.string().optional(),
     cta: z.string().optional(),
   })
@@ -174,7 +178,9 @@ const pages = defineCollection({
           fields: z.array(formField).min(1),
           submit: z.string().default('Send'),
           consent: z.boolean().default(true),
-          action: z.string().default('#'),
+          // '#' until a backend exists; only ever a same-site path, so a
+          // pasted value can't send enquiry data to another host
+          action: z.union([z.literal('#'), sitePath]).default('#'),
         })
         .optional(),
 
