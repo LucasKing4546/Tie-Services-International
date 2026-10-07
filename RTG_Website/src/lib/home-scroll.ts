@@ -348,9 +348,9 @@ export function initHome(): void {
   function loop(){
     raf = requestAnimationFrame(loop);
     const nowT = performance.now();
-    /* 60 fps is plenty for these scenes: on a 120 Hz display, drawing every
-       refresh doubles the GPU work for no visible gain */
-    if (nowT - lastT < 15) return;
+    /* No frame-rate cap while live: this loop also positions the hoisted
+       panel, and drawing at half the display rate made the browser drop
+       three times as many frames during scroll (measured at 120 Hz). */
     const dt = Math.min(0.05, (nowT - lastT) / 1000); lastT = nowT;
     /* the case-study machine turns on its own, so it alone keeps drawing
        while it is on screen — never under reduced motion */
