@@ -4,9 +4,11 @@
   --psh-2:0 2px 4px rgba(3,29,91,.07),0 22px 44px -16px rgba(3,29,91,.28)}
 
 /* ---------- header ---------- */
-/* Chat launcher (Base.astro): fixed bottom-right, under the header's z-index.
-   .btn sets display, so [hidden] has to be restated or it never hides. */
-.chat-open{position:fixed;right:20px;bottom:20px;z-index:300}
+/* Chat launcher (Base.astro): fixed bottom-left, under the header's z-index.
+   Left, not right: bottom-right is where the homepage showcase and several
+   templates put their own primary button. .btn sets display, so [hidden]
+   has to be restated or it never hides. */
+.chat-open{position:fixed;left:20px;bottom:20px;z-index:300}
 .chat-open[hidden]{display:none}
 .hdr .hdr-in{min-width:0}
 .hdr.on::before,body:has(.phero) .hdr::before{background:rgba(255,255,255,.94);

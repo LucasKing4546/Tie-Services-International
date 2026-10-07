@@ -113,6 +113,14 @@ export function initHome(): void {
       spec:[['15-110 kW','Power range'],['ATEX','On request'],['Flushed','To class']] }
   ];
 
+  /* Render on demand. Nothing here moves unless the visitor scrolls, drags,
+     resizes or picks a machine, so the loop only draws for a short window
+     after one of those (long enough for the eased moves to settle) and is
+     otherwise idle. Drawing every frame regardless kept five WebGL scenes
+     busy at the display's refresh rate and made the whole page stutter. */
+  let wake = 0;
+  const poke = () => { wake = performance.now() + 1200; };
+
   const stages: Stage[] = [];
   function makeStage(
     canvasId: string, model: THREE.Object3D,
@@ -125,7 +133,7 @@ export function initHome(): void {
     v.frame(dist, height, lookY);
     v.baseDist = dist; v.baseH = height; v.lookY = lookY;
     v.el = cv; v.spin = 0; v.drag = 0; v.onScreen = false;
-    const io = new IntersectionObserver(es => es.forEach(e => v.onScreen = e.isIntersecting),
+    const io = new IntersectionObserver(es => { es.forEach(e => v.onScreen = e.isIntersecting); poke(); },
       { rootMargin: '120px' });
     io.observe(cv);
     cleanups.push(() => { io.disconnect(); v.dispose(); });
@@ -180,7 +188,7 @@ export function initHome(): void {
       // frame() otherwise only runs on scroll — without this call, dragging
       // on an unscrolled page updates stage.drag but never paints, so the
       // model looks inert until the user scrolls.
-      frame(); });
+      poke(); frame(); });
     const up = () => { down = false; el.style.cursor = 'grab'; };
     el.addEventListener('pointerup', up); el.addEventListener('pointercancel', up);
   })();
@@ -218,6 +226,7 @@ export function initHome(): void {
   function setModel(i: number){
     if (i === curModel || !machines.length) return;
     curModel = i;
+    poke();
     const s = SPECS[i];
     if (mHead) mHead.style.opacity = '0';
     if (mSpec) mSpec.style.opacity = '0';
@@ -316,7 +325,7 @@ export function initHome(): void {
   }
 
   let ticking = false;
-  function onScroll(){ if (!ticking) { ticking = true; requestAnimationFrame(frame); } }
+  function onScroll(){ poke(); if (!ticking) { ticking = true; requestAnimationFrame(frame); } }
   function onResize(){ sizeHz(); stages.forEach(v => v.resize()); onScroll(); }
   addEventListener('scroll', onScroll, {passive:true});
   addEventListener('resize', onResize);
@@ -332,12 +341,30 @@ export function initHome(): void {
 
   const smooth = (t: number) => t * t * (3 - 2 * t);
 
+  const SPIN = 0.13;                    // rad/s — time-based, so the same on any display
+  let lastSpin = 0;
   let lastT = performance.now();
   let raf = 0;
   function loop(){
     raf = requestAnimationFrame(loop);
     const nowT = performance.now();
+    /* 60 fps is plenty for these scenes: on a 120 Hz display, drawing every
+       refresh doubles the GPU work for no visible gain */
+    if (nowT - lastT < 15) return;
     const dt = Math.min(0.05, (nowT - lastT) / 1000); lastT = nowT;
+    /* the case-study machine turns on its own, so it alone keeps drawing
+       while it is on screen — never under reduced motion */
+    const spinning = !rm && !!proofV && proofV.onScreen;
+    const live = nowT <= wake;
+    if (!live) {
+      /* idle: only the slow turn remains, and 30 fps carries it */
+      if (spinning && proofV && nowT - lastSpin > 32) {
+        proofV.pivot.rotation.y += SPIN * Math.min(0.1, (nowT - lastSpin) / 1000);
+        lastSpin = nowT;
+        proofV.render();
+      }
+      return;
+    }
     const aMove = 1 - Math.exp(-dt * 6.0);
     const aTier = 1 - Math.exp(-dt * 7.0);
 
@@ -378,8 +405,7 @@ export function initHome(): void {
       zf.style.opacity = liftK > 0.02 ? '1' : '0';
     }
 
-    /* the case-study machine turns on its own — never under reduced motion */
-    if (!rm && proofV && proofV.onScreen) proofV.pivot.rotation.y += 0.0022;
+    if (spinning && proofV) { proofV.pivot.rotation.y += SPIN * dt; lastSpin = nowT; }
 
     if (heroV  && heroV.onScreen)  heroV.render();
     if (tierV  && tierV.onScreen)  tierV.render();
@@ -391,6 +417,7 @@ export function initHome(): void {
   sizeHz();
   stages.forEach(v => v.resize());
   frame();
+  poke();
   if (stages.length) loop();
 
   teardown = () => {

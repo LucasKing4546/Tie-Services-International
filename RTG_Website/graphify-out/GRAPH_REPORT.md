@@ -1,7 +1,7 @@
 # Graph Report - RTG_Website  (2026-10-07)
 
 ## Corpus Check
-- 176 files · ~3,092,157 words
+- 176 files · ~3,092,421 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 10 file(s) not represented in the graph (top: .css 8, (none) 1, .xml 1)
 
@@ -11,7 +11,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `be17601f`
+- Built from commit: `e733f6c4`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 

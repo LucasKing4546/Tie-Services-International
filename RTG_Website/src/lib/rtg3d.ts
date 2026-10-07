@@ -437,8 +437,12 @@ function createViewer(canvas: HTMLCanvasElement, opts?: ViewerOpts) {
   const renderer = new THREE.WebGLRenderer({
     canvas: canvas, antialias: true, alpha: true, powerPreference: 'high-performance'
   });
-  renderer.setPixelRatio(Math.min(devicePixelRatio || 1, 2));
-  renderer.shadowMap.enabled = true;
+  // 1.5, not 2: a full-viewport canvas at 2x is ~4x the pixels of 1x for a
+  // difference nobody sees on these flat-shaded models, and it is the
+  // difference between smooth and stuttering on integrated graphics.
+  renderer.setPixelRatio(Math.min(devicePixelRatio || 1, 1.5));
+  // a viewer asked for no ground shadow shouldn't pay for a shadow pass
+  renderer.shadowMap.enabled = opts.shadow !== 0;
   renderer.shadowMap.type = THREE.PCFSoftShadowMap;
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
