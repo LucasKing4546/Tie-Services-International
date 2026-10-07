@@ -1,23 +1,23 @@
-# Graph Report - RTG_Website  (2026-09-20)
+# Graph Report - RTG_Website  (2026-10-07)
 
 ## Corpus Check
-- 171 files · ~3,636,507 words
+- 175 files · ~3,652,485 words
 - Verdict: corpus is large enough that graph structure adds value.
-- Unclassified: 5 file(s) not represented in the graph (top: .css 3, (none) 1, .xml 1)
+- Unclassified: 10 file(s) not represented in the graph (top: .css 8, (none) 1, .xml 1)
 
 ## Summary
-- 698 nodes · 1159 edges · 96 communities (42 shown, 54 thin omitted)
+- 867 nodes · 1341 edges · 116 communities (63 shown, 53 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 11 edges (avg confidence: 0.88)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `a98439a3`
+- Built from commit: `7be14877`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
 - blocks.ts
-- Base.astro
+- site.js
 - media.ts
 - rtg3d.ts
 - build.py
@@ -67,12 +67,34 @@
 - e-07.mdx
 - e-08.mdx
 - e-10.mdx
+- z-01.mdx
+- z-02.mdx
+- z-03.mdx
+- z-04.mdx
 - ImageSlot.astro
 - src_assets_equipment_e04_reel_winch
 - orientationOf
 - src_assets_equipment_e07_aframe_dusk
 - src_assets_equipment_e08_knuckle_boom
 - src_assets_equipment_e08_proof_load_test
+- Base.astro
+- Appendix B - Canonical Sources (read these before reinventing)
+- 4. DESIGN ENGINEERING DIRECTIVES (Bias Correction)
+- Product
+- 10. REFERENCE VOCABULARY (Pattern Names the Agent Should Know)
+- tasteskill: Anti-Slop Frontend Skill
+- page.ts
+- 9. AI TELLS (Forbidden Patterns)
+- seo.ts
+- 11. REDESIGN PROTOCOL
+- 3. DEFAULT ARCHITECTURE & CONVENTIONS
+- 6. PERFORMANCE & ACCESSIBILITY GUARDRAILS
+- 0. BRIEF INFERENCE (Read the Room Before Anything Else)
+- 12. THE BLOCK LIBRARY (Contract - Implementations Land Here Iteratively)
+- 5. CONTEXT-AWARE PROACTIVITY
+- 8. DARK MODE PROTOCOL
+- 7. DIAL DEFINITIONS (Technical Reference)
+- vercel.json
 
 ## God Nodes (most connected - your core abstractions)
 1. `[]` - 33 edges
@@ -101,22 +123,22 @@
 ## Import Cycles
 - None detected.
 
-## Communities (96 total, 54 thin omitted)
+## Communities (116 total, 53 thin omitted)
 
 ### Community 0 - "blocks.ts"
-Cohesion: 0.09
-Nodes (53): trail, jsonLdPage, siblings, jobPostings, [], jsonLdPage, [], contactPoints (+45 more)
+Cohesion: 0.08
+Nodes (57): trail, jsonLdPage, siblings, jobPostings, [], jsonLdPage, [], contactPoints (+49 more)
 
-### Community 1 - "Base.astro"
-Cohesion: 0.07
-Nodes (29): ref_astro_config, @astrojs/mdx, @astrojs/sitemap, year, ancestorsOf(), OFF_MAP_IDS, OFF_MAP_PAGES, FOOTER_NAV (+21 more)
+### Community 1 - "site.js"
+Cohesion: 0.15
+Nodes (10): ref_astro_config, @astrojs/mdx, @astrojs/sitemap, year, FOOTER_NAV, LEGAL_NAV, NAV, PROOF (+2 more)
 
 ### Community 2 - "media.ts"
 Cohesion: 0.04
-Nodes (53): src_assets_contact_x01_team, src_assets_equipment_e00_deck_spread, src_assets_equipment_e00_system_overview, src_assets_equipment_e02_deployment_frame, src_assets_equipment_e02_ds01_guarded, src_assets_equipment_e02_ds01_panel, src_assets_equipment_e02_ds38_hpu_b, src_assets_equipment_e02_ds38_winch (+45 more)
+Nodes (52): src_assets_contact_x01_team, src_assets_equipment_e00_deck_spread, src_assets_equipment_e00_system_overview, src_assets_equipment_e02_deployment_frame, src_assets_equipment_e02_ds01_guarded, src_assets_equipment_e02_ds01_panel, src_assets_equipment_e02_ds38_hpu_b, src_assets_equipment_e02_ds38_winch (+44 more)
 
 ### Community 3 - "rtg3d.ts"
-Cohesion: 0.13
+Cohesion: 0.12
 Nodes (35): three, CraneRig, destroyHome(), initHome(), finishedWinch(), frame(), makeStage(), onResize() (+27 more)
 
 ### Community 4 - "build.py"
@@ -125,15 +147,15 @@ Nodes (24): collections, datetime, glob, html, json, os, re, build() (+16 more)
 
 ### Community 5 - "RTG Website — project guide for Claude Code"
 Cohesion: 0.06
-Nodes (30): 1. What this is, 2. The workflow — follow this for every feature and every page, 3. Stack and conventions, 3D, 4. The 17 templates, 5. Known gaps — do not paper over these, 6. What must never be published, 7. Design system (+22 more)
+Nodes (29): 1. What this is, 2. The workflow — follow this for every feature and every page, 3. Stack and conventions, 3D, 4. The 17 templates, 5. Known gaps — do not paper over these, 6. What must never be published, 7. Design system (+21 more)
 
 ### Community 6 - "package.json"
 Cohesion: 0.06
-Nodes (30): dependencies, astro, @astrojs/mdx, @astrojs/sitemap, three, description, devDependencies, @astrojs/check (+22 more)
+Nodes (35): dependencies, astro, @astrojs/mdx, @astrojs/sitemap, @fontsource/jetbrains-mono, @fontsource-variable/archivo, @fontsource-variable/inter, three (+27 more)
 
 ### Community 7 - "home.ts"
-Cohesion: 0.10
-Nodes (13): doubled, EQUIPMENT, HERO_STATS, LIFECYCLE, MACHINES, MARQUEE, SECTORS, Stat (+5 more)
+Cohesion: 0.13
+Nodes (12): doubled, EQUIPMENT, HERO_PROOF, HERO_STATS, LIFECYCLE, MACHINES, MARQUEE, SECTORS (+4 more)
 
 ### Community 8 - "RTG design language"
 Cohesion: 0.10
@@ -144,8 +166,8 @@ Cohesion: 0.11
 Nodes (18): About — 4 pages, Article — 1 page, Careers — 1 page, Case — 4 pages, Contact — 2 pages, Form — 8 pages, Guide — 1 page, Home — 1 page (+10 more)
 
 ### Community 10 - "build-page-map.mjs"
-Cohesion: 0.14
-Nodes (13): body, closeIdx, current, head, OUT, pages, pagesStart, root (+5 more)
+Cohesion: 0.13
+Nodes (14): xlsx, body, closeIdx, current, head, OUT, pages, pagesStart (+6 more)
 
 ### Community 11 - "RTG Website — Build"
 Cohesion: 0.15
@@ -181,15 +203,15 @@ Nodes (8): And a spares recommendation, How it was proved, The assessment came f
 
 ### Community 19 - "audit-protection.mjs"
 Cohesion: 0.25
-Nodes (7): ref_node_fs, BANNED, ds, exts, hits, root, roots
+Nodes (7): ref_node_url, BANNED, ds, exts, hits, root, roots
 
 ### Community 20 - "screenshot-pages.mjs"
 Cohesion: 0.32
-Nodes (7): ref_node_url, ref_playwright, main(), OUT_DIR, readSitemapUrls(), root, slugFor()
+Nodes (7): ref_node_path, ref_playwright, main(), OUT_DIR, readSitemapUrls(), root, slugFor()
 
 ### Community 21 - "gen-stubs.mjs"
 Cohesion: 0.33
-Nodes (5): ref_node_path, outDir, root, SKIP, PAGES
+Nodes (5): ref_node_fs, outDir, root, SKIP, PAGES
 
 ### Community 22 - "c-00.mdx"
 Cohesion: 0.33
@@ -267,29 +289,113 @@ Nodes (3): Applications, Class and proof load, The range
 Cohesion: 0.40
 Nodes (4): Fail-safe braking, How it is built, Squeeze versus line tension, explained, What decides which unit
 
-### Community 90 - "ImageSlot.astro"
+### Community 86 - "z-01.mdx"
 Cohesion: 0.22
-Nodes (5): src_assets_home_home_fleet_vessel, photo, tiles, mediaFor(), MotionHint
+Nodes (8): Changes to this notice, How long we keep it, How to contact us or complain, What we collect, Who we are, Who we share it with, Why we hold it, and the lawful basis, Your rights
+
+### Community 87 - "z-02.mdx"
+Cohesion: 0.33
+Nodes (5): Categories, Changing your mind, Each item named, More about your data, The short version
+
+### Community 88 - "z-03.mdx"
+Cohesion: 0.22
+Nodes (8): Changes to these terms, Copyright in drawings and technical publications, Documents issued to you, Figures published here, Liability, Links to other websites, Using the site, Who owns this website
+
+### Community 89 - "z-04.mdx"
+Cohesion: 0.50
+Nodes (3): Known issues, Telling us about a problem, The standard we target
+
+### Community 90 - "ImageSlot.astro"
+Cohesion: 0.19
+Nodes (6): src_assets_home_home_fleet_vessel, photo, tiles, bg, mediaFor(), MotionHint
+
+### Community 96 - "Base.astro"
+Cohesion: 0.08
+Nodes (17): ref_fontsource_jetbrains_mono_400_css, ref_fontsource_jetbrains_mono_500_css, ref_fontsource_variable_archivo_files_archivo_latin_wght_normal_woff2_url, ref_fontsource_variable_archivo_wght_css, ref_fontsource_variable_inter_files_inter_latin_wght_normal_woff2_url, ref_fontsource_variable_inter_wght_css, canonical, ogImage (+9 more)
+
+### Community 97 - "Appendix B - Canonical Sources (read these before reinventing)"
+Cohesion: 0.09
+Nodes (21): APPENDICES - Real Source-Backed Reference Material, Appendix A - Install Commands per Design System, Appendix B - Canonical Sources (read these before reinventing), Appendix C - Apple Liquid Glass: Honest Web Approximation, Apple Liquid Glass (Apple platforms only), Atlassian, Bootstrap, Carbon (+13 more)
+
+### Community 98 - "4. DESIGN ENGINEERING DIRECTIVES (Bias Correction)"
+Cohesion: 0.17
+Nodes (12): 4.10 Quotes & Testimonials, 4.11 Page Theme Lock (Light / Dark Mode Consistency), 4.1 Typography, 4.2 Color Calibration, 4.3 Layout Diversification, 4.4 Materiality, Shadows, Cards, 4.5 Interactive UI States, 4.6 Data & Form Patterns (+4 more)
+
+### Community 99 - "Product"
+Cohesion: 0.17
+Nodes (11): Accessibility & Inclusion, Brand Commitments, Capabilities and Constraints, Evidence on Hand, Operating Context, Platform, Positioning, Product (+3 more)
+
+### Community 100 - "10. REFERENCE VOCABULARY (Pattern Names the Agent Should Know)"
+Cohesion: 0.20
+Nodes (10): 10. REFERENCE VOCABULARY (Pattern Names the Agent Should Know), Animation Library Choice, Cards & Containers, Galleries & Media, Hero Paradigms, Layout & Grids, Micro-Interactions & Effects, Navigation & Menus (+2 more)
+
+### Community 101 - "tasteskill: Anti-Slop Frontend Skill"
+Cohesion: 0.20
+Nodes (10): 13. OUT OF SCOPE, 14. FINAL PRE-FLIGHT CHECK, 1.A Dial Inference (design read → dial values), 1.B Use-Case Presets, 1.C How the Dials Drive Output, 1. THE THREE DIALS (Core Configuration), 2.A When to reach for a real design system (use official packages), 2.B When the brief is an aesthetic, not a system (+2 more)
+
+### Community 102 - "page.ts"
+Cohesion: 0.31
+Nodes (6): OFF_MAP_IDS, OFF_MAP_PAGES, BY_ID, ResolvedPage, resolvePage(), { p }
+
+### Community 103 - "9. AI TELLS (Forbidden Patterns)"
+Cohesion: 0.25
+Nodes (8): 9.A Visual & CSS, 9. AI TELLS (Forbidden Patterns), 9.B Typography, 9.C Layout & Spacing, 9.D Content & Data ("Jane Doe" Effect), 9.E External Resources & Components, 9.F Production-Test Tells (banned outright), 9.G EM-DASH BAN (the single most-violated Tell)
+
+### Community 104 - "seo.ts"
+Cohesion: 0.46
+Nodes (7): ancestorsOf(), PageData, absolute(), breadcrumbNode(), buildJsonLd(), ogImageFor(), organizationNode()
+
+### Community 105 - "11. REDESIGN PROTOCOL"
+Cohesion: 0.29
+Nodes (7): 11.A Detect the Mode (first action), 11.B Audit Before Touching, 11.C Preservation Rules, 11.D Modernisation Levers (priority order), 11.E Decision Tree: Targeted Evolution vs Full Redesign, 11.F What Never Changes Silently, 11. REDESIGN PROTOCOL
+
+### Community 106 - "3. DEFAULT ARCHITECTURE & CONVENTIONS"
+Cohesion: 0.29
+Nodes (7): 3.A Stack, 3.B State, 3.C Icons, 3.D Emoji Policy, 3. DEFAULT ARCHITECTURE & CONVENTIONS, 3.E Responsiveness & Layout Mechanics, 3.F Dependency Verification (mandatory)
+
+### Community 107 - "6. PERFORMANCE & ACCESSIBILITY GUARDRAILS"
+Cohesion: 0.29
+Nodes (7): 6.A Hardware Acceleration, 6.B Reduced Motion (mandatory), 6.C Dark Mode (mandatory for any consumer-facing page), 6.D Core Web Vitals Targets, 6.E DOM Cost, 6.F Z-Index Restraint, 6. PERFORMANCE & ACCESSIBILITY GUARDRAILS
+
+### Community 108 - "0. BRIEF INFERENCE (Read the Room Before Anything Else)"
+Cohesion: 0.40
+Nodes (5): 0.A Read these signals first, 0.B Output a one-line "Design Read" before generating, 0. BRIEF INFERENCE (Read the Room Before Anything Else), 0.C If the brief is ambiguous, ask one question, do not guess, 0.D Anti-Default Discipline
+
+### Community 109 - "12. THE BLOCK LIBRARY (Contract - Implementations Land Here Iteratively)"
+Cohesion: 0.40
+Nodes (5): 12.A File Location, 12.B Required Frontmatter, 12.C Required Body Sections, 12.D Block-Library Discipline, 12. THE BLOCK LIBRARY (Contract - Implementations Land Here Iteratively)
+
+### Community 110 - "5. CONTEXT-AWARE PROACTIVITY"
+Cohesion: 0.40
+Nodes (5): 5.A Sticky-Stack - Canonical Skeleton, 5.B Horizontal-Pan - Canonical Skeleton, 5.C Scroll-Reveal Stagger - Canonical Skeleton (lighter alternative), 5. CONTEXT-AWARE PROACTIVITY, 5.D Forbidden Animation Patterns
+
+### Community 111 - "8. DARK MODE PROTOCOL"
+Cohesion: 0.40
+Nodes (5): 8.A Token Strategy (pick one, stick to it), 8.B Do Not Prescribe Specific Colors Here, 8.C Default Mode, 8.D Test in Both Modes Before Finishing, 8. DARK MODE PROTOCOL
+
+### Community 112 - "7. DIAL DEFINITIONS (Technical Reference)"
+Cohesion: 0.50
+Nodes (4): 7. DIAL DEFINITIONS (Technical Reference), DESIGN_VARIANCE (Level 1-10), MOTION_INTENSITY (Level 1-10), VISUAL_DENSITY (Level 1-10)
 
 ## Knowledge Gaps
-- **297 isolated node(s):** `name`, `version`, `private`, `type`, `description` (+292 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 446 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **54 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **425 isolated node(s):** `name`, `version`, `private`, `type`, `description` (+420 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 586 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **53 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `[]` connect `blocks.ts` to `Base.astro`, `ImageSlot.astro`, `media.ts`, `orientationOf`?**
-  _High betweenness centrality (0.059) - this node is a cross-community bridge._
+  _High betweenness centrality (0.040) - this node is a cross-community bridge._
 - **Why does `astro` connect `package.json` to `media.ts`?**
-  _High betweenness centrality (0.031) - this node is a cross-community bridge._
+  _High betweenness centrality (0.022) - this node is a cross-community bridge._
 - **What connects `name`, `version`, `private` to the rest of the system?**
-  _297 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _425 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `blocks.ts` be split into smaller, more focused modules?**
-  _Cohesion score 0.08686868686868687 - nodes in this community are weakly interconnected._
-- **Should `Base.astro` be split into smaller, more focused modules?**
-  _Cohesion score 0.06659619450317125 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.07935108446482102 - nodes in this community are weakly interconnected._
 - **Should `media.ts` be split into smaller, more focused modules?**
-  _Cohesion score 0.037037037037037035 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.03773584905660377 - nodes in this community are weakly interconnected._
 - **Should `rtg3d.ts` be split into smaller, more focused modules?**
-  _Cohesion score 0.1251778093883357 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.12375533428165007 - nodes in this community are weakly interconnected._
+- **Should `build.py` be split into smaller, more focused modules?**
+  _Cohesion score 0.0766488413547237 - nodes in this community are weakly interconnected._

@@ -191,7 +191,10 @@ export function initHome(): void {
         mSpec = document.getElementById('mSpec'), mPick = document.getElementById('mPick'),
         mHead = document.getElementById('mHead');
   const machines: Machine[] = [];
-  let curModel = 0, userPicked = false, showSpin = -0.7, liftK = 0, zoomK = 0;
+  /* the machine only changes when a pill is clicked, and holds a fixed
+     three-quarter view — nothing here is driven by scroll position */
+  const showSpin = -0.7;
+  let curModel = 0, liftK = 0, zoomK = 0;
   let textTimer: ReturnType<typeof setTimeout> | undefined;
 
   const GAP = 19;                       // world-space spacing on the carousel
@@ -225,18 +228,21 @@ export function initHome(): void {
       if (mSpec) { mSpec.innerHTML = specHTML(s); mSpec.style.opacity = '1'; }
       if (mHead) mHead.style.opacity = '1';
     }, 210);
-    if (mPick) [...mPick.children].forEach((btn, k) => btn.classList.toggle('on', k === i));
+    if (mPick) [...mPick.children].forEach((btn, k) => {
+      btn.classList.toggle('on', k === i);
+      btn.setAttribute('aria-pressed', String(k === i));
+    });
   }
   if (mPick) mPick.addEventListener('click', e => {
     const b = (e.target as HTMLElement).closest('button') as HTMLElement | null;
-    if (b) { userPicked = true; setModel(+(b.dataset.m ?? 0)); }
+    if (b) setModel(+(b.dataset.m ?? 0));
   });
 
   /* zoom-into-frame */
   const zw = document.getElementById('showcase'),
         zf = document.getElementById('zFrame'),
         zHint = document.getElementById('zHint');
-  if (zw) zw.style.height = '440vh';
+  if (zw) zw.style.height = '340vh';
 
   /* pinned tiers */
   const pinWrap = document.getElementById('tiers');
@@ -275,13 +281,9 @@ export function initHome(): void {
         zoomK = ease(clamp((p - 0.34) / 0.26, 0, 1));   // then you push into it
         if (craneRig && craneRig.userData.rig)
           craneRig.userData.rig.setDrop(lerp(DROP_OUT, DROP_IN, liftK));
-        if (showV) {
-          showV.frame(lerp(15.6, 13.2, zoomK), lerp(3.9, 3.2, zoomK), -0.4);
-          showSpin = -0.7 + p * 1.1;
-        }
+        if (showV) showV.frame(lerp(15.6, 13.2, zoomK), lerp(3.9, 3.2, zoomK), -0.4);
         if (craneV) craneV.el.style.opacity = (1 - clamp((zoomK - 0.45) / 0.5, 0, 1)).toFixed(3);
         if (zHint) zHint.style.opacity = p > 0.28 ? '0' : '1';
-        if (!userPicked) setModel(p < 0.68 ? 0 : p < 0.84 ? 1 : 2);
       } else {
         zf.style.transform = '';
         if (showV) showV.frame(15.5, 3.4, -0.4);

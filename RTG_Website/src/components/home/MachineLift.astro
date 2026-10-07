@@ -24,7 +24,7 @@ const first = MACHINES[0];
           </div>
           <div class="zf-pick" id="mPick">
             {MACHINES.map((m, i) => (
-              <button class={i === 0 ? 'on' : ''} data-m={i}>
+              <button type="button" class={i === 0 ? 'on' : ''} aria-pressed={i === 0 ? 'true' : 'false'} data-m={i}>
                 {m.key === 'winch' ? 'Winch' : m.key === 'aframe' ? 'A-frame LARS' : 'Power unit'}
               </button>
             ))}

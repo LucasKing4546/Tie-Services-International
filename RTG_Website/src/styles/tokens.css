@@ -142,6 +142,8 @@ html.js .stag.in > *{opacity:1;transform:none}
 .hdr-in{position:relative;display:flex;align-items:center;justify-content:space-between;gap:20px}
 .brand{display:flex;align-items:center;gap:12px}
 .brand .logo{height:34px;width:auto;display:block}
+.hdr .brand .logo{height:46px}
+@media (max-width:640px){.hdr .brand .logo{height:38px}}
 .nav{display:flex;align-items:center;gap:4px}
 .nav a{font-family:var(--f-d);font-weight:600;font-size:14px;letter-spacing:-.01em;padding:9px 15px;
   border-radius:100px;color:var(--navy);transition:background .25s,color .25s}

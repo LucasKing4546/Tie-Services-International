@@ -18,9 +18,10 @@
  *
  * IMG-H01-A (homepage hero) shows a client's vessel with the client's name
  * visible on the wheelhouse, published on the user's explicit instruction
- * ("we can use the Fugro picture"). That authorises the photograph only —
- * it does not authorise naming the client in copy; no written permission
- * exists (CLAUDE.md §5.7), so no page text names them.
+ * ("we can use the Fugro picture"). On 2026-10-07 the user also authorised
+ * naming the client in the homepage vessel banner (home/Fleet.astro). That
+ * covers that one block; no written permission is on file (CLAUDE.md §5.7),
+ * so no other page text names them.
  *
  * IMG-S02-A/B and IMG-S05-A/B are confirmed third-party (a stock filename,
  * a journal cover, a named institute's own vessel) and are unused by any

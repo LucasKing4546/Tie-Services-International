@@ -27,7 +27,7 @@ export const SECTORS = [
     blurb: 'CTD, side scan, magnetometer, sub-bottom profiler and deep tow. 300 to 4,000 m.' },
   { id: 'S-02', ref: 'IMG-S02-C', name: 'Marine Geotechnical', href: '/sectors/marine-geotechnical/',
     blurb: 'When the tool is fixed to the seabed and the ship is not. Corer, CPT and vibrocorer handling.' },
-  { id: 'S-03', ref: '', name: 'Offshore Wind & Subsea Cables', href: '/sectors/offshore-wind-subsea-cables/',
+  { id: 'S-03', ref: 'IMG-E10-A', name: 'Offshore Wind & Subsea Cables', href: '/sectors/offshore-wind-subsea-cables/',
     blurb: 'Every turbine starts with a core sample. Every array ends with a cable.' },
   { id: 'S-04', ref: 'IMG-S04-D', name: 'Seismic', href: '/sectors/seismic/',
     blurb: 'Handling built for continuous duty, where the winch never really stops.' },
