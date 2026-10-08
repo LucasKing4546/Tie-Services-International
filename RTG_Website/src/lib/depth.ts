@@ -9,6 +9,11 @@
 
 let off: (() => void) | undefined;
 
+/** Sections taller than the screen that pin their content while scrolled:
+ *  the homepage tiers and sector track, and the shared scroll track and
+ *  pinned stages once motion.ts has switched them on. */
+const PINNED = '#tiers, #sectors, .strack.on, .pstage.on';
+
 /** The readout's label for a section: its data-zone if it has one, else its
  *  own first heading, cut to fit the readout. */
 export function zoneOf(el: HTMLElement): string {
@@ -35,8 +40,18 @@ export function initDepth(): void {
 
   const update = () => {
     raf = 0;
-    const span = document.documentElement.scrollHeight - innerHeight;
-    const p = span > 0 ? Math.min(1, Math.max(0, scrollY / span)) : 0;
+    // A pinned section holds the screen still while you scroll through it, so
+    // that scroll is not descent: take it out of both the distance travelled
+    // and the total, and the gauge stands still for as long as the page does.
+    let held = 0, holdable = 0;
+    for (const el of document.querySelectorAll<HTMLElement>(PINNED)) {
+      const extra = el.offsetHeight - innerHeight;
+      if (extra <= 0) continue;
+      holdable += extra;
+      held += Math.min(extra, Math.max(0, -el.getBoundingClientRect().top));
+    }
+    const span = document.documentElement.scrollHeight - innerHeight - holdable;
+    const p = span > 0 ? Math.min(1, Math.max(0, (scrollY - held) / span)) : 0;
     gauge.style.setProperty('--depth', p.toFixed(4));
     // Squared, so the shallow water gets a fair share of the page instead of
     // the first 200 m flashing past in the first few percent of scroll.
