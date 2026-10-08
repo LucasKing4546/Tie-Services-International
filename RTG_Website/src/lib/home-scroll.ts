@@ -21,6 +21,7 @@
  */
 import * as THREE from 'three';
 import { buildWinch, buildAFrame, buildHPU, createViewer } from './rtg3d';
+import { MACHINES } from '@data/home';
 import type { ViewerOpts } from './rtg3d';
 
 type Viewer = ReturnType<typeof createViewer>;
@@ -96,17 +97,7 @@ export function initHome(): void {
   const ease  = (t: number) => 1 - Math.pow(1 - t, 3);
   const lerp  = (a: number, b: number, t: number) => a + (b-a)*t;
 
-  const SPECS = [
-    { name:'Traction &amp; storage winch',
-      desc:'Grooved drum, level wind, hydraulic drive and fail-safe band brake, built as one machine on a single skid.',
-      spec:[['Tier 1-4','Scope available'],['150 Te','Load tested'],['3,000 m','Proven depth']] },
-    { name:'A-frame launch &amp; recovery',
-      desc:'Twin-leg fabricated A-frame with luffing cylinders, head sheave and hook block. Class surveyed as a system.',
-      spec:[['Twin ram','Luffing'],['Class','Surveyed'],['Bespoke','Geometry']] },
-    { name:'Hydraulic power unit',
-      desc:'Tank, motor-pump group, valve manifold and air-blast cooling on one skid. Pipework flushed to class.',
-      spec:[['15-110 kW','Power range'],['ATEX','On request'],['Flushed','To class']] }
-  ];
+  const SPECS = MACHINES;
 
   /* Render on demand. Nothing here moves unless the visitor scrolls, drags,
      resizes or picks a machine, so the loop only draws for a short window
@@ -144,17 +135,14 @@ export function initHome(): void {
     return m;
   }
 
-  let tierV: Stage | null = null, showV: Stage | null = null,
-      proofV: Stage | null = null;
+  let tierV: Stage | null = null, showV: Stage | null = null;
   let tierModel: TieredModel | null = null;
   {
     tierModel = buildWinch() as unknown as TieredModel;
     tierV  = makeStage('tierGL', tierModel, 15.0, 2.6, -0.5);
     showV  = makeStage('showGL', new THREE.Group(), 20.0, 3.4, -0.4, { shadow: 0.22 });
-    proofV = makeStage('proofGL', finishedWinch(), 15.6, 2.6, -0.5, { shadow: 0.20 });
     if (tierV)  tierV.pivot.rotation.y  = -0.62;
     if (showV)  showV.pivot.rotation.y  = 0;
-    if (proofV) proofV.pivot.rotation.y = -0.6;
   }
 
   /* ── the three machines all live in the scene at once and cross-dissolve,
@@ -292,8 +280,6 @@ export function initHome(): void {
 
   const smooth = (t: number) => t * t * (3 - 2 * t);
 
-  const SPIN = 0.13;                    // rad/s — time-based, so the same on any display
-  let lastSpin = 0;
   let lastT = performance.now();
   let raf = 0;
   function loop(){
@@ -303,19 +289,7 @@ export function initHome(): void {
        panel, and drawing at half the display rate made the browser drop
        three times as many frames during scroll (measured at 120 Hz). */
     const dt = Math.min(0.05, (nowT - lastT) / 1000); lastT = nowT;
-    /* the case-study machine turns on its own, so it alone keeps drawing
-       while it is on screen — never under reduced motion */
-    const spinning = !rm && !!proofV && proofV.onScreen;
-    const live = nowT <= wake;
-    if (!live) {
-      /* idle: only the slow turn remains, and 30 fps carries it */
-      if (spinning && proofV && nowT - lastSpin > 32) {
-        proofV.pivot.rotation.y += SPIN * Math.min(0.1, (nowT - lastSpin) / 1000);
-        lastSpin = nowT;
-        proofV.render();
-      }
-      return;
-    }
+    if (nowT > wake) return;
     const aMove = 1 - Math.exp(-dt * 6.0);
     const aTier = 1 - Math.exp(-dt * 7.0);
 
@@ -341,11 +315,8 @@ export function initHome(): void {
       m.wrap.visible = d < 1.3;                      // they simply leave the frame
     });
 
-    if (spinning && proofV) { proofV.pivot.rotation.y += SPIN * dt; lastSpin = nowT; }
-
     if (tierV  && tierV.onScreen)  tierV.render();
     if (showV  && showV.onScreen)  showV.render();
-    if (proofV && proofV.onScreen) proofV.render();
   }
 
   sizeHz();

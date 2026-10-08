@@ -1,17 +1,19 @@
 ---
-import { MACHINES } from '@data/home';
+// "Engineered for offshore conditions": the four engineering points, then the
+// showroom — one machine in open water, turned by drag (home-scroll.ts).
+import { CONDITIONS, MACHINES } from '@data/home';
 const first = MACHINES[0];
 ---
-<section data-zone="Hardware" class="sec sm" style="padding-bottom:44px">
+<section data-zone="Engineering" class="sec sm cond">
   <div class="wrap">
-    <div class="sechd" style="margin-bottom:0">
-      <h2 class="d2"><span class="rl"><span>Look at the actual</span></span>
-      <span class="rl"><span>hardware.</span></span></h2>
-    </div>
+    <h2 class="d2"><span class="rl"><span>{CONDITIONS.heading}</span></span></h2>
+    <ul class="cond-list stag">
+      {CONDITIONS.points.map((p) => <li>{p}</li>)}
+    </ul>
   </div>
 </section>
 
-<section data-zone="Hardware" class="zw" id="showcase">
+<section data-zone="Engineering" class="zw" id="showcase">
   <div class="zs">
     <div class="zf" id="zFrame">
       <canvas id="showGL" role="img" aria-label="3D model of RTG deck equipment. Drag to turn it."></canvas>
@@ -23,9 +25,7 @@ const first = MACHINES[0];
           </div>
           <div class="zf-pick" id="mPick">
             {MACHINES.map((m, i) => (
-              <button type="button" class={i === 0 ? 'on' : ''} aria-pressed={i === 0 ? 'true' : 'false'} data-m={i}>
-                {m.key === 'winch' ? 'Winch' : m.key === 'aframe' ? 'A-frame LARS' : 'Power unit'}
-              </button>
+              <button type="button" class={i === 0 ? 'on' : ''} aria-pressed={i === 0 ? 'true' : 'false'} data-m={i}>{m.label}</button>
             ))}
           </div>
         </div>
@@ -34,7 +34,6 @@ const first = MACHINES[0];
           <div class="spec" id="mSpec">
             {first.spec.map(([b, l]) => <div><b>{b}</b><span>{l}</span></div>)}
           </div>
-          <a class="btn b-red" href="/equipment/">See the full range<span class="dot"></span></a>
         </div>
       </div>
     </div>

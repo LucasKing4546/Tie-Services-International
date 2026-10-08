@@ -16,7 +16,10 @@ interface Props {
   compact?: boolean;
 }
 
-const { keys = Object.keys(PROOF) as ProofKey[], tone = 'light', compact = false } = Astro.props;
+/** The standard band: the figures shown above the footer on every main page. */
+const BAND: ProofKey[] = ['since', 'machines', 'projects', 'loadTestTe'];
+
+const { keys = BAND, tone = 'light', compact = false } = Astro.props;
 const items = keys.map((k) => ({ key: k, ...PROOF_DISPLAY[k] }));
 ---
 

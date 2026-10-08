@@ -1,14 +1,7 @@
 ---
-import { Image } from 'astro:assets';
-import { TIERS } from '@data/home';
-import { mediaFor } from '@data/media';
-
-// pos crops the camera date stamp out of the bottom-right of IMG-S07-B.
-const SHOP: { ref: string; alt: string; pos?: string }[] = [
-  { ref: 'IMG-E04-A', alt: 'A large fabricated cable reel on its skid frame in the RTG workshop, painted and fitted with its hydraulic drive.' },
-  { ref: 'IMG-S07-B', alt: 'A fabricated A-frame launch and recovery system with its winch, assembled on stands on the RTG workshop floor.', pos: '35% 50%' },
-  { ref: 'IMG-E02-G', alt: 'A skid-mounted winch with a grooved drum and overhead sheave, spooled with wire on the RTG workshop floor.' },
-];
+// Contract manufacturing: the pinned four-tier ladder, with the 3D winch
+// built up one tier at a time (home-scroll.ts).
+import { MANUFACTURING, TIERS } from '@data/home';
 ---
 <section data-zone="Manufacturing" class="pin-wrap" id="tiers">
   <div class="pin-stick">
@@ -16,8 +9,8 @@ const SHOP: { ref: string; alt: string; pos?: string }[] = [
       <div class="pin-vis"><canvas id="tierGL" role="img"
         aria-label="3D winch assembly building up one manufacturing tier at a time"></canvas></div>
       <div>
-        <p class="mono red tier-eyebrow">Contract manufacturing</p>
-        <h2 class="d3 tier-h">Flexible Build Scopes: From Structural Fabrication to Full Class-Witnessed FAT.</h2>
+        <h2 class="d3 tier-h">{MANUFACTURING.heading}</h2>
+        <p class="tier-intro">{MANUFACTURING.body}</p>
         <div class="pin-copy">
           {TIERS.map((t, i) => (
             <article class={`tier${i === 0 ? ' on' : ''}`} data-t={i}>
@@ -29,23 +22,8 @@ const SHOP: { ref: string; alt: string; pos?: string }[] = [
           ))}
         </div>
         <div class="pin-bar" aria-hidden="true">{TIERS.map((t, i) => <i class={i === 0 ? 'on' : ''}><b>{t.n}</b><span>{t.title}</span></i>)}</div>
-        <p style="margin-top:30px"><a class="arw" href="/contract-manufacturing/">Your design. Your IP. Our factory. →</a></p>
+        <p style="margin-top:30px"><a class="arw" href={MANUFACTURING.link.href}>{MANUFACTURING.link.label} →</a></p>
       </div>
-    </div>
-  </div>
-</section>
-
-{/* RTG's own in-workshop equipment shots, standing in until dedicated
-   factory-floor photography (machining, welding bays) is supplied. */}
-<section data-zone="Manufacturing" class="sec sm shop">
-  <div class="wrap">
-    <p class="mono red">Satu Mare workshop</p>
-    <div class="shop-grid">
-      {SHOP.map((s) => {
-        const photo = mediaFor(s.ref);
-        return photo && <Image src={photo} alt={s.alt} widths={[420, 760]}
-          sizes="(max-width:700px) 100vw, 33vw" loading="lazy" style={s.pos ? `object-position:${s.pos}` : undefined} />;
-      })}
     </div>
   </div>
 </section>

@@ -6,7 +6,7 @@ export const SITE = {
   origin: 'https://www.romicatiegroup.com',
   name: 'Romica Tie Group',
   shortName: 'RTG',
-  tagline: 'Custom deck equipment for research, survey and offshore vessels',
+  tagline: 'Custom deck machinery for research, survey and offshore vessels',
   founded: '2003',
   locations: [
     { country: 'GB', locality: 'United Kingdom', role: 'Design' },
@@ -67,7 +67,9 @@ export const LEGAL_NAV = [
 /** Verified proof figures. Any number shown on the site comes from here so a
  *  single correction propagates everywhere. */
 export const PROOF = {
-  years: 22,
+  /** The family business. Romica Tie Group itself dates from 2003 (SITE.founded). */
+  since: 1978,
+  staff: 80,
   machines: 1500,
   projects: 250,
   clients: 50,
@@ -78,14 +80,15 @@ export const PROOF = {
 /**
  * Display form of each PROOF figure — pre-formatted value for the .ct
  * count-up (src/lib/motion.ts) plus a generic label. Used by ProofBar.astro
- * and Fig.astro. HERO_STATS (src/data/home.ts) composes its own richer
- * sentences from the same PROOF numbers instead of using this directly.
+ * and Fig.astro. The homepage (src/data/home.ts) reads PROOF directly.
  */
 export const PROOF_DISPLAY = {
-  years: { value: `${PROOF.years}`, label: 'Years designing and building deck equipment' },
-  machines: { value: PROOF.machines.toLocaleString('en-GB'), label: 'Custom deck machines delivered' },
-  projects: { value: `${PROOF.projects}+`, label: 'Completed projects' },
+  // 'Since 1978', not a bare 1978: a bare number counts up and prints as 1,978.
+  since: { value: `Since ${PROOF.since}`, label: 'Family business' },
+  staff: { value: `${PROOF.staff}`, label: 'Engineers, welders, fitters and technicians' },
+  machines: { value: PROOF.machines.toLocaleString('en-GB'), label: 'Machines delivered' },
+  projects: { value: `${PROOF.projects}+`, label: `Projects for ${PROOF.clients}+ clients` },
   clients: { value: `${PROOF.clients}+`, label: 'Clients served' },
   cptDepthM: { value: `${PROOF.cptDepthM.toLocaleString('en-GB')} m`, label: 'Proven CPT sampling working depth' },
-  loadTestTe: { value: `${PROOF.loadTestTe} Te`, label: 'In-house load test capability, class witnessed' },
+  loadTestTe: { value: `${PROOF.loadTestTe} Te`, label: 'Load tested in-house' },
 };

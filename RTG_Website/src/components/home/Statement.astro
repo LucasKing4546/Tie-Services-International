@@ -1,24 +1,24 @@
 ---
+// The family business and who it works for, over a real vessel at sea with
+// RTG equipment fitted. The vessel is a named client's (visible on the
+// wheelhouse), published on the user's explicit instruction; the client
+// names in STORY were authorised on 2026-10-08. See @data/media for the
+// photo's provenance note.
 import { Image } from 'astro:assets';
-import { mediaFor } from '@data/media';
-const bg = mediaFor('IMG-L00-A');
+import { STORY } from '@data/home';
+import fleet from '../../assets/home/home-fleet-vessel.jpg';
 ---
-<section data-zone="Track record" class="sec stmt navy">
-  {bg && <Image src={bg} alt="" widths={[1200, 2000]} sizes="100vw" loading="lazy" class="stmt-bg" />}
+<section data-zone="Family business" class="sec stmt">
+  <Image src={fleet} alt="" widths={[1200, 2000]} sizes="100vw" loading="lazy" class="stmt-bg" />
   <div class="wrap stmt-grid">
     <div>
-      <h2 class="d2">
-        <span class="rl"><span>Designed for Decades on Deck.</span></span>
-        <span class="rl"><span>Backed for Life.</span></span>
-      </h2>
+      <h2 class="d2"><span class="rl"><span>{STORY.heading}</span></span></h2>
+      <p class="lede fu">{STORY.body}</p>
     </div>
-    <div class="fu">
-      <p class="lede">Offshore assets work in punishing environments. Rather than facing
-      premature replacement cycles, our systems are engineered for complete strip-down,
-      upgrade, and class re-certification. Whether extending the operational life of an RTG
-      winch or overhauling third-party deck machinery, we provide full through-life
-      engineering support.</p>
-      <a class="arw" href="/lifecycle/">Lifecycle &amp; refurbishment →</a>
+    <div class="stmt-side fu">
+      <h3 class="d3">{STORY.trustedHeading}</h3>
+      <p>{STORY.trusted}</p>
+      <a class="arw" href={STORY.link.href}>{STORY.link.label} →</a>
     </div>
   </div>
 </section>

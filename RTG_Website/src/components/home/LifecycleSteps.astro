@@ -1,37 +1,14 @@
 ---
-import { Image } from 'astro:assets';
-import { LIFECYCLE } from '@data/home';
-import { MEDIA } from '@data/media';
-const PHOTOS = ['IMG-E02-A', 'IMG-E04-A', 'IMG-E07-A'];
+// Service life support: the last thing before the seabed.
+import { SERVICE } from '@data/home';
 ---
-<section data-zone="Lifecycle" class="sec" id="lifecycle" style="padding-bottom:76px">
+<section data-zone="Service life" class="sec service" id="lifecycle">
   <div class="wrap">
-    <div class="sechd" style="margin-bottom:44px">
-      <h2 class="d2"><span class="rl"><span>Refurbish. Upgrade.</span></span>
-      <span class="rl"><span>Re-certify.</span></span></h2>
-    </div>
-    <div class="eq stag">
-      {LIFECYCLE.map((l, i) => (
-        <div class="ecard lc">
-          {MEDIA[PHOTOS[i]] && (
-            <div class="lc-ph"><Image src={MEDIA[PHOTOS[i]]} alt="" widths={[420, 640, 860]} sizes="(max-width:900px) 100vw, 380px" loading="lazy" decoding="async" /></div>
-          )}
-          <div>
-            <div class="lc-h">
-              <div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true" set:html={l.icon} /></div>
-            </div>
-            <h3>{l.title}</h3>
-            <p>{l.blurb}</p>
-            <ul class="lc-l">{l.points.map((pt) => <li>{pt}</li>)}</ul>
-          </div>
-          <a class="arw" href={l.href}>{l.cta === 'Read more' ? `Read about ${l.title.toLowerCase()}` : l.cta} →</a>
-        </div>
-      ))}
-    </div>
-    <div class="lc-band fu">
-      <div><b>Assess first.</b> A machine that is worth rebuilding is usually obvious within a day of
-        stripping it, and a machine that is not is worth knowing about before you buy steel.</div>
-      <a class="btn btn-o" href="/lifecycle/condition-assessment/">Talk it through</a>
+    <h2 class="d2"><span class="rl"><span>{SERVICE.heading}</span></span></h2>
+    <p class="lede fu">{SERVICE.body}</p>
+    <div class="hero-cta fu">
+      <a class="btn b-red" href={SERVICE.ctas[0].href}>{SERVICE.ctas[0].label}</a>
+      <a class="btn btn-o" href={SERVICE.ctas[1].href}>{SERVICE.ctas[1].label}</a>
     </div>
   </div>
 </section>

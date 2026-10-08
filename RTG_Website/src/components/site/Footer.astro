@@ -1,5 +1,5 @@
 ---
-import { FOOTER_NAV, LEGAL_NAV, SITE } from '@data/site.js';
+import { FOOTER_NAV, LEGAL_NAV, SITE, PROOF } from '@data/site.js';
 const year = new Date().getFullYear();
 ---
 <footer class="ftr" data-zone="Seabed" transition:persist>
@@ -13,8 +13,9 @@ const year = new Date().getFullYear();
           <img class="logo" src="/logo-rtg.png" alt="Romica Tie Group" width="378" height="102" />
         </a>
         <p class="ftr-blurb">
-          Custom deck equipment for research, survey and offshore vessels.
-          Designed in the UK, built and tested in Satu Mare, Romania.
+          Family-owned designers and manufacturers of custom deck machinery for research,
+          survey and offshore vessels since {PROOF.since}. Designed in the UK, built and tested
+          in Satu Mare, Romania.
         </p>
       </div>
       {FOOTER_NAV.map((col) => (

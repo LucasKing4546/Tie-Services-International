@@ -7,25 +7,21 @@
  *
  * The vessel is a drawn silhouette, not a model of any real ship.
  */
-import { HERO_PROOF } from '@data/home';
+import { HERO, HERO_PROOF } from '@data/home';
 import Waterline from '@components/site/Waterline.astro';
+
+const [lead, accent, rest] = HERO.h1;
 ---
 <section data-zone="Surface" class="hero">
   <div class="hero-sky above">
     <div class="wrap">
-      <h1 class="d1">
-        <span class="rl"><span>Built for</span></span>
-        <span class="rl"><span>the work,</span></span>
-        <span class="rl"><span>not the <i>brochure.</i></span></span>
-      </h1>
-      <p class="lede fu">Winches, launch and recovery systems and deck handling for
-      research, survey and offshore vessels. Twenty-two years of it, and the machines
-      we built at the start are still working.</p>
+      <h1 class="d1"><span class="rl"><span>{lead} <i>{accent}</i> {rest}</span></span></h1>
+      <p class="lede fu">{HERO.lede}</p>
       <div class="hero-cta fu">
-        <a class="btn b-navy" href="/sectors/">Find your sector<span class="dot"></span></a>
-        <a class="btn btn-o" href="/proof/">See the evidence</a>
+        <a class="btn b-navy" href={HERO.ctas[0].href}>{HERO.ctas[0].label}<span class="dot"></span></a>
+        <a class="btn btn-o" href={HERO.ctas[1].href}>{HERO.ctas[1].label}</a>
       </div>
-      <p class="hero-origin fu">Designed in the UK. Built and tested in Romania. Since 2003.</p>
+      <p class="hero-origin fu">{HERO.note}</p>
     </div>
 
     <Waterline>

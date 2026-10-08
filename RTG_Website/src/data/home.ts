@@ -1,120 +1,124 @@
 // Homepage content as data, so a copywriter can edit it without touching a component.
+// Source: RTG_Website_Copy_Concise.docx, Draft 1, October 2026.
 import { PROOF } from './site.js';
 
-export interface Stat { value: string; label: string; accent?: boolean }
+export const HERO = {
+  /** Mirrors the H-01 h1 in the Page Map. The middle part is the accented one. */
+  h1: ['Custom', 'deck machinery', 'for research, survey and offshore vessels'],
+  lede: `Winches, launch and recovery systems, tensioners and cranes, engineered to the vessel and the duty, load tested to ${PROOF.loadTestTe} Te in our own facility and supported for the full service life.`,
+  ctas: [
+    { label: 'Find your sector', href: '/sectors/' },
+    { label: 'Equipment range', href: '/equipment/' },
+  ],
+  note: `Family-owned deck machinery specialists since ${PROOF.since}`,
+};
 
-export const HERO_STATS: Stat[] = [
-  { value: `${PROOF.years}`, label: 'Years designing and building deck equipment', accent: true },
-  { value: `${PROOF.machines.toLocaleString('en-GB')}`, label: 'Custom deck machines delivered' },
-  { value: `${PROOF.projects}+`, label: `Completed projects across ${PROOF.clients}+ clients` },
-  { value: `${PROOF.cptDepthM.toLocaleString('en-GB')} m`, label: 'Proven CPT sampling working depth', accent: true },
-  { value: `${PROOF.loadTestTe} Te`, label: 'In-house load test capability, class witnessed' },
-  { value: 'UK/EU', label: 'Designed in the UK, manufactured and tested in Romania' },
+/** The four figures just under the waterline. Values come from PROOF only. */
+export const HERO_PROOF = [
+  { value: `${PROOF.since}`, label: 'Family business founded' },
+  { value: PROOF.machines.toLocaleString('en-GB'), label: 'Machines delivered' },
+  { value: `${PROOF.cptDepthM.toLocaleString('en-GB')} m`, label: 'CPT working-depth record' },
+  { value: `${PROOF.loadTestTe} Te`, label: 'In-house load testing' },
 ];
 
-export const MARQUEE = [
-  'Traction & storage winches',
-  'Launch & recovery systems',
-  'Cable & pipe tensioners',
-  'A-frames & deck cranes',
-  'Hydraulic power units',
-  'Containerised spreads',
+/** Client names here are published on the user's instruction of 2026-10-08
+ *  (see CLAUDE.md §5.7). */
+export const STORY = {
+  heading: `A family business in deck machinery since ${PROOF.since}`,
+  body: `In ${PROOF.since} Robert Turner, a qualified electrical engineer, entered the deck machinery industry. In 2003 the family business continued as Romica Tie Group under his son Mike Turner, combining British design with Romanian manufacturing. Today a team of around ${PROOF.staff} engineers, welders, fabricators and technicians designs, builds, tests and supports RTG equipment working worldwide.`,
+  trustedHeading: 'Trusted by industry leaders',
+  trusted: 'Fugro has used RTG handling systems on seven vessels over fourteen years. Other clients include Gardline, Geoquip Marine, MMT, IHC, Hyundai Heavy Industries and Damen.',
+  link: { label: 'Clients and references', href: '/proof/references/' },
+};
+
+export const CONDITIONS = {
+  heading: 'Engineered for offshore conditions',
+  points: [
+    'A-frames rated to 3.9 m significant wave height',
+    'Spring-applied fail-safe brakes: minimum 1.5 × WLL on winches, 1.8 × SWL on tensioners',
+    'Lebus grooved drums and controlled level wind as standard',
+    'Every machine proof load, brake, render and speed tested before dispatch; class witness on request',
+  ],
+};
+
+/** Machines in the showroom. Order drives the carousel; home-scroll.ts reads
+ *  the same list, so the text beside the model can never drift from it. */
+export const MACHINES = [
+  { key: 'winch', label: 'Winch', name: 'Winches',
+    desc: 'Geotechnical, survey, seismic, ROV and umbilical, mooring and utility.',
+    spec: [['240 kg to 30 t', 'Working load limit'], ['1.5 × WLL', 'Static brake holding, minimum'],
+           [`${PROOF.cptDepthM.toLocaleString('en-GB')} m`, 'Proven working depth']] },
+  { key: 'aframe', label: 'A-frame LARS', name: 'Launch &amp; recovery systems',
+    desc: 'A-frames and LARS engineered to the deck arrangement and the sea state.',
+    spec: [['20 to 40 Te', 'Working load limit'], ['3.9 m Hs', 'Rated sea state']] },
+  { key: 'hpu', label: 'Power unit', name: 'Power units',
+    desc: 'Hydraulic power units built and flushed to a defined cleanliness class.',
+    spec: [['2 × 55 kW', 'Example unit'], ['Function tested', 'With the machine it drives']] },
 ];
 
 /** Mirrors S-01…S-07 in the Page Map. */
 export const SECTORS = [
   { id: 'S-01', ref: 'IMG-S01-C', name: 'Ocean Survey & Hydrography', href: '/sectors/ocean-survey-hydrography/',
-    blurb: 'CTD, side scan, magnetometer, sub-bottom profiler and deep tow. 300 to 4,000 m.' },
+    blurb: 'CTD, side scan, magnetometer, sub-bottom profiler and deep-tow handling, 300 to 4,000 m.' },
   { id: 'S-02', ref: 'IMG-S02-C', name: 'Marine Geotechnical', href: '/sectors/marine-geotechnical/',
-    blurb: 'When the tool is fixed to the seabed and the ship is not. Corer, CPT and vibrocorer handling.' },
+    blurb: `Corer, CPT and vibrocorer handling with constant tension control. Proven to ${PROOF.cptDepthM.toLocaleString('en-GB')} m.` },
   { id: 'S-03', ref: 'IMG-E10-A', name: 'Offshore Wind & Subsea Cables', href: '/sectors/offshore-wind-subsea-cables/',
-    blurb: 'Every turbine starts with a core sample. Every array ends with a cable.' },
+    blurb: 'Site-investigation handling and 5 to 20 Te cable tensioners.' },
   { id: 'S-04', ref: 'IMG-S04-D', name: 'Seismic', href: '/sectors/seismic/',
-    blurb: 'Handling built for continuous duty, where the winch never really stops.' },
+    blurb: 'Source and streamer handling for continuous-duty acquisition.' },
   { id: 'S-05', ref: 'IMG-S05-C', name: 'Oceanographic Research', href: '/sectors/oceanographic-research/',
-    blurb: 'A CTD cast is a measurement, not a lift. Controlled, repeatable, instrument-safe.' },
+    blurb: 'Electric and hydraulic winches for precise, repeatable CTD and coring casts.' },
   { id: 'S-06', ref: 'IMG-S06-B', name: 'Subsea, ROV & Diving', href: '/sectors/subsea-rov-diving/',
-    blurb: 'An ROV is only as available as its umbilical winch.' },
+    blurb: 'ROV LARS, umbilical winches and personnel-rated handling.' },
   { id: 'S-07', ref: 'IMG-S07-B', name: 'Defence & Government', href: '/sectors/defence-government/',
-    blurb: 'Built for government and naval programmes, with the documentation to match.' },
-];
-
-/** The four-tier contract-manufacturing scope ladder — C-01…C-04. */
-export const TIERS = [
-  { n: '01', title: 'Structural fabrication', href: '/contract-manufacturing/structural-fabrication/',
-    lede: 'Welded structures built to your drawings, class surveyed, fully traceable.',
-    points: ['Certified welding procedures and welders', 'Material traceability to mill certificate',
-             'NDT and class survey at your nominated hold points'] },
-  { n: '02', title: 'Mechanical assembly', href: '/contract-manufacturing/mechanical-assembly/',
-    lede: 'Everything in Tier 1, plus the rotating and load-bearing hardware.',
-    points: ['Drums, bearings, gearboxes and brakes', 'Sheaves and level wind, built and aligned',
-             'Dimensional inspection against your GA'] },
-  { n: '03', title: 'Hydraulic & electrical build', href: '/contract-manufacturing/hydraulic-electrical-build/',
-    lede: 'The machine becomes powered, plumbed and wired.',
-    points: ['Power units built and pipework flushed to class', 'Panels, cabling and instrumentation',
-             'Cleanliness certification on every circuit'] },
-  { n: '04', title: 'Automation, test & commissioning', href: '/contract-manufacturing/automation-test-commissioning/',
-    lede: 'It leaves as a proven machine, not a delivery of parts.',
-    points: ['PLC loading and control system integration',
-             `Load testing to ${PROOF.loadTestTe} tonnes under class witness`,
-             'Commissioning and full documentation pack'] },
-];
-
-/** Machines shown in the lifted frame. Order drives the carousel. */
-export const MACHINES = [
-  { key: 'winch', name: 'Traction &amp; storage winch',
-    desc: 'Grooved drum, level wind, hydraulic drive and fail-safe band brake, built as one machine on a single skid.',
-    spec: [['Tier 1-4', 'Scope available'], ['150 Te', 'Load tested'], ['3,000 m', 'Proven depth']] },
-  { key: 'aframe', name: 'A-frame launch &amp; recovery',
-    desc: 'Twin-leg fabricated A-frame with luffing cylinders, head sheave and hook block. Class surveyed as a system.',
-    spec: [['Twin ram', 'Luffing'], ['Class', 'Surveyed'], ['Bespoke', 'Geometry']] },
-  { key: 'hpu', name: 'Hydraulic power unit',
-    desc: 'Tank, motor-pump group, valve manifold and air-blast cooling on one skid. Pipework flushed to class.',
-    spec: [['15-110 kW', 'Power range'], ['ATEX', 'On request'], ['Flushed', 'To class']] },
+    blurb: 'Class-certified handling with full material and weld traceability.' },
 ];
 
 /** Equipment families — mirrors E-01…E-12. */
 export const EQUIPMENT = [
-  { name: 'Winches', href: '/equipment/winches/', cta: 'Six winch families',
-    blurb: 'Geotechnical & coring, survey & oceanographic, seismic, ROV/tow/umbilical, mooring & utility.',
-    icon: '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.5"/>' },
-  { name: 'Launch & recovery', href: '/equipment/launch-recovery-systems/', cta: 'Read more',
-    blurb: 'A-frames and LARS matched to the winch, the tool and the sea state it has to work in.',
-    icon: '<path d="M4 20V8l8-4 8 4v12"/><path d="M4 14h16"/>' },
-  { name: 'Cranes & lifting', href: '/equipment/cranes-lifting/', cta: 'Read more',
-    blurb: 'Deck cranes and lifting equipment for research and survey vessels.',
-    icon: '<path d="M3 19h18"/><path d="M6 19V7l9 3"/><path d="M15 10v6"/>' },
-  { name: 'Handling systems', href: '/equipment/handling-systems/', cta: 'Read more',
-    blurb: 'Cable and pipe tensioners, and general handling built for continuous-duty work.',
-    icon: '<rect x="3" y="7" width="18" height="10" rx="2"/><path d="M7 7v10M17 7v10"/>' },
-  { name: 'Power units', href: '/equipment/power-units/', cta: 'Read more',
-    blurb: 'Hydraulic power units sized to the machine, not picked off a catalogue page.',
-    icon: '<circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/>' },
-  { name: 'Portable & containerised', href: '/equipment/portable-containerised/', cta: 'Read more',
-    blurb: 'Built to move between hulls: mobilise, demobilise, redeploy.',
-    icon: '<rect x="3" y="6" width="18" height="12" rx="1.5"/><path d="M7 6v12M11 6v12M15 6v12"/>' },
+  { title: 'Winches', href: '/equipment/winches/',
+    blurb: 'Geotechnical, survey, seismic, ROV and umbilical, mooring and utility; 240 kg to 30 t WLL.' },
+  { title: 'Launch & recovery systems', href: '/equipment/launch-recovery-systems/',
+    blurb: 'A-frames and LARS, 20 to 40 Te WLL.' },
+  { title: 'Cranes & lifting', href: '/equipment/cranes-lifting/',
+    blurb: 'Knuckle boom, telescopic and utility cranes, and davits.' },
+  { title: 'Handling systems', href: '/equipment/handling-systems/',
+    blurb: 'Cable and pipe tensioners, 5 to 20 Te.' },
+  { title: 'Power units', href: '/equipment/power-units/',
+    blurb: 'Hydraulic power units built and flushed to a defined cleanliness class.' },
+  { title: 'Portable & containerised', href: '/equipment/portable-containerised/',
+    blurb: 'Self-contained spreads for chartered vessels.' },
 ];
 
-/** Lifecycle steps — L-05, L-01, L-03. */
-export const LIFECYCLE = [
-  { step: 'Step 01', title: 'Condition assessment', href: '/lifecycle/condition-assessment/', cta: 'Book an assessment',
-    blurb: 'An honest report on what the machine has left in it, before anyone quotes you for a replacement.',
-    points: ['Strip, measure and NDT', 'Reuse / rework / replace per component', 'Written report with costed options'],
-    icon: '<circle cx="11" cy="11" r="7"/><path d="M16 16l5 5"/>' },
-  { step: 'Step 02', title: 'Refurbishment & upgrade', href: '/lifecycle/refurbishment-upgrade/', cta: 'Read more',
-    blurb: "Rework, reuse and upgrade while it's apart: the cheapest time to improve the machine.",
-    points: ['Drums, bearings, brakes and gearboxes', 'Control system and instrumentation', 'Documentation reissued'],
-    icon: '<path d="M14.7 6.3a4 4 0 01-5 5L5 16v3h3l4.7-4.7a4 4 0 015-5z"/>' },
-  { step: 'Step 03', title: 'Re-certification', href: '/lifecycle/recertification-class-renewal/', cta: 'Read more',
-    blurb: 'Class renewal and load testing, so it goes back to sea with paperwork that stands up.',
-    points: [`Load tested to ${PROOF.loadTestTe} Te in house`, 'Class witnessed and certified', 'Full test and traceability pack'],
-    icon: '<path d="M12 3l7 3v5c0 4.4-2.9 8.3-7 9.5C7.9 19.3 5 15.4 5 11V6z"/><path d="M9 12l2 2 4-4"/>' },
+export const MANUFACTURING = {
+  heading: 'Contract manufacturing',
+  body: 'Your design, built and tested in our factory. Four cumulative scopes, from structural fabrication to a commissioned machine.',
+  link: { label: 'Contract manufacturing', href: '/contract-manufacturing/' },
+};
+
+/** The four-tier contract-manufacturing scope ladder — C-01…C-04. */
+export const TIERS = [
+  { n: '01', title: 'Structural fabrication', href: '/contract-manufacturing/structural-fabrication/',
+    lede: 'Welded structures to your drawings.',
+    points: ['EN ISO 3834 discipline', 'NDT to ISO 9712 level 2', '100% traceability on main structural welds',
+             'Machining to 12 m and 10 t in one setup'] },
+  { n: '02', title: 'Mechanical assembly', href: '/contract-manufacturing/mechanical-assembly/',
+    lede: 'Drums, shafts, bearings, gearboxes, brakes, sheaves and level wind.',
+    points: ['Torqued, aligned and rotation checked'] },
+  { n: '03', title: 'Hydraulic & electrical build', href: '/contract-manufacturing/hydraulic-electrical-build/',
+    lede: 'Power units, pipework, panels and instrumentation.',
+    points: ['Pipework flushed to class', 'Valve blocks', 'Panels, cabling and instrumentation'] },
+  { n: '04', title: 'Automation, test & commissioning', href: '/contract-manufacturing/automation-test-commissioning/',
+    lede: 'PLC and HMI loading, then proof under load.',
+    points: ['Interlock proving', `Load test to ${PROOF.loadTestTe} Te under class witness`,
+             'Certification dossier', 'Vessel commissioning'] },
 ];
 
-/** Compact proof row under the hero CTAs. Values come from PROOF only. */
-export const HERO_PROOF = [
-  { value: `${PROOF.years}`, label: 'years building' },
-  { value: PROOF.machines.toLocaleString('en-GB'), label: 'machines delivered' },
-  { value: `${PROOF.cptDepthM.toLocaleString('en-GB')} m`, label: 'CPT depth record' },
-  { value: `${PROOF.loadTestTe} Te`, label: 'in-house load test' },
-];
+export const SERVICE = {
+  heading: 'Service life support',
+  body: 'Condition assessment, refurbishment, upgrade, re-certification and spares for RTG equipment and machines from other manufacturers. A traction winch built by RTG in 2009 returned to offshore service in 2021 after refurbishment and re-certification.',
+  ctas: [
+    { label: 'Book a condition assessment', href: '/lifecycle/condition-assessment/' },
+    { label: 'Talk to an engineer', href: '/contact/' },
+  ],
+};

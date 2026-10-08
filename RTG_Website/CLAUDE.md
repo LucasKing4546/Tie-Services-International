@@ -13,7 +13,12 @@ recovery systems, cable and pipe tensioners, deck cranes and hydraulic power
 units for offshore research, hydrographic survey and geotechnical vessels.
 
 - **70 pages** across **17 templates**, defined in `research/RTG_Website_Page_Map.xlsx`.
-- Designed in the UK, built and tested in Satu Mare, Romania. Trading since 2003.
+- Designed in the UK, built and tested in Satu Mare, Romania. A family business in
+  deck machinery since 1978; Romica Tie Group itself dates from 2003.
+- **Copy source:** `RTG_Website_Copy_Concise.docx` (Draft 1, October 2026) is the
+  text for 52 of the 70 pages. Where it contradicts itself on a figure, the lower,
+  datasheet-backed value is used: winches 240 kg to 30 t, LARS 20 to 40 Te, survey
+  300 to 4,000 m, and "since 1978" rather than "50 years".
 - Replaces a legacy PHP site that has no meta descriptions, no canonicals, no
   structured data, three `<h1>` elements on the homepage and a sitemap pointing
   at the wrong host over the wrong protocol.
@@ -247,7 +252,12 @@ These are real and unresolved. Flag them; do not invent content to fill them.
    categories — they are **not CAD** and their proportions are indicative.
 6. **Alt text is unwritten.** It arrives with the photography. It is a
    requirement, not a nicety.
-7. **Only RTG can supply**: written permission to name each client; certificate
+7. **Client names are published as written in the copy document.** Decided by
+   the site owner on 2026-10-08, overriding the earlier hold-back rule. The
+   document itself still describes names as "subject to written permission", so
+   that permission remains RTG's to hold. Names not in the document are still
+   not to be added.
+7a. **Only RTG can supply**: certificate
    numbers and expiry dates; insurance limits; refurbishment lead times by scope
    band; current capacity by tier; the tariff and origin position confirmed with
    a customs adviser; overall envelope and dry weight per configuration.
@@ -352,8 +362,9 @@ Write the way the buyer talks, not the way a brochure does.
 - No exclamation marks. No "cutting-edge", "world-class", "state-of-the-art",
   "seamless", "leverage", "solutions provider".
 - British English throughout: "recognised", "metre", "programme", "tonne".
-- Never claim a certification, approval, client name or figure that is not
-  confirmed in `research/`. If it is unconfirmed, mark it and flag it.
+- Never claim a certification, approval or figure that is not in the copy document
+  or confirmed in `research/`. If it is unconfirmed, mark it and flag it. Client
+  names: only those the copy document lists (§5.7).
 
 ---
 
