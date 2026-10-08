@@ -38,9 +38,23 @@ html{scrollbar-color:var(--sea-0) var(--sea-2)}
 .gauge{--depth:0;position:fixed;inset:0;z-index:300;pointer-events:none}
 /* Light from the surface: strongest at the top of the page, gone by a third
    of the way down. */
-.gauge-light{position:absolute;inset:0 0 auto 0;height:72svh;mix-blend-mode:screen;
-  background:radial-gradient(70% 100% at 50% 0%,rgba(255,255,255,.2),transparent 72%);
-  opacity:calc(1 - var(--depth) * 3)}
+.gauge-light{position:absolute;inset:0 -8% auto -8%;height:86svh;mix-blend-mode:screen;
+  background:
+    repeating-linear-gradient(102deg,rgba(255,255,255,.07) 0 46px,transparent 46px 170px,rgba(255,255,255,.04) 170px 250px,transparent 250px 380px),
+    radial-gradient(70% 100% at 50% 0%,rgba(255,255,255,.22),transparent 72%);
+  mask-image:linear-gradient(to bottom,#000,transparent);
+  opacity:calc(1 - var(--depth) * 2.2);animation:shafts 14s ease-in-out infinite alternate}
+@keyframes shafts{from{transform:translateX(-3%)}to{transform:translateX(3%)}}
+/* Marine snow: drifting specks that thicken as the light goes. The layer is
+   600px taller than the screen and falls exactly 600px, a whole number of
+   both tile heights, so the loop never jumps. */
+.gauge::after{content:"";position:absolute;inset:-600px 0 0 0;opacity:calc(var(--depth) * .85);
+  background-image:radial-gradient(circle,rgba(255,255,255,.55) 0 1px,transparent 1.6px),
+    radial-gradient(circle,rgba(255,255,255,.35) 0 1px,transparent 1.6px),
+    radial-gradient(circle,rgba(255,255,255,.28) 0 1.5px,transparent 2.2px);
+  background-size:190px 200px,270px 300px,410px 600px;background-position:0 0,90px 140px,210px 60px;
+  animation:snow 46s linear infinite}
+@keyframes snow{to{transform:translateY(600px)}}
 .gauge-rail{position:absolute;right:13px;top:50%;width:2px;height:44svh;margin-top:-22svh;
   border-radius:2px;background:color-mix(in oklab,var(--sea-0) 45%,var(--sky))}
 .gauge-rail i{position:absolute;right:-4px;width:10px;height:1px;background:inherit}
@@ -74,8 +88,7 @@ html{scrollbar-color:var(--sea-0) var(--sea-2)}
 .phero:has(.phero-media-shot){mask-image:linear-gradient(to bottom,transparent,#000 var(--fade))}
 
 @media (prefers-reduced-motion:reduce){
-  .wv{animation:none}
-  .gauge-light{opacity:.5}
+  .wv,.gauge-light,.gauge::after{animation:none}
 }
 
 /* ---------- nothing paints over the water ----------

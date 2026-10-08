@@ -1,17 +1,17 @@
 # Graph Report - RTG_Website  (2026-10-08)
 
 ## Corpus Check
-- 178 files · ~3,093,246 words
+- 178 files · ~3,093,106 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 11 file(s) not represented in the graph (top: .css 9, (none) 1, .xml 1)
 
 ## Summary
-- 882 nodes · 1352 edges · 126 communities (67 shown, 59 thin omitted)
+- 881 nodes · 1349 edges · 124 communities (66 shown, 58 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 10 edges (avg confidence: 0.88)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `7a153c50`
+- Built from commit: `51af8cde`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -95,7 +95,7 @@
 - 8. DARK MODE PROTOCOL
 - 7. DIAL DEFINITIONS (Technical Reference)
 - devDependencies
-- ProofBar.astro
+- 1. THE THREE DIALS (Core Configuration)
 - vercel.json
 - src_assets_contact_x01_team
 - src_assets_sectors_s02_pipeline_survey
@@ -104,7 +104,6 @@
 - src_assets_sectors_s03_wind_array
 - src_assets_sectors_s05_research_deck
 - src_assets_sectors_s05_research_vessel
-- 0. BRIEF INFERENCE (Read the Room Before Anything Else)
 - Site-wide ocean world (homepage first surface)
 
 ## God Nodes (most connected - your core abstractions)
@@ -134,23 +133,23 @@
 ## Import Cycles
 - None detected.
 
-## Communities (126 total, 59 thin omitted)
+## Communities (124 total, 58 thin omitted)
 
 ### Community 0 - "blocks.ts"
-Cohesion: 0.09
-Nodes (54): trail, jsonLdPage, siblings, jobPostings, [], jsonLdPage, [], contactPoints (+46 more)
+Cohesion: 0.08
+Nodes (56): trail, jsonLdPage, siblings, jobPostings, [], jsonLdPage, [], contactPoints (+48 more)
 
 ### Community 1 - "site.js"
-Cohesion: 0.15
-Nodes (6): year, FOOTER_NAV, LEGAL_NAV, NAV, PROOF, PROOF_DISPLAY
+Cohesion: 0.17
+Nodes (5): year, FOOTER_NAV, LEGAL_NAV, NAV, PROOF_DISPLAY
 
 ### Community 2 - "media.ts"
 Cohesion: 0.04
 Nodes (45): src_assets_equipment_e00_deck_spread, src_assets_equipment_e00_system_overview, src_assets_equipment_e02_deployment_frame, src_assets_equipment_e02_ds01_guarded, src_assets_equipment_e02_ds01_panel, src_assets_equipment_e02_ds38_hpu_b, src_assets_equipment_e02_ds38_winch, src_assets_equipment_e02_hpu (+37 more)
 
 ### Community 3 - "rtg3d.ts"
-Cohesion: 0.12
-Nodes (35): three, CraneRig, destroyHome(), initHome(), finishedWinch(), frame(), makeStage(), onResize() (+27 more)
+Cohesion: 0.13
+Nodes (34): three, destroyHome(), initHome(), finishedWinch(), frame(), makeStage(), onResize(), onScroll() (+26 more)
 
 ### Community 4 - "build.py"
 Cohesion: 0.08
@@ -166,7 +165,7 @@ Nodes (12): description, name, private, type, version, astro, @astrojs/check, @f
 
 ### Community 7 - "home.ts"
 Cohesion: 0.12
-Nodes (13): src_assets_home_home_fleet_vessel, bg, EQUIPMENT, HERO_PROOF, HERO_STATS, LIFECYCLE, MACHINES, MARQUEE (+5 more)
+Nodes (12): EQUIPMENT, HERO_PROOF, HERO_STATS, LIFECYCLE, MACHINES, MARQUEE, SECTORS, Stat (+4 more)
 
 ### Community 8 - "RTG design language"
 Cohesion: 0.10
@@ -317,12 +316,12 @@ Cohesion: 0.50
 Nodes (3): Known issues, Telling us about a problem, The standard we target
 
 ### Community 90 - "ImageSlot.astro"
-Cohesion: 0.32
-Nodes (4): photo, tiles, mediaFor(), MotionHint
+Cohesion: 0.19
+Nodes (6): src_assets_home_home_fleet_vessel, photo, tiles, bg, mediaFor(), MotionHint
 
 ### Community 96 - "Base.astro"
 Cohesion: 0.05
-Nodes (35): ref_fontsource_jetbrains_mono_400_css, ref_fontsource_jetbrains_mono_500_css, ref_fontsource_variable_archivo_files_archivo_latin_wght_normal_woff2_url, ref_fontsource_variable_archivo_wght_css, ref_fontsource_variable_inter_files_inter_latin_wght_normal_woff2_url, ref_fontsource_variable_inter_wght_css, ancestorsOf(), OFF_MAP_IDS (+27 more)
+Nodes (36): ref_fontsource_jetbrains_mono_400_css, ref_fontsource_jetbrains_mono_500_css, ref_fontsource_variable_archivo_files_archivo_latin_wght_normal_woff2_url, ref_fontsource_variable_archivo_wght_css, ref_fontsource_variable_inter_files_inter_latin_wght_normal_woff2_url, ref_fontsource_variable_inter_wght_css, ancestorsOf(), OFF_MAP_IDS (+28 more)
 
 ### Community 97 - "Appendix B - Canonical Sources (read these before reinventing)"
 Cohesion: 0.09
@@ -341,8 +340,8 @@ Cohesion: 0.20
 Nodes (10): 10. REFERENCE VOCABULARY (Pattern Names the Agent Should Know), Animation Library Choice, Cards & Containers, Galleries & Media, Hero Paradigms, Layout & Grids, Micro-Interactions & Effects, Navigation & Menus (+2 more)
 
 ### Community 101 - "tasteskill: Anti-Slop Frontend Skill"
-Cohesion: 0.20
-Nodes (10): 13. OUT OF SCOPE, 14. FINAL PRE-FLIGHT CHECK, 1.A Dial Inference (design read → dial values), 1.B Use-Case Presets, 1.C How the Dials Drive Output, 1. THE THREE DIALS (Core Configuration), 2.A When to reach for a real design system (use official packages), 2.B When the brief is an aesthetic, not a system (+2 more)
+Cohesion: 0.18
+Nodes (11): 0.A Read these signals first, 0.B Output a one-line "Design Read" before generating, 0. BRIEF INFERENCE (Read the Room Before Anything Else), 0.C If the brief is ambiguous, ask one question, do not guess, 0.D Anti-Default Discipline, 13. OUT OF SCOPE, 14. FINAL PRE-FLIGHT CHECK, 2.A When to reach for a real design system (use official packages) (+3 more)
 
 ### Community 102 - "scripts"
 Cohesion: 0.20
@@ -392,22 +391,18 @@ Nodes (4): 7. DIAL DEFINITIONS (Technical Reference), DESIGN_VARIANCE (Level 1-1
 Cohesion: 0.40
 Nodes (5): devDependencies, @astrojs/check, @types/three, typescript, xlsx
 
-### Community 114 - "ProofBar.astro"
-Cohesion: 0.60
-Nodes (3): isNumericStat(), statDigits(), statSuffix()
-
-### Community 123 - "0. BRIEF INFERENCE (Read the Room Before Anything Else)"
-Cohesion: 0.40
-Nodes (5): 0.A Read these signals first, 0.B Output a one-line "Design Read" before generating, 0. BRIEF INFERENCE (Read the Room Before Anything Else), 0.C If the brief is ambiguous, ask one question, do not guess, 0.D Anti-Default Discipline
+### Community 114 - "1. THE THREE DIALS (Core Configuration)"
+Cohesion: 0.50
+Nodes (4): 1.A Dial Inference (design read → dial values), 1.B Use-Case Presets, 1.C How the Dials Drive Output, 1. THE THREE DIALS (Core Configuration)
 
 ### Community 124 - "Site-wide ocean world (homepage first surface)"
 Cohesion: 0.50
 Nodes (3): Direction contract, Site-wide ocean world (homepage first surface), Unresolved
 
 ## Knowledge Gaps
-- **433 isolated node(s):** `pagesDir`, `pagesTs`, `unfinished`, `name`, `version` (+428 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 597 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **59 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **432 isolated node(s):** `pagesDir`, `pagesTs`, `unfinished`, `name`, `version` (+427 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 596 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **58 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
@@ -417,12 +412,12 @@ _Questions this graph is uniquely positioned to answer:_
 - **Why does `astro` connect `package.json` to `media.ts`?**
   _High betweenness centrality (0.021) - this node is a cross-community bridge._
 - **What connects `pagesDir`, `pagesTs`, `unfinished` to the rest of the system?**
-  _433 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _432 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `blocks.ts` be split into smaller, more focused modules?**
-  _Cohesion score 0.08554455445544555 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.08068283917340521 - nodes in this community are weakly interconnected._
 - **Should `media.ts` be split into smaller, more focused modules?**
   _Cohesion score 0.043478260869565216 - nodes in this community are weakly interconnected._
 - **Should `rtg3d.ts` be split into smaller, more focused modules?**
-  _Cohesion score 0.12375533428165007 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.12612612612612611 - nodes in this community are weakly interconnected._
 - **Should `build.py` be split into smaller, more focused modules?**
   _Cohesion score 0.0766488413547237 - nodes in this community are weakly interconnected._

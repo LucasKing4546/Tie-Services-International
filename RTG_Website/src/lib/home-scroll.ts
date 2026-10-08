@@ -6,7 +6,8 @@
  * Three behaviours, all driven from one rAF loop so they share a frame budget:
  *   1. pinned manufacturing-tier assembly, built up in 3D one tier at a time
  *   2. horizontal sector track
- *   3. the crane hoisting the machine frame in, then the zoom into it
+ *   3. the machine frame lowered in on the vessel's hoist line, then the
+ *      zoom into it
  *
  * 3D stages are created lazily by the caller so three.js is only fetched on
  * pages that need it.
@@ -20,7 +21,7 @@
  * stacking rAF loops and WebGL contexts fighting over the browser's cap.
  */
 import * as THREE from 'three';
-import { buildWinch, buildAFrame, buildHPU, buildCrane, createViewer } from './rtg3d';
+import { buildWinch, buildAFrame, buildHPU, createViewer } from './rtg3d';
 import type { ViewerOpts } from './rtg3d';
 
 type Viewer = ReturnType<typeof createViewer>;
@@ -39,11 +40,6 @@ interface Stage extends Viewer {
 /** A winch whose four manufacturing tiers can be revealed independently. */
 type TieredModel = THREE.Object3D & {
   userData: { tiers: (THREE.Object3D & { userData: { want?: number; have?: number } })[] };
-};
-
-/** A crane with a live hoist. */
-type CraneRig = THREE.Object3D & {
-  userData: { rig: { hook: THREE.Object3D; setDrop(d: number): void } };
 };
 
 /** One machine on the showcase carousel. */
@@ -149,25 +145,17 @@ export function initHome(): void {
     return m;
   }
 
-  /* crane framing — tuned so the boom tip sits high-left and the fall runs
-     down the middle of the viewport */
-  const CRANE_DIST = 34, CRANE_Y = 1.5, CRANE_LOOK = 0;
-  const DROP_OUT = 20.6, DROP_IN = 4.3;          // fall paid out vs hauled home
   let tierV: Stage | null = null, showV: Stage | null = null,
-      proofV: Stage | null = null, craneV: Stage | null = null;
-  let craneRig: CraneRig | null = null, tierModel: TieredModel | null = null;
+      proofV: Stage | null = null;
+  let tierModel: TieredModel | null = null;
   {
     tierModel = buildWinch() as unknown as TieredModel;
     tierV  = makeStage('tierGL', tierModel, 15.0, 2.6, -0.5);
     showV  = makeStage('showGL', new THREE.Group(), 20.0, 3.4, -0.4, { shadow: 0.22 });
     proofV = makeStage('proofGL', finishedWinch(), 15.6, 2.6, -0.5, { shadow: 0.20 });
-    craneRig = buildCrane({ rig: true }) as unknown as CraneRig;
-    craneV = makeStage('craneGL', craneRig, CRANE_DIST, CRANE_Y, CRANE_LOOK, { shadow: 0 });
-    craneRig.position.set(-1.5, 4.6, 0);          // sit the crane high in the frame
     if (tierV)  tierV.pivot.rotation.y  = -0.62;
     if (showV)  showV.pivot.rotation.y  = 0;
     if (proofV) proofV.pivot.rotation.y = -0.6;
-    if (craneV) craneV.pivot.rotation.y = -0.30;
   }
 
   /* ── the three machines all live in the scene at once and cross-dissolve,
@@ -227,6 +215,7 @@ export function initHome(): void {
   /* zoom-into-frame */
   const zw = document.getElementById('showcase'),
         zf = document.getElementById('zFrame'),
+        zCable = document.getElementById('zCable'),
         zHint = document.getElementById('zHint');
   if (zw) zw.style.height = '340vh';
 
@@ -255,14 +244,11 @@ export function initHome(): void {
       const p = clamp(-r.top / (r.height - innerHeight), 0, 1);
       const wide = innerWidth >= 821;
       if (wide) {
-        /* the crane hauls the payload up into shot; the panel is hung off the
-           projected position of the hook block, so the two can never drift */
-        liftK = ease(clamp(p / 0.38, 0, 1));            // crane hauls the load in
+        /* the panel is lowered into shot on the hoist line from the surface */
+        liftK = ease(clamp(p / 0.38, 0, 1));            // paid out from above
         zoomK = ease(clamp((p - 0.34) / 0.26, 0, 1));   // then you push into it
-        if (craneRig && craneRig.userData.rig)
-          craneRig.userData.rig.setDrop(lerp(DROP_OUT, DROP_IN, liftK));
         if (showV) showV.frame(lerp(15.6, 13.2, zoomK), lerp(3.9, 3.2, zoomK), -0.4);
-        if (craneV) craneV.el.style.opacity = (1 - clamp((zoomK - 0.45) / 0.5, 0, 1)).toFixed(3);
+        if (zCable) zCable.style.opacity = (1 - clamp((zoomK - 0.45) / 0.5, 0, 1)).toFixed(3);
         if (zHint) zHint.style.opacity = p > 0.28 ? '0' : '1';
       } else {
         zf.style.transform = '';
@@ -361,13 +347,14 @@ export function initHome(): void {
       m.wrap.visible = d < 1.3;                      // they simply leave the frame
     });
 
-    /* hang the payload from the hook block */
-    if (craneV && zf && innerWidth >= 821 && craneRig && craneRig.userData.rig) {
-      const W = craneV.el.clientWidth, H = craneV.el.clientHeight;
-      const hp = craneV.project(craneRig.userData.rig.hook);
+    /* hang the payload on the line: it comes down from above the frame, and
+       the cable is drawn from the top of the screen to wherever it is */
+    if (zCable && zf && innerWidth >= 821) {
+      const H = zf.clientHeight;
       const sc = lerp(0.42, 1, zoomK);
-      const ax = hp.x * W - W / 2, ay = hp.y * H + 24;   // slung under the hook
-      const tx = lerp(ax, 0, zoomK), ty = lerp(ay, 0, zoomK);
+      const ay = lerp(-0.46 * H, 0.3 * H, liftK);
+      const tx = 0, ty = lerp(ay, 0, zoomK);
+      zCable.style.transform = `scaleY(${Math.max(0, ty).toFixed(1)})`;
       const sway = (1 - liftK) * 1.4 * (1 - zoomK);      // settles as it lands
       zf.style.borderRadius = (48 * (1 - zoomK)).toFixed(1) + 'px';
       zf.style.transform =
@@ -381,7 +368,6 @@ export function initHome(): void {
     if (tierV  && tierV.onScreen)  tierV.render();
     if (showV  && showV.onScreen)  showV.render();
     if (proofV && proofV.onScreen) proofV.render();
-    if (craneV && craneV.onScreen) craneV.render();
   }
 
   sizeHz();
