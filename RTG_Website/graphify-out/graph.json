@@ -235,7 +235,7 @@
       "file_type": "code",
       "norm_label": "machine",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L46"
+      "source_location": "L45"
     },
     {
       "id": "src_lib_home_scroll_stage",
@@ -248,7 +248,7 @@
       "file_type": "code",
       "norm_label": "stage",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L30"
+      "source_location": "L29"
     },
     {
       "id": "src_lib_home_scroll_tieredmodel",
@@ -261,7 +261,7 @@
       "file_type": "code",
       "norm_label": "tieredmodel",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L41"
+      "source_location": "L40"
     },
     {
       "id": "src_lib_home_scroll_viewer",
@@ -274,7 +274,7 @@
       "file_type": "code",
       "norm_label": "viewer",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L27"
+      "source_location": "L26"
     },
     {
       "id": "src_lib_rtg3d_mat",
@@ -760,7 +760,7 @@
       "file_type": "code",
       "norm_label": "destroyhome()",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L58"
+      "source_location": "L57"
     },
     {
       "id": "src_lib_home_scroll_inithome",
@@ -772,7 +772,7 @@
       "file_type": "code",
       "norm_label": "inithome()",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L78"
+      "source_location": "L77"
     },
     {
       "id": "src_lib_home_scroll_inithome_finishedwinch",
@@ -784,7 +784,7 @@
       "file_type": "code",
       "norm_label": "finishedwinch()",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L142"
+      "source_location": "L141"
     },
     {
       "id": "src_lib_home_scroll_inithome_frame",
@@ -796,7 +796,7 @@
       "file_type": "code",
       "norm_label": "frame()",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L240"
+      "source_location": "L252"
     },
     {
       "id": "src_lib_home_scroll_inithome_loop",
@@ -808,7 +808,7 @@
       "file_type": "code",
       "norm_label": "loop()",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L305"
+      "source_location": "L299"
     },
     {
       "id": "src_lib_home_scroll_inithome_makestage",
@@ -820,7 +820,7 @@
       "file_type": "code",
       "norm_label": "makestage()",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L121"
+      "source_location": "L120"
     },
     {
       "id": "src_lib_home_scroll_inithome_onresize",
@@ -832,7 +832,7 @@
       "file_type": "code",
       "norm_label": "onresize()",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L286"
+      "source_location": "L280"
     },
     {
       "id": "src_lib_home_scroll_inithome_onscroll",
@@ -844,7 +844,7 @@
       "file_type": "code",
       "norm_label": "onscroll()",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L285"
+      "source_location": "L279"
     },
     {
       "id": "src_lib_home_scroll_inithome_setmodel",
@@ -868,7 +868,7 @@
       "file_type": "code",
       "norm_label": "sizehz()",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L233"
+      "source_location": "L245"
     },
     {
       "id": "src_lib_rtg3d_box",
@@ -12901,7 +12901,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L127",
+      "source_location": "L126",
       "weight": 1.0
     },
     {
@@ -12913,7 +12913,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L143",
+      "source_location": "L142",
       "weight": 1.0
     },
     {
@@ -12949,7 +12949,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L82",
+      "source_location": "L81",
       "weight": 1.0
     },
     {
@@ -12961,7 +12961,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L143",
+      "source_location": "L142",
       "weight": 1.0
     },
     {
@@ -12973,7 +12973,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L250",
+      "source_location": "L264",
       "weight": 1.0
     },
     {
@@ -12985,7 +12985,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L127",
+      "source_location": "L126",
       "weight": 1.0
     },
     {
@@ -12997,7 +12997,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L128",
+      "source_location": "L127",
       "weight": 1.0
     },
     {
@@ -13009,7 +13009,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L129",
+      "source_location": "L128",
       "weight": 1.0
     },
     {
@@ -13021,7 +13021,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L286",
+      "source_location": "L280",
       "weight": 1.0
     },
     {
@@ -13033,7 +13033,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L286",
+      "source_location": "L280",
       "weight": 1.0
     },
     {
@@ -13585,7 +13585,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L58",
+      "source_location": "L57",
       "weight": 1.0
     },
     {
@@ -13597,7 +13597,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L121",
+      "source_location": "L120",
       "weight": 1.0
     },
     {
@@ -13609,7 +13609,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L142",
+      "source_location": "L141",
       "weight": 1.0
     },
     {
@@ -13633,7 +13633,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L233",
+      "source_location": "L245",
       "weight": 1.0
     },
     {
@@ -13645,7 +13645,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L240",
+      "source_location": "L252",
       "weight": 1.0
     },
     {
@@ -13657,7 +13657,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L305",
+      "source_location": "L299",
       "weight": 1.0
     },
     {
@@ -15673,7 +15673,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L24",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -15685,7 +15685,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L24",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -15697,7 +15697,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L24",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -15709,7 +15709,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L24",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -15721,7 +15721,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L25",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -20273,7 +20273,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L23",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -20285,7 +20285,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L25",
+      "source_location": "L24",
       "type_only": true,
       "weight": 1.0
     },
@@ -20840,7 +20840,7 @@
       "confidence_score": 1.0,
       "context": "type",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L30",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
@@ -26659,7 +26659,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L27",
+      "source_location": "L26",
       "weight": 1.0
     },
     {
@@ -26670,7 +26670,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L30",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
@@ -26681,7 +26681,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L41",
+      "source_location": "L40",
       "weight": 1.0
     },
     {
@@ -26692,7 +26692,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L46",
+      "source_location": "L45",
       "weight": 1.0
     },
     {
@@ -26703,7 +26703,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L78",
+      "source_location": "L77",
       "weight": 1.0
     },
     {
@@ -27984,7 +27984,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L287",
+      "source_location": "L281",
       "weight": 1.0
     },
     {
@@ -27996,7 +27996,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L288",
+      "source_location": "L282",
       "weight": 1.0
     },
     {
@@ -28008,7 +28008,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L285",
+      "source_location": "L279",
       "weight": 1.0
     },
     {
@@ -28073,5 +28073,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "51af8cde4df9c7738c4bca166eaa2c494641b9f9"
+  "built_at_commit": "65ad78d1f08c044f62b2e21fd877d21e91216ca3"
 }

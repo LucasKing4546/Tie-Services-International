@@ -6,8 +6,7 @@
  * Three behaviours, all driven from one rAF loop so they share a frame budget:
  *   1. pinned manufacturing-tier assembly, built up in 3D one tier at a time
  *   2. horizontal sector track
- *   3. the machine frame hauled up on the vessel's hoist line, then the
- *      zoom into it
+ *   3. the equipment showroom: one machine in open water, turned by drag
  *
  * 3D stages are created lazily by the caller so three.js is only fetched on
  * pages that need it.
@@ -164,10 +163,11 @@ export function initHome(): void {
         mSpec = document.getElementById('mSpec'), mPick = document.getElementById('mPick'),
         mHead = document.getElementById('mHead');
   const machines: Machine[] = [];
-  /* the machine only changes when a pill is clicked, and holds a fixed
-     three-quarter view — nothing here is driven by scroll position */
-  const showSpin = -0.7;
-  let curModel = 0, liftK = 0, zoomK = 0;
+  /* the machine only changes when a pill is clicked; it starts at a
+     three-quarter view and turns when dragged — nothing here is driven by
+     scroll position */
+  let showSpin = -0.7;
+  let curModel = 0;
   let textTimer: ReturnType<typeof setTimeout> | undefined;
 
   const GAP = 19;                       // world-space spacing on the carousel
@@ -212,12 +212,24 @@ export function initHome(): void {
     if (b) setModel(+(b.dataset.m ?? 0));
   });
 
-  /* zoom-into-frame */
-  const zw = document.getElementById('showcase'),
-        zf = document.getElementById('zFrame'),
-        zCable = document.getElementById('zCable'),
-        zHint = document.getElementById('zHint');
-  if (zw) zw.style.height = '340vh';
+  /* showroom: drag anywhere on the stage (not on its buttons) to turn the
+     machine. pan-y is left to the browser so the page still scrolls. */
+  const zf = document.getElementById('zFrame');
+  if (zf && showV) {
+    showV.frame(13.6, 3.2, -0.4);
+    let lastX: number | null = null;
+    zf.addEventListener('pointerdown', e => {
+      if ((e.target as HTMLElement).closest('button,a')) return;
+      lastX = e.clientX; zf.setPointerCapture(e.pointerId); zf.classList.add('drag');
+    });
+    zf.addEventListener('pointermove', e => {
+      if (lastX == null) return;
+      showSpin += (e.clientX - lastX) * 0.008; lastX = e.clientX;
+      poke();
+    });
+    const up = () => { lastX = null; zf.classList.remove('drag'); };
+    zf.addEventListener('pointerup', up); zf.addEventListener('pointercancel', up);
+  }
 
   /* pinned tiers */
   const pinWrap = document.getElementById('tiers');
@@ -238,24 +250,6 @@ export function initHome(): void {
   }
 
   function frame(){
-    /* zoom-into-frame showcase */
-    if (zw && zf) {
-      const r = zw.getBoundingClientRect();
-      const p = clamp(-r.top / (r.height - innerHeight), 0, 1);
-      const wide = innerWidth >= 821;
-      if (wide) {
-        /* the vessel hauls the panel up into shot on its hoist line */
-        liftK = ease(clamp(p / 0.38, 0, 1));            // hauled up from below
-        zoomK = ease(clamp((p - 0.34) / 0.26, 0, 1));   // then you push into it
-        if (showV) showV.frame(lerp(15.6, 13.2, zoomK), lerp(3.9, 3.2, zoomK), -0.4);
-        if (zCable) zCable.style.opacity = (1 - clamp((zoomK - 0.45) / 0.5, 0, 1)).toFixed(3);
-        if (zHint) zHint.style.opacity = p > 0.28 ? '0' : '1';
-      } else {
-        zf.style.transform = '';
-        if (showV) showV.frame(15.5, 3.4, -0.4);
-      }
-    }
-
     /* tiers — the 3D winch builds up one manufacturing stage at a time */
     if (pinWrap) {
       const r = pinWrap.getBoundingClientRect();
@@ -346,22 +340,6 @@ export function initHome(): void {
       m.spin.rotation.y = showSpin;
       m.wrap.visible = d < 1.3;                      // they simply leave the frame
     });
-
-    /* hang the payload on the line: the vessel hauls it up from below the
-       frame, and the cable runs from the top of the screen to wherever it is */
-    if (zCable && zf && innerWidth >= 821) {
-      const H = zf.clientHeight;
-      const sc = lerp(0.42, 1, zoomK);
-      const ay = lerp(1.05 * H, 0.3 * H, liftK);
-      const tx = 0, ty = lerp(ay, 0, zoomK);
-      zCable.style.transform = `scaleY(${Math.max(0, ty).toFixed(1)})`;
-      const sway = (1 - liftK) * 1.4 * (1 - zoomK);      // settles as it lands
-      zf.style.borderRadius = (48 * (1 - zoomK)).toFixed(1) + 'px';
-      zf.style.transform =
-        `translate3d(${tx.toFixed(1)}px, ${ty.toFixed(1)}px, 0) scale(${sc.toFixed(4)}) ` +
-        `rotate(${sway.toFixed(2)}deg)`;
-      zf.style.opacity = liftK > 0.02 ? '1' : '0';
-    }
 
     if (spinning && proofV) { proofV.pivot.rotation.y += SPIN * dt; lastSpin = nowT; }
 

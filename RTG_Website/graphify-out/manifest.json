@@ -294,9 +294,9 @@
     "semantic_hash": ""
   },
   "src/components/home/MachineLift.astro": {
-    "mtime": 1791446094.7497306,
-    "seen": 1791446126.770363,
-    "ast_hash": "753a0a43ddda9aa592aabbd15c98de21",
+    "mtime": 1791446741.488385,
+    "seen": 1791446789.1068306,
+    "ast_hash": "f59dc60361ec113752b7c113fa088299",
     "semantic_hash": ""
   },
   "src/components/home/ProofCase.astro": {
@@ -504,9 +504,9 @@
     "semantic_hash": ""
   },
   "src/lib/home-scroll.ts": {
-    "mtime": 1791446094.6767406,
-    "seen": 1791446126.770363,
-    "ast_hash": "df11d85a81d79ee1d0888b37b7fa4ee8",
+    "mtime": 1791446741.4180808,
+    "seen": 1791446789.1068306,
+    "ast_hash": "de10ecd90f15988acc327f83421c4a42",
     "semantic_hash": ""
   },
   "src/lib/mdx.ts": {

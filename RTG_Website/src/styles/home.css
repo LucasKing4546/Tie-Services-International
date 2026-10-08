@@ -48,7 +48,7 @@
   .hero-proof div{margin-right:0;padding-right:12px}
   .hero-proof div:nth-child(2n){border-right:0;padding-left:16px}
 }
-@media (prefers-reduced-motion:reduce){.vessel{animation:none}}
+@media (prefers-reduced-motion:reduce){.vessel,.zs::before{animation:none}}
 
 /* ---------- fleet (full-bleed photo, straight after the hero) ---------- */
 .fleet{position:relative;background:var(--panel-2)}
@@ -61,18 +61,20 @@
   text-shadow:0 2px 18px rgba(0,0,0,.75)}
 @media (max-width:640px){.fleet img{height:56svh}}
 
-/* ---------- zoom-into-frame showcase ---------- */
+/* ---------- equipment showroom ----------
+   One machine in open water, no frame around it. .zs::before is a work light
+   that drifts across the stage, the way an ROV lamp picks hardware out of the
+   dark. Drag turns the model (home-scroll.ts). */
 .zw{position:relative}
-.zs{position:sticky;top:0;height:100svh;overflow:hidden}
-/* The hoist line from the vessel: 1px tall, stretched by home-scroll.ts to
-   reach the frame hanging on it. */
-.zcable{position:absolute;left:50%;top:0;width:2px;height:1px;margin-left:-1px;z-index:1;
-  background:rgba(255,255,255,.75);transform-origin:50% 0;transform:scaleY(0);pointer-events:none}
-.zf{position:absolute;z-index:2;left:0;top:0;width:100%;height:100%;opacity:0;
-  background:var(--sea-1);overflow:hidden;transform-origin:50% 0;
-  will-change:transform}
+.zs{position:relative;height:min(100svh,900px);overflow:hidden}
+.zs::before{content:"";position:absolute;inset:-20%;z-index:0;pointer-events:none;
+  background:radial-gradient(34% 44% at 50% 48%,rgba(255,255,255,.17),transparent 70%);
+  animation:lamp 17s ease-in-out infinite alternate}
+@keyframes lamp{from{transform:translate(-13%,-5%)}to{transform:translate(13%,4%)}}
+.zf{position:absolute;inset:0;z-index:1;cursor:grab;touch-action:pan-y}
+.zf.drag{cursor:grabbing}
 .zf-in{position:absolute;inset:0;display:grid;grid-template-rows:auto 1fr auto;
-  padding:clamp(20px,2.6vw,40px);padding-top:94px;width:100%;height:100%}
+  padding:94px var(--gut) clamp(24px,3vw,44px);width:100%;height:100%;max-width:var(--wrap);margin:0 auto}
 .zf canvas{position:absolute;inset:0;width:100%;height:100%;z-index:0}
 .zf-top,.zf-bot{position:relative;z-index:2;display:flex;justify-content:space-between;
   align-items:flex-start;gap:24px;flex-wrap:wrap}
@@ -90,13 +92,9 @@
   padding:10px 18px;border-radius:100px;border:1px solid rgba(255,255,255,.3);background:transparent;
   color:rgba(255,255,255,.75);cursor:pointer;transition:all .3s var(--e)}
 .zf-pick button.on{background:var(--red);border-color:var(--red);color:#fff}
-.zoom-hint{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);z-index:3;
-  font-family:var(--f-m);font-size:10px;letter-spacing:.2em;text-transform:uppercase;
-  color:rgba(255,255,255,.45);transition:opacity .4s}
 @media (max-width:820px){
   .zw{height:auto!important}
   .zs{position:static;height:auto;padding:0 var(--gut)}
-  .zcable{display:none}
   .zf{position:relative!important;left:auto!important;top:auto!important;opacity:1!important;
     width:auto!important;height:74vh!important;transform:none!important}
   .zf-in{padding-top:clamp(20px,2.6vw,40px)}
@@ -296,7 +294,9 @@
 /* machine lift: heading spacing and pick buttons */
 .zf-pick button{transition:transform .25s var(--e),background .25s var(--e),border-color .25s var(--e)}
 .zf-pick button:hover{transform:translateY(-2px)}
-.zf .spec{background:rgba(3,29,91,.55);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:16px 22px}
+/* Figures as readouts on a hairline, not in a box. */
+.zf .spec{gap:0}
+.zf .spec div{border-top:1px solid var(--rule);padding:12px 34px 0 0}
 .zf .btn.b-red{}
 @media (max-width:640px){.zf .spec{gap:18px;padding:14px 16px}}
 
