@@ -822,3 +822,16 @@ table.spec .gap{text-transform:uppercase;letter-spacing:.1em;font-size:.8em}
 .prose strong{color:var(--ink)}
 .prose a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
 .note-line{margin:12px 0 0;font-size:14px;color:var(--ink-2)}
+
+/* ---------- list body (Prose class="lists") ----------
+   Pages whose copy is a few short headed lists. The groups flow into two
+   columns so "What we supply / Testing / Track record" sit side by side
+   rather than stacking down a long page. A heading never parts from the
+   list under it. */
+.prose.lists{columns:2;column-gap:clamp(36px,5vw,88px)}
+.prose.lists h2{font-size:clamp(20px,1.8vw,26px);letter-spacing:-.02em;max-width:none;
+  margin:34px 0 14px;padding-top:18px;border-top:1px solid var(--rule);break-after:avoid}
+.prose.lists > h2:first-child{margin-top:0}
+.prose.lists ul,.prose.lists ol,.prose.lists p,.prose.lists li{break-inside:avoid}
+.prose.lists p,.prose.lists ul{font-size:16px}
+@media (max-width:900px){.prose.lists{columns:1}}

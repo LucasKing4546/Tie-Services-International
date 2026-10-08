@@ -159,7 +159,8 @@ const pages = defineCollection({
       outline: z.array(z.string()).default([]),
       cta: z
         .object({
-          heading: z.string(),
+          /** Optional: a page may close on its two buttons alone. */
+          heading: z.string().optional(),
           body: z.string().optional(),
           primary: link,
           secondary: link.optional(),

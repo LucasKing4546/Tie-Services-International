@@ -1,5 +1,6 @@
 ---
-/** The proof bar -> CTA -> draft-panel closing sequence shared by every template. */
+/** The closing sequence shared by every template: buttons, then the standard
+ *  band directly above the footer, then the draft panel on unfinished pages. */
 import type { PageMeta } from '@data/pages';
 import type { PageData } from '@lib/blocks';
 import Section from './Section.astro';
@@ -21,12 +22,6 @@ interface Props {
 const { page, proofBar, cta, draft, outline, draftNote } = Astro.props;
 ---
 
-{proofBar && (
-  <Section tone="off" size="sm">
-    <ProofBar />
-  </Section>
-)}
-
 {cta && (
   <Section tone="off">
     <CtaBand
@@ -35,6 +30,12 @@ const { page, proofBar, cta, draft, outline, draftNote } = Astro.props;
       primary={cta.primary}
       secondary={cta.secondary}
     />
+  </Section>
+)}
+
+{proofBar && (
+  <Section tone="off" size="sm">
+    <ProofBar />
   </Section>
 )}
 

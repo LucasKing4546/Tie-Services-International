@@ -1,27 +1,25 @@
 ---
 /**
  * The Sector template — S-01…S-07. The market the buyer identifies with;
- * P1 in the workbook. Composition: parallax hero -> problem (sticky media)
- * -> equipment from related[] -> featured case band -> proof bar -> CTA.
+ * P1 in the workbook. Composition: hero (heading, one-line intro, two
+ * buttons) -> the body's short headed lists in two columns -> photographs
+ * -> related equipment from related[] -> buttons and the standard band.
+ *
+ * Deliberately short. The copy is a set of lists a buyer checks against a
+ * specification, not an argument to read, so there is no featured-case band
+ * and no technical-note sequence here any more; a case study is a sentence
+ * with a link in the body.
  */
 import { render } from 'astro:content';
-import { page as lookupPage, type PageMeta } from '@data/pages';
-import type { PageEntry, CardItem } from '@lib/blocks';
-import { cardFrom, entryFor } from '@lib/content';
-import { orientationOf } from '@data/media';
+import type { PageMeta } from '@data/pages';
+import { endingCta, type PageEntry, type CardItem } from '@lib/blocks';
+import { cardFrom, hasBody } from '@lib/content';
 import Base from '@layouts/Base.astro';
 import PageHero from '@components/blocks/PageHero.astro';
 import Section from '@components/blocks/Section.astro';
 import Prose from '@components/blocks/Prose.astro';
 import MediaBand from '@components/blocks/MediaBand.astro';
-import StepList from '@components/blocks/StepList.astro';
-import SectionHead from '@components/blocks/SectionHead.astro';
-import FeatureRow from '@components/blocks/FeatureRow.astro';
-import ScrollTrack from '@components/blocks/ScrollTrack.astro';
 import IndexRows from '@components/blocks/IndexRows.astro';
-import Card from '@components/blocks/Card.astro';
-import FeaturedCase from '@components/blocks/FeaturedCase.astro';
-import Skeleton from '@components/blocks/Skeleton.astro';
 import PageEnding from '@components/blocks/PageEnding.astro';
 import { mdxComponents } from '@lib/mdx';
 
@@ -35,93 +33,29 @@ const { data } = entry;
 const { Content } = await render(entry);
 
 const equipment: CardItem[] = data.related.map((id) => cardFrom({ pageId: id }));
-
-// Only a `featured` card with a pageId resolves to a page/entry pair here —
-// one with just title+href has nothing to look up, so the band is skipped.
-const featured = data.featured?.pageId
-  ? { page: lookupPage(data.featured.pageId), entry: await entryFor(data.featured.pageId), ctaLabel: data.featured.cta }
-  : undefined;
-
-// Portrait/square media goes beside the prose; wide media goes to the
-// full-width band below instead — a wide photo cropped into that narrow
-// column is what made one sector page look broken.
-const tallMedia = data.media.find((m) => {
-  const o = orientationOf(m.ref);
-  return o === 'portrait' || o === 'square';
-});
-const bandMedia = data.media.filter((m) => m !== tallMedia);
-
-// Drawn empty (with the shoot brief) when no picture exists yet, so every
-// sector page keeps the same shape while photography is gathered.
-const tallSlot = tallMedia ?? {
-  ref: `IMG-${page.id}-V`,
-  brief: 'Vertical shot: the machine at full height, on the shop floor or rigged on deck.',
-  ratio: '3/4',
-};
 ---
 
 <Base pageId={page.id}>
   <PageHero
     page={page}
-    eyebrow={data.eyebrow}
     lede={data.lede}
     media={data.hero.media}
     ctas={data.hero.ctas}
     updated={data.updated}
   />
 
-  <FeatureRow media={tallSlot}>
-    <Prose>
-      <Content components={mdxComponents} />
-    </Prose>
-  </FeatureRow>
-
-  {equipment.length >= 5 ? (
-    <ScrollTrack eyebrow="Equipment" heading="Built for this sector">
-      {equipment.map((item) => <Card item={item} tone="dark" />)}
-    </ScrollTrack>
-  ) : equipment.length > 0 && (
-    <IndexRows
-      items={equipment}
-      eyebrow="Equipment"
-      heading="Built for this sector"
-      lede="The machines this sector's work actually turns on."
-    />
-  )}
-
-  {data.steps.length > 0 && (
+  {hasBody(entry) && (
     <Section>
-      <SectionHead
-        eyebrow="Technical note"
-        heading="What actually goes wrong"
-        level={2}
-        lede="The failure modes behind the specification, in the order you meet them."
-      />
-      <StepList steps={data.steps} />
+      <Prose class="lists">
+        <Content components={mdxComponents} />
+      </Prose>
     </Section>
   )}
 
-  {/* No heading: each picture carries its own caption, and a fixed one
-      ("Equipment for this sector") is wrong the moment a page's photograph
-      is a diagram or a vessel rather than a machine. */}
-  <MediaBand items={bandMedia} lead />
+  {/* No heading: each picture carries its own caption. */}
+  <MediaBand items={data.media} />
 
-  {data.draft && data.steps.length === 0 && (
-    <Skeleton label="Technical note" kind="rows" count={3} tone="off" />
-  )}
-  {data.draft && bandMedia.length === 0 && (
-    <Skeleton label="Equipment photography" kind="media" />
-  )}
+  <IndexRows items={equipment} heading="Related equipment" tone="default" />
 
-  {featured && (
-    <Section wrap={false}>
-      <FeaturedCase page={featured.page} entry={featured.entry} ctaLabel={featured.ctaLabel} />
-    </Section>
-  )}
-
-  {/* No proof bar: unlike other templates, PageEnding here gets no
-      `proofBar` prop — a sector page argues one buyer's specific problem,
-      and the same boxed site-wide figures at the close would undercut
-      that. */}
-  <PageEnding page={page} cta={data.cta} draft={data.draft} outline={data.outline} />
+  <PageEnding page={page} proofBar cta={endingCta(data)} draft={data.draft} outline={data.outline} />
 </Base>
