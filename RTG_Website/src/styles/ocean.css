@@ -45,22 +45,14 @@ html{scrollbar-color:var(--sea-0) var(--sea-2)}
   mask-image:linear-gradient(to bottom,#000,transparent);
   opacity:calc(1 - var(--depth) * 2.2);animation:shafts 14s ease-in-out infinite alternate}
 @keyframes shafts{from{transform:translateX(-3%)}to{transform:translateX(3%)}}
-/* Marine snow: drifting specks that thicken as the light goes. The layer is
-   600px taller than the screen and falls exactly 600px, a whole number of
-   both tile heights, so the loop never jumps. */
-.gauge::after{content:"";position:absolute;inset:-600px 0 0 0;opacity:calc(var(--depth) * .85);
-  background-image:radial-gradient(circle,rgba(255,255,255,.55) 0 1px,transparent 1.6px),
-    radial-gradient(circle,rgba(255,255,255,.35) 0 1px,transparent 1.6px),
-    radial-gradient(circle,rgba(255,255,255,.28) 0 1.5px,transparent 2.2px);
-  background-size:190px 200px,270px 300px,410px 600px;background-position:0 0,90px 140px,210px 60px;
-  animation:snow 46s linear infinite}
-@keyframes snow{to{transform:translateY(600px)}}
 .gauge-rail{position:absolute;right:13px;top:50%;width:2px;height:44svh;margin-top:-22svh;
   border-radius:2px;background:color-mix(in oklab,var(--sea-0) 45%,var(--sky))}
 .gauge-rail i{position:absolute;right:-4px;width:10px;height:1px;background:inherit}
 .gauge-bob{position:absolute;left:-4px;top:calc(var(--depth) * 100%);width:10px;height:10px;margin-top:-5px;
   border-radius:50%;background:var(--red);outline:2px solid #fff}
-.gauge-read{position:absolute;right:13px;bottom:16px;margin:0;max-width:none;padding:9px 13px 10px;
+/* The readout rides beside the bob, so the figure is always at the point on
+   the rail it describes. */
+.gauge-read{position:absolute;right:32px;top:calc(50% - 22svh + var(--depth) * 44svh);transform:translateY(-50%);margin:0;max-width:none;padding:9px 13px 10px;
   border-radius:10px;background:rgba(1,10,36,.82);border:1px solid rgba(255,255,255,.16);
   font-family:var(--f-m);font-size:10.5px;line-height:1.35;letter-spacing:.1em;text-transform:uppercase;
   color:rgba(255,255,255,.78);text-align:right;min-width:128px}
@@ -68,15 +60,15 @@ html{scrollbar-color:var(--sea-0) var(--sea-2)}
   font-variant-numeric:tabular-nums;text-transform:none}
 @media (max-width:900px){
   .gauge-rail{display:none}
-  .gauge-read{right:12px;bottom:12px;padding:7px 11px 8px;min-width:0}
+  /* No rail on a phone, so the readout parks in the corner. */
+  .gauge-read{top:auto;transform:none;right:12px;bottom:12px;padding:7px 11px 8px;min-width:0}
   .gauge-read span{display:none}
   .gauge-read b{font-size:14px}
 }
 @media print{.gauge{display:none}}
 
 /* ---------- seabed (Footer.astro) ---------- */
-/* Bottom padding keeps the legal line clear of the fixed depth readout. */
-.ftr{background:#00061a;padding-bottom:88px}
+.ftr{background:#00061a}
 .seabed{position:absolute;left:0;bottom:calc(100% - 1px);width:100%;height:46px;display:block}
 .seabed path{fill:#00061a;stroke:rgba(255,255,255,.2);stroke-width:1;vector-effect:non-scaling-stroke}
 
@@ -88,7 +80,7 @@ html{scrollbar-color:var(--sea-0) var(--sea-2)}
 .phero:has(.phero-media-shot){mask-image:linear-gradient(to bottom,transparent,#000 var(--fade))}
 
 @media (prefers-reduced-motion:reduce){
-  .wv,.gauge-light,.gauge::after{animation:none}
+  .wv,.gauge-light{animation:none}
 }
 
 /* ---------- nothing paints over the water ----------
@@ -99,7 +91,8 @@ html{scrollbar-color:var(--sea-0) var(--sea-2)}
 .sechd > .mono,.frow-copy > .mono,.tier-eyebrow,.hz-head .mono,.strack-head .mono,.pstage-head .mono{display:none}
 
 /* Fixed controls give way to the product page's request bar. */
-body:has(.req-bar:not([hidden])) :is(.gauge-read,.chat-open){bottom:76px}
+body:has(.req-bar:not([hidden])) .chat-open{bottom:76px}
+@media (max-width:900px){body:has(.req-bar:not([hidden])) .gauge-read{bottom:76px}}
 
 /* Spec tables: hairlines only, so the caption and body read as one table. */
 table.spec{border:0;border-radius:0;background:none;overflow:visible}

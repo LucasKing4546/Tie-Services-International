@@ -1,7 +1,8 @@
 ---
 /**
  * The depth gauge: a rail down the right edge with a bob that tracks scroll,
- * and a readout of the current depth. Decorative — it restates scroll
+ * and a readout that rides beside the bob: the current depth and the name of
+ * the section on screen. Decorative — it restates scroll
  * position, so it is aria-hidden and nothing is only available here.
  *
  * The scale runs from the surface to RTG's proven working depth, read from
@@ -18,5 +19,5 @@ import { PROOF } from '@data/site.js';
     {[0, 25, 50, 75, 100].map((t) => <i style={`top:${t}%`} />)}
     <span class="gauge-bob"></span>
   </div>
-  <p class="gauge-read"><b id="gaugeM">0 m</b><span id="gaugeZ">Surface</span></p>
+  <p class="gauge-read"><b id="gaugeM">0 m</b><span id="gaugeZ"></span></p>
 </div>
