@@ -13,7 +13,7 @@
 .hero-origin{margin:26px 0 0;font-size:14px;color:var(--ink-2)}
 
 .vessel{--vw:clamp(230px,36vw,540px);position:absolute;right:max(170px,11vw);bottom:34px;width:var(--vw);
-  animation:sail-in 2.8s var(--e-heavy) both,bob 5.5s ease-in-out 2.8s infinite alternate}
+  animation:sail-in 9s cubic-bezier(.2,.6,.2,1) both,bob 5.5s ease-in-out infinite alternate}
 .vessel svg{display:block;width:100%;height:auto;overflow:visible}
 .vessel-hull{fill:var(--navy);stroke:var(--navy)}
 .vessel-band{fill:var(--red)}
