@@ -6,7 +6,7 @@
  * Three behaviours, all driven from one rAF loop so they share a frame budget:
  *   1. pinned manufacturing-tier assembly, built up in 3D one tier at a time
  *   2. horizontal sector track
- *   3. the machine frame lowered in on the vessel's hoist line, then the
+ *   3. the machine frame hauled up on the vessel's hoist line, then the
  *      zoom into it
  *
  * 3D stages are created lazily by the caller so three.js is only fetched on
@@ -244,8 +244,8 @@ export function initHome(): void {
       const p = clamp(-r.top / (r.height - innerHeight), 0, 1);
       const wide = innerWidth >= 821;
       if (wide) {
-        /* the panel is lowered into shot on the hoist line from the surface */
-        liftK = ease(clamp(p / 0.38, 0, 1));            // paid out from above
+        /* the vessel hauls the panel up into shot on its hoist line */
+        liftK = ease(clamp(p / 0.38, 0, 1));            // hauled up from below
         zoomK = ease(clamp((p - 0.34) / 0.26, 0, 1));   // then you push into it
         if (showV) showV.frame(lerp(15.6, 13.2, zoomK), lerp(3.9, 3.2, zoomK), -0.4);
         if (zCable) zCable.style.opacity = (1 - clamp((zoomK - 0.45) / 0.5, 0, 1)).toFixed(3);
@@ -347,12 +347,12 @@ export function initHome(): void {
       m.wrap.visible = d < 1.3;                      // they simply leave the frame
     });
 
-    /* hang the payload on the line: it comes down from above the frame, and
-       the cable is drawn from the top of the screen to wherever it is */
+    /* hang the payload on the line: the vessel hauls it up from below the
+       frame, and the cable runs from the top of the screen to wherever it is */
     if (zCable && zf && innerWidth >= 821) {
       const H = zf.clientHeight;
       const sc = lerp(0.42, 1, zoomK);
-      const ay = lerp(-0.46 * H, 0.3 * H, liftK);
+      const ay = lerp(1.05 * H, 0.3 * H, liftK);
       const tx = 0, ty = lerp(ay, 0, zoomK);
       zCable.style.transform = `scaleY(${Math.max(0, ty).toFixed(1)})`;
       const sway = (1 - liftK) * 1.4 * (1 - zoomK);      // settles as it lands
