@@ -10,6 +10,7 @@ import type { PageMeta } from '@data/pages';
 import type { ImgBrief, Link } from '@lib/blocks';
 import { mediaFor } from '@data/media';
 import Breadcrumbs from './Breadcrumbs.astro';
+import Waterline from '@components/site/Waterline.astro';
 
 interface Props {
   page: PageMeta;
@@ -27,6 +28,7 @@ const { page, eyebrow, lede, ctas = [], media, crumbs = true } = Astro.props;
 const photo = media ? mediaFor(media.ref) : undefined;
 ---
 
+<Waterline slim />
 <section class="phero" data-tpl={page.template}>
   <div
     class:list={['phero-media', { 'phero-media-shot': photo }]}
@@ -49,7 +51,6 @@ const photo = media ? mediaFor(media.ref) : undefined;
 
   <div class="wrap phero-in">
     {crumbs && <Breadcrumbs page={page} />}
-    {eyebrow && <p class="mono red fu">{eyebrow}</p>}
     <h1 class="d-hero"><span class="rl"><span>{page.h1}</span></span></h1>
     {lede && <p class="lede fu">{lede}</p>}
     {ctas.length > 0 && (

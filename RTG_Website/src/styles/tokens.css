@@ -15,6 +15,28 @@
   --line:#DFE3EA;
   --muted:#5A6478;
 
+  /* The water. One ramp, all from the brand navy: pale sky above the
+     waterline, then lighter navy at the surface down to near-black navy at
+     the seabed. --sea-0 is the lightest ground white type ever sits on, and
+     white passes 4.5:1 on it, so contrast holds at every depth. */
+  --sky:#EEF2FA;
+  --sea-0:#17409a;
+  --sea-1:var(--navy);
+  --sea-2:#010a24;
+
+  /* Semantic colours. The defaults are the SUBMERGED values, because almost
+     everything is under water. .above (below) restores the light ones for the
+     few things at the surface: the homepage hero and the header bar. */
+  --ink:#fff;
+  --ink-2:rgba(255,255,255,.76);
+  --rule:rgba(255,255,255,.2);
+  --panel:rgba(255,255,255,.055);
+  --panel-2:rgba(1,10,36,.34);
+  /* Text accent. Red on navy is ~2.3:1, so under water red is for fills and
+     marks only and accented type goes white. */
+  --accent:#fff;
+  --on-ink:var(--navy);
+
   --wrap:1320px;
   --gut:32px;
 
@@ -35,15 +57,20 @@
   /* Full-bleed hero h1 only: larger than .d1 at the small end (must hold
      the frame on a phone) and stops short of it at the large end (must not
      outgrow the scrim on a wide desktop). */
-  --d-hero:clamp(44px,7.5vw,116px);
+  --d-hero:clamp(36px,5.2vw,76px);
 }
 
 @media (max-width:700px){:root{--gut:20px}}
 
+.above,.hdr{--ink:var(--navy);--ink-2:var(--muted);--rule:var(--line);--panel:var(--off);
+  --panel-2:var(--navy);--accent:var(--red);--on-ink:#fff;color:var(--ink);color-scheme:light}
+
 *,*::before,*::after{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
+/* Dark, so native controls (select popups, autofill, scrollbars) match the
+   water; .above and .hdr switch back to light. */
+html{-webkit-text-size-adjust:100%;color-scheme:dark}
 body{
-  margin:0;background:var(--white);color:var(--navy);
+  margin:0;background:var(--sea-2);color:var(--ink);
   font-family:var(--f-b);font-size:17px;line-height:1.6;
   -webkit-font-smoothing:antialiased;overflow-x:hidden;
 }
@@ -59,7 +86,7 @@ a{color:inherit;text-decoration:none}
    can otherwise touch the cap height of the line below on a two-line
    heading. Applies to every heading on the site. */
 h1,h2,h3{font-family:var(--f-d);font-weight:800;letter-spacing:-.035em;line-height:1.06;
-  margin:0;color:var(--navy);text-transform:none}
+  margin:0;color:var(--ink);text-transform:none}
 /* balance/pretty prevent an orphaned last word; both degrade gracefully
    where unsupported. */
 h1,h2,h3,.d-hero,.d1,.d2,.d3{text-wrap:balance}
@@ -69,15 +96,13 @@ p,.lede{text-wrap:pretty}
 .d-hero,.d1,.d2,.d3,.stat b,.headline-num,.ct,table.spec td,.step .num{
   font-variant-numeric:tabular-nums lining-nums}
 .d-hero{font-size:var(--d-hero)}
-.d1{font-size:clamp(46px,8.4vw,124px)}
-.d2{font-size:clamp(34px,5.6vw,80px)}
+.d1{font-size:clamp(44px,6vw,88px)}
+.d2{font-size:clamp(30px,4.2vw,60px)}
 .d3{font-size:clamp(24px,3vw,40px);letter-spacing:-.028em;line-height:1.1}
 .mono{font-family:var(--f-m);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--muted);font-weight:500}
-.mono.red{color:var(--red)}
-.mono.on-navy{color:rgba(255,255,255,.62)}
-.lede{font-size:clamp(17px,1.5vw,21px);line-height:1.5;color:var(--muted);max-width:52ch;font-weight:400}
-.on-navy .lede,.navy .lede{color:rgba(255,255,255,.72)}
+  color:var(--ink-2);font-weight:500}
+.mono.red{color:var(--accent)}
+.lede{font-size:clamp(17px,1.5vw,21px);line-height:1.5;color:var(--ink-2);max-width:52ch;font-weight:400}
 p{margin:0 0 1em;max-width:62ch}
 
 .btn{display:inline-flex;align-items:center;gap:12px;font-family:var(--f-d);font-weight:700;
@@ -86,16 +111,16 @@ p{margin:0 0 1em;max-width:62ch}
 .btn:hover{transform:translateY(-2px)}
 .b-red{background:var(--red);color:#fff}
 .b-red:hover{background:var(--red-dk)}
-.b-navy{background:var(--navy);color:#fff}
-.b-navy:hover{background:var(--navy-2)}
-.btn-o{border-color:var(--line);color:var(--navy)}
-.btn-o:hover{border-color:var(--navy);background:var(--navy);color:#fff}
+.b-navy{background:var(--ink);color:var(--on-ink)}
+.b-navy:hover{opacity:.88}
+.btn-o{border-color:var(--rule);color:var(--ink)}
+.btn-o:hover{border-color:var(--ink);background:var(--ink);color:var(--on-ink)}
 .btn-o.inv{border-color:rgba(255,255,255,.35);color:#fff}
-.btn-o.inv:hover{background:#fff;color:var(--navy);border-color:#fff}
+.btn-o.inv:hover{background:var(--panel);color:var(--ink);border-color:#fff}
 .btn .dot{width:6px;height:6px;border-radius:50%;background:currentColor;opacity:.5}
 
 .arw{display:inline-flex;align-items:center;gap:9px;font-family:var(--f-d);font-weight:700;font-size:13.5px;
-  color:var(--red);transition:gap .3s var(--e)}
+  color:var(--accent);transition:gap .3s var(--e)}
 .arw:hover{gap:15px}
 
 /* ---------- masked line reveal + motion primitives ----------
@@ -135,10 +160,9 @@ html.js .stag.in > *{opacity:1;transform:none}
 
 /* ---------- header ---------- */
 .hdr{position:fixed;inset:0 0 auto 0;z-index:400;padding:22px 0}
-.hdr::before{content:"";position:absolute;inset:0;background:rgba(255,255,255,.82);
-  backdrop-filter:blur(14px);border-bottom:1px solid var(--line);opacity:0;transition:opacity .4s var(--e)}
+.hdr::before{content:"";position:absolute;inset:0;background:rgba(238,242,250,.9);
+  backdrop-filter:blur(14px);border-bottom:1px solid var(--rule)}
 .hdr.on{padding:12px 0}
-.hdr.on::before{opacity:1}
 .hdr-in{position:relative;display:flex;align-items:center;justify-content:space-between;gap:20px}
 .brand{display:flex;align-items:center;gap:12px}
 .brand .logo{height:34px;width:auto;display:block}
@@ -146,26 +170,15 @@ html.js .stag.in > *{opacity:1;transform:none}
 @media (max-width:640px){.hdr .brand .logo{height:38px}}
 .nav{display:flex;align-items:center;gap:4px}
 .nav a{font-family:var(--f-d);font-weight:600;font-size:14px;letter-spacing:-.01em;padding:9px 15px;
-  border-radius:100px;color:var(--navy);transition:background .25s,color .25s}
-.nav a:hover{background:var(--off)}
-.nav a[aria-current="page"]{background:var(--off);color:var(--red)}
+  border-radius:100px;color:var(--ink);transition:background .25s,color .25s}
+.nav a:hover{background:var(--panel)}
+.nav a[aria-current="page"]{background:var(--panel);color:var(--accent)}
 .nav .btn{margin-left:10px;padding:12px 22px;font-size:13.5px}
 .nav .btn[aria-current="page"]{background:var(--red);color:#fff}
 
-/* ---------- header over a dark hero ----------
-   The header is transparent until scrolled, so on a navy-hero page (every
-   inner page — .phero in blocks.css) the default navy nav links go
-   navy-on-navy. Fixed by forcing the white backdrop in immediately, not by
-   recolouring the header contents — reversing the type would also need a
-   reversed logo asset (two-colour mark: red monogram, navy wordmark) that
-   doesn't exist yet.
-   Detected via :has() on body rather than a passed-down prop because the
-   header carries transition:persist and is NOT re-rendered on client-side
-   navigation — server-rendered state would go stale the moment the visitor
-   moved between a dark-hero page and a light one. :has() re-evaluates live
-   against whatever <main> currently holds, so it stays correct across view
-   transitions with no script. */
-body:has(.phero) .hdr::before{opacity:1;background:#fff;backdrop-filter:none}
+/* The header is a light "surface" bar on every page, never reversed: the
+   logo is a two-colour mark (red monogram, navy wordmark) and no reversed
+   asset exists, so it has to sit on a light ground. */
 .nav .btn.b-red{background:var(--red);color:#fff}
 .nav .btn.b-red:hover{background:var(--red-dk);color:#fff}
 
@@ -174,14 +187,14 @@ body:has(.phero) .hdr::before{opacity:1;background:#fff;backdrop-filter:none}
    of the two navs is ever rendered: display:none removes the hidden one
    from the accessibility tree, avoiding duplicate landmarks. */
 .mnav{display:none;position:relative;flex:none}
-.mnav-btn{list-style:none;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);
-  background:var(--white);display:grid;place-items:center;cursor:pointer}
+.mnav-btn{list-style:none;width:44px;height:44px;border-radius:50%;border:1px solid var(--rule);
+  background:var(--panel);display:grid;place-items:center;cursor:pointer}
 .mnav-btn::-webkit-details-marker{display:none}
 .mnav-btn::marker{content:""}
-.mnav-btn:hover{border-color:var(--navy)}
+.mnav-btn:hover{border-color:var(--ink)}
 .mnav-bars{position:relative;display:block;width:18px;height:12px}
 .mnav-bars::before,.mnav-bars::after,.mnav-bars i{content:"";position:absolute;left:0;right:0;height:2px;
-  background:var(--navy);border-radius:2px;transition:transform .3s var(--e),opacity .2s var(--e)}
+  background:var(--panel-2);border-radius:2px;transition:transform .3s var(--e),opacity .2s var(--e)}
 .mnav-bars::before{top:0}
 .mnav-bars i{top:5px}
 .mnav-bars::after{bottom:0}
@@ -189,12 +202,12 @@ body:has(.phero) .hdr::before{opacity:1;background:#fff;backdrop-filter:none}
 .mnav[open] .mnav-bars i{opacity:0}
 .mnav[open] .mnav-bars::after{transform:translateY(-5px) rotate(-45deg)}
 .mnav-panel{position:absolute;top:calc(100% + 14px);right:0;width:min(320px,calc(100vw - 32px));
-  background:var(--white);border:1px solid var(--navy);border-radius:18px;padding:14px}
+  background:var(--panel);border:1px solid var(--ink);border-radius:18px;padding:14px}
 .mnav-panel nav{display:flex;flex-direction:column;gap:2px}
 .mnav-panel a{font-family:var(--f-d);font-weight:600;font-size:15px;letter-spacing:-.01em;
-  padding:13px 16px;border-radius:12px;color:var(--navy);transition:background .25s,color .25s}
-.mnav-panel a:hover{background:var(--off)}
-.mnav-panel a[aria-current="page"]{background:var(--off);color:var(--red)}
+  padding:13px 16px;border-radius:12px;color:var(--ink);transition:background .25s,color .25s}
+.mnav-panel a:hover{background:var(--panel)}
+.mnav-panel a[aria-current="page"]{background:var(--panel);color:var(--accent)}
 .mnav-panel .btn{margin-top:10px;justify-content:center}
 .mnav-panel .btn[aria-current="page"]{background:var(--red);color:#fff}
 .mnav[open] .mnav-panel{animation:mnav-in .26s var(--e) both}
@@ -209,20 +222,7 @@ body:has(.phero) .hdr::before{opacity:1;background:#fff;backdrop-filter:none}
 @media (max-width:560px){.nav{display:none}}
 
 /* ---------- footer ---------- */
-.ftr{position:relative;isolation:isolate;overflow:hidden;
-  padding:96px 0 34px;background:var(--navy);color:#fff}
-.ftr::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
-  background-image:
-    linear-gradient(to right,rgba(255,255,255,.05) 1px,transparent 1px),
-    linear-gradient(to bottom,rgba(255,255,255,.05) 1px,transparent 1px);
-  background-size:78px 78px;
-  mask-image:radial-gradient(110% 90% at 88% 0%,#000 0%,transparent 74%)}
-/* The logo's navy "GROUP" word vanishes on the navy footer. Inverting the
-   whole mark to white would flatten the brand red and fill the monogram's
-   counters, so only a white drop-shadow lifts the dark glyphs instead.
-   Replace with a proper reversed asset when RTG supplies one. */
-.ftr .brand .logo{filter:drop-shadow(0 0 1px rgba(255,255,255,.95))
-  drop-shadow(0 0 3px rgba(255,255,255,.75)) drop-shadow(0 0 7px rgba(255,255,255,.5))}
+.ftr{position:relative;padding:96px 0 34px;background:var(--sea-2);color:#fff}
 .ftr-g{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:44px;margin-bottom:60px}
 @media (max-width:820px){.ftr-g{grid-template-columns:1fr 1fr}}
 @media (max-width:520px){.ftr-g{grid-template-columns:1fr;gap:36px;margin-bottom:44px}}

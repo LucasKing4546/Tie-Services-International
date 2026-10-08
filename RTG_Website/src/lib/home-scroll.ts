@@ -88,7 +88,7 @@ export function initHome(): void {
   // The idle callback that schedules this can outlive the page that queued
   // it, so confirm the homepage is actually in the document before building
   // anything. Every stage below is keyed to an id that only index.astro has.
-  if (!document.getElementById('heroGL')) return;
+  if (!document.getElementById('tierGL')) return;
 
   const cleanups: (() => void)[] = [];
 
@@ -153,13 +153,10 @@ export function initHome(): void {
      down the middle of the viewport */
   const CRANE_DIST = 34, CRANE_Y = 1.5, CRANE_LOOK = 0;
   const DROP_OUT = 20.6, DROP_IN = 4.3;          // fall paid out vs hauled home
-  let heroV: Stage | null = null, tierV: Stage | null = null, showV: Stage | null = null,
+  let tierV: Stage | null = null, showV: Stage | null = null,
       proofV: Stage | null = null, craneV: Stage | null = null;
   let craneRig: CraneRig | null = null, tierModel: TieredModel | null = null;
   {
-    /* hero shows the deck crane — the tier walkthrough below is the winch,
-       so the two lead visuals are deliberately different machines */
-    heroV  = makeStage('heroGL', buildCrane(), 17.4, 3.0, 0.2);
     tierModel = buildWinch() as unknown as TieredModel;
     tierV  = makeStage('tierGL', tierModel, 15.0, 2.6, -0.5);
     showV  = makeStage('showGL', new THREE.Group(), 20.0, 3.4, -0.4, { shadow: 0.22 });
@@ -167,31 +164,11 @@ export function initHome(): void {
     craneRig = buildCrane({ rig: true }) as unknown as CraneRig;
     craneV = makeStage('craneGL', craneRig, CRANE_DIST, CRANE_Y, CRANE_LOOK, { shadow: 0 });
     craneRig.position.set(-1.5, 4.6, 0);          // sit the crane high in the frame
-    if (heroV)  heroV.pivot.rotation.y  = -0.55;
     if (tierV)  tierV.pivot.rotation.y  = -0.62;
     if (showV)  showV.pivot.rotation.y  = 0;
     if (proofV) proofV.pivot.rotation.y = -0.6;
     if (craneV) craneV.pivot.rotation.y = -0.30;
   }
-
-  /* pointer-drag to orbit the hero model */
-  (function dragOrbit(){
-    const stage = heroV;
-    if (!stage) return;
-    let down = false, lastX = 0;
-    const el = stage.el;
-    el.style.cursor = 'grab';
-    el.addEventListener('pointerdown', e => { down = true; lastX = e.clientX;
-      el.style.cursor = 'grabbing'; el.setPointerCapture(e.pointerId); });
-    el.addEventListener('pointermove', e => { if (!down) return;
-      stage.drag += (e.clientX - lastX) * 0.008; lastX = e.clientX;
-      // frame() otherwise only runs on scroll — without this call, dragging
-      // on an unscrolled page updates stage.drag but never paints, so the
-      // model looks inert until the user scrolls.
-      poke(); frame(); });
-    const up = () => { down = false; el.style.cursor = 'grab'; };
-    el.addEventListener('pointerup', up); el.addEventListener('pointercancel', up);
-  })();
 
   /* ── the three machines all live in the scene at once and cross-dissolve,
         so changing machine is a move rather than a cut ── */
@@ -272,12 +249,6 @@ export function initHome(): void {
   }
 
   function frame(){
-    /* hero: scroll turns the crane and lifts the camera slightly */
-    if (heroV) {
-      heroV.pivot.rotation.y = -0.7 + scrollY * 0.0016 + heroV.drag;
-      heroV.frame(heroV.baseDist, heroV.baseH + Math.min(scrollY * 0.0016, 1.1), heroV.lookY);
-    }
-
     /* zoom-into-frame showcase */
     if (zw && zf) {
       const r = zw.getBoundingClientRect();
@@ -407,7 +378,6 @@ export function initHome(): void {
 
     if (spinning && proofV) { proofV.pivot.rotation.y += SPIN * dt; lastSpin = nowT; }
 
-    if (heroV  && heroV.onScreen)  heroV.render();
     if (tierV  && tierV.onScreen)  tierV.render();
     if (showV  && showV.onScreen)  showV.render();
     if (proofV && proofV.onScreen) proofV.render();

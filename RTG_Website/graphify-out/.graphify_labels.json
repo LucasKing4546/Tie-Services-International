@@ -19,7 +19,7 @@
   "17": "How it runs",
   "18": "p-03.mdx",
   "19": "audit-protection.mjs",
-  "20": "screenshot-pages.mjs",
+  "20": "strip-exif.mjs",
   "21": "gen-stubs.mjs",
   "22": "c-00.mdx",
   "23": "c-01.mdx",
@@ -113,7 +113,7 @@
   "111": "8. DARK MODE PROTOCOL",
   "112": "7. DIAL DEFINITIONS (Technical Reference)",
   "113": "devDependencies",
-  "114": "1. THE THREE DIALS (Core Configuration)",
+  "114": "ProofBar.astro",
   "115": "vercel.json",
   "116": "src_assets_contact_x01_team",
   "117": "src_assets_sectors_s02_pipeline_survey",
@@ -121,5 +121,8 @@
   "119": "src_assets_sectors_s03_cable_work",
   "120": "src_assets_sectors_s03_wind_array",
   "121": "src_assets_sectors_s05_research_deck",
-  "122": "src_assets_sectors_s05_research_vessel"
+  "122": "src_assets_sectors_s05_research_vessel",
+  "123": "0. BRIEF INFERENCE (Read the Room Before Anything Else)",
+  "124": "Site-wide ocean world (homepage first surface)",
+  "125": "Hero.astro"
 }

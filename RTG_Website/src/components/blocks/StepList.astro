@@ -24,7 +24,7 @@ const { steps, label } = Astro.props;
       </div>
       <div>
         <h3 class="d3" style="font-size:22px">{s.title}</h3>
-        {s.body && <p style="margin-top:10px;color:var(--muted)">{s.body}</p>}
+        {s.body && <p style="margin-top:10px;color:var(--ink-2)">{s.body}</p>}
         {s.points.length > 0 && (
           <ul class="lc-l" style="margin-top:16px">
             {s.points.map((p) => <li>{p}</li>)}

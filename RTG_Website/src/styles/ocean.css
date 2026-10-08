@@ -1,0 +1,96 @@
+/* ==========================================================================
+   The ocean. Loaded last (Base.astro).
+
+   The whole descent is ONE background: <main> carries a single gradient from
+   the surface navy down to near-black, and every section sits transparent on
+   top of it. That is what makes the page darken continuously on any length
+   of page with no script, and why pinned sections darken behind their own
+   content. --sea-0, the lightest stop, already passes 4.5:1 against white,
+   so type is legible at every depth.
+   ========================================================================== */
+
+/* --sea-top holds the surface colour flat for the first stretch, so the
+   waterline's front wave (also --sea-0) meets it with no seam. */
+main{--sea-top:120px;
+  background:linear-gradient(to bottom,var(--sea-0) var(--sea-top),var(--sea-1) 52%,var(--sea-2))}
+main:has(> .hero){--sea-top:118svh}
+
+::selection{background:var(--red);color:#fff}
+html{scrollbar-color:var(--sea-0) var(--sea-2)}
+
+/* ---------- waterline (Waterline.astro) ---------- */
+.waterline{position:absolute;inset:auto 0 0 0;height:96px;pointer-events:none;overflow-x:clip}
+.wv{position:absolute;left:0;bottom:0;width:200%;min-width:2400px;height:62px;display:block;
+  animation:wave 16s linear infinite;will-change:transform}
+.wv-back{height:92px;fill:color-mix(in oklab,var(--sea-0) 38%,var(--sky));animation-duration:22s}
+.wv-mid{height:76px;fill:color-mix(in oklab,var(--sea-0) 72%,var(--sky));animation-duration:13s;animation-direction:reverse}
+.wv-front{fill:var(--sea-0);animation-duration:9s}
+@keyframes wave{to{transform:translateX(-50%)}}
+
+/* Inner pages: a short band of sky under the header, then the surface. In
+   normal flow ahead of the page hero, so it never sits over a photograph. */
+.waterline.slim{position:relative;inset:auto;height:132px;background:var(--sky)}
+.waterline.slim .wv{height:34px}
+.waterline.slim .wv-back{height:44px}
+.waterline.slim .wv-mid{height:39px}
+
+/* ---------- depth gauge (DepthGauge.astro) ---------- */
+.gauge{--depth:0;position:fixed;inset:0;z-index:300;pointer-events:none}
+/* Light from the surface: strongest at the top of the page, gone by a third
+   of the way down. */
+.gauge-light{position:absolute;inset:0 0 auto 0;height:72svh;mix-blend-mode:screen;
+  background:radial-gradient(70% 100% at 50% 0%,rgba(255,255,255,.2),transparent 72%);
+  opacity:calc(1 - var(--depth) * 3)}
+.gauge-rail{position:absolute;right:13px;top:50%;width:2px;height:44svh;margin-top:-22svh;
+  border-radius:2px;background:color-mix(in oklab,var(--sea-0) 45%,var(--sky))}
+.gauge-rail i{position:absolute;right:-4px;width:10px;height:1px;background:inherit}
+.gauge-bob{position:absolute;left:-4px;top:calc(var(--depth) * 100%);width:10px;height:10px;margin-top:-5px;
+  border-radius:50%;background:var(--red);outline:2px solid #fff}
+.gauge-read{position:absolute;right:13px;bottom:16px;margin:0;max-width:none;padding:9px 13px 10px;
+  border-radius:10px;background:rgba(1,10,36,.82);border:1px solid rgba(255,255,255,.16);
+  font-family:var(--f-m);font-size:10.5px;line-height:1.35;letter-spacing:.1em;text-transform:uppercase;
+  color:rgba(255,255,255,.78);text-align:right;min-width:128px}
+.gauge-read b{display:block;font-size:17px;font-weight:500;letter-spacing:0;color:#fff;
+  font-variant-numeric:tabular-nums;text-transform:none}
+@media (max-width:900px){
+  .gauge-rail{display:none}
+  .gauge-read{right:12px;bottom:12px;padding:7px 11px 8px;min-width:0}
+  .gauge-read span{display:none}
+  .gauge-read b{font-size:14px}
+}
+@media print{.gauge{display:none}}
+
+/* ---------- seabed (Footer.astro) ---------- */
+/* Bottom padding keeps the legal line clear of the fixed depth readout. */
+.ftr{background:#00061a;padding-bottom:88px}
+.seabed{position:absolute;left:0;bottom:calc(100% - 1px);width:100%;height:46px;display:block}
+.seabed path{fill:#00061a;stroke:rgba(255,255,255,.2);stroke-width:1;vector-effect:non-scaling-stroke}
+
+/* ---------- page hero under the surface ---------- */
+.phero{--fade:clamp(40px,6vw,84px);background:none;padding-top:var(--fade)}
+.phero:not(:has(.phero-media-shot)){min-height:0}
+/* A photograph fades up out of the water rather than starting on a hard
+   edge under the waves. */
+.phero:has(.phero-media-shot){mask-image:linear-gradient(to bottom,transparent,#000 var(--fade))}
+
+@media (prefers-reduced-motion:reduce){
+  .wv{animation:none}
+  .gauge-light{opacity:.5}
+}
+
+/* ---------- nothing paints over the water ----------
+   Section-level tones stay transparent so the descent reads as one unbroken
+   darkening; a tone only ever marks a card or a callout, never a band. */
+.sec.off,.navy,.strack,.pstage,.pstage.off,.pstage.navy,.fleet{background:none}
+/* Section labels above a heading repeat the heading. */
+.sechd > .mono,.frow-copy > .mono,.tier-eyebrow,.hz-head .mono,.strack-head .mono,.pstage-head .mono{display:none}
+
+/* Fixed controls give way to the product page's request bar. */
+body:has(.req-bar:not([hidden])) :is(.gauge-read,.chat-open){bottom:76px}
+
+/* Spec tables: hairlines only, so the caption and body read as one table. */
+table.spec{border:0;border-radius:0;background:none;overflow:visible}
+table.spec caption{background:none;padding-inline:4px;border-bottom:1px solid var(--ink)}
+table.spec th,table.spec td{padding-inline:4px}
+.wrap > .prose p,.wrap > .prose ul,.wrap > .prose ol{max-width:72ch}
+.field select option{background:var(--sea-2);color:#fff}

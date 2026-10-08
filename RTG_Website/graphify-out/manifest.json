@@ -6,9 +6,9 @@
     "semantic_hash": ""
   },
   "package.json": {
-    "mtime": 1791370409.7999742,
-    "seen": 1791370493.514169,
-    "ast_hash": "f744987ea2e22ef257656fc0117c640e",
+    "mtime": 1791445301.3420835,
+    "seen": 1791445537.123424,
+    "ast_hash": "0051df20dbfdee491435ff7487fa552e",
     "semantic_hash": ""
   },
   "research/rtg-website/rtg-website/assets/js/rtg.js": {
@@ -57,12 +57,6 @@
     "mtime": 1791370238.2970805,
     "seen": 1791370493.514169,
     "ast_hash": "686f019cf78f79926214d4962029417e",
-    "semantic_hash": ""
-  },
-  "scripts/screenshot-pages.mjs": {
-    "mtime": 1791370238.386561,
-    "seen": 1791370493.514169,
-    "ast_hash": "9c464d8d646642287f91530f5be5ca07",
     "semantic_hash": ""
   },
   "src/components/blocks/Breadcrumbs.astro": {
@@ -132,9 +126,9 @@
     "semantic_hash": ""
   },
   "src/components/blocks/FeaturedCase.astro": {
-    "mtime": 1789738924.4794044,
-    "seen": 1789914311.2928,
-    "ast_hash": "07d4e098bd75360f45b779c899b640f8",
+    "mtime": 1791444521.1792798,
+    "seen": 1791445537.123424,
+    "ast_hash": "2da55a21ba9e298d8bb33f356c1f8ec8",
     "semantic_hash": ""
   },
   "src/components/blocks/Fig.astro": {
@@ -186,9 +180,9 @@
     "semantic_hash": ""
   },
   "src/components/blocks/PageHero.astro": {
-    "mtime": 1789918684.1148522,
-    "seen": 1791367962.076949,
-    "ast_hash": "8b13829dd1556fc49a48f2276d51b65c",
+    "mtime": 1791444995.0160992,
+    "seen": 1791445537.123424,
+    "ast_hash": "e340686551004a36b8dc029cfc02c77c",
     "semantic_hash": ""
   },
   "src/components/blocks/PinnedStage.astro": {
@@ -258,9 +252,9 @@
     "semantic_hash": ""
   },
   "src/components/blocks/StepList.astro": {
-    "mtime": 1787243316.7626503,
-    "seen": 1789731804.2681696,
-    "ast_hash": "bb3f6c7fc2c23025204c59e5210199b0",
+    "mtime": 1791444521.1812897,
+    "seen": 1791445537.123424,
+    "ast_hash": "421cb9d99b00e2a26991e2d0b9f88bac",
     "semantic_hash": ""
   },
   "src/components/blocks/TagList.astro": {
@@ -288,9 +282,9 @@
     "semantic_hash": ""
   },
   "src/components/home/Hero.astro": {
-    "mtime": 1791367770.1625347,
-    "seen": 1791367962.076949,
-    "ast_hash": "08b07cb0273dfbcc2eda9e0ebfc6255e",
+    "mtime": 1791445441.2572937,
+    "seen": 1791445537.123424,
+    "ast_hash": "57aa1659616423bab027b41e614291b5",
     "semantic_hash": ""
   },
   "src/components/home/LifecycleSteps.astro": {
@@ -305,16 +299,10 @@
     "ast_hash": "33d5d6852a714ca4b720b5421b55e958",
     "semantic_hash": ""
   },
-  "src/components/home/Marquee.astro": {
-    "mtime": 1787013738.9094067,
-    "seen": 1789731804.2681696,
-    "ast_hash": "f2af89f6c69abd45e79341d2c7dd2cc5",
-    "semantic_hash": ""
-  },
   "src/components/home/ProofCase.astro": {
-    "mtime": 1791180063.214491,
-    "seen": 1791367962.076949,
-    "ast_hash": "d027f2bec36b725be0338e1a3c16e779",
+    "mtime": 1791444521.1829414,
+    "seen": 1791445537.123424,
+    "ast_hash": "e52a31267277c914160c2dbc9f5aad06",
     "semantic_hash": ""
   },
   "src/components/home/SectorTrack.astro": {
@@ -330,21 +318,21 @@
     "semantic_hash": ""
   },
   "src/components/home/Stats.astro": {
-    "mtime": 1787243316.764659,
-    "seen": 1789731804.2681696,
-    "ast_hash": "f597f8e1eb0521ca61b51cb3c5d84102",
+    "mtime": 1791444521.1844468,
+    "seen": 1791445537.123424,
+    "ast_hash": "e2fcb223c092dc6d8dedd5a9cac4e7c7",
     "semantic_hash": ""
   },
   "src/components/home/TierLadder.astro": {
-    "mtime": 1791367806.6798263,
-    "seen": 1791367962.076949,
-    "ast_hash": "720f8e610c15bba02ca339e4da22cdcd",
+    "mtime": 1791444718.7833254,
+    "seen": 1791445537.123424,
+    "ast_hash": "fe83c2066b8854a813fdc67776d35aad",
     "semantic_hash": ""
   },
   "src/components/site/Footer.astro": {
-    "mtime": 1789917859.5900948,
-    "seen": 1791367962.076949,
-    "ast_hash": "f00d45aac7a5b20e272b0746c34884e0",
+    "mtime": 1791444824.0641825,
+    "seen": 1791445537.123424,
+    "ast_hash": "af114eee5989e2591cda42e30dbe782c",
     "semantic_hash": ""
   },
   "src/components/site/Header.astro": {
@@ -426,9 +414,9 @@
     "semantic_hash": ""
   },
   "src/components/templates/Product.astro": {
-    "mtime": 1789919615.1867445,
-    "seen": 1791367962.076949,
-    "ast_hash": "d0f43995d81f0a54ba57dd57013eb21c",
+    "mtime": 1791445515.6546712,
+    "seen": 1791445537.123424,
+    "ast_hash": "7b0cd546b57c100bc892eecca70ad78e",
     "semantic_hash": ""
   },
   "src/components/templates/Proof.astro": {
@@ -492,9 +480,9 @@
     "semantic_hash": ""
   },
   "src/layouts/Base.astro": {
-    "mtime": 1791370237.0606396,
-    "seen": 1791370493.514169,
-    "ast_hash": "8d96372ff82b41fbf333d30acb945b57",
+    "mtime": 1791444823.9380708,
+    "seen": 1791445537.123424,
+    "ast_hash": "e1a1d6ed648f54c36aa0fc367fa9916d",
     "semantic_hash": ""
   },
   "src/lib/blocks.ts": {
@@ -516,9 +504,9 @@
     "semantic_hash": ""
   },
   "src/lib/home-scroll.ts": {
-    "mtime": 1791370914.3236048,
-    "seen": 1791371033.9325883,
-    "ast_hash": "092ba23b757f68388f4939abe8c79e7e",
+    "mtime": 1791444858.3007114,
+    "seen": 1791445537.123424,
+    "ast_hash": "5590c1de261c4756df8355e69a47e260",
     "semantic_hash": ""
   },
   "src/lib/mdx.ts": {
@@ -540,8 +528,8 @@
     "semantic_hash": ""
   },
   "src/lib/rtg3d.ts": {
-    "mtime": 1791370765.8981514,
-    "seen": 1791371033.9325883,
+    "mtime": 1791371672.3949256,
+    "seen": 1791445537.123424,
     "ast_hash": "1fb6791583ee03bc76b2378e1430fc04",
     "semantic_hash": ""
   },
@@ -564,9 +552,9 @@
     "semantic_hash": ""
   },
   "src/pages/index.astro": {
-    "mtime": 1789738945.5712636,
-    "seen": 1789914311.2928,
-    "ast_hash": "ce0eb6698ace3819473cb7b2a278b0a3",
+    "mtime": 1791444823.9604065,
+    "seen": 1791445537.123424,
+    "ast_hash": "627f4e1a858a97410765d81702e9d1a3",
     "semantic_hash": ""
   },
   "tsconfig.json": {
@@ -576,9 +564,9 @@
     "semantic_hash": ""
   },
   "CLAUDE.md": {
-    "mtime": 1791370485.2843833,
-    "seen": 1791370493.514169,
-    "ast_hash": "9157aea0aa6349b615e5c8f8782976c6",
+    "mtime": 1791445261.912561,
+    "seen": 1791445537.123424,
+    "ast_hash": "f8b6ffdd30afd78fdf574d9d7ef436de",
     "semantic_hash": ""
   },
   "README.md": {
@@ -1791,6 +1779,30 @@
     "mtime": 1791370309.000759,
     "seen": 1791370493.514169,
     "ast_hash": "e3dbe24f2951466236d85de1d69275a9",
+    "semantic_hash": ""
+  },
+  "src/components/site/DepthGauge.astro": {
+    "mtime": 1791444746.9469378,
+    "seen": 1791445537.123424,
+    "ast_hash": "3890e485d9e5d9bbe3096e126422d3fc",
+    "semantic_hash": ""
+  },
+  "src/components/site/Waterline.astro": {
+    "mtime": 1791444995.0379512,
+    "seen": 1791445537.123424,
+    "ast_hash": "b0dc444ade513e9448627f2bf0c6d112",
+    "semantic_hash": ""
+  },
+  "src/lib/depth.ts": {
+    "mtime": 1791444746.9829712,
+    "seen": 1791445537.123424,
+    "ast_hash": "abe76d5cb392d7c75003a2366b5f209a",
+    "semantic_hash": ""
+  },
+  ".impeccable/surfaces/src-pages-index-astro.md": {
+    "mtime": 1791445441.2800813,
+    "seen": 1791445537.123424,
+    "ast_hash": "d56e2c2646dd68eee7fcf6e4b2d0653c",
     "semantic_hash": ""
   }
 }

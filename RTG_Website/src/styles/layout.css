@@ -1,20 +1,19 @@
 /* Layout: rhythm, asymmetry and overlap for the shared blocks. Loaded after surfaces.css. */
 
 /* ---------- whitespace ---------- */
-.sec{padding:clamp(80px,9vw,140px) 0 clamp(88px,10vw,152px)}
-.sec.sm{padding:clamp(64px,7vw,104px) 0 clamp(72px,8vw,112px)}
-.phero + .sec,.phero + .sec.sm{padding-top:clamp(56px,6vw,96px)}
+.sec{padding:clamp(52px,6vw,92px) 0}
+.sec.sm{padding:clamp(40px,4.6vw,68px) 0}
+.phero + .sec,.phero + .sec.sm{padding-top:clamp(36px,4vw,60px)}
 .sec.off + .sec.off,.sec.navy + .sec.navy{padding-top:0}
 .sec:has(> .wrap > .prose:empty):not(:has(> .wrap > :not(.prose))){padding:0}
 .sec:has(> .wrap > .two > .prose:empty):not(:has(> .wrap > .two > :not(.prose))){padding:0}
 
 /* ---------- section heads: asymmetric ---------- */
 .sechd{display:grid;grid-template-columns:minmax(0,1fr);column-gap:clamp(32px,6vw,96px);
-  margin-bottom:clamp(40px,5vw,72px);padding-top:32px;border-top:2px solid var(--navy)}
-.navy .sechd{border-top-color:var(--red)}
+  margin-bottom:clamp(26px,3.2vw,44px);padding-top:24px;border-top:1px solid var(--rule)}
 .sechd > *{max-width:none}
 .sechd .d2,.sechd .d3{letter-spacing:-.04em;line-height:1.02;max-width:16ch}
-.sechd .d2{font-size:clamp(38px,6.4vw,96px)}
+.sechd .d2{font-size:clamp(30px,4.2vw,60px)}
 .sechd .lede{margin:0!important;max-width:40ch}
 @media (min-width:901px){
   .sechd{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);align-items:end}
@@ -26,65 +25,52 @@
 /* ---------- feature rows: overlap, offsets, caption plate ---------- */
 .frow{overflow:visible;position:relative;z-index:1}
 .frow-grid{gap:clamp(40px,6vw,110px)}
-.frow-copy h2{font-size:clamp(34px,5vw,72px);letter-spacing:-.04em;line-height:1.02;max-width:14ch}
+.frow-copy h2{font-size:clamp(28px,3.6vw,52px);letter-spacing:-.04em;line-height:1.02;max-width:14ch}
 @media (min-width:901px){
   .frow-media{margin-bottom:calc(-1 * clamp(40px,6vw,88px));margin-top:calc(-1 * clamp(24px,3vw,44px));
-    transform:translateX(clamp(0px,2vw,36px))}
-  .frow-rev .frow-media{transform:translateX(calc(-1 * clamp(0px,2vw,36px)))}
-  .frow-media .frow-plate{border-radius:20px;box-shadow:0 30px 60px -28px rgba(3,29,91,.45)}
-  .frow-media::after{content:"";position:absolute;left:-14px;bottom:-14px;width:38%;height:38%;
-    border-left:3px solid var(--red);border-bottom:3px solid var(--red);border-radius:0 0 0 20px;
-    pointer-events:none;z-index:-1}
-  .frow-rev .frow-media::after{left:auto;right:-14px;border-left:0;border-right:3px solid var(--red);
-    border-radius:0 0 20px 0}
+}
+  .frow-media .frow-plate{border-radius:20px;}
 }
 .frow-media:has(.frow-plate span,.frow-plate figcaption)::before{content:none}
 
 /* ---------- stats / proof bar ---------- */
 .stats{background:transparent;border:0;border-radius:0;gap:0;
-  border-top:2px solid var(--navy);grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr))}
-.stat{background:transparent;padding:36px 28px 40px;border-left:1px solid var(--line)}
+  border-top:2px solid var(--ink);grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr))}
+.stat{background:transparent;padding:36px 28px 40px;border-left:1px solid var(--rule)}
 .stat:first-child{border-left:0;padding-left:0}
 .stat b{font-size:clamp(52px,6.4vw,96px);letter-spacing:-.04em;margin-bottom:16px}
-.stat:nth-child(2) b .u,.stat b.accent{color:var(--red)}
-.stats .stat:first-child b{color:var(--red)}
-.stats .stat:first-child b .u{color:var(--navy)}
+.stat:nth-child(2) b .u,.stat b.accent{color:var(--accent)}
+.stats .stat:first-child b{color:var(--accent)}
+.stats .stat:first-child b .u{color:var(--ink)}
 .stats.inv{background:transparent;border-top-color:var(--red)}
 .stats.inv .stat{border-left-color:rgba(255,255,255,.18)}
 .stats.inv .stat:first-child b{color:#fff}
-.stats.inv .stat:first-child b .u{color:var(--red);opacity:1}
+.stats.inv .stat:first-child b .u{color:var(--accent);opacity:1}
 .stats.compact .stat{padding:28px 24px}
 .frow-copy .stats{grid-auto-flow:row;grid-template-columns:repeat(auto-fit,minmax(min(100%,120px),1fr))}
 .frow-copy .stat{padding:20px 16px}
 .frow-copy .stat b{font-size:clamp(30px,3.2vw,48px)}
 @media (max-width:560px){
-  .stat,.stat:first-child{padding:28px 0 28px 0;border-left:0;border-bottom:1px solid var(--line)}
+  .stat,.stat:first-child{padding:28px 0 28px 0;border-left:0;border-bottom:1px solid var(--rule)}
 }
 
 /* ---------- CTA band: full-bleed closing panel ---------- */
-.sec:has(> .wrap > .cta){padding:0;background:var(--navy);overflow:clip;position:relative;isolation:isolate}
+.sec:has(> .wrap > .cta){padding:0;background:none;overflow:clip;position:relative;isolation:isolate}
 .sec:has(> .wrap > .cta)::before{content:none}
 .sec:has(> .wrap > .cta) > .wrap{max-width:none;padding:0}
-.cta{border-radius:0;background:
-    radial-gradient(60% 120% at 100% 0%,rgba(171,50,65,.22) 0%,transparent 60%),
-    var(--navy);
-  padding:clamp(88px,11vw,168px) max(var(--gut),calc((100vw - var(--wrap))/2 + var(--gut)));
-  border-top:4px solid var(--red);gap:clamp(32px,5vw,72px)}
-.cta::after{right:-6%;bottom:auto;top:50%;transform:translateY(-50%);width:clamp(320px,42vw,620px);
-  height:clamp(320px,42vw,620px);border:1px solid rgba(255,255,255,.22);opacity:1}
-.cta::before{content:"";position:absolute;right:calc(-6% + 60px);top:50%;transform:translateY(-50%);
-  width:clamp(200px,28vw,420px);height:clamp(200px,28vw,420px);border-radius:50%;
-  border:1px solid rgba(171,50,65,.7);pointer-events:none}
-.cta .d3{font-size:clamp(40px,6.4vw,96px);letter-spacing:-.04em;line-height:1.02;max-width:14ch}
+.cta{border-radius:0;background:none;
+  padding:clamp(52px,6.5vw,96px) max(var(--gut),calc((100vw - var(--wrap))/2 + var(--gut)));
+  border-top:1px solid var(--rule);gap:clamp(32px,5vw,72px)}
+.cta .d3{font-size:clamp(30px,4.4vw,60px);letter-spacing:-.04em;line-height:1.02;max-width:14ch}
 .cta .btn{padding-block:18px}
 @media (max-width:700px){.cta{padding:72px var(--gut)}}
 
 /* ---------- page hero by template ---------- */
-.phero h1{max-width:16ch;font-size:clamp(40px,6.8vw,96px);letter-spacing:-.04em}
-.phero-in{padding-bottom:clamp(56px,7vw,104px)}
-.phero[data-tpl="Sector"]{min-height:clamp(600px,88svh,980px)}
-.phero[data-tpl="Sector"] h1{max-width:13ch;font-size:clamp(44px,7.6vw,96px)}
-.phero[data-tpl="Product"]{min-height:clamp(540px,78svh,900px)}
+.phero h1{max-width:18ch;font-size:clamp(36px,5.2vw,76px);letter-spacing:-.04em}
+.phero-in{padding-bottom:clamp(36px,4.6vw,64px)}
+.phero[data-tpl="Sector"]{min-height:clamp(420px,58svh,640px)}
+.phero[data-tpl="Sector"] h1{max-width:14ch}
+.phero[data-tpl="Product"]{min-height:clamp(400px,54svh,600px)}
 .phero[data-tpl="Product"] .phero-in{display:grid;grid-template-columns:minmax(0,1fr);}
 .phero[data-tpl="Product"] .phero-media img{object-position:70% center}
 @media (min-width:901px){
@@ -100,10 +86,10 @@
 .strack-rail > *{width:370px}
 .strack .ecard{min-height:430px;padding:32px 30px;border-radius:20px;background:rgba(255,255,255,.06);
   border-color:rgba(255,255,255,.16);justify-content:space-between;
-  box-shadow:0 24px 48px -18px rgba(0,8,32,.65);
+  
   transition:background .35s var(--e),border-color .35s var(--e),transform .35s var(--e),box-shadow .35s var(--e)}
 .strack .ecard:hover{background:var(--red);border-color:var(--red);transform:translateY(-8px);
-  box-shadow:0 34px 60px -20px rgba(171,50,65,.6)}
+  }
 .strack .ecard:focus-visible{outline:3px solid #fff;outline-offset:3px}
 .strack .ecard .lc-n{font-family:var(--f-d);font-weight:800;font-size:44px;letter-spacing:-.04em;
   line-height:1;text-transform:none;color:rgba(255,255,255,.9);margin-bottom:0}
@@ -118,10 +104,10 @@
    overlaps. Rows are separated by hairlines, not vertical dividers, so the
    left edge stays aligned whatever the column count. */
 .stats{grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));column-gap:32px;
-  box-shadow:none;overflow:visible}
-.stats .stat,.stats .stat:first-child{padding:32px 0 36px;border-left:0;border-bottom:0;border-top:1px solid var(--line);
+  overflow:visible}
+.stats .stat,.stats .stat:first-child{padding:22px 0 24px;border-left:0;border-bottom:0;border-top:1px solid var(--rule);
   margin-top:-1px}
-.stats .stat b{font-size:clamp(40px,4.4vw,64px);white-space:nowrap}
+.stats .stat b{font-size:clamp(32px,3.4vw,50px);white-space:nowrap}
 .stats.inv .stat{border-top-color:rgba(255,255,255,.18)}
 .frow-copy .stats{grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));column-gap:20px}
 .frow-copy .stats .stat b{font-size:clamp(26px,2.4vw,36px)}
@@ -132,7 +118,6 @@
 .stats:not(.frow-copy .stats){grid-template-columns:repeat(3,minmax(0,1fr))}
 .stats:not(.frow-copy .stats):has(> .stat:nth-child(2):last-child){grid-template-columns:repeat(2,minmax(0,1fr))}
 .stats:not(.frow-copy .stats):has(> .stat:nth-child(4):last-child){grid-template-columns:repeat(4,minmax(0,1fr))}
-.stats .stat,.stats .stat:first-child{margin-top:0;border-top:2px solid var(--navy)}
-.stats.inv .stat,.stats.inv .stat:first-child{border-top-color:var(--red)}
+.stats .stat,.stats .stat:first-child{margin-top:0;border-top:1px solid var(--rule)}
 @media (max-width:900px){.stats:not(.frow-copy .stats),.stats:not(.frow-copy .stats):has(> .stat:nth-child(4):last-child){grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:520px){.stats:not(.frow-copy .stats),.stats:not(.frow-copy .stats):has(> .stat:nth-child(4):last-child),.stats:not(.frow-copy .stats):has(> .stat:nth-child(2):last-child){grid-template-columns:minmax(0,1fr)}}

@@ -16,7 +16,7 @@ import { isNumericStat, statDigits, statSuffix } from '@lib/blocks';
                 {statSuffix(s.value)}
               </>
             ) : (
-              <Fragment set:html={s.value.replace('/', '<span style="color:var(--red)">/</span>')} />
+              <Fragment set:html={s.value.replace('/', '<span style="color:var(--accent)">/</span>')} />
             )}
           </b>
           <span>{s.label}</span>

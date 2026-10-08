@@ -141,7 +141,8 @@ src/
   lib/mdx.ts              mdxComponents map (Gap, Fig, Note, SpecTable...)
                           every MDX body gets with no import.
   styles/                 tokens.css (global), blocks.css (every non-Home
-                          page), home.css (homepage only).
+                          page), home.css (homepage only), ocean.css
+                          (the water, waterline, depth gauge, seabed).
   pages/[...slug].astro   The routing dispatcher — see below.
   pages/index.astro, 404.astro  The two explicit route files.
 scripts/                 Page-map regeneration and pre-deploy audits.
@@ -277,25 +278,47 @@ enforces it and **fails the build**.
 
 ## 7. Design system
 
-Palette taken from the live RTG stylesheet. Roughly **70% white, 25% navy, 5% red**.
+The site is an ocean descent. The homepage opens above the water (pale sky,
+navy type), crosses an animated waterline, and every page then darkens
+continuously to the seabed at the footer. A depth gauge on the right edge reads
+the descent, from 0 m to `PROOF.cptDepthM`.
+
+**The descent is one background, not per-section colours**: `<main>` carries a
+single gradient (`--sea-0` → `--sea-1` → `--sea-2`, `src/styles/ocean.css`) and
+every section sits transparent on it. Do not give a section its own opaque
+background. `Section`'s `tone="off"` / `tone="navy"` are faint translucent panels.
+
+Palette is the brand navy and red from the live RTG stylesheet, unchanged.
 
 | Token | Value | Use |
 |---|---|---|
-| `--navy` | `#031d5b` | All headings and body type; full-bleed inverted sections. |
-| `--red` | `#AB3241` | Accent only: one word in a headline, primary buttons, mono labels, bullets. |
-| `--white` | `#FFFFFF` | The dominant canvas. |
-| `--off` | `#F5F6F8` | Alternating section backgrounds. |
-| `--line` | `#DFE3EA` | Hairline borders. |
-| `--muted` | `#5A6478` | Body text on white. |
+| `--navy` | `#031d5b` | The water at mid-depth; type above the waterline. |
+| `--red` | `#AB3241` | Fills and marks only: primary buttons, rules, bullets, the gauge bob. Never type on navy (about 2.3:1). |
+| `--sky` | `#EEF2FA` | Above the waterline: homepage hero and the header bar. |
+| `--sea-0` / `--sea-1` / `--sea-2` | `#17409a` / navy / `#010a24` | Surface, mid-water, seabed. `--sea-0` is the lightest ground white type sits on. |
+| `--ink`, `--ink-2` | white, white 76% | Text. Always use these, never `--navy` or `--muted`, for type. |
+| `--rule`, `--panel`, `--panel-2` | white alphas / dark alpha | Hairlines and faint panels. |
+| `--accent` | white under water, red above | Accented type. |
+
+The semantic tokens default to their under-water values. The `.above` class
+(homepage hero) and `.hdr` restore the light values, so the same component CSS
+works in both. The header stays a light bar on every page because the logo has
+no reversed version.
 
 - **Type**: Archivo 800 for display (letter-spacing −3.5%, line-height 1.06 — it
   was 0.92, which is tight enough that a descender nearly touches the cap of
   the line below on any two-line heading),
   Inter for body, JetBrains Mono for small technical labels. Sentence case,
   never all-caps headings.
-- **No gradients, no drop shadows on cards, no stock-photo collages.** Cards use
+- **Minimal surfaces: no drop shadows, no textures, no glows, no stock-photo
+  collages.** The one gradient is the water itself. Cards use
   1px hairline borders and 16px radius. Buttons are fully rounded pills.
-- **Never navy text on navy.** Never red for long runs of body text.
+- **Never navy text on navy, never red text on navy.**
+- **Motion budget, five pieces:** waves, the vessel arriving, the hoist line, the
+  depth gauge, surface light fading with depth. Masked reveals are the only
+  entrance motion. Do not add scattered hover effects.
+- **Compact.** Pages are meant to be short: one idea per screen. Section padding
+  and display sizes were cut for this; do not grow them back.
 - Masked line reveals (`.rl`) need `padding-bottom` inside the mask or descenders
   clip — this is already handled in `tokens.css`, do not remove it.
 - Target **WCAG 2.2 AA**. One `h1` per page, skip link, visible focus, full

@@ -1,0 +1,22 @@
+---
+/**
+ * The depth gauge: a rail down the right edge with a bob that tracks scroll,
+ * and a readout of the current depth. Decorative — it restates scroll
+ * position, so it is aria-hidden and nothing is only available here.
+ *
+ * The scale runs from the surface to RTG's proven working depth, read from
+ * PROOF so the figure can never drift from the one quoted on the site.
+ * Driven by initDepth() (src/lib/depth.ts), which sets --depth on this
+ * element only; .gauge-light is the surface light that fades as you descend.
+ */
+import { PROOF } from '@data/site.js';
+---
+
+<div class="gauge" id="gauge" data-max={PROOF.cptDepthM} aria-hidden="true" transition:persist>
+  <div class="gauge-light"></div>
+  <div class="gauge-rail">
+    {[0, 25, 50, 75, 100].map((t) => <i style={`top:${t}%`} />)}
+    <span class="gauge-bob"></span>
+  </div>
+  <p class="gauge-read"><b id="gaugeM">0 m</b><span id="gaugeZ">Surface</span></p>
+</div>

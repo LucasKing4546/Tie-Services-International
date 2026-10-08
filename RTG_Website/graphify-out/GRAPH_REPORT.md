@@ -1,17 +1,17 @@
-# Graph Report - RTG_Website  (2026-10-07)
+# Graph Report - RTG_Website  (2026-10-08)
 
 ## Corpus Check
-- 176 files · ~3,092,421 words
+- 178 files · ~3,093,246 words
 - Verdict: corpus is large enough that graph structure adds value.
-- Unclassified: 10 file(s) not represented in the graph (top: .css 8, (none) 1, .xml 1)
+- Unclassified: 11 file(s) not represented in the graph (top: .css 9, (none) 1, .xml 1)
 
 ## Summary
-- 881 nodes · 1355 edges · 123 communities (65 shown, 58 thin omitted)
+- 882 nodes · 1352 edges · 126 communities (67 shown, 59 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 10 edges (avg confidence: 0.88)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `e733f6c4`
+- Built from commit: `7a153c50`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -36,7 +36,7 @@
 - How it runs
 - p-03.mdx
 - audit-protection.mjs
-- screenshot-pages.mjs
+- strip-exif.mjs
 - gen-stubs.mjs
 - c-00.mdx
 - c-01.mdx
@@ -95,7 +95,7 @@
 - 8. DARK MODE PROTOCOL
 - 7. DIAL DEFINITIONS (Technical Reference)
 - devDependencies
-- 1. THE THREE DIALS (Core Configuration)
+- ProofBar.astro
 - vercel.json
 - src_assets_contact_x01_team
 - src_assets_sectors_s02_pipeline_survey
@@ -104,6 +104,8 @@
 - src_assets_sectors_s03_wind_array
 - src_assets_sectors_s05_research_deck
 - src_assets_sectors_s05_research_vessel
+- 0. BRIEF INFERENCE (Read the Room Before Anything Else)
+- Site-wide ocean world (homepage first surface)
 
 ## God Nodes (most connected - your core abstractions)
 1. `[]` - 33 edges
@@ -120,10 +122,10 @@
 ## Surprising Connections (you probably didn't know these)
 - `Routing` --references--> `entryFor()`  [INFERRED]
   CLAUDE.md → src/lib/content.ts
-- `9.2 Steps, per page` --references--> `pagesByTemplate()`  [INFERRED]
-  CLAUDE.md → src/data/pages.ts
 - `3D` --references--> `createViewer()`  [INFERRED]
   CLAUDE.md → src/lib/rtg3d.ts
+- `9.2 Steps, per page` --references--> `pagesByTemplate()`  [INFERRED]
+  CLAUDE.md → src/data/pages.ts
 - `ResolvedPage` --references--> `PageMeta`  [EXTRACTED]
   src/lib/page.ts → src/data/pages.ts
 - `tiles` --calls--> `mediaFor()`  [EXTRACTED]
@@ -132,14 +134,14 @@
 ## Import Cycles
 - None detected.
 
-## Communities (123 total, 58 thin omitted)
+## Communities (126 total, 59 thin omitted)
 
 ### Community 0 - "blocks.ts"
-Cohesion: 0.08
-Nodes (57): trail, jsonLdPage, siblings, jobPostings, [], jsonLdPage, [], contactPoints (+49 more)
+Cohesion: 0.09
+Nodes (54): trail, jsonLdPage, siblings, jobPostings, [], jsonLdPage, [], contactPoints (+46 more)
 
 ### Community 1 - "site.js"
-Cohesion: 0.17
+Cohesion: 0.15
 Nodes (6): year, FOOTER_NAV, LEGAL_NAV, NAV, PROOF, PROOF_DISPLAY
 
 ### Community 2 - "media.ts"
@@ -147,24 +149,24 @@ Cohesion: 0.04
 Nodes (45): src_assets_equipment_e00_deck_spread, src_assets_equipment_e00_system_overview, src_assets_equipment_e02_deployment_frame, src_assets_equipment_e02_ds01_guarded, src_assets_equipment_e02_ds01_panel, src_assets_equipment_e02_ds38_hpu_b, src_assets_equipment_e02_ds38_winch, src_assets_equipment_e02_hpu (+37 more)
 
 ### Community 3 - "rtg3d.ts"
-Cohesion: 0.11
-Nodes (37): 3D, 7. Design system, three, CraneRig, destroyHome(), initHome(), finishedWinch(), frame() (+29 more)
+Cohesion: 0.12
+Nodes (35): three, CraneRig, destroyHome(), initHome(), finishedWinch(), frame(), makeStage(), onResize() (+27 more)
 
 ### Community 4 - "build.py"
 Cohesion: 0.08
 Nodes (24): collections, datetime, glob, html, json, os, re, build() (+16 more)
 
 ### Community 5 - "RTG Website — project guide for Claude Code"
-Cohesion: 0.07
-Nodes (27): 1. What this is, 2. The workflow — follow this for every feature and every page, 3. Stack and conventions, 4. The 17 templates, 5. Known gaps — do not paper over these, 6. What must never be published, 8. Tone of voice, 9.1 How the site actually takes real content (+19 more)
+Cohesion: 0.06
+Nodes (30): 1. What this is, 2. The workflow — follow this for every feature and every page, 3. Stack and conventions, 3D, 4. The 17 templates, 5. Known gaps — do not paper over these, 6. What must never be published, 7. Design system (+22 more)
 
 ### Community 6 - "package.json"
 Cohesion: 0.15
 Nodes (12): description, name, private, type, version, astro, @astrojs/check, @fontsource/jetbrains-mono (+4 more)
 
 ### Community 7 - "home.ts"
-Cohesion: 0.13
-Nodes (12): doubled, EQUIPMENT, HERO_PROOF, HERO_STATS, LIFECYCLE, MACHINES, MARQUEE, SECTORS (+4 more)
+Cohesion: 0.12
+Nodes (13): src_assets_home_home_fleet_vessel, bg, EQUIPMENT, HERO_PROOF, HERO_STATS, LIFECYCLE, MACHINES, MARQUEE (+5 more)
 
 ### Community 8 - "RTG design language"
 Cohesion: 0.10
@@ -211,16 +213,16 @@ Cohesion: 0.22
 Nodes (8): And a spares recommendation, How it was proved, The assessment came first, The documentation was reissued, The result, The situation, What was reused, What was upgraded
 
 ### Community 19 - "audit-protection.mjs"
-Cohesion: 0.25
-Nodes (7): BANNED, ds, EXIF, exts, hits, root, roots
+Cohesion: 0.22
+Nodes (8): ref_node_path, BANNED, ds, EXIF, exts, hits, root, roots
 
-### Community 20 - "screenshot-pages.mjs"
-Cohesion: 0.32
-Nodes (7): ref_node_fs, playwright, main(), OUT_DIR, readSitemapUrls(), root, slugFor()
+### Community 20 - "strip-exif.mjs"
+Cohesion: 0.33
+Nodes (5): ref_node_fs, ref_sharp, EXIF, root, walk()
 
 ### Community 21 - "gen-stubs.mjs"
-Cohesion: 0.18
-Nodes (10): ref_node_path, ref_node_url, ref_sharp, outDir, root, SKIP, EXIF, root (+2 more)
+Cohesion: 0.33
+Nodes (5): ref_node_url, outDir, root, SKIP, PAGES
 
 ### Community 22 - "c-00.mdx"
 Cohesion: 0.33
@@ -315,12 +317,12 @@ Cohesion: 0.50
 Nodes (3): Known issues, Telling us about a problem, The standard we target
 
 ### Community 90 - "ImageSlot.astro"
-Cohesion: 0.19
-Nodes (6): src_assets_home_home_fleet_vessel, photo, tiles, bg, mediaFor(), MotionHint
+Cohesion: 0.32
+Nodes (4): photo, tiles, mediaFor(), MotionHint
 
 ### Community 96 - "Base.astro"
-Cohesion: 0.06
-Nodes (32): ref_fontsource_jetbrains_mono_400_css, ref_fontsource_jetbrains_mono_500_css, ref_fontsource_variable_archivo_files_archivo_latin_wght_normal_woff2_url, ref_fontsource_variable_archivo_wght_css, ref_fontsource_variable_inter_files_inter_latin_wght_normal_woff2_url, ref_fontsource_variable_inter_wght_css, ancestorsOf(), OFF_MAP_IDS (+24 more)
+Cohesion: 0.05
+Nodes (35): ref_fontsource_jetbrains_mono_400_css, ref_fontsource_jetbrains_mono_500_css, ref_fontsource_variable_archivo_files_archivo_latin_wght_normal_woff2_url, ref_fontsource_variable_archivo_wght_css, ref_fontsource_variable_inter_files_inter_latin_wght_normal_woff2_url, ref_fontsource_variable_inter_wght_css, ancestorsOf(), OFF_MAP_IDS (+27 more)
 
 ### Community 97 - "Appendix B - Canonical Sources (read these before reinventing)"
 Cohesion: 0.09
@@ -339,12 +341,12 @@ Cohesion: 0.20
 Nodes (10): 10. REFERENCE VOCABULARY (Pattern Names the Agent Should Know), Animation Library Choice, Cards & Containers, Galleries & Media, Hero Paradigms, Layout & Grids, Micro-Interactions & Effects, Navigation & Menus (+2 more)
 
 ### Community 101 - "tasteskill: Anti-Slop Frontend Skill"
-Cohesion: 0.18
-Nodes (11): 0.A Read these signals first, 0.B Output a one-line "Design Read" before generating, 0. BRIEF INFERENCE (Read the Room Before Anything Else), 0.C If the brief is ambiguous, ask one question, do not guess, 0.D Anti-Default Discipline, 13. OUT OF SCOPE, 14. FINAL PRE-FLIGHT CHECK, 2.A When to reach for a real design system (use official packages) (+3 more)
+Cohesion: 0.20
+Nodes (10): 13. OUT OF SCOPE, 14. FINAL PRE-FLIGHT CHECK, 1.A Dial Inference (design read → dial values), 1.B Use-Case Presets, 1.C How the Dials Drive Output, 1. THE THREE DIALS (Core Configuration), 2.A When to reach for a real design system (use official packages), 2.B When the brief is an aesthetic, not a system (+2 more)
 
 ### Community 102 - "scripts"
-Cohesion: 0.18
-Nodes (11): scripts, audit, audit:protection, audit:seo, build, check, dev, pagemap (+3 more)
+Cohesion: 0.20
+Nodes (10): scripts, audit, audit:protection, audit:seo, build, check, dev, pagemap (+2 more)
 
 ### Community 103 - "9. AI TELLS (Forbidden Patterns)"
 Cohesion: 0.25
@@ -387,17 +389,25 @@ Cohesion: 0.50
 Nodes (4): 7. DIAL DEFINITIONS (Technical Reference), DESIGN_VARIANCE (Level 1-10), MOTION_INTENSITY (Level 1-10), VISUAL_DENSITY (Level 1-10)
 
 ### Community 113 - "devDependencies"
-Cohesion: 0.33
-Nodes (6): devDependencies, @astrojs/check, playwright, @types/three, typescript, xlsx
+Cohesion: 0.40
+Nodes (5): devDependencies, @astrojs/check, @types/three, typescript, xlsx
 
-### Community 114 - "1. THE THREE DIALS (Core Configuration)"
+### Community 114 - "ProofBar.astro"
+Cohesion: 0.60
+Nodes (3): isNumericStat(), statDigits(), statSuffix()
+
+### Community 123 - "0. BRIEF INFERENCE (Read the Room Before Anything Else)"
+Cohesion: 0.40
+Nodes (5): 0.A Read these signals first, 0.B Output a one-line "Design Read" before generating, 0. BRIEF INFERENCE (Read the Room Before Anything Else), 0.C If the brief is ambiguous, ask one question, do not guess, 0.D Anti-Default Discipline
+
+### Community 124 - "Site-wide ocean world (homepage first surface)"
 Cohesion: 0.50
-Nodes (4): 1.A Dial Inference (design read → dial values), 1.B Use-Case Presets, 1.C How the Dials Drive Output, 1. THE THREE DIALS (Core Configuration)
+Nodes (3): Direction contract, Site-wide ocean world (homepage first surface), Unresolved
 
 ## Knowledge Gaps
-- **435 isolated node(s):** `pagesDir`, `pagesTs`, `unfinished`, `name`, `version` (+430 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 596 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **58 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **433 isolated node(s):** `pagesDir`, `pagesTs`, `unfinished`, `name`, `version` (+428 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 597 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **59 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
@@ -405,14 +415,14 @@ _Questions this graph is uniquely positioned to answer:_
 - **Why does `[]` connect `blocks.ts` to `Base.astro`, `ImageSlot.astro`, `media.ts`, `orientationOf`?**
   _High betweenness centrality (0.035) - this node is a cross-community bridge._
 - **Why does `astro` connect `package.json` to `media.ts`?**
-  _High betweenness centrality (0.023) - this node is a cross-community bridge._
-- **Why does `RTG Website — project guide for Claude Code` connect `RTG Website — project guide for Claude Code` to `rtg3d.ts`?**
-  _High betweenness centrality (0.023) - this node is a cross-community bridge._
+  _High betweenness centrality (0.021) - this node is a cross-community bridge._
 - **What connects `pagesDir`, `pagesTs`, `unfinished` to the rest of the system?**
-  _435 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _433 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `blocks.ts` be split into smaller, more focused modules?**
-  _Cohesion score 0.07935108446482102 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.08554455445544555 - nodes in this community are weakly interconnected._
 - **Should `media.ts` be split into smaller, more focused modules?**
   _Cohesion score 0.043478260869565216 - nodes in this community are weakly interconnected._
 - **Should `rtg3d.ts` be split into smaller, more focused modules?**
-  _Cohesion score 0.1141025641025641 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.12375533428165007 - nodes in this community are weakly interconnected._
+- **Should `build.py` be split into smaller, more focused modules?**
+  _Cohesion score 0.0766488413547237 - nodes in this community are weakly interconnected._

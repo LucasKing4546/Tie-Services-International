@@ -9,6 +9,7 @@ import { resolvePage } from '@lib/page';
 import { entryFor, UNFINISHED } from '@lib/content';
 import Header from '@components/site/Header.astro';
 import Footer from '@components/site/Footer.astro';
+import DepthGauge from '@components/site/DepthGauge.astro';
 import '@fontsource-variable/archivo/wght.css';
 import '@fontsource-variable/inter/wght.css';
 import '@fontsource/jetbrains-mono/400.css';
@@ -22,6 +23,7 @@ import '@/styles/layout.css';
 import '@/styles/parts-site.css';
 import '@/styles/parts-content.css';
 import '@/styles/parts-sections.css';
+import '@/styles/ocean.css';
 
 interface Props {
   /** Page Map id, e.g. 'S-02'. Unknown ids throw at build time. */
@@ -99,11 +101,13 @@ const robots = offMap || unfinished ? 'noindex, follow' : 'index, follow, max-im
       <slot />
     </main>
     <Footer />
+    <DepthGauge />
     <slot name="body-end" />
 
     <script>
       import { initMotion } from '@lib/motion';
       import { initFormPrefill } from '@lib/forms';
+      import { initDepth } from '@lib/depth';
       // astro:page-load fires on first load and after every client-side
       // navigation — the one place reveals, counters and parallax get
       // booted. Don't call initMotion() again from a template: home-scroll.ts
@@ -111,17 +115,7 @@ const robots = offMap || unfinished ? 'noindex, follow' : 'index, follow, max-im
       // 3D on top.
       document.addEventListener('astro:page-load', initMotion);
       document.addEventListener('astro:page-load', initFormPrefill);
-    </script>
-
-    <script is:inline>
-      if (matchMedia('(pointer:fine) and (prefers-reduced-motion:no-preference)').matches)
-        document.addEventListener('pointermove', function (e) {
-          var c = e.target.closest && e.target.closest('.ecard');
-          if (!c) return;
-          var r = c.getBoundingClientRect();
-          c.style.setProperty('--mx', e.clientX - r.left + 'px');
-          c.style.setProperty('--my', e.clientY - r.top + 'px');
-        }, { passive: true });
+      document.addEventListener('astro:page-load', initDepth);
     </script>
 
     {/* Chatra live chat, same ID as production — but nothing third-party

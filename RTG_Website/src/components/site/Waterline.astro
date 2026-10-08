@@ -1,0 +1,29 @@
+---
+/**
+ * The sea surface: sky above, three wave layers below, the front one the
+ * exact colour the water starts at (--sea-0) so it runs straight into
+ * <main>'s gradient with no seam. Each layer is twice the width of its box
+ * and slides half its own width, so the loop never jumps. CSS only — see
+ * .waterline in ocean.css.
+ *
+ * `slim` is the inner-page version: a short band under the header, so every
+ * page reads as starting just below the surface.
+ */
+interface Props { slim?: boolean }
+const { slim = false } = Astro.props;
+
+/** A closed wave path across a 1200-wide box, `n` crests, peak-to-trough `a`. */
+const wave = (n: number, a: number) => {
+  const half = 1200 / n / 2;
+  let d = `M0 ${a} Q${half / 2} 0 ${half} ${a}`;
+  for (let x = half * 2; x <= 1200; x += half) d += ` T${x} ${a}`;
+  return `${d} V60 H0Z`;
+};
+---
+
+<div class:list={['waterline', { slim }]} aria-hidden="true">
+  <svg class="wv wv-back" viewBox="0 0 1200 60" preserveAspectRatio="none"><path d={wave(4, 24)} /></svg>
+  <slot />
+  <svg class="wv wv-mid" viewBox="0 0 1200 60" preserveAspectRatio="none"><path d={wave(6, 18)} /></svg>
+  <svg class="wv wv-front" viewBox="0 0 1200 60" preserveAspectRatio="none"><path d={wave(8, 13)} /></svg>
+</div>
