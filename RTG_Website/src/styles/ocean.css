@@ -35,7 +35,7 @@ html{scrollbar-color:var(--sea-0) var(--sea-2)}
 .waterline.slim .wv-mid{height:39px}
 
 /* ---------- depth gauge (DepthGauge.astro) ---------- */
-.gauge{--depth:0;position:fixed;inset:0;z-index:300;pointer-events:none}
+.gauge{--depth:0;--rail:26svh;position:fixed;inset:0;z-index:300;pointer-events:none}
 /* Light from the surface: strongest at the top of the page, gone by a third
    of the way down. */
 .gauge-light{position:absolute;inset:0 -8% auto -8%;height:86svh;mix-blend-mode:screen;
@@ -45,18 +45,18 @@ html{scrollbar-color:var(--sea-0) var(--sea-2)}
   mask-image:linear-gradient(to bottom,#000,transparent);
   opacity:calc(1 - var(--depth) * 2.2);animation:shafts 14s ease-in-out infinite alternate}
 @keyframes shafts{from{transform:translateX(-3%)}to{transform:translateX(3%)}}
-.gauge-rail{position:absolute;right:13px;top:50%;width:2px;height:44svh;margin-top:-22svh;
+.gauge-rail{position:absolute;right:13px;top:50%;width:2px;height:var(--rail);margin-top:calc(var(--rail) / -2);
   border-radius:2px;background:color-mix(in oklab,var(--sea-0) 45%,var(--sky))}
 .gauge-rail i{position:absolute;right:-4px;width:10px;height:1px;background:inherit}
-.gauge-bob{position:absolute;left:-4px;top:calc(var(--depth) * 100%);width:10px;height:10px;margin-top:-5px;
+.gauge-bob{position:absolute;left:-3px;top:calc(var(--depth) * 100%);width:8px;height:8px;margin-top:-4px;
   border-radius:50%;background:var(--red);outline:2px solid #fff}
 /* The readout rides beside the bob, so the figure is always at the point on
    the rail it describes. */
-.gauge-read{position:absolute;right:32px;top:calc(50% - 22svh + var(--depth) * 44svh);transform:translateY(-50%);margin:0;max-width:none;padding:9px 13px 10px;
-  border-radius:10px;background:rgba(1,10,36,.82);border:1px solid rgba(255,255,255,.16);
-  font-family:var(--f-m);font-size:10.5px;line-height:1.35;letter-spacing:.1em;text-transform:uppercase;
-  color:rgba(255,255,255,.78);text-align:right;min-width:128px}
-.gauge-read b{display:block;font-size:17px;font-weight:500;letter-spacing:0;color:#fff;
+.gauge-read{position:absolute;right:28px;top:calc(50% - var(--rail) / 2 + var(--depth) * var(--rail));transform:translateY(-50%);margin:0;max-width:none;padding:5px 9px 6px;
+  border-radius:7px;background:rgba(1,10,36,.82);border:1px solid rgba(255,255,255,.16);
+  font-family:var(--f-m);font-size:9px;line-height:1.3;letter-spacing:.08em;text-transform:uppercase;
+  color:rgba(255,255,255,.78);text-align:right;white-space:nowrap}
+.gauge-read b{display:block;font-size:12.5px;font-weight:500;letter-spacing:0;color:#fff;
   font-variant-numeric:tabular-nums;text-transform:none}
 @media (max-width:900px){
   .gauge-rail{display:none}

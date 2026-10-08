@@ -13,7 +13,7 @@ let off: (() => void) | undefined;
  *  own first heading, cut to fit the readout. */
 export function zoneOf(el: HTMLElement): string {
   const text = el.dataset.zone ?? el.querySelector('h2, h3')?.textContent?.replace(/\s+/g, ' ').trim() ?? '';
-  return text.length > 26 ? `${text.slice(0, 25).trimEnd()}…` : text;
+  return text.length > 20 ? `${text.slice(0, 19).trimEnd()}…` : text;
 }
 
 export function initDepth(): void {
