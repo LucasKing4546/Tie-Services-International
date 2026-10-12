@@ -235,7 +235,7 @@
       "file_type": "code",
       "norm_label": "machine",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L45"
+      "source_location": "L46"
     },
     {
       "id": "src_lib_home_scroll_stage",
@@ -248,7 +248,7 @@
       "file_type": "code",
       "norm_label": "stage",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L29"
+      "source_location": "L30"
     },
     {
       "id": "src_lib_home_scroll_tieredmodel",
@@ -261,7 +261,7 @@
       "file_type": "code",
       "norm_label": "tieredmodel",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L40"
+      "source_location": "L41"
     },
     {
       "id": "src_lib_home_scroll_viewer",
@@ -274,7 +274,7 @@
       "file_type": "code",
       "norm_label": "viewer",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L26"
+      "source_location": "L27"
     },
     {
       "id": "src_lib_rtg3d_mat",
@@ -314,19 +314,6 @@
       "norm_label": "vieweropts",
       "source_file": "src/lib/rtg3d.ts",
       "source_location": "L432"
-    },
-    {
-      "id": "src_data_home_stat",
-      "label": "Stat",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "home.ts",
-      "file_type": "code",
-      "norm_label": "stat",
-      "source_file": "src/data/home.ts",
-      "source_location": "L4"
     },
     {
       "id": "src_lib_blocks_motionhint",
@@ -403,6 +390,18 @@
       "source_location": "L1046"
     },
     {
+      "id": "src_lib_blocks_endingcta",
+      "label": "endingCta()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "blocks.ts",
+      "file_type": "code",
+      "norm_label": "endingcta()",
+      "source_file": "src/lib/blocks.ts",
+      "source_location": "L79"
+    },
+    {
       "id": "src_lib_blocks_isnumericstat",
       "label": "isNumericStat()",
       "_callable": true,
@@ -439,18 +438,6 @@
       "source_location": "L74"
     },
     {
-      "id": "src_lib_content_byid",
-      "label": "byId()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "blocks.ts",
-      "file_type": "code",
-      "norm_label": "byid()",
-      "source_file": "src/lib/content.ts",
-      "source_location": "L18"
-    },
-    {
       "id": "src_lib_content_cardfrom",
       "label": "cardFrom()",
       "_callable": true,
@@ -461,42 +448,6 @@
       "norm_label": "cardfrom()",
       "source_file": "src/lib/content.ts",
       "source_location": "L49"
-    },
-    {
-      "id": "src_lib_content_childentries",
-      "label": "childEntries()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "blocks.ts",
-      "file_type": "code",
-      "norm_label": "childentries()",
-      "source_file": "src/lib/content.ts",
-      "source_location": "L40"
-    },
-    {
-      "id": "src_lib_content_entriesfor",
-      "label": "entriesFor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "blocks.ts",
-      "file_type": "code",
-      "norm_label": "entriesfor()",
-      "source_file": "src/lib/content.ts",
-      "source_location": "L33"
-    },
-    {
-      "id": "src_lib_content_entryfor",
-      "label": "entryFor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "blocks.ts",
-      "file_type": "code",
-      "norm_label": "entryfor()",
-      "source_file": "src/lib/content.ts",
-      "source_location": "L25"
     },
     {
       "id": "src_lib_content_hasbody",
@@ -739,6 +690,18 @@
       "source_location": "L60"
     },
     {
+      "id": "src_data_media_orientationof",
+      "label": "orientationOf()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "media.ts",
+      "file_type": "code",
+      "norm_label": "orientationof()",
+      "source_file": "src/data/media.ts",
+      "source_location": "L162"
+    },
+    {
       "id": "scripts_strip_exif_walk",
       "label": "walk()",
       "_callable": true,
@@ -760,7 +723,7 @@
       "file_type": "code",
       "norm_label": "destroyhome()",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L57"
+      "source_location": "L58"
     },
     {
       "id": "src_lib_home_scroll_inithome",
@@ -772,7 +735,7 @@
       "file_type": "code",
       "norm_label": "inithome()",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L77"
+      "source_location": "L78"
     },
     {
       "id": "src_lib_home_scroll_inithome_finishedwinch",
@@ -784,7 +747,7 @@
       "file_type": "code",
       "norm_label": "finishedwinch()",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L141"
+      "source_location": "L132"
     },
     {
       "id": "src_lib_home_scroll_inithome_frame",
@@ -796,7 +759,7 @@
       "file_type": "code",
       "norm_label": "frame()",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L252"
+      "source_location": "L240"
     },
     {
       "id": "src_lib_home_scroll_inithome_loop",
@@ -808,7 +771,7 @@
       "file_type": "code",
       "norm_label": "loop()",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L299"
+      "source_location": "L285"
     },
     {
       "id": "src_lib_home_scroll_inithome_makestage",
@@ -820,7 +783,7 @@
       "file_type": "code",
       "norm_label": "makestage()",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L120"
+      "source_location": "L111"
     },
     {
       "id": "src_lib_home_scroll_inithome_onresize",
@@ -832,7 +795,7 @@
       "file_type": "code",
       "norm_label": "onresize()",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L280"
+      "source_location": "L268"
     },
     {
       "id": "src_lib_home_scroll_inithome_onscroll",
@@ -844,7 +807,7 @@
       "file_type": "code",
       "norm_label": "onscroll()",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L279"
+      "source_location": "L267"
     },
     {
       "id": "src_lib_home_scroll_inithome_setmodel",
@@ -856,7 +819,7 @@
       "file_type": "code",
       "norm_label": "setmodel()",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L191"
+      "source_location": "L179"
     },
     {
       "id": "src_lib_home_scroll_inithome_sizehz",
@@ -868,7 +831,7 @@
       "file_type": "code",
       "norm_label": "sizehz()",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L245"
+      "source_location": "L233"
     },
     {
       "id": "src_lib_rtg3d_box",
@@ -1267,6 +1230,54 @@
       "source_location": "L1042"
     },
     {
+      "id": "src_lib_content_byid",
+      "label": "byId()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "RTG Website \u2014 project guide for Claude Code",
+      "file_type": "code",
+      "norm_label": "byid()",
+      "source_file": "src/lib/content.ts",
+      "source_location": "L18"
+    },
+    {
+      "id": "src_lib_content_childentries",
+      "label": "childEntries()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "RTG Website \u2014 project guide for Claude Code",
+      "file_type": "code",
+      "norm_label": "childentries()",
+      "source_file": "src/lib/content.ts",
+      "source_location": "L40"
+    },
+    {
+      "id": "src_lib_content_entriesfor",
+      "label": "entriesFor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "RTG Website \u2014 project guide for Claude Code",
+      "file_type": "code",
+      "norm_label": "entriesfor()",
+      "source_file": "src/lib/content.ts",
+      "source_location": "L33"
+    },
+    {
+      "id": "src_lib_content_entryfor",
+      "label": "entryFor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "RTG Website \u2014 project guide for Claude Code",
+      "file_type": "code",
+      "norm_label": "entryfor()",
+      "source_file": "src/lib/content.ts",
+      "source_location": "L25"
+    },
+    {
       "id": "src_components_site_waterline_wave",
       "label": "wave()",
       "_callable": true,
@@ -1303,18 +1314,6 @@
       "source_location": "L148"
     },
     {
-      "id": "src_data_media_orientationof",
-      "label": "orientationOf()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 92,
-      "community_name": "orientationOf",
-      "file_type": "code",
-      "norm_label": "orientationof()",
-      "source_file": "src/data/media.ts",
-      "source_location": "L162"
-    },
-    {
       "id": "src_data_pages_ancestorsof",
       "label": "ancestorsOf()",
       "_callable": true,
@@ -1339,14 +1338,14 @@
       "source_location": "L24"
     },
     {
-      "id": "src_lib_depth_zoneat",
-      "label": "zoneAt()",
+      "id": "src_lib_depth_zoneof",
+      "label": "zoneOf()",
       "_callable": true,
       "_origin": "ast",
       "community": 96,
       "community_name": "Base.astro",
       "file_type": "code",
-      "norm_label": "zoneat()",
+      "norm_label": "zoneof()",
       "source_file": "src/lib/depth.ts",
       "source_location": "L19"
     },
@@ -1821,17 +1820,6 @@
       "source_location": "L1"
     },
     {
-      "id": "src_components_home_stats",
-      "label": "Stats.astro",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "blocks.ts",
-      "file_type": "code",
-      "norm_label": "stats.astro",
-      "source_file": "src/components/home/Stats.astro",
-      "source_location": "L1"
-    },
-    {
       "id": "src_components_templates_about",
       "label": "About.astro",
       "_origin": "ast",
@@ -1994,7 +1982,7 @@
       "file_type": "code",
       "norm_label": "children",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L38"
+      "source_location": "L40"
     },
     {
       "id": "src_components_templates_hub_extracards",
@@ -2005,7 +1993,7 @@
       "file_type": "code",
       "norm_label": "extracards",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L39"
+      "source_location": "L41"
     },
     {
       "id": "src_components_templates_hub_griditems",
@@ -2016,7 +2004,7 @@
       "file_type": "code",
       "norm_label": "griditems",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L57"
+      "source_location": "L59"
     },
     {
       "id": "src_components_templates_ladder",
@@ -2082,7 +2070,7 @@
       "file_type": "code",
       "norm_label": "additionalproperty",
       "source_file": "src/components/templates/Product.astro",
-      "source_location": "L43"
+      "source_location": "L47"
     },
     {
       "id": "src_components_templates_proof",
@@ -2115,18 +2103,7 @@
       "file_type": "code",
       "norm_label": "[]",
       "source_file": "src/components/templates/Sector.astro",
-      "source_location": "L37"
-    },
-    {
-      "id": "src_components_templates_sector_bandmedia",
-      "label": "bandMedia",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "blocks.ts",
-      "file_type": "code",
-      "norm_label": "bandmedia",
-      "source_file": "src/components/templates/Sector.astro",
-      "source_location": "L52"
+      "source_location": "L35"
     },
     {
       "id": "src_components_templates_service",
@@ -2360,6 +2337,17 @@
       "source_location": "L20"
     },
     {
+      "id": "src_data_site_proof",
+      "label": "PROOF",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "site.js",
+      "file_type": "code",
+      "norm_label": "proof",
+      "source_file": "src/data/site.js",
+      "source_location": "L69"
+    },
+    {
       "id": "src_data_site_proof_display",
       "label": "PROOF_DISPLAY",
       "_origin": "ast",
@@ -2368,7 +2356,7 @@
       "file_type": "code",
       "norm_label": "proof_display",
       "source_file": "src/data/site.js",
-      "source_location": "L84"
+      "source_location": "L85"
     },
     {
       "id": "scripts_build_page_map",
@@ -3939,7 +3927,7 @@
       "file_type": "code",
       "norm_label": "collections",
       "source_file": "src/content.config.ts",
-      "source_location": "L270"
+      "source_location": "L271"
     },
     {
       "id": "src_content_config_formfield",
@@ -4878,6 +4866,17 @@
       "source_location": "L1"
     },
     {
+      "id": "src_data_media_media",
+      "label": "MEDIA",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "media.ts",
+      "file_type": "code",
+      "norm_label": "media",
+      "source_file": "src/data/media.ts",
+      "source_location": "L98"
+    },
+    {
       "id": "scripts_strip_exif",
       "label": "strip-exif.mjs",
       "_origin": "ast",
@@ -5458,78 +5457,52 @@
       "label": "e-01.mdx",
       "_origin": "ast",
       "community": 27,
-      "community_name": "One winch, five duties",
+      "community_name": "e-01.mdx",
       "file_type": "document",
       "frontmatter": {
         "pageId": "E-01",
-        "eyebrow": "Equipment",
-        "lede": "Five families, one set of engineering principles: grooved drums, controlled level wind, honest brake margins and a lead-off angle that suits your deck.",
-        "proofBar": true,
-        "cta": {
-          "heading": "Request the winch datasheets",
-          "body": "Full specifications including the general arrangement are issued on request.",
-          "primary": {
-            "label": "Request datasheets",
-            "href": "/resources/datasheets/"
+        "lede": "Five winch families built to one engineering standard.",
+        "draft": false,
+        "hero": {
+          "ctas": [
+            {
+              "label": "Request datasheets",
+              "href": "/resources/datasheets/"
+            },
+            {
+              "label": "Talk to an engineer",
+              "href": "/contact/"
+            }
+          ]
+        },
+        "cards": [
+          {
+            "pageId": "E-02",
+            "blurb": "Piston, gravity, box and vibrocoring; CPT deployment."
           },
-          "secondary": {
-            "label": "Talk to an engineer",
-            "href": "/contact/"
+          {
+            "pageId": "E-03",
+            "blurb": "CTD, side scan, magnetometer, sub-bottom profiler."
+          },
+          {
+            "pageId": "E-04",
+            "blurb": "Streamer and source handling."
+          },
+          {
+            "pageId": "E-05",
+            "blurb": "Armoured cable and umbilical handling."
+          },
+          {
+            "pageId": "E-06",
+            "blurb": "Mooring, towing and general deck handling."
           }
-        }
+        ],
+        "proofBar": true
       },
       "node_kind": "page",
       "norm_label": "e-01.mdx",
       "source_file": "src/content/pages/e-01.mdx",
       "source_location": "L1"
-    },
-    {
-      "id": "src_content_pages_e_01_electric_or_hydraulic",
-      "label": "Electric or hydraulic",
-      "_origin": "ast",
-      "community": 27,
-      "community_name": "One winch, five duties",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "electric or hydraulic",
-      "source_file": "src/content/pages/e-01.mdx",
-      "source_location": "L21"
-    },
-    {
-      "id": "src_content_pages_e_01_one_winch_five_duties",
-      "label": "One winch, five duties",
-      "_origin": "ast",
-      "community": 27,
-      "community_name": "One winch, five duties",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "one winch, five duties",
-      "source_file": "src/content/pages/e-01.mdx",
-      "source_location": "L13"
-    },
-    {
-      "id": "src_content_pages_e_01_the_figure_that_actually_matters",
-      "label": "The figure that actually matters",
-      "_origin": "ast",
-      "community": 27,
-      "community_name": "One winch, five duties",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "the figure that actually matters",
-      "source_file": "src/content/pages/e-01.mdx",
-      "source_location": "L17"
-    },
-    {
-      "id": "src_content_pages_e_01_the_five_families",
-      "label": "The five families",
-      "_origin": "ast",
-      "community": 27,
-      "community_name": "One winch, five duties",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "the five families",
-      "source_file": "src/content/pages/e-01.mdx",
-      "source_location": "L25"
     },
     {
       "id": "src_content_pages_s_02",
@@ -5540,35 +5513,29 @@
       "file_type": "document",
       "frontmatter": {
         "pageId": "S-02",
-        "eyebrow": "Sectors \u00b7 Marine geotechnical",
-        "lede": "Every metre of relative motion between a captive tool and a moving vessel is absorbed by the cable. Handling systems that manage that are the difference between a completed campaign and a lost tool.",
+        "lede": "Handling systems for piston, gravity, box and vibrocorers and CPT units, with constant tension control to protect the umbilical while the tool is fixed in the seabed.",
+        "draft": false,
         "hero": {
           "media": {
             "ref": "IMG-S02-C",
             "brief": "Handling gantry lowering a geotechnical frame over the stern in a rising sea."
-          }
+          },
+          "ctas": [
+            {
+              "label": "Talk to an engineer",
+              "href": "/contact/"
+            },
+            {
+              "label": "Request the datasheet",
+              "href": "/resources/datasheets/?equipment=Geotechnical%20and%20coring%20winches"
+            }
+          ]
         },
         "related": [
           "E-02",
           "E-07",
           "E-12"
-        ],
-        "featured": {
-          "pageId": "P-03",
-          "cta": "Read the case study"
-        },
-        "cta": {
-          "heading": "Working out what a geotechnical spread needs?",
-          "body": "Send us the tool, the target depth and the vessel. We will come back with a configuration and tell you what we still need to know.",
-          "primary": {
-            "label": "Talk to an engineer",
-            "href": "/contact/request-a-quotation/"
-          },
-          "secondary": {
-            "label": "Request the datasheet",
-            "href": "/resources/datasheets/"
-          }
-        }
+        ]
       },
       "node_kind": "page",
       "norm_label": "s-02.mdx",
@@ -5576,52 +5543,52 @@
       "source_location": "L1"
     },
     {
-      "id": "src_content_pages_s_02_a_captive_tool_is_a_hostile_geometry",
-      "label": "A captive tool is a hostile geometry",
+      "id": "src_content_pages_s_02_fig_of_cptdepthm_working_depth_record",
+      "label": "<Fig of=\"cptDepthM\" /> working-depth record",
       "_origin": "ast",
       "community": 28,
       "community_name": "s-02.mdx",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "a captive tool is a hostile geometry",
+      "norm_label": "<fig of=\"cptdepthm\" /> working-depth record",
+      "source_file": "src/content/pages/s-02.mdx",
+      "source_location": "L29"
+    },
+    {
+      "id": "src_content_pages_s_02_sizing_at_depth",
+      "label": "Sizing at depth",
+      "_origin": "ast",
+      "community": 28,
+      "community_name": "s-02.mdx",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "sizing at depth",
+      "source_file": "src/content/pages/s-02.mdx",
+      "source_location": "L33"
+    },
+    {
+      "id": "src_content_pages_s_02_track_record",
+      "label": "Track record",
+      "_origin": "ast",
+      "community": 28,
+      "community_name": "s-02.mdx",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "track record",
+      "source_file": "src/content/pages/s-02.mdx",
+      "source_location": "L37"
+    },
+    {
+      "id": "src_content_pages_s_02_what_we_supply",
+      "label": "What we supply",
+      "_origin": "ast",
+      "community": 28,
+      "community_name": "s-02.mdx",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "what we supply",
       "source_file": "src/content/pages/s-02.mdx",
       "source_location": "L20"
-    },
-    {
-      "id": "src_content_pages_s_02_three_thousand_metres",
-      "label": "Three thousand metres",
-      "_origin": "ast",
-      "community": 28,
-      "community_name": "s-02.mdx",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "three thousand metres",
-      "source_file": "src/content/pages/s-02.mdx",
-      "source_location": "L38"
-    },
-    {
-      "id": "src_content_pages_s_02_what_we_build_for_it",
-      "label": "What we build for it",
-      "_origin": "ast",
-      "community": 28,
-      "community_name": "s-02.mdx",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "what we build for it",
-      "source_file": "src/content/pages/s-02.mdx",
-      "source_location": "L28"
-    },
-    {
-      "id": "src_content_pages_s_02_why_your_winch_gets_weaker_and_faster_as_it_spools_in",
-      "label": "Why your winch gets weaker and faster as it spools in",
-      "_origin": "ast",
-      "community": 28,
-      "community_name": "s-02.mdx",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "why your winch gets weaker and faster as it spools in",
-      "source_file": "src/content/pages/s-02.mdx",
-      "source_location": "L48"
     },
     {
       "id": "src_content_pages_a_01",
@@ -5690,6 +5657,17 @@
       "norm_label": "where we are",
       "source_file": "src/content/pages/a-01.mdx",
       "source_location": "L26"
+    },
+    {
+      "id": "src_data_home_machines",
+      "label": "MACHINES",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "rtg3d.ts",
+      "file_type": "code",
+      "norm_label": "machines",
+      "source_file": "src/data/home.ts",
+      "source_location": "L46"
     },
     {
       "id": "src_lib_home_scroll",
@@ -5828,8 +5806,8 @@
       "file_type": "document",
       "frontmatter": {
         "pageId": "S-06",
-        "eyebrow": "Sectors \u00b7 Subsea, ROV &amp; diving",
-        "lede": "The vehicle is the expensive part of the spread. The handling system is the part that decides whether it gets in the water.",
+        "lede": "ROV LARS, umbilical and tow winches, and personnel-rated handling, built to class and proven under load.",
+        "draft": false,
         "hero": {
           "media": {
             "ref": "IMG-S06-A",
@@ -5841,11 +5819,16 @@
               "href": "/contact/"
             },
             {
-              "label": "Request the datasheet",
-              "href": "/resources/datasheets/?equipment=ROV%2C%20tow%20and%20umbilical%20winches"
+              "label": "Launch and recovery systems",
+              "href": "/equipment/launch-recovery-systems/"
             }
           ]
         },
+        "related": [
+          "E-05",
+          "E-07",
+          "E-03"
+        ],
         "media": [
           {
             "ref": "IMG-S06-B",
@@ -5855,24 +5838,7 @@
             "ref": "IMG-S06-C",
             "brief": "Dive and ROV spread rigged on deck."
           }
-        ],
-        "related": [
-          "E-04",
-          "E-03",
-          "E-07"
-        ],
-        "cta": {
-          "heading": "Tell us the vehicle and the sea state",
-          "body": "The tether, the launch window you need to keep, and whether the system carries people. Those three set the design, and two of them are usually missing from the enquiry.",
-          "primary": {
-            "label": "Talk to an engineer",
-            "href": "/contact/"
-          },
-          "secondary": {
-            "label": "Launch and recovery systems",
-            "href": "/equipment/launch-recovery-systems/"
-          }
-        }
+        ]
       },
       "node_kind": "page",
       "norm_label": "s-06.mdx",
@@ -5880,52 +5846,28 @@
       "source_location": "L1"
     },
     {
-      "id": "src_content_pages_s_06_availability_is_the_specification",
-      "label": "Availability is the specification",
+      "id": "src_content_pages_s_06_clients",
+      "label": "Clients",
       "_origin": "ast",
       "community": 31,
       "community_name": "s-06.mdx",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "availability is the specification",
+      "norm_label": "clients",
       "source_file": "src/content/pages/s-06.mdx",
-      "source_location": "L28"
+      "source_location": "L35"
     },
     {
-      "id": "src_content_pages_s_06_certification_at_delivery_is_not_certification_in_service",
-      "label": "Certification at delivery is not certification in service",
+      "id": "src_content_pages_s_06_what_we_supply",
+      "label": "What we supply",
       "_origin": "ast",
       "community": 31,
       "community_name": "s-06.mdx",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "certification at delivery is not certification in service",
+      "norm_label": "what we supply",
       "source_file": "src/content/pages/s-06.mdx",
-      "source_location": "L51"
-    },
-    {
-      "id": "src_content_pages_s_06_handling_people_is_a_different_design_problem",
-      "label": "Handling people is a different design problem",
-      "_origin": "ast",
-      "community": 31,
-      "community_name": "s-06.mdx",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "handling people is a different design problem",
-      "source_file": "src/content/pages/s-06.mdx",
-      "source_location": "L41"
-    },
-    {
-      "id": "src_content_pages_s_06_why_we_do_not_supply_the_slip_ring",
-      "label": "Why we do not supply the slip ring",
-      "_origin": "ast",
-      "community": 31,
-      "community_name": "s-06.mdx",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "why we do not supply the slip ring",
-      "source_file": "src/content/pages/s-06.mdx",
-      "source_location": "L58"
+      "source_location": "L25"
     },
     {
       "id": "src_content_pages_c_06",
@@ -5988,29 +5930,23 @@
       "file_type": "document",
       "frontmatter": {
         "pageId": "E-02",
-        "eyebrow": "Equipment \u00b7 Winches",
-        "lede": "Built for the moment the tool stops moving and the ship does not. Lebus grooved drums, controlled level wind, and tension control that protects the cable rather than the schedule.",
+        "lede": "Winches for coring and CPT deployment, with constant tension control to protect the umbilical while the tool is fixed in the seabed.",
+        "draft": false,
         "hero": {
           "media": {
             "ref": "IMG-E02-D",
             "brief": "Electric winch with its guards fitted, three-quarter view."
-          }
-        },
-        "product": {
-          "category": "Marine winch",
-          "drive": [
-            "Electric",
-            "Hydraulic"
-          ],
-          "applications": [
-            "Piston coring",
-            "Gravity coring",
-            "Box coring",
-            "Vibrocoring",
-            "CPT deployment",
-            "Seabed sampling"
-          ],
-          "datasheetPageId": "R-01"
+          },
+          "ctas": [
+            {
+              "label": "Request the datasheet",
+              "href": "/resources/datasheets/?equipment=Geotechnical%20and%20coring%20winches"
+            },
+            {
+              "label": "Request a quotation",
+              "href": "/contact/request-a-quotation/"
+            }
+          ]
         },
         "specs": [
           {
@@ -6186,52 +6122,27 @@
             ]
           }
         ],
-        "related": [
-          "S-02",
-          "E-01",
-          "P-06"
-        ],
-        "cta": {
-          "heading": "Tell us the duty and we will size it",
-          "body": "Working depth, cable type and load. Three things, and we can come back with a configuration.",
-          "primary": {
-            "label": "Request a quotation",
-            "href": "/contact/request-a-quotation/"
-          },
-          "secondary": {
-            "label": "Talk to an engineer",
-            "href": "/contact/"
-          }
+        "product": {
+          "category": "Marine winch",
+          "drive": [
+            "Electric",
+            "Hydraulic"
+          ],
+          "applications": [
+            "Piston coring",
+            "Gravity coring",
+            "Box coring",
+            "Vibrocoring",
+            "CPT deployment",
+            "Seabed sampling"
+          ],
+          "datasheetPageId": "R-01"
         }
       },
       "node_kind": "page",
       "norm_label": "e-02.mdx",
       "source_file": "src/content/pages/e-02.mdx",
       "source_location": "L1"
-    },
-    {
-      "id": "src_content_pages_e_02_proven",
-      "label": "Proven",
-      "_origin": "ast",
-      "community": 33,
-      "community_name": "e-02.mdx",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "proven",
-      "source_file": "src/content/pages/e-02.mdx",
-      "source_location": "L80"
-    },
-    {
-      "id": "src_content_pages_e_02_why_it_is_built_this_way",
-      "label": "Why it is built this way",
-      "_origin": "ast",
-      "community": 33,
-      "community_name": "e-02.mdx",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "why it is built this way",
-      "source_file": "src/content/pages/e-02.mdx",
-      "source_location": "L70"
     },
     {
       "id": "src_content_pages_s_01",
@@ -6242,8 +6153,8 @@
       "file_type": "document",
       "frontmatter": {
         "pageId": "S-01",
-        "eyebrow": "Sectors \u00b7 Ocean survey &amp; hydrography",
-        "lede": "The survey is not limited by the sensor. It is limited by everything between the sensor and the ship.",
+        "lede": "Winches and launch and recovery systems for CTD, side scan, magnetometer, sub-bottom profiler and deep-tow work, 300 to 4,000 m, electric or hydraulic drive.",
+        "draft": false,
         "hero": {
           "media": {
             "ref": "IMG-S01-B",
@@ -6260,6 +6171,11 @@
             }
           ]
         },
+        "related": [
+          "E-03",
+          "E-05",
+          "E-07"
+        ],
         "media": [
           {
             "ref": "IMG-S01-A",
@@ -6269,58 +6185,7 @@
             "ref": "IMG-S01-C",
             "brief": "Containerised survey spread rigged on deck, ready for mobilisation."
           }
-        ],
-        "related": [
-          "E-02",
-          "E-07",
-          "E-05"
-        ],
-        "featured": {
-          "pageId": "P-02",
-          "cta": "Read the fleet standardisation case"
-        },
-        "steps": [
-          {
-            "n": "01",
-            "title": "Drive resolution",
-            "body": "At two metres a minute a hydraulic drive runs on a very small fraction of full flow, the least linear part of a proportional valve&#x27;s characteristic. Add seal friction and you get stick-slip: the motor holds, breaks free, holds again. On deck it looks like a slight shudder. On the record it is periodic noise at a frequency that has nothing to do with the water column.",
-            "points": [
-              "A closed-loop electric drive with position feedback holds low speed more precisely",
-              "Which is much of why research vessels specify electric, not because it is better in general, but because it is better there"
-            ]
-          },
-          {
-            "n": "02",
-            "title": "Level wind placement and reversal",
-            "body": "At speed a level wind has momentum on its side and the rope more or less falls where it should. At two metres a minute the rope has to be actively placed, turn by turn, and every mechanism&#x27;s backlash shows up as a small lateral hesitation.",
-            "points": [
-              "The moment that matters is the reversal at the flange, where the level wind changes direction and the rope steps across",
-              "Done with slop it puts a tension transient into the cable at every flange, once per wrap, for the whole cast",
-              "Which is precisely the kind of periodic artefact that survives into a processed record"
-            ]
-          },
-          {
-            "n": "03",
-            "title": "Layer change",
-            "body": "As the drum fills, effective radius grows and line pull and speed change with it. What is less discussed is the transition: the moment the rope steps up a layer, effective radius changes abruptly rather than smoothly.",
-            "points": [
-              "At working speeds that transient is lost in the noise",
-              "At two metres a minute it is a visible step in tension, and if you are holding a sensor at a fixed altitude, a step in altitude"
-            ]
-          }
-        ],
-        "cta": {
-          "heading": "Send us your spec and we will answer the three questions",
-          "body": "Minimum controllable line speed, level wind behaviour through the reversal, and how cable out is derived. If you are writing a survey winch specification, those are the lines we would want to see. Send send us what you have and we will tell you what is missing.",
-          "primary": {
-            "label": "Request the datasheet",
-            "href": "/resources/datasheets/?equipment=Survey%20and%20oceanographic%20winches"
-          },
-          "secondary": {
-            "label": "Talk to an engineer",
-            "href": "/contact/"
-          }
-        }
+        ]
       },
       "node_kind": "page",
       "norm_label": "s-01.mdx",
@@ -6328,40 +6193,40 @@
       "source_location": "L1"
     },
     {
-      "id": "src_content_pages_s_01_proven_in_service",
-      "label": "Proven in service",
+      "id": "src_content_pages_s_01_testing",
+      "label": "Testing",
       "_origin": "ast",
       "community": 34,
       "community_name": "s-01.mdx",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "proven in service",
+      "norm_label": "testing",
       "source_file": "src/content/pages/s-01.mdx",
-      "source_location": "L85"
+      "source_location": "L35"
     },
     {
-      "id": "src_content_pages_s_01_the_problem_as_it_usually_gets_described_to_us",
-      "label": "The problem, as it usually gets described to us",
+      "id": "src_content_pages_s_01_track_record",
+      "label": "Track record",
       "_origin": "ast",
       "community": 34,
       "community_name": "s-01.mdx",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "the problem, as it usually gets described to us",
+      "norm_label": "track record",
       "source_file": "src/content/pages/s-01.mdx",
-      "source_location": "L51"
+      "source_location": "L39"
     },
     {
-      "id": "src_content_pages_s_01_what_we_build_for_it",
-      "label": "What we build for it",
+      "id": "src_content_pages_s_01_what_we_supply",
+      "label": "What we supply",
       "_origin": "ast",
       "community": 34,
       "community_name": "s-01.mdx",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "what we build for it",
+      "norm_label": "what we supply",
       "source_file": "src/content/pages/s-01.mdx",
-      "source_location": "L75"
+      "source_location": "L25"
     },
     {
       "id": "src_content_pages_s_04",
@@ -6372,8 +6237,8 @@
       "file_type": "document",
       "frontmatter": {
         "pageId": "S-04",
-        "eyebrow": "Sectors \u00b7 Seismic",
-        "lede": "It is not that anything breaks dramatically. It is that nothing gets a rest.",
+        "lede": "Source and streamer handling winches for 2D and 3D acquisition, supplied as matched spreads that deploy, recover and hold tension together.",
+        "draft": false,
         "hero": {
           "media": {
             "ref": "IMG-S04-B",
@@ -6390,6 +6255,11 @@
             }
           ]
         },
+        "related": [
+          "E-04",
+          "E-05",
+          "E-07"
+        ],
         "media": [
           {
             "ref": "IMG-S04-A",
@@ -6407,24 +6277,7 @@
             "ref": "IMG-S04-E",
             "brief": "Storage reel loaded with streamer gear, on deck mid-spread."
           }
-        ],
-        "related": [
-          "E-05",
-          "E-02",
-          "E-07"
-        ],
-        "cta": {
-          "heading": "Tell us the spread and the rotation",
-          "body": "How long the gear stays in the water, what has to be reachable with it deployed, and how many units have to behave as one. That is the specification for a seismic winch, and it is not the one on most datasheets.",
-          "primary": {
-            "label": "Talk to an engineer",
-            "href": "/contact/"
-          },
-          "secondary": {
-            "label": "Condition assessment",
-            "href": "/lifecycle/condition-assessment/"
-          }
-        }
+        ]
       },
       "node_kind": "page",
       "norm_label": "s-04.mdx",
@@ -6432,28 +6285,28 @@
       "source_location": "L1"
     },
     {
-      "id": "src_content_pages_s_04_a_deck_is_not_one_machine",
-      "label": "A deck is not one machine",
+      "id": "src_content_pages_s_04_duty_rating",
+      "label": "Duty rating",
       "_origin": "ast",
       "community": 35,
       "community_name": "s-04.mdx",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "a deck is not one machine",
+      "norm_label": "duty rating",
       "source_file": "src/content/pages/s-04.mdx",
-      "source_location": "L49"
+      "source_location": "L37"
     },
     {
-      "id": "src_content_pages_s_04_the_problem_as_it_usually_gets_described_to_us",
-      "label": "The problem, as it usually gets described to us",
+      "id": "src_content_pages_s_04_what_we_supply",
+      "label": "What we supply",
       "_origin": "ast",
       "community": 35,
       "community_name": "s-04.mdx",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "the problem, as it usually gets described to us",
+      "norm_label": "what we supply",
       "source_file": "src/content/pages/s-04.mdx",
-      "source_location": "L32"
+      "source_location": "L29"
     },
     {
       "id": "src_content_pages_c_07",
@@ -6576,33 +6429,26 @@
       "file_type": "document",
       "frontmatter": {
         "pageId": "S-03",
-        "eyebrow": "Sectors \u00b7 Offshore wind &amp; subsea cables",
-        "lede": "Cable is laid once and inspected for twenty-five years. The handling system decides which of those two you are paying for.",
+        "lede": "Geotechnical handling for wind-farm site investigation, and self-contained cable tensioners for inter-array, export and interconnector cables.",
+        "draft": false,
         "hero": {
           "ctas": [
             {
               "label": "Talk to an engineer",
               "href": "/contact/"
+            },
+            {
+              "label": "Cable and pipe tensioners",
+              "href": "/equipment/handling-systems/cable-pipe-tensioners/"
             }
           ]
         },
         "related": [
-          "E-06",
+          "E-10",
           "E-02",
-          "E-07"
-        ],
-        "cta": {
-          "heading": "Working a wind array or a cable route?",
-          "body": "Tell us the cable, the tension range and the deck. We will come back with a configuration and tell you what we still need to know.",
-          "primary": {
-            "label": "Talk to an engineer",
-            "href": "/contact/"
-          },
-          "secondary": {
-            "label": "Cable and pipe tensioners",
-            "href": "/equipment/handling-systems/cable-pipe-tensioners/"
-          }
-        }
+          "E-07",
+          "E-06"
+        ]
       },
       "node_kind": "page",
       "norm_label": "s-03.mdx",
@@ -6619,7 +6465,7 @@
       "node_kind": "heading",
       "norm_label": "cable handling",
       "source_file": "src/content/pages/s-03.mdx",
-      "source_location": "L92"
+      "source_location": "L26"
     },
     {
       "id": "src_content_pages_s_03_lead_times",
@@ -6631,19 +6477,7 @@
       "node_kind": "heading",
       "norm_label": "lead times",
       "source_file": "src/content/pages/s-03.mdx",
-      "source_location": "L161"
-    },
-    {
-      "id": "src_content_pages_s_03_self_contained_skids_for_vessels_of_opportunity",
-      "label": "Self-contained skids for vessels of opportunity",
-      "_origin": "ast",
-      "community": 38,
-      "community_name": "s-03.mdx",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "self-contained skids for vessels of opportunity",
-      "source_file": "src/content/pages/s-03.mdx",
-      "source_location": "L126"
+      "source_location": "L40"
     },
     {
       "id": "src_content_pages_s_03_site_investigation",
@@ -6655,19 +6489,31 @@
       "node_kind": "heading",
       "norm_label": "site investigation",
       "source_file": "src/content/pages/s-03.mdx",
-      "source_location": "L61"
+      "source_location": "L18"
     },
     {
-      "id": "src_content_pages_s_03_the_problem_as_it_usually_gets_described_to_us",
-      "label": "The problem, as it usually gets described to us",
+      "id": "src_content_pages_s_03_to_specify_a_tensioner",
+      "label": "To specify a tensioner",
       "_origin": "ast",
       "community": 38,
       "community_name": "s-03.mdx",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "the problem, as it usually gets described to us",
+      "norm_label": "to specify a tensioner",
       "source_file": "src/content/pages/s-03.mdx",
-      "source_location": "L19"
+      "source_location": "L46"
+    },
+    {
+      "id": "src_content_pages_s_03_vessels_of_opportunity",
+      "label": "Vessels of opportunity",
+      "_origin": "ast",
+      "community": 38,
+      "community_name": "s-03.mdx",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "vessels of opportunity",
+      "source_file": "src/content/pages/s-03.mdx",
+      "source_location": "L36"
     },
     {
       "id": "src_content_pages_s_05",
@@ -6678,8 +6524,8 @@
       "file_type": "document",
       "frontmatter": {
         "pageId": "S-05",
-        "eyebrow": "Sectors \u00b7 Oceanographic research",
-        "lede": "A research vessel&#x27;s deck equipment has to serve whatever science is booked on it next, not the science it was specified for.",
+        "lede": "Winches and launch systems for CTD, coring, deep tow and mooring work, 300 to 4,000 m, electric or hydraulic.",
+        "draft": false,
         "hero": {
           "media": {
             "ref": "IMG-S05-C",
@@ -6689,26 +6535,19 @@
             {
               "label": "Talk to an engineer",
               "href": "/contact/"
+            },
+            {
+              "label": "Survey and oceanographic winches",
+              "href": "/equipment/winches/survey-oceanographic/"
             }
           ]
         },
         "related": [
+          "E-03",
           "E-02",
-          "E-07",
-          "E-03"
-        ],
-        "cta": {
-          "heading": "Specifying for a research programme?",
-          "body": "Tell us the range of work the deck has to cover. We will tell you where one machine can serve it and where it cannot.",
-          "primary": {
-            "label": "Talk to an engineer",
-            "href": "/contact/"
-          },
-          "secondary": {
-            "label": "Survey and oceanographic winches",
-            "href": "/equipment/winches/survey-oceanographic/"
-          }
-        }
+          "E-05",
+          "E-07"
+        ]
       },
       "node_kind": "page",
       "norm_label": "s-05.mdx",
@@ -6716,52 +6555,52 @@
       "source_location": "L1"
     },
     {
-      "id": "src_content_pages_s_05_institutions_we_work_with",
-      "label": "Institutions we work with",
+      "id": "src_content_pages_s_05_design_choices",
+      "label": "Design choices",
       "_origin": "ast",
       "community": 39,
       "community_name": "s-05.mdx",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "institutions we work with",
+      "norm_label": "design choices",
       "source_file": "src/content/pages/s-05.mdx",
-      "source_location": "L153"
+      "source_location": "L29"
     },
     {
-      "id": "src_content_pages_s_05_slow_speed_control",
-      "label": "Slow-speed control",
+      "id": "src_content_pages_s_05_testing",
+      "label": "Testing",
       "_origin": "ast",
       "community": 39,
       "community_name": "s-05.mdx",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "slow-speed control",
+      "norm_label": "testing",
       "source_file": "src/content/pages/s-05.mdx",
-      "source_location": "L67"
+      "source_location": "L35"
     },
     {
-      "id": "src_content_pages_s_05_the_range",
-      "label": "The range",
+      "id": "src_content_pages_s_05_what_we_supply",
+      "label": "What we supply",
       "_origin": "ast",
       "community": 39,
       "community_name": "s-05.mdx",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "the range",
+      "norm_label": "what we supply",
       "source_file": "src/content/pages/s-05.mdx",
-      "source_location": "L113"
+      "source_location": "L21"
     },
     {
-      "id": "src_content_pages_s_05_why_the_winch_is_part_of_the_instrument",
-      "label": "Why the winch is part of the instrument",
+      "id": "src_content_pages_s_05_who_we_work_with",
+      "label": "Who we work with",
       "_origin": "ast",
       "community": 39,
       "community_name": "s-05.mdx",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "why the winch is part of the instrument",
+      "norm_label": "who we work with",
       "source_file": "src/content/pages/s-05.mdx",
-      "source_location": "L22"
+      "source_location": "L39"
     },
     {
       "id": "research_rtg_website_rtg_website_site_build_build",
@@ -6860,8 +6699,8 @@
       "file_type": "document",
       "frontmatter": {
         "pageId": "S-07",
-        "eyebrow": "Sectors \u00b7 Defence &amp; government",
-        "lede": "Material traceability, documented weld procedures and a build that survives audit, before anything gets lifted.",
+        "lede": "Class-certified handling systems for naval, coastguard and government research vessels, with the traceability and documentation defence programmes require.",
+        "draft": false,
         "hero": {
           "media": {
             "ref": "IMG-S07-B",
@@ -6878,29 +6717,17 @@
             }
           ]
         },
-        "media": [
-          {
-            "ref": "IMG-S07-C",
-            "brief": "The same A-frame system, guarding and control panel fitted, ready for test."
-          }
-        ],
         "related": [
           "E-02",
           "E-04",
           "E-07"
         ],
-        "cta": {
-          "heading": "Building to a defence specification?",
-          "body": "Tell us the standard and the audit trail you have to satisfy. Certification, traceability and survey during build are in scope from the start.",
-          "primary": {
-            "label": "Talk to an engineer",
-            "href": "/contact/"
-          },
-          "secondary": {
-            "label": "Certifications and approvals",
-            "href": "/yards-integrators/certifications-approvals/"
+        "media": [
+          {
+            "ref": "IMG-S07-C",
+            "brief": "The same A-frame system, guarding and control panel fitted, ready for test."
           }
-        }
+        ]
       },
       "node_kind": "page",
       "norm_label": "s-07.mdx",
@@ -6908,16 +6735,16 @@
       "source_location": "L1"
     },
     {
-      "id": "src_content_pages_s_07_class",
-      "label": "Class",
+      "id": "src_content_pages_s_07_class_and_acceptance",
+      "label": "Class and acceptance",
       "_origin": "ast",
       "community": 40,
       "community_name": "s-07.mdx",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "class",
+      "norm_label": "class and acceptance",
       "source_file": "src/content/pages/s-07.mdx",
-      "source_location": "L130"
+      "source_location": "L32"
     },
     {
       "id": "src_content_pages_s_07_security_of_supply",
@@ -6929,19 +6756,7 @@
       "node_kind": "heading",
       "norm_label": "security of supply",
       "source_file": "src/content/pages/s-07.mdx",
-      "source_location": "L92"
-    },
-    {
-      "id": "src_content_pages_s_07_the_problem_as_it_usually_gets_described_to_us",
-      "label": "The problem, as it usually gets described to us",
-      "_origin": "ast",
-      "community": 40,
-      "community_name": "s-07.mdx",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "the problem, as it usually gets described to us",
-      "source_file": "src/content/pages/s-07.mdx",
-      "source_location": "L26"
+      "source_location": "L39"
     },
     {
       "id": "src_content_pages_s_07_traceability_and_documentation",
@@ -6953,7 +6768,7 @@
       "node_kind": "heading",
       "norm_label": "traceability and documentation",
       "source_file": "src/content/pages/s-07.mdx",
-      "source_location": "L54"
+      "source_location": "L23"
     },
     {
       "id": "src_content_pages_x_01",
@@ -7237,7 +7052,7 @@
       "node_kind": "heading",
       "norm_label": "2. the workflow \u2014 follow this for every feature and every page",
       "source_file": "CLAUDE.md",
-      "source_location": "L38"
+      "source_location": "L43"
     },
     {
       "id": "claude_3_stack_and_conventions",
@@ -7249,7 +7064,7 @@
       "node_kind": "heading",
       "norm_label": "3. stack and conventions",
       "source_file": "CLAUDE.md",
-      "source_location": "L95"
+      "source_location": "L100"
     },
     {
       "id": "claude_3d",
@@ -7261,7 +7076,7 @@
       "node_kind": "heading",
       "norm_label": "3d",
       "source_file": "CLAUDE.md",
-      "source_location": "L327"
+      "source_location": "L337"
     },
     {
       "id": "claude_4_the_17_templates",
@@ -7273,7 +7088,7 @@
       "node_kind": "heading",
       "norm_label": "4. the 17 templates",
       "source_file": "CLAUDE.md",
-      "source_location": "L187"
+      "source_location": "L192"
     },
     {
       "id": "claude_5_known_gaps_do_not_paper_over_these",
@@ -7285,7 +7100,7 @@
       "node_kind": "heading",
       "norm_label": "5. known gaps \u2014 do not paper over these",
       "source_file": "CLAUDE.md",
-      "source_location": "L219"
+      "source_location": "L224"
     },
     {
       "id": "claude_6_what_must_never_be_published",
@@ -7297,7 +7112,7 @@
       "node_kind": "heading",
       "norm_label": "6. what must never be published",
       "source_file": "CLAUDE.md",
-      "source_location": "L261"
+      "source_location": "L271"
     },
     {
       "id": "claude_7_design_system",
@@ -7309,7 +7124,7 @@
       "node_kind": "heading",
       "norm_label": "7. design system",
       "source_file": "CLAUDE.md",
-      "source_location": "L279"
+      "source_location": "L289"
     },
     {
       "id": "claude_8_tone_of_voice",
@@ -7321,7 +7136,7 @@
       "node_kind": "heading",
       "norm_label": "8. tone of voice",
       "source_file": "CLAUDE.md",
-      "source_location": "L344"
+      "source_location": "L354"
     },
     {
       "id": "claude_9_1_how_the_site_actually_takes_real_content",
@@ -7333,7 +7148,7 @@
       "node_kind": "heading",
       "norm_label": "9.1 how the site actually takes real content",
       "source_file": "CLAUDE.md",
-      "source_location": "L367"
+      "source_location": "L378"
     },
     {
       "id": "claude_9_2_steps_per_page",
@@ -7345,7 +7160,7 @@
       "node_kind": "heading",
       "norm_label": "9.2 steps, per page",
       "source_file": "CLAUDE.md",
-      "source_location": "L410"
+      "source_location": "L421"
     },
     {
       "id": "claude_9_3_current_intake_folder_received_2026_09_18",
@@ -7357,7 +7172,7 @@
       "node_kind": "heading",
       "norm_label": "9.3 current intake \u2014 folder received 2026-09-18",
       "source_file": "CLAUDE.md",
-      "source_location": "L430"
+      "source_location": "L441"
     },
     {
       "id": "claude_9_bringing_in_a_content_drop_photography_copy_specs",
@@ -7369,7 +7184,7 @@
       "node_kind": "heading",
       "norm_label": "9. bringing in a content drop (photography, copy, specs)",
       "source_file": "CLAUDE.md",
-      "source_location": "L360"
+      "source_location": "L371"
     },
     {
       "id": "claude_commands",
@@ -7381,7 +7196,7 @@
       "node_kind": "heading",
       "norm_label": "commands",
       "source_file": "CLAUDE.md",
-      "source_location": "L174"
+      "source_location": "L179"
     },
     {
       "id": "claude_definition_of_done_for_any_page_or_template",
@@ -7393,7 +7208,7 @@
       "node_kind": "heading",
       "norm_label": "definition of done for any page or template",
       "source_file": "CLAUDE.md",
-      "source_location": "L83"
+      "source_location": "L88"
     },
     {
       "id": "claude_directory_map",
@@ -7405,7 +7220,7 @@
       "node_kind": "heading",
       "norm_label": "directory map",
       "source_file": "CLAUDE.md",
-      "source_location": "L106"
+      "source_location": "L111"
     },
     {
       "id": "claude_graphify",
@@ -7417,7 +7232,7 @@
       "node_kind": "heading",
       "norm_label": "graphify",
       "source_file": "CLAUDE.md",
-      "source_location": "L486"
+      "source_location": "L497"
     },
     {
       "id": "claude_routing",
@@ -7429,7 +7244,7 @@
       "node_kind": "heading",
       "norm_label": "routing",
       "source_file": "CLAUDE.md",
-      "source_location": "L152"
+      "source_location": "L157"
     },
     {
       "id": "claude_rtg_website_project_guide_for_claude_code",
@@ -7453,7 +7268,7 @@
       "node_kind": "heading",
       "norm_label": "rules",
       "source_file": "CLAUDE.md",
-      "source_location": "L164"
+      "source_location": "L169"
     },
     {
       "id": "claude_step_1_research_the_best_approach_first",
@@ -7465,7 +7280,7 @@
       "node_kind": "heading",
       "norm_label": "step 1 \u2014 research the best approach first",
       "source_file": "CLAUDE.md",
-      "source_location": "L42"
+      "source_location": "L47"
     },
     {
       "id": "claude_step_2_implement_and_review_with_feature_dev",
@@ -7477,7 +7292,7 @@
       "node_kind": "heading",
       "norm_label": "step 2 \u2014 implement and review with `/feature-dev`",
       "source_file": "CLAUDE.md",
-      "source_location": "L63"
+      "source_location": "L68"
     },
     {
       "id": "claude_the_three_buyer_routes_avatars",
@@ -7489,7 +7304,7 @@
       "node_kind": "heading",
       "norm_label": "the three buyer routes (avatars)",
       "source_file": "CLAUDE.md",
-      "source_location": "L25"
+      "source_location": "L30"
     },
     {
       "id": "readme",
@@ -7600,73 +7415,62 @@
       "file_type": "document",
       "frontmatter": {
         "pageId": "E-00",
-        "eyebrow": "Equipment",
-        "lede": "The ranges below are families rather than products. Within each one the drum, the drive, the level wind, the control system and the footprint are all decided by the tool, the depth, the load and the deck.",
+        "lede": "Six equipment families, each configured to the vessel, tool, depth and load. Headline figures are published on each page; full datasheets and general arrangement drawings are issued on request, watermarked to the recipient, usually the same day.",
+        "draft": false,
         "hero": {
           "media": {
             "ref": "IMG-E00-B",
             "brief": "Full afterdeck spread underway, gantries, reels and winches deployed together."
-          }
+          },
+          "ctas": [
+            {
+              "label": "Request a quotation",
+              "href": "/contact/request-a-quotation/"
+            },
+            {
+              "label": "Talk to an engineer",
+              "href": "/contact/"
+            }
+          ]
         },
+        "cards": [
+          {
+            "pageId": "E-01",
+            "blurb": "Geotechnical, survey, seismic, ROV and umbilical, mooring and utility. 240 kg to 30 t WLL."
+          },
+          {
+            "pageId": "E-07",
+            "blurb": "A-frames and LARS, 20 to 40 Te WLL, rated to 3.9 m Hs."
+          },
+          {
+            "pageId": "E-08",
+            "blurb": "Knuckle boom, telescopic and utility cranes, davits and personnel-rated systems."
+          },
+          {
+            "pageId": "E-09",
+            "blurb": "Two-track cable and pipe tensioners, 5 to 20 Te."
+          },
+          {
+            "pageId": "E-11",
+            "blurb": "Hydraulic power units to a defined cleanliness class."
+          },
+          {
+            "pageId": "E-12",
+            "blurb": "Self-contained, road-transportable spreads."
+          }
+        ],
         "media": [
           {
             "ref": "IMG-E00-A",
             "brief": "Cutaway of a survey vessel&#x27;s afterdeck, winches, cranes and handling systems shown as one build."
           }
         ],
-        "cta": {
-          "heading": "Find your configuration",
-          "body": "Tell us what you are deploying, how deep, and what deck it has to work from. An engineer will come back with configurations and what is still missing.",
-          "primary": {
-            "label": "Request a quotation",
-            "href": "/contact/request-a-quotation/"
-          },
-          "secondary": {
-            "label": "Talk to an engineer",
-            "href": "/contact/"
-          }
-        }
+        "proofBar": true
       },
       "node_kind": "page",
       "norm_label": "e-00.mdx",
       "source_file": "src/content/pages/e-00.mdx",
       "source_location": "L1"
-    },
-    {
-      "id": "src_content_pages_e_00_three_ways_in",
-      "label": "Three ways in",
-      "_origin": "ast",
-      "community": 51,
-      "community_name": "e-00.mdx",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "three ways in",
-      "source_file": "src/content/pages/e-00.mdx",
-      "source_location": "L44"
-    },
-    {
-      "id": "src_content_pages_e_00_what_we_need_to_size_anything",
-      "label": "What we need to size anything",
-      "_origin": "ast",
-      "community": 51,
-      "community_name": "e-00.mdx",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "what we need to size anything",
-      "source_file": "src/content/pages/e-00.mdx",
-      "source_location": "L56"
-    },
-    {
-      "id": "src_content_pages_e_00_why_the_figures_on_these_pages_are_representative",
-      "label": "Why the figures on these pages are representative",
-      "_origin": "ast",
-      "community": 51,
-      "community_name": "e-00.mdx",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "why the figures on these pages are representative",
-      "source_file": "src/content/pages/e-00.mdx",
-      "source_location": "L27"
     },
     {
       "id": "src_content_pages_e_03",
@@ -7677,8 +7481,8 @@
       "file_type": "document",
       "frontmatter": {
         "pageId": "E-03",
-        "eyebrow": "Equipment \u00b7 Winches",
-        "lede": "The specification that matters on a survey winch is not top speed. It is turndown: the span between the fastest it will run and the slowest it will hold steadily.",
+        "lede": "Electric or hydraulic winches, 300 to 4,000 m cable capacity, for controlled deployment at survey speeds.",
+        "draft": false,
         "hero": {
           "media": {
             "ref": "IMG-E03-B",
@@ -7690,26 +7494,10 @@
               "href": "/resources/datasheets/?equipment=Survey%20and%20oceanographic%20winches"
             },
             {
-              "label": "Talk to an engineer",
-              "href": "/contact/"
+              "label": "Request a quotation",
+              "href": "/contact/request-a-quotation/"
             }
           ]
-        },
-        "product": {
-          "category": "Marine winch",
-          "drive": [
-            "Electric",
-            "Hydraulic"
-          ],
-          "applications": [
-            "Side-scan sonar towing",
-            "Magnetometer systems",
-            "Sub-bottom profiler operations",
-            "Water sampler handling",
-            "CTD deployment",
-            "Drop-down camera deployment"
-          ],
-          "datasheetPageId": "R-01"
         },
         "specs": [
           {
@@ -7776,64 +7564,27 @@
             ]
           }
         ],
-        "related": [
-          "S-01",
-          "S-05",
-          "E-01"
-        ],
-        "cta": {
-          "heading": "Tell us the sensor and the cast",
-          "body": "What is being towed or lowered, the depth, and whether the deployment is precise slow-speed work or general handling. We will say which drive and configuration fits.",
-          "primary": {
-            "label": "Request a quotation",
-            "href": "/contact/request-a-quotation/"
-          },
-          "secondary": {
-            "label": "Talk to an engineer",
-            "href": "/contact/"
-          }
+        "product": {
+          "category": "Marine winch",
+          "drive": [
+            "Electric",
+            "Hydraulic"
+          ],
+          "applications": [
+            "Side-scan sonar towing",
+            "Magnetometer systems",
+            "Sub-bottom profiler",
+            "Water samplers",
+            "CTD deployment",
+            "Drop-down cameras"
+          ],
+          "datasheetPageId": "R-01"
         }
       },
       "node_kind": "page",
       "norm_label": "e-03.mdx",
       "source_file": "src/content/pages/e-03.mdx",
       "source_location": "L1"
-    },
-    {
-      "id": "src_content_pages_e_03_applications",
-      "label": "Applications",
-      "_origin": "ast",
-      "community": 52,
-      "community_name": "e-03.mdx",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "applications",
-      "source_file": "src/content/pages/e-03.mdx",
-      "source_location": "L84"
-    },
-    {
-      "id": "src_content_pages_e_03_drive_comparison",
-      "label": "Drive comparison",
-      "_origin": "ast",
-      "community": 52,
-      "community_name": "e-03.mdx",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "drive comparison",
-      "source_file": "src/content/pages/e-03.mdx",
-      "source_location": "L43"
-    },
-    {
-      "id": "src_content_pages_e_03_level_wind_options",
-      "label": "Level wind options",
-      "_origin": "ast",
-      "community": 52,
-      "community_name": "e-03.mdx",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "level wind options",
-      "source_file": "src/content/pages/e-03.mdx",
-      "source_location": "L67"
     },
     {
       "id": "src_content_pages_e_04",
@@ -7844,8 +7595,8 @@
       "file_type": "document",
       "frontmatter": {
         "pageId": "E-04",
-        "eyebrow": "Equipment \u00b7 Winches",
-        "lede": "A seismic winch is not asked what it can lift. It is asked how long it will run without asking for anything, deployed alongside a dozen others that have to behave as one.",
+        "lede": "Reel winches for digital streamer and source handling, built as matched spreads for continuous duty.",
+        "draft": false,
         "hero": {
           "media": {
             "ref": "IMG-E04-A",
@@ -7861,18 +7612,6 @@
               "href": "/contact/"
             }
           ]
-        },
-        "product": {
-          "category": "Marine winch",
-          "drive": [
-            "Hydraulic"
-          ],
-          "applications": [
-            "Source handling",
-            "Streamer handling",
-            "Continuous-duty spread deployment"
-          ],
-          "datasheetPageId": "R-01"
         },
         "specs": [
           {
@@ -7939,22 +7678,17 @@
             ]
           }
         ],
-        "related": [
-          "S-04",
-          "E-02",
-          "E-07"
-        ],
-        "cta": {
-          "heading": "Tell us the spread and the rotation",
-          "body": "How long the gear stays in the water, what has to be reachable with it deployed, and how many units have to behave as one. That is the specification for a seismic winch, and it is not the one on most datasheets.",
-          "primary": {
-            "label": "Talk to an engineer",
-            "href": "/contact/"
-          },
-          "secondary": {
-            "label": "Condition assessment",
-            "href": "/lifecycle/condition-assessment/"
-          }
+        "product": {
+          "category": "Marine winch",
+          "drive": [
+            "Hydraulic"
+          ],
+          "applications": [
+            "Source handling",
+            "Streamer handling",
+            "Continuous-duty spread deployment"
+          ],
+          "datasheetPageId": "R-01"
         }
       },
       "node_kind": "page",
@@ -7963,16 +7697,16 @@
       "source_location": "L1"
     },
     {
-      "id": "src_content_pages_e_04_applications",
-      "label": "Applications",
+      "id": "src_content_pages_e_04_duty_rating",
+      "label": "Duty rating",
       "_origin": "ast",
       "community": 53,
       "community_name": "e-04.mdx",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "applications",
+      "norm_label": "duty rating",
       "source_file": "src/content/pages/e-04.mdx",
-      "source_location": "L43"
+      "source_location": "L64"
     },
     {
       "id": "src_content_pages_e_05",
@@ -7983,8 +7717,8 @@
       "file_type": "document",
       "frontmatter": {
         "pageId": "E-05",
-        "eyebrow": "Equipment \u00b7 Winches",
-        "lede": "An ROV is only as available as its umbilical winch. The winch is built to accept the slip ring your vehicle needs, not the one we would prefer to sell.",
+        "lede": "Umbilical and armoured-cable winches for ROV launch and recovery and deep tow.",
+        "draft": false,
         "hero": {
           "media": {
             "ref": "IMG-E05-A",
@@ -8000,18 +7734,6 @@
               "href": "/contact/"
             }
           ]
-        },
-        "product": {
-          "category": "Marine winch",
-          "drive": [
-            "Hydraulic"
-          ],
-          "applications": [
-            "ROV launch and recovery",
-            "Deep tow",
-            "Umbilical handling"
-          ],
-          "datasheetPageId": "R-01"
         },
         "specs": [
           {
@@ -8079,52 +7801,23 @@
             ]
           }
         ],
-        "related": [
-          "S-06",
-          "E-07",
-          "E-02"
-        ],
-        "cta": {
-          "heading": "Tell us the vehicle and the sea state",
-          "body": "The tether, the launch window that has to be kept, and whether the system carries people. Those three set the design, and two of them are usually missing from the enquiry.",
-          "primary": {
-            "label": "Talk to an engineer",
-            "href": "/contact/"
-          },
-          "secondary": {
-            "label": "Launch and recovery systems",
-            "href": "/equipment/launch-recovery-systems/"
-          }
+        "product": {
+          "category": "Marine winch",
+          "drive": [
+            "Hydraulic"
+          ],
+          "applications": [
+            "ROV launch and recovery",
+            "Deep tow",
+            "Umbilical handling"
+          ],
+          "datasheetPageId": "R-01"
         }
       },
       "node_kind": "page",
       "norm_label": "e-05.mdx",
       "source_file": "src/content/pages/e-05.mdx",
       "source_location": "L1"
-    },
-    {
-      "id": "src_content_pages_e_05_cable_protection",
-      "label": "Cable protection",
-      "_origin": "ast",
-      "community": 54,
-      "community_name": "e-05.mdx",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "cable protection",
-      "source_file": "src/content/pages/e-05.mdx",
-      "source_location": "L61"
-    },
-    {
-      "id": "src_content_pages_e_05_the_slip_ring_boundary_explained",
-      "label": "The slip ring boundary, explained",
-      "_origin": "ast",
-      "community": 54,
-      "community_name": "e-05.mdx",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "the slip ring boundary, explained",
-      "source_file": "src/content/pages/e-05.mdx",
-      "source_location": "L43"
     },
     {
       "id": "src_content_pages_e_06",
@@ -8135,8 +7828,8 @@
       "file_type": "document",
       "frontmatter": {
         "pageId": "E-06",
-        "eyebrow": "Equipment \u00b7 Winches",
-        "lede": "Mooring and utility winches built to the same welding, traceability and test discipline as the survey range, because a foredeck failure does not care that the machine was the unglamorous one.",
+        "lede": "Mooring, towing and general deck winches built to the same class, welding and test standards as the survey range.",
+        "draft": false,
         "hero": {
           "media": {
             "ref": "IMG-E06-C",
@@ -8148,22 +7841,10 @@
               "href": "/resources/datasheets/?equipment=Mooring%20and%20utility%20winches"
             },
             {
-              "label": "Talk to an engineer",
-              "href": "/contact/"
+              "label": "Request a quotation",
+              "href": "/contact/request-a-quotation/"
             }
           ]
-        },
-        "product": {
-          "category": "Marine winch",
-          "drive": [
-            "Hydraulic"
-          ],
-          "applications": [
-            "Mooring",
-            "Towing",
-            "General deck utility handling"
-          ],
-          "datasheetPageId": "R-01"
         },
         "specs": [
           {
@@ -8218,7 +7899,7 @@
               },
               {
                 "k": "Dry weight, without cable",
-                "v": "3,700 kg"
+                "v": "TO SUPPLY"
               }
             ],
             "footnote": "One real configuration in this family; every unit is engineered to the duty and the deck. Full specifications, including the general arrangement drawing, are issued on request.",
@@ -8305,40 +7986,23 @@
             ]
           }
         ],
-        "related": [
-          "E-01",
-          "E-02",
-          "Y-03"
-        ],
-        "cta": {
-          "heading": "Tell us the duty and we will size it",
-          "body": "Working load, cable capacity and whether the winch needs to render under load. Three things, and we can come back with a configuration.",
-          "primary": {
-            "label": "Request a quotation",
-            "href": "/contact/request-a-quotation/"
-          },
-          "secondary": {
-            "label": "Talk to an engineer",
-            "href": "/contact/"
-          }
+        "product": {
+          "category": "Marine winch",
+          "drive": [
+            "Hydraulic"
+          ],
+          "applications": [
+            "Mooring",
+            "Towing",
+            "General deck utility handling"
+          ],
+          "datasheetPageId": "R-01"
         }
       },
       "node_kind": "page",
       "norm_label": "e-06.mdx",
       "source_file": "src/content/pages/e-06.mdx",
       "source_location": "L1"
-    },
-    {
-      "id": "src_content_pages_e_06_class",
-      "label": "Class",
-      "_origin": "ast",
-      "community": 55,
-      "community_name": "e-06.mdx",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "class",
-      "source_file": "src/content/pages/e-06.mdx",
-      "source_location": "L63"
     },
     {
       "id": "src_content_pages_e_07",
@@ -8349,8 +8013,8 @@
       "file_type": "document",
       "frontmatter": {
         "pageId": "E-07",
-        "eyebrow": "Equipment \u00b7 Launch &amp; recovery",
-        "lede": "The A-frame is the one machine on deck that has to work in the sea state everyone else has stood down for.",
+        "lede": "Stern and side A-frames, mini survey LARS, ROV and CTD launch and recovery systems, engineered to the deck arrangement and sea state.",
+        "draft": false,
         "hero": {
           "media": {
             "ref": "IMG-E07-B",
@@ -8358,27 +8022,14 @@
           },
           "ctas": [
             {
-              "label": "Request a quotation",
-              "href": "/contact/request-a-quotation/"
+              "label": "Request the GA",
+              "href": "/resources/datasheets/?equipment=Launch%20and%20recovery%20systems"
             },
             {
-              "label": "Talk to an engineer",
-              "href": "/contact/"
+              "label": "Request a quotation",
+              "href": "/contact/request-a-quotation/"
             }
           ]
-        },
-        "product": {
-          "category": "A-frame launch and recovery system",
-          "drive": [
-            "Hydraulic"
-          ],
-          "applications": [
-            "Stern and side A-frames",
-            "ROV launch and recovery",
-            "Survey spread deployment",
-            "Cable and umbilical handling"
-          ],
-          "datasheetPageId": "R-01"
         },
         "specs": [
           {
@@ -8517,88 +8168,24 @@
             ]
           }
         ],
-        "related": [
-          "E-01",
-          "E-08",
-          "S-01"
-        ],
-        "cta": {
-          "heading": "Send us the deck arrangement",
-          "body": "The vessel, the load, the sea state you actually work in, and what has to share the deck with it. That is what an A-frame is specified against, not a capacity on its own.",
-          "primary": {
-            "label": "Request a quotation",
-            "href": "/contact/request-a-quotation/"
-          },
-          "secondary": {
-            "label": "Talk to an engineer",
-            "href": "/contact/"
-          }
+        "product": {
+          "category": "A-frame launch and recovery system",
+          "drive": [
+            "Hydraulic"
+          ],
+          "applications": [
+            "Stern and side A-frames",
+            "ROV launch and recovery",
+            "Survey spread deployment",
+            "Cable and umbilical handling"
+          ],
+          "datasheetPageId": "R-01"
         }
       },
       "node_kind": "page",
       "norm_label": "e-07.mdx",
       "source_file": "src/content/pages/e-07.mdx",
       "source_location": "L1"
-    },
-    {
-      "id": "src_content_pages_e_07_configurations",
-      "label": "Configurations",
-      "_origin": "ast",
-      "community": 56,
-      "community_name": "e-07.mdx",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "configurations",
-      "source_file": "src/content/pages/e-07.mdx",
-      "source_location": "L63"
-    },
-    {
-      "id": "src_content_pages_e_07_deck_seating_and_loading",
-      "label": "Deck seating and loading",
-      "_origin": "ast",
-      "community": 56,
-      "community_name": "e-07.mdx",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "deck seating and loading",
-      "source_file": "src/content/pages/e-07.mdx",
-      "source_location": "L83"
-    },
-    {
-      "id": "src_content_pages_e_07_motion_compensation_options",
-      "label": "Motion compensation options",
-      "_origin": "ast",
-      "community": 56,
-      "community_name": "e-07.mdx",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "motion compensation options",
-      "source_file": "src/content/pages/e-07.mdx",
-      "source_location": "L93"
-    },
-    {
-      "id": "src_content_pages_e_07_request_the_general_arrangement",
-      "label": "Request the general arrangement",
-      "_origin": "ast",
-      "community": 56,
-      "community_name": "e-07.mdx",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "request the general arrangement",
-      "source_file": "src/content/pages/e-07.mdx",
-      "source_location": "L101"
-    },
-    {
-      "id": "src_content_pages_e_07_sea_state",
-      "label": "Sea state",
-      "_origin": "ast",
-      "community": 56,
-      "community_name": "e-07.mdx",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "sea state",
-      "source_file": "src/content/pages/e-07.mdx",
-      "source_location": "L75"
     },
     {
       "id": "src_content_pages_e_08",
@@ -8609,17 +8196,17 @@
       "file_type": "document",
       "frontmatter": {
         "pageId": "E-08",
-        "eyebrow": "Equipment \u00b7 Cranes &amp; lifting",
-        "lede": "Certification is not a reassurance on a lifting appliance. It is a condition of use, and it is proven on our own stands before the crane ever reaches a quay.",
+        "lede": "Class-certified cranes and lifting appliances for research, survey and offshore vessels.",
+        "draft": false,
         "hero": {
           "ctas": [
             {
               "label": "Request the datasheet",
-              "href": "/resources/datasheets/?equipment=Cranes%20%26%20lifting"
+              "href": "/resources/datasheets/?equipment=Cranes%20and%20lifting"
             },
             {
-              "label": "Talk to an engineer",
-              "href": "/contact/"
+              "label": "Request a quotation",
+              "href": "/contact/request-a-quotation/"
             }
           ]
         },
@@ -8637,23 +8224,6 @@
             "Personnel and basket handling"
           ],
           "datasheetPageId": "R-01"
-        },
-        "related": [
-          "E-07",
-          "E-01",
-          "P-06"
-        ],
-        "cta": {
-          "heading": "Sharing a deck with an A-frame or a winch?",
-          "body": "If we are already engineering the handling spread, the crane can share the same deck seating design, loading calculations, class submission and certification dossier, one interface fewer to slip a schedule.",
-          "primary": {
-            "label": "Request a quotation",
-            "href": "/contact/request-a-quotation/"
-          },
-          "secondary": {
-            "label": "Talk to an engineer",
-            "href": "/contact/"
-          }
         }
       },
       "node_kind": "page",
@@ -8662,40 +8232,16 @@
       "source_location": "L1"
     },
     {
-      "id": "src_content_pages_e_08_applications",
-      "label": "Applications",
+      "id": "src_content_pages_e_08_certification",
+      "label": "Certification",
       "_origin": "ast",
       "community": 57,
       "community_name": "e-08.mdx",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "applications",
+      "norm_label": "certification",
       "source_file": "src/content/pages/e-08.mdx",
-      "source_location": "L108"
-    },
-    {
-      "id": "src_content_pages_e_08_class_and_proof_load",
-      "label": "Class and proof load",
-      "_origin": "ast",
-      "community": 57,
-      "community_name": "e-08.mdx",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "class and proof load",
-      "source_file": "src/content/pages/e-08.mdx",
-      "source_location": "L58"
-    },
-    {
-      "id": "src_content_pages_e_08_the_range",
-      "label": "The range",
-      "_origin": "ast",
-      "community": 57,
-      "community_name": "e-08.mdx",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "the range",
-      "source_file": "src/content/pages/e-08.mdx",
-      "source_location": "L22"
+      "source_location": "L33"
     },
     {
       "id": "src_content_pages_e_09",
@@ -8706,7 +8252,43 @@
       "file_type": "document",
       "frontmatter": {
         "pageId": "E-09",
-        "draft": true
+        "lede": "Integrated deck handling spreads combining winches, A-frames, tensioners, power units and controls under one design, one class submission and one test programme.",
+        "draft": false,
+        "hero": {
+          "ctas": [
+            {
+              "label": "Request a quotation",
+              "href": "/contact/request-a-quotation/"
+            },
+            {
+              "label": "Talk to an engineer",
+              "href": "/contact/"
+            }
+          ]
+        },
+        "cards": [
+          {
+            "pageId": "E-02",
+            "title": "Corer and CPT handling spreads",
+            "blurb": ""
+          },
+          {
+            "pageId": "E-04",
+            "title": "Seismic source handling systems",
+            "blurb": ""
+          },
+          {
+            "pageId": "S-06",
+            "title": "Diver basket and personnel handling",
+            "blurb": ""
+          },
+          {
+            "pageId": "E-10",
+            "title": "Cable and pipe tensioners, 5 to 20 Te",
+            "blurb": ""
+          }
+        ],
+        "proofBar": true
       },
       "node_kind": "page",
       "norm_label": "e-09.mdx",
@@ -8722,8 +8304,8 @@
       "file_type": "document",
       "frontmatter": {
         "pageId": "E-10",
-        "eyebrow": "Equipment \u00b7 Handling systems",
-        "lede": "Squeeze tension is not line tension, and confusing them is the most common way to specify the wrong machine, and one of the more common ways to damage a cable.",
+        "lede": "Self-contained electro-hydraulic tensioners with integrated power unit on a common skid, requiring an electrical supply only.",
+        "draft": false,
         "hero": {
           "media": {
             "ref": "IMG-E10-A",
@@ -8731,32 +8313,14 @@
           },
           "ctas": [
             {
-              "label": "Request a quotation",
-              "href": "/contact/request-a-quotation/"
+              "label": "Request the datasheet",
+              "href": "/resources/datasheets/?equipment=Cable%20and%20pipe%20tensioners"
             },
             {
-              "label": "Talk to an engineer",
-              "href": "/contact/"
+              "label": "Request a quotation",
+              "href": "/contact/request-a-quotation/"
             }
           ]
-        },
-        "product": {
-          "category": "Cable and pipe tensioner",
-          "drive": [
-            "Electro-hydraulic"
-          ],
-          "applications": [
-            "Inter-array cable lay",
-            "Export cable and interconnector lay",
-            "Cable pull-in and J-tube entry",
-            "Shore-end and landfall pulls",
-            "Cable recovery and repair",
-            "Umbilical and dynamic cable handling",
-            "Flexible pipe and umbilical lay",
-            "Spooling and factory acceptance",
-            "Recovery and abandonment"
-          ],
-          "datasheetPageId": "R-01"
         },
         "specs": [
           {
@@ -8851,8 +8415,7 @@
               },
               {
                 "k": "Static parking brake",
-                "v": "20 Te maximum holding",
-                "note": "fail-safe"
+                "v": "TO SUPPLY"
               },
               {
                 "k": "Hydraulic drives",
@@ -8909,22 +8472,23 @@
             ]
           }
         ],
-        "related": [
-          "S-03",
-          "E-06",
-          "P-06"
-        ],
-        "cta": {
-          "heading": "Bring the cable&#x27;s data sheet",
-          "body": "Outside diameter, construction, minimum bend radius and permitted crush load, plus the vessel and the date. Send those and we can tell you which capacity fits and what the track and pad configuration should be.",
-          "primary": {
-            "label": "Request a quotation",
-            "href": "/contact/request-a-quotation/"
-          },
-          "secondary": {
-            "label": "Talk to an engineer",
-            "href": "/contact/"
-          }
+        "product": {
+          "category": "Cable and pipe tensioner",
+          "drive": [
+            "Electro-hydraulic"
+          ],
+          "applications": [
+            "Inter-array cable lay",
+            "Export cable and interconnector lay",
+            "Pull-in and J-tube entry",
+            "Shore-end pulls",
+            "Cable recovery and repair",
+            "Umbilical and dynamic cable handling",
+            "Flexible pipe lay",
+            "Spooling and FAT",
+            "Recovery and abandonment"
+          ],
+          "datasheetPageId": "R-01"
         }
       },
       "node_kind": "page",
@@ -8933,52 +8497,16 @@
       "source_location": "L1"
     },
     {
-      "id": "src_content_pages_e_10_fail_safe_braking",
-      "label": "Fail-safe braking",
+      "id": "src_content_pages_e_10_to_specify",
+      "label": "To specify",
       "_origin": "ast",
       "community": 59,
       "community_name": "e-10.mdx",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "fail-safe braking",
+      "norm_label": "to specify",
       "source_file": "src/content/pages/e-10.mdx",
-      "source_location": "L126"
-    },
-    {
-      "id": "src_content_pages_e_10_how_it_is_built",
-      "label": "How it is built",
-      "_origin": "ast",
-      "community": 59,
-      "community_name": "e-10.mdx",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "how it is built",
-      "source_file": "src/content/pages/e-10.mdx",
-      "source_location": "L66"
-    },
-    {
-      "id": "src_content_pages_e_10_squeeze_versus_line_tension_explained",
-      "label": "Squeeze versus line tension, explained",
-      "_origin": "ast",
-      "community": 59,
-      "community_name": "e-10.mdx",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "squeeze versus line tension, explained",
-      "source_file": "src/content/pages/e-10.mdx",
-      "source_location": "L81"
-    },
-    {
-      "id": "src_content_pages_e_10_what_decides_which_unit",
-      "label": "What decides which unit",
-      "_origin": "ast",
-      "community": 59,
-      "community_name": "e-10.mdx",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "what decides which unit",
-      "source_file": "src/content/pages/e-10.mdx",
-      "source_location": "L158"
+      "source_location": "L116"
     },
     {
       "id": "package",
@@ -9132,7 +8660,20 @@
       "file_type": "document",
       "frontmatter": {
         "pageId": "E-11",
-        "draft": true
+        "lede": "Hydraulic power units sized to the machine, built and flushed in-house to a defined cleanliness class and function tested with the equipment they drive.",
+        "draft": false,
+        "hero": {
+          "ctas": [
+            {
+              "label": "Request the datasheet",
+              "href": "/resources/datasheets/?equipment=Power%20units"
+            },
+            {
+              "label": "Talk to an engineer",
+              "href": "/contact/"
+            }
+          ]
+        }
       },
       "node_kind": "page",
       "norm_label": "e-11.mdx",
@@ -9148,7 +8689,20 @@
       "file_type": "document",
       "frontmatter": {
         "pageId": "E-12",
-        "draft": true
+        "lede": "Self-contained handling spreads for chartered vessels and fleets that move equipment between hulls.",
+        "draft": false,
+        "hero": {
+          "ctas": [
+            {
+              "label": "Request a quotation",
+              "href": "/contact/request-a-quotation/"
+            },
+            {
+              "label": "Talk to an engineer",
+              "href": "/contact/"
+            }
+          ]
+        }
       },
       "node_kind": "page",
       "norm_label": "e-12.mdx",
@@ -9293,15 +8847,15 @@
       "source_location": "L1"
     },
     {
-      "id": "src_components_home_equipmentgrid",
-      "label": "EquipmentGrid.astro",
+      "id": "astro_assets",
+      "label": "astro:assets",
       "_origin": "ast",
       "community": 7,
       "community_name": "home.ts",
+      "confidence": "EXTRACTED",
       "file_type": "code",
-      "norm_label": "equipmentgrid.astro",
-      "source_file": "src/components/home/EquipmentGrid.astro",
-      "source_location": "L1"
+      "norm_label": "astro:assets",
+      "source_file": "astro:assets"
     },
     {
       "id": "src_components_home_hero",
@@ -9337,17 +8891,6 @@
       "source_location": "L1"
     },
     {
-      "id": "src_components_home_proofcase",
-      "label": "ProofCase.astro",
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "home.ts",
-      "file_type": "code",
-      "norm_label": "proofcase.astro",
-      "source_file": "src/components/home/ProofCase.astro",
-      "source_location": "L1"
-    },
-    {
       "id": "src_components_home_sectortrack",
       "label": "SectorTrack.astro",
       "_origin": "ast",
@@ -9356,6 +8899,17 @@
       "file_type": "code",
       "norm_label": "sectortrack.astro",
       "source_file": "src/components/home/SectorTrack.astro",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_home_statement",
+      "label": "Statement.astro",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "home.ts",
+      "file_type": "code",
+      "norm_label": "statement.astro",
+      "source_file": "src/components/home/Statement.astro",
       "source_location": "L1"
     },
     {
@@ -9392,6 +8946,17 @@
       "source_location": "L1"
     },
     {
+      "id": "src_data_home_conditions",
+      "label": "CONDITIONS",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "home.ts",
+      "file_type": "code",
+      "norm_label": "conditions",
+      "source_file": "src/data/home.ts",
+      "source_location": "L34"
+    },
+    {
       "id": "src_data_home_equipment",
       "label": "EQUIPMENT",
       "_origin": "ast",
@@ -9400,7 +8965,18 @@
       "file_type": "code",
       "norm_label": "equipment",
       "source_file": "src/data/home.ts",
-      "source_location": "L77"
+      "source_location": "L78"
+    },
+    {
+      "id": "src_data_home_hero",
+      "label": "HERO",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "home.ts",
+      "file_type": "code",
+      "norm_label": "hero",
+      "source_file": "src/data/home.ts",
+      "source_location": "L5"
     },
     {
       "id": "src_data_home_hero_proof",
@@ -9411,51 +8987,18 @@
       "file_type": "code",
       "norm_label": "hero_proof",
       "source_file": "src/data/home.ts",
-      "source_location": "L115"
+      "source_location": "L17"
     },
     {
-      "id": "src_data_home_hero_stats",
-      "label": "HERO_STATS",
+      "id": "src_data_home_manufacturing",
+      "label": "MANUFACTURING",
       "_origin": "ast",
       "community": 7,
       "community_name": "home.ts",
       "file_type": "code",
-      "norm_label": "hero_stats",
+      "norm_label": "manufacturing",
       "source_file": "src/data/home.ts",
-      "source_location": "L6"
-    },
-    {
-      "id": "src_data_home_lifecycle",
-      "label": "LIFECYCLE",
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "home.ts",
-      "file_type": "code",
-      "norm_label": "lifecycle",
-      "source_file": "src/data/home.ts",
-      "source_location": "L99"
-    },
-    {
-      "id": "src_data_home_machines",
-      "label": "MACHINES",
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "home.ts",
-      "file_type": "code",
-      "norm_label": "machines",
-      "source_file": "src/data/home.ts",
-      "source_location": "L64"
-    },
-    {
-      "id": "src_data_home_marquee",
-      "label": "MARQUEE",
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "home.ts",
-      "file_type": "code",
-      "norm_label": "marquee",
-      "source_file": "src/data/home.ts",
-      "source_location": "L15"
+      "source_location": "L93"
     },
     {
       "id": "src_data_home_sectors",
@@ -9466,7 +9009,29 @@
       "file_type": "code",
       "norm_label": "sectors",
       "source_file": "src/data/home.ts",
-      "source_location": "L25"
+      "source_location": "L60"
+    },
+    {
+      "id": "src_data_home_service",
+      "label": "SERVICE",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "home.ts",
+      "file_type": "code",
+      "norm_label": "service",
+      "source_file": "src/data/home.ts",
+      "source_location": "L117"
+    },
+    {
+      "id": "src_data_home_story",
+      "label": "STORY",
+      "_origin": "ast",
+      "community": 7,
+      "community_name": "home.ts",
+      "file_type": "code",
+      "norm_label": "story",
+      "source_file": "src/data/home.ts",
+      "source_location": "L26"
     },
     {
       "id": "src_data_home_tiers",
@@ -9477,29 +9042,7 @@
       "file_type": "code",
       "norm_label": "tiers",
       "source_file": "src/data/home.ts",
-      "source_location": "L43"
-    },
-    {
-      "id": "src_data_media_media",
-      "label": "MEDIA",
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "home.ts",
-      "file_type": "code",
-      "norm_label": "media",
-      "source_file": "src/data/media.ts",
-      "source_location": "L98"
-    },
-    {
-      "id": "src_data_site_proof",
-      "label": "PROOF",
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "home.ts",
-      "file_type": "code",
-      "norm_label": "proof",
-      "source_file": "src/data/site.js",
-      "source_location": "L69"
+      "source_location": "L100"
     },
     {
       "id": "src_pages_index",
@@ -9701,21 +9244,21 @@
       "file_type": "document",
       "frontmatter": {
         "pageId": "S-00",
-        "eyebrow": "Sectors",
-        "lede": "Seven markets, one set of engineering problems: holding a load steady while the ship moves, and keeping the cable alive while you do it.",
-        "proofBar": true,
-        "cta": {
-          "heading": "Not sure which one you are?",
-          "body": "Most enquiries cross two or three of these. Tell us the vessel, the tool and the depth and we will start from there rather than from a category.",
-          "primary": {
-            "label": "Talk to an engineer",
-            "href": "/contact/"
-          },
-          "secondary": {
-            "label": "See the equipment range",
-            "href": "/equipment/"
-          }
-        }
+        "lede": "RTG supplies complete after-deck equipment packages for vessels working over the side: winches, A-frames and LARS, tensioners, cranes and power units. Each package is engineered to the vessel, the tool, the working depth and the sea state.",
+        "draft": false,
+        "hero": {
+          "ctas": [
+            {
+              "label": "Talk to an engineer",
+              "href": "/contact/"
+            },
+            {
+              "label": "Equipment range",
+              "href": "/equipment/"
+            }
+          ]
+        },
+        "proofBar": true
       },
       "node_kind": "page",
       "norm_label": "s-00.mdx",
@@ -10677,17 +10220,6 @@
       "source_location": "L155"
     },
     {
-      "id": "astro_assets",
-      "label": "astro:assets",
-      "_origin": "ast",
-      "community": 90,
-      "community_name": "ImageSlot.astro",
-      "confidence": "EXTRACTED",
-      "file_type": "code",
-      "norm_label": "astro:assets",
-      "source_file": "astro:assets"
-    },
-    {
       "id": "src_components_blocks_compareslot",
       "label": "CompareSlot.astro",
       "_origin": "ast",
@@ -10741,50 +10273,6 @@
       "norm_label": "tiles",
       "source_file": "src/components/blocks/MediaBand.astro",
       "source_location": "L29"
-    },
-    {
-      "id": "src_components_home_fleet",
-      "label": "Fleet.astro",
-      "_origin": "ast",
-      "community": 90,
-      "community_name": "ImageSlot.astro",
-      "file_type": "code",
-      "norm_label": "fleet.astro",
-      "source_file": "src/components/home/Fleet.astro",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_home_statement",
-      "label": "Statement.astro",
-      "_origin": "ast",
-      "community": 90,
-      "community_name": "ImageSlot.astro",
-      "file_type": "code",
-      "norm_label": "statement.astro",
-      "source_file": "src/components/home/Statement.astro",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_home_statement_bg",
-      "label": "bg",
-      "_origin": "ast",
-      "community": 90,
-      "community_name": "ImageSlot.astro",
-      "file_type": "code",
-      "norm_label": "bg",
-      "source_file": "src/components/home/Statement.astro",
-      "source_location": "L4"
-    },
-    {
-      "id": "src_components_templates_sector_tallmedia",
-      "label": "tallMedia",
-      "_origin": "ast",
-      "community": 92,
-      "community_name": "orientationOf",
-      "file_type": "code",
-      "norm_label": "tallmedia",
-      "source_file": "src/components/templates/Sector.astro",
-      "source_location": "L48"
     },
     {
       "id": "400_css",
@@ -10961,17 +10449,6 @@
       "norm_label": "depth.ts",
       "source_file": "src/lib/depth.ts",
       "source_location": "L1"
-    },
-    {
-      "id": "src_lib_depth_zones",
-      "label": "ZONES",
-      "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
-      "file_type": "code",
-      "norm_label": "zones",
-      "source_file": "src/lib/depth.ts",
-      "source_location": "L13"
     },
     {
       "id": "src_lib_forms",
@@ -12423,6 +11900,18 @@
       "type": "external"
     },
     {
+      "id": "src_assets_home_home_fleet_vessel",
+      "label": "src_assets_home_home_fleet_vessel",
+      "_origin": "semantic",
+      "community": 7,
+      "community_name": "home.ts",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "src_assets_home_home_fleet_vessel",
+      "source_file": "",
+      "type": "external"
+    },
+    {
       "id": "src_styles_home",
       "label": "src_styles_home",
       "_origin": "semantic",
@@ -12431,18 +11920,6 @@
       "external": true,
       "file_type": "concept",
       "norm_label": "src_styles_home",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "src_assets_home_home_fleet_vessel",
-      "label": "src_assets_home_home_fleet_vessel",
-      "_origin": "semantic",
-      "community": 90,
-      "community_name": "ImageSlot.astro",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "src_assets_home_home_fleet_vessel",
       "source_file": "",
       "type": "external"
     },
@@ -12809,18 +12286,6 @@
       "weight": 1.0
     },
     {
-      "source": "src_components_templates_sector_tallmedia",
-      "target": "src_data_media_orientationof",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/components/templates/Sector.astro",
-      "source_location": "L49",
-      "weight": 1.0
-    },
-    {
       "source": "src_lib_content_cardfrom",
       "target": "src_data_pages_page",
       "relation": "calls",
@@ -12882,14 +12347,14 @@
     },
     {
       "source": "src_lib_depth_initdepth",
-      "target": "src_lib_depth_zoneat",
+      "target": "src_lib_depth_zoneof",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/depth.ts",
-      "source_location": "L45",
+      "source_location": "L37",
       "weight": 1.0
     },
     {
@@ -12901,7 +12366,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L126",
+      "source_location": "L117",
       "weight": 1.0
     },
     {
@@ -12913,7 +12378,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L142",
+      "source_location": "L133",
       "weight": 1.0
     },
     {
@@ -12925,7 +12390,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L177",
+      "source_location": "L165",
       "weight": 1.0
     },
     {
@@ -12937,7 +12402,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L178",
+      "source_location": "L166",
       "weight": 1.0
     },
     {
@@ -12949,7 +12414,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L81",
+      "source_location": "L82",
       "weight": 1.0
     },
     {
@@ -12961,7 +12426,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L142",
+      "source_location": "L133",
       "weight": 1.0
     },
     {
@@ -12973,7 +12438,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L264",
+      "source_location": "L252",
       "weight": 1.0
     },
     {
@@ -12985,7 +12450,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L126",
+      "source_location": "L117",
       "weight": 1.0
     },
     {
@@ -12997,7 +12462,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L127",
+      "source_location": "L118",
       "weight": 1.0
     },
     {
@@ -13009,7 +12474,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L128",
+      "source_location": "L119",
       "weight": 1.0
     },
     {
@@ -13021,7 +12486,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L280",
+      "source_location": "L268",
       "weight": 1.0
     },
     {
@@ -13033,7 +12498,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L280",
+      "source_location": "L268",
       "weight": 1.0
     },
     {
@@ -13585,7 +13050,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L57",
+      "source_location": "L58",
       "weight": 1.0
     },
     {
@@ -13597,7 +13062,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L120",
+      "source_location": "L111",
       "weight": 1.0
     },
     {
@@ -13609,7 +13074,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L141",
+      "source_location": "L132",
       "weight": 1.0
     },
     {
@@ -13621,7 +13086,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L191",
+      "source_location": "L179",
       "weight": 1.0
     },
     {
@@ -13633,7 +13098,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L245",
+      "source_location": "L233",
       "weight": 1.0
     },
     {
@@ -13645,7 +13110,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L252",
+      "source_location": "L240",
       "weight": 1.0
     },
     {
@@ -13657,7 +13122,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L299",
+      "source_location": "L285",
       "weight": 1.0
     },
     {
@@ -14041,7 +13506,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/blocks/PageEnding.astro",
-      "source_location": "L4",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -14177,30 +13642,6 @@
       "weight": 1.0
     },
     {
-      "source": "src_components_home_lifecyclesteps",
-      "target": "src_data_home_lifecycle",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/home/LifecycleSteps.astro",
-      "source_location": "L3",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_home_lifecyclesteps",
-      "target": "src_data_media_media",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/home/LifecycleSteps.astro",
-      "source_location": "L4",
-      "weight": 1.0
-    },
-    {
       "source": "src_components_home_sectortrack",
       "target": "src_data_home_sectors",
       "relation": "imports",
@@ -14226,74 +13667,14 @@
     },
     {
       "source": "src_components_home_statement",
-      "target": "src_data_media_mediafor",
+      "target": "src_data_home_story",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/home/Statement.astro",
-      "source_location": "L3",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_home_stats",
-      "target": "src_lib_blocks_isnumericstat",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/home/Stats.astro",
-      "source_location": "L3",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_home_stats",
-      "target": "src_lib_blocks_statdigits",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/home/Stats.astro",
-      "source_location": "L3",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_home_stats",
-      "target": "src_lib_blocks_statsuffix",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/home/Stats.astro",
-      "source_location": "L3",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_home_tierladder",
-      "target": "src_data_home_tiers",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/home/TierLadder.astro",
-      "source_location": "L3",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_home_tierladder",
-      "target": "src_data_media_mediafor",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/home/TierLadder.astro",
-      "source_location": "L4",
+      "source_location": "L8",
       "weight": 1.0
     },
     {
@@ -14821,7 +14202,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L15",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -14833,48 +14214,12 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L15",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_templates_hub",
-      "target": "src_lib_blocks_pageentry",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L16",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_templates_hub",
-      "target": "src_lib_content_hasbody",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/templates/Hub.astro",
       "source_location": "L17",
       "weight": 1.0
     },
     {
       "source": "src_components_templates_hub",
-      "target": "src_lib_content_isintro",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L17",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_templates_hub",
-      "target": "src_lib_seo_absolute",
+      "target": "src_lib_blocks_endingcta",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -14886,6 +14231,54 @@
     },
     {
       "source": "src_components_templates_hub",
+      "target": "src_lib_blocks_pageentry",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/templates/Hub.astro",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_templates_hub",
+      "target": "src_lib_content_hasbody",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/templates/Hub.astro",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_templates_hub",
+      "target": "src_lib_content_isintro",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/templates/Hub.astro",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_templates_hub",
+      "target": "src_lib_seo_absolute",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/templates/Hub.astro",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_templates_hub",
       "target": "src_lib_mdx_mdxcomponents",
       "relation": "imports",
       "_origin": "ast",
@@ -14893,7 +14286,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L27",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
@@ -15097,7 +14490,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Product.astro",
-      "source_location": "L11",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -15109,7 +14502,19 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Product.astro",
-      "source_location": "L11",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_templates_product",
+      "target": "src_lib_blocks_endingcta",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/templates/Product.astro",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -15121,7 +14526,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Product.astro",
-      "source_location": "L12",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -15133,7 +14538,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Product.astro",
-      "source_location": "L13",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -15145,7 +14550,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Product.astro",
-      "source_location": "L26",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -15234,66 +14639,6 @@
     },
     {
       "source": "src_components_templates_sector",
-      "target": "src_lib_content_cardfrom",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/templates/Sector.astro",
-      "source_location": "L10",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_templates_sector",
-      "target": "src_lib_content_entryfor",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/templates/Sector.astro",
-      "source_location": "L10",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_templates_sector",
-      "target": "src_data_media_orientationof",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/templates/Sector.astro",
-      "source_location": "L11",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_templates_sector",
-      "target": "src_lib_mdx_mdxcomponents",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/templates/Sector.astro",
-      "source_location": "L26",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_templates_sector",
-      "target": "src_data_pages_page",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/templates/Sector.astro",
-      "source_location": "L8",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_templates_sector",
       "target": "src_data_pages_pagemeta",
       "relation": "imports",
       "_origin": "ast",
@@ -15301,7 +14646,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Sector.astro",
-      "source_location": "L8",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -15313,7 +14658,19 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Sector.astro",
-      "source_location": "L9",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_templates_sector",
+      "target": "src_lib_blocks_endingcta",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/templates/Sector.astro",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -15325,7 +14682,43 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Sector.astro",
-      "source_location": "L9",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_templates_sector",
+      "target": "src_lib_content_cardfrom",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/templates/Sector.astro",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_templates_sector",
+      "target": "src_lib_content_hasbody",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/templates/Sector.astro",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_templates_sector",
+      "target": "src_lib_mdx_mdxcomponents",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/templates/Sector.astro",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -15493,7 +14886,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/data/home.ts",
-      "source_location": "L2",
+      "source_location": "L3",
       "weight": 1.0
     },
     {
@@ -15714,7 +15107,7 @@
     },
     {
       "source": "src_lib_home_scroll",
-      "target": "src_lib_rtg3d_vieweropts",
+      "target": "src_data_home_machines",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -15722,6 +15115,18 @@
       "context": "import",
       "source_file": "src/lib/home-scroll.ts",
       "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_home_scroll",
+      "target": "src_lib_rtg3d_vieweropts",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/lib/home-scroll.ts",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -15830,6 +15235,18 @@
       "context": "import",
       "source_file": "src/pages/404.astro",
       "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_pages_index",
+      "target": "src_data_home_equipment",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/pages/index.astro",
+      "source_location": "L12",
       "weight": 1.0
     },
     {
@@ -16333,7 +15750,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/blocks/PageEnding.astro",
-      "source_location": "L4",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -16345,7 +15762,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/blocks/PageEnding.astro",
-      "source_location": "L5",
+      "source_location": "L6",
       "weight": 1.0
     },
     {
@@ -16357,7 +15774,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/blocks/PageEnding.astro",
-      "source_location": "L6",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -16369,7 +15786,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/blocks/PageEnding.astro",
-      "source_location": "L7",
+      "source_location": "L8",
       "weight": 1.0
     },
     {
@@ -16381,7 +15798,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/blocks/PageEnding.astro",
-      "source_location": "L8",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -16493,18 +15910,6 @@
       "weight": 1.0
     },
     {
-      "source": "src_components_home_fleet",
-      "target": "src_assets_home_home_fleet_vessel",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/home/Fleet.astro",
-      "source_location": "L9",
-      "weight": 1.0
-    },
-    {
       "source": "src_components_home_hero",
       "target": "src_components_site_waterline",
       "relation": "imports_from",
@@ -16514,30 +15919,6 @@
       "context": "import",
       "source_file": "src/components/home/Hero.astro",
       "source_location": "L11",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_home_lifecyclesteps",
-      "target": "src_data_home",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/home/LifecycleSteps.astro",
-      "source_location": "L3",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_home_lifecyclesteps",
-      "target": "src_data_media",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/home/LifecycleSteps.astro",
-      "source_location": "L4",
       "weight": 1.0
     },
     {
@@ -16566,50 +15947,26 @@
     },
     {
       "source": "src_components_home_statement",
-      "target": "src_data_media",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/home/Statement.astro",
-      "source_location": "L3",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_home_stats",
-      "target": "src_lib_blocks",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/home/Stats.astro",
-      "source_location": "L3",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_home_tierladder",
       "target": "src_data_home",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "import",
-      "source_file": "src/components/home/TierLadder.astro",
-      "source_location": "L3",
+      "source_file": "src/components/home/Statement.astro",
+      "source_location": "L8",
       "weight": 1.0
     },
     {
-      "source": "src_components_home_tierladder",
-      "target": "src_data_media",
+      "source": "src_components_home_statement",
+      "target": "src_assets_home_home_fleet_vessel",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "import",
-      "source_file": "src/components/home/TierLadder.astro",
-      "source_location": "L4",
+      "source_file": "src/components/home/Statement.astro",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -17773,7 +17130,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L15",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -17785,7 +17142,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L16",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -17797,7 +17154,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L17",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -17809,7 +17166,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L18",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -17821,7 +17178,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L19",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -17833,7 +17190,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L20",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -17845,7 +17202,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L21",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -17857,7 +17214,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L22",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -17869,7 +17226,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L23",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -17881,7 +17238,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L24",
+      "source_location": "L26",
       "weight": 1.0
     },
     {
@@ -17893,7 +17250,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L25",
+      "source_location": "L27",
       "weight": 1.0
     },
     {
@@ -17905,7 +17262,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L26",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -17917,7 +17274,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L27",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
@@ -18373,7 +17730,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Product.astro",
-      "source_location": "L11",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -18385,7 +17742,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Product.astro",
-      "source_location": "L12",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -18397,7 +17754,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Product.astro",
-      "source_location": "L13",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -18409,7 +17766,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Product.astro",
-      "source_location": "L14",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -18421,7 +17778,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Product.astro",
-      "source_location": "L15",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -18433,7 +17790,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Product.astro",
-      "source_location": "L16",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -18445,7 +17802,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Product.astro",
-      "source_location": "L17",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -18457,7 +17814,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Product.astro",
-      "source_location": "L18",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -18469,7 +17826,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Product.astro",
-      "source_location": "L19",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -18481,7 +17838,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Product.astro",
-      "source_location": "L20",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -18493,7 +17850,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Product.astro",
-      "source_location": "L21",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -18505,7 +17862,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Product.astro",
-      "source_location": "L22",
+      "source_location": "L26",
       "weight": 1.0
     },
     {
@@ -18517,7 +17874,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Product.astro",
-      "source_location": "L23",
+      "source_location": "L27",
       "weight": 1.0
     },
     {
@@ -18529,7 +17886,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Product.astro",
-      "source_location": "L24",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -18541,7 +17898,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Product.astro",
-      "source_location": "L25",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
@@ -18553,7 +17910,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Product.astro",
-      "source_location": "L26",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -18774,55 +18131,7 @@
     },
     {
       "source": "src_components_templates_sector",
-      "target": "src_lib_content",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/templates/Sector.astro",
-      "source_location": "L10",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_templates_sector",
-      "target": "src_data_media",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/templates/Sector.astro",
-      "source_location": "L11",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_templates_sector",
-      "target": "src_layouts_base",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/templates/Sector.astro",
-      "source_location": "L12",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_templates_sector",
-      "target": "src_components_blocks_pagehero",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/templates/Sector.astro",
-      "source_location": "L13",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_templates_sector",
-      "target": "src_components_blocks_section",
+      "target": "src_data_pages",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -18834,7 +18143,7 @@
     },
     {
       "source": "src_components_templates_sector",
-      "target": "src_components_blocks_prose",
+      "target": "src_lib_blocks",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -18846,7 +18155,7 @@
     },
     {
       "source": "src_components_templates_sector",
-      "target": "src_components_blocks_mediaband",
+      "target": "src_lib_content",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -18858,7 +18167,7 @@
     },
     {
       "source": "src_components_templates_sector",
-      "target": "src_components_blocks_steplist",
+      "target": "src_layouts_base",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -18870,7 +18179,7 @@
     },
     {
       "source": "src_components_templates_sector",
-      "target": "src_components_blocks_sectionhead",
+      "target": "src_components_blocks_pagehero",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -18882,7 +18191,7 @@
     },
     {
       "source": "src_components_templates_sector",
-      "target": "src_components_blocks_featurerow",
+      "target": "src_components_blocks_section",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -18894,7 +18203,7 @@
     },
     {
       "source": "src_components_templates_sector",
-      "target": "src_components_blocks_scrolltrack",
+      "target": "src_components_blocks_prose",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -18906,7 +18215,7 @@
     },
     {
       "source": "src_components_templates_sector",
-      "target": "src_components_blocks_indexrows",
+      "target": "src_components_blocks_mediaband",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -18918,7 +18227,7 @@
     },
     {
       "source": "src_components_templates_sector",
-      "target": "src_components_blocks_card",
+      "target": "src_components_blocks_indexrows",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -18930,7 +18239,7 @@
     },
     {
       "source": "src_components_templates_sector",
-      "target": "src_components_blocks_featuredcase",
+      "target": "src_components_blocks_pageending",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -18942,30 +18251,6 @@
     },
     {
       "source": "src_components_templates_sector",
-      "target": "src_components_blocks_skeleton",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/templates/Sector.astro",
-      "source_location": "L24",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_templates_sector",
-      "target": "src_components_blocks_pageending",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/templates/Sector.astro",
-      "source_location": "L25",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_templates_sector",
       "target": "src_lib_mdx",
       "relation": "imports_from",
       "_origin": "ast",
@@ -18973,31 +18258,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Sector.astro",
-      "source_location": "L26",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_templates_sector",
-      "target": "src_data_pages",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/templates/Sector.astro",
-      "source_location": "L8",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_templates_sector",
-      "target": "src_lib_blocks",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/templates/Sector.astro",
-      "source_location": "L9",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -19381,7 +18642,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/data/home.ts",
-      "source_location": "L2",
+      "source_location": "L3",
       "weight": 1.0
     },
     {
@@ -20278,7 +19539,7 @@
     },
     {
       "source": "src_lib_home_scroll",
-      "target": "src_lib_rtg3d",
+      "target": "src_data_home",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -20286,6 +19547,18 @@
       "context": "import",
       "source_file": "src/lib/home-scroll.ts",
       "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_home_scroll",
+      "target": "src_lib_rtg3d",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/lib/home-scroll.ts",
+      "source_location": "L25",
       "type_only": true,
       "weight": 1.0
     },
@@ -20473,7 +19746,7 @@
     },
     {
       "source": "src_pages_index",
-      "target": "src_components_home_equipmentgrid",
+      "target": "src_components_blocks_section",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -20485,7 +19758,7 @@
     },
     {
       "source": "src_pages_index",
-      "target": "src_components_home_proofcase",
+      "target": "src_components_blocks_proofbar",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -20497,7 +19770,7 @@
     },
     {
       "source": "src_pages_index",
-      "target": "src_components_home_lifecyclesteps",
+      "target": "src_data_home",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -20533,7 +19806,7 @@
     },
     {
       "source": "src_pages_index",
-      "target": "src_components_home_fleet",
+      "target": "src_components_home_statement",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -20545,7 +19818,7 @@
     },
     {
       "source": "src_pages_index",
-      "target": "src_components_home_statement",
+      "target": "src_components_home_machinelift",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -20557,7 +19830,7 @@
     },
     {
       "source": "src_pages_index",
-      "target": "src_components_home_stats",
+      "target": "src_components_home_sectortrack",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -20581,7 +19854,7 @@
     },
     {
       "source": "src_pages_index",
-      "target": "src_components_home_sectortrack",
+      "target": "src_components_home_lifecyclesteps",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -20593,7 +19866,7 @@
     },
     {
       "source": "src_pages_index",
-      "target": "src_components_home_machinelift",
+      "target": "src_components_blocks_indexrows",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -20840,7 +20113,7 @@
       "confidence_score": 1.0,
       "context": "type",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L29",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -22061,7 +21334,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L25",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -22072,7 +21345,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L42",
+      "source_location": "L47",
       "weight": 1.0
     },
     {
@@ -22083,7 +21356,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L63",
+      "source_location": "L68",
       "weight": 1.0
     },
     {
@@ -22094,7 +21367,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L83",
+      "source_location": "L88",
       "weight": 1.0
     },
     {
@@ -22105,7 +21378,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L106",
+      "source_location": "L111",
       "weight": 1.0
     },
     {
@@ -22116,7 +21389,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L152",
+      "source_location": "L157",
       "weight": 1.0
     },
     {
@@ -22127,7 +21400,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L164",
+      "source_location": "L169",
       "weight": 1.0
     },
     {
@@ -22138,7 +21411,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L174",
+      "source_location": "L179",
       "weight": 1.0
     },
     {
@@ -22149,7 +21422,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L327",
+      "source_location": "L337",
       "weight": 1.0
     },
     {
@@ -22160,7 +21433,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L367",
+      "source_location": "L378",
       "weight": 1.0
     },
     {
@@ -22171,7 +21444,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L410",
+      "source_location": "L421",
       "weight": 1.0
     },
     {
@@ -22182,7 +21455,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L430",
+      "source_location": "L441",
+      "weight": 1.0
+    },
+    {
+      "source": "claude_rtg_website_project_guide_for_claude_code",
+      "target": "claude_3_stack_and_conventions",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": "L100",
       "weight": 1.0
     },
     {
@@ -22193,7 +21477,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L187",
+      "source_location": "L192",
       "weight": 1.0
     },
     {
@@ -22204,7 +21488,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L219",
+      "source_location": "L224",
       "weight": 1.0
     },
     {
@@ -22215,7 +21499,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L261",
+      "source_location": "L271",
       "weight": 1.0
     },
     {
@@ -22226,7 +21510,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L279",
+      "source_location": "L289",
       "weight": 1.0
     },
     {
@@ -22237,7 +21521,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L344",
+      "source_location": "L354",
       "weight": 1.0
     },
     {
@@ -22248,7 +21532,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L360",
+      "source_location": "L371",
       "weight": 1.0
     },
     {
@@ -22259,7 +21543,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L38",
+      "source_location": "L43",
       "weight": 1.0
     },
     {
@@ -22270,7 +21554,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L486",
+      "source_location": "L497",
       "weight": 1.0
     },
     {
@@ -22282,17 +21566,6 @@
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
       "source_location": "L8",
-      "weight": 1.0
-    },
-    {
-      "source": "claude_rtg_website_project_guide_for_claude_code",
-      "target": "claude_3_stack_and_conventions",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CLAUDE.md",
-      "source_location": "L95",
       "weight": 1.0
     },
     {
@@ -24023,17 +23296,6 @@
       "weight": 1.0
     },
     {
-      "source": "src_components_home_statement",
-      "target": "src_components_home_statement_bg",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/components/home/Statement.astro",
-      "source_location": "L4",
-      "weight": 1.0
-    },
-    {
       "source": "src_components_site_footer",
       "target": "src_components_site_footer_year",
       "relation": "contains",
@@ -24162,7 +23424,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L38",
+      "source_location": "L40",
       "weight": 1.0
     },
     {
@@ -24173,7 +23435,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L39",
+      "source_location": "L41",
       "weight": 1.0
     },
     {
@@ -24184,7 +23446,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L57",
+      "source_location": "L59",
       "weight": 1.0
     },
     {
@@ -24217,7 +23479,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/templates/Product.astro",
-      "source_location": "L43",
+      "source_location": "L47",
       "weight": 1.0
     },
     {
@@ -24250,29 +23512,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/templates/Sector.astro",
-      "source_location": "L37",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_templates_sector",
-      "target": "src_components_templates_sector_tallmedia",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/components/templates/Sector.astro",
-      "source_location": "L48",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_templates_sector",
-      "target": "src_components_templates_sector_bandmedia",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/components/templates/Sector.astro",
-      "source_location": "L52",
+      "source_location": "L35",
       "weight": 1.0
     },
     {
@@ -24349,7 +23589,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/content.config.ts",
-      "source_location": "L270",
+      "source_location": "L271",
       "weight": 1.0
     },
     {
@@ -24705,311 +23945,36 @@
       "weight": 1.0
     },
     {
-      "source": "src_content_pages_e_00",
-      "target": "src_content_pages_e_00_why_the_figures_on_these_pages_are_representative",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/e-00.mdx",
-      "source_location": "L27",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_e_00",
-      "target": "src_content_pages_e_00_three_ways_in",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/e-00.mdx",
-      "source_location": "L44",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_e_00",
-      "target": "src_content_pages_e_00_what_we_need_to_size_anything",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/e-00.mdx",
-      "source_location": "L56",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_e_01",
-      "target": "src_content_pages_e_01_one_winch_five_duties",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/e-01.mdx",
-      "source_location": "L13",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_e_01",
-      "target": "src_content_pages_e_01_the_five_families",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/e-01.mdx",
-      "source_location": "L25",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_e_01_one_winch_five_duties",
-      "target": "src_content_pages_e_01_the_figure_that_actually_matters",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/e-01.mdx",
-      "source_location": "L17",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_e_01_one_winch_five_duties",
-      "target": "src_content_pages_e_01_electric_or_hydraulic",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/e-01.mdx",
-      "source_location": "L21",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_e_02",
-      "target": "src_content_pages_e_02_why_it_is_built_this_way",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/e-02.mdx",
-      "source_location": "L70",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_e_02",
-      "target": "src_content_pages_e_02_proven",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/e-02.mdx",
-      "source_location": "L80",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_e_03",
-      "target": "src_content_pages_e_03_drive_comparison",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/e-03.mdx",
-      "source_location": "L43",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_e_03",
-      "target": "src_content_pages_e_03_level_wind_options",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/e-03.mdx",
-      "source_location": "L67",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_e_03",
-      "target": "src_content_pages_e_03_applications",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/e-03.mdx",
-      "source_location": "L84",
-      "weight": 1.0
-    },
-    {
       "source": "src_content_pages_e_04",
-      "target": "src_content_pages_e_04_applications",
+      "target": "src_content_pages_e_04_duty_rating",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/content/pages/e-04.mdx",
-      "source_location": "L43",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_e_05",
-      "target": "src_content_pages_e_05_the_slip_ring_boundary_explained",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/e-05.mdx",
-      "source_location": "L43",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_e_05",
-      "target": "src_content_pages_e_05_cable_protection",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/e-05.mdx",
-      "source_location": "L61",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_e_06",
-      "target": "src_content_pages_e_06_class",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/e-06.mdx",
-      "source_location": "L63",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_e_07",
-      "target": "src_content_pages_e_07_request_the_general_arrangement",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/e-07.mdx",
-      "source_location": "L101",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_e_07",
-      "target": "src_content_pages_e_07_configurations",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/e-07.mdx",
-      "source_location": "L63",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_e_07",
-      "target": "src_content_pages_e_07_sea_state",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/e-07.mdx",
-      "source_location": "L75",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_e_07",
-      "target": "src_content_pages_e_07_deck_seating_and_loading",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/e-07.mdx",
-      "source_location": "L83",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_e_07",
-      "target": "src_content_pages_e_07_motion_compensation_options",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/e-07.mdx",
-      "source_location": "L93",
+      "source_location": "L64",
       "weight": 1.0
     },
     {
       "source": "src_content_pages_e_08",
-      "target": "src_content_pages_e_08_applications",
+      "target": "src_content_pages_e_08_certification",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/content/pages/e-08.mdx",
-      "source_location": "L108",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_e_08",
-      "target": "src_content_pages_e_08_the_range",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/e-08.mdx",
-      "source_location": "L22",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_e_08",
-      "target": "src_content_pages_e_08_class_and_proof_load",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/e-08.mdx",
-      "source_location": "L58",
+      "source_location": "L33",
       "weight": 1.0
     },
     {
       "source": "src_content_pages_e_10",
-      "target": "src_content_pages_e_10_fail_safe_braking",
+      "target": "src_content_pages_e_10_to_specify",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/content/pages/e-10.mdx",
-      "source_location": "L126",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_e_10",
-      "target": "src_content_pages_e_10_what_decides_which_unit",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/e-10.mdx",
-      "source_location": "L158",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_e_10",
-      "target": "src_content_pages_e_10_how_it_is_built",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/e-10.mdx",
-      "source_location": "L66",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_e_10",
-      "target": "src_content_pages_e_10_squeeze_versus_line_tension_explained",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/e-10.mdx",
-      "source_location": "L81",
+      "source_location": "L116",
       "weight": 1.0
     },
     {
@@ -25333,40 +24298,40 @@
     },
     {
       "source": "src_content_pages_s_01",
-      "target": "src_content_pages_s_01_the_problem_as_it_usually_gets_described_to_us",
+      "target": "src_content_pages_s_01_what_we_supply",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/content/pages/s-01.mdx",
-      "source_location": "L51",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
       "source": "src_content_pages_s_01",
-      "target": "src_content_pages_s_01_what_we_build_for_it",
+      "target": "src_content_pages_s_01_testing",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/content/pages/s-01.mdx",
-      "source_location": "L75",
+      "source_location": "L35",
       "weight": 1.0
     },
     {
       "source": "src_content_pages_s_01",
-      "target": "src_content_pages_s_01_proven_in_service",
+      "target": "src_content_pages_s_01_track_record",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/content/pages/s-01.mdx",
-      "source_location": "L85",
+      "source_location": "L39",
       "weight": 1.0
     },
     {
       "source": "src_content_pages_s_02",
-      "target": "src_content_pages_s_02_a_captive_tool_is_a_hostile_geometry",
+      "target": "src_content_pages_s_02_what_we_supply",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -25377,68 +24342,35 @@
     },
     {
       "source": "src_content_pages_s_02",
-      "target": "src_content_pages_s_02_three_thousand_metres",
+      "target": "src_content_pages_s_02_fig_of_cptdepthm_working_depth_record",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/content/pages/s-02.mdx",
-      "source_location": "L38",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
       "source": "src_content_pages_s_02",
-      "target": "src_content_pages_s_02_why_your_winch_gets_weaker_and_faster_as_it_spools_in",
+      "target": "src_content_pages_s_02_sizing_at_depth",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/content/pages/s-02.mdx",
-      "source_location": "L48",
+      "source_location": "L33",
       "weight": 1.0
     },
     {
-      "source": "src_content_pages_s_02_a_captive_tool_is_a_hostile_geometry",
-      "target": "src_content_pages_s_02_what_we_build_for_it",
+      "source": "src_content_pages_s_02",
+      "target": "src_content_pages_s_02_track_record",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/content/pages/s-02.mdx",
-      "source_location": "L28",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_s_03",
-      "target": "src_content_pages_s_03_self_contained_skids_for_vessels_of_opportunity",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/s-03.mdx",
-      "source_location": "L126",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_s_03",
-      "target": "src_content_pages_s_03_lead_times",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/s-03.mdx",
-      "source_location": "L161",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_s_03",
-      "target": "src_content_pages_s_03_the_problem_as_it_usually_gets_described_to_us",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/s-03.mdx",
-      "source_location": "L19",
+      "source_location": "L37",
       "weight": 1.0
     },
     {
@@ -25449,7 +24381,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/content/pages/s-03.mdx",
-      "source_location": "L61",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -25460,139 +24392,128 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/content/pages/s-03.mdx",
-      "source_location": "L92",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_s_04",
-      "target": "src_content_pages_s_04_the_problem_as_it_usually_gets_described_to_us",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/s-04.mdx",
-      "source_location": "L32",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_s_04",
-      "target": "src_content_pages_s_04_a_deck_is_not_one_machine",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/s-04.mdx",
-      "source_location": "L49",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_s_05",
-      "target": "src_content_pages_s_05_the_range",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/s-05.mdx",
-      "source_location": "L113",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_s_05",
-      "target": "src_content_pages_s_05_institutions_we_work_with",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/s-05.mdx",
-      "source_location": "L153",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_s_05",
-      "target": "src_content_pages_s_05_why_the_winch_is_part_of_the_instrument",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/s-05.mdx",
-      "source_location": "L22",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_s_05",
-      "target": "src_content_pages_s_05_slow_speed_control",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/s-05.mdx",
-      "source_location": "L67",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_s_06",
-      "target": "src_content_pages_s_06_availability_is_the_specification",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/s-06.mdx",
-      "source_location": "L28",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_s_06",
-      "target": "src_content_pages_s_06_handling_people_is_a_different_design_problem",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/s-06.mdx",
-      "source_location": "L41",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_s_06",
-      "target": "src_content_pages_s_06_certification_at_delivery_is_not_certification_in_service",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/s-06.mdx",
-      "source_location": "L51",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_s_06",
-      "target": "src_content_pages_s_06_why_we_do_not_supply_the_slip_ring",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/s-06.mdx",
-      "source_location": "L58",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_s_07",
-      "target": "src_content_pages_s_07_class",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/s-07.mdx",
-      "source_location": "L130",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_s_07",
-      "target": "src_content_pages_s_07_the_problem_as_it_usually_gets_described_to_us",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/s-07.mdx",
       "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "src_content_pages_s_03",
+      "target": "src_content_pages_s_03_vessels_of_opportunity",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/content/pages/s-03.mdx",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "src_content_pages_s_03",
+      "target": "src_content_pages_s_03_lead_times",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/content/pages/s-03.mdx",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "src_content_pages_s_03",
+      "target": "src_content_pages_s_03_to_specify_a_tensioner",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/content/pages/s-03.mdx",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "src_content_pages_s_04",
+      "target": "src_content_pages_s_04_what_we_supply",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/content/pages/s-04.mdx",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "src_content_pages_s_04",
+      "target": "src_content_pages_s_04_duty_rating",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/content/pages/s-04.mdx",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "src_content_pages_s_05",
+      "target": "src_content_pages_s_05_what_we_supply",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/content/pages/s-05.mdx",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "src_content_pages_s_05",
+      "target": "src_content_pages_s_05_design_choices",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/content/pages/s-05.mdx",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "src_content_pages_s_05",
+      "target": "src_content_pages_s_05_testing",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/content/pages/s-05.mdx",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "src_content_pages_s_05",
+      "target": "src_content_pages_s_05_who_we_work_with",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/content/pages/s-05.mdx",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "src_content_pages_s_06",
+      "target": "src_content_pages_s_06_what_we_supply",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/content/pages/s-06.mdx",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "src_content_pages_s_06",
+      "target": "src_content_pages_s_06_clients",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/content/pages/s-06.mdx",
+      "source_location": "L35",
       "weight": 1.0
     },
     {
@@ -25603,7 +24524,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/content/pages/s-07.mdx",
-      "source_location": "L54",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "src_content_pages_s_07",
+      "target": "src_content_pages_s_07_class_and_acceptance",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/content/pages/s-07.mdx",
+      "source_location": "L32",
       "weight": 1.0
     },
     {
@@ -25614,7 +24546,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/content/pages/s-07.mdx",
-      "source_location": "L92",
+      "source_location": "L39",
       "weight": 1.0
     },
     {
@@ -25905,68 +24837,57 @@
     },
     {
       "source": "src_data_home",
-      "target": "src_data_home_hero_proof",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/data/home.ts",
-      "source_location": "L115",
-      "weight": 1.0
-    },
-    {
-      "source": "src_data_home",
-      "target": "src_data_home_marquee",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/data/home.ts",
-      "source_location": "L15",
-      "weight": 1.0
-    },
-    {
-      "source": "src_data_home",
-      "target": "src_data_home_sectors",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/data/home.ts",
-      "source_location": "L25",
-      "weight": 1.0
-    },
-    {
-      "source": "src_data_home",
-      "target": "src_data_home_stat",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/data/home.ts",
-      "source_location": "L4",
-      "weight": 1.0
-    },
-    {
-      "source": "src_data_home",
       "target": "src_data_home_tiers",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/data/home.ts",
-      "source_location": "L43",
+      "source_location": "L100",
       "weight": 1.0
     },
     {
       "source": "src_data_home",
-      "target": "src_data_home_hero_stats",
+      "target": "src_data_home_service",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/data/home.ts",
-      "source_location": "L6",
+      "source_location": "L117",
+      "weight": 1.0
+    },
+    {
+      "source": "src_data_home",
+      "target": "src_data_home_hero_proof",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/data/home.ts",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "src_data_home",
+      "target": "src_data_home_story",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/data/home.ts",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "src_data_home",
+      "target": "src_data_home_conditions",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/data/home.ts",
+      "source_location": "L34",
       "weight": 1.0
     },
     {
@@ -25977,7 +24898,29 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/data/home.ts",
-      "source_location": "L64",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "src_data_home",
+      "target": "src_data_home_hero",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/data/home.ts",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_data_home",
+      "target": "src_data_home_sectors",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/data/home.ts",
+      "source_location": "L60",
       "weight": 1.0
     },
     {
@@ -25988,18 +24931,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/data/home.ts",
-      "source_location": "L77",
+      "source_location": "L78",
       "weight": 1.0
     },
     {
       "source": "src_data_home",
-      "target": "src_data_home_lifecycle",
+      "target": "src_data_home_manufacturing",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/data/home.ts",
-      "source_location": "L99",
+      "source_location": "L93",
       "weight": 1.0
     },
     {
@@ -26285,7 +25228,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/data/site.js",
-      "source_location": "L84",
+      "source_location": "L85",
       "weight": 1.0
     },
     {
@@ -26499,6 +25442,17 @@
     },
     {
       "source": "src_lib_blocks",
+      "target": "src_lib_blocks_endingcta",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/lib/blocks.ts",
+      "source_location": "L79",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_blocks",
       "target": "src_lib_blocks_pageentry",
       "relation": "contains",
       "_origin": "ast",
@@ -26598,18 +25552,7 @@
     },
     {
       "source": "src_lib_depth",
-      "target": "src_lib_depth_zones",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/lib/depth.ts",
-      "source_location": "L13",
-      "weight": 1.0
-    },
-    {
-      "source": "src_lib_depth",
-      "target": "src_lib_depth_zoneat",
+      "target": "src_lib_depth_zoneof",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -26659,7 +25602,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L26",
+      "source_location": "L27",
       "weight": 1.0
     },
     {
@@ -26670,7 +25613,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L29",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -26681,7 +25624,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L40",
+      "source_location": "L41",
       "weight": 1.0
     },
     {
@@ -26692,7 +25635,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L45",
+      "source_location": "L46",
       "weight": 1.0
     },
     {
@@ -26703,7 +25646,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L77",
+      "source_location": "L78",
       "weight": 1.0
     },
     {
@@ -27517,24 +26460,6 @@
       "source_file": "src/components/blocks/TierCard.astro"
     },
     {
-      "source": "src_components_home_equipmentgrid",
-      "target": "src_data_home",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/components/home/EquipmentGrid.astro"
-    },
-    {
-      "source": "src_components_home_fleet",
-      "target": "astro_assets",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/components/home/Fleet.astro"
-    },
-    {
       "source": "src_components_home_hero",
       "target": "src_data_home",
       "relation": "imports_from",
@@ -27545,7 +26470,7 @@
     },
     {
       "source": "src_components_home_lifecyclesteps",
-      "target": "astro_assets",
+      "target": "src_data_home",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -27580,17 +26505,8 @@
       "source_file": "src/components/home/Statement.astro"
     },
     {
-      "source": "src_components_home_stats",
-      "target": "src_data_home",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/components/home/Stats.astro"
-    },
-    {
       "source": "src_components_home_tierladder",
-      "target": "astro_assets",
+      "target": "src_data_home",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -27972,7 +26888,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L39",
+      "source_location": "L41",
       "weight": 1.0
     },
     {
@@ -27984,7 +26900,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L281",
+      "source_location": "L269",
       "weight": 1.0
     },
     {
@@ -27996,7 +26912,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L282",
+      "source_location": "L270",
       "weight": 1.0
     },
     {
@@ -28008,7 +26924,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L279",
+      "source_location": "L267",
       "weight": 1.0
     },
     {
@@ -28044,7 +26960,7 @@
       "confidence_score": 0.95,
       "context": "createViewer()",
       "source_file": "CLAUDE.md",
-      "source_location": "L334",
+      "source_location": "L344",
       "weight": 1.0
     },
     {
@@ -28056,7 +26972,7 @@
       "confidence_score": 0.95,
       "context": "entryFor()",
       "source_file": "CLAUDE.md",
-      "source_location": "L156",
+      "source_location": "L161",
       "weight": 1.0
     },
     {
@@ -28068,10 +26984,10 @@
       "confidence_score": 0.95,
       "context": "pagesByTemplate()",
       "source_file": "CLAUDE.md",
-      "source_location": "L413",
+      "source_location": "L424",
       "weight": 1.0
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "65ad78d1f08c044f62b2e21fd877d21e91216ca3"
+  "built_at_commit": "37627fb2c078f682ffa0fcab2875edc21727c7e4"
 }

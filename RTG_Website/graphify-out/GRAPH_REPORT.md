@@ -1,17 +1,17 @@
-# Graph Report - RTG_Website  (2026-10-08)
+# Graph Report - RTG_Website  (2026-10-12)
 
 ## Corpus Check
-- 178 files · ~3,092,938 words
+- 174 files · ~3,082,181 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 11 file(s) not represented in the graph (top: .css 9, (none) 1, .xml 1)
 
 ## Summary
-- 881 nodes · 1349 edges · 124 communities (66 shown, 58 thin omitted)
+- 847 nodes · 1299 edges · 123 communities (59 shown, 64 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 10 edges (avg confidence: 0.88)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `65ad78d1`
+- Built from commit: `37627fb2`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -43,13 +43,11 @@
 - c-02.mdx
 - c-03.mdx
 - c-04.mdx
-- One winch, five duties
 - s-02.mdx
 - a-01.mdx
 - l-00.mdx
 - s-06.mdx
 - c-06.mdx
-- e-02.mdx
 - s-01.mdx
 - s-04.mdx
 - c-07.mdx
@@ -59,12 +57,7 @@
 - s-07.mdx
 - x-01.mdx
 - y-03.mdx
-- e-00.mdx
-- e-03.mdx
 - e-04.mdx
-- e-05.mdx
-- e-06.mdx
-- e-07.mdx
 - e-08.mdx
 - e-10.mdx
 - z-01.mdx
@@ -73,7 +66,6 @@
 - z-04.mdx
 - ImageSlot.astro
 - src_assets_equipment_e04_reel_winch
-- orientationOf
 - src_assets_equipment_e07_aframe_dusk
 - src_assets_equipment_e08_knuckle_boom
 - src_assets_equipment_e08_proof_load_test
@@ -107,22 +99,22 @@
 - Site-wide ocean world (homepage first surface)
 
 ## God Nodes (most connected - your core abstractions)
-1. `[]` - 33 edges
-2. `[]` - 30 edges
-3. `[]` - 28 edges
-4. `[]` - 26 edges
+1. `[]` - 30 edges
+2. `[]` - 28 edges
+3. `[]` - 26 edges
+4. `[]` - 25 edges
 5. `[]` - 25 edges
-6. `[]` - 25 edges
-7. `[]` - 24 edges
-8. `PageMeta` - 24 edges
-9. `[]` - 23 edges
+6. `[]` - 24 edges
+7. `PageMeta` - 24 edges
+8. `[]` - 23 edges
+9. `[]` - 22 edges
 10. `PageEntry` - 20 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `Routing` --references--> `entryFor()`  [INFERRED]
-  CLAUDE.md → src/lib/content.ts
 - `3D` --references--> `createViewer()`  [INFERRED]
   CLAUDE.md → src/lib/rtg3d.ts
+- `Routing` --references--> `entryFor()`  [INFERRED]
+  CLAUDE.md → src/lib/content.ts
 - `9.2 Steps, per page` --references--> `pagesByTemplate()`  [INFERRED]
   CLAUDE.md → src/data/pages.ts
 - `ResolvedPage` --references--> `PageMeta`  [EXTRACTED]
@@ -133,23 +125,23 @@
 ## Import Cycles
 - None detected.
 
-## Communities (124 total, 58 thin omitted)
+## Communities (123 total, 64 thin omitted)
 
 ### Community 0 - "blocks.ts"
-Cohesion: 0.08
-Nodes (56): trail, jsonLdPage, siblings, jobPostings, [], jsonLdPage, [], contactPoints (+48 more)
+Cohesion: 0.09
+Nodes (52): trail, jsonLdPage, siblings, jobPostings, [], jsonLdPage, [], contactPoints (+44 more)
 
 ### Community 1 - "site.js"
-Cohesion: 0.17
-Nodes (5): year, FOOTER_NAV, LEGAL_NAV, NAV, PROOF_DISPLAY
+Cohesion: 0.15
+Nodes (6): year, FOOTER_NAV, LEGAL_NAV, NAV, PROOF, PROOF_DISPLAY
 
 ### Community 2 - "media.ts"
 Cohesion: 0.04
-Nodes (45): src_assets_equipment_e00_deck_spread, src_assets_equipment_e00_system_overview, src_assets_equipment_e02_deployment_frame, src_assets_equipment_e02_ds01_guarded, src_assets_equipment_e02_ds01_panel, src_assets_equipment_e02_ds38_hpu_b, src_assets_equipment_e02_ds38_winch, src_assets_equipment_e02_hpu (+37 more)
+Nodes (46): src_assets_equipment_e00_deck_spread, src_assets_equipment_e00_system_overview, src_assets_equipment_e02_deployment_frame, src_assets_equipment_e02_ds01_guarded, src_assets_equipment_e02_ds01_panel, src_assets_equipment_e02_ds38_hpu_b, src_assets_equipment_e02_ds38_winch, src_assets_equipment_e02_hpu (+38 more)
 
 ### Community 3 - "rtg3d.ts"
-Cohesion: 0.13
-Nodes (34): three, destroyHome(), initHome(), finishedWinch(), frame(), makeStage(), onResize(), onScroll() (+26 more)
+Cohesion: 0.12
+Nodes (35): three, MACHINES, destroyHome(), initHome(), finishedWinch(), frame(), makeStage(), onResize() (+27 more)
 
 ### Community 4 - "build.py"
 Cohesion: 0.08
@@ -157,15 +149,15 @@ Nodes (24): collections, datetime, glob, html, json, os, re, build() (+16 more)
 
 ### Community 5 - "RTG Website — project guide for Claude Code"
 Cohesion: 0.06
-Nodes (30): 1. What this is, 2. The workflow — follow this for every feature and every page, 3. Stack and conventions, 3D, 4. The 17 templates, 5. Known gaps — do not paper over these, 6. What must never be published, 7. Design system (+22 more)
+Nodes (34): 1. What this is, 2. The workflow — follow this for every feature and every page, 3. Stack and conventions, 3D, 4. The 17 templates, 5. Known gaps — do not paper over these, 6. What must never be published, 7. Design system (+26 more)
 
 ### Community 6 - "package.json"
 Cohesion: 0.15
 Nodes (12): description, name, private, type, version, astro, @astrojs/check, @fontsource/jetbrains-mono (+4 more)
 
 ### Community 7 - "home.ts"
-Cohesion: 0.12
-Nodes (12): EQUIPMENT, HERO_PROOF, HERO_STATS, LIFECYCLE, MACHINES, MARQUEE, SECTORS, Stat (+4 more)
+Cohesion: 0.13
+Nodes (11): src_assets_home_home_fleet_vessel, CONDITIONS, EQUIPMENT, HERO, HERO_PROOF, MANUFACTURING, SECTORS, SERVICE (+3 more)
 
 ### Community 8 - "RTG design language"
 Cohesion: 0.10
@@ -243,13 +235,9 @@ Nodes (4): How it is proven, What we do, What you no longer do, Where this sits
 Cohesion: 0.40
 Nodes (4): How it is proven, What we do, What you no longer do, Where this sits
 
-### Community 27 - "One winch, five duties"
-Cohesion: 0.40
-Nodes (4): Electric or hydraulic, One winch, five duties, The figure that actually matters, The five families
-
 ### Community 28 - "s-02.mdx"
 Cohesion: 0.40
-Nodes (4): A captive tool is a hostile geometry, Three thousand metres, What we build for it, Why your winch gets weaker and faster as it spools in
+Nodes (4): <Fig of="cptDepthM" /> working-depth record, Sizing at depth, Track record, What we supply
 
 ### Community 29 - "a-01.mdx"
 Cohesion: 0.50
@@ -259,45 +247,21 @@ Nodes (3): The model, and why it was built that way, What we believe, Where we a
 Cohesion: 0.50
 Nodes (3): Start with an honest assessment, What we do, Why this matters more than it used to
 
-### Community 31 - "s-06.mdx"
-Cohesion: 0.40
-Nodes (4): Availability is the specification, Certification at delivery is not certification in service, Handling people is a different design problem, Why we do not supply the slip ring
-
 ### Community 34 - "s-01.mdx"
 Cohesion: 0.50
-Nodes (3): Proven in service, The problem, as it usually gets described to us, What we build for it
+Nodes (3): Testing, Track record, What we supply
 
 ### Community 38 - "s-03.mdx"
 Cohesion: 0.33
-Nodes (5): Cable handling, Lead times, Self-contained skids for vessels of opportunity, Site investigation, The problem, as it usually gets described to us
+Nodes (5): Cable handling, Lead times, Site investigation, To specify a tensioner, Vessels of opportunity
 
 ### Community 39 - "s-05.mdx"
 Cohesion: 0.40
-Nodes (4): Institutions we work with, Slow-speed control, The range, Why the winch is part of the instrument
+Nodes (4): Design choices, Testing, What we supply, Who we work with
 
 ### Community 40 - "s-07.mdx"
-Cohesion: 0.40
-Nodes (4): Class, Security of supply, The problem, as it usually gets described to us, Traceability and documentation
-
-### Community 51 - "e-00.mdx"
 Cohesion: 0.50
-Nodes (3): Three ways in, What we need to size anything, Why the figures on these pages are representative
-
-### Community 52 - "e-03.mdx"
-Cohesion: 0.50
-Nodes (3): Applications, Drive comparison, Level wind options
-
-### Community 56 - "e-07.mdx"
-Cohesion: 0.33
-Nodes (5): Configurations, Deck seating and loading, Motion compensation options, Request the general arrangement, Sea state
-
-### Community 57 - "e-08.mdx"
-Cohesion: 0.50
-Nodes (3): Applications, Class and proof load, The range
-
-### Community 59 - "e-10.mdx"
-Cohesion: 0.40
-Nodes (4): Fail-safe braking, How it is built, Squeeze versus line tension, explained, What decides which unit
+Nodes (3): Class and acceptance, Security of supply, Traceability and documentation
 
 ### Community 86 - "z-01.mdx"
 Cohesion: 0.22
@@ -316,12 +280,12 @@ Cohesion: 0.50
 Nodes (3): Known issues, Telling us about a problem, The standard we target
 
 ### Community 90 - "ImageSlot.astro"
-Cohesion: 0.19
-Nodes (6): src_assets_home_home_fleet_vessel, photo, tiles, bg, mediaFor(), MotionHint
+Cohesion: 0.32
+Nodes (4): photo, tiles, mediaFor(), MotionHint
 
 ### Community 96 - "Base.astro"
 Cohesion: 0.05
-Nodes (36): ref_fontsource_jetbrains_mono_400_css, ref_fontsource_jetbrains_mono_500_css, ref_fontsource_variable_archivo_files_archivo_latin_wght_normal_woff2_url, ref_fontsource_variable_archivo_wght_css, ref_fontsource_variable_inter_files_inter_latin_wght_normal_woff2_url, ref_fontsource_variable_inter_wght_css, ancestorsOf(), OFF_MAP_IDS (+28 more)
+Nodes (35): ref_fontsource_jetbrains_mono_400_css, ref_fontsource_jetbrains_mono_500_css, ref_fontsource_variable_archivo_files_archivo_latin_wght_normal_woff2_url, ref_fontsource_variable_archivo_wght_css, ref_fontsource_variable_inter_files_inter_latin_wght_normal_woff2_url, ref_fontsource_variable_inter_wght_css, ancestorsOf(), OFF_MAP_IDS (+27 more)
 
 ### Community 97 - "Appendix B - Canonical Sources (read these before reinventing)"
 Cohesion: 0.09
@@ -400,24 +364,24 @@ Cohesion: 0.50
 Nodes (3): Direction contract, Site-wide ocean world (homepage first surface), Unresolved
 
 ## Knowledge Gaps
-- **432 isolated node(s):** `pagesDir`, `pagesTs`, `unfinished`, `name`, `version` (+427 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 596 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **58 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **404 isolated node(s):** `pagesDir`, `pagesTs`, `unfinished`, `name`, `version` (+399 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 576 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **64 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `[]` connect `blocks.ts` to `Base.astro`, `ImageSlot.astro`, `media.ts`, `orientationOf`?**
-  _High betweenness centrality (0.035) - this node is a cross-community bridge._
 - **Why does `astro` connect `package.json` to `media.ts`?**
   _High betweenness centrality (0.021) - this node is a cross-community bridge._
+- **Why does `tasteskill: Anti-Slop Frontend Skill` connect `tasteskill: Anti-Slop Frontend Skill` to `Appendix B - Canonical Sources (read these before reinventing)`, `4. DESIGN ENGINEERING DIRECTIVES (Bias Correction)`, `10. REFERENCE VOCABULARY (Pattern Names the Agent Should Know)`, `9. AI TELLS (Forbidden Patterns)`, `11. REDESIGN PROTOCOL`, `3. DEFAULT ARCHITECTURE & CONVENTIONS`, `6. PERFORMANCE & ACCESSIBILITY GUARDRAILS`, `12. THE BLOCK LIBRARY (Contract - Implementations Land Here Iteratively)`, `5. CONTEXT-AWARE PROACTIVITY`, `8. DARK MODE PROTOCOL`, `7. DIAL DEFINITIONS (Technical Reference)`, `1. THE THREE DIALS (Core Configuration)`?**
+  _High betweenness centrality (0.014) - this node is a cross-community bridge._
 - **What connects `pagesDir`, `pagesTs`, `unfinished` to the rest of the system?**
-  _432 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _404 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `blocks.ts` be split into smaller, more focused modules?**
-  _Cohesion score 0.08068283917340521 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.08534653465346535 - nodes in this community are weakly interconnected._
 - **Should `media.ts` be split into smaller, more focused modules?**
-  _Cohesion score 0.043478260869565216 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.041666666666666664 - nodes in this community are weakly interconnected._
 - **Should `rtg3d.ts` be split into smaller, more focused modules?**
-  _Cohesion score 0.12612612612612611 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.12091038406827881 - nodes in this community are weakly interconnected._
 - **Should `build.py` be split into smaller, more focused modules?**
   _Cohesion score 0.0766488413547237 - nodes in this community are weakly interconnected._
