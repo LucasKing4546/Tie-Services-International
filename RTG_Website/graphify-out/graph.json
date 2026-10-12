@@ -1876,14 +1876,14 @@
     },
     {
       "id": "src_components_templates_contact",
-      "label": "[]",
+      "label": "Contact.astro",
       "_origin": "ast",
       "community": 0,
       "community_name": "blocks.ts",
       "file_type": "code",
-      "norm_label": "[]",
+      "norm_label": "contact.astro",
       "source_file": "src/components/templates/Contact.astro",
-      "source_location": "L35"
+      "source_location": "L1"
     },
     {
       "id": "src_components_templates_contact_contactpoints",
@@ -1894,7 +1894,7 @@
       "file_type": "code",
       "norm_label": "contactpoints",
       "source_file": "src/components/templates/Contact.astro",
-      "source_location": "L37"
+      "source_location": "L41"
     },
     {
       "id": "src_components_templates_fallback",
@@ -4946,23 +4946,16 @@
       "file_type": "document",
       "frontmatter": {
         "pageId": "A-01",
-        "eyebrow": "About",
-        "lede": "Romica Tie Group was founded in 2003 by Mike Turner with his son Bob, to combine British deck equipment design knowledge with manufacturing capability in Eastern Europe.",
-        "stats": [
-          {
-            "value": "~80",
-            "label": "Engineers, welders, fitters and technicians in Satu Mare"
-          }
-        ],
-        "proofBar": true,
-        "cta": {
-          "heading": "Come and see it",
-          "body": "We are twenty minutes from Satu Mare airport.",
-          "primary": {
-            "label": "Talk to an engineer",
-            "href": "/contact/"
-          }
-        }
+        "draft": false,
+        "hero": {
+          "ctas": [
+            {
+              "label": "Talk to an engineer",
+              "href": "/contact/"
+            }
+          ]
+        },
+        "proofBar": true
       },
       "node_kind": "page",
       "norm_label": "a-01.mdx",
@@ -4970,40 +4963,40 @@
       "source_location": "L1"
     },
     {
-      "id": "src_content_pages_a_01_the_model_and_why_it_was_built_that_way",
-      "label": "The model, and why it was built that way",
+      "id": "src_content_pages_a_01_our_values",
+      "label": "Our values",
       "_origin": "ast",
       "community": 29,
       "community_name": "a-01.mdx",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "the model, and why it was built that way",
+      "norm_label": "our values",
       "source_file": "src/content/pages/a-01.mdx",
-      "source_location": "L14"
+      "source_location": "L23"
     },
     {
-      "id": "src_content_pages_a_01_what_we_believe",
-      "label": "What we believe",
+      "id": "src_content_pages_a_01_rtg_today",
+      "label": "RTG today",
       "_origin": "ast",
       "community": 29,
       "community_name": "a-01.mdx",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "what we believe",
+      "norm_label": "rtg today",
       "source_file": "src/content/pages/a-01.mdx",
-      "source_location": "L20"
+      "source_location": "L15"
     },
     {
-      "id": "src_content_pages_a_01_where_we_are",
-      "label": "Where we are",
+      "id": "src_content_pages_a_01_visit_us",
+      "label": "Visit us",
       "_origin": "ast",
       "community": 29,
       "community_name": "a-01.mdx",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "where we are",
+      "norm_label": "visit us",
       "source_file": "src/content/pages/a-01.mdx",
-      "source_location": "L26"
+      "source_location": "L27"
     },
     {
       "id": "src_data_home_machines",
@@ -6063,26 +6056,69 @@
       "file_type": "document",
       "frontmatter": {
         "pageId": "X-01",
-        "draft": true,
-        "eyebrow": "Contact",
-        "lede": "Two offices, named people, and a stated response time we intend to keep."
+        "lede": "We reply to enquiries within one working day.",
+        "draft": false,
+        "cards": [
+          {
+            "pageId": "X-03",
+            "title": "Request a quotation",
+            "blurb": "Duty, vessel and timescale."
+          },
+          {
+            "pageId": "L-05",
+            "title": "Book a condition assessment",
+            "blurb": "Equipment, vessel and maintenance window."
+          },
+          {
+            "pageId": "X-04",
+            "title": "Aftersales and spares",
+            "blurb": "Equipment and vessel; routed to the responsible engineer."
+          },
+          {
+            "pageId": "C-09",
+            "title": "Send documentation",
+            "blurb": "Contract manufacturing, under NDA."
+          },
+          {
+            "pageId": "R-01",
+            "title": "Datasheets and catalogues",
+            "blurb": "Issued by email."
+          },
+          {
+            "pageId": "Y-04",
+            "title": "Vendor qualification pack",
+            "blurb": "For procurement and quality teams."
+          },
+          {
+            "pageId": "X-02",
+            "title": "Agents",
+            "blurb": "Americas and Asia Pacific."
+          }
+        ],
+        "offices": [
+          {
+            "name": "Romica Engineering Ltd",
+            "country": "UK",
+            "addressLines": [
+              "19 Albion Street",
+              "Hull, East Yorkshire",
+              "HU1 3TG"
+            ]
+          },
+          {
+            "name": "Satu Mare",
+            "country": "Romania",
+            "addressLines": [
+              "Spicului nr. 17",
+              "440278 Satu Mare"
+            ]
+          }
+        ]
       },
       "node_kind": "page",
       "norm_label": "x-01.mdx",
       "source_file": "src/content/pages/x-01.mdx",
       "source_location": "L1"
-    },
-    {
-      "id": "src_content_pages_x_01_response_time",
-      "label": "Response time",
-      "_origin": "ast",
-      "community": 41,
-      "community_name": "x-01.mdx",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "response time",
-      "source_file": "src/content/pages/x-01.mdx",
-      "source_location": "L8"
     },
     {
       "id": "src_content_pages_y_03",
@@ -6189,9 +6225,8 @@
       "file_type": "document",
       "frontmatter": {
         "pageId": "A-02",
-        "draft": true,
-        "eyebrow": "About",
-        "lede": "Around eighty people. Mechanical, hydraulic, electrical, automation, welding and design, in one building."
+        "lede": "Around 80 people covering mechanical, hydraulic, electrical, automation, welding and design disciplines in one facility.",
+        "draft": false
       },
       "node_kind": "page",
       "norm_label": "a-02.mdx",
@@ -6243,9 +6278,8 @@
       "file_type": "document",
       "frontmatter": {
         "pageId": "A-05",
-        "draft": true,
-        "eyebrow": "Careers",
-        "lede": "Coded welders are among the scarcest people in European manufacturing. If you are one, you have options. Here is our case."
+        "lede": "Welding, mechanical, hydraulic, electrical, automation and design roles building deck machinery for vessels worldwide.",
+        "draft": false
       },
       "node_kind": "page",
       "norm_label": "a-05.mdx",
@@ -6484,14 +6518,14 @@
       "source_location": "L421"
     },
     {
-      "id": "claude_9_3_current_intake_folder_received_2026_09_18",
-      "label": "9.3 Current intake \u2014 folder received 2026-09-18",
+      "id": "claude_9_3_current_intake",
+      "label": "9.3 Current intake",
       "_origin": "ast",
       "community": 5,
       "community_name": "RTG Website \u2014 project guide for Claude Code",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "9.3 current intake \u2014 folder received 2026-09-18",
+      "norm_label": "9.3 current intake",
       "source_file": "CLAUDE.md",
       "source_location": "L441"
     },
@@ -6553,7 +6587,7 @@
       "node_kind": "heading",
       "norm_label": "graphify",
       "source_file": "CLAUDE.md",
-      "source_location": "L497"
+      "source_location": "L450"
     },
     {
       "id": "claude_routing",
@@ -8996,9 +9030,8 @@
       "file_type": "document",
       "frontmatter": {
         "pageId": "X-02",
-        "draft": true,
-        "eyebrow": "Contact",
-        "lede": "A mid-sized European manufacturer supporting equipment worldwide. Honest about scale, and stronger for it."
+        "lede": "Local sales, support and spares, backed directly by RTG engineering in the UK and Romania.",
+        "draft": false
       },
       "node_kind": "page",
       "norm_label": "x-02.mdx",
@@ -9266,7 +9299,87 @@
       "file_type": "document",
       "frontmatter": {
         "pageId": "X-03",
-        "draft": true
+        "lede": "Send the duty, vessel and timescale. An engineer will reply with a proposed configuration, an indicative price and any further information required.",
+        "draft": false,
+        "form": {
+          "submit": "Request a quotation",
+          "fields": [
+            {
+              "label": "Equipment type",
+              "name": "equipment",
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Tool or payload",
+              "name": "payload",
+              "type": "text",
+              "required": false
+            },
+            {
+              "label": "Working depth",
+              "name": "working_depth",
+              "type": "text",
+              "hint": "In metres",
+              "required": false
+            },
+            {
+              "label": "Load",
+              "name": "load",
+              "type": "text",
+              "hint": "In kg or tonnes",
+              "required": false
+            },
+            {
+              "label": "Cable type and diameter",
+              "name": "cable",
+              "type": "text",
+              "required": false
+            },
+            {
+              "label": "Vessel",
+              "name": "vessel",
+              "type": "text",
+              "required": false
+            },
+            {
+              "label": "Sea state",
+              "name": "sea_state",
+              "type": "text",
+              "required": false
+            },
+            {
+              "label": "Required date",
+              "name": "required_date",
+              "type": "date",
+              "required": false
+            },
+            {
+              "label": "Your name",
+              "name": "name",
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Company",
+              "name": "company",
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Work email",
+              "name": "email",
+              "type": "email",
+              "required": true
+            },
+            {
+              "label": "Phone",
+              "name": "phone",
+              "type": "tel",
+              "required": false
+            }
+          ]
+        }
       },
       "node_kind": "page",
       "norm_label": "x-03.mdx",
@@ -13442,6 +13555,18 @@
     },
     {
       "source": "src_components_templates_about",
+      "target": "src_lib_blocks_endingcta",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/templates/About.astro",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_templates_about",
       "target": "src_lib_blocks_pageentry",
       "relation": "imports",
       "_origin": "ast",
@@ -13582,6 +13707,18 @@
       "context": "import",
       "source_file": "src/components/templates/Careers.astro",
       "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_templates_careers",
+      "target": "src_lib_blocks_endingcta",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/templates/Careers.astro",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -13754,7 +13891,7 @@
     },
     {
       "source": "src_components_templates_contact",
-      "target": "src_lib_blocks_pageentry",
+      "target": "src_lib_blocks_endingcta",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -13766,14 +13903,14 @@
     },
     {
       "source": "src_components_templates_contact",
-      "target": "src_lib_content_cardfrom",
+      "target": "src_lib_blocks_pageentry",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Contact.astro",
-      "source_location": "L15",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -21236,7 +21373,7 @@
     },
     {
       "source": "claude_9_bringing_in_a_content_drop_photography_copy_specs",
-      "target": "claude_9_3_current_intake_folder_received_2026_09_18",
+      "target": "claude_9_3_current_intake",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -21341,7 +21478,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L497",
+      "source_location": "L450",
       "weight": 1.0
     },
     {
@@ -23172,24 +23309,13 @@
     },
     {
       "source": "src_components_templates_contact",
-      "target": "src_components_templates_contact",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/components/templates/Contact.astro",
-      "source_location": "L35",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_templates_contact",
       "target": "src_components_templates_contact_contactpoints",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/templates/Contact.astro",
-      "source_location": "L37",
+      "source_location": "L41",
       "weight": 1.0
     },
     {
@@ -23425,35 +23551,35 @@
     },
     {
       "source": "src_content_pages_a_01",
-      "target": "src_content_pages_a_01_the_model_and_why_it_was_built_that_way",
+      "target": "src_content_pages_a_01_rtg_today",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/content/pages/a-01.mdx",
-      "source_location": "L14",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
       "source": "src_content_pages_a_01",
-      "target": "src_content_pages_a_01_what_we_believe",
+      "target": "src_content_pages_a_01_our_values",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/content/pages/a-01.mdx",
-      "source_location": "L20",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
       "source": "src_content_pages_a_01",
-      "target": "src_content_pages_a_01_where_we_are",
+      "target": "src_content_pages_a_01_visit_us",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/content/pages/a-01.mdx",
-      "source_location": "L26",
+      "source_location": "L27",
       "weight": 1.0
     },
     {
@@ -23927,17 +24053,6 @@
       "confidence_score": 1.0,
       "source_file": "src/content/pages/s-07.mdx",
       "source_location": "L39",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_x_01",
-      "target": "src_content_pages_x_01_response_time",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/x-01.mdx",
-      "source_location": "L8",
       "weight": 1.0
     },
     {
@@ -26249,6 +26364,18 @@
       "weight": 1.0
     },
     {
+      "source": "src_components_templates_contact",
+      "target": "src_lib_content_cardfrom",
+      "relation": "indirect_call",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "context": "argument",
+      "source_file": "src/components/templates/Contact.astro",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
       "source": "src_components_templates_hub",
       "target": "src_lib_content_cardfrom",
       "relation": "indirect_call",
@@ -26370,5 +26497,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "afc404ad47c1d41648f7aa730898d2748f3261c3"
+  "built_at_commit": "7205bf622a4691d01f31a635e7ec905b2da40f5d"
 }

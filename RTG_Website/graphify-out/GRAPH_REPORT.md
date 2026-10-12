@@ -1,17 +1,17 @@
 # Graph Report - RTG_Website  (2026-10-12)
 
 ## Corpus Check
-- 174 files · ~3,080,157 words
+- 174 files · ~3,079,454 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 11 file(s) not represented in the graph (top: .css 9, (none) 1, .xml 1)
 
 ## Summary
-- 811 nodes · 1266 edges · 126 communities (52 shown, 74 thin omitted)
-- Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 11 edges (avg confidence: 0.88)
+- 810 nodes · 1267 edges · 126 communities (52 shown, 74 thin omitted)
+- Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 12 edges (avg confidence: 0.87)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `afc404ad`
+- Built from commit: `7205bf62`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -50,7 +50,6 @@
 - s-03.mdx
 - s-05.mdx
 - s-07.mdx
-- x-01.mdx
 - e-04.mdx
 - e-08.mdx
 - e-10.mdx
@@ -101,11 +100,11 @@
 3. `[]` - 27 edges
 4. `[]` - 26 edges
 5. `[]` - 24 edges
-6. `[]` - 24 edges
-7. `PageMeta` - 24 edges
-8. `[]` - 22 edges
-9. `PageEntry` - 20 edges
-10. `mdxComponents` - 18 edges
+6. `PageMeta` - 24 edges
+7. `[]` - 22 edges
+8. `PageEntry` - 20 edges
+9. `mdxComponents` - 18 edges
+10. `Template inventory` - 18 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `3D` --references--> `createViewer()`  [INFERRED]
@@ -126,7 +125,7 @@
 
 ### Community 0 - "blocks.ts"
 Cohesion: 0.09
-Nodes (49): trail, jsonLdPage, siblings, jobPostings, [], jsonLdPage, [], contactPoints (+41 more)
+Nodes (48): trail, jsonLdPage, siblings, jobPostings, [], jsonLdPage, contactPoints, children (+40 more)
 
 ### Community 1 - "site.js"
 Cohesion: 0.15
@@ -214,7 +213,7 @@ Nodes (4): <Fig of="cptDepthM" /> working-depth record, Sizing at depth, Track r
 
 ### Community 29 - "a-01.mdx"
 Cohesion: 0.50
-Nodes (3): The model, and why it was built that way, What we believe, Where we are
+Nodes (3): Our values, RTG today, Visit us
 
 ### Community 34 - "s-01.mdx"
 Cohesion: 0.50
@@ -333,8 +332,8 @@ Cohesion: 0.50
 Nodes (3): Direction contract, Site-wide ocean world (homepage first surface), Unresolved
 
 ## Knowledge Gaps
-- **370 isolated node(s):** `pagesDir`, `pagesTs`, `unfinished`, `name`, `version` (+365 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 548 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **369 isolated node(s):** `pagesDir`, `pagesTs`, `unfinished`, `name`, `version` (+364 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 547 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **74 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
@@ -343,11 +342,11 @@ _Questions this graph is uniquely positioned to answer:_
 - **Why does `astro` connect `package.json` to `media.ts`?**
   _High betweenness centrality (0.023) - this node is a cross-community bridge._
 - **Why does `tasteskill: Anti-Slop Frontend Skill` connect `tasteskill: Anti-Slop Frontend Skill` to `Appendix B - Canonical Sources (read these before reinventing)`, `4. DESIGN ENGINEERING DIRECTIVES (Bias Correction)`, `10. REFERENCE VOCABULARY (Pattern Names the Agent Should Know)`, `9. AI TELLS (Forbidden Patterns)`, `11. REDESIGN PROTOCOL`, `3. DEFAULT ARCHITECTURE & CONVENTIONS`, `6. PERFORMANCE & ACCESSIBILITY GUARDRAILS`, `12. THE BLOCK LIBRARY (Contract - Implementations Land Here Iteratively)`, `5. CONTEXT-AWARE PROACTIVITY`, `8. DARK MODE PROTOCOL`, `7. DIAL DEFINITIONS (Technical Reference)`, `1. THE THREE DIALS (Core Configuration)`?**
-  _High betweenness centrality (0.015) - this node is a cross-community bridge._
+  _High betweenness centrality (0.016) - this node is a cross-community bridge._
 - **What connects `pagesDir`, `pagesTs`, `unfinished` to the rest of the system?**
-  _370 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _369 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `blocks.ts` be split into smaller, more focused modules?**
-  _Cohesion score 0.0925438596491228 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.09320175438596491 - nodes in this community are weakly interconnected._
 - **Should `media.ts` be split into smaller, more focused modules?**
   _Cohesion score 0.041666666666666664 - nodes in this community are weakly interconnected._
 - **Should `rtg3d.ts` be split into smaller, more focused modules?**
