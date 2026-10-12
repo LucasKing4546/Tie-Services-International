@@ -10,7 +10,7 @@
  */
 import { render } from 'astro:content';
 import type { PageMeta } from '@data/pages';
-import type { PageEntry } from '@lib/blocks';
+import { endingCta, type PageEntry } from '@lib/blocks';
 import { hasBody } from '@lib/content';
 import { articleJsonLd } from '@lib/seo';
 import Base from '@layouts/Base.astro';
@@ -68,5 +68,5 @@ const byline = data.article
     <Skeleton label="Article body" kind="copy" count={5} />
   )}
 
-  <PageEnding page={page} proofBar={data.proofBar} cta={data.cta} draft={data.draft} outline={data.outline} />
+  <PageEnding page={page} proofBar cta={endingCta(data)} draft={data.draft} outline={data.outline} />
 </Base>

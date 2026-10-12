@@ -1,4 +1,51 @@
 ---
-pageId: "C-08"
-draft: true
+pageId: C-08
+draft: false
+form:
+  submit: Send enquiry
+  fields:
+    - label: Company
+      name: company
+      type: text
+      required: true
+    - label: Tier required
+      name: tier
+      type: select
+      options:
+        - "Tier 1: structural fabrication"
+        - "Tier 2: mechanical assembly"
+        - "Tier 3: hydraulic and electrical build"
+        - "Tier 4: automation, test and commissioning"
+        - Not sure yet
+      required: true
+    - label: Scope
+      name: scope
+      type: textarea
+      hint: What is to be built, and roughly how much of it
+      required: true
+    - label: Required date
+      name: required_date
+      type: date
+      required: false
+    - label: Your name
+      name: name
+      type: text
+      required: true
+    - label: Work email
+      name: email
+      type: email
+      required: true
+    - label: Phone
+      name: phone
+      type: tel
+      required: false
 ---
+
+<Gap>RTG to supply: the quarter and year this statement covers.</Gap>
+
+<SpecTable caption="Available capacity and indicative lead time, by tier" rows={[
+  { k: 'Tier 1: structural fabrication', v: 'TO SUPPLY' },
+  { k: 'Tier 2: mechanical assembly', v: 'TO SUPPLY' },
+  { k: 'Tier 3: hydraulic and electrical', v: 'TO SUPPLY' },
+  { k: 'Tier 4: test and commissioning', v: 'TO SUPPLY' },
+]} />

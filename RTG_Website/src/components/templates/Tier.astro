@@ -1,9 +1,10 @@
 ---
 /**
  * The Tier template — C-01…C-04, the four contract-manufacturing scope
- * tiers. Composition: scope -> "what we need from you" -> sibling tier
- * strip -> CTA. Both sections live in the MDX body as prose (the latter
- * via an inline <Note>), rendered together through Prose.
+ * tiers. Composition: hero (heading, scope paragraph, one button) -> the
+ * body's two lists side by side ("Quality" or "Deliverables", and
+ * "Required from you") -> sibling tier strip when `related` is set ->
+ * button and the standard band.
  *
  * The plan describes the sibling strip as childrenOf('/contract-manufacturing/'),
  * but that hub's children are all nine C-01…C-09 pages, not just the four
@@ -12,7 +13,7 @@
  */
 import { render } from 'astro:content';
 import type { PageMeta } from '@data/pages';
-import type { PageEntry, CardItem } from '@lib/blocks';
+import { endingCta, type PageEntry, type CardItem } from '@lib/blocks';
 import { cardFrom, hasBody } from '@lib/content';
 import Base from '@layouts/Base.astro';
 import PageHero from '@components/blocks/PageHero.astro';
@@ -49,7 +50,7 @@ const siblingTiers: CardItem[] = data.related.map((id) => cardFrom({ pageId: id 
 
   {hasBody(entry) && (
     <Section>
-      <Prose>
+      <Prose class="lists">
         <Content components={mdxComponents} />
       </Prose>
     </Section>
@@ -68,5 +69,5 @@ const siblingTiers: CardItem[] = data.related.map((id) => cardFrom({ pageId: id 
     <Skeleton label="Scope detail" kind="copy" count={4} />
   )}
 
-  <PageEnding page={page} proofBar={data.proofBar} cta={data.cta} draft={data.draft} outline={data.outline} />
+  <PageEnding page={page} proofBar cta={endingCta(data)} draft={data.draft} outline={data.outline} />
 </Base>

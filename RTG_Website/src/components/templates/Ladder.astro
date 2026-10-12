@@ -1,8 +1,13 @@
 ---
 /**
  * The Ladder template — the contract-manufacturing scope ladder (C-00), the
- * only page on this template. Composition: four tiers -> references -> CTA
- * to C-09 (send documentation).
+ * only page on this template. Composition: hero -> the four tiers as
+ * linked rows (`cards`, each tier page with its scope) -> the body's short
+ * headed lists in two columns -> buttons and the standard band.
+ *
+ * The rows replace the picture carousel and the separate reference grid
+ * below it, which showed the same four tiers twice. Both are still here for
+ * a page that sets `steps` or `related` instead.
  *
  * The plan describes each tier's points as read from that tier's own MDX
  * frontmatter, but C-01…C-04 carry that detail as prose, not a structured
@@ -20,7 +25,7 @@
  */
 import { render } from 'astro:content';
 import type { PageMeta } from '@data/pages';
-import type { PageEntry, CardItem } from '@lib/blocks';
+import { endingCta, type PageEntry, type CardItem } from '@lib/blocks';
 import { cardFrom, hasBody } from '@lib/content';
 import Base from '@layouts/Base.astro';
 import PageHero from '@components/blocks/PageHero.astro';
@@ -29,6 +34,7 @@ import SectionHead from '@components/blocks/SectionHead.astro';
 import Prose from '@components/blocks/Prose.astro';
 import ScrollTrack from '@components/blocks/ScrollTrack.astro';
 import TierCard from '@components/blocks/TierCard.astro';
+import IndexRows from '@components/blocks/IndexRows.astro';
 import CardGrid from '@components/blocks/CardGrid.astro';
 import Card from '@components/blocks/Card.astro';
 import Skeleton from '@components/blocks/Skeleton.astro';
@@ -45,6 +51,7 @@ const { data } = entry;
 const { Content } = await render(entry);
 
 const references: CardItem[] = data.related.map((id) => cardFrom({ pageId: id }));
+const tiers: CardItem[] = data.cards.map(cardFrom);
 ---
 
 <Base pageId={page.id}>
@@ -57,19 +64,12 @@ const references: CardItem[] = data.related.map((id) => cardFrom({ pageId: id })
     updated={data.updated}
   />
 
-  {hasBody(entry) && (
-    <Section>
-      <Prose>
-        <Content components={mdxComponents} />
-      </Prose>
-    </Section>
-  )}
+  <IndexRows items={tiers} heading="Four tiers, cumulative" tone="default" />
 
   {data.steps.length > 0 && (
     <ScrollTrack
       eyebrow="The scope ladder"
       heading="Four tiers, cumulative"
-      lede="Each one contains everything below it. Most relationships start at Tier 1 with a single sub-assembly and move up as trust is earned."
     >
       {data.steps.map((s) => <TierCard step={s} label="Tier" />)}
     </ScrollTrack>
@@ -84,9 +84,17 @@ const references: CardItem[] = data.related.map((id) => cardFrom({ pageId: id })
     </Section>
   )}
 
+  {hasBody(entry) && (
+    <Section>
+      <Prose class="lists">
+        <Content components={mdxComponents} />
+      </Prose>
+    </Section>
+  )}
+
   {data.draft && !hasBody(entry) && (
     <Skeleton label="Tier detail" kind="rows" count={4} />
   )}
 
-  <PageEnding page={page} proofBar={data.proofBar} cta={data.cta} draft={data.draft} outline={data.outline} />
+  <PageEnding page={page} proofBar cta={endingCta(data)} draft={data.draft} outline={data.outline} />
 </Base>
