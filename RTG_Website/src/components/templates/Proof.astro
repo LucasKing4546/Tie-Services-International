@@ -13,7 +13,7 @@
  */
 import { render } from 'astro:content';
 import type { PageMeta } from '@data/pages';
-import type { PageEntry, CardItem } from '@lib/blocks';
+import { endingCta, type PageEntry, type CardItem } from '@lib/blocks';
 import { cardFrom, hasBody } from '@lib/content';
 import { articleJsonLd } from '@lib/seo';
 import Base from '@layouts/Base.astro';
@@ -23,7 +23,6 @@ import SectionHead from '@components/blocks/SectionHead.astro';
 import Prose from '@components/blocks/Prose.astro';
 import SpecTable from '@components/blocks/SpecTable.astro';
 import Quote from '@components/blocks/Quote.astro';
-import ProofBar from '@components/blocks/ProofBar.astro';
 import ScrollTrack from '@components/blocks/ScrollTrack.astro';
 import IndexRows from '@components/blocks/IndexRows.astro';
 import Card from '@components/blocks/Card.astro';
@@ -69,12 +68,6 @@ const cases: CardItem[] = data.related.map((id) => cardFrom({ pageId: id }));
     </Section>
   )}
 
-  {data.proofBar && (
-    <Section tone="off" size="sm">
-      <ProofBar />
-    </Section>
-  )}
-
   {data.draft && data.specs.length === 0 && (
     <Skeleton label="Credentials table" kind="rows" count={5} tone="off" />
   )}
@@ -102,5 +95,5 @@ const cases: CardItem[] = data.related.map((id) => cardFrom({ pageId: id }));
     />
   )}
 
-  <PageEnding page={page} cta={data.cta} draft={data.draft} outline={data.outline} />
+  <PageEnding page={page} proofBar cta={endingCta(data)} draft={data.draft} outline={data.outline} />
 </Base>
