@@ -15,7 +15,7 @@
  */
 import { render } from 'astro:content';
 import { childrenOf, type PageMeta } from '@data/pages';
-import type { PageEntry } from '@lib/blocks';
+import { endingCta, type PageEntry } from '@lib/blocks';
 import { hasBody } from '@lib/content';
 import { articleJsonLd } from '@lib/seo';
 import Base from '@layouts/Base.astro';
@@ -85,5 +85,5 @@ const jsonLdPage = articleJsonLd(data);
     </Section>
   )}
 
-  <PageEnding page={page} proofBar={data.proofBar} cta={data.cta} draft={data.draft} outline={data.outline} />
+  <PageEnding page={page} proofBar cta={endingCta(data)} draft={data.draft} outline={data.outline} />
 </Base>

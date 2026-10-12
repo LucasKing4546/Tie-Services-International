@@ -11,7 +11,7 @@
  */
 import { render } from 'astro:content';
 import { pagesByTemplate, type PageMeta } from '@data/pages';
-import type { PageEntry, CardItem } from '@lib/blocks';
+import { endingCta, type PageEntry, type CardItem } from '@lib/blocks';
 import { cardFrom, hasBody } from '@lib/content';
 import Base from '@layouts/Base.astro';
 import PageHero from '@components/blocks/PageHero.astro';
@@ -32,7 +32,11 @@ const { page, entry } = Astro.props;
 const { data } = entry;
 const { Content } = await render(entry);
 
-const forms: CardItem[] = pagesByTemplate('Form').map((p) => cardFrom({ pageId: p.id }));
+// A page's own `cards` are its enquiry routes, in its order and wording;
+// without them, every Form page.
+const forms: CardItem[] = data.cards.length > 0
+  ? data.cards.map(cardFrom)
+  : pagesByTemplate('Form').map((p) => cardFrom({ pageId: p.id }));
 
 const contactPoints = [
   ...data.offices.map((o) => ({
@@ -73,7 +77,7 @@ const jsonLdPage = contactPoints.length > 0 ? { contactPoint: contactPoints } : 
 
   {data.offices.length > 0 && (
     <Section tone="off">
-      <SectionHead eyebrow="Offices" heading="Two offices, named people" level={2} />
+      <SectionHead eyebrow="Offices" heading="Offices" level={2} />
       <div class="two stag">
         {data.offices.map((o) => (
           <div class="ecard">
@@ -115,10 +119,10 @@ const jsonLdPage = contactPoints.length > 0 ? { contactPoint: contactPoints } : 
   )}
 
   {forms.length > 0 && (
-    <ScrollTrack eyebrow="Or go straight there" heading="What are you trying to do?">
+    <ScrollTrack eyebrow="Or go straight there" heading="Enquiry routes">
       {forms.map((item) => <Card item={item} tone="dark" />)}
     </ScrollTrack>
   )}
 
-  <PageEnding page={page} proofBar={data.proofBar} cta={data.cta} draft={data.draft} outline={data.outline} />
+  <PageEnding page={page} proofBar cta={endingCta(data)} draft={data.draft} outline={data.outline} />
 </Base>

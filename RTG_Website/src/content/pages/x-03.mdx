@@ -1,4 +1,60 @@
 ---
-pageId: "X-03"
-draft: true
+pageId: X-03
+lede: Send the duty, vessel and timescale. An engineer will reply with a proposed configuration, an indicative price and any further information required.
+draft: false
+form:
+  submit: Request a quotation
+  fields:
+    - label: Equipment type
+      name: equipment
+      type: text
+      required: true
+    - label: Tool or payload
+      name: payload
+      type: text
+      required: false
+    - label: Working depth
+      name: working_depth
+      type: text
+      hint: In metres
+      required: false
+    - label: Load
+      name: load
+      type: text
+      hint: In kg or tonnes
+      required: false
+    - label: Cable type and diameter
+      name: cable
+      type: text
+      required: false
+    - label: Vessel
+      name: vessel
+      type: text
+      required: false
+    - label: Sea state
+      name: sea_state
+      type: text
+      required: false
+    - label: Required date
+      name: required_date
+      type: date
+      required: false
+    - label: Your name
+      name: name
+      type: text
+      required: true
+    - label: Company
+      name: company
+      type: text
+      required: true
+    - label: Work email
+      name: email
+      type: email
+      required: true
+    - label: Phone
+      name: phone
+      type: tel
+      required: false
 ---
+
+<Gap>RTG to supply: the reply time, in working days.</Gap>

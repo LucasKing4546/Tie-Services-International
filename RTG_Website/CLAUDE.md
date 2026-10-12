@@ -204,9 +204,9 @@ Build order follows workbook priority: **P1 earns revenue or unblocks a sale.**
 | `Form` | 8 | **Done** | Eight forms. See §5 — none of them have a backend yet. |
 | `Case` | 4 | **Done** | Case studies. P-03 has real data; the rest need RTG input. |
 | `Proof` | 4 | **Done** | Certifications, test facility, references, testimonials. |
-| `About` | 4 | **Done** | Company, people & facility, QHSE, sustainability. Only A-01 has real prose; A-02–A-04 stay draft — RTG-only facts (headcount, facility, certificate numbers). |
+| `About` | 4 | **Done** | Company, people & facility, QHSE, sustainability. A-01 and A-02 carry the copy document's text with RTG-to-supply markers; A-03 and A-04 stay draft. |
 | `Legal` | 4 | **Done** | Privacy, cookies, terms, accessibility. All four still draft — needs legal review, none have real policy text yet. |
-| `Contact` | 2 | **Done** | Contact and agents. Both still draft — no office address, phone, email or named contact confirmed anywhere. |
+| `Contact` | 2 | **Done** | Contact and agents. Office addresses are published; named contacts, phones, emails and agents are still RTG-to-supply markers. |
 | `Ladder` | 1 | **Done** | Contract-manufacturing hub — the scope ladder. |
 | `Guide` | 1 | **Done** | "Refurbish, upgrade or replace?" decision guide. |
 | `Policy` | 1 | **Done** | "Your IP, protected". Commercially important. |
@@ -438,61 +438,14 @@ figures above, not a static file to link to.
    workflow, but still gets a final read-through against §6 and §8 before
    it's called done.
 
-### 9.3 Current intake — folder received 2026-09-18
+### 9.3 Current intake
 
-Source: `Claude website/` (Sectors, Equipment, plus a duplicate
-`RTG_Website_Page_Map.xlsx` — checked cell-for-cell identical to
-`research/RTG_Website_Page_Map.xlsx`, so it changes nothing and needs no
-`npm run pagemap` run).
-
-**Sectors** — text and hero/media photography already exist for all seven
-sector pages (`IMG-S0X-*` registered in `media.ts`); this drop mostly
-confirms or extends that rather than starting from nothing.
-
-| Folder | Page(s) | Already there | This drop adds | Still open |
-|---|---|---|---|---|
-| `Sectors/Intro.docx` | S-00 | Full body, no `<Gap>` | Cross-check only | — |
-| `Sectors/Ocean survey&Hydrography/` | S-01 | Full body + 3 photos wired | Matching docx set (CTAs, proof, technical note) — spot-check against current copy | — |
-| `Sectors/Marine Geotechnical/` | S-02 | Full body + 3 photos wired | Nothing new for the open gap | `<Gap>`: operator/vessel/year for the 3,000 m depth record — needs RTG's direct, clearance-checked answer, not in this folder |
-| `Sectors/Ofshore wind subsea cables/` | S-03 | Draft; hero/media wired | **"The problem of the sector in buyer's words.docx" directly closes the open `<Gap>`** (verified — matches almost word for word); `Cable handling`, `Lead times`, `Self-contained skids`, `Site Investigation` docx cover the rest of the page's blocks | The two images in this folder (`Exsto-illustration…`, `Renewable-with-DBM…`) are third-party stock, not RTG's — don't register them; still needs real RTG photography |
-| `Sectors/Seismic/` | S-04 | Full body + 5 photos wired | Extra photography (7 files) — spare/replacement stock only, no open gap to close | — |
-| `Sectors/Oceanographic Research/` | S-05 | Draft; hero/media wired | No direct "buyer's words" docx here — `Why the winch is part of the instrument`, `The range`, `Slow speed control`, `Institutions served` are source material to draft the `<Gap>` from, not a drop-in | Still needs drafting, not just pasting |
-| `Sectors/Subsea, ROV & Diving/` | S-06 | Full body + 3 photos wired | — | — |
-| `Sectors/Defence & Government/` | S-07 | Draft; 1 photo wired | **"Traceability and documentation.docx" directly closes the open `<Gap>`** (verified match); `Class`, `Programme requirements`, `Security of supply` docx cover the rest; 2 unused real defence-vessel photos available | Extra care on what's shown/named — defence sector, §5.7 permission rule applies in full |
-
-**Equipment** — the hub and most product pages are still bare stubs
-(`draft: true`, frontmatter only, no body). This is where most of the new
-work is.
-
-| Folder | Page(s) | Already there | This drop adds | Still open |
-|---|---|---|---|---|
-| `Equipment/Section introduction.docx`, `Range tiles-Main .docx` | E-00 | 8-line stub, `draft: true` | Both docx map straight onto this page — the range-tiles doc already lists the same six families/URLs as the site nav. Cleanest, lowest-risk page to close first | — |
-| `Equipment/Winches/` (top level) | E-01 | Full body, not draft | — | — |
-| `Equipment/Winches/Geotechnical Coring/` | E-02 | Full body + specs, but hero/media still uses unregistered generic refs (`IMG-05`, `IMG-07`); 2 `TO SUPPLY` spec rows | 11 real photos + 3 datasheets (`DS01`, `DS38`, `DS61`) — enough to register real `IMG-E02-*` photography and fill the envelope/weight specs | — |
-| `Equipment/Winches/Survey Oceanographic/` | E-03 | 4-line stub, `draft: true` | `Applications.docx` + 1 datasheet (`DS83`) + 3 photos | Needs a full page draft, not just a media/spec fix |
-| `Equipment/Winches/Seismic/` | E-04 | 4-line stub, `draft: true` | 1 datasheet (`DS11`) + 7 photos, no copy docx | Needs drafting — cross-reference S-04's sector copy, no dedicated Equipment write-up supplied |
-| `Equipment/Winches/ROV Tow Umbilical/` | E-05 | 4-line stub, `draft: true` | 1 datasheet (`DS63`) + 2 photos, no copy docx | Needs drafting |
-| `Equipment/Winches/Mooring Utility/` | E-06 | 4-line stub, `draft: true` | 2 datasheets (`DS74`, `DS80`) + 7 photos, no copy docx | Needs drafting |
-| `Equipment/Launch & Recovery Systems/` | E-07 | 4-line stub, `draft: true` | **Folder is empty** | Nothing supplied yet — flag to RTG |
-| `Equipment/Cranes & Lifting/` | E-08 | Frontmatter only (`pageId` + `draft: true`), the barest page on the site | `Applications`, `Class and proof load`, `Range` docx (all verified, publication-ready) + 2 datasheets (`DS33`, `DS96`) + 9 photos. The `Range.docx` itself carries its own `RTG TO SUPPLY` marker for capacity/reach ranges per crane family — carry that through as this page's `<Gap>` rather than guessing figures | Build this page from scratch off these three docx |
-| `Equipment/Handling Systems/` (hub level) | E-09 | Frontmatter only, `draft: true` | No hub-level docx supplied | Needs drafting |
-| `Equipment/Handling Systems/Cable pipe tensioners/` | E-10 | 4-line stub, `draft: true` | `Applications`, `Failsafe braking`, `Squeeze vs line tension explained` docx + a `Specification Table.docx` (verified — a complete numbered 10 Te datasheet, ready to drop into `specs` almost as-is) + 2 photos + 1 large datasheet docx (`DS57`, has embedded diagrams — extract text only, don't reuse the diagrams per §6) | Build this page from scratch |
-| `Equipment/Power Units/` | E-11 | 4-line stub, `draft: true` | **Folder is empty** | Nothing supplied yet |
-| `Equipment/Portable & Containerised/` | E-12 | 4-line stub, `draft: true` | **Folder is empty** | Nothing supplied yet |
-| `Equipment/1003040004.JPG` (loose, top level) | — | — | One unsorted general equipment photo | Needs a look before it's assigned anywhere |
-
-**Datasheet PDFs generally** (11 across the folders above: `DS33`, `DS96`,
-`DS57`, `DS74`, `DS80`, `DS63`, `DS11`, `DS83`, `DS01`, `DS61`, `DS38`) —
-each is the source for the numeric rows on its product page's `specs`
-table, never a file to publish directly (§5.3, §6).
-
-**Video** — `Sectors/Marine Geotechnical/RTG_traction_winch_refurbishment
-(1).mp4` is a candidate for L-01's refurbishment content and/or P-06's open
-`<Gap>` asking for a 60–90 s load-test clip — watch it first to see which
-it actually is before assigning it; it isn't an automatic fit for either.
-
-Delete a row from this table once its page is built and closes the gap it
-names, so this section stays a live to-do rather than a permanent record.
+None open. The September 2026 folder (`Claude website/`) was superseded by
+`RTG_Website_Copy_Concise.docx` (§1), which replaced the text of 52 pages in
+October 2026. What is still missing is marked on each page: run
+`grep -rn "<Gap>|TO SUPPLY" src/content/pages` for the live list. The 18 pages
+the document does not cover (C-05, C-09, Y-04, P-02, P-04, P-05, R-00 to R-04,
+A-03, A-04, X-04, Z-01 to Z-04) keep their earlier text.
 
 ## graphify
 

@@ -16,7 +16,7 @@
 import { render } from 'astro:content';
 import type { PageMeta } from '@data/pages';
 import { SITE } from '@data/site.js';
-import type { PageEntry } from '@lib/blocks';
+import { endingCta, type PageEntry } from '@lib/blocks';
 import { hasBody } from '@lib/content';
 import Base from '@layouts/Base.astro';
 import PageHero from '@components/blocks/PageHero.astro';
@@ -82,5 +82,5 @@ const jobPostings = data.vacancies.map((v) => ({
     </Section>
   )}
 
-  <PageEnding page={page} proofBar={data.proofBar} cta={data.cta} draft={data.draft} outline={data.outline} />
+  <PageEnding page={page} proofBar cta={endingCta(data)} draft={data.draft} outline={data.outline} />
 </Base>
