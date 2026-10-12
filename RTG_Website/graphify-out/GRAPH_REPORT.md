@@ -1,22 +1,23 @@
 # Graph Report - RTG_Website  (2026-10-12)
 
 ## Corpus Check
-- 174 files · ~3,080,694 words
+- 174 files · ~3,080,157 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 11 file(s) not represented in the graph (top: .css 9, (none) 1, .xml 1)
 
 ## Summary
-- 828 nodes · 1282 edges · 119 communities (49 shown, 70 thin omitted)
+- 811 nodes · 1266 edges · 126 communities (52 shown, 74 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 11 edges (avg confidence: 0.88)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `7a8e56da`
+- Built from commit: `afc404ad`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
 - blocks.ts
+- site.js
 - media.ts
 - rtg3d.ts
 - build.py
@@ -31,9 +32,7 @@
 - tsconfig.json
 - audit-seo.mjs
 - motion.ts
-- The test suite
 - l-01.mdx
-- p-03.mdx
 - audit-protection.mjs
 - strip-exif.mjs
 - gen-stubs.mjs
@@ -62,6 +61,7 @@
 - z-04.mdx
 - ImageSlot.astro
 - src_assets_equipment_e04_reel_winch
+- page.ts
 - src_assets_equipment_e07_aframe_dusk
 - src_assets_equipment_e08_knuckle_boom
 - src_assets_equipment_e08_proof_load_test
@@ -71,15 +71,19 @@
 - Product
 - 10. REFERENCE VOCABULARY (Pattern Names the Agent Should Know)
 - tasteskill: Anti-Slop Frontend Skill
+- astro.config.mjs
 - 9. AI TELLS (Forbidden Patterns)
+- seo.ts
 - 11. REDESIGN PROTOCOL
 - 3. DEFAULT ARCHITECTURE & CONVENTIONS
 - 6. PERFORMANCE & ACCESSIBILITY GUARDRAILS
-- 0. BRIEF INFERENCE (Read the Room Before Anything Else)
+- ProofBar.astro
 - 12. THE BLOCK LIBRARY (Contract - Implementations Land Here Iteratively)
 - 5. CONTEXT-AWARE PROACTIVITY
 - 8. DARK MODE PROTOCOL
 - 7. DIAL DEFINITIONS (Technical Reference)
+- 1. THE THREE DIALS (Core Configuration)
+- depth.ts
 - vercel.json
 - src_assets_contact_x01_team
 - src_assets_sectors_s02_pipeline_survey
@@ -89,10 +93,11 @@
 - src_assets_sectors_s05_research_deck
 - src_assets_sectors_s05_research_vessel
 - Site-wide ocean world (homepage first surface)
+- forms.ts
 
 ## God Nodes (most connected - your core abstractions)
 1. `[]` - 30 edges
-2. `[]` - 28 edges
+2. `[]` - 29 edges
 3. `[]` - 27 edges
 4. `[]` - 26 edges
 5. `[]` - 24 edges
@@ -117,11 +122,15 @@
 ## Import Cycles
 - None detected.
 
-## Communities (119 total, 70 thin omitted)
+## Communities (126 total, 74 thin omitted)
 
 ### Community 0 - "blocks.ts"
 Cohesion: 0.09
 Nodes (49): trail, jsonLdPage, siblings, jobPostings, [], jsonLdPage, [], contactPoints (+41 more)
+
+### Community 1 - "site.js"
+Cohesion: 0.15
+Nodes (6): year, FOOTER_NAV, LEGAL_NAV, NAV, PROOF, PROOF_DISPLAY
 
 ### Community 2 - "media.ts"
 Cohesion: 0.04
@@ -140,12 +149,12 @@ Cohesion: 0.06
 Nodes (34): 1. What this is, 2. The workflow — follow this for every feature and every page, 3. Stack and conventions, 3D, 4. The 17 templates, 5. Known gaps — do not paper over these, 6. What must never be published, 7. Design system (+26 more)
 
 ### Community 6 - "package.json"
-Cohesion: 0.05
-Nodes (42): pagesDir, pagesTs, unfinished, dependencies, astro, @astrojs/mdx, @astrojs/sitemap, @fontsource/jetbrains-mono (+34 more)
+Cohesion: 0.06
+Nodes (35): dependencies, astro, @astrojs/mdx, @astrojs/sitemap, @fontsource/jetbrains-mono, @fontsource-variable/archivo, @fontsource-variable/inter, three (+27 more)
 
 ### Community 7 - "home.ts"
-Cohesion: 0.07
-Nodes (20): src_assets_home_home_fleet_vessel, year, CONDITIONS, EQUIPMENT, HERO, HERO_PROOF, MANUFACTURING, SECTORS (+12 more)
+Cohesion: 0.13
+Nodes (11): src_assets_home_home_fleet_vessel, CONDITIONS, EQUIPMENT, HERO, HERO_PROOF, MANUFACTURING, SECTORS, SERVICE (+3 more)
 
 ### Community 8 - "RTG design language"
 Cohesion: 0.10
@@ -178,14 +187,6 @@ Nodes (9): descs, dist, fails, ids, root, slugs, src, titles (+1 more)
 ### Community 15 - "motion.ts"
 Cohesion: 0.30
 Nodes (10): initCarousels(), initCompare(), initCounters(), initMotion(), initParallax(), apply(), initPinStages(), initReveals() (+2 more)
-
-### Community 16 - "The test suite"
-Cohesion: 0.20
-Nodes (9): Class witness and the dossier, Dynamic functional load, For contract manufacturing clients, Render test, Speed test, Static brake holding, Static structural proof load, System checks (+1 more)
-
-### Community 18 - "p-03.mdx"
-Cohesion: 0.22
-Nodes (8): And a spares recommendation, How it was proved, The assessment came first, The documentation was reissued, The result, The situation, What was reused, What was upgraded
 
 ### Community 19 - "audit-protection.mjs"
 Cohesion: 0.22
@@ -251,9 +252,13 @@ Nodes (3): Known issues, Telling us about a problem, The standard we target
 Cohesion: 0.32
 Nodes (4): photo, tiles, mediaFor(), MotionHint
 
+### Community 92 - "page.ts"
+Cohesion: 0.31
+Nodes (6): OFF_MAP_IDS, OFF_MAP_PAGES, BY_ID, ResolvedPage, resolvePage(), { p }
+
 ### Community 96 - "Base.astro"
-Cohesion: 0.05
-Nodes (35): ref_fontsource_jetbrains_mono_400_css, ref_fontsource_jetbrains_mono_500_css, ref_fontsource_variable_archivo_files_archivo_latin_wght_normal_woff2_url, ref_fontsource_variable_archivo_wght_css, ref_fontsource_variable_inter_files_inter_latin_wght_normal_woff2_url, ref_fontsource_variable_inter_wght_css, ancestorsOf(), OFF_MAP_IDS (+27 more)
+Cohesion: 0.08
+Nodes (19): ref_fontsource_jetbrains_mono_400_css, ref_fontsource_jetbrains_mono_500_css, ref_fontsource_variable_archivo_files_archivo_latin_wght_normal_woff2_url, ref_fontsource_variable_archivo_wght_css, ref_fontsource_variable_inter_files_inter_latin_wght_normal_woff2_url, ref_fontsource_variable_inter_wght_css, canonical, ogImage (+11 more)
 
 ### Community 97 - "Appendix B - Canonical Sources (read these before reinventing)"
 Cohesion: 0.09
@@ -272,12 +277,20 @@ Cohesion: 0.20
 Nodes (10): 10. REFERENCE VOCABULARY (Pattern Names the Agent Should Know), Animation Library Choice, Cards & Containers, Galleries & Media, Hero Paradigms, Layout & Grids, Micro-Interactions & Effects, Navigation & Menus (+2 more)
 
 ### Community 101 - "tasteskill: Anti-Slop Frontend Skill"
-Cohesion: 0.20
-Nodes (10): 13. OUT OF SCOPE, 14. FINAL PRE-FLIGHT CHECK, 1.A Dial Inference (design read → dial values), 1.B Use-Case Presets, 1.C How the Dials Drive Output, 1. THE THREE DIALS (Core Configuration), 2.A When to reach for a real design system (use official packages), 2.B When the brief is an aesthetic, not a system (+2 more)
+Cohesion: 0.18
+Nodes (11): 0.A Read these signals first, 0.B Output a one-line "Design Read" before generating, 0. BRIEF INFERENCE (Read the Room Before Anything Else), 0.C If the brief is ambiguous, ask one question, do not guess, 0.D Anti-Default Discipline, 13. OUT OF SCOPE, 14. FINAL PRE-FLIGHT CHECK, 2.A When to reach for a real design system (use official packages) (+3 more)
+
+### Community 102 - "astro.config.mjs"
+Cohesion: 0.25
+Nodes (7): pagesDir, pagesTs, unfinished, ref_astro_config, @astrojs/mdx, @astrojs/sitemap, SITE
 
 ### Community 103 - "9. AI TELLS (Forbidden Patterns)"
 Cohesion: 0.25
 Nodes (8): 9.A Visual & CSS, 9. AI TELLS (Forbidden Patterns), 9.B Typography, 9.C Layout & Spacing, 9.D Content & Data ("Jane Doe" Effect), 9.E External Resources & Components, 9.F Production-Test Tells (banned outright), 9.G EM-DASH BAN (the single most-violated Tell)
+
+### Community 104 - "seo.ts"
+Cohesion: 0.46
+Nodes (7): ancestorsOf(), absolute(), breadcrumbNode(), buildJsonLd(), faqPageJsonLd(), ogImageFor(), organizationNode()
 
 ### Community 105 - "11. REDESIGN PROTOCOL"
 Cohesion: 0.29
@@ -291,9 +304,9 @@ Nodes (7): 3.A Stack, 3.B State, 3.C Icons, 3.D Emoji Policy, 3. DEFAULT ARCHITE
 Cohesion: 0.29
 Nodes (7): 6.A Hardware Acceleration, 6.B Reduced Motion (mandatory), 6.C Dark Mode (mandatory for any consumer-facing page), 6.D Core Web Vitals Targets, 6.E DOM Cost, 6.F Z-Index Restraint, 6. PERFORMANCE & ACCESSIBILITY GUARDRAILS
 
-### Community 108 - "0. BRIEF INFERENCE (Read the Room Before Anything Else)"
-Cohesion: 0.40
-Nodes (5): 0.A Read these signals first, 0.B Output a one-line "Design Read" before generating, 0. BRIEF INFERENCE (Read the Room Before Anything Else), 0.C If the brief is ambiguous, ask one question, do not guess, 0.D Anti-Default Discipline
+### Community 108 - "ProofBar.astro"
+Cohesion: 0.60
+Nodes (3): isNumericStat(), statDigits(), statSuffix()
 
 ### Community 109 - "12. THE BLOCK LIBRARY (Contract - Implementations Land Here Iteratively)"
 Cohesion: 0.40
@@ -311,26 +324,30 @@ Nodes (5): 8.A Token Strategy (pick one, stick to it), 8.B Do Not Prescribe Spec
 Cohesion: 0.50
 Nodes (4): 7. DIAL DEFINITIONS (Technical Reference), DESIGN_VARIANCE (Level 1-10), MOTION_INTENSITY (Level 1-10), VISUAL_DENSITY (Level 1-10)
 
+### Community 113 - "1. THE THREE DIALS (Core Configuration)"
+Cohesion: 0.50
+Nodes (4): 1.A Dial Inference (design read → dial values), 1.B Use-Case Presets, 1.C How the Dials Drive Output, 1. THE THREE DIALS (Core Configuration)
+
 ### Community 124 - "Site-wide ocean world (homepage first surface)"
 Cohesion: 0.50
 Nodes (3): Direction contract, Site-wide ocean world (homepage first surface), Unresolved
 
 ## Knowledge Gaps
-- **386 isolated node(s):** `pagesDir`, `pagesTs`, `unfinished`, `name`, `version` (+381 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 562 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **70 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **370 isolated node(s):** `pagesDir`, `pagesTs`, `unfinished`, `name`, `version` (+365 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 548 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **74 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `astro` connect `package.json` to `media.ts`?**
-  _High betweenness centrality (0.022) - this node is a cross-community bridge._
-- **Why does `tasteskill: Anti-Slop Frontend Skill` connect `tasteskill: Anti-Slop Frontend Skill` to `Appendix B - Canonical Sources (read these before reinventing)`, `4. DESIGN ENGINEERING DIRECTIVES (Bias Correction)`, `10. REFERENCE VOCABULARY (Pattern Names the Agent Should Know)`, `9. AI TELLS (Forbidden Patterns)`, `11. REDESIGN PROTOCOL`, `3. DEFAULT ARCHITECTURE & CONVENTIONS`, `6. PERFORMANCE & ACCESSIBILITY GUARDRAILS`, `0. BRIEF INFERENCE (Read the Room Before Anything Else)`, `12. THE BLOCK LIBRARY (Contract - Implementations Land Here Iteratively)`, `5. CONTEXT-AWARE PROACTIVITY`, `8. DARK MODE PROTOCOL`, `7. DIAL DEFINITIONS (Technical Reference)`?**
+  _High betweenness centrality (0.023) - this node is a cross-community bridge._
+- **Why does `tasteskill: Anti-Slop Frontend Skill` connect `tasteskill: Anti-Slop Frontend Skill` to `Appendix B - Canonical Sources (read these before reinventing)`, `4. DESIGN ENGINEERING DIRECTIVES (Bias Correction)`, `10. REFERENCE VOCABULARY (Pattern Names the Agent Should Know)`, `9. AI TELLS (Forbidden Patterns)`, `11. REDESIGN PROTOCOL`, `3. DEFAULT ARCHITECTURE & CONVENTIONS`, `6. PERFORMANCE & ACCESSIBILITY GUARDRAILS`, `12. THE BLOCK LIBRARY (Contract - Implementations Land Here Iteratively)`, `5. CONTEXT-AWARE PROACTIVITY`, `8. DARK MODE PROTOCOL`, `7. DIAL DEFINITIONS (Technical Reference)`, `1. THE THREE DIALS (Core Configuration)`?**
   _High betweenness centrality (0.015) - this node is a cross-community bridge._
 - **What connects `pagesDir`, `pagesTs`, `unfinished` to the rest of the system?**
-  _386 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _370 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `blocks.ts` be split into smaller, more focused modules?**
-  _Cohesion score 0.09232456140350877 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.0925438596491228 - nodes in this community are weakly interconnected._
 - **Should `media.ts` be split into smaller, more focused modules?**
   _Cohesion score 0.041666666666666664 - nodes in this community are weakly interconnected._
 - **Should `rtg3d.ts` be split into smaller, more focused modules?**

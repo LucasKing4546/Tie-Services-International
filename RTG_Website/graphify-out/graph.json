@@ -334,8 +334,8 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
+      "community": 92,
+      "community_name": "page.ts",
       "file_type": "code",
       "norm_label": "resolvedpage",
       "source_file": "src/lib/page.ts",
@@ -450,6 +450,30 @@
       "source_location": "L84"
     },
     {
+      "id": "src_components_site_header_isactive",
+      "label": "isActive()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "site.js",
+      "file_type": "code",
+      "norm_label": "isactive()",
+      "source_file": "src/components/site/Header.astro",
+      "source_location": "L5"
+    },
+    {
+      "id": "src_components_site_header_syncnav",
+      "label": "syncNav()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "site.js",
+      "file_type": "code",
+      "norm_label": "syncnav()",
+      "source_file": "src/components/site/Header.astro",
+      "source_location": "L47"
+    },
+    {
       "id": "scripts_build_page_map_list",
       "label": "list()",
       "_callable": true,
@@ -474,6 +498,150 @@
       "source_location": "L33"
     },
     {
+      "id": "src_data_pages_ancestorsof",
+      "label": "ancestorsOf()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 104,
+      "community_name": "seo.ts",
+      "file_type": "code",
+      "norm_label": "ancestorsof()",
+      "source_file": "src/data/pages.ts",
+      "source_location": "L1059"
+    },
+    {
+      "id": "src_lib_seo_absolute",
+      "label": "absolute()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 104,
+      "community_name": "seo.ts",
+      "file_type": "code",
+      "norm_label": "absolute()",
+      "source_file": "src/lib/seo.ts",
+      "source_location": "L6"
+    },
+    {
+      "id": "src_lib_seo_breadcrumbnode",
+      "label": "breadcrumbNode()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 104,
+      "community_name": "seo.ts",
+      "file_type": "code",
+      "norm_label": "breadcrumbnode()",
+      "source_file": "src/lib/seo.ts",
+      "source_location": "L30"
+    },
+    {
+      "id": "src_lib_seo_buildjsonld",
+      "label": "buildJsonLd()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 104,
+      "community_name": "seo.ts",
+      "file_type": "code",
+      "norm_label": "buildjsonld()",
+      "source_file": "src/lib/seo.ts",
+      "source_location": "L54"
+    },
+    {
+      "id": "src_lib_seo_faqpagejsonld",
+      "label": "faqPageJsonLd()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 104,
+      "community_name": "seo.ts",
+      "file_type": "code",
+      "norm_label": "faqpagejsonld()",
+      "source_file": "src/lib/seo.ts",
+      "source_location": "L96"
+    },
+    {
+      "id": "src_lib_seo_ogimagefor",
+      "label": "ogImageFor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 104,
+      "community_name": "seo.ts",
+      "file_type": "code",
+      "norm_label": "ogimagefor()",
+      "source_file": "src/lib/seo.ts",
+      "source_location": "L9"
+    },
+    {
+      "id": "src_lib_seo_organizationnode",
+      "label": "organizationNode()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 104,
+      "community_name": "seo.ts",
+      "file_type": "code",
+      "norm_label": "organizationnode()",
+      "source_file": "src/lib/seo.ts",
+      "source_location": "L12"
+    },
+    {
+      "id": "src_lib_blocks_isnumericstat",
+      "label": "isNumericStat()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 108,
+      "community_name": "ProofBar.astro",
+      "file_type": "code",
+      "norm_label": "isnumericstat()",
+      "source_file": "src/lib/blocks.ts",
+      "source_location": "L72"
+    },
+    {
+      "id": "src_lib_blocks_statdigits",
+      "label": "statDigits()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 108,
+      "community_name": "ProofBar.astro",
+      "file_type": "code",
+      "norm_label": "statdigits()",
+      "source_file": "src/lib/blocks.ts",
+      "source_location": "L73"
+    },
+    {
+      "id": "src_lib_blocks_statsuffix",
+      "label": "statSuffix()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 108,
+      "community_name": "ProofBar.astro",
+      "file_type": "code",
+      "norm_label": "statsuffix()",
+      "source_file": "src/lib/blocks.ts",
+      "source_location": "L74"
+    },
+    {
+      "id": "src_lib_depth_initdepth",
+      "label": "initDepth()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 114,
+      "community_name": "depth.ts",
+      "file_type": "code",
+      "norm_label": "initdepth()",
+      "source_file": "src/lib/depth.ts",
+      "source_location": "L24"
+    },
+    {
+      "id": "src_lib_depth_zoneof",
+      "label": "zoneOf()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 114,
+      "community_name": "depth.ts",
+      "file_type": "code",
+      "norm_label": "zoneof()",
+      "source_file": "src/lib/depth.ts",
+      "source_location": "L19"
+    },
+    {
       "id": "src_content_config_knownid",
       "label": "knownId()",
       "_callable": true,
@@ -484,6 +652,18 @@
       "norm_label": "knownid()",
       "source_file": "src/content.config.ts",
       "source_location": "L6"
+    },
+    {
+      "id": "src_lib_forms_initformprefill",
+      "label": "initFormPrefill()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 125,
+      "community_name": "forms.ts",
+      "file_type": "code",
+      "norm_label": "initformprefill()",
+      "source_file": "src/lib/forms.ts",
+      "source_location": "L17"
     },
     {
       "id": "scripts_audit_seo_dupes",
@@ -1218,30 +1398,6 @@
       "source_location": "L25"
     },
     {
-      "id": "src_components_site_header_isactive",
-      "label": "isActive()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "home.ts",
-      "file_type": "code",
-      "norm_label": "isactive()",
-      "source_file": "src/components/site/Header.astro",
-      "source_location": "L5"
-    },
-    {
-      "id": "src_components_site_header_syncnav",
-      "label": "syncNav()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "home.ts",
-      "file_type": "code",
-      "norm_label": "syncnav()",
-      "source_file": "src/components/site/Header.astro",
-      "source_location": "L47"
-    },
-    {
       "id": "src_components_site_waterline_wave",
       "label": "wave()",
       "_callable": true,
@@ -1252,42 +1408,6 @@
       "norm_label": "wave()",
       "source_file": "src/components/site/Waterline.astro",
       "source_location": "L16"
-    },
-    {
-      "id": "src_lib_blocks_isnumericstat",
-      "label": "isNumericStat()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "home.ts",
-      "file_type": "code",
-      "norm_label": "isnumericstat()",
-      "source_file": "src/lib/blocks.ts",
-      "source_location": "L72"
-    },
-    {
-      "id": "src_lib_blocks_statdigits",
-      "label": "statDigits()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "home.ts",
-      "file_type": "code",
-      "norm_label": "statdigits()",
-      "source_file": "src/lib/blocks.ts",
-      "source_location": "L73"
-    },
-    {
-      "id": "src_lib_blocks_statsuffix",
-      "label": "statSuffix()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "home.ts",
-      "file_type": "code",
-      "norm_label": "statsuffix()",
-      "source_file": "src/lib/blocks.ts",
-      "source_location": "L74"
     },
     {
       "id": "src_components_blocks_mediaband_sizesfor",
@@ -1314,136 +1434,16 @@
       "source_location": "L148"
     },
     {
-      "id": "src_data_pages_ancestorsof",
-      "label": "ancestorsOf()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
-      "file_type": "code",
-      "norm_label": "ancestorsof()",
-      "source_file": "src/data/pages.ts",
-      "source_location": "L1059"
-    },
-    {
-      "id": "src_lib_depth_initdepth",
-      "label": "initDepth()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
-      "file_type": "code",
-      "norm_label": "initdepth()",
-      "source_file": "src/lib/depth.ts",
-      "source_location": "L24"
-    },
-    {
-      "id": "src_lib_depth_zoneof",
-      "label": "zoneOf()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
-      "file_type": "code",
-      "norm_label": "zoneof()",
-      "source_file": "src/lib/depth.ts",
-      "source_location": "L19"
-    },
-    {
-      "id": "src_lib_forms_initformprefill",
-      "label": "initFormPrefill()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
-      "file_type": "code",
-      "norm_label": "initformprefill()",
-      "source_file": "src/lib/forms.ts",
-      "source_location": "L17"
-    },
-    {
       "id": "src_lib_page_resolvepage",
       "label": "resolvePage()",
       "_callable": true,
       "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
+      "community": 92,
+      "community_name": "page.ts",
       "file_type": "code",
       "norm_label": "resolvepage()",
       "source_file": "src/lib/page.ts",
       "source_location": "L17"
-    },
-    {
-      "id": "src_lib_seo_absolute",
-      "label": "absolute()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
-      "file_type": "code",
-      "norm_label": "absolute()",
-      "source_file": "src/lib/seo.ts",
-      "source_location": "L6"
-    },
-    {
-      "id": "src_lib_seo_breadcrumbnode",
-      "label": "breadcrumbNode()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
-      "file_type": "code",
-      "norm_label": "breadcrumbnode()",
-      "source_file": "src/lib/seo.ts",
-      "source_location": "L30"
-    },
-    {
-      "id": "src_lib_seo_buildjsonld",
-      "label": "buildJsonLd()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
-      "file_type": "code",
-      "norm_label": "buildjsonld()",
-      "source_file": "src/lib/seo.ts",
-      "source_location": "L54"
-    },
-    {
-      "id": "src_lib_seo_faqpagejsonld",
-      "label": "faqPageJsonLd()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
-      "file_type": "code",
-      "norm_label": "faqpagejsonld()",
-      "source_file": "src/lib/seo.ts",
-      "source_location": "L96"
-    },
-    {
-      "id": "src_lib_seo_ogimagefor",
-      "label": "ogImageFor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
-      "file_type": "code",
-      "norm_label": "ogimagefor()",
-      "source_file": "src/lib/seo.ts",
-      "source_location": "L9"
-    },
-    {
-      "id": "src_lib_seo_organizationnode",
-      "label": "organizationNode()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
-      "file_type": "code",
-      "norm_label": "organizationnode()",
-      "source_file": "src/lib/seo.ts",
-      "source_location": "L12"
     },
     {
       "id": "astro",
@@ -2205,6 +2205,127 @@
       "source_location": "L46"
     },
     {
+      "id": "src_components_blocks_fig",
+      "label": "Fig.astro",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "site.js",
+      "file_type": "code",
+      "norm_label": "fig.astro",
+      "source_file": "src/components/blocks/Fig.astro",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_site_depthgauge",
+      "label": "DepthGauge.astro",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "site.js",
+      "file_type": "code",
+      "norm_label": "depthgauge.astro",
+      "source_file": "src/components/site/DepthGauge.astro",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_site_footer",
+      "label": "Footer.astro",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "site.js",
+      "file_type": "code",
+      "norm_label": "footer.astro",
+      "source_file": "src/components/site/Footer.astro",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_site_footer_year",
+      "label": "year",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "site.js",
+      "file_type": "code",
+      "norm_label": "year",
+      "source_file": "src/components/site/Footer.astro",
+      "source_location": "L3"
+    },
+    {
+      "id": "src_components_site_header",
+      "label": "Header.astro",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "site.js",
+      "file_type": "code",
+      "norm_label": "header.astro",
+      "source_file": "src/components/site/Header.astro",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_data_site",
+      "label": "site.js",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "site.js",
+      "file_type": "code",
+      "norm_label": "site.js",
+      "source_file": "src/data/site.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_data_site_footer_nav",
+      "label": "FOOTER_NAV",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "site.js",
+      "file_type": "code",
+      "norm_label": "footer_nav",
+      "source_file": "src/data/site.js",
+      "source_location": "L29"
+    },
+    {
+      "id": "src_data_site_legal_nav",
+      "label": "LEGAL_NAV",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "site.js",
+      "file_type": "code",
+      "norm_label": "legal_nav",
+      "source_file": "src/data/site.js",
+      "source_location": "L60"
+    },
+    {
+      "id": "src_data_site_nav",
+      "label": "NAV",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "site.js",
+      "file_type": "code",
+      "norm_label": "nav",
+      "source_file": "src/data/site.js",
+      "source_location": "L20"
+    },
+    {
+      "id": "src_data_site_proof",
+      "label": "PROOF",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "site.js",
+      "file_type": "code",
+      "norm_label": "proof",
+      "source_file": "src/data/site.js",
+      "source_location": "L69"
+    },
+    {
+      "id": "src_data_site_proof_display",
+      "label": "PROOF_DISPLAY",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "site.js",
+      "file_type": "code",
+      "norm_label": "proof_display",
+      "source_file": "src/data/site.js",
+      "source_location": "L85"
+    },
+    {
       "id": "scripts_build_page_map",
       "label": "build-page-map.mjs",
       "_origin": "ast",
@@ -2479,6 +2600,66 @@
       "source_location": "L757"
     },
     {
+      "id": "agents_skills_design_taste_frontend_skill_0_a_read_these_signals_first",
+      "label": "0.A Read these signals first",
+      "_origin": "ast",
+      "community": 101,
+      "community_name": "tasteskill: Anti-Slop Frontend Skill",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "0.a read these signals first",
+      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
+      "source_location": "L17"
+    },
+    {
+      "id": "agents_skills_design_taste_frontend_skill_0_b_output_a_one_line_design_read_before_generating",
+      "label": "0.B Output a one-line \"Design Read\" before generating",
+      "_origin": "ast",
+      "community": 101,
+      "community_name": "tasteskill: Anti-Slop Frontend Skill",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "0.b output a one-line \"design read\" before generating",
+      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
+      "source_location": "L25"
+    },
+    {
+      "id": "agents_skills_design_taste_frontend_skill_0_brief_inference_read_the_room_before_anything_else",
+      "label": "0. BRIEF INFERENCE (Read the Room Before Anything Else)",
+      "_origin": "ast",
+      "community": 101,
+      "community_name": "tasteskill: Anti-Slop Frontend Skill",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "0. brief inference (read the room before anything else)",
+      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
+      "source_location": "L13"
+    },
+    {
+      "id": "agents_skills_design_taste_frontend_skill_0_c_if_the_brief_is_ambiguous_ask_one_question_do_not_guess",
+      "label": "0.C If the brief is ambiguous, ask one question, do not guess",
+      "_origin": "ast",
+      "community": 101,
+      "community_name": "tasteskill: Anti-Slop Frontend Skill",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "0.c if the brief is ambiguous, ask one question, do not guess",
+      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
+      "source_location": "L33"
+    },
+    {
+      "id": "agents_skills_design_taste_frontend_skill_0_d_anti_default_discipline",
+      "label": "0.D Anti-Default Discipline",
+      "_origin": "ast",
+      "community": 101,
+      "community_name": "tasteskill: Anti-Slop Frontend Skill",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "0.d anti-default discipline",
+      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
+      "source_location": "L38"
+    },
+    {
       "id": "agents_skills_design_taste_frontend_skill_13_out_of_scope",
       "label": "13. OUT OF SCOPE",
       "_origin": "ast",
@@ -2501,54 +2682,6 @@
       "norm_label": "14. final pre-flight check",
       "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
       "source_location": "L910"
-    },
-    {
-      "id": "agents_skills_design_taste_frontend_skill_1_a_dial_inference_design_read_dial_values",
-      "label": "1.A Dial Inference (design read \u2192 dial values)",
-      "_origin": "ast",
-      "community": 101,
-      "community_name": "tasteskill: Anti-Slop Frontend Skill",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "1.a dial inference (design read \u2192 dial values)",
-      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
-      "source_location": "L53"
-    },
-    {
-      "id": "agents_skills_design_taste_frontend_skill_1_b_use_case_presets",
-      "label": "1.B Use-Case Presets",
-      "_origin": "ast",
-      "community": 101,
-      "community_name": "tasteskill: Anti-Slop Frontend Skill",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "1.b use-case presets",
-      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
-      "source_location": "L64"
-    },
-    {
-      "id": "agents_skills_design_taste_frontend_skill_1_c_how_the_dials_drive_output",
-      "label": "1.C How the Dials Drive Output",
-      "_origin": "ast",
-      "community": 101,
-      "community_name": "tasteskill: Anti-Slop Frontend Skill",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "1.c how the dials drive output",
-      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
-      "source_location": "L77"
-    },
-    {
-      "id": "agents_skills_design_taste_frontend_skill_1_the_three_dials_core_configuration",
-      "label": "1. THE THREE DIALS (Core Configuration)",
-      "_origin": "ast",
-      "community": 101,
-      "community_name": "tasteskill: Anti-Slop Frontend Skill",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "1. the three dials (core configuration)",
-      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
-      "source_location": "L43"
     },
     {
       "id": "agents_skills_design_taste_frontend_skill_2_a_when_to_reach_for_a_real_design_system_use_official_packages",
@@ -2597,6 +2730,83 @@
       "norm_label": "tasteskill: anti-slop frontend skill",
       "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
       "source_location": "L6"
+    },
+    {
+      "id": "astro_config",
+      "label": "astro.config.mjs",
+      "_origin": "ast",
+      "community": 102,
+      "community_name": "astro.config.mjs",
+      "file_type": "code",
+      "norm_label": "astro.config.mjs",
+      "source_file": "astro.config.mjs",
+      "source_location": "L1"
+    },
+    {
+      "id": "astro_config_pagesdir",
+      "label": "pagesDir",
+      "_origin": "ast",
+      "community": 102,
+      "community_name": "astro.config.mjs",
+      "file_type": "code",
+      "norm_label": "pagesdir",
+      "source_file": "astro.config.mjs",
+      "source_location": "L12"
+    },
+    {
+      "id": "astro_config_pagests",
+      "label": "pagesTs",
+      "_origin": "ast",
+      "community": 102,
+      "community_name": "astro.config.mjs",
+      "file_type": "code",
+      "norm_label": "pagests",
+      "source_file": "astro.config.mjs",
+      "source_location": "L13"
+    },
+    {
+      "id": "astro_config_unfinished",
+      "label": "unfinished",
+      "_origin": "ast",
+      "community": 102,
+      "community_name": "astro.config.mjs",
+      "file_type": "code",
+      "norm_label": "unfinished",
+      "source_file": "astro.config.mjs",
+      "source_location": "L14"
+    },
+    {
+      "id": "src_data_site_site",
+      "label": "SITE",
+      "_origin": "ast",
+      "community": 102,
+      "community_name": "astro.config.mjs",
+      "file_type": "code",
+      "norm_label": "site",
+      "source_file": "src/data/site.js",
+      "source_location": "L3"
+    },
+    {
+      "id": "ref_astrojs_mdx",
+      "label": "@astrojs/mdx",
+      "_origin": "ast",
+      "community": 102,
+      "community_name": "astro.config.mjs",
+      "file_type": "concept",
+      "norm_label": "@astrojs/mdx",
+      "source_file": "package.json",
+      "source_location": "L19"
+    },
+    {
+      "id": "ref_astrojs_sitemap",
+      "label": "@astrojs/sitemap",
+      "_origin": "ast",
+      "community": 102,
+      "community_name": "astro.config.mjs",
+      "file_type": "concept",
+      "norm_label": "@astrojs/sitemap",
+      "source_file": "package.json",
+      "source_location": "L20"
     },
     {
       "id": "agents_skills_design_taste_frontend_skill_9_a_visual_css",
@@ -2693,6 +2903,17 @@
       "norm_label": "9.g em-dash ban (the single most-violated tell)",
       "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
       "source_location": "L685"
+    },
+    {
+      "id": "src_lib_seo",
+      "label": "seo.ts",
+      "_origin": "ast",
+      "community": 104,
+      "community_name": "seo.ts",
+      "file_type": "code",
+      "norm_label": "seo.ts",
+      "source_file": "src/lib/seo.ts",
+      "source_location": "L1"
     },
     {
       "id": "agents_skills_design_taste_frontend_skill_11_a_detect_the_mode_first_action",
@@ -2947,64 +3168,26 @@
       "source_location": "L519"
     },
     {
-      "id": "agents_skills_design_taste_frontend_skill_0_a_read_these_signals_first",
-      "label": "0.A Read these signals first",
+      "id": "src_components_blocks_proofbar",
+      "label": "ProofBar.astro",
       "_origin": "ast",
       "community": 108,
-      "community_name": "0. BRIEF INFERENCE (Read the Room Before Anything Else)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "0.a read these signals first",
-      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
-      "source_location": "L17"
+      "community_name": "ProofBar.astro",
+      "file_type": "code",
+      "norm_label": "proofbar.astro",
+      "source_file": "src/components/blocks/ProofBar.astro",
+      "source_location": "L1"
     },
     {
-      "id": "agents_skills_design_taste_frontend_skill_0_b_output_a_one_line_design_read_before_generating",
-      "label": "0.B Output a one-line \"Design Read\" before generating",
+      "id": "src_components_blocks_statsstrip",
+      "label": "StatsStrip.astro",
       "_origin": "ast",
       "community": 108,
-      "community_name": "0. BRIEF INFERENCE (Read the Room Before Anything Else)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "0.b output a one-line \"design read\" before generating",
-      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
-      "source_location": "L25"
-    },
-    {
-      "id": "agents_skills_design_taste_frontend_skill_0_brief_inference_read_the_room_before_anything_else",
-      "label": "0. BRIEF INFERENCE (Read the Room Before Anything Else)",
-      "_origin": "ast",
-      "community": 108,
-      "community_name": "0. BRIEF INFERENCE (Read the Room Before Anything Else)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "0. brief inference (read the room before anything else)",
-      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
-      "source_location": "L13"
-    },
-    {
-      "id": "agents_skills_design_taste_frontend_skill_0_c_if_the_brief_is_ambiguous_ask_one_question_do_not_guess",
-      "label": "0.C If the brief is ambiguous, ask one question, do not guess",
-      "_origin": "ast",
-      "community": 108,
-      "community_name": "0. BRIEF INFERENCE (Read the Room Before Anything Else)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "0.c if the brief is ambiguous, ask one question, do not guess",
-      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
-      "source_location": "L33"
-    },
-    {
-      "id": "agents_skills_design_taste_frontend_skill_0_d_anti_default_discipline",
-      "label": "0.D Anti-Default Discipline",
-      "_origin": "ast",
-      "community": 108,
-      "community_name": "0. BRIEF INFERENCE (Read the Room Before Anything Else)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "0.d anti-default discipline",
-      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
-      "source_location": "L38"
+      "community_name": "ProofBar.astro",
+      "file_type": "code",
+      "norm_label": "statsstrip.astro",
+      "source_file": "src/components/blocks/StatsStrip.astro",
+      "source_location": "L1"
     },
     {
       "id": "agents_skills_design_taste_frontend_skill_12_a_file_location",
@@ -3391,6 +3574,65 @@
       "source_location": "L565"
     },
     {
+      "id": "agents_skills_design_taste_frontend_skill_1_a_dial_inference_design_read_dial_values",
+      "label": "1.A Dial Inference (design read \u2192 dial values)",
+      "_origin": "ast",
+      "community": 113,
+      "community_name": "1. THE THREE DIALS (Core Configuration)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "1.a dial inference (design read \u2192 dial values)",
+      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
+      "source_location": "L53"
+    },
+    {
+      "id": "agents_skills_design_taste_frontend_skill_1_b_use_case_presets",
+      "label": "1.B Use-Case Presets",
+      "_origin": "ast",
+      "community": 113,
+      "community_name": "1. THE THREE DIALS (Core Configuration)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "1.b use-case presets",
+      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
+      "source_location": "L64"
+    },
+    {
+      "id": "agents_skills_design_taste_frontend_skill_1_c_how_the_dials_drive_output",
+      "label": "1.C How the Dials Drive Output",
+      "_origin": "ast",
+      "community": 113,
+      "community_name": "1. THE THREE DIALS (Core Configuration)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "1.c how the dials drive output",
+      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
+      "source_location": "L77"
+    },
+    {
+      "id": "agents_skills_design_taste_frontend_skill_1_the_three_dials_core_configuration",
+      "label": "1. THE THREE DIALS (Core Configuration)",
+      "_origin": "ast",
+      "community": 113,
+      "community_name": "1. THE THREE DIALS (Core Configuration)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "1. the three dials (core configuration)",
+      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
+      "source_location": "L43"
+    },
+    {
+      "id": "src_lib_depth",
+      "label": "depth.ts",
+      "_origin": "ast",
+      "community": 114,
+      "community_name": "depth.ts",
+      "file_type": "code",
+      "norm_label": "depth.ts",
+      "source_file": "src/lib/depth.ts",
+      "source_location": "L1"
+    },
+    {
       "id": "vercel",
       "label": "vercel.json",
       "_origin": "ast",
@@ -3588,6 +3830,28 @@
       "norm_label": "unresolved",
       "source_file": ".impeccable/surfaces/src-pages-index-astro.md",
       "source_location": "L26"
+    },
+    {
+      "id": "src_lib_forms",
+      "label": "forms.ts",
+      "_origin": "ast",
+      "community": 125,
+      "community_name": "forms.ts",
+      "file_type": "code",
+      "norm_label": "forms.ts",
+      "source_file": "src/lib/forms.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_lib_forms_prefill",
+      "label": "PREFILL",
+      "_origin": "ast",
+      "community": 125,
+      "community_name": "forms.ts",
+      "file_type": "code",
+      "norm_label": "prefill",
+      "source_file": "src/lib/forms.ts",
+      "source_location": "L15"
     },
     {
       "id": "tsconfig",
@@ -3858,150 +4122,33 @@
       "label": "p-06.mdx",
       "_origin": "ast",
       "community": 16,
-      "community_name": "The test suite",
+      "community_name": "p-06.mdx",
       "file_type": "document",
       "frontmatter": {
         "pageId": "P-06",
-        "eyebrow": "Proof",
-        "lede": "Two stands, load testing to 150 tonnes, calibrated measuring equipment and certified test weights. Testing here is routine, not exceptional, which is the whole point of it.",
+        "lede": "Every machine is tested before dispatch with calibrated measuring equipment and certified test weights.",
+        "draft": false,
         "hero": {
           "media": {
             "ref": "IMG-07",
             "brief": "Machine under load on the test stand, certified weights and instrumentation visible. 2000\u00d71125.",
             "ratio": "16/9"
-          }
+          },
+          "ctas": [
+            {
+              "label": "Ask about factory acceptance testing",
+              "href": "/contact/"
+            }
+          ]
         },
         "article": {
           "author": "Romica Tie Group"
-        },
-        "proofBar": true,
-        "related": [
-          "P-03",
-          "P-02",
-          "P-05",
-          "P-04"
-        ],
-        "cta": {
-          "heading": "Ask about factory acceptance testing",
-          "body": "Whether the machine is ours or yours, we can test it here before it reaches a quay.",
-          "primary": {
-            "label": "Talk to us",
-            "href": "/contact/"
-          }
         }
       },
       "node_kind": "page",
       "norm_label": "p-06.mdx",
       "source_file": "src/content/pages/p-06.mdx",
       "source_location": "L1"
-    },
-    {
-      "id": "src_content_pages_p_06_class_witness_and_the_dossier",
-      "label": "Class witness and the dossier",
-      "_origin": "ast",
-      "community": 16,
-      "community_name": "The test suite",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "class witness and the dossier",
-      "source_file": "src/content/pages/p-06.mdx",
-      "source_location": "L52"
-    },
-    {
-      "id": "src_content_pages_p_06_dynamic_functional_load",
-      "label": "Dynamic functional load",
-      "_origin": "ast",
-      "community": 16,
-      "community_name": "The test suite",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "dynamic functional load",
-      "source_file": "src/content/pages/p-06.mdx",
-      "source_location": "L32"
-    },
-    {
-      "id": "src_content_pages_p_06_for_contract_manufacturing_clients",
-      "label": "For contract manufacturing clients",
-      "_origin": "ast",
-      "community": 16,
-      "community_name": "The test suite",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "for contract manufacturing clients",
-      "source_file": "src/content/pages/p-06.mdx",
-      "source_location": "L56"
-    },
-    {
-      "id": "src_content_pages_p_06_render_test",
-      "label": "Render test",
-      "_origin": "ast",
-      "community": 16,
-      "community_name": "The test suite",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "render test",
-      "source_file": "src/content/pages/p-06.mdx",
-      "source_location": "L40"
-    },
-    {
-      "id": "src_content_pages_p_06_speed_test",
-      "label": "Speed test",
-      "_origin": "ast",
-      "community": 16,
-      "community_name": "The test suite",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "speed test",
-      "source_file": "src/content/pages/p-06.mdx",
-      "source_location": "L44"
-    },
-    {
-      "id": "src_content_pages_p_06_static_brake_holding",
-      "label": "Static brake holding",
-      "_origin": "ast",
-      "community": 16,
-      "community_name": "The test suite",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "static brake holding",
-      "source_file": "src/content/pages/p-06.mdx",
-      "source_location": "L36"
-    },
-    {
-      "id": "src_content_pages_p_06_static_structural_proof_load",
-      "label": "Static structural proof load",
-      "_origin": "ast",
-      "community": 16,
-      "community_name": "The test suite",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "static structural proof load",
-      "source_file": "src/content/pages/p-06.mdx",
-      "source_location": "L28"
-    },
-    {
-      "id": "src_content_pages_p_06_system_checks",
-      "label": "System checks",
-      "_origin": "ast",
-      "community": 16,
-      "community_name": "The test suite",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "system checks",
-      "source_file": "src/content/pages/p-06.mdx",
-      "source_location": "L48"
-    },
-    {
-      "id": "src_content_pages_p_06_the_test_suite",
-      "label": "The test suite",
-      "_origin": "ast",
-      "community": 16,
-      "community_name": "The test suite",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "the test suite",
-      "source_file": "src/content/pages/p-06.mdx",
-      "source_location": "L26"
     },
     {
       "id": "src_content_pages_l_01",
@@ -4083,14 +4230,23 @@
       "file_type": "document",
       "frontmatter": {
         "pageId": "P-03",
-        "eyebrow": "Case study \u00b7 21REL-05",
-        "lede": "Twelve years of offshore geotechnical work, and the machine had more left in it than the market assumed.",
+        "draft": false,
         "hero": {
           "media": {
             "ref": "IMG-16",
             "brief": "Before and after of the same machine at a matched angle. 1600\u00d7900.",
             "ratio": "16/9"
-          }
+          },
+          "ctas": [
+            {
+              "label": "Book an assessment",
+              "href": "/lifecycle/condition-assessment/"
+            },
+            {
+              "label": "Refurbishment and upgrade",
+              "href": "/lifecycle/refurbishment-upgrade/"
+            }
+          ]
         },
         "media": [
           {
@@ -4106,126 +4262,12 @@
         ],
         "article": {
           "author": "Romica Tie Group"
-        },
-        "quotes": [
-          {
-            "text": "Sometimes the right answer is to rebuild the winch you already own. Sometimes it is not, and an honest assessment is the only way to know which.",
-            "attribution": "Romica Tie Group"
-          }
-        ],
-        "cta": {
-          "heading": "Book a condition assessment",
-          "body": "Tell us the equipment, the vessel and your maintenance window. We will tell you what is worth doing.",
-          "primary": {
-            "label": "Book an assessment",
-            "href": "/lifecycle/condition-assessment/"
-          },
-          "secondary": {
-            "label": "Refurbishment and upgrade",
-            "href": "/lifecycle/refurbishment-upgrade/"
-          }
         }
       },
       "node_kind": "page",
       "norm_label": "p-03.mdx",
       "source_file": "src/content/pages/p-03.mdx",
       "source_location": "L1"
-    },
-    {
-      "id": "src_content_pages_p_03_and_a_spares_recommendation",
-      "label": "And a spares recommendation",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "p-03.mdx",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "and a spares recommendation",
-      "source_file": "src/content/pages/p-03.mdx",
-      "source_location": "L69"
-    },
-    {
-      "id": "src_content_pages_p_03_how_it_was_proved",
-      "label": "How it was proved",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "p-03.mdx",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "how it was proved",
-      "source_file": "src/content/pages/p-03.mdx",
-      "source_location": "L61"
-    },
-    {
-      "id": "src_content_pages_p_03_the_assessment_came_first",
-      "label": "The assessment came first",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "p-03.mdx",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "the assessment came first",
-      "source_file": "src/content/pages/p-03.mdx",
-      "source_location": "L47"
-    },
-    {
-      "id": "src_content_pages_p_03_the_documentation_was_reissued",
-      "label": "The documentation was reissued",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "p-03.mdx",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "the documentation was reissued",
-      "source_file": "src/content/pages/p-03.mdx",
-      "source_location": "L65"
-    },
-    {
-      "id": "src_content_pages_p_03_the_result",
-      "label": "The result",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "p-03.mdx",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "the result",
-      "source_file": "src/content/pages/p-03.mdx",
-      "source_location": "L73"
-    },
-    {
-      "id": "src_content_pages_p_03_the_situation",
-      "label": "The situation",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "p-03.mdx",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "the situation",
-      "source_file": "src/content/pages/p-03.mdx",
-      "source_location": "L41"
-    },
-    {
-      "id": "src_content_pages_p_03_what_was_reused",
-      "label": "What was reused",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "p-03.mdx",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "what was reused",
-      "source_file": "src/content/pages/p-03.mdx",
-      "source_location": "L53"
-    },
-    {
-      "id": "src_content_pages_p_03_what_was_upgraded",
-      "label": "What was upgraded",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "p-03.mdx",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "what was upgraded",
-      "source_file": "src/content/pages/p-03.mdx",
-      "source_location": "L57"
     },
     {
       "id": "scripts_audit_protection",
@@ -7788,50 +7830,6 @@
       "source_location": "L116"
     },
     {
-      "id": "astro_config",
-      "label": "astro.config.mjs",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "package.json",
-      "file_type": "code",
-      "norm_label": "astro.config.mjs",
-      "source_file": "astro.config.mjs",
-      "source_location": "L1"
-    },
-    {
-      "id": "astro_config_pagesdir",
-      "label": "pagesDir",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "package.json",
-      "file_type": "code",
-      "norm_label": "pagesdir",
-      "source_file": "astro.config.mjs",
-      "source_location": "L12"
-    },
-    {
-      "id": "astro_config_pagests",
-      "label": "pagesTs",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "package.json",
-      "file_type": "code",
-      "norm_label": "pagests",
-      "source_file": "astro.config.mjs",
-      "source_location": "L13"
-    },
-    {
-      "id": "astro_config_unfinished",
-      "label": "unfinished",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "package.json",
-      "file_type": "code",
-      "norm_label": "unfinished",
-      "source_file": "astro.config.mjs",
-      "source_location": "L14"
-    },
-    {
       "id": "package",
       "label": "package.json",
       "_origin": "ast",
@@ -8151,17 +8149,6 @@
       "source_location": "L3"
     },
     {
-      "id": "src_data_site_site",
-      "label": "SITE",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "package.json",
-      "file_type": "code",
-      "norm_label": "site",
-      "source_file": "src/data/site.js",
-      "source_location": "L3"
-    },
-    {
       "id": "ref_astro",
       "label": "astro",
       "_origin": "ast",
@@ -8182,28 +8169,6 @@
       "norm_label": "@astrojs/check",
       "source_file": "package.json",
       "source_location": "L28"
-    },
-    {
-      "id": "ref_astrojs_mdx",
-      "label": "@astrojs/mdx",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "package.json",
-      "file_type": "concept",
-      "norm_label": "@astrojs/mdx",
-      "source_file": "package.json",
-      "source_location": "L19"
-    },
-    {
-      "id": "ref_astrojs_sitemap",
-      "label": "@astrojs/sitemap",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "package.json",
-      "file_type": "concept",
-      "norm_label": "@astrojs/sitemap",
-      "source_file": "package.json",
-      "source_location": "L20"
     },
     {
       "id": "ref_fontsource_jetbrains_mono",
@@ -8496,16 +8461,36 @@
       "file_type": "document",
       "frontmatter": {
         "pageId": "P-00",
-        "eyebrow": "Proof",
-        "lede": "Anyone can publish a capability list. These are the things that can be checked.",
-        "proofBar": true,
+        "lede": "Since 1978: more than 1,500 deck machines and 250 projects for over 50 clients worldwide.",
+        "draft": false,
         "cards": [
+          {
+            "pageId": "P-01",
+            "title": "Case studies",
+            "blurb": "Fleet standardisation, winch refurbishment, contract manufacturing, yard programme."
+          },
+          {
+            "pageId": "P-06",
+            "title": "Test facility",
+            "blurb": "Two stands, load testing to 150 Te."
+          },
+          {
+            "pageId": "P-07",
+            "title": "References",
+            "blurb": "Operators, OEMs and shipyards."
+          },
+          {
+            "pageId": "Y-04",
+            "title": "Vendor qualification pack",
+            "blurb": "One document for procurement and quality teams."
+          },
           {
             "pageId": "Y-03",
             "title": "Certifications",
-            "blurb": "Class recognitions, welding approvals, NDT levels and traceability."
+            "blurb": "Class recognition, welding approvals, NDT and traceability."
           }
-        ]
+        ],
+        "proofBar": true
       },
       "node_kind": "page",
       "norm_label": "p-00.mdx",
@@ -8521,7 +8506,30 @@
       "file_type": "document",
       "frontmatter": {
         "pageId": "P-01",
-        "draft": true
+        "draft": false,
+        "cards": [
+          {
+            "pageId": "P-02",
+            "title": "CS-01 Fleet standardisation",
+            "blurb": "One handling standard across seven Fugro vessels over fourteen years."
+          },
+          {
+            "pageId": "P-03",
+            "title": "CS-02 Winch refurbishment 21REL-05",
+            "blurb": "2009 traction winch rebuilt, upgraded and re-certified in 2021."
+          },
+          {
+            "pageId": "P-04",
+            "title": "CS-03 Contract manufacturing",
+            "blurb": "From steelwork to complete Tier 4 machines for an equipment OEM."
+          },
+          {
+            "pageId": "P-05",
+            "title": "CS-04 Yard programme",
+            "blurb": "Deck equipment supplied and commissioned for a Hyundai Heavy Industries newbuild."
+          }
+        ],
+        "proofBar": true
       },
       "node_kind": "page",
       "norm_label": "p-01.mdx",
@@ -8570,39 +8578,6 @@
       "file_type": "code",
       "norm_label": "astro:assets",
       "source_file": "astro:assets"
-    },
-    {
-      "id": "src_components_blocks_fig",
-      "label": "Fig.astro",
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "home.ts",
-      "file_type": "code",
-      "norm_label": "fig.astro",
-      "source_file": "src/components/blocks/Fig.astro",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_blocks_proofbar",
-      "label": "ProofBar.astro",
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "home.ts",
-      "file_type": "code",
-      "norm_label": "proofbar.astro",
-      "source_file": "src/components/blocks/ProofBar.astro",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_blocks_statsstrip",
-      "label": "StatsStrip.astro",
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "home.ts",
-      "file_type": "code",
-      "norm_label": "statsstrip.astro",
-      "source_file": "src/components/blocks/StatsStrip.astro",
-      "source_location": "L1"
     },
     {
       "id": "src_components_home_hero",
@@ -8668,50 +8643,6 @@
       "file_type": "code",
       "norm_label": "tierladder.astro",
       "source_file": "src/components/home/TierLadder.astro",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_site_depthgauge",
-      "label": "DepthGauge.astro",
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "home.ts",
-      "file_type": "code",
-      "norm_label": "depthgauge.astro",
-      "source_file": "src/components/site/DepthGauge.astro",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_site_footer",
-      "label": "Footer.astro",
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "home.ts",
-      "file_type": "code",
-      "norm_label": "footer.astro",
-      "source_file": "src/components/site/Footer.astro",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_site_footer_year",
-      "label": "year",
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "home.ts",
-      "file_type": "code",
-      "norm_label": "year",
-      "source_file": "src/components/site/Footer.astro",
-      "source_location": "L3"
-    },
-    {
-      "id": "src_components_site_header",
-      "label": "Header.astro",
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "home.ts",
-      "file_type": "code",
-      "norm_label": "header.astro",
-      "source_file": "src/components/site/Header.astro",
       "source_location": "L1"
     },
     {
@@ -8836,72 +8767,6 @@
       "source_location": "L100"
     },
     {
-      "id": "src_data_site",
-      "label": "site.js",
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "home.ts",
-      "file_type": "code",
-      "norm_label": "site.js",
-      "source_file": "src/data/site.js",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_data_site_footer_nav",
-      "label": "FOOTER_NAV",
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "home.ts",
-      "file_type": "code",
-      "norm_label": "footer_nav",
-      "source_file": "src/data/site.js",
-      "source_location": "L29"
-    },
-    {
-      "id": "src_data_site_legal_nav",
-      "label": "LEGAL_NAV",
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "home.ts",
-      "file_type": "code",
-      "norm_label": "legal_nav",
-      "source_file": "src/data/site.js",
-      "source_location": "L60"
-    },
-    {
-      "id": "src_data_site_nav",
-      "label": "NAV",
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "home.ts",
-      "file_type": "code",
-      "norm_label": "nav",
-      "source_file": "src/data/site.js",
-      "source_location": "L20"
-    },
-    {
-      "id": "src_data_site_proof",
-      "label": "PROOF",
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "home.ts",
-      "file_type": "code",
-      "norm_label": "proof",
-      "source_file": "src/data/site.js",
-      "source_location": "L69"
-    },
-    {
-      "id": "src_data_site_proof_display",
-      "label": "PROOF_DISPLAY",
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "home.ts",
-      "file_type": "code",
-      "norm_label": "proof_display",
-      "source_file": "src/data/site.js",
-      "source_location": "L85"
-    },
-    {
       "id": "src_pages_index",
       "label": "index.astro",
       "_origin": "ast",
@@ -8937,7 +8802,7 @@
       "file_type": "document",
       "frontmatter": {
         "pageId": "P-07",
-        "draft": true
+        "draft": false
       },
       "node_kind": "page",
       "norm_label": "p-07.mdx",
@@ -8953,7 +8818,7 @@
       "file_type": "document",
       "frontmatter": {
         "pageId": "P-08",
-        "draft": true
+        "draft": false
       },
       "node_kind": "page",
       "norm_label": "p-08.mdx",
@@ -10181,6 +10046,83 @@
       "source_location": "L29"
     },
     {
+      "id": "src_data_pages_extra",
+      "label": "pages-extra.ts",
+      "_origin": "ast",
+      "community": 92,
+      "community_name": "page.ts",
+      "file_type": "code",
+      "norm_label": "pages-extra.ts",
+      "source_file": "src/data/pages-extra.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_data_pages_extra_off_map_ids",
+      "label": "OFF_MAP_IDS",
+      "_origin": "ast",
+      "community": 92,
+      "community_name": "page.ts",
+      "file_type": "code",
+      "norm_label": "off_map_ids",
+      "source_file": "src/data/pages-extra.ts",
+      "source_location": "L33"
+    },
+    {
+      "id": "src_data_pages_extra_off_map_pages",
+      "label": "OFF_MAP_PAGES",
+      "_origin": "ast",
+      "community": 92,
+      "community_name": "page.ts",
+      "file_type": "code",
+      "norm_label": "off_map_pages",
+      "source_file": "src/data/pages-extra.ts",
+      "source_location": "L8"
+    },
+    {
+      "id": "src_lib_page",
+      "label": "page.ts",
+      "_origin": "ast",
+      "community": 92,
+      "community_name": "page.ts",
+      "file_type": "code",
+      "norm_label": "page.ts",
+      "source_file": "src/lib/page.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_lib_page_by_id",
+      "label": "BY_ID",
+      "_origin": "ast",
+      "community": 92,
+      "community_name": "page.ts",
+      "file_type": "code",
+      "norm_label": "by_id",
+      "source_file": "src/lib/page.ts",
+      "source_location": "L9"
+    },
+    {
+      "id": "src_pages_404",
+      "label": "404.astro",
+      "_origin": "ast",
+      "community": 92,
+      "community_name": "page.ts",
+      "file_type": "code",
+      "norm_label": "404.astro",
+      "source_file": "src/pages/404.astro",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_pages_404_p",
+      "label": "{ p }",
+      "_origin": "ast",
+      "community": 92,
+      "community_name": "page.ts",
+      "file_type": "code",
+      "norm_label": "{ p }",
+      "source_file": "src/pages/404.astro",
+      "source_location": "L8"
+    },
+    {
       "id": "400_css",
       "label": "@fontsource/jetbrains-mono/400.css",
       "_origin": "ast",
@@ -10247,39 +10189,6 @@
       "source_file": "@fontsource-variable/archivo/wght.css"
     },
     {
-      "id": "src_data_pages_extra",
-      "label": "pages-extra.ts",
-      "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
-      "file_type": "code",
-      "norm_label": "pages-extra.ts",
-      "source_file": "src/data/pages-extra.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_data_pages_extra_off_map_ids",
-      "label": "OFF_MAP_IDS",
-      "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
-      "file_type": "code",
-      "norm_label": "off_map_ids",
-      "source_file": "src/data/pages-extra.ts",
-      "source_location": "L33"
-    },
-    {
-      "id": "src_data_pages_extra_off_map_pages",
-      "label": "OFF_MAP_PAGES",
-      "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
-      "file_type": "code",
-      "norm_label": "off_map_pages",
-      "source_file": "src/data/pages-extra.ts",
-      "source_location": "L8"
-    },
-    {
       "id": "src_layouts_base",
       "label": "Base.astro",
       "_origin": "ast",
@@ -10344,94 +10253,6 @@
       "norm_label": "unfinished",
       "source_file": "src/lib/content.ts",
       "source_location": "L16"
-    },
-    {
-      "id": "src_lib_depth",
-      "label": "depth.ts",
-      "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
-      "file_type": "code",
-      "norm_label": "depth.ts",
-      "source_file": "src/lib/depth.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_lib_forms",
-      "label": "forms.ts",
-      "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
-      "file_type": "code",
-      "norm_label": "forms.ts",
-      "source_file": "src/lib/forms.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_lib_forms_prefill",
-      "label": "PREFILL",
-      "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
-      "file_type": "code",
-      "norm_label": "prefill",
-      "source_file": "src/lib/forms.ts",
-      "source_location": "L15"
-    },
-    {
-      "id": "src_lib_page",
-      "label": "page.ts",
-      "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
-      "file_type": "code",
-      "norm_label": "page.ts",
-      "source_file": "src/lib/page.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_lib_page_by_id",
-      "label": "BY_ID",
-      "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
-      "file_type": "code",
-      "norm_label": "by_id",
-      "source_file": "src/lib/page.ts",
-      "source_location": "L9"
-    },
-    {
-      "id": "src_lib_seo",
-      "label": "seo.ts",
-      "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
-      "file_type": "code",
-      "norm_label": "seo.ts",
-      "source_file": "src/lib/seo.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_pages_404",
-      "label": "404.astro",
-      "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
-      "file_type": "code",
-      "norm_label": "404.astro",
-      "source_file": "src/pages/404.astro",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_pages_404_p",
-      "label": "{ p }",
-      "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
-      "file_type": "code",
-      "norm_label": "{ p }",
-      "source_file": "src/pages/404.astro",
-      "source_location": "L8"
     },
     {
       "id": "agents_skills_design_taste_frontend_skill",
@@ -10998,6 +10819,18 @@
       "external": true,
       "file_type": "concept",
       "norm_label": "src_lib_blocks_type",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "ref_astro_config",
+      "label": "ref_astro_config",
+      "_origin": "semantic",
+      "community": 102,
+      "community_name": "astro.config.mjs",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "ref_astro_config",
       "source_file": "",
       "type": "external"
     },
@@ -11802,18 +11635,6 @@
       "external": true,
       "file_type": "concept",
       "norm_label": "sys",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "ref_astro_config",
-      "label": "ref_astro_config",
-      "_origin": "semantic",
-      "community": 6,
-      "community_name": "package.json",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "ref_astro_config",
       "source_file": "",
       "type": "external"
     },
@@ -13814,6 +13635,18 @@
     {
       "source": "src_components_templates_case",
       "target": "src_lib_blocks_carditem",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/templates/Case.astro",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_templates_case",
+      "target": "src_lib_blocks_endingcta",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -23844,193 +23677,6 @@
       "weight": 1.0
     },
     {
-      "source": "src_content_pages_p_03",
-      "target": "src_content_pages_p_03_the_situation",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/p-03.mdx",
-      "source_location": "L41",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_p_03",
-      "target": "src_content_pages_p_03_the_assessment_came_first",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/p-03.mdx",
-      "source_location": "L47",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_p_03",
-      "target": "src_content_pages_p_03_what_was_reused",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/p-03.mdx",
-      "source_location": "L53",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_p_03",
-      "target": "src_content_pages_p_03_what_was_upgraded",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/p-03.mdx",
-      "source_location": "L57",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_p_03",
-      "target": "src_content_pages_p_03_how_it_was_proved",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/p-03.mdx",
-      "source_location": "L61",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_p_03",
-      "target": "src_content_pages_p_03_the_documentation_was_reissued",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/p-03.mdx",
-      "source_location": "L65",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_p_03",
-      "target": "src_content_pages_p_03_and_a_spares_recommendation",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/p-03.mdx",
-      "source_location": "L69",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_p_03",
-      "target": "src_content_pages_p_03_the_result",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/p-03.mdx",
-      "source_location": "L73",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_p_06",
-      "target": "src_content_pages_p_06_the_test_suite",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/p-06.mdx",
-      "source_location": "L26",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_p_06",
-      "target": "src_content_pages_p_06_class_witness_and_the_dossier",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/p-06.mdx",
-      "source_location": "L52",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_p_06",
-      "target": "src_content_pages_p_06_for_contract_manufacturing_clients",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/p-06.mdx",
-      "source_location": "L56",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_p_06_the_test_suite",
-      "target": "src_content_pages_p_06_static_structural_proof_load",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/p-06.mdx",
-      "source_location": "L28",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_p_06_the_test_suite",
-      "target": "src_content_pages_p_06_dynamic_functional_load",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/p-06.mdx",
-      "source_location": "L32",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_p_06_the_test_suite",
-      "target": "src_content_pages_p_06_static_brake_holding",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/p-06.mdx",
-      "source_location": "L36",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_p_06_the_test_suite",
-      "target": "src_content_pages_p_06_render_test",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/p-06.mdx",
-      "source_location": "L40",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_p_06_the_test_suite",
-      "target": "src_content_pages_p_06_speed_test",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/p-06.mdx",
-      "source_location": "L44",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_p_06_the_test_suite",
-      "target": "src_content_pages_p_06_system_checks",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/p-06.mdx",
-      "source_location": "L48",
-      "weight": 1.0
-    },
-    {
       "source": "src_content_pages_s_01",
       "target": "src_content_pages_s_01_what_we_supply",
       "relation": "contains",
@@ -26724,5 +26370,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "7a8e56da11ae5a6d25ac926e856eaf36e82ccbed"
+  "built_at_commit": "afc404ad47c1d41648f7aa730898d2748f3261c3"
 }
