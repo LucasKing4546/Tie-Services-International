@@ -11,7 +11,7 @@
  */
 import { render } from 'astro:content';
 import type { PageMeta } from '@data/pages';
-import type { PageEntry, CardItem } from '@lib/blocks';
+import { endingCta, type PageEntry, type CardItem } from '@lib/blocks';
 import { cardFrom, hasBody } from '@lib/content';
 import { articleJsonLd } from '@lib/seo';
 import Base from '@layouts/Base.astro';
@@ -113,5 +113,5 @@ const jsonLdPage = articleJsonLd(data);
     </Section>
   )}
 
-  <PageEnding page={page} proofBar={data.proofBar} cta={data.cta} draft={data.draft} outline={data.outline} />
+  <PageEnding page={page} proofBar cta={endingCta(data)} draft={data.draft} outline={data.outline} />
 </Base>
