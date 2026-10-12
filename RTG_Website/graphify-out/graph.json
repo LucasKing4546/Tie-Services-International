@@ -334,8 +334,8 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
+      "community": 92,
+      "community_name": "page.ts",
       "file_type": "code",
       "norm_label": "resolvedpage",
       "source_file": "src/lib/page.ts",
@@ -438,6 +438,18 @@
       "source_location": "L74"
     },
     {
+      "id": "src_lib_content_byid",
+      "label": "byId()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "blocks.ts",
+      "file_type": "code",
+      "norm_label": "byid()",
+      "source_file": "src/lib/content.ts",
+      "source_location": "L18"
+    },
+    {
       "id": "src_lib_content_cardfrom",
       "label": "cardFrom()",
       "_callable": true,
@@ -448,6 +460,42 @@
       "norm_label": "cardfrom()",
       "source_file": "src/lib/content.ts",
       "source_location": "L49"
+    },
+    {
+      "id": "src_lib_content_childentries",
+      "label": "childEntries()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "blocks.ts",
+      "file_type": "code",
+      "norm_label": "childentries()",
+      "source_file": "src/lib/content.ts",
+      "source_location": "L40"
+    },
+    {
+      "id": "src_lib_content_entriesfor",
+      "label": "entriesFor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "blocks.ts",
+      "file_type": "code",
+      "norm_label": "entriesfor()",
+      "source_file": "src/lib/content.ts",
+      "source_location": "L33"
+    },
+    {
+      "id": "src_lib_content_entryfor",
+      "label": "entryFor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "blocks.ts",
+      "file_type": "code",
+      "norm_label": "entryfor()",
+      "source_file": "src/lib/content.ts",
+      "source_location": "L25"
     },
     {
       "id": "src_lib_content_hasbody",
@@ -532,6 +580,126 @@
       "norm_label": "s()",
       "source_file": "scripts/build-page-map.mjs",
       "source_location": "L33"
+    },
+    {
+      "id": "src_data_pages_ancestorsof",
+      "label": "ancestorsOf()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 102,
+      "community_name": "seo.ts",
+      "file_type": "code",
+      "norm_label": "ancestorsof()",
+      "source_file": "src/data/pages.ts",
+      "source_location": "L1059"
+    },
+    {
+      "id": "src_lib_seo_absolute",
+      "label": "absolute()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 102,
+      "community_name": "seo.ts",
+      "file_type": "code",
+      "norm_label": "absolute()",
+      "source_file": "src/lib/seo.ts",
+      "source_location": "L6"
+    },
+    {
+      "id": "src_lib_seo_breadcrumbnode",
+      "label": "breadcrumbNode()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 102,
+      "community_name": "seo.ts",
+      "file_type": "code",
+      "norm_label": "breadcrumbnode()",
+      "source_file": "src/lib/seo.ts",
+      "source_location": "L30"
+    },
+    {
+      "id": "src_lib_seo_buildjsonld",
+      "label": "buildJsonLd()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 102,
+      "community_name": "seo.ts",
+      "file_type": "code",
+      "norm_label": "buildjsonld()",
+      "source_file": "src/lib/seo.ts",
+      "source_location": "L54"
+    },
+    {
+      "id": "src_lib_seo_faqpagejsonld",
+      "label": "faqPageJsonLd()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 102,
+      "community_name": "seo.ts",
+      "file_type": "code",
+      "norm_label": "faqpagejsonld()",
+      "source_file": "src/lib/seo.ts",
+      "source_location": "L96"
+    },
+    {
+      "id": "src_lib_seo_ogimagefor",
+      "label": "ogImageFor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 102,
+      "community_name": "seo.ts",
+      "file_type": "code",
+      "norm_label": "ogimagefor()",
+      "source_file": "src/lib/seo.ts",
+      "source_location": "L9"
+    },
+    {
+      "id": "src_lib_seo_organizationnode",
+      "label": "organizationNode()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 102,
+      "community_name": "seo.ts",
+      "file_type": "code",
+      "norm_label": "organizationnode()",
+      "source_file": "src/lib/seo.ts",
+      "source_location": "L12"
+    },
+    {
+      "id": "src_lib_depth_initdepth",
+      "label": "initDepth()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 113,
+      "community_name": "depth.ts",
+      "file_type": "code",
+      "norm_label": "initdepth()",
+      "source_file": "src/lib/depth.ts",
+      "source_location": "L24"
+    },
+    {
+      "id": "src_lib_depth_zoneof",
+      "label": "zoneOf()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 113,
+      "community_name": "depth.ts",
+      "file_type": "code",
+      "norm_label": "zoneof()",
+      "source_file": "src/lib/depth.ts",
+      "source_location": "L19"
+    },
+    {
+      "id": "src_lib_forms_initformprefill",
+      "label": "initFormPrefill()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 114,
+      "community_name": "forms.ts",
+      "file_type": "code",
+      "norm_label": "initformprefill()",
+      "source_file": "src/lib/forms.ts",
+      "source_location": "L17"
     },
     {
       "id": "src_content_config_knownid",
@@ -1230,54 +1398,6 @@
       "source_location": "L1042"
     },
     {
-      "id": "src_lib_content_byid",
-      "label": "byId()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "RTG Website \u2014 project guide for Claude Code",
-      "file_type": "code",
-      "norm_label": "byid()",
-      "source_file": "src/lib/content.ts",
-      "source_location": "L18"
-    },
-    {
-      "id": "src_lib_content_childentries",
-      "label": "childEntries()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "RTG Website \u2014 project guide for Claude Code",
-      "file_type": "code",
-      "norm_label": "childentries()",
-      "source_file": "src/lib/content.ts",
-      "source_location": "L40"
-    },
-    {
-      "id": "src_lib_content_entriesfor",
-      "label": "entriesFor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "RTG Website \u2014 project guide for Claude Code",
-      "file_type": "code",
-      "norm_label": "entriesfor()",
-      "source_file": "src/lib/content.ts",
-      "source_location": "L33"
-    },
-    {
-      "id": "src_lib_content_entryfor",
-      "label": "entryFor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "RTG Website \u2014 project guide for Claude Code",
-      "file_type": "code",
-      "norm_label": "entryfor()",
-      "source_file": "src/lib/content.ts",
-      "source_location": "L25"
-    },
-    {
       "id": "src_components_site_waterline_wave",
       "label": "wave()",
       "_callable": true,
@@ -1314,136 +1434,16 @@
       "source_location": "L148"
     },
     {
-      "id": "src_data_pages_ancestorsof",
-      "label": "ancestorsOf()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
-      "file_type": "code",
-      "norm_label": "ancestorsof()",
-      "source_file": "src/data/pages.ts",
-      "source_location": "L1059"
-    },
-    {
-      "id": "src_lib_depth_initdepth",
-      "label": "initDepth()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
-      "file_type": "code",
-      "norm_label": "initdepth()",
-      "source_file": "src/lib/depth.ts",
-      "source_location": "L24"
-    },
-    {
-      "id": "src_lib_depth_zoneof",
-      "label": "zoneOf()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
-      "file_type": "code",
-      "norm_label": "zoneof()",
-      "source_file": "src/lib/depth.ts",
-      "source_location": "L19"
-    },
-    {
-      "id": "src_lib_forms_initformprefill",
-      "label": "initFormPrefill()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
-      "file_type": "code",
-      "norm_label": "initformprefill()",
-      "source_file": "src/lib/forms.ts",
-      "source_location": "L17"
-    },
-    {
       "id": "src_lib_page_resolvepage",
       "label": "resolvePage()",
       "_callable": true,
       "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
+      "community": 92,
+      "community_name": "page.ts",
       "file_type": "code",
       "norm_label": "resolvepage()",
       "source_file": "src/lib/page.ts",
       "source_location": "L17"
-    },
-    {
-      "id": "src_lib_seo_absolute",
-      "label": "absolute()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
-      "file_type": "code",
-      "norm_label": "absolute()",
-      "source_file": "src/lib/seo.ts",
-      "source_location": "L6"
-    },
-    {
-      "id": "src_lib_seo_breadcrumbnode",
-      "label": "breadcrumbNode()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
-      "file_type": "code",
-      "norm_label": "breadcrumbnode()",
-      "source_file": "src/lib/seo.ts",
-      "source_location": "L30"
-    },
-    {
-      "id": "src_lib_seo_buildjsonld",
-      "label": "buildJsonLd()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
-      "file_type": "code",
-      "norm_label": "buildjsonld()",
-      "source_file": "src/lib/seo.ts",
-      "source_location": "L54"
-    },
-    {
-      "id": "src_lib_seo_faqpagejsonld",
-      "label": "faqPageJsonLd()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
-      "file_type": "code",
-      "norm_label": "faqpagejsonld()",
-      "source_file": "src/lib/seo.ts",
-      "source_location": "L96"
-    },
-    {
-      "id": "src_lib_seo_ogimagefor",
-      "label": "ogImageFor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
-      "file_type": "code",
-      "norm_label": "ogimagefor()",
-      "source_file": "src/lib/seo.ts",
-      "source_location": "L9"
-    },
-    {
-      "id": "src_lib_seo_organizationnode",
-      "label": "organizationNode()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
-      "file_type": "code",
-      "norm_label": "organizationnode()",
-      "source_file": "src/lib/seo.ts",
-      "source_location": "L12"
     },
     {
       "id": "astro",
@@ -1674,17 +1674,6 @@
       "file_type": "code",
       "norm_label": "pinnedstage.astro",
       "source_file": "src/components/blocks/PinnedStage.astro",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_blocks_pinnedstages",
-      "label": "PinnedStages.astro",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "blocks.ts",
-      "file_type": "code",
-      "norm_label": "pinnedstages.astro",
-      "source_file": "src/components/blocks/PinnedStages.astro",
       "source_location": "L1"
     },
     {
@@ -1953,14 +1942,14 @@
     },
     {
       "id": "src_components_templates_guide",
-      "label": "[]",
+      "label": "Guide.astro",
       "_origin": "ast",
       "community": 0,
       "community_name": "blocks.ts",
       "file_type": "code",
-      "norm_label": "[]",
+      "norm_label": "guide.astro",
       "source_file": "src/components/templates/Guide.astro",
-      "source_location": "L43"
+      "source_location": "L1"
     },
     {
       "id": "src_components_templates_hub",
@@ -2114,7 +2103,7 @@
       "file_type": "code",
       "norm_label": "[]",
       "source_file": "src/components/templates/Service.astro",
-      "source_location": "L40"
+      "source_location": "L39"
     },
     {
       "id": "src_components_templates_tier",
@@ -2633,66 +2622,6 @@
       "source_location": "L757"
     },
     {
-      "id": "agents_skills_design_taste_frontend_skill_0_a_read_these_signals_first",
-      "label": "0.A Read these signals first",
-      "_origin": "ast",
-      "community": 101,
-      "community_name": "tasteskill: Anti-Slop Frontend Skill",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "0.a read these signals first",
-      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
-      "source_location": "L17"
-    },
-    {
-      "id": "agents_skills_design_taste_frontend_skill_0_b_output_a_one_line_design_read_before_generating",
-      "label": "0.B Output a one-line \"Design Read\" before generating",
-      "_origin": "ast",
-      "community": 101,
-      "community_name": "tasteskill: Anti-Slop Frontend Skill",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "0.b output a one-line \"design read\" before generating",
-      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
-      "source_location": "L25"
-    },
-    {
-      "id": "agents_skills_design_taste_frontend_skill_0_brief_inference_read_the_room_before_anything_else",
-      "label": "0. BRIEF INFERENCE (Read the Room Before Anything Else)",
-      "_origin": "ast",
-      "community": 101,
-      "community_name": "tasteskill: Anti-Slop Frontend Skill",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "0. brief inference (read the room before anything else)",
-      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
-      "source_location": "L13"
-    },
-    {
-      "id": "agents_skills_design_taste_frontend_skill_0_c_if_the_brief_is_ambiguous_ask_one_question_do_not_guess",
-      "label": "0.C If the brief is ambiguous, ask one question, do not guess",
-      "_origin": "ast",
-      "community": 101,
-      "community_name": "tasteskill: Anti-Slop Frontend Skill",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "0.c if the brief is ambiguous, ask one question, do not guess",
-      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
-      "source_location": "L33"
-    },
-    {
-      "id": "agents_skills_design_taste_frontend_skill_0_d_anti_default_discipline",
-      "label": "0.D Anti-Default Discipline",
-      "_origin": "ast",
-      "community": 101,
-      "community_name": "tasteskill: Anti-Slop Frontend Skill",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "0.d anti-default discipline",
-      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
-      "source_location": "L38"
-    },
-    {
       "id": "agents_skills_design_taste_frontend_skill_13_out_of_scope",
       "label": "13. OUT OF SCOPE",
       "_origin": "ast",
@@ -2715,6 +2644,54 @@
       "norm_label": "14. final pre-flight check",
       "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
       "source_location": "L910"
+    },
+    {
+      "id": "agents_skills_design_taste_frontend_skill_1_a_dial_inference_design_read_dial_values",
+      "label": "1.A Dial Inference (design read \u2192 dial values)",
+      "_origin": "ast",
+      "community": 101,
+      "community_name": "tasteskill: Anti-Slop Frontend Skill",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "1.a dial inference (design read \u2192 dial values)",
+      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
+      "source_location": "L53"
+    },
+    {
+      "id": "agents_skills_design_taste_frontend_skill_1_b_use_case_presets",
+      "label": "1.B Use-Case Presets",
+      "_origin": "ast",
+      "community": 101,
+      "community_name": "tasteskill: Anti-Slop Frontend Skill",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "1.b use-case presets",
+      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
+      "source_location": "L64"
+    },
+    {
+      "id": "agents_skills_design_taste_frontend_skill_1_c_how_the_dials_drive_output",
+      "label": "1.C How the Dials Drive Output",
+      "_origin": "ast",
+      "community": 101,
+      "community_name": "tasteskill: Anti-Slop Frontend Skill",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "1.c how the dials drive output",
+      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
+      "source_location": "L77"
+    },
+    {
+      "id": "agents_skills_design_taste_frontend_skill_1_the_three_dials_core_configuration",
+      "label": "1. THE THREE DIALS (Core Configuration)",
+      "_origin": "ast",
+      "community": 101,
+      "community_name": "tasteskill: Anti-Slop Frontend Skill",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "1. the three dials (core configuration)",
+      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
+      "source_location": "L43"
     },
     {
       "id": "agents_skills_design_taste_frontend_skill_2_a_when_to_reach_for_a_real_design_system_use_official_packages",
@@ -2765,114 +2742,15 @@
       "source_location": "L6"
     },
     {
-      "id": "package_scripts",
-      "label": "scripts",
+      "id": "src_lib_seo",
+      "label": "seo.ts",
       "_origin": "ast",
       "community": 102,
-      "community_name": "scripts",
+      "community_name": "seo.ts",
       "file_type": "code",
-      "norm_label": "scripts",
-      "source_file": "package.json",
-      "source_location": "L7"
-    },
-    {
-      "id": "package_scripts_audit",
-      "label": "audit",
-      "_origin": "ast",
-      "community": 102,
-      "community_name": "scripts",
-      "file_type": "code",
-      "norm_label": "audit",
-      "source_file": "package.json",
-      "source_location": "L16"
-    },
-    {
-      "id": "package_scripts_audit_protection",
-      "label": "audit:protection",
-      "_origin": "ast",
-      "community": 102,
-      "community_name": "scripts",
-      "file_type": "code",
-      "norm_label": "audit:protection",
-      "source_file": "package.json",
-      "source_location": "L14"
-    },
-    {
-      "id": "package_scripts_audit_seo",
-      "label": "audit:seo",
-      "_origin": "ast",
-      "community": 102,
-      "community_name": "scripts",
-      "file_type": "code",
-      "norm_label": "audit:seo",
-      "source_file": "package.json",
-      "source_location": "L13"
-    },
-    {
-      "id": "package_scripts_build",
-      "label": "build",
-      "_origin": "ast",
-      "community": 102,
-      "community_name": "scripts",
-      "file_type": "code",
-      "norm_label": "build",
-      "source_file": "package.json",
-      "source_location": "L9"
-    },
-    {
-      "id": "package_scripts_check",
-      "label": "check",
-      "_origin": "ast",
-      "community": 102,
-      "community_name": "scripts",
-      "file_type": "code",
-      "norm_label": "check",
-      "source_file": "package.json",
-      "source_location": "L11"
-    },
-    {
-      "id": "package_scripts_dev",
-      "label": "dev",
-      "_origin": "ast",
-      "community": 102,
-      "community_name": "scripts",
-      "file_type": "code",
-      "norm_label": "dev",
-      "source_file": "package.json",
-      "source_location": "L8"
-    },
-    {
-      "id": "package_scripts_pagemap",
-      "label": "pagemap",
-      "_origin": "ast",
-      "community": 102,
-      "community_name": "scripts",
-      "file_type": "code",
-      "norm_label": "pagemap",
-      "source_file": "package.json",
-      "source_location": "L12"
-    },
-    {
-      "id": "package_scripts_preview",
-      "label": "preview",
-      "_origin": "ast",
-      "community": 102,
-      "community_name": "scripts",
-      "file_type": "code",
-      "norm_label": "preview",
-      "source_file": "package.json",
-      "source_location": "L10"
-    },
-    {
-      "id": "package_scripts_strip_exif",
-      "label": "strip-exif",
-      "_origin": "ast",
-      "community": 102,
-      "community_name": "scripts",
-      "file_type": "code",
-      "norm_label": "strip-exif",
-      "source_file": "package.json",
-      "source_location": "L15"
+      "norm_label": "seo.ts",
+      "source_file": "src/lib/seo.ts",
+      "source_location": "L1"
     },
     {
       "id": "agents_skills_design_taste_frontend_skill_9_a_visual_css",
@@ -3300,92 +3178,64 @@
       "source_location": "L519"
     },
     {
-      "id": "package_dependencies",
-      "label": "dependencies",
+      "id": "agents_skills_design_taste_frontend_skill_0_a_read_these_signals_first",
+      "label": "0.A Read these signals first",
       "_origin": "ast",
       "community": 108,
-      "community_name": "dependencies",
-      "file_type": "code",
-      "norm_label": "dependencies",
-      "source_file": "package.json",
-      "source_location": "L18"
+      "community_name": "0. BRIEF INFERENCE (Read the Room Before Anything Else)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "0.a read these signals first",
+      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
+      "source_location": "L17"
     },
     {
-      "id": "package_dependencies_astro",
-      "label": "astro",
+      "id": "agents_skills_design_taste_frontend_skill_0_b_output_a_one_line_design_read_before_generating",
+      "label": "0.B Output a one-line \"Design Read\" before generating",
       "_origin": "ast",
       "community": 108,
-      "community_name": "dependencies",
-      "file_type": "code",
-      "norm_label": "astro",
-      "source_file": "package.json",
-      "source_location": "L24"
-    },
-    {
-      "id": "package_dependencies_astrojs_mdx",
-      "label": "@astrojs/mdx",
-      "_origin": "ast",
-      "community": 108,
-      "community_name": "dependencies",
-      "file_type": "code",
-      "norm_label": "@astrojs/mdx",
-      "source_file": "package.json",
-      "source_location": "L19"
-    },
-    {
-      "id": "package_dependencies_astrojs_sitemap",
-      "label": "@astrojs/sitemap",
-      "_origin": "ast",
-      "community": 108,
-      "community_name": "dependencies",
-      "file_type": "code",
-      "norm_label": "@astrojs/sitemap",
-      "source_file": "package.json",
-      "source_location": "L20"
-    },
-    {
-      "id": "package_dependencies_fontsource_jetbrains_mono",
-      "label": "@fontsource/jetbrains-mono",
-      "_origin": "ast",
-      "community": 108,
-      "community_name": "dependencies",
-      "file_type": "code",
-      "norm_label": "@fontsource/jetbrains-mono",
-      "source_file": "package.json",
-      "source_location": "L23"
-    },
-    {
-      "id": "package_dependencies_fontsource_variable_archivo",
-      "label": "@fontsource-variable/archivo",
-      "_origin": "ast",
-      "community": 108,
-      "community_name": "dependencies",
-      "file_type": "code",
-      "norm_label": "@fontsource-variable/archivo",
-      "source_file": "package.json",
-      "source_location": "L21"
-    },
-    {
-      "id": "package_dependencies_fontsource_variable_inter",
-      "label": "@fontsource-variable/inter",
-      "_origin": "ast",
-      "community": 108,
-      "community_name": "dependencies",
-      "file_type": "code",
-      "norm_label": "@fontsource-variable/inter",
-      "source_file": "package.json",
-      "source_location": "L22"
-    },
-    {
-      "id": "package_dependencies_three",
-      "label": "three",
-      "_origin": "ast",
-      "community": 108,
-      "community_name": "dependencies",
-      "file_type": "code",
-      "norm_label": "three",
-      "source_file": "package.json",
+      "community_name": "0. BRIEF INFERENCE (Read the Room Before Anything Else)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "0.b output a one-line \"design read\" before generating",
+      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
       "source_location": "L25"
+    },
+    {
+      "id": "agents_skills_design_taste_frontend_skill_0_brief_inference_read_the_room_before_anything_else",
+      "label": "0. BRIEF INFERENCE (Read the Room Before Anything Else)",
+      "_origin": "ast",
+      "community": 108,
+      "community_name": "0. BRIEF INFERENCE (Read the Room Before Anything Else)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "0. brief inference (read the room before anything else)",
+      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
+      "source_location": "L13"
+    },
+    {
+      "id": "agents_skills_design_taste_frontend_skill_0_c_if_the_brief_is_ambiguous_ask_one_question_do_not_guess",
+      "label": "0.C If the brief is ambiguous, ask one question, do not guess",
+      "_origin": "ast",
+      "community": 108,
+      "community_name": "0. BRIEF INFERENCE (Read the Room Before Anything Else)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "0.c if the brief is ambiguous, ask one question, do not guess",
+      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
+      "source_location": "L33"
+    },
+    {
+      "id": "agents_skills_design_taste_frontend_skill_0_d_anti_default_discipline",
+      "label": "0.D Anti-Default Discipline",
+      "_origin": "ast",
+      "community": 108,
+      "community_name": "0. BRIEF INFERENCE (Read the Room Before Anything Else)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "0.d anti-default discipline",
+      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
+      "source_location": "L38"
     },
     {
       "id": "agents_skills_design_taste_frontend_skill_12_a_file_location",
@@ -3772,107 +3622,37 @@
       "source_location": "L565"
     },
     {
-      "id": "package_devdependencies",
-      "label": "devDependencies",
+      "id": "src_lib_depth",
+      "label": "depth.ts",
       "_origin": "ast",
       "community": 113,
-      "community_name": "devDependencies",
+      "community_name": "depth.ts",
       "file_type": "code",
-      "norm_label": "devdependencies",
-      "source_file": "package.json",
-      "source_location": "L27"
+      "norm_label": "depth.ts",
+      "source_file": "src/lib/depth.ts",
+      "source_location": "L1"
     },
     {
-      "id": "package_devdependencies_astrojs_check",
-      "label": "@astrojs/check",
-      "_origin": "ast",
-      "community": 113,
-      "community_name": "devDependencies",
-      "file_type": "code",
-      "norm_label": "@astrojs/check",
-      "source_file": "package.json",
-      "source_location": "L28"
-    },
-    {
-      "id": "package_devdependencies_types_three",
-      "label": "@types/three",
-      "_origin": "ast",
-      "community": 113,
-      "community_name": "devDependencies",
-      "file_type": "code",
-      "norm_label": "@types/three",
-      "source_file": "package.json",
-      "source_location": "L29"
-    },
-    {
-      "id": "package_devdependencies_typescript",
-      "label": "typescript",
-      "_origin": "ast",
-      "community": 113,
-      "community_name": "devDependencies",
-      "file_type": "code",
-      "norm_label": "typescript",
-      "source_file": "package.json",
-      "source_location": "L30"
-    },
-    {
-      "id": "package_devdependencies_xlsx",
-      "label": "xlsx",
-      "_origin": "ast",
-      "community": 113,
-      "community_name": "devDependencies",
-      "file_type": "code",
-      "norm_label": "xlsx",
-      "source_file": "package.json",
-      "source_location": "L31"
-    },
-    {
-      "id": "agents_skills_design_taste_frontend_skill_1_a_dial_inference_design_read_dial_values",
-      "label": "1.A Dial Inference (design read \u2192 dial values)",
+      "id": "src_lib_forms",
+      "label": "forms.ts",
       "_origin": "ast",
       "community": 114,
-      "community_name": "1. THE THREE DIALS (Core Configuration)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "1.a dial inference (design read \u2192 dial values)",
-      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
-      "source_location": "L53"
+      "community_name": "forms.ts",
+      "file_type": "code",
+      "norm_label": "forms.ts",
+      "source_file": "src/lib/forms.ts",
+      "source_location": "L1"
     },
     {
-      "id": "agents_skills_design_taste_frontend_skill_1_b_use_case_presets",
-      "label": "1.B Use-Case Presets",
+      "id": "src_lib_forms_prefill",
+      "label": "PREFILL",
       "_origin": "ast",
       "community": 114,
-      "community_name": "1. THE THREE DIALS (Core Configuration)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "1.b use-case presets",
-      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
-      "source_location": "L64"
-    },
-    {
-      "id": "agents_skills_design_taste_frontend_skill_1_c_how_the_dials_drive_output",
-      "label": "1.C How the Dials Drive Output",
-      "_origin": "ast",
-      "community": 114,
-      "community_name": "1. THE THREE DIALS (Core Configuration)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "1.c how the dials drive output",
-      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
-      "source_location": "L77"
-    },
-    {
-      "id": "agents_skills_design_taste_frontend_skill_1_the_three_dials_core_configuration",
-      "label": "1. THE THREE DIALS (Core Configuration)",
-      "_origin": "ast",
-      "community": 114,
-      "community_name": "1. THE THREE DIALS (Core Configuration)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "1. the three dials (core configuration)",
-      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
-      "source_location": "L43"
+      "community_name": "forms.ts",
+      "file_type": "code",
+      "norm_label": "prefill",
+      "source_file": "src/lib/forms.ts",
+      "source_location": "L15"
     },
     {
       "id": "vercel",
@@ -4005,6 +3785,17 @@
       "norm_label": "spectable",
       "source_file": "src/content.config.ts",
       "source_location": "L48"
+    },
+    {
+      "id": "src_components_blocks_pinnedstages",
+      "label": "PinnedStages.astro",
+      "_origin": "ast",
+      "community": 123,
+      "community_name": "PinnedStages.astro",
+      "file_type": "code",
+      "norm_label": "pinnedstages.astro",
+      "source_file": "src/components/blocks/PinnedStages.astro",
+      "source_location": "L1"
     },
     {
       "id": "impeccable_surfaces_src_pages_index_astro",
@@ -4481,36 +4272,54 @@
       "label": "l-01.mdx",
       "_origin": "ast",
       "community": 17,
-      "community_name": "How it runs",
+      "community_name": "l-01.mdx",
       "file_type": "document",
       "frontmatter": {
         "pageId": "L-01",
-        "eyebrow": "Lifecycle",
-        "lede": "A machine that is already stripped is the cheapest moment in its life to improve. The work is worth doing properly, and it is worth documenting properly.",
+        "draft": false,
         "hero": {
           "media": {
             "ref": "IMG-16",
             "brief": "Before and after of the same machine at a matched angle. 1600\u00d7900.",
             "ratio": "16/9"
-          }
-        },
-        "related": [
-          "L-02",
-          "L-04",
-          "P-03"
-        ],
-        "cta": {
-          "heading": "Book a condition assessment",
-          "body": "Equipment, vessel, location and your maintenance window. That is all we need to start.",
-          "primary": {
-            "label": "Book an assessment",
-            "href": "/lifecycle/condition-assessment/"
           },
-          "secondary": {
-            "label": "Read the case study",
-            "href": "/proof/case-studies/traction-winch-refurbishment/"
+          "ctas": [
+            {
+              "label": "Book an assessment",
+              "href": "/lifecycle/condition-assessment/"
+            },
+            {
+              "label": "Case study CS-02",
+              "href": "/proof/case-studies/traction-winch-refurbishment/"
+            }
+          ]
+        },
+        "steps": [
+          {
+            "title": "Condition assessment",
+            "body": "Strip and inspect drum, shaft, bearings, brakes, hydraulics, structure (NDT) and control system obsolescence. Written report and recommendation."
+          },
+          {
+            "title": "Rework and reuse",
+            "body": "Serviceable components returned to service."
+          },
+          {
+            "title": "Upgrade",
+            "body": "Control system, instrumentation, brake, hydraulic circuit, safety systems or capacity, carried out during the rebuild."
+          },
+          {
+            "title": "Test",
+            "body": "Static proof load, dynamic functional load, brake holding, render and speed tests to 150 Te, as for a new machine."
+          },
+          {
+            "title": "Documentation",
+            "body": "Quality Record Book and User and Maintenance Manuals reissued to the as-rebuilt condition."
+          },
+          {
+            "title": "Spares recommendation",
+            "body": "Based on measured component condition."
           }
-        }
+        ]
       },
       "node_kind": "page",
       "norm_label": "l-01.mdx",
@@ -4518,100 +4327,16 @@
       "source_location": "L1"
     },
     {
-      "id": "src_content_pages_l_01_1_condition_assessment",
-      "label": "1. Condition assessment",
-      "_origin": "ast",
-      "community": 17,
-      "community_name": "How it runs",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "1. condition assessment",
-      "source_file": "src/content/pages/l-01.mdx",
-      "source_location": "L20"
-    },
-    {
-      "id": "src_content_pages_l_01_2_rework_and_reuse",
-      "label": "2. Rework and reuse",
-      "_origin": "ast",
-      "community": 17,
-      "community_name": "How it runs",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "2. rework and reuse",
-      "source_file": "src/content/pages/l-01.mdx",
-      "source_location": "L24"
-    },
-    {
-      "id": "src_content_pages_l_01_3_upgrade_while_it_is_apart",
-      "label": "3. Upgrade while it is apart",
-      "_origin": "ast",
-      "community": 17,
-      "community_name": "How it runs",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "3. upgrade while it is apart",
-      "source_file": "src/content/pages/l-01.mdx",
-      "source_location": "L28"
-    },
-    {
-      "id": "src_content_pages_l_01_4_test_to_the_same_regime_as_a_new_machine",
-      "label": "4. Test to the same regime as a new machine",
-      "_origin": "ast",
-      "community": 17,
-      "community_name": "How it runs",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "4. test to the same regime as a new machine",
-      "source_file": "src/content/pages/l-01.mdx",
-      "source_location": "L32"
-    },
-    {
-      "id": "src_content_pages_l_01_5_reissue_the_documentation",
-      "label": "5. Reissue the documentation",
-      "_origin": "ast",
-      "community": 17,
-      "community_name": "How it runs",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "5. reissue the documentation",
-      "source_file": "src/content/pages/l-01.mdx",
-      "source_location": "L36"
-    },
-    {
-      "id": "src_content_pages_l_01_6_a_spares_recommendation_based_on_what_we_found",
-      "label": "6. A spares recommendation based on what we found",
-      "_origin": "ast",
-      "community": 17,
-      "community_name": "How it runs",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "6. a spares recommendation based on what we found",
-      "source_file": "src/content/pages/l-01.mdx",
-      "source_location": "L40"
-    },
-    {
-      "id": "src_content_pages_l_01_how_it_runs",
-      "label": "How it runs",
-      "_origin": "ast",
-      "community": 17,
-      "community_name": "How it runs",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "how it runs",
-      "source_file": "src/content/pages/l-01.mdx",
-      "source_location": "L18"
-    },
-    {
       "id": "src_content_pages_l_01_lead_times",
       "label": "Lead times",
       "_origin": "ast",
       "community": 17,
-      "community_name": "How it runs",
+      "community_name": "l-01.mdx",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "lead times",
       "source_file": "src/content/pages/l-01.mdx",
-      "source_location": "L48"
+      "source_location": "L31"
     },
     {
       "id": "src_content_pages_p_03",
@@ -5733,69 +5458,50 @@
       "file_type": "document",
       "frontmatter": {
         "pageId": "L-00",
-        "eyebrow": "Lifecycle",
-        "lede": "The offshore fleet is older than it has ever been, and replacing a vessel costs more than the market will bear. That makes the deck machinery already on it worth looking after properly.",
+        "lede": "Spares, field service, refurbishment, upgrade and class renewal for RTG machines and equipment from other manufacturers.",
+        "draft": false,
         "hero": {
           "media": {
             "ref": "IMG-L00-A",
             "brief": "A survey vessel&#x27;s afterdeck, cranes and winch stations visible, alongside in poor weather.",
             "ratio": "16/9"
-          }
-        },
-        "proofBar": true,
-        "cta": {
-          "heading": "Book a condition assessment",
-          "body": "Tell us the equipment, the vessel and your maintenance window. We will tell you what is worth doing.",
-          "primary": {
-            "label": "Book an assessment",
-            "href": "/lifecycle/condition-assessment/"
           },
-          "secondary": {
-            "label": "Read the decision guide",
-            "href": "/lifecycle/refurbish-upgrade-or-replace/"
+          "ctas": [
+            {
+              "label": "Book a condition assessment",
+              "href": "/lifecycle/condition-assessment/"
+            },
+            {
+              "label": "Decision guide",
+              "href": "/lifecycle/refurbish-upgrade-or-replace/"
+            }
+          ]
+        },
+        "cards": [
+          {
+            "pageId": "L-01",
+            "blurb": "Sound components reused; controls, instrumentation, brakes and hydraulics upgraded during the rebuild."
+          },
+          {
+            "pageId": "L-03",
+            "blurb": "Load testing to 150 Te in-house, class witnessed, documentation reissued."
+          },
+          {
+            "pageId": "L-04",
+            "blurb": "From UK and EU offices and agents in the Americas and Asia Pacific."
+          },
+          {
+            "pageId": "L-05",
+            "title": "Condition assessment",
+            "blurb": "Strip, measure and NDT; written report with costed options."
           }
-        }
+        ],
+        "proofBar": true
       },
       "node_kind": "page",
       "norm_label": "l-00.mdx",
       "source_file": "src/content/pages/l-00.mdx",
       "source_location": "L1"
-    },
-    {
-      "id": "src_content_pages_l_00_start_with_an_honest_assessment",
-      "label": "Start with an honest assessment",
-      "_origin": "ast",
-      "community": 30,
-      "community_name": "l-00.mdx",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "start with an honest assessment",
-      "source_file": "src/content/pages/l-00.mdx",
-      "source_location": "L33"
-    },
-    {
-      "id": "src_content_pages_l_00_what_we_do",
-      "label": "What we do",
-      "_origin": "ast",
-      "community": 30,
-      "community_name": "l-00.mdx",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "what we do",
-      "source_file": "src/content/pages/l-00.mdx",
-      "source_location": "L26"
-    },
-    {
-      "id": "src_content_pages_l_00_why_this_matters_more_than_it_used_to",
-      "label": "Why this matters more than it used to",
-      "_origin": "ast",
-      "community": 30,
-      "community_name": "l-00.mdx",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "why this matters more than it used to",
-      "source_file": "src/content/pages/l-00.mdx",
-      "source_location": "L18"
     },
     {
       "id": "src_content_pages_s_06",
@@ -6363,44 +6069,43 @@
       "file_type": "document",
       "frontmatter": {
         "pageId": "L-02",
-        "eyebrow": "Lifecycle",
-        "lede": "Six questions. Some of the answers point away from buying anything from us, which is rather the point.",
-        "article": {
-          "author": "Romica Tie Group"
+        "draft": false,
+        "hero": {
+          "ctas": [
+            {
+              "label": "Book a condition assessment",
+              "href": "/lifecycle/condition-assessment/"
+            }
+          ]
         },
-        "faqs": [
+        "steps": [
           {
-            "q": "What is the drum and shaft condition?",
-            "a": "These are the expensive structural elements. Sound drum and shaft, and refurbishment is almost always the better answer. Significant wear or cracking in either and the economics change quickly."
+            "title": "Drum and shaft condition",
+            "body": "Sound drum and shaft generally favour refurbishment. Significant wear or cracking favours replacement."
           },
           {
-            "q": "What state are the brakes and hydraulics in?",
-            "a": "Both are renewable. Neither should decide the outcome on its own, but a hydraulic system that has been contaminated for years tells you something about how the machine has been run."
+            "title": "Brakes and hydraulics",
+            "body": "Both are renewable. Long-term hydraulic contamination indicates wider wear."
           },
           {
-            "q": "Has the capability target moved?",
-            "a": "If the work you are winning now needs more depth, more load or better control than the machine was built for, an upgrade during rebuild may get you there. Sometimes it will not, and that is a genuine reason to replace."
+            "title": "Capability",
+            "body": "Additional depth, load or control can often be achieved by upgrade during the rebuild."
           },
           {
-            "q": "Can you still get spares?",
-            "a": "Obsolete control systems are the commonest reason a sound machine is uneconomic. If the electronics cannot be supported, the rebuild has to include replacing them, which is often still cheaper than a new machine, but changes the sum."
+            "title": "Spares availability",
+            "body": "Obsolete control systems are the most common cost driver; replacement controls can be included in the rebuild."
           },
           {
-            "q": "What does class say?",
-            "a": "Where the equipment sits in its certification cycle affects both cost and timing. A rebuild that coincides with a renewal survey is more efficient than one that does not."
+            "title": "Class status",
+            "body": "Timing the rebuild with a renewal survey reduces cost and downtime."
           },
           {
-            "q": "How long do you need it for?",
-            "a": "Three more years and five more years are different decisions. Be honest about the vessel&#x27;s own remaining life: there is no sense putting a twenty-year machine into a hull with five years left."
+            "title": "Required service life",
+            "body": "Match the rebuild to the vessel&#x27;s remaining life."
           }
         ],
-        "cta": {
-          "heading": "Get the questions answered properly",
-          "body": "A condition assessment turns these six questions into a written recommendation with numbers attached.",
-          "primary": {
-            "label": "Book a condition assessment",
-            "href": "/lifecycle/condition-assessment/"
-          }
+        "article": {
+          "author": "Romica Tie Group"
         }
       },
       "node_kind": "page",
@@ -6409,16 +6114,16 @@
       "source_location": "L1"
     },
     {
-      "id": "src_content_pages_l_02_what_the_assessment_covers",
-      "label": "What the assessment covers",
+      "id": "src_content_pages_l_02_when_replacement_is_recommended",
+      "label": "When replacement is recommended",
       "_origin": "ast",
       "community": 37,
       "community_name": "l-02.mdx",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "what the assessment covers",
+      "norm_label": "when replacement is recommended",
       "source_file": "src/content/pages/l-02.mdx",
-      "source_location": "L30"
+      "source_location": "L25"
     },
     {
       "id": "src_content_pages_s_03",
@@ -8520,6 +8225,94 @@
       "source_location": "L1"
     },
     {
+      "id": "package_dependencies",
+      "label": "dependencies",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "dependencies",
+      "source_file": "package.json",
+      "source_location": "L18"
+    },
+    {
+      "id": "package_dependencies_astro",
+      "label": "astro",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "astro",
+      "source_file": "package.json",
+      "source_location": "L24"
+    },
+    {
+      "id": "package_dependencies_astrojs_mdx",
+      "label": "@astrojs/mdx",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "@astrojs/mdx",
+      "source_file": "package.json",
+      "source_location": "L19"
+    },
+    {
+      "id": "package_dependencies_astrojs_sitemap",
+      "label": "@astrojs/sitemap",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "@astrojs/sitemap",
+      "source_file": "package.json",
+      "source_location": "L20"
+    },
+    {
+      "id": "package_dependencies_fontsource_jetbrains_mono",
+      "label": "@fontsource/jetbrains-mono",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "@fontsource/jetbrains-mono",
+      "source_file": "package.json",
+      "source_location": "L23"
+    },
+    {
+      "id": "package_dependencies_fontsource_variable_archivo",
+      "label": "@fontsource-variable/archivo",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "@fontsource-variable/archivo",
+      "source_file": "package.json",
+      "source_location": "L21"
+    },
+    {
+      "id": "package_dependencies_fontsource_variable_inter",
+      "label": "@fontsource-variable/inter",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "@fontsource-variable/inter",
+      "source_file": "package.json",
+      "source_location": "L22"
+    },
+    {
+      "id": "package_dependencies_three",
+      "label": "three",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "three",
+      "source_file": "package.json",
+      "source_location": "L25"
+    },
+    {
       "id": "package_description",
       "label": "description",
       "_origin": "ast",
@@ -8529,6 +8322,61 @@
       "norm_label": "description",
       "source_file": "package.json",
       "source_location": "L6"
+    },
+    {
+      "id": "package_devdependencies",
+      "label": "devDependencies",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "devdependencies",
+      "source_file": "package.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "package_devdependencies_astrojs_check",
+      "label": "@astrojs/check",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "@astrojs/check",
+      "source_file": "package.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "package_devdependencies_types_three",
+      "label": "@types/three",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "@types/three",
+      "source_file": "package.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "package_devdependencies_typescript",
+      "label": "typescript",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "typescript",
+      "source_file": "package.json",
+      "source_location": "L30"
+    },
+    {
+      "id": "package_devdependencies_xlsx",
+      "label": "xlsx",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "xlsx",
+      "source_file": "package.json",
+      "source_location": "L31"
     },
     {
       "id": "package_name",
@@ -8551,6 +8399,116 @@
       "norm_label": "private",
       "source_file": "package.json",
       "source_location": "L4"
+    },
+    {
+      "id": "package_scripts",
+      "label": "scripts",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "scripts",
+      "source_file": "package.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "package_scripts_audit",
+      "label": "audit",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "audit",
+      "source_file": "package.json",
+      "source_location": "L16"
+    },
+    {
+      "id": "package_scripts_audit_protection",
+      "label": "audit:protection",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "audit:protection",
+      "source_file": "package.json",
+      "source_location": "L14"
+    },
+    {
+      "id": "package_scripts_audit_seo",
+      "label": "audit:seo",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "audit:seo",
+      "source_file": "package.json",
+      "source_location": "L13"
+    },
+    {
+      "id": "package_scripts_build",
+      "label": "build",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "build",
+      "source_file": "package.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "package_scripts_check",
+      "label": "check",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "check",
+      "source_file": "package.json",
+      "source_location": "L11"
+    },
+    {
+      "id": "package_scripts_dev",
+      "label": "dev",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "dev",
+      "source_file": "package.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "package_scripts_pagemap",
+      "label": "pagemap",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "pagemap",
+      "source_file": "package.json",
+      "source_location": "L12"
+    },
+    {
+      "id": "package_scripts_preview",
+      "label": "preview",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "preview",
+      "source_file": "package.json",
+      "source_location": "L10"
+    },
+    {
+      "id": "package_scripts_strip_exif",
+      "label": "strip-exif",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "strip-exif",
+      "source_file": "package.json",
+      "source_location": "L15"
     },
     {
       "id": "package_type",
@@ -8734,7 +8692,20 @@
       "file_type": "document",
       "frontmatter": {
         "pageId": "L-03",
-        "draft": true
+        "lede": "Inspection, load testing and documentation for class renewal of winches, A-frames, cranes and handling systems, including equipment from other manufacturers.",
+        "draft": false,
+        "hero": {
+          "ctas": [
+            {
+              "label": "Book an assessment",
+              "href": "/lifecycle/condition-assessment/"
+            },
+            {
+              "label": "Talk to an engineer",
+              "href": "/contact/"
+            }
+          ]
+        }
       },
       "node_kind": "page",
       "norm_label": "l-03.mdx",
@@ -8750,7 +8721,20 @@
       "file_type": "document",
       "frontmatter": {
         "pageId": "L-04",
-        "draft": true
+        "lede": "Spares, technical support and field service for RTG equipment and for deck machinery from other manufacturers.",
+        "draft": false,
+        "hero": {
+          "ctas": [
+            {
+              "label": "Aftersales and spares",
+              "href": "/contact/aftersales/"
+            },
+            {
+              "label": "Talk to an engineer",
+              "href": "/contact/"
+            }
+          ]
+        }
       },
       "node_kind": "page",
       "norm_label": "l-04.mdx",
@@ -8766,12 +8750,91 @@
       "file_type": "document",
       "frontmatter": {
         "pageId": "L-05",
-        "draft": true
+        "draft": false,
+        "form": {
+          "submit": "Book an assessment",
+          "fields": [
+            {
+              "label": "Equipment type and manufacturer",
+              "name": "equipment",
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Vessel",
+              "name": "vessel",
+              "type": "text",
+              "required": false
+            },
+            {
+              "label": "Location",
+              "name": "location",
+              "type": "text",
+              "hint": "Where the equipment is now",
+              "required": false
+            },
+            {
+              "label": "Maintenance window",
+              "name": "maintenance_window",
+              "type": "text",
+              "hint": "When the equipment can be released",
+              "required": false
+            },
+            {
+              "label": "Your name",
+              "name": "name",
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Company",
+              "name": "company",
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Work email",
+              "name": "email",
+              "type": "email",
+              "required": true
+            },
+            {
+              "label": "Phone",
+              "name": "phone",
+              "type": "tel",
+              "required": false
+            }
+          ]
+        }
       },
       "node_kind": "page",
       "norm_label": "l-05.mdx",
       "source_file": "src/content/pages/l-05.mdx",
       "source_location": "L1"
+    },
+    {
+      "id": "src_content_pages_l_05_assessment_covers",
+      "label": "Assessment covers",
+      "_origin": "ast",
+      "community": 65,
+      "community_name": "l-05.mdx",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "assessment covers",
+      "source_file": "src/content/pages/l-05.mdx",
+      "source_location": "L43"
+    },
+    {
+      "id": "src_content_pages_l_05_you_receive",
+      "label": "You receive",
+      "_origin": "ast",
+      "community": 65,
+      "community_name": "l-05.mdx",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "you receive",
+      "source_file": "src/content/pages/l-05.mdx",
+      "source_location": "L52"
     },
     {
       "id": "src_content_pages_p_00",
@@ -10275,6 +10338,83 @@
       "source_location": "L29"
     },
     {
+      "id": "src_data_pages_extra",
+      "label": "pages-extra.ts",
+      "_origin": "ast",
+      "community": 92,
+      "community_name": "page.ts",
+      "file_type": "code",
+      "norm_label": "pages-extra.ts",
+      "source_file": "src/data/pages-extra.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_data_pages_extra_off_map_ids",
+      "label": "OFF_MAP_IDS",
+      "_origin": "ast",
+      "community": 92,
+      "community_name": "page.ts",
+      "file_type": "code",
+      "norm_label": "off_map_ids",
+      "source_file": "src/data/pages-extra.ts",
+      "source_location": "L33"
+    },
+    {
+      "id": "src_data_pages_extra_off_map_pages",
+      "label": "OFF_MAP_PAGES",
+      "_origin": "ast",
+      "community": 92,
+      "community_name": "page.ts",
+      "file_type": "code",
+      "norm_label": "off_map_pages",
+      "source_file": "src/data/pages-extra.ts",
+      "source_location": "L8"
+    },
+    {
+      "id": "src_lib_page",
+      "label": "page.ts",
+      "_origin": "ast",
+      "community": 92,
+      "community_name": "page.ts",
+      "file_type": "code",
+      "norm_label": "page.ts",
+      "source_file": "src/lib/page.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_lib_page_by_id",
+      "label": "BY_ID",
+      "_origin": "ast",
+      "community": 92,
+      "community_name": "page.ts",
+      "file_type": "code",
+      "norm_label": "by_id",
+      "source_file": "src/lib/page.ts",
+      "source_location": "L9"
+    },
+    {
+      "id": "src_pages_404",
+      "label": "404.astro",
+      "_origin": "ast",
+      "community": 92,
+      "community_name": "page.ts",
+      "file_type": "code",
+      "norm_label": "404.astro",
+      "source_file": "src/pages/404.astro",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_pages_404_p",
+      "label": "{ p }",
+      "_origin": "ast",
+      "community": 92,
+      "community_name": "page.ts",
+      "file_type": "code",
+      "norm_label": "{ p }",
+      "source_file": "src/pages/404.astro",
+      "source_location": "L8"
+    },
+    {
       "id": "400_css",
       "label": "@fontsource/jetbrains-mono/400.css",
       "_origin": "ast",
@@ -10341,39 +10481,6 @@
       "source_file": "@fontsource-variable/archivo/wght.css"
     },
     {
-      "id": "src_data_pages_extra",
-      "label": "pages-extra.ts",
-      "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
-      "file_type": "code",
-      "norm_label": "pages-extra.ts",
-      "source_file": "src/data/pages-extra.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_data_pages_extra_off_map_ids",
-      "label": "OFF_MAP_IDS",
-      "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
-      "file_type": "code",
-      "norm_label": "off_map_ids",
-      "source_file": "src/data/pages-extra.ts",
-      "source_location": "L33"
-    },
-    {
-      "id": "src_data_pages_extra_off_map_pages",
-      "label": "OFF_MAP_PAGES",
-      "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
-      "file_type": "code",
-      "norm_label": "off_map_pages",
-      "source_file": "src/data/pages-extra.ts",
-      "source_location": "L8"
-    },
-    {
       "id": "src_layouts_base",
       "label": "Base.astro",
       "_origin": "ast",
@@ -10438,94 +10545,6 @@
       "norm_label": "unfinished",
       "source_file": "src/lib/content.ts",
       "source_location": "L16"
-    },
-    {
-      "id": "src_lib_depth",
-      "label": "depth.ts",
-      "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
-      "file_type": "code",
-      "norm_label": "depth.ts",
-      "source_file": "src/lib/depth.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_lib_forms",
-      "label": "forms.ts",
-      "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
-      "file_type": "code",
-      "norm_label": "forms.ts",
-      "source_file": "src/lib/forms.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_lib_forms_prefill",
-      "label": "PREFILL",
-      "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
-      "file_type": "code",
-      "norm_label": "prefill",
-      "source_file": "src/lib/forms.ts",
-      "source_location": "L15"
-    },
-    {
-      "id": "src_lib_page",
-      "label": "page.ts",
-      "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
-      "file_type": "code",
-      "norm_label": "page.ts",
-      "source_file": "src/lib/page.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_lib_page_by_id",
-      "label": "BY_ID",
-      "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
-      "file_type": "code",
-      "norm_label": "by_id",
-      "source_file": "src/lib/page.ts",
-      "source_location": "L9"
-    },
-    {
-      "id": "src_lib_seo",
-      "label": "seo.ts",
-      "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
-      "file_type": "code",
-      "norm_label": "seo.ts",
-      "source_file": "src/lib/seo.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_pages_404",
-      "label": "404.astro",
-      "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
-      "file_type": "code",
-      "norm_label": "404.astro",
-      "source_file": "src/pages/404.astro",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_pages_404_p",
-      "label": "{ p }",
-      "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
-      "file_type": "code",
-      "norm_label": "{ p }",
-      "source_file": "src/pages/404.astro",
-      "source_location": "L8"
     },
     {
       "id": "agents_skills_design_taste_frontend_skill",
@@ -12136,6 +12155,17 @@
       "external": true,
       "file_type": "concept",
       "norm_label": "src_styles_tokens",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "src_lib_blocks_type",
+      "label": "src_lib_blocks_type",
+      "community": 0,
+      "community_name": "blocks.ts",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "src_lib_blocks_type",
       "source_file": "",
       "type": "external"
     }
@@ -14118,7 +14148,19 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Guide.astro",
-      "source_location": "L18",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_templates_guide",
+      "target": "src_lib_blocks_endingcta",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/templates/Guide.astro",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -14130,19 +14172,19 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Guide.astro",
-      "source_location": "L19",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
       "source": "src_components_templates_guide",
-      "target": "src_lib_blocks_step",
+      "target": "src_lib_blocks_type",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Guide.astro",
-      "source_location": "L19",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -14154,7 +14196,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Guide.astro",
-      "source_location": "L20",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -14166,7 +14208,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Guide.astro",
-      "source_location": "L21",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -14178,7 +14220,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Guide.astro",
-      "source_location": "L21",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -14190,7 +14232,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Guide.astro",
-      "source_location": "L32",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -14730,7 +14772,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Service.astro",
-      "source_location": "L15",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -14742,7 +14784,19 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Service.astro",
-      "source_location": "L16",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_templates_service",
+      "target": "src_lib_blocks_endingcta",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/templates/Service.astro",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -14754,7 +14808,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Service.astro",
-      "source_location": "L16",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -14766,7 +14820,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Service.astro",
-      "source_location": "L17",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -14778,7 +14832,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Service.astro",
-      "source_location": "L17",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -14790,7 +14844,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Service.astro",
-      "source_location": "L29",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -16950,7 +17004,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Guide.astro",
-      "source_location": "L18",
+      "source_location": "L13",
       "weight": 1.0
     },
     {
@@ -16962,7 +17016,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Guide.astro",
-      "source_location": "L19",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -16974,7 +17028,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Guide.astro",
-      "source_location": "L20",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -16986,7 +17040,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Guide.astro",
-      "source_location": "L21",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -16998,7 +17052,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Guide.astro",
-      "source_location": "L22",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -17010,7 +17064,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Guide.astro",
-      "source_location": "L23",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -17022,19 +17076,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Guide.astro",
-      "source_location": "L24",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_templates_guide",
-      "target": "src_components_blocks_sectionhead",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/templates/Guide.astro",
-      "source_location": "L25",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -17046,7 +17088,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Guide.astro",
-      "source_location": "L26",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -17058,31 +17100,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Guide.astro",
-      "source_location": "L27",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_templates_guide",
-      "target": "src_components_blocks_pinnedstages",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/templates/Guide.astro",
-      "source_location": "L28",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_templates_guide",
-      "target": "src_components_blocks_pinnedstage",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/templates/Guide.astro",
-      "source_location": "L29",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -17094,7 +17112,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Guide.astro",
-      "source_location": "L30",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -17106,7 +17124,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Guide.astro",
-      "source_location": "L31",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -17118,7 +17136,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Guide.astro",
-      "source_location": "L32",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -18270,7 +18288,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Service.astro",
-      "source_location": "L15",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -18282,7 +18300,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Service.astro",
-      "source_location": "L16",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -18294,7 +18312,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Service.astro",
-      "source_location": "L17",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -18306,7 +18324,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Service.astro",
-      "source_location": "L18",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -18318,7 +18336,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Service.astro",
-      "source_location": "L19",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -18330,7 +18348,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Service.astro",
-      "source_location": "L20",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -18342,7 +18360,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Service.astro",
-      "source_location": "L21",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -18354,7 +18372,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Service.astro",
-      "source_location": "L22",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -18366,7 +18384,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Service.astro",
-      "source_location": "L23",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -18378,7 +18396,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Service.astro",
-      "source_location": "L24",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -18390,7 +18408,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Service.astro",
-      "source_location": "L25",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -18402,7 +18420,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Service.astro",
-      "source_location": "L26",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -18414,7 +18432,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Service.astro",
-      "source_location": "L27",
+      "source_location": "L26",
       "weight": 1.0
     },
     {
@@ -18426,7 +18444,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Service.astro",
-      "source_location": "L28",
+      "source_location": "L27",
       "weight": 1.0
     },
     {
@@ -18438,7 +18456,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Service.astro",
-      "source_location": "L29",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -23406,17 +23424,6 @@
       "weight": 1.0
     },
     {
-      "source": "src_components_templates_guide",
-      "target": "src_components_templates_guide",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/components/templates/Guide.astro",
-      "source_location": "L43",
-      "weight": 1.0
-    },
-    {
       "source": "src_components_templates_hub",
       "target": "src_components_templates_hub_children",
       "relation": "contains",
@@ -23523,7 +23530,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/templates/Service.astro",
-      "source_location": "L40",
+      "source_location": "L39",
       "weight": 1.0
     },
     {
@@ -23978,50 +23985,6 @@
       "weight": 1.0
     },
     {
-      "source": "src_content_pages_l_00",
-      "target": "src_content_pages_l_00_why_this_matters_more_than_it_used_to",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/l-00.mdx",
-      "source_location": "L18",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_l_00",
-      "target": "src_content_pages_l_00_start_with_an_honest_assessment",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/l-00.mdx",
-      "source_location": "L33",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_l_00_why_this_matters_more_than_it_used_to",
-      "target": "src_content_pages_l_00_what_we_do",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/l-00.mdx",
-      "source_location": "L26",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_l_01",
-      "target": "src_content_pages_l_01_how_it_runs",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/l-01.mdx",
-      "source_location": "L18",
-      "weight": 1.0
-    },
-    {
       "source": "src_content_pages_l_01",
       "target": "src_content_pages_l_01_lead_times",
       "relation": "contains",
@@ -24029,84 +23992,40 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/content/pages/l-01.mdx",
-      "source_location": "L48",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_l_01_how_it_runs",
-      "target": "src_content_pages_l_01_1_condition_assessment",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/l-01.mdx",
-      "source_location": "L20",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_l_01_how_it_runs",
-      "target": "src_content_pages_l_01_2_rework_and_reuse",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/l-01.mdx",
-      "source_location": "L24",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_l_01_how_it_runs",
-      "target": "src_content_pages_l_01_3_upgrade_while_it_is_apart",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/l-01.mdx",
-      "source_location": "L28",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_l_01_how_it_runs",
-      "target": "src_content_pages_l_01_4_test_to_the_same_regime_as_a_new_machine",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/l-01.mdx",
-      "source_location": "L32",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_l_01_how_it_runs",
-      "target": "src_content_pages_l_01_5_reissue_the_documentation",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/l-01.mdx",
-      "source_location": "L36",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_l_01_how_it_runs",
-      "target": "src_content_pages_l_01_6_a_spares_recommendation_based_on_what_we_found",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/l-01.mdx",
-      "source_location": "L40",
+      "source_location": "L31",
       "weight": 1.0
     },
     {
       "source": "src_content_pages_l_02",
-      "target": "src_content_pages_l_02_what_the_assessment_covers",
+      "target": "src_content_pages_l_02_when_replacement_is_recommended",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/content/pages/l-02.mdx",
-      "source_location": "L30",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "src_content_pages_l_05",
+      "target": "src_content_pages_l_05_assessment_covers",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/content/pages/l-05.mdx",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "src_content_pages_l_05",
+      "target": "src_content_pages_l_05_you_receive",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/content/pages/l-05.mdx",
+      "source_location": "L52",
       "weight": 1.0
     },
     {
@@ -26989,5 +26908,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "37627fb2c078f682ffa0fcab2875edc21727c7e4"
+  "built_at_commit": "8ce356478e1ff23a15cf7a4bbe4a23dde552ee58"
 }
