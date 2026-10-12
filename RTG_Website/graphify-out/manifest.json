@@ -396,9 +396,9 @@
     "semantic_hash": ""
   },
   "src/components/templates/Proof.astro": {
-    "mtime": 1789739042.4115953,
-    "seen": 1789914311.2928,
-    "ast_hash": "4307a3a99ddebe1ef4d68625f3c4f23d",
+    "mtime": 1791834254.2567647,
+    "seen": 1791834281.460189,
+    "ast_hash": "822937b3bc0a4918ae088a1fc53579d5",
     "semantic_hash": ""
   },
   "src/components/templates/Sector.astro": {
@@ -444,9 +444,9 @@
     "semantic_hash": ""
   },
   "src/data/pages.ts": {
-    "mtime": 1791834135.2126157,
-    "seen": 1791834161.8782053,
-    "ast_hash": "2e94418d4d3e1c9c9aaee00244701790",
+    "mtime": 1791834255.4229224,
+    "seen": 1791834281.460189,
+    "ast_hash": "5abb0173d7ba88187f48528f30e0f194",
     "semantic_hash": ""
   },
   "src/data/site.js": {
@@ -1374,27 +1374,27 @@
     "semantic_hash": ""
   },
   "src/content/pages/y-00.mdx": {
-    "mtime": 1787243316.811416,
-    "seen": 1789731804.2681696,
-    "ast_hash": "7c7400cc22e31fff9576fa578a3ef448",
+    "mtime": 1791834254.2917593,
+    "seen": 1791834281.460189,
+    "ast_hash": "7238d19d304c2584edc2c902676d91f6",
     "semantic_hash": ""
   },
   "src/content/pages/y-01.mdx": {
-    "mtime": 1787243316.811946,
-    "seen": 1789731804.2681696,
-    "ast_hash": "4ddf07088ce755054be66560d2dd82c3",
+    "mtime": 1791834254.2947617,
+    "seen": 1791834281.460189,
+    "ast_hash": "d02e6c8f30c8926a4c88b7e487af22e6",
     "semantic_hash": ""
   },
   "src/content/pages/y-02.mdx": {
-    "mtime": 1787243316.8129616,
-    "seen": 1789731804.2681696,
-    "ast_hash": "68988e2e8109feaeb08d58357b2f9ca5",
+    "mtime": 1791834254.2947617,
+    "seen": 1791834281.460189,
+    "ast_hash": "c7a92bc1f20884886df77a43da89e3f1",
     "semantic_hash": ""
   },
   "src/content/pages/y-03.mdx": {
-    "mtime": 1789916653.8047411,
-    "seen": 1791367962.076949,
-    "ast_hash": "15931a15a36e38a60d3977903dd2422e",
+    "mtime": 1791834254.2988093,
+    "seen": 1791834281.460189,
+    "ast_hash": "89d4fc4124b12050530451667262a9d1",
     "semantic_hash": ""
   },
   "src/content/pages/y-04.mdx": {
