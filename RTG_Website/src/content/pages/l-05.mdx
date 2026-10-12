@@ -1,4 +1,54 @@
 ---
-pageId: "L-05"
-draft: true
+pageId: L-05
+draft: false
+form:
+  submit: Book an assessment
+  fields:
+    - label: Equipment type and manufacturer
+      name: equipment
+      type: text
+      required: true
+    - label: Vessel
+      name: vessel
+      type: text
+      required: false
+    - label: Location
+      name: location
+      type: text
+      hint: Where the equipment is now
+      required: false
+    - label: Maintenance window
+      name: maintenance_window
+      type: text
+      hint: When the equipment can be released
+      required: false
+    - label: Your name
+      name: name
+      type: text
+      required: true
+    - label: Company
+      name: company
+      type: text
+      required: true
+    - label: Work email
+      name: email
+      type: email
+      required: true
+    - label: Phone
+      name: phone
+      type: tel
+      required: false
 ---
+
+## Assessment covers
+
+- Drum and shaft condition
+- Bearing wear
+- Brake condition
+- Hydraulic system and fluid condition
+- Structural NDT
+- Control system obsolescence
+
+## You receive
+
+A written report with reuse, rework or replace per component, upgrade options, costed recommendations and a spares list.

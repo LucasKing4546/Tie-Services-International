@@ -1,32 +1,24 @@
 ---
 /**
  * The Guide template — L-02, "Refurbish, upgrade or replace?" (the only
- * page on this template). Composition: six questions as a numbered list ->
- * "when not to refurbish" -> CTA to L-05. Article + FAQPage schema.
+ * page on this template). Composition: six factors as a numbered list ->
+ * when replacement is recommended -> button to L-05. Article schema.
  *
- * The plan describes this as "StepList -> Faq", but the content is authored
- * once as `faqs[]` — rendering through both would show the same six
- * questions twice. Instead faqPageJsonLd() (lib/seo.ts) builds the FAQPage
- * node from the same data as a second, independent representation, never
- * re-typed.
- *
- * The six questions render as PinnedStages rather than a plain StepList: a
- * decision walkthrough is the one genuinely sequential piece of content on
- * the site. StepList stays the fallback for the single-question case.
+ * The factors are authored as `steps[]` and render as a plain StepList: six
+ * short statements read faster down a page than pinned one to a screen.
+ * `faqs[]` is still honoured (as the list, and as a FAQPage node through
+ * faqPageJsonLd()) for a guide written as real questions and answers.
  */
 import { render } from 'astro:content';
 import type { PageMeta } from '@data/pages';
-import type { PageEntry, Step } from '@lib/blocks';
+import { endingCta, type PageEntry, type Step } from '@lib/blocks';
 import { hasBody } from '@lib/content';
 import { articleJsonLd, faqPageJsonLd } from '@lib/seo';
 import Base from '@layouts/Base.astro';
 import PageHero from '@components/blocks/PageHero.astro';
 import Section from '@components/blocks/Section.astro';
-import SectionHead from '@components/blocks/SectionHead.astro';
 import Prose from '@components/blocks/Prose.astro';
 import StepList from '@components/blocks/StepList.astro';
-import PinnedStages from '@components/blocks/PinnedStages.astro';
-import PinnedStage from '@components/blocks/PinnedStage.astro';
 import Skeleton from '@components/blocks/Skeleton.astro';
 import PageEnding from '@components/blocks/PageEnding.astro';
 import { mdxComponents } from '@lib/mdx';
@@ -40,12 +32,9 @@ const { page, entry } = Astro.props;
 const { data } = entry;
 const { Content } = await render(entry);
 
-const questions: Step[] = data.faqs.map((f, i) => ({
-  n: String(i + 1).padStart(2, '0'),
-  title: f.q,
-  body: f.a,
-  points: [],
-}));
+const factors: Step[] = data.steps.length > 0
+  ? data.steps
+  : data.faqs.map((f) => ({ title: f.q, body: f.a, points: [] }));
 ---
 
 <Base pageId={page.id} jsonLd={faqPageJsonLd(data)} jsonLdPage={articleJsonLd(data)}>
@@ -58,20 +47,9 @@ const questions: Step[] = data.faqs.map((f, i) => ({
     updated={data.updated}
   />
 
-  {questions.length > 1 ? (
-    <PinnedStages
-      eyebrow="Six questions"
-      heading="Before you decide"
-      lede="Work through them in order. Any one of them can settle the decision on its own."
-      index={questions.map((q) => q.title)}
-      tone="navy"
-    >
-      {questions.map((q, i) => <PinnedStage step={q} n={i + 1} label="Question" />)}
-    </PinnedStages>
-  ) : questions.length === 1 && (
+  {factors.length > 0 && (
     <Section>
-      <SectionHead eyebrow="Six questions" heading="Before you decide" level={2} />
-      <StepList steps={questions} label="Question" />
+      <StepList steps={factors} />
     </Section>
   )}
 
@@ -87,5 +65,5 @@ const questions: Step[] = data.faqs.map((f, i) => ({
     <Skeleton label="Guidance" kind="copy" count={4} />
   )}
 
-  <PageEnding page={page} proofBar={data.proofBar} cta={data.cta} draft={data.draft} outline={data.outline} />
+  <PageEnding page={page} proofBar cta={endingCta(data)} draft={data.draft} outline={data.outline} />
 </Base>
