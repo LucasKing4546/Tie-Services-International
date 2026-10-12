@@ -1,96 +1,67 @@
 ---
-pageId: "E-03"
-eyebrow: "Equipment · Winches"
-lede: "The specification that matters on a survey winch is not top speed. It is turndown: the span between the fastest it will run and the slowest it will hold steadily."
+pageId: E-03
+lede: Electric or hydraulic winches, 300 to 4,000 m cable capacity, for controlled deployment at survey speeds.
+draft: false
 hero:
   media:
-    ref: "IMG-E03-B"
-    brief: "Compact electric survey winch with its control box."
+    ref: IMG-E03-B
+    brief: Compact electric survey winch with its control box.
   ctas:
-    - { label: "Request the datasheet", href: "/resources/datasheets/?equipment=Survey%20and%20oceanographic%20winches" }
-    - { label: "Talk to an engineer", href: "/contact/" }
-product:
-  category: "Marine winch"
-  drive: ["Electric", "Hydraulic"]
-  applications: ["Side-scan sonar towing", "Magnetometer systems", "Sub-bottom profiler operations", "Water sampler handling", "CTD deployment", "Drop-down camera deployment"]
-  datasheetPageId: "R-01"
+    - label: Request the datasheet
+      href: /resources/datasheets/?equipment=Survey%20and%20oceanographic%20winches
+    - label: Request a quotation
+      href: /contact/request-a-quotation/
 specs:
-  - caption: "0.24 Te WLL compact electric winch"
+  - caption: 0.24 Te WLL compact electric winch
     rows:
-      - { k: "Working load limit, first layer", v: "240 kg" }
-      - { k: "Working load limit, top layer", v: "170 kg" }
-      - { k: "Line speed", v: "35 m/min" }
-      - { k: "Cable capacity", v: "6 mm: 1,250 m · 8.18 mm: 750 m · 10 mm: 510 m · 12 mm: 330 m", note: "sprocket and chain changed to suit the cable" }
-      - { k: "Static brake holding, first layer", v: "360 kg", note: "minimum 1.5 × WLL" }
-      - { k: "Static brake holding, top layer", v: "250 kg", note: "minimum 1.5 × WLL" }
-      - { k: "Cable lead-off angle", v: "±15° horizontal, 0° to 65° vertical" }
-      - { k: "Drive", v: "Electric, 2.2 kW, single phase 220-254 V" }
-      - { k: "Overall envelope L×W×H", v: "1,336 × 805 × 1,276 mm" }
-      - { k: "Dry weight, without cable", v: "388 kg" }
-    footnote: "One real configuration in this family; every unit is engineered to the duty and the deck. Full specifications, including the general arrangement drawing, are issued on request."
+      - k: Working load limit, first layer
+        v: 240 kg
+      - k: Working load limit, top layer
+        v: 170 kg
+      - k: Line speed
+        v: 35 m/min
+      - k: Cable capacity
+        v: "6 mm: 1,250 m · 8.18 mm: 750 m · 10 mm: 510 m · 12 mm: 330 m"
+        note: sprocket and chain changed to suit the cable
+      - k: Static brake holding, first layer
+        v: 360 kg
+        note: minimum 1.5 × WLL
+      - k: Static brake holding, top layer
+        v: 250 kg
+        note: minimum 1.5 × WLL
+      - k: Cable lead-off angle
+        v: ±15° horizontal, 0° to 65° vertical
+      - k: Drive
+        v: Electric, 2.2 kW, single phase 220-254 V
+      - k: Overall envelope L×W×H
+        v: 1,336 × 805 × 1,276 mm
+      - k: Dry weight, without cable
+        v: 388 kg
+    footnote: One real configuration in this family; every unit is engineered to the duty and the deck. Full specifications, including the general arrangement drawing, are issued on request.
     media:
-      - { ref: "IMG-E03-B", brief: "Compact electric survey winch with its control box." }
-      - { ref: "IMG-E03-C", brief: "Two units on pallets, ready for dispatch." }
-      - { ref: "IMG-E03-A", brief: "Drum and chain-driven spooling gear, close." }
-related: ["S-01", "S-05", "E-01"]
-cta:
-  heading: "Tell us the sensor and the cast"
-  body: "What is being towed or lowered, the depth, and whether the deployment is precise slow-speed work or general handling. We will say which drive and configuration fits."
-  primary: { label: "Request a quotation", href: "/contact/request-a-quotation/" }
-  secondary: { label: "Talk to an engineer", href: "/contact/" }
+      - ref: IMG-E03-B
+        brief: Compact electric survey winch with its control box.
+      - ref: IMG-E03-C
+        brief: Two units on pallets, ready for dispatch.
+      - ref: IMG-E03-A
+        brief: Drum and chain-driven spooling gear, close.
+product:
+  category: Marine winch
+  drive:
+    - Electric
+    - Hydraulic
+  applications:
+    - Side-scan sonar towing
+    - Magnetometer systems
+    - Sub-bottom profiler
+    - Water samplers
+    - CTD deployment
+    - Drop-down cameras
+  datasheetPageId: R-01
 ---
 
-## Drive comparison
-
-Hydraulic drives meter flow through a proportional valve. At a few metres a
-minute the valve is operating on a very small fraction of its range, the
-least linear part of its characteristic, and the available resolution sets
-a floor on how finely speed can be commanded. Closed-loop control with
-speed feedback compensates for a great deal of this, but it cannot create
-resolution the valve does not have.
-
-Electric drives hold low speed by measuring it. A closed-loop drive with
-encoder feedback produces full torque at near-zero speed and corrects
-continuously, which is why survey and research vessels specify electric so
-often, not because electric is better in general, but because it is
-better at the slow end, where a CTD cast, a slow tow or a controlled
-descent actually happens. On payout it also has to absorb energy rather
-than deliver it, so the drive has to be specified to handle a regenerating
-load rather than trip on it.
-
-Both drive types are built for the duty rather than for preference, and we
-will say which one a cast profile argues for even when it is the less
-convenient answer, hydraulic where vessel power is limited or the deck
-environment argues for it, electric where precise slow-speed control and a
-clean installation matter more.
-
-## Level wind options
-
-At speed, a level wind has momentum on its side and the rope more or less
-falls where it should. At survey speeds the rope has to be actively
-placed, turn by turn, and every mechanism's backlash shows up as a small
-lateral hesitation, most visibly at the reversal, where the level wind
-changes direction and the rope steps across the flange. Done cleanly it is
-invisible; done with slop it puts a small tension transient into the cable
-at every wrap.
-
-Mechanical, electric and hydraulic level winds behave very differently at
-two metres a minute, and the difference rarely appears on a datasheet.
-Actuation is specified for placement at low speed rather than for
-throughput, and on the compact family the spooling device is chain-driven
-from the winch's own gearmotor, with the sprocket and chain changed to
-match the cable diameter actually being run.
-
-## Applications
-
-Designed for marine and oceanographic survey operations from small
-research and survey vessels, where electric operation gives precise,
-controlled deployment and a compact footprint keeps deck space that a
-larger vessel would not need to think about:
-
-- Side-scan sonar towing
-- Magnetometer systems
-- Sub-bottom profiler operations
-- Water sampler handling
-- CTD deployment
-- Drop-down camera deployment
+- **Electric drive:** closed-loop control with encoder feedback, full torque at near-zero speed, regenerative payout
+- **Hydraulic drive:** for vessels with limited electrical power or heavier duty
+- **Level wind:** mechanical, electric or hydraulic actuation, specified for placement at low speed
+- **Compact range:** chain-driven spooling from the winch gearmotor, sprocket and chain matched to cable diameter
+- Speed tested across all drum layers before dispatch

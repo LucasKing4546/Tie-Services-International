@@ -18,9 +18,9 @@ interface Props {
   label?: string;
   /** Page ids to leave out, e.g. one already surfaced via a "featured" block. */
   exclude?: string[];
-  /** Curated cards to append after the derived children (resolve frontmatter
-   *  `cards` through cardFrom() first). Not deduplicated against the derived
-   *  children — add an id to `exclude` if an `extra` entry would double up. */
+  /** Curated cards (resolve frontmatter `cards` through cardFrom() first).
+   *  One that points at a derived child replaces that child's card where it
+   *  stands, so a hub can word its own rows; the rest append after. */
   extra?: CardItem[];
   /** Ask for the full-bleed navy set-piece rather than a light carousel —
    *  see TRACK_MIN below: asking is not the same as getting one. */
@@ -38,13 +38,14 @@ const {
   track = false, eyebrow, heading,
 } = Astro.props;
 const pairs = (await childEntries(of)).filter(({ page }) => !exclude.includes(page.id));
+const curated = new Map(extra.map((c) => [c.href, c]));
 const items: CardItem[] = [
-  ...pairs.map(({ page, entry }) => ({
+  ...pairs.map(({ page, entry }) => curated.get(page.slug) ?? {
     title: page.name,
     href: page.slug,
     blurb: entry.data.lede ?? page.description,
-  })),
-  ...extra,
+  }),
+  ...extra.filter((c) => !pairs.some(({ page }) => page.slug === c.href)),
 ];
 ---
 

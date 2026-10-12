@@ -9,7 +9,9 @@
  * A hub may also curate `cards` in frontmatter for a cross-link outside its
  * own branch (P-00's Proof hub linking to Y-03 Certifications, which lives
  * under /yards-integrators/) — those append into the same grid via
- * ChildCards' `extra` prop rather than a second, disconnected one.
+ * ChildCards' `extra` prop rather than a second, disconnected one. A card
+ * naming one of the hub's own children rewords that child's row instead
+ * (E-00's family rows carry the range figures).
  */
 import { render } from 'astro:content';
 import { childrenOf, type PageMeta } from '@data/pages';
@@ -55,8 +57,8 @@ const trackHeading = children.length > 0 ? `Everything in ${page.section.toLower
 // the visible grid. Only emitted for pages typed CollectionPage — a couple
 // of Hub pages (L-00, Y-00) carry a workbook schema of "Service" instead.
 const gridItems = [
-  ...children.map((c) => ({ name: c.name, url: absolute(c.slug) })),
-  ...extraCards.map((c) => ({ name: c.title, url: absolute(c.href) })),
+  ...children.map((c) => ({ name: extraCards.find((x) => x.href === c.slug)?.title ?? c.name, url: absolute(c.slug) })),
+  ...extraCards.filter((x) => !children.some((c) => c.slug === x.href)).map((c) => ({ name: c.title, url: absolute(c.href) })),
 ];
 const jsonLdPage =
   gridItems.length > 0 && page.schema === 'CollectionPage'

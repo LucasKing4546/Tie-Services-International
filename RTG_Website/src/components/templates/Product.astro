@@ -1,15 +1,19 @@
 ---
 /**
  * The Product template — equipment detail pages (winches, LARS, cranes,
- * power units...). Composition: hero -> .two (sticky-rail spec table(s) +
- * "why it is built this way" prose) -> applications -> gated-datasheet CTA
- * -> closing CTA. Proof-point copy lives inline in the MDX body (it needs
- * <Fig> figures), so it scrolls past alongside the spec rail rather than
- * as a separate block.
+ * power units...). Composition: hero (heading, one-line intro, two buttons)
+ * -> the body's short feature lists in two columns -> one row per
+ * configuration, its photograph beside its own spec table -> applications
+ * -> buttons and the standard band.
+ *
+ * Deliberately short, like Sector.astro: the copy is a list a buyer checks
+ * against a specification. The "full datasheet on request" line is each
+ * table's footnote, and the datasheet request itself is the sticky bar, so
+ * there is no separate datasheet section.
  */
 import { render } from 'astro:content';
 import { page as lookupPage, type PageMeta } from '@data/pages';
-import type { PageEntry } from '@lib/blocks';
+import { endingCta, type PageEntry } from '@lib/blocks';
 import { hasBody } from '@lib/content';
 import Base from '@layouts/Base.astro';
 import PageHero from '@components/blocks/PageHero.astro';
@@ -61,7 +65,9 @@ const glance = (rows: { k: string; v: string }[]) =>
 const datasheetPage = data.product?.datasheetPageId ? lookupPage(data.product.datasheetPageId) : undefined;
 // Carries this product's name into R-01's "Equipment" field so the visitor
 // never has to retype it — see lib/forms.ts's generic name-matched prefill.
-const datasheetHref = datasheetPage ? `${datasheetPage.slug}?equipment=${encodeURIComponent(page.h1)}` : undefined;
+// The page name, not the h1: an h1 may be a claim ("A-frames and LARS rated
+// to 3.9 m Hs") rather than something to file a request under.
+const datasheetHref = datasheetPage ? `${datasheetPage.slug}?equipment=${encodeURIComponent(page.name)}` : undefined;
 ---
 
 <Base
@@ -82,7 +88,7 @@ const datasheetHref = datasheetPage ? `${datasheetPage.slug}?equipment=${encodeU
 
   {hasBody(entry) && (
     <Section>
-      <Prose>
+      <Prose class="lists">
         <Content components={mdxComponents} />
       </Prose>
     </Section>
@@ -125,20 +131,13 @@ const datasheetHref = datasheetPage ? `${datasheetPage.slug}?equipment=${encodeU
     </div>
   )}
 
-  {datasheetHref && data.specs.length > 0 && (
-    <Section>
-      <a class="btn b-navy" href={datasheetHref}>Request the datasheet →</a>
-      <p class="note-line">Sent to you by name, watermarked and serial-numbered.</p>
-    </Section>
-  )}
-
   {data.draft && data.specs.length === 0 && (
     <Skeleton label="Specification table" kind="split" count={4} />
   )}
 
   {data.product && data.product.applications.length > 0 && (
     <Section tone="off">
-      <SectionHead eyebrow="Applications" heading="Where this runs" level={2} />
+      <SectionHead heading="Applications" level={2} />
       <TagList items={data.product.applications} />
     </Section>
   )}
@@ -147,7 +146,7 @@ const datasheetHref = datasheetPage ? `${datasheetPage.slug}?equipment=${encodeU
     <Skeleton label="Applications" kind="rows" count={2} tone="off" />
   )}
 
-  <PageEnding page={page} proofBar={data.proofBar} cta={data.cta} draft={data.draft} outline={data.outline} />
+  <PageEnding page={page} proofBar cta={endingCta(data)} draft={data.draft} outline={data.outline} />
 </Base>
 
 <style is:global>
