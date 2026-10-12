@@ -324,9 +324,9 @@
     "semantic_hash": ""
   },
   "src/components/templates/Article.astro": {
-    "mtime": 1789738964.701786,
-    "seen": 1789914311.2928,
-    "ast_hash": "39ec315adac351fe23e5567a8f711c42",
+    "mtime": 1791834133.9684117,
+    "seen": 1791834161.8782053,
+    "ast_hash": "80e972ecfab1a7342e781d2c13cd6681",
     "semantic_hash": ""
   },
   "src/components/templates/Careers.astro": {
@@ -372,9 +372,9 @@
     "semantic_hash": ""
   },
   "src/components/templates/Ladder.astro": {
-    "mtime": 1789739015.771702,
-    "seen": 1789914311.2928,
-    "ast_hash": "6deaaa41c27e51b6c302ddb254834fff",
+    "mtime": 1791834133.9659936,
+    "seen": 1791834161.8782053,
+    "ast_hash": "4f2055d7cc065855c5ab45cb5f9169c9",
     "semantic_hash": ""
   },
   "src/components/templates/Legal.astro": {
@@ -384,9 +384,9 @@
     "semantic_hash": ""
   },
   "src/components/templates/Policy.astro": {
-    "mtime": 1789739025.189734,
-    "seen": 1789914311.2928,
-    "ast_hash": "cc50b0267ba26eb658bd6b0a1154f39d",
+    "mtime": 1791834133.9669936,
+    "seen": 1791834161.8782053,
+    "ast_hash": "8e5c5a87048a0fd681a5bfa6356d3741",
     "semantic_hash": ""
   },
   "src/components/templates/Product.astro": {
@@ -414,9 +414,9 @@
     "semantic_hash": ""
   },
   "src/components/templates/Tier.astro": {
-    "mtime": 1789739069.2282789,
-    "seen": 1789914311.2928,
-    "ast_hash": "f3ef6139c17bfc83c4e9dadc03fd6499",
+    "mtime": 1791834133.9669936,
+    "seen": 1791834161.8782053,
+    "ast_hash": "79d5c45095ed0f95bc3c206472685502",
     "semantic_hash": ""
   },
   "src/content.config.ts": {
@@ -444,9 +444,9 @@
     "semantic_hash": ""
   },
   "src/data/pages.ts": {
-    "mtime": 1791833942.7563217,
-    "seen": 1791833974.4273129,
-    "ast_hash": "6775232389f95b6771001889b6ad2b46",
+    "mtime": 1791834135.2126157,
+    "seen": 1791834161.8782053,
+    "ast_hash": "2e94418d4d3e1c9c9aaee00244701790",
     "semantic_hash": ""
   },
   "src/data/site.js": {
@@ -1038,33 +1038,33 @@
     "semantic_hash": ""
   },
   "src/content/pages/c-00.mdx": {
-    "mtime": 1789916642.0593774,
-    "seen": 1791367962.076949,
-    "ast_hash": "7e1846200fa971d9162129d35b827fce",
+    "mtime": 1791834134.0778317,
+    "seen": 1791834161.8782053,
+    "ast_hash": "39d693fe8ac99dc8627a7e143bee7799",
     "semantic_hash": ""
   },
   "src/content/pages/c-01.mdx": {
-    "mtime": 1789916642.0593774,
-    "seen": 1791367962.076949,
-    "ast_hash": "db65e44d6d8f3dda7f0d68fd4cea6e3b",
+    "mtime": 1791834134.0808501,
+    "seen": 1791834161.8782053,
+    "ast_hash": "862b68f6a660b58bd9173970260ba507",
     "semantic_hash": ""
   },
   "src/content/pages/c-02.mdx": {
-    "mtime": 1787243316.7800117,
-    "seen": 1789731804.2681696,
-    "ast_hash": "fa587432722fe743d76c34cbefd94aca",
+    "mtime": 1791834134.0818565,
+    "seen": 1791834161.8782053,
+    "ast_hash": "a5bc0bf9ee43fe78d123e8c3c0f8822c",
     "semantic_hash": ""
   },
   "src/content/pages/c-03.mdx": {
-    "mtime": 1789916642.0603824,
-    "seen": 1791367962.076949,
-    "ast_hash": "2454d64a6f1d8ddedf62ff07b53d49b1",
+    "mtime": 1791834134.0828564,
+    "seen": 1791834161.8782053,
+    "ast_hash": "e64ec84171dcf2945b2a07864ebc54fb",
     "semantic_hash": ""
   },
   "src/content/pages/c-04.mdx": {
-    "mtime": 1787243316.7815375,
-    "seen": 1789731804.2681696,
-    "ast_hash": "85c236bac41a94a464630b0f2e777075",
+    "mtime": 1791834134.0848567,
+    "seen": 1791834161.8782053,
+    "ast_hash": "141a7287d458752fab86b7a933cda045",
     "semantic_hash": ""
   },
   "src/content/pages/c-05.mdx": {
@@ -1074,21 +1074,21 @@
     "semantic_hash": ""
   },
   "src/content/pages/c-06.mdx": {
-    "mtime": 1789916642.0614004,
-    "seen": 1791367962.076949,
-    "ast_hash": "5f1e130fcff11bd2caa1bcbed1b7c713",
+    "mtime": 1791834134.0858564,
+    "seen": 1791834161.8782053,
+    "ast_hash": "4c7b5c9068d0f0990b4f534660fd2efd",
     "semantic_hash": ""
   },
   "src/content/pages/c-07.mdx": {
-    "mtime": 1789916655.3878868,
-    "seen": 1791367962.076949,
-    "ast_hash": "48b1c06714824e2ecdef890d5ff2f56a",
+    "mtime": 1791834134.086362,
+    "seen": 1791834161.8782053,
+    "ast_hash": "c88f12ea44ddd22bc4bf3a8de51bdd68",
     "semantic_hash": ""
   },
   "src/content/pages/c-08.mdx": {
-    "mtime": 1787243316.7835522,
-    "seen": 1789731804.2681696,
-    "ast_hash": "71e52c4957fa6a0ee6887959348d8661",
+    "mtime": 1791834134.087367,
+    "seen": 1791834161.8782053,
+    "ast_hash": "582e53b0e7f4ae32607a697a5ede5e16",
     "semantic_hash": ""
   },
   "src/content/pages/c-09.mdx": {

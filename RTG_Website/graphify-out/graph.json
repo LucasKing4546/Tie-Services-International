@@ -438,18 +438,6 @@
       "source_location": "L74"
     },
     {
-      "id": "src_lib_content_byid",
-      "label": "byId()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "blocks.ts",
-      "file_type": "code",
-      "norm_label": "byid()",
-      "source_file": "src/lib/content.ts",
-      "source_location": "L18"
-    },
-    {
       "id": "src_lib_content_cardfrom",
       "label": "cardFrom()",
       "_callable": true,
@@ -460,42 +448,6 @@
       "norm_label": "cardfrom()",
       "source_file": "src/lib/content.ts",
       "source_location": "L49"
-    },
-    {
-      "id": "src_lib_content_childentries",
-      "label": "childEntries()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "blocks.ts",
-      "file_type": "code",
-      "norm_label": "childentries()",
-      "source_file": "src/lib/content.ts",
-      "source_location": "L40"
-    },
-    {
-      "id": "src_lib_content_entriesfor",
-      "label": "entriesFor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "blocks.ts",
-      "file_type": "code",
-      "norm_label": "entriesfor()",
-      "source_file": "src/lib/content.ts",
-      "source_location": "L33"
-    },
-    {
-      "id": "src_lib_content_entryfor",
-      "label": "entryFor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "blocks.ts",
-      "file_type": "code",
-      "norm_label": "entryfor()",
-      "source_file": "src/lib/content.ts",
-      "source_location": "L25"
     },
     {
       "id": "src_lib_content_hasbody",
@@ -1398,6 +1350,54 @@
       "source_location": "L1042"
     },
     {
+      "id": "src_lib_content_byid",
+      "label": "byId()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "RTG Website \u2014 project guide for Claude Code",
+      "file_type": "code",
+      "norm_label": "byid()",
+      "source_file": "src/lib/content.ts",
+      "source_location": "L18"
+    },
+    {
+      "id": "src_lib_content_childentries",
+      "label": "childEntries()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "RTG Website \u2014 project guide for Claude Code",
+      "file_type": "code",
+      "norm_label": "childentries()",
+      "source_file": "src/lib/content.ts",
+      "source_location": "L40"
+    },
+    {
+      "id": "src_lib_content_entriesfor",
+      "label": "entriesFor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "RTG Website \u2014 project guide for Claude Code",
+      "file_type": "code",
+      "norm_label": "entriesfor()",
+      "source_file": "src/lib/content.ts",
+      "source_location": "L33"
+    },
+    {
+      "id": "src_lib_content_entryfor",
+      "label": "entryFor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "RTG Website \u2014 project guide for Claude Code",
+      "file_type": "code",
+      "norm_label": "entryfor()",
+      "source_file": "src/lib/content.ts",
+      "source_location": "L25"
+    },
+    {
       "id": "src_components_site_waterline_wave",
       "label": "wave()",
       "_callable": true,
@@ -2004,7 +2004,7 @@
       "file_type": "code",
       "norm_label": "[]",
       "source_file": "src/components/templates/Ladder.astro",
-      "source_location": "L47"
+      "source_location": "L53"
     },
     {
       "id": "src_components_templates_legal",
@@ -2114,7 +2114,7 @@
       "file_type": "code",
       "norm_label": "[]",
       "source_file": "src/components/templates/Tier.astro",
-      "source_location": "L37"
+      "source_location": "L38"
     },
     {
       "id": "src_data_pages",
@@ -4698,79 +4698,47 @@
       "file_type": "document",
       "frontmatter": {
         "pageId": "C-00",
-        "eyebrow": "Contract manufacturing",
-        "lede": "You own the design and the intellectual property at every level. What changes is how much of the build leaves your floor, and how much capacity you stop having to hold.",
+        "lede": "Your design, built, tested and certified in our factory. Four cumulative tiers under one contract, one project file and one point of contact. The design and IP remain yours at every tier.",
+        "draft": false,
         "hero": {
           "media": {
             "ref": "IMG-20",
             "brief": "Factory walk-through, machines part-built on the shop floor, client branding absent. 1600\u00d7900.",
             "ratio": "16/9"
-          }
+          },
+          "ctas": [
+            {
+              "label": "Send documentation",
+              "href": "/contract-manufacturing/send-documentation/"
+            },
+            {
+              "label": "Current capacity",
+              "href": "/contract-manufacturing/capacity-lead-times/"
+            }
+          ]
         },
-        "steps": [
+        "cards": [
           {
-            "n": "1",
-            "title": "Structural fabrication",
-            "body": "Welded structures to your drawings, class surveyed, fully traceable.",
-            "points": [],
-            "media": {
-              "ref": "IMG-08",
-              "brief": "Welder fabricating structural steelwork to drawing.",
-              "ratio": "4/3"
-            }
+            "pageId": "C-01",
+            "title": "Tier 1: structural fabrication",
+            "blurb": "Welded structures to your drawings; EN ISO 3834 discipline; NDT to ISO 9712 level 2; 100% traceability on main structural welds; machining to 12 m and 10 t in one setup."
           },
           {
-            "n": "2",
-            "title": "Mechanical assembly",
-            "body": "Drums, bearings, gearboxes, brakes, sheaves and level wind, built and aligned.",
-            "points": [],
-            "media": {
-              "ref": "IMG-12",
-              "brief": "Drum and shaft being lowered into bearings, crane or hoist in frame.",
-              "ratio": "4/3"
-            }
+            "pageId": "C-02",
+            "title": "Tier 2: mechanical assembly",
+            "blurb": "Drums, shafts, bearings, gearboxes, brakes, sheaves, level wind; torqued, aligned and rotation checked."
           },
           {
-            "n": "3",
-            "title": "Hydraulic and electrical build",
-            "body": "Power units, pipework flushed to class, panels, cabling and instrumentation.",
-            "points": [],
-            "media": {
-              "ref": "IMG-13",
-              "brief": "Hydraulic pipework and manifolds, clean and ordered.",
-              "ratio": "4/3"
-            }
+            "pageId": "C-03",
+            "title": "Tier 3: hydraulic and electrical build",
+            "blurb": "Power units, pipework flushed to class, valve blocks, panels, cabling and instrumentation."
           },
           {
-            "n": "4",
-            "title": "Automation, test and commissioning",
-            "body": "PLC loading, load testing to 150 tonnes under class witness, commissioning.",
-            "points": [],
-            "media": {
-              "ref": "IMG-15",
-              "brief": "HMI screen live during function testing, engineer at the console.",
-              "ratio": "4/3"
-            }
+            "pageId": "C-04",
+            "title": "Tier 4: automation, test and commissioning",
+            "blurb": "PLC and HMI loading, interlock proving, load test to 150 Te under class witness, certification dossier, vessel commissioning."
           }
-        ],
-        "related": [
-          "C-01",
-          "C-02",
-          "C-03",
-          "C-04"
-        ],
-        "cta": {
-          "heading": "Send us your documentation",
-          "body": "Under NDA. Tell us which tier you are short of capacity in. That, more than the drawing, is what tells us how to help.",
-          "primary": {
-            "label": "Send documentation",
-            "href": "/contract-manufacturing/send-documentation/"
-          },
-          "secondary": {
-            "label": "See current capacity",
-            "href": "/contract-manufacturing/capacity-lead-times/"
-          }
-        }
+        ]
       },
       "node_kind": "page",
       "norm_label": "c-00.mdx",
@@ -4778,64 +4746,52 @@
       "source_location": "L1"
     },
     {
-      "id": "src_content_pages_c_00_built_inside_the_eu",
-      "label": "Built inside the EU",
+      "id": "src_content_pages_c_00_approvals",
+      "label": "Approvals",
       "_origin": "ast",
       "community": 22,
       "community_name": "c-00.mdx",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "built inside the eu",
+      "norm_label": "approvals",
       "source_file": "src/content/pages/c-00.mdx",
-      "source_location": "L57"
+      "source_location": "L30"
     },
     {
-      "id": "src_content_pages_c_00_built_to_classification_design_approval",
-      "label": "Built to classification design approval",
+      "id": "src_content_pages_c_00_eu_manufacture",
+      "label": "EU manufacture",
       "_origin": "ast",
       "community": 22,
       "community_name": "c-00.mdx",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "built to classification design approval",
+      "norm_label": "eu manufacture",
       "source_file": "src/content/pages/c-00.mdx",
-      "source_location": "L51"
+      "source_location": "L44"
     },
     {
-      "id": "src_content_pages_c_00_four_tiers_cumulative",
-      "label": "Four tiers. Cumulative.",
+      "id": "src_content_pages_c_00_getting_started",
+      "label": "Getting started",
       "_origin": "ast",
       "community": 22,
       "community_name": "c-00.mdx",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "four tiers. cumulative.",
+      "norm_label": "getting started",
       "source_file": "src/content/pages/c-00.mdx",
-      "source_location": "L39"
+      "source_location": "L48"
     },
     {
-      "id": "src_content_pages_c_00_start_small",
-      "label": "Start small",
+      "id": "src_content_pages_c_00_ip_protection",
+      "label": "IP protection",
       "_origin": "ast",
       "community": 22,
       "community_name": "c-00.mdx",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "start small",
+      "norm_label": "ip protection",
       "source_file": "src/content/pages/c-00.mdx",
-      "source_location": "L65"
-    },
-    {
-      "id": "src_content_pages_c_00_your_design_stays_yours",
-      "label": "Your design stays yours",
-      "_origin": "ast",
-      "community": 22,
-      "community_name": "c-00.mdx",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "your design stays yours",
-      "source_file": "src/content/pages/c-00.mdx",
-      "source_location": "L43"
+      "source_location": "L34"
     },
     {
       "id": "src_content_pages_c_01",
@@ -4846,27 +4802,20 @@
       "file_type": "document",
       "frontmatter": {
         "pageId": "C-01",
-        "eyebrow": "Contract manufacturing \u00b7 Tier 1",
-        "lede": "Welded structures to your drawings, class surveyed, fully traceable",
+        "lede": "LARS bodies, stern and side frames, A-frames, drums, gantries, sea-fastenings and sub-assemblies, welded to your drawings and procedures. Large-dimension machining up to 12 m and 10 t in a single setup.",
+        "draft": false,
         "hero": {
           "media": {
             "ref": "IMG-08",
             "brief": "Welder at work, arc light, correct PPE, honest not staged. 1600\u00d7900.",
             "ratio": "16/9"
-          }
-        },
-        "related": [
-          "C-02",
-          "C-03",
-          "C-04"
-        ],
-        "cta": {
-          "heading": "Talk about a package at this tier",
-          "body": "Send the documentation and tell us the date you need to hold. We will tell you honestly whether we can hold it.",
-          "primary": {
-            "label": "Send documentation",
-            "href": "/contract-manufacturing/send-documentation/"
-          }
+          },
+          "ctas": [
+            {
+              "label": "Send documentation",
+              "href": "/contract-manufacturing/send-documentation/"
+            }
+          ]
         }
       },
       "node_kind": "page",
@@ -4875,52 +4824,28 @@
       "source_location": "L1"
     },
     {
-      "id": "src_content_pages_c_01_how_it_is_proven",
-      "label": "How it is proven",
+      "id": "src_content_pages_c_01_quality",
+      "label": "Quality",
       "_origin": "ast",
       "community": 23,
       "community_name": "c-01.mdx",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "how it is proven",
+      "norm_label": "quality",
       "source_file": "src/content/pages/c-01.mdx",
-      "source_location": "L29"
+      "source_location": "L15"
     },
     {
-      "id": "src_content_pages_c_01_what_we_do",
-      "label": "What we do",
+      "id": "src_content_pages_c_01_required_from_you",
+      "label": "Required from you",
       "_origin": "ast",
       "community": 23,
       "community_name": "c-01.mdx",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "what we do",
+      "norm_label": "required from you",
       "source_file": "src/content/pages/c-01.mdx",
-      "source_location": "L17"
-    },
-    {
-      "id": "src_content_pages_c_01_what_you_no_longer_do",
-      "label": "What you no longer do",
-      "_origin": "ast",
-      "community": 23,
-      "community_name": "c-01.mdx",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "what you no longer do",
-      "source_file": "src/content/pages/c-01.mdx",
-      "source_location": "L21"
-    },
-    {
-      "id": "src_content_pages_c_01_where_this_sits",
-      "label": "Where this sits",
-      "_origin": "ast",
-      "community": 23,
-      "community_name": "c-01.mdx",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "where this sits",
-      "source_file": "src/content/pages/c-01.mdx",
-      "source_location": "L33"
+      "source_location": "L24"
     },
     {
       "id": "src_content_pages_c_02",
@@ -4931,27 +4856,20 @@
       "file_type": "document",
       "frontmatter": {
         "pageId": "C-02",
-        "eyebrow": "Contract manufacturing \u00b7 Tier 2",
-        "lede": "Drums, bearings, gearboxes, brakes, sheaves and level wind, built and aligned",
+        "lede": "Tier 1 plus drums and shafts, bearings, gearboxes, brakes, sheaves, level wind, guards and covers. Fasteners to your torque specification; alignment and rotation checked.",
+        "draft": false,
         "hero": {
           "media": {
             "ref": "IMG-12",
             "brief": "Drum and shaft being lowered into bearings, hoist in frame. 1600\u00d7900.",
             "ratio": "16/9"
-          }
-        },
-        "related": [
-          "C-01",
-          "C-03",
-          "C-04"
-        ],
-        "cta": {
-          "heading": "Talk about a package at this tier",
-          "body": "Send the documentation and tell us the date you need to hold. We will tell you honestly whether we can hold it.",
-          "primary": {
-            "label": "Send documentation",
-            "href": "/contract-manufacturing/send-documentation/"
-          }
+          },
+          "ctas": [
+            {
+              "label": "Send documentation",
+              "href": "/contract-manufacturing/send-documentation/"
+            }
+          ]
         }
       },
       "node_kind": "page",
@@ -4960,52 +4878,28 @@
       "source_location": "L1"
     },
     {
-      "id": "src_content_pages_c_02_how_it_is_proven",
-      "label": "How it is proven",
+      "id": "src_content_pages_c_02_quality",
+      "label": "Quality",
       "_origin": "ast",
       "community": 24,
       "community_name": "c-02.mdx",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "how it is proven",
+      "norm_label": "quality",
       "source_file": "src/content/pages/c-02.mdx",
-      "source_location": "L29"
+      "source_location": "L15"
     },
     {
-      "id": "src_content_pages_c_02_what_we_do",
-      "label": "What we do",
+      "id": "src_content_pages_c_02_required_from_you",
+      "label": "Required from you",
       "_origin": "ast",
       "community": 24,
       "community_name": "c-02.mdx",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "what we do",
+      "norm_label": "required from you",
       "source_file": "src/content/pages/c-02.mdx",
-      "source_location": "L17"
-    },
-    {
-      "id": "src_content_pages_c_02_what_you_no_longer_do",
-      "label": "What you no longer do",
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "c-02.mdx",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "what you no longer do",
-      "source_file": "src/content/pages/c-02.mdx",
-      "source_location": "L21"
-    },
-    {
-      "id": "src_content_pages_c_02_where_this_sits",
-      "label": "Where this sits",
-      "_origin": "ast",
-      "community": 24,
-      "community_name": "c-02.mdx",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "where this sits",
-      "source_file": "src/content/pages/c-02.mdx",
-      "source_location": "L33"
+      "source_location": "L22"
     },
     {
       "id": "src_content_pages_c_03",
@@ -5016,27 +4910,20 @@
       "file_type": "document",
       "frontmatter": {
         "pageId": "C-03",
-        "eyebrow": "Contract manufacturing \u00b7 Tier 3",
-        "lede": "Power units, pipework flushed to class, panels, cabling and instrumentation",
+        "lede": "Tier 2 plus power units, hydraulic pipework and hose routing, valve blocks and manifolds, flushing to a defined cleanliness class, control panels, cabling, glanding and terminations, sensors and instrumentation.",
+        "draft": false,
         "hero": {
           "media": {
             "ref": "IMG-13",
             "brief": "Hydraulic pipework and manifolds, clean and ordered. 1600\u00d7900.",
             "ratio": "16/9"
-          }
-        },
-        "related": [
-          "C-01",
-          "C-02",
-          "C-04"
-        ],
-        "cta": {
-          "heading": "Talk about a package at this tier",
-          "body": "Send the documentation and tell us the date you need to hold. We will tell you honestly whether we can hold it.",
-          "primary": {
-            "label": "Send documentation",
-            "href": "/contract-manufacturing/send-documentation/"
-          }
+          },
+          "ctas": [
+            {
+              "label": "Send documentation",
+              "href": "/contract-manufacturing/send-documentation/"
+            }
+          ]
         }
       },
       "node_kind": "page",
@@ -5045,52 +4932,28 @@
       "source_location": "L1"
     },
     {
-      "id": "src_content_pages_c_03_how_it_is_proven",
-      "label": "How it is proven",
+      "id": "src_content_pages_c_03_quality",
+      "label": "Quality",
       "_origin": "ast",
       "community": 25,
       "community_name": "c-03.mdx",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "how it is proven",
+      "norm_label": "quality",
       "source_file": "src/content/pages/c-03.mdx",
-      "source_location": "L29"
+      "source_location": "L15"
     },
     {
-      "id": "src_content_pages_c_03_what_we_do",
-      "label": "What we do",
+      "id": "src_content_pages_c_03_required_from_you",
+      "label": "Required from you",
       "_origin": "ast",
       "community": 25,
       "community_name": "c-03.mdx",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "what we do",
+      "norm_label": "required from you",
       "source_file": "src/content/pages/c-03.mdx",
-      "source_location": "L17"
-    },
-    {
-      "id": "src_content_pages_c_03_what_you_no_longer_do",
-      "label": "What you no longer do",
-      "_origin": "ast",
-      "community": 25,
-      "community_name": "c-03.mdx",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "what you no longer do",
-      "source_file": "src/content/pages/c-03.mdx",
-      "source_location": "L21"
-    },
-    {
-      "id": "src_content_pages_c_03_where_this_sits",
-      "label": "Where this sits",
-      "_origin": "ast",
-      "community": 25,
-      "community_name": "c-03.mdx",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "where this sits",
-      "source_file": "src/content/pages/c-03.mdx",
-      "source_location": "L33"
+      "source_location": "L22"
     },
     {
       "id": "src_content_pages_c_04",
@@ -5101,27 +4964,20 @@
       "file_type": "document",
       "frontmatter": {
         "pageId": "C-04",
-        "eyebrow": "Contract manufacturing \u00b7 Tier 4",
-        "lede": "PLC loading, load testing to 150 tonnes under class witness, commissioning",
+        "lede": "Tier 3 plus PLC and HMI software loading and configuration, function and interlock proving, and testing on our stands to 150 Te. Class witness where required. Commissioning and operator familiarisation on site or on the vessel.",
+        "draft": false,
         "hero": {
           "media": {
             "ref": "IMG-15",
             "brief": "HMI live during function testing, engineer at the console. 1600\u00d7900.",
             "ratio": "16/9"
-          }
-        },
-        "related": [
-          "C-01",
-          "C-02",
-          "C-03"
-        ],
-        "cta": {
-          "heading": "Talk about a package at this tier",
-          "body": "Send the documentation and tell us the date you need to hold. We will tell you honestly whether we can hold it.",
-          "primary": {
-            "label": "Send documentation",
-            "href": "/contract-manufacturing/send-documentation/"
-          }
+          },
+          "ctas": [
+            {
+              "label": "Send documentation",
+              "href": "/contract-manufacturing/send-documentation/"
+            }
+          ]
         }
       },
       "node_kind": "page",
@@ -5130,52 +4986,40 @@
       "source_location": "L1"
     },
     {
-      "id": "src_content_pages_c_04_how_it_is_proven",
-      "label": "How it is proven",
+      "id": "src_content_pages_c_04_deliverables",
+      "label": "Deliverables",
       "_origin": "ast",
       "community": 26,
       "community_name": "c-04.mdx",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "how it is proven",
+      "norm_label": "deliverables",
       "source_file": "src/content/pages/c-04.mdx",
-      "source_location": "L29"
+      "source_location": "L19"
     },
     {
-      "id": "src_content_pages_c_04_what_we_do",
-      "label": "What we do",
+      "id": "src_content_pages_c_04_required_from_you",
+      "label": "Required from you",
       "_origin": "ast",
       "community": 26,
       "community_name": "c-04.mdx",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "what we do",
+      "norm_label": "required from you",
       "source_file": "src/content/pages/c-04.mdx",
-      "source_location": "L17"
+      "source_location": "L26"
     },
     {
-      "id": "src_content_pages_c_04_what_you_no_longer_do",
-      "label": "What you no longer do",
+      "id": "src_content_pages_c_04_testing",
+      "label": "Testing",
       "_origin": "ast",
       "community": 26,
       "community_name": "c-04.mdx",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "what you no longer do",
+      "norm_label": "testing",
       "source_file": "src/content/pages/c-04.mdx",
-      "source_location": "L21"
-    },
-    {
-      "id": "src_content_pages_c_04_where_this_sits",
-      "label": "Where this sits",
-      "_origin": "ast",
-      "community": 26,
-      "community_name": "c-04.mdx",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "where this sits",
-      "source_file": "src/content/pages/c-04.mdx",
-      "source_location": "L37"
+      "source_location": "L15"
     },
     {
       "id": "src_content_pages_e_01",
@@ -5584,48 +5428,23 @@
       "file_type": "document",
       "frontmatter": {
         "pageId": "C-06",
-        "eyebrow": "Contract manufacturing",
-        "lede": "That should not need saying. We are saying it anyway, because almost nobody in this market does, and because we sell our own equipment too, which means you are entitled to ask.",
+        "draft": false,
+        "hero": {
+          "ctas": [
+            {
+              "label": "Request the NDA",
+              "href": "/contract-manufacturing/send-documentation/"
+            }
+          ]
+        },
         "article": {
           "author": "Romica Tie Group"
-        },
-        "cta": {
-          "heading": "Ask for the NDA first",
-          "body": "We will send our standard mutual NDA before you send anything. That is the right order.",
-          "primary": {
-            "label": "Request the NDA",
-            "href": "/contract-manufacturing/send-documentation/"
-          }
         }
       },
       "node_kind": "page",
       "norm_label": "c-06.mdx",
       "source_file": "src/content/pages/c-06.mdx",
       "source_location": "L1"
-    },
-    {
-      "id": "src_content_pages_c_06_the_question_you_are_actually_asking",
-      "label": "The question you are actually asking",
-      "_origin": "ast",
-      "community": 32,
-      "community_name": "c-06.mdx",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "the question you are actually asking",
-      "source_file": "src/content/pages/c-06.mdx",
-      "source_location": "L20"
-    },
-    {
-      "id": "src_content_pages_c_06_what_we_commit_to",
-      "label": "What we commit to",
-      "_origin": "ast",
-      "community": 32,
-      "community_name": "c-06.mdx",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "what we commit to",
-      "source_file": "src/content/pages/c-06.mdx",
-      "source_location": "L13"
     },
     {
       "id": "src_content_pages_e_02",
@@ -6023,42 +5842,24 @@
       "file_type": "document",
       "frontmatter": {
         "pageId": "C-07",
-        "eyebrow": "Contract manufacturing",
-        "lede": "The July 2026 safeguard changes made origin documentation a live issue for every buyer in the chain. We can supply ours.",
+        "lede": "Structures fabricated at Satu Mare, Romania, inside the EU customs union, supplied with melt-and-pour origin documentation alongside the weld traceability pack.",
+        "draft": false,
+        "hero": {
+          "ctas": [
+            {
+              "label": "Ask about origin documentation",
+              "href": "/contact/"
+            }
+          ]
+        },
         "article": {
           "author": "Romica Tie Group"
-        },
-        "draft": true,
-        "outline": [
-          "What changed on 1 July 2026, factually and without spin",
-          "What RTG supplies: melt-and-pour documentation alongside the weld traceability pack",
-          "What RTG cannot advise on: a clear disclaimer pointing the reader to a customs adviser"
-        ],
-        "cta": {
-          "heading": "Ask about origin documentation",
-          "body": "We will tell you exactly what we can supply with a structure.",
-          "primary": {
-            "label": "Ask us",
-            "href": "/contact/"
-          }
         }
       },
       "node_kind": "page",
       "norm_label": "c-07.mdx",
       "source_file": "src/content/pages/c-07.mdx",
       "source_location": "L1"
-    },
-    {
-      "id": "src_content_pages_c_07_what_we_cannot_advise_on",
-      "label": "What we cannot advise on",
-      "_origin": "ast",
-      "community": 36,
-      "community_name": "c-07.mdx",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "what we cannot advise on",
-      "source_file": "src/content/pages/c-07.mdx",
-      "source_location": "L22"
     },
     {
       "id": "src_content_pages_l_02",
@@ -6716,7 +6517,62 @@
       "file_type": "document",
       "frontmatter": {
         "pageId": "C-08",
-        "draft": true
+        "draft": false,
+        "form": {
+          "submit": "Send enquiry",
+          "fields": [
+            {
+              "label": "Company",
+              "name": "company",
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Tier required",
+              "name": "tier",
+              "type": "select",
+              "options": [
+                "Tier 1: structural fabrication",
+                "Tier 2: mechanical assembly",
+                "Tier 3: hydraulic and electrical build",
+                "Tier 4: automation, test and commissioning",
+                "Not sure yet"
+              ],
+              "required": true
+            },
+            {
+              "label": "Scope",
+              "name": "scope",
+              "type": "textarea",
+              "hint": "What is to be built, and roughly how much of it",
+              "required": true
+            },
+            {
+              "label": "Required date",
+              "name": "required_date",
+              "type": "date",
+              "required": false
+            },
+            {
+              "label": "Your name",
+              "name": "name",
+              "type": "text",
+              "required": true
+            },
+            {
+              "label": "Work email",
+              "name": "email",
+              "type": "email",
+              "required": true
+            },
+            {
+              "label": "Phone",
+              "name": "phone",
+              "type": "tel",
+              "required": false
+            }
+          ]
+        }
       },
       "node_kind": "page",
       "norm_label": "c-08.mdx",
@@ -11103,6 +10959,18 @@
       "source_location": "L9"
     },
     {
+      "id": "src_lib_blocks_type",
+      "label": "src_lib_blocks_type",
+      "_origin": "semantic",
+      "community": 0,
+      "community_name": "blocks.ts",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "src_lib_blocks_type",
+      "source_file": "",
+      "type": "external"
+    },
+    {
       "id": "ref_astro_config",
       "label": "ref_astro_config",
       "_origin": "semantic",
@@ -12155,17 +12023,6 @@
       "external": true,
       "file_type": "concept",
       "norm_label": "src_styles_tokens",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "src_lib_blocks_type",
-      "label": "src_lib_blocks_type",
-      "community": 0,
-      "community_name": "blocks.ts",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "src_lib_blocks_type",
       "source_file": "",
       "type": "external"
     }
@@ -13793,6 +13650,18 @@
     },
     {
       "source": "src_components_templates_article",
+      "target": "src_lib_blocks_endingcta",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/templates/Article.astro",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_templates_article",
       "target": "src_lib_blocks_pageentry",
       "relation": "imports",
       "_origin": "ast",
@@ -14340,7 +14209,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Ladder.astro",
-      "source_location": "L22",
+      "source_location": "L27",
       "weight": 1.0
     },
     {
@@ -14352,7 +14221,19 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Ladder.astro",
-      "source_location": "L23",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_templates_ladder",
+      "target": "src_lib_blocks_endingcta",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/templates/Ladder.astro",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -14364,19 +14245,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Ladder.astro",
-      "source_location": "L23",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_templates_ladder",
-      "target": "src_lib_content_cardfrom",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/templates/Ladder.astro",
-      "source_location": "L24",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -14388,7 +14257,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Ladder.astro",
-      "source_location": "L24",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
@@ -14400,7 +14269,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Ladder.astro",
-      "source_location": "L36",
+      "source_location": "L42",
       "weight": 1.0
     },
     {
@@ -14461,6 +14330,18 @@
       "context": "import",
       "source_file": "src/components/templates/Policy.astro",
       "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_templates_policy",
+      "target": "src_lib_blocks_endingcta",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/templates/Policy.astro",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -14856,7 +14737,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Tier.astro",
-      "source_location": "L14",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -14868,7 +14749,19 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Tier.astro",
-      "source_location": "L15",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_templates_tier",
+      "target": "src_lib_blocks_endingcta",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/templates/Tier.astro",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -14880,7 +14773,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Tier.astro",
-      "source_location": "L15",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -14892,7 +14785,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Tier.astro",
-      "source_location": "L16",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -14904,7 +14797,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Tier.astro",
-      "source_location": "L16",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -14916,7 +14809,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Tier.astro",
-      "source_location": "L26",
+      "source_location": "L27",
       "weight": 1.0
     },
     {
@@ -17304,7 +17197,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Ladder.astro",
-      "source_location": "L22",
+      "source_location": "L27",
       "weight": 1.0
     },
     {
@@ -17316,7 +17209,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Ladder.astro",
-      "source_location": "L23",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -17328,7 +17221,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Ladder.astro",
-      "source_location": "L24",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
@@ -17340,7 +17233,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Ladder.astro",
-      "source_location": "L25",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -17352,7 +17245,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Ladder.astro",
-      "source_location": "L26",
+      "source_location": "L31",
       "weight": 1.0
     },
     {
@@ -17364,7 +17257,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Ladder.astro",
-      "source_location": "L27",
+      "source_location": "L32",
       "weight": 1.0
     },
     {
@@ -17376,7 +17269,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Ladder.astro",
-      "source_location": "L28",
+      "source_location": "L33",
       "weight": 1.0
     },
     {
@@ -17388,7 +17281,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Ladder.astro",
-      "source_location": "L29",
+      "source_location": "L34",
       "weight": 1.0
     },
     {
@@ -17400,7 +17293,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Ladder.astro",
-      "source_location": "L30",
+      "source_location": "L35",
       "weight": 1.0
     },
     {
@@ -17412,7 +17305,19 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Ladder.astro",
-      "source_location": "L31",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_templates_ladder",
+      "target": "src_components_blocks_indexrows",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/templates/Ladder.astro",
+      "source_location": "L37",
       "weight": 1.0
     },
     {
@@ -17424,7 +17329,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Ladder.astro",
-      "source_location": "L32",
+      "source_location": "L38",
       "weight": 1.0
     },
     {
@@ -17436,7 +17341,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Ladder.astro",
-      "source_location": "L33",
+      "source_location": "L39",
       "weight": 1.0
     },
     {
@@ -17448,7 +17353,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Ladder.astro",
-      "source_location": "L34",
+      "source_location": "L40",
       "weight": 1.0
     },
     {
@@ -17460,7 +17365,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Ladder.astro",
-      "source_location": "L35",
+      "source_location": "L41",
       "weight": 1.0
     },
     {
@@ -17472,7 +17377,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Ladder.astro",
-      "source_location": "L36",
+      "source_location": "L42",
       "weight": 1.0
     },
     {
@@ -18468,7 +18373,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Tier.astro",
-      "source_location": "L14",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -18480,7 +18385,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Tier.astro",
-      "source_location": "L15",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -18492,7 +18397,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Tier.astro",
-      "source_location": "L16",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -18504,7 +18409,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Tier.astro",
-      "source_location": "L17",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -18516,7 +18421,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Tier.astro",
-      "source_location": "L18",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -18528,7 +18433,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Tier.astro",
-      "source_location": "L19",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -18540,7 +18445,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Tier.astro",
-      "source_location": "L20",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -18552,7 +18457,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Tier.astro",
-      "source_location": "L21",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -18564,7 +18469,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Tier.astro",
-      "source_location": "L22",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -18576,7 +18481,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Tier.astro",
-      "source_location": "L23",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -18588,7 +18493,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Tier.astro",
-      "source_location": "L24",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -18600,7 +18505,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Tier.astro",
-      "source_location": "L25",
+      "source_location": "L26",
       "weight": 1.0
     },
     {
@@ -18612,7 +18517,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Tier.astro",
-      "source_location": "L26",
+      "source_location": "L27",
       "weight": 1.0
     },
     {
@@ -23464,7 +23369,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/templates/Ladder.astro",
-      "source_location": "L47",
+      "source_location": "L53",
       "weight": 1.0
     },
     {
@@ -23541,7 +23446,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/templates/Tier.astro",
-      "source_location": "L37",
+      "source_location": "L38",
       "weight": 1.0
     },
     {
@@ -23689,266 +23594,145 @@
     },
     {
       "source": "src_content_pages_c_00",
-      "target": "src_content_pages_c_00_four_tiers_cumulative",
+      "target": "src_content_pages_c_00_approvals",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/content/pages/c-00.mdx",
-      "source_location": "L39",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
       "source": "src_content_pages_c_00",
-      "target": "src_content_pages_c_00_your_design_stays_yours",
+      "target": "src_content_pages_c_00_ip_protection",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/content/pages/c-00.mdx",
-      "source_location": "L43",
+      "source_location": "L34",
       "weight": 1.0
     },
     {
       "source": "src_content_pages_c_00",
-      "target": "src_content_pages_c_00_built_to_classification_design_approval",
+      "target": "src_content_pages_c_00_eu_manufacture",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/content/pages/c-00.mdx",
-      "source_location": "L51",
+      "source_location": "L44",
       "weight": 1.0
     },
     {
       "source": "src_content_pages_c_00",
-      "target": "src_content_pages_c_00_built_inside_the_eu",
+      "target": "src_content_pages_c_00_getting_started",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/content/pages/c-00.mdx",
-      "source_location": "L57",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_c_00",
-      "target": "src_content_pages_c_00_start_small",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/c-00.mdx",
-      "source_location": "L65",
+      "source_location": "L48",
       "weight": 1.0
     },
     {
       "source": "src_content_pages_c_01",
-      "target": "src_content_pages_c_01_what_we_do",
+      "target": "src_content_pages_c_01_quality",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/content/pages/c-01.mdx",
-      "source_location": "L17",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
       "source": "src_content_pages_c_01",
-      "target": "src_content_pages_c_01_what_you_no_longer_do",
+      "target": "src_content_pages_c_01_required_from_you",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/content/pages/c-01.mdx",
-      "source_location": "L21",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_c_01",
-      "target": "src_content_pages_c_01_how_it_is_proven",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/c-01.mdx",
-      "source_location": "L29",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_c_01",
-      "target": "src_content_pages_c_01_where_this_sits",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/c-01.mdx",
-      "source_location": "L33",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
       "source": "src_content_pages_c_02",
-      "target": "src_content_pages_c_02_what_we_do",
+      "target": "src_content_pages_c_02_quality",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/content/pages/c-02.mdx",
-      "source_location": "L17",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
       "source": "src_content_pages_c_02",
-      "target": "src_content_pages_c_02_what_you_no_longer_do",
+      "target": "src_content_pages_c_02_required_from_you",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/content/pages/c-02.mdx",
-      "source_location": "L21",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_c_02",
-      "target": "src_content_pages_c_02_how_it_is_proven",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/c-02.mdx",
-      "source_location": "L29",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_c_02",
-      "target": "src_content_pages_c_02_where_this_sits",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/c-02.mdx",
-      "source_location": "L33",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_c_03",
-      "target": "src_content_pages_c_03_what_we_do",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/c-03.mdx",
-      "source_location": "L17",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_c_03",
-      "target": "src_content_pages_c_03_what_you_no_longer_do",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/c-03.mdx",
-      "source_location": "L21",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_c_03",
-      "target": "src_content_pages_c_03_how_it_is_proven",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/c-03.mdx",
-      "source_location": "L29",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_c_03",
-      "target": "src_content_pages_c_03_where_this_sits",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/c-03.mdx",
-      "source_location": "L33",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_c_04",
-      "target": "src_content_pages_c_04_what_we_do",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/c-04.mdx",
-      "source_location": "L17",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_c_04",
-      "target": "src_content_pages_c_04_what_you_no_longer_do",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/c-04.mdx",
-      "source_location": "L21",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_c_04",
-      "target": "src_content_pages_c_04_how_it_is_proven",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/c-04.mdx",
-      "source_location": "L29",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_c_04",
-      "target": "src_content_pages_c_04_where_this_sits",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/c-04.mdx",
-      "source_location": "L37",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_c_06",
-      "target": "src_content_pages_c_06_what_we_commit_to",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/c-06.mdx",
-      "source_location": "L13",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_c_06",
-      "target": "src_content_pages_c_06_the_question_you_are_actually_asking",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/c-06.mdx",
-      "source_location": "L20",
-      "weight": 1.0
-    },
-    {
-      "source": "src_content_pages_c_07",
-      "target": "src_content_pages_c_07_what_we_cannot_advise_on",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/content/pages/c-07.mdx",
       "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "src_content_pages_c_03",
+      "target": "src_content_pages_c_03_quality",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/content/pages/c-03.mdx",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "src_content_pages_c_03",
+      "target": "src_content_pages_c_03_required_from_you",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/content/pages/c-03.mdx",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "src_content_pages_c_04",
+      "target": "src_content_pages_c_04_testing",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/content/pages/c-04.mdx",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "src_content_pages_c_04",
+      "target": "src_content_pages_c_04_deliverables",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/content/pages/c-04.mdx",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "src_content_pages_c_04",
+      "target": "src_content_pages_c_04_required_from_you",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/content/pages/c-04.mdx",
+      "source_location": "L26",
       "weight": 1.0
     },
     {
@@ -26811,6 +26595,18 @@
       "weight": 1.0
     },
     {
+      "source": "src_components_templates_ladder",
+      "target": "src_lib_content_cardfrom",
+      "relation": "indirect_call",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "context": "argument",
+      "source_file": "src/components/templates/Ladder.astro",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
       "source": "src_lib_home_scroll_inithome",
       "target": "src_lib_home_scroll_inithome_onscroll",
       "relation": "indirect_call",
@@ -26908,5 +26704,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "8ce356478e1ff23a15cf7a4bbe4a23dde552ee58"
+  "built_at_commit": "575f247648dc36419ed6ad8a8212c4126e230017"
 }
