@@ -121,7 +121,7 @@
 .hz-wrap{position:relative;overflow:clip}
 .hz-stick{position:sticky;top:0;height:100svh;display:flex;flex-direction:column;justify-content:center;
   overflow:hidden}
-.hz-head{padding:0 var(--gut);max-width:var(--wrap);margin:0 auto 44px;width:100%;
+.hz-head{padding:0 var(--gut);max-width:var(--wrap);margin:0 auto 56px;width:100%;
   display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
 .hz-track{display:flex;gap:22px;padding:0 max(var(--gut),calc((100vw - var(--wrap))/2 + var(--gut)));
   will-change:transform}
@@ -272,7 +272,7 @@
    clear of the bar, and tighten it on a short laptop screen. */
 @media (min-width:901px){.hz-stick{padding-top:82px}}
 @media (min-width:901px) and (max-height:820px){
-  .hz-head{margin-bottom:24px}
+  .hz-head{margin-bottom:36px}
   .hz-prog{margin-top:28px}
   .hero .d1{font-size:clamp(34px,4.1vw,56px)}
 }
@@ -304,3 +304,7 @@
   .fentry-form .field{flex:1 1 150px;width:auto}
 }
 .sec.irows:has(+ .fentry){padding-bottom:clamp(28px,3.4vw,48px)}
+/* "Equipment" is a section title like "Sectors" and "Service life support",
+   so it is set at their size, not at the sub-heading size IndexRows uses on
+   inner pages. */
+.irows .sechd .d3{font-size:clamp(30px,4.2vw,60px);letter-spacing:-.04em}
