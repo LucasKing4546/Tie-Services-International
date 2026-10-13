@@ -41,7 +41,7 @@
 .ftr h3{color:rgba(255,255,255,.7);padding-bottom:14px;margin-bottom:8px;border-bottom:1px solid rgba(255,255,255,.16);position:relative}
 .ftr h3::after{content:"";position:absolute;left:0;bottom:-1px;width:28px;height:2px;background:var(--red)}
 .ftr ul{gap:2px}
-.ftr li a{display:flex;align-items:center;gap:8px;min-height:40px;color:rgba(255,255,255,.88);border-radius:8px;
+.ftr li a{display:flex;align-items:center;gap:8px;min-height:44px;color:rgba(255,255,255,.88);border-radius:8px;
   transition:color .2s,transform .25s var(--e)}
 .ftr li a:hover{color:#fff;transform:translateX(4px)}
 .ftr li a:active{transform:translateX(2px)}
@@ -56,7 +56,7 @@
 .crumbs ol{gap:6px}
 .crumbs li{gap:6px}
 .crumbs li:not(:last-child)::after{content:"/";color:var(--ink-2);opacity:.5}
-.crumbs a{padding:12px 10px;margin:0 -4px;border-radius:100px;transition:color .2s,background .2s}
+.crumbs a{padding:14px 10px;margin:0 -4px;border-radius:100px;transition:color .2s,background .2s}
 .crumbs a:hover{color:var(--ink);background:var(--panel)}
 .crumbs a:active{background:var(--rule)}
 .crumbs li[aria-current] span{font-weight:600;color:var(--ink);padding:4px 10px;border-radius:100px;background:var(--panel)}

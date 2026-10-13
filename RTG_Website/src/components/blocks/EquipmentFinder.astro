@@ -7,26 +7,27 @@
  * Every row is in the HTML, so with no JS the full list is still there and
  * the filter bar simply stays hidden. Filter state lives in the query
  * string (?type=winch&app=survey&wll=5), so any other page can link in
- * pre-filtered. A row ends in two links: the design's own spec table on its
- * product page where it has one (else the family page), and a datasheet
- * request carrying its name, never a file: datasheets stay gated (CLAUDE.md
- * §5.3).
+ * pre-filtered. A row ends in two links: where the design lives on the site
+ * (its own spec table, or its row in its family's list) and a datasheet
+ * request carrying its name.
  */
-import { EQUIPMENT, type EquipmentDrive, type EquipmentType } from '@data/equipment';
-import { getCollection } from 'astro:content';
+import { EQUIPMENT, type EquipmentType } from '@data/equipment';
 import { page } from '@data/pages';
-import { EQUIPMENT_APPS as APPS, EQUIPMENT_LOADS as LOADS } from '@lib/equipment';
+import {
+  EQUIPMENT_APPS as APPS,
+  EQUIPMENT_DRIVES as DRIVES,
+  EQUIPMENT_LOADS as LOADS,
+  designLink,
+  designTags,
+  specTableLinks,
+} from '@lib/equipment';
+import DesignRow from './DesignRow.astro';
 
 const TYPES: Record<EquipmentType, string> = {
   winch: 'Winches',
   lars: 'A-frames and LARS',
   hpu: 'Power units',
   other: 'Tensioners, booms and other',
-};
-const DRIVES: Record<EquipmentDrive, string> = {
-  electric: 'Electric',
-  hydraulic: 'Hydraulic',
-  'electro-hydraulic': 'Electro-hydraulic',
 };
 const GROUPS = [
   { key: 'type', legend: 'Type', options: TYPES },
@@ -37,33 +38,8 @@ const CAPACITIES = [500, 1500, 3000];
 /** Rows shown before "Show all", to keep the hub short. */
 const FIRST = 12;
 
-const datasheets = page('R-01').slug;
 const quote = page('X-03').slug;
-const load = (kg: number) => (kg < 1000 ? `${kg} kg` : `${Number((kg / 1000).toFixed(2))} Te`);
-
-// A design that has its own spec table on a product page links straight to
-// that table (Product.astro numbers them #config-1, #config-2...); the rest
-// link to the family page.
-const shown = new Map<string, string>();
-for (const entry of await getCollection('pages')) {
-  entry.data.specs.forEach((s, i) => {
-    if (s.datasheet) shown.set(s.datasheet, `${page(entry.data.pageId).slug}#config-${i + 1}`);
-  });
-}
-
-const rows = EQUIPMENT.map((e) => {
-  const family = page(e.family);
-  // "DS38 and DS38A" is one design; the first number is the one a page cites
-  const deep = shown.get(e.code.split(' ')[0]);
-  const tags = [e.drive && DRIVES[e.drive], ...e.apps.map((a) => APPS[a])].filter(Boolean).join(' · ');
-  return {
-    ...e,
-    view: deep ? { href: deep, label: 'View specification' } : { href: family.slug, label: 'View family' },
-    tags,
-    text: `${e.code} ${e.name} ${TYPES[e.type]} ${tags}`.toLowerCase(),
-    request: `${datasheets}?equipment=${encodeURIComponent(`${e.code} ${e.name}`)}`,
-  };
-});
+const tables = await specTableLinks();
 ---
 
 <section class="sec finder" id="finder" data-finder data-first={FIRST}>
@@ -72,7 +48,7 @@ const rows = EQUIPMENT.map((e) => {
       <p class="mono red">Selector</p>
       <h2 class="d3"><span class="rl"><span>Find a standard design</span></span></h2>
       <p class="lede">
-        {rows.length} designs with a datasheet. Every one can be adapted to the vessel, or we design from the duty.
+        {EQUIPMENT.length} designs with a datasheet. Every one can be adapted to the vessel, or we design from the duty.
       </p>
     </div>
 
@@ -81,61 +57,58 @@ const rows = EQUIPMENT.map((e) => {
         <label for="finder-q">Search</label>
         <input id="finder-q" name="q" type="search" placeholder="Datasheet number or description" autocomplete="off" />
       </div>
-      {GROUPS.map((g) => (
-        <fieldset class="finder-group">
-          <legend>{g.legend}</legend>
-          <div class="finder-chips">
-            <button type="button" class="finder-chip" data-key={g.key} data-value="" aria-pressed="true">All</button>
-            {Object.entries(g.options).map(([value, label]) => (
-              <button type="button" class="finder-chip" data-key={g.key} data-value={value} aria-pressed="false">{label}</button>
-            ))}
+      {/* Open on a wide screen, where its summary is hidden; a disclosure on
+          a phone, where the filters would otherwise fill the screen above
+          the results they change. */}
+      <details class="finder-more" data-filters>
+        <summary>Filters</summary>
+        <div class="finder-more-in">
+          {GROUPS.map((g) => (
+            <fieldset class="finder-group">
+              <legend>{g.legend}</legend>
+              <div class="finder-chips">
+                <button type="button" class="finder-chip" data-key={g.key} data-value="" aria-pressed="true">All</button>
+                {Object.entries(g.options).map(([value, label]) => (
+                  <button type="button" class="finder-chip" data-key={g.key} data-value={value} aria-pressed="false">{label}</button>
+                ))}
+              </div>
+            </fieldset>
+          ))}
+          <div class="finder-ranges">
+            <div class="field">
+              <label for="finder-wll">Working load</label>
+              <select id="finder-wll" name="wll">
+                <option value="">Any</option>
+                {LOADS.map((t) => <option value={t}>{t} Te or more</option>)}
+              </select>
+            </div>
+            <div class="field">
+              <label for="finder-cap">Cable capacity</label>
+              <select id="finder-cap" name="cap">
+                <option value="">Any</option>
+                {CAPACITIES.map((m) => <option value={m}>{m.toLocaleString('en-GB')} m or more</option>)}
+              </select>
+            </div>
           </div>
-        </fieldset>
-      ))}
-      <div class="finder-ranges">
-        <div class="field">
-          <label for="finder-wll">Working load</label>
-          <select id="finder-wll" name="wll">
-            <option value="">Any</option>
-            {LOADS.map((t) => <option value={t}>{t} Te or more</option>)}
-          </select>
         </div>
-        <div class="field">
-          <label for="finder-cap">Cable capacity</label>
-          <select id="finder-cap" name="cap">
-            <option value="">Any</option>
-            {CAPACITIES.map((m) => <option value={m}>{m.toLocaleString('en-GB')} m or more</option>)}
-          </select>
-        </div>
-      </div>
+      </details>
     </form>
 
-    <p class="finder-count mono" aria-live="polite" data-count>{rows.length} standard designs</p>
+    <p class="finder-count mono" aria-live="polite" data-count>{EQUIPMENT.length} standard designs</p>
 
     <ul class="finder-list">
-      {rows.map((r) => (
-        <li
+      {EQUIPMENT.map((e) => (
+        <DesignRow
+          item={e}
+          view={designLink(e, tables)}
           data-row
-          data-type={r.type}
-          data-app={r.apps.join(' ')}
-          data-drive={r.drive ?? ''}
-          data-wll={r.wllKg ?? ''}
-          data-cap={r.capM ?? ''}
-          data-text={r.text}
-        >
-          <span class="finder-code mono">{r.code}</span>
-          <span class="finder-name">
-            {r.name}
-            {r.tags && <small>{r.tags}</small>}
-          </span>
-          <span class="finder-fig">{r.wllKg ? load(r.wllKg) : '—'}<small>working load</small></span>
-          <span class="finder-fig">{r.cap ?? '—'}<small>cable capacity</small></span>
-          <span class="finder-fig">{r.speed ? `${r.speed} m/min` : '—'}<small>line speed</small></span>
-          <span class="finder-links">
-            <a href={r.view.href}>{r.view.label} <span aria-hidden="true">→</span></a>
-            <a href={r.request} aria-label={`Request the ${r.code} datasheet`}>Request datasheet</a>
-          </span>
-        </li>
+          data-type={e.type}
+          data-app={e.apps.join(' ')}
+          data-drive={e.drive ?? ''}
+          data-wll={e.wllKg ?? ''}
+          data-cap={e.capM ?? ''}
+          data-text={`${e.code} ${e.name} ${TYPES[e.type]} ${designTags(e)}`.toLowerCase()}
+        />
       ))}
     </ul>
 
@@ -160,6 +133,7 @@ const rows = EQUIPMENT.map((e) => {
     const count = root.querySelector<HTMLElement>('[data-count]')!;
     const empty = root.querySelector<HTMLElement>('[data-empty]')!;
     const more = root.querySelector<HTMLButtonElement>('[data-more]')!;
+    const filters = root.querySelector<HTMLDetailsElement>('[data-filters]')!;
     const first = Number(root.dataset.first);
     const field = (k: string) => form.elements.namedItem(k) as HTMLInputElement | HTMLSelectElement | null;
 
@@ -221,6 +195,13 @@ const rows = EQUIPMENT.map((e) => {
       rows.filter((r) => !r.hidden)[first]?.querySelector('a')?.focus();
     });
     form.addEventListener('submit', (e) => e.preventDefault());
+
+    // The filters are a disclosure only on a phone; anywhere wider their
+    // summary is hidden (blocks.css), so they must be open.
+    const wide = matchMedia('(min-width:701px)');
+    const sync = () => { if (wide.matches) filters.open = true; };
+    wide.addEventListener('change', sync);
+    sync();
 
     form.hidden = false;
     render();

@@ -873,3 +873,33 @@ table.spec .gap{text-transform:uppercase;letter-spacing:.1em;font-size:.8em}
   .finder-links{flex-direction:row;gap:18px;justify-self:start;text-align:left}
   .finder-ranges{grid-template-columns:1fr 1fr}
 }
+
+/* The finder's filters: always open on a wide screen (the script opens them
+   and the summary is hidden), a disclosure on a phone. */
+.finder-more-in{display:grid;grid-template-columns:minmax(0,1fr);gap:22px}
+.finder-more > summary{display:none}
+.finder-code-in{display:none}
+/* a family list's row that a finder link pointed at */
+.finder-list li{scroll-margin-top:118px}
+.finder-list li:target{background:var(--panel)}
+.fam .sechd .lede a{color:var(--ink)}
+.fam .btn{margin-top:0}
+table.spec .spec-opt{display:block}
+@media (max-width:900px){
+  /* three lines a row: name, the datasheet number with its tags, the figures
+     without their captions (the units say what each is), then the links */
+  .finder-list li{padding:14px 0;gap:8px 16px}
+  .finder-code,.finder-fig small{display:none}
+  .finder-code-in{display:inline;font-family:var(--f-m);letter-spacing:.06em;color:var(--ink)}
+  .finder-name small .finder-code-in{margin-right:8px}
+}
+@media (max-width:700px){
+  .finder-more > summary{display:inline-flex;align-items:center;gap:8px;list-style:none;cursor:pointer;
+    font-family:var(--f-b);font-size:14px;color:var(--ink);border:1px solid var(--rule);border-radius:100px;
+    padding:9px 16px;min-height:44px}
+  .finder-more > summary::-webkit-details-marker{display:none}
+  .finder-more > summary::after{content:"+";font-family:var(--f-m)}
+  .finder-more[open] > summary::after{content:"−"}
+  .finder-more[open] > summary{margin-bottom:22px}
+  .finder-more > summary:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+}

@@ -1,0 +1,36 @@
+---
+/**
+ * One standard design as a ruled row: datasheet number, name, three figures
+ * and its links. Shared by the finder and the per-family lists so a design
+ * reads the same wherever it is listed. Extra attributes (an id, the
+ * finder's data-* filter fields) pass straight through to the <li>.
+ */
+import type { EquipmentItem } from '@data/equipment';
+import { datasheetRequest, designTags, formatLoad } from '@lib/equipment';
+
+interface Props {
+  item: EquipmentItem;
+  /** The onward link, if this list has one to offer for the row. */
+  view?: { href: string; label: string };
+  [attr: string]: unknown;
+}
+
+const { item, view, ...attrs } = Astro.props;
+const tags = designTags(item);
+---
+
+<li {...attrs}>
+  <span class="finder-code mono">{item.code}</span>
+  <span class="finder-name">
+    {item.name}
+    {/* the number rides here on a phone, where it has no column of its own */}
+    <small><span class="finder-code-in">{item.code}</span>{tags}</small>
+  </span>
+  <span class="finder-fig">{item.wllKg ? formatLoad(item.wllKg) : '—'}<small>working load</small></span>
+  <span class="finder-fig">{item.cap ?? '—'}<small>cable capacity</small></span>
+  <span class="finder-fig">{item.speed ? `${item.speed} m/min` : '—'}<small>line speed</small></span>
+  <span class="finder-links">
+    {view && <a href={view.href}>{view.label} <span aria-hidden="true">→</span></a>}
+    <a href={datasheetRequest(item)} aria-label={`Request the ${item.code} datasheet`}>Request datasheet</a>
+  </span>
+</li>

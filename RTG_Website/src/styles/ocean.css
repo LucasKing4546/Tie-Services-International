@@ -65,6 +65,9 @@ html{scrollbar-color:var(--sea-0) var(--sea-2)}
   .gauge-read{right:24px;padding:4px 7px}
   .gauge-read span{display:none}
 }
+/* Between the phone layout and about 1100px the readout has no margin to
+   sit in and would lie on the content, so the rail and bob stand alone. */
+@media (min-width:901px) and (max-width:1100px){.gauge-read{display:none}}
 @media (max-width:900px){
   .gauge-rail{display:none}
   /* No rail on a phone, so the readout parks in the corner: the left one,

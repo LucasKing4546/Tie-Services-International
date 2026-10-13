@@ -14,7 +14,8 @@
  * (E-00's family rows carry the range figures).
  *
  * E-00 alone also carries the equipment finder, the "link to selector"
- * block in its workbook row.
+ * block in its workbook row; a hub that standard designs belong to (Winches,
+ * Handling systems) lists them, as product pages do.
  */
 import { render } from 'astro:content';
 import { childrenOf, type PageMeta } from '@data/pages';
@@ -27,6 +28,7 @@ import Section from '@components/blocks/Section.astro';
 import Prose from '@components/blocks/Prose.astro';
 import ChildCards from '@components/blocks/ChildCards.astro';
 import EquipmentFinder from '@components/blocks/EquipmentFinder.astro';
+import FamilyDesigns from '@components/blocks/FamilyDesigns.astro';
 import FeatureRow from '@components/blocks/FeatureRow.astro';
 import Skeleton from '@components/blocks/Skeleton.astro';
 import PageEnding from '@components/blocks/PageEnding.astro';
@@ -121,7 +123,7 @@ const jsonLdPage =
     />
   )}
 
-  {page.id === 'E-00' && <EquipmentFinder />}
+  {page.id === 'E-00' ? <EquipmentFinder /> : <FamilyDesigns page={page} />}
 
   {data.draft && !hasBody(entry) && (
     <Skeleton label="Section introduction" kind="copy" count={4} />

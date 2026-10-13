@@ -1,0 +1,74 @@
+---
+/**
+ * Every standard design in one equipment family, listed on that family's
+ * page. It is where a finder row lands for a design that has no spec table
+ * of its own: each row carries the design's datasheet number as its id
+ * (designAnchor), so the link scrolls to it. Renders nothing for a page no
+ * design belongs to.
+ *
+ * All rows are in the HTML. With JS, the list shows the first few and a
+ * "Show all" button, unless the visitor arrived on a row's own link, in
+ * which case nothing is hidden and the row they came for is in view.
+ */
+import { EQUIPMENT } from '@data/equipment';
+import { page as lookupPage, type PageMeta } from '@data/pages';
+import { designAnchor, specTableLinks } from '@lib/equipment';
+import DesignRow from './DesignRow.astro';
+
+interface Props {
+  page: PageMeta;
+}
+
+const { page } = Astro.props;
+const designs = EQUIPMENT.filter((e) => e.family === page.id);
+const tables = await specTableLinks();
+/** Rows shown before "Show all". */
+const FIRST = 6;
+const finder = `${lookupPage('E-00').slug}#finder`;
+
+// A design whose table is further up this page points back to it.
+const tableAbove = (code: string) => {
+  const href = tables.get(code.split(' ')[0]);
+  return href?.startsWith(`${page.slug}#`) ? { href: href.slice(page.slug.length), label: 'Specification above' } : undefined;
+};
+---
+
+{designs.length > 0 && (
+  <section class="sec fam" id="designs" data-family-designs data-first={FIRST}>
+    <div class="wrap">
+      <div class="sechd">
+        <h2 class="d3"><span class="rl"><span>Standard designs in this family</span></span></h2>
+        <p class="lede">
+          {designs.length === 1 ? 'One design' : `${designs.length} designs`} with a datasheet.
+          <a href={finder}>Search the whole range</a> by load, capacity and drive.
+        </p>
+      </div>
+      <ul class="finder-list">
+        {designs.map((e) => <DesignRow item={e} view={tableAbove(e.code)} id={designAnchor(e)} data-row />)}
+      </ul>
+      <button type="button" class="btn btn-o" data-more hidden></button>
+    </div>
+  </section>
+)}
+
+<script>
+  const init = () => {
+    const root = document.querySelector<HTMLElement>('[data-family-designs]');
+    if (!root) return;
+    const rows = [...root.querySelectorAll<HTMLElement>('[data-row]')];
+    const more = root.querySelector<HTMLButtonElement>('[data-more]')!;
+    const first = Number(root.dataset.first);
+    // Arrived on one design's link: leave every row in place.
+    if (rows.length <= first || rows.some((r) => `#${r.id}` === location.hash)) return;
+
+    rows.slice(first).forEach((r) => (r.hidden = true));
+    more.textContent = `Show all ${rows.length}`;
+    more.hidden = false;
+    more.addEventListener('click', () => {
+      rows.forEach((r) => (r.hidden = false));
+      more.hidden = true;
+      rows[first]?.querySelector('a')?.focus();
+    });
+  };
+  document.addEventListener('astro:page-load', init);
+</script>

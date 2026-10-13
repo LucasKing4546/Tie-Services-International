@@ -33,7 +33,15 @@ const { caption = 'Representative specification', rows, footnote } = Astro.props
       <tr>
         <th scope="row">{row.k}</th>
         <td>
-          {row.v === 'TO SUPPLY' ? <Gap>To be confirmed</Gap> : row.v}
+          {row.v === 'TO SUPPLY' ? (
+            <Gap>To be confirmed</Gap>
+          ) : row.v.split(' · ').length > 2 ? (
+            // three or more alternatives ("6 mm: 1,250 m · 8.18 mm: 750 m · ..."):
+            // one per line, or a narrow column wraps them mid-pair
+            row.v.split(' · ').map((part) => <span class="spec-opt">{part}</span>)
+          ) : (
+            row.v
+          )}
           {row.note && <em>{row.note}</em>}
         </td>
       </tr>

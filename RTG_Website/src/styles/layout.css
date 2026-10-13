@@ -131,3 +131,9 @@
 }
 /* "Applications" is a tag list under the configurations, not a peer of them. */
 .apps .sechd .d2{font-size:clamp(24px,3vw,40px)}
+
+/* Three figures stay on one row on a phone instead of leaving one alone. */
+@media (max-width:560px){
+  .frow-copy .stats{grid-template-columns:repeat(3,minmax(0,1fr));column-gap:12px}
+  .frow-copy .stats .stat b{font-size:20px}
+}

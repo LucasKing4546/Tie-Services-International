@@ -18,6 +18,7 @@ import { hasBody } from '@lib/content';
 import Base from '@layouts/Base.astro';
 import PageHero from '@components/blocks/PageHero.astro';
 import Section from '@components/blocks/Section.astro';
+import FamilyDesigns from '@components/blocks/FamilyDesigns.astro';
 import SectionHead from '@components/blocks/SectionHead.astro';
 import Prose from '@components/blocks/Prose.astro';
 import SpecTable from '@components/blocks/SpecTable.astro';
@@ -137,6 +138,8 @@ const datasheetHref = datasheetPage ? `${datasheetPage.slug}?equipment=${encodeU
     <Skeleton label="Specification table" kind="split" count={4} />
   )}
 
+  <FamilyDesigns page={page} />
+
   {data.product && data.product.applications.length > 0 && (
     <Section tone="off" class="apps">
       <SectionHead heading="Applications" level={2} />
@@ -153,15 +156,15 @@ const datasheetHref = datasheetPage ? `${datasheetPage.slug}?equipment=${encodeU
 
 <style is:global>
   .cfg-nav ul { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 0 auto; padding-block: 16px; }
-  .cfg-nav a { display: inline-block; padding: 8px 16px; border: 1px solid var(--rule); border-radius: 999px; color:var(--ink); text-decoration: none; font-size: 14px; }
+  .cfg-nav a { display: inline-block; padding: 10px 16px; border: 1px solid var(--rule); border-radius: 999px; color:var(--ink); text-decoration: none; font-size: 14px; }
   .cfg-nav a:hover { border-color:var(--ink); }
   .frow[id^="config-"] { scroll-margin-top: 96px; }
   /* A pill docked bottom centre, sized to its content: it must not cost the
      page a band of its height, and it leaves the corners to the chat
      launcher and the depth readout. */
   .req-bar { position: fixed; left: 50%; bottom: 16px; translate: -50% 0; z-index: 350; display: flex; align-items: center; gap: 14px; padding: 5px 5px 5px 18px; border-radius: 100px; background:var(--sea-2); border: 1px solid var(--rule); color:var(--ink-2); font-size: 13px; white-space: nowrap; }
-  .req-bar .btn { padding: 9px 16px; font-size: 13px; gap: 6px; min-height: 0; }
-  .req-bar[hidden] { display: none; }
+  .req-bar .btn { padding: 11px 16px; font-size: 13px; gap: 6px; min-height: 0; }
+  .req-bar[hidden], .req-bar.away { display: none; }
   @media (max-width: 700px) { .req-bar { padding: 5px; bottom: 12px; } .req-bar > span { display: none; } }
   @media (prefers-reduced-motion: no-preference) {
     .req-bar { animation: req-in .25s ease-out; }
@@ -183,6 +186,9 @@ const datasheetHref = datasheetPage ? `${datasheetPage.slug}?equipment=${encodeU
       }
     });
     io.observe(first);
+    // It would sit on the footer's own links: stand aside while they are in view.
+    const footer = document.querySelector('footer.ftr');
+    if (footer) new IntersectionObserver(([e]) => bar.classList.toggle('away', e.isIntersecting)).observe(footer);
   };
   document.addEventListener('astro:page-load', init);
 </script>

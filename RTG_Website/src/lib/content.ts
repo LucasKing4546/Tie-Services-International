@@ -9,7 +9,7 @@
  */
 import { getCollection } from 'astro:content';
 import { page as lookupPage, childrenOf, type PageMeta } from '@data/pages';
-import type { CardItem, PageData, PageEntry } from './blocks';
+import { sentenceCase, type CardItem, type PageData, type PageEntry } from './blocks';
 
 /** Markers of a page that is still a working outline. Base.astro noindexes
  *  on this; astro.config.mjs keeps the same pages out of the sitemap. */
@@ -50,7 +50,7 @@ export function cardFrom(item: PageData['cards'][number]): CardItem {
   if (item.pageId) {
     const p = lookupPage(item.pageId);
     return {
-      title: item.title ?? p.name,
+      title: item.title ?? sentenceCase(p.name),
       href: item.href ?? p.slug,
       blurb: item.blurb ?? p.description,
       meta: item.meta,

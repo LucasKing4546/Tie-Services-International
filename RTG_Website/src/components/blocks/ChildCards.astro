@@ -5,7 +5,7 @@
  * slug appears here automatically with no hand-written child list.
  */
 import { childEntries } from '@lib/content';
-import type { CardItem } from '@lib/blocks';
+import { sentenceCase, type CardItem } from '@lib/blocks';
 import CardGrid from './CardGrid.astro';
 import ScrollTrack from './ScrollTrack.astro';
 import IndexRows from './IndexRows.astro';
@@ -41,7 +41,7 @@ const pairs = (await childEntries(of)).filter(({ page }) => !exclude.includes(pa
 const curated = new Map(extra.map((c) => [c.href, c]));
 const items: CardItem[] = [
   ...pairs.map(({ page, entry }) => curated.get(page.slug) ?? {
-    title: page.name,
+    title: sentenceCase(page.name),
     href: page.slug,
     blurb: entry.data.lede ?? page.description,
   }),

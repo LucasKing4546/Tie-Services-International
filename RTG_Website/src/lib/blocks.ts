@@ -76,6 +76,16 @@ export const isNumericStat = (v: string): boolean => /^[\d,]+[^\d.]*$/.test(v);
 export const statDigits = (v: string): string => (v.match(/^[\d,]+/)?.[0] ?? '').replace(/,/g, '');
 export const statSuffix = (v: string): string => v.replace(/^[\d,]+/, '');
 
+/** A workbook page name ("Geotechnical & Coring Winches") as the site writes
+ *  headings: sentence case, "and" for "&". A word that opens with two
+ *  capitals (ROV, LARS, EU-origin) is an acronym and is left alone. */
+export const sentenceCase = (name: string): string =>
+  name
+    .replace(/ & /g, ' and ')
+    .split(' ')
+    .map((w, i) => (/^[A-Z]{2}/.test(w) ? w : i === 0 ? w[0].toUpperCase() + w.slice(1).toLowerCase() : w.toLowerCase()))
+    .join(' ');
+
 /** A page's closing buttons: its own `cta` block if it has one, otherwise
  *  the hero's buttons again, so a reader at the bottom of a page has the same
  *  two actions the top offered without their being written twice. */

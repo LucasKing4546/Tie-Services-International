@@ -119,9 +119,21 @@ for (const r of rows) {
     : /tensioner|spooler/i.test(name) ? 'E-10'
     : /crane/i.test(name) ? 'E-08' : 'E-09';
 
+  // The datasheet title opens with a rounded load ("7.5 Te WLL") that the
+  // load column states exactly (7.36 Te): publish the measured one only.
+  const shortName = name
+    .replace(/^[\d.]+\s*Te\b\s*(?:WLL\b)?\s*-?\s*/i, '')
+    .replace(/(^|\s-\s)WLL\s-\s/i, '$1')
+    // ...and so is the cable capacity, when the title leads with the same figure
+    .replace(capM ? new RegExp(`^${capM.toLocaleString('en-GB')} m\\s*-\\s*`) : /^$/, '')
+    // sentence case, as the site writes headings; HPU, LARS, kW and the like are left alone
+    .replace(/(?<=\s)[A-Z][a-z]+(?:-[A-Z]?[a-z]+)*/g, (w) => w.toLowerCase())
+    .replace(/-([A-Z])(?=[a-z])/g, (_, c) => `-${c.toLowerCase()}`)
+    .replace(/^./, (c) => c.toUpperCase());
+
   seen.add(code);
   items.push({
-    code, name, type, apps, drive: driveOf(name),
+    code, name: shortName || name, type, apps, drive: driveOf(name),
     wllKg: colKg ?? statedKg,
     capM,
     cap: capText ? (num(capText) ? `${capM.toLocaleString('en-GB')} m` : `${capText.replace(/\s*x\s*/gi, ' × ').replace(/\d{4,}/g, (n) => Number(n).toLocaleString('en-GB'))} m`) : null,
