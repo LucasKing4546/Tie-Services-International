@@ -23,7 +23,13 @@
 }
 
 /* ---------- feature rows: overlap, offsets, caption plate ---------- */
-.frow + .mband{padding-top:0}
+/* On a wide screen the row's photo travels down its section as you scroll and
+   comes to rest flush with the section's bottom edge, so the band under it keeps
+   its own top padding or the two photographs touch. On a narrow screen the row's
+   bottom padding is already the gap. Doubled classes
+   to outrank the .off + .off rule above. */
+.frow.frow + .mband.mband{padding-top:0}
+@media (min-width:901px){.frow.frow + .mband.mband{padding-top:clamp(48px,5vw,72px)}}
 .frow{overflow:visible;position:relative;z-index:1}
 .frow-grid{gap:clamp(40px,6vw,110px)}
 .frow-copy h2{font-size:clamp(28px,3.6vw,52px);letter-spacing:-.04em;line-height:1.02;max-width:14ch}
