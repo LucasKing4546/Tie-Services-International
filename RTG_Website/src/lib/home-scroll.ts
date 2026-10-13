@@ -223,7 +223,9 @@ export function initHome(): void {
   const pinWrap = document.getElementById('tiers');
   const tiers   = [...document.querySelectorAll('.tier')];
   const bars    = [...document.querySelectorAll('.pin-bar i')];
-  if (pinWrap) pinWrap.style.height = (tiers.length * 90) + 'vh';
+  // Under 900px the CSS lists the four tiers one under another, unpinned.
+  function sizePin(){ if (pinWrap) pinWrap.style.height = innerWidth < 900 ? '' : (tiers.length * 90) + 'vh'; }
+  sizePin();
 
   /* horizontal sectors */
   const hzWrap = document.getElementById('sectors');
@@ -242,7 +244,7 @@ export function initHome(): void {
     if (pinWrap) {
       const r = pinWrap.getBoundingClientRect();
       const total = r.height - innerHeight;
-      const p = Math.min(1, Math.max(0, -r.top / total));
+      const p = total > 0 ? Math.min(1, Math.max(0, -r.top / total)) : 1;
       const idx = Math.min(tiers.length - 1, Math.floor(p * tiers.length * 0.999));
       tiers.forEach((t, i) => t.classList.toggle('on', i === idx));
       bars.forEach((b, i) => b.classList.toggle('on', i <= idx));
@@ -265,7 +267,7 @@ export function initHome(): void {
 
   let ticking = false;
   function onScroll(){ poke(); if (!ticking) { ticking = true; requestAnimationFrame(frame); } }
-  function onResize(){ sizeHz(); stages.forEach(v => v.resize()); onScroll(); }
+  function onResize(){ sizePin(); sizeHz(); stages.forEach(v => v.resize()); onScroll(); }
   addEventListener('scroll', onScroll, {passive:true});
   addEventListener('resize', onResize);
   cleanups.push(() => {

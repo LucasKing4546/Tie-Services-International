@@ -4,7 +4,7 @@
    it navy type. The vessel rides inside the waterline, between the back and
    front waves, so the swell laps over its hull. */
 .hero{position:relative;overflow:clip}
-.hero-sky{position:relative;background:var(--sky);padding:clamp(108px,14svh,150px) 0 126px;
+.hero-sky{position:relative;background:var(--sky);padding:clamp(132px,17svh,170px) 0 126px;
   display:flex;align-items:center}
 .hero .d1{max-width:17ch;font-size:clamp(34px,4.7vw,68px);letter-spacing:-.04em}
 .hero .d1 i{font-style:normal;color:var(--accent)}
@@ -80,10 +80,15 @@
   color:rgba(255,255,255,.75);cursor:pointer;transition:all .3s var(--e)}
 .zf-pick button.on{background:var(--red);border-color:var(--red);color:#fff}
 @media (max-width:820px){.zw{height:auto!important}
-  .zs{position:static;height:auto;padding:0 var(--gut)}
+  .zs{height:auto}
   .zf{position:relative!important;left:auto!important;top:auto!important;opacity:1!important;
-    width:auto!important;height:74vh!important;transform:none!important}
-  .zf-in{padding-top:clamp(20px,2.6vw,40px)}}
+    width:auto!important;height:auto!important;transform:none!important;display:flex;flex-direction:column}
+  /* Text, then the model, then its figures: nothing lies on the machine, and
+     the canvas runs edge to edge so the model is not cut by the gutter. */
+  .zf-in{display:contents}
+  .zf-top{order:1;flex-direction:column;align-items:flex-start;gap:16px;padding:clamp(20px,2.6vw,40px) var(--gut) 8px}
+  .zf canvas{order:2;position:relative;inset:auto;height:auto;aspect-ratio:1/1}
+  .zf-bot{order:3;padding:8px var(--gut) 32px}}
 
 /* ---------- statement ---------- */
 .stmt .d2{max-width:19ch}
@@ -140,7 +145,7 @@
 
 /* statement: navy band with photo, glow and grid; tight */
 .stmt{position:relative;overflow:hidden;isolation:isolate;padding:clamp(52px,6vw,92px) 0 clamp(36px,4vw,56px)}
-.stmt-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-3;opacity:.38;
+.stmt-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-3;opacity:.22;
   mask-image:linear-gradient(to bottom,transparent,#000 30%,#000 55%,transparent 96%)}
 .stmt .d2{color:#fff}
 .stmt .lede{color:rgba(255,255,255,.86)}
@@ -254,3 +259,29 @@
 .tier-intro{margin:0 0 22px;color:var(--ink-2);max-width:46ch}
 .service .lede{margin-top:20px;max-width:62ch}
 .tier-h{margin-bottom:12px}
+
+/* ---------- layout fixes from the homepage review ---------- */
+/* A pinned panel is a full screen under a fixed header: keep its heading
+   clear of the bar, and tighten it on a short laptop screen. */
+@media (min-width:901px){.hz-stick{padding-top:82px}}
+@media (min-width:901px) and (max-height:820px){
+  .hz-head{margin-bottom:24px}
+  .scard{min-height:380px}
+  .hz-prog{margin-top:28px}
+  .hero .d1{font-size:clamp(34px,4.1vw,56px)}
+}
+@media (max-width:900px){
+  /* the stacked cards fill the column the heading sits on */
+  .hz-track{width:100%}
+  /* Tiers: no pin on a small screen. Four panels of text do not fit one
+     screen there, so they are listed under the model instead. */
+  #tiers .pin-stick{position:static;height:auto;overflow:visible;display:block;padding:72px 0 56px}
+  #tiers .pin-copy{min-height:0}
+  #tiers .tier{position:static;opacity:1;transform:none;pointer-events:auto;
+    border-top:1px solid var(--rule);padding:22px 0 26px}
+  #tiers .pin-bar{display:none}
+}
+@media (max-width:820px){
+  .zf .spec{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;padding:0}
+  .zf .spec div{padding-right:0}
+}

@@ -59,10 +59,17 @@ html{scrollbar-color:var(--sea-0) var(--sea-2)}
   color:rgba(255,255,255,.78);text-align:right;white-space:nowrap}
 .gauge-read b{display:block;font-size:12.5px;font-weight:500;letter-spacing:0;color:#fff;
   font-variant-numeric:tabular-nums;text-transform:none}
+/* Up to 1560px there is little room beside the content, so the readout
+   drops the section name and shows the metres alone. */
+@media (min-width:901px) and (max-width:1560px){
+  .gauge-read{right:24px;padding:4px 7px}
+  .gauge-read span{display:none}
+}
 @media (max-width:900px){
   .gauge-rail{display:none}
-  /* No rail on a phone, so the readout parks in the corner. */
-  .gauge-read{top:auto;transform:none;right:12px;bottom:12px;padding:7px 11px 8px;min-width:0}
+  /* No rail on a phone, so the readout parks in the corner: the left one,
+     the chat launcher has the right. */
+  .gauge-read{top:auto;transform:none;right:auto;left:12px;bottom:12px;padding:7px 11px 8px;min-width:0}
   .gauge-read span{display:none}
   .gauge-read b{font-size:14px}
 }

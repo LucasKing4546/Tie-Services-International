@@ -121,7 +121,10 @@ const robots = offMap || unfinished ? 'noindex, follow' : 'index, follow, max-im
     {/* Chatra live chat, same ID as production — but nothing third-party
        loads until the visitor presses this button, which is the consent
        (CLAUDE.md §5.4). Hidden without JS, since it can do nothing there. */}
-    <button type="button" class="btn b-navy chat-open" id="chatOpen" hidden>Chat with us</button>
+    <button type="button" class="btn b-navy chat-open" id="chatOpen" hidden>
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z" /></svg>
+      <span>Chat with us</span>
+    </button>
 
     {/* is:inline so Astro ships it verbatim. Listeners are registered once
        (w.__chat) because this markup rides along on every ClientRouter

@@ -2,11 +2,18 @@
    Loaded last; overrides by specificity. Shadows are navy-tinted, two layers. */
 
 /* ---------- header ---------- */
-/* Chat launcher (Base.astro): fixed bottom-left, under the header's z-index.
-   Left, not right: bottom-right is where the homepage showcase and several
-   templates put their own primary button. .btn sets display, so [hidden]
-   has to be restated or it never hides. */
-.chat-open{position:fixed;left:20px;bottom:20px;z-index:300}
+/* Chat launcher (Base.astro): fixed bottom-right, under the header's z-index.
+   A round icon by default so it stays in the page gutter and off the content
+   column; the label only appears once the side margin is wide enough to hold
+   it. .btn sets display, so [hidden] has to be restated or it never hides. */
+.chat-open{position:fixed;right:20px;bottom:20px;z-index:300;gap:10px}
+.chat-open svg{flex:none}
+@media (max-width:1700px){
+  .chat-open{width:48px;height:48px;padding:0;justify-content:center}
+  /* still the button's name for a screen reader */
+  .chat-open span{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+}
+@media (max-width:900px){.chat-open{right:12px;bottom:12px}}
 .chat-open[hidden]{display:none}
 .hdr .hdr-in{min-width:0}
 .hdr .brand{border-radius:10px;transition:transform .3s var(--e),opacity .2s}
@@ -37,7 +44,7 @@
 .mnav-panel .btn{margin-top:8px;}
 
 /* ---------- footer ---------- */
-.ftr{padding:88px 0 30px}
+.ftr{padding:88px 0 84px}
 .ftr-g{grid-template-columns:minmax(0,1.5fr) repeat(3,minmax(0,1fr));gap:48px;margin-bottom:56px}
 .ftr-g > div:first-child{padding:28px;border-radius:20px;background:rgba(255,255,255,.05);
   border:1px solid rgba(255,255,255,.12);align-self:start}
@@ -56,7 +63,7 @@
 .ftr-b a{color:rgba(255,255,255,.85);text-decoration:underline;text-decoration-color:rgba(255,255,255,.3);text-underline-offset:3px;transition:color .2s,text-decoration-color .2s}
 .ftr-b a:hover{color:#fff;text-decoration-color:var(--red)}
 @media (max-width:820px){.ftr-g{grid-template-columns:repeat(2,minmax(0,1fr))}.ftr-g > div:first-child{grid-column:1/-1}}
-@media (max-width:520px){.ftr{padding:64px 0 24px}.ftr-g{grid-template-columns:minmax(0,1fr);gap:32px}}
+@media (max-width:520px){.ftr{padding:64px 0 76px}.ftr-g{grid-template-columns:minmax(0,1fr);gap:32px}}
 
 /* ---------- breadcrumbs ---------- */
 .crumbs ol{gap:6px}

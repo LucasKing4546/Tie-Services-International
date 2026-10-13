@@ -13,7 +13,9 @@ let off: (() => void) | undefined;
 /** Sections taller than the screen that pin their content while scrolled:
  *  the homepage tiers and sector track, and the shared scroll track and
  *  pinned stages once motion.ts has switched them on. */
-const PINNED = '#tiers, #sectors, .strack.on, .pstage.on';
+const PINNED = '.strack.on, .pstage.on';
+/** The homepage tiers and sector track pin by CSS, and only above 900px. */
+const PINNED_WIDE = `#tiers, #sectors, ${PINNED}`;
 
 /** The readout's label for a section: its data-zone if it has one, else its
  *  own first heading, cut to fit the readout. */
@@ -47,7 +49,7 @@ export function initDepth(): void {
     // that scroll is not descent: take it out of both the distance travelled
     // and the total, and the gauge stands still for as long as the page does.
     let held = 0, holdable = 0;
-    for (const el of document.querySelectorAll<HTMLElement>(PINNED)) {
+    for (const el of document.querySelectorAll<HTMLElement>(innerWidth > 900 ? PINNED_WIDE : PINNED)) {
       const extra = el.offsetHeight - innerHeight;
       if (extra <= 0) continue;
       holdable += extra;
