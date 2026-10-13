@@ -1,37 +1,49 @@
 ---
 pageId: "Z-02"
 draft: true
-updated: 2026-10-05
-lede: "This site sets very little. Here is what it does store on your device, what each item is for, and how to refuse it."
+updated: 2026-10-13
+lede: "What this site stores on your device, what each item is for, and how to refuse or change it. Nothing optional is set until you agree."
 ---
 
 ## The short version
 
-This website does not use analytics cookies or advertising cookies. The previous version of the site used Google Analytics. This one does not.
+When you first visit, a notice asks whether you accept cookies. Until you answer, this website loads no analytics and no chat, and sets nothing that is not strictly necessary.
 
-The only third party that stores anything on your device is the live chat window.
+You can change your answer at any time: <a href="/cookies/" data-cookie-settings>open cookie settings</a>. The same link is at the foot of every page.
 
 ## Categories
 
-**Strictly necessary.** Nothing is set by the pages themselves. Fonts, styles and images are served from this site, not from a third party.
+The settings panel groups what this site can store into categories. Strictly necessary items are always on. Everything else is off until you switch it on.
 
-**Functional: live chat.** The chat window is provided by Chatra. It stores a small identifier in your browser so that a conversation continues as you move between pages and when you come back.
+**Strictly necessary.** The record of your own cookie choice, so that we do not ask again on every page. It is kept by OneTrust, the service that provides the notice and the settings panel. Fonts, styles and images are served from this site, not from a third party.
 
-**Analytics.** None.
+**Performance.** Google Analytics. It tells us how many people visit, which pages they read and roughly where they come from. It collects statistical data such as your IP address, operating system and browser. We use it to see trends, not to identify you.
 
-**Marketing.** None.
+**Functional: live chat.** The chat window is provided by Chatra. It keeps a small identifier in your browser so that a conversation continues as you move between pages and when you come back. At present the settings panel has no separate switch for the chat, so it loads only if you choose "Accept All Cookies".
+
+**Targeting.** This website sets none. It carries no advertising and no embedded video.
 
 ## Each item named
 
-| Set by | Name | Purpose | Lasts |
-|---|---|---|---|
-| Chatra live chat | <Gap>RTG to supply: exact cookie and local storage names, checked against the live widget</Gap> | Recognises your browser so a chat conversation continues between pages and visits | <Gap>RTG to supply</Gap> |
+| Category | Set by | Name | Purpose | Lasts |
+|---|---|---|---|---|
+| Strictly necessary | OneTrust | `OptanonConsent` | Records which categories you have accepted | 1 year |
+| Strictly necessary | OneTrust | `OptanonAlertBoxClosed` | Records that you have answered the notice | 1 year |
+| Performance | Google Analytics | `_ga` | Tells one visitor from another | Up to 2 years |
+| Performance | Google Analytics | `_ga_E3LKWVYPMK` | Keeps the state of your visit | Up to 2 years |
+| Functional | Chatra | `Chatra.clientId` (browser storage) | Recognises your browser so a chat conversation continues | Until you clear site data |
+| Functional | Chatra | `Chatra.referrer`, `Chatra.lastPageViewAt` (browser storage) | Tells the person answering which page you came from and when you were last here | Until you clear site data |
+
+<Gap>RTG to confirm on the live address: the OneTrust names and lifetimes above are taken from the OneTrust configuration, and the Chatra items were read on a test address. Both should be checked once the site is on its own domain, where Chatra may also set cookies.</Gap>
 
 ## Changing your mind
 
-The chat window loads only after you press the "Chat with us" button. Until you do, nothing from Chatra is requested or stored. If you never press it, none of the items above are set.
+<a href="/cookies/" data-cookie-settings>Open cookie settings</a> to switch any category on or off. A change takes effect at once for anything not yet loaded, and from the next page for anything already running.
 
-Once you have used the chat you can remove these items yourself. Every browser lets you block third-party storage or clear what a site has stored, and the rest of this website works the same without it. Only the chat window is affected.
+Two other ways to refuse:
+
+- **Google Analytics only.** Google provides a browser add-on that stops Analytics on every website you visit: [Google Analytics opt-out add-on](https://tools.google.com/dlpage/gaoptout).
+- **Everything.** Every browser lets you block or clear what a site has stored. This website works the same without any of it. Only the chat window is affected.
 
 ## More about your data
 

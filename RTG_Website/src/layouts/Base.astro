@@ -3,7 +3,7 @@
 // meta, canonical, Open Graph, JSON-LD) from the page's Page Map entry, so
 // it can never drift from the workbook. Templates supply body content only.
 import { ClientRouter } from 'astro:transitions';
-import { SITE } from '@data/site.js';
+import { SITE, CONSENT } from '@data/site.js';
 import { absolute, ogImageFor, buildJsonLd } from '@lib/seo';
 import { resolvePage } from '@lib/page';
 import { entryFor, UNFINISHED } from '@lib/content';
@@ -91,6 +91,92 @@ const robots = offMap || unfinished ? 'noindex, follow' : 'index, follow, max-im
 
     <ClientRouter />
 
+    {/* Cookie consent (CLAUDE.md §5.4). OneTrust shows the banner and the
+       settings panel; nothing else third-party loads until the visitor has
+       agreed to its category. OneTrust calls OptanonWrapper() once it has
+       loaded and again after every change of choice, so that one function
+       is the only place analytics and the chat are ever started:
+         Performance (C0002) -> Google Analytics
+         Functional  (C0003) -> Chatra, whose own "Message us" button is
+                                the site's only chat control
+       Each is started at most once (w.__ga, w.ChatraID): these scripts ride
+       along on every ClientRouter navigation and the services persist
+       across them. Withdrawing Performance sets Google's own kill switch so
+       no further hits are sent; the script itself is gone on the next full
+       load. is:inline (implied by define:vars) so Astro ships it verbatim. */}
+    <script define:vars={{ consent: CONSENT }}>
+      (function (d, w) {
+        w.OptanonWrapper = function () {
+          var groups = w.OnetrustActiveGroups || '';
+          var performance = groups.indexOf(consent.performance) > -1;
+          // The chat is Functional. The OneTrust configuration lists nothing
+          // under that category yet, and OneTrust does not offer a category
+          // with nothing in it, so until Chatra is added there in the
+          // OneTrust dashboard the chat counts as agreed only when every
+          // optional category that IS offered has been switched on, which is
+          // what "Accept All Cookies" does. Once Functional is offered, it
+          // alone decides.
+          var data = w.OneTrust && w.OneTrust.GetDomainData ? w.OneTrust.GetDomainData() : { Groups: [] };
+          var offered = data.Groups.filter(function (g) {
+            return g.Status !== 'always active' && ((g.FirstPartyCookies || []).length || (g.Hosts || []).length);
+          }).map(function (g) { return g.OptanonGroupId; });
+          var functional = offered.indexOf(consent.functional) > -1
+            ? groups.indexOf(consent.functional) > -1
+            : offered.length > 0 && offered.every(function (id) { return groups.indexOf(id) > -1; });
+
+          w['ga-disable-' + consent.analytics] = !performance;
+          if (performance && !w.__ga) {
+            w.__ga = true;
+            w.dataLayer = w.dataLayer || [];
+            w.gtag = function () { w.dataLayer.push(arguments); };
+            w.gtag('js', new Date());
+            w.gtag('config', consent.analytics);
+            var g = d.createElement('script');
+            g.async = true;
+            g.src = 'https://www.googletagmanager.com/gtag/js?id=' + consent.analytics;
+            d.head.appendChild(g);
+          }
+
+          if (functional && !w.ChatraID) {
+            w.ChatraID = consent.chatra;
+            w.Chatra = w.Chatra || function () { (w.Chatra.q = w.Chatra.q || []).push(arguments); };
+            var c = d.createElement('script');
+            c.async = true;
+            c.src = 'https://call.chatra.io/chatra.js';
+            d.head.appendChild(c);
+          }
+        };
+
+        // "Cookie settings" links (footer, cookie policy) open OneTrust's
+        // panel. Delegated, because the footer is replaced on every
+        // navigation. Until OneTrust has loaded, or if it is blocked, the
+        // link simply goes to the cookie policy it points at.
+        if (w.__cookieSettings) return;
+        w.__cookieSettings = true;
+        // OneTrust and Chatra put their own elements at the end of <body>,
+        // and a ClientRouter navigation replaces the body: carry them over,
+        // or the banner, the settings panel and the chat vanish on the
+        // first click through the site.
+        d.addEventListener('astro:before-swap', function (e) {
+          d.querySelectorAll('#onetrust-consent-sdk, [id^="chatra"]').forEach(function (el) {
+            if (el.parentElement === d.body) e.newDocument.body.appendChild(el);
+          });
+          // ...and the stylesheets they injected into <head>, which the
+          // router would otherwise drop, leaving the panel as bare text.
+          d.head.querySelectorAll('style[id^="onetrust"], style[id*="hatra"], style[class*="hatra"]').forEach(function (el) {
+            e.newDocument.head.appendChild(el);
+          });
+        });
+        d.addEventListener('click', function (e) {
+          var link = e.target.closest && e.target.closest('[data-cookie-settings]');
+          if (!link || !w.OneTrust || !w.OneTrust.ToggleInfoDisplay) return;
+          e.preventDefault();
+          w.OneTrust.ToggleInfoDisplay();
+        });
+      })(document, window);
+    </script>
+    <script is:inline src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" data-domain-script={CONSENT.oneTrust}></script>
+
     <slot name="head" />
   </head>
 
@@ -118,24 +204,5 @@ const robots = offMap || unfinished ? 'noindex, follow' : 'index, follow, max-im
       document.addEventListener('astro:page-load', initDepth);
     </script>
 
-    {/* Chatra live chat, same ID as production. Its own "Message us" button
-       is the only chat control: the site owner asked on 2026-10-13 for our
-       separate launcher to go, so the script now loads with the page rather
-       than on a click. That makes it a third party loaded before consent
-       (CLAUDE.md §5.4), which a consent banner has to cover before launch.
-       is:inline so Astro ships it verbatim; w.ChatraID guards against a
-       second load, since this markup rides along on every ClientRouter
-       navigation and the widget persists across them. */}
-    <script is:inline>
-      (function (d, w, c) {
-        if (w.ChatraID) return;
-        w.ChatraID = 'iraKxKmohhNY38Mu9';
-        var s = d.createElement('script');
-        w[c] = w[c] || function () { (w[c].q = w[c].q || []).push(arguments); };
-        s.async = true;
-        s.src = 'https://call.chatra.io/chatra.js';
-        d.head.appendChild(s);
-      })(document, window, 'Chatra');
-    </script>
   </body>
 </html>

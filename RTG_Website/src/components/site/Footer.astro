@@ -27,7 +27,11 @@ const year = new Date().getFullYear();
     </div>
     <div class="ftr-b">
       <span>© {year} {SITE.name}. All drawings and technical publications remain our copyright.</span>
-      <span>{LEGAL_NAV.map((l, i) => <>{i > 0 && ' · '}<a href={l.href}>{l.label}</a></>)}</span>
+      <span>
+        {LEGAL_NAV.map((l, i) => <>{i > 0 && ' · '}<a href={l.href}>{l.label}</a></>)}
+        {/* opens OneTrust's panel (Base.astro); goes to the cookie policy if it cannot */}
+        {' · '}<a href="/cookies/" data-cookie-settings>Cookie settings</a>
+      </span>
     </div>
   </div>
 </footer>

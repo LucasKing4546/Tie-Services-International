@@ -57,6 +57,18 @@ export const FOOTER_NAV = [
   },
 ];
 
+/** Consent and the two services it holds back. The same accounts the legacy
+ *  site uses, so analytics history and the OneTrust configuration carry
+ *  over. OneTrust's category ids are fixed by that configuration:
+ *  C0002 Performance, C0003 Functional. */
+export const CONSENT = {
+  oneTrust: '413a8916-90f2-4a76-a336-3f3839d743d3',
+  analytics: 'G-E3LKWVYPMK',
+  chatra: 'iraKxKmohhNY38Mu9',
+  performance: 'C0002',
+  functional: 'C0003',
+};
+
 export const LEGAL_NAV = [
   { label: 'Privacy', href: '/privacy/' },
   { label: 'Cookies', href: '/cookies/' },

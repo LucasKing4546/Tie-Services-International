@@ -242,13 +242,18 @@ These are real and unresolved. Flag them; do not invent content to fill them.
 3. **Gated documents are not built.** Datasheets must be generated on request,
    watermarked per recipient with a unique serial, rasterised, metadata
    stripped, and delivered by a short-lived signed URL. Never a static file path.
-4. **Consent management.** Analytics must be genuinely withheld until consent,
-   not merely declared to be. UK and EU GDPR both apply. The Chatra chat
-   script is the only third party. Since 2026-10-13, on the site owner's
-   instruction, it loads with every page so that its own "Message us" button
-   is the only chat control (`Base.astro`); before that it loaded only on a
-   click. It is therefore a third party loaded before consent, and there is
-   still no consent banner: one must cover it before launch.
+4. **Consent management.** Built on RTG's existing OneTrust account (decided by
+   the site owner on 2026-10-13). `Base.astro` loads the OneTrust stub and one
+   `OptanonWrapper()` function that is the only place third parties start:
+   Google Analytics on the Performance category, the Chatra chat on Functional.
+   Nothing but OneTrust itself loads before a choice. Ids are in `CONSENT`
+   (`src/data/site.js`). Still open, all outside the code: the OneTrust
+   configuration has nothing under Functional, so OneTrust does not offer that
+   category and the chat falls back to "every offered category accepted" until
+   Chatra is added there; the banner has no "Reject all" button; the cookie
+   names in the cookie policy (Z-02) need checking on the live domain, because
+   OneTrust's cookies are bound to romicatiegroup.com and cannot be set on a
+   test address (so a choice is not remembered between page loads locally).
 5a. **No security headers.** The host is undecided (not Vercel), so no
    `Content-Security-Policy`, `frame-ancestors` or `X-Content-Type-Options`
    is set anywhere. They have to be configured on whichever host is chosen.

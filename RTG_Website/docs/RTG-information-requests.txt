@@ -62,6 +62,6 @@ D10. Company text: the canonical web address (romicatiegroup.com vs the older Ro
 E. THINGS THE WEBSITE DOES NOT YET DO (FOR RTG TO DECIDE)
 
 E1. Datasheet requests: the site has no form backend, CRM or email alert yet. Where should enquiries go, and who answers them?
-E2. Consent management for analytics and the chat widget is not built.
+E2. Cookie consent now runs through your existing OneTrust account. Someone with the OneTrust login needs to: add the Chatra chat to the "Functional" category (until then the chat only loads when a visitor accepts all cookies); switch on a "Reject all" button, since UK and EU guidance expects refusing to be as easy as accepting; and re-scan the site once it is live so the cookie list in the pop-up is right.
 E3. Fonts are loaded from Google and should be self-hosted before launch.
-E4. The old .php web addresses need a redirect map checked before and after launch.
+E4. The old .php web addresses need a redirect map checked before and after launch. It must include /legal-and-privacy.php, which should go to /terms/.
