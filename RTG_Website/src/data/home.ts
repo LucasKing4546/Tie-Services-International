@@ -33,11 +33,13 @@ export const STORY = {
 
 export const CONDITIONS = {
   heading: 'Engineered for offshore conditions',
+  /** `lead` is the figure or term the line turns on, set large beside it;
+   *  `text` is the copy document's sentence, unchanged. */
   points: [
-    'A-frames rated to 3.9 m significant wave height',
-    'Spring-applied fail-safe brakes: minimum 1.5 × WLL on winches, 1.8 × SWL on tensioners',
-    'Lebus grooved drums and controlled level wind as standard',
-    'Every machine proof load, brake, render and speed tested before dispatch; class witness on request',
+    { lead: '3.9 m Hs', text: 'A-frames rated to 3.9 m significant wave height' },
+    { lead: '1.5 × WLL', text: 'Spring-applied fail-safe brakes: minimum 1.5 × WLL on winches, 1.8 × SWL on tensioners' },
+    { lead: 'Lebus drums', text: 'Lebus grooved drums and controlled level wind as standard' },
+    { lead: 'Proof loaded', text: 'Every machine proof load, brake, render and speed tested before dispatch; class witness on request' },
   ],
 };
 

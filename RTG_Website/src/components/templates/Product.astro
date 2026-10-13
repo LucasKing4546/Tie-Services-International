@@ -126,8 +126,8 @@ const datasheetHref = datasheetPage ? `${datasheetPage.slug}?equipment=${encodeU
 
   {datasheetHref && data.specs.length > 0 && (
     <div class="req-bar" data-req-bar hidden>
-      <span>Full specification, sent to you by name.</span>
-      <a class="btn b-navy" href={datasheetHref}>Request the datasheet →</a>
+      <span>Full specification, sent to you by name</span>
+      <a class="btn b-navy" href={datasheetHref}>Request the datasheet <span aria-hidden="true">→</span></a>
     </div>
   )}
 
@@ -154,17 +154,21 @@ const datasheetHref = datasheetPage ? `${datasheetPage.slug}?equipment=${encodeU
   .cfg-nav a { display: inline-block; padding: 8px 16px; border: 1px solid var(--rule); border-radius: 999px; color:var(--ink); text-decoration: none; font-size: 14px; }
   .cfg-nav a:hover { border-color:var(--ink); }
   .frow[id^="config-"] { scroll-margin-top: 96px; }
-  .req-bar { position: fixed; inset: auto 0 0 0; z-index: 350; display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; padding: 10px 16px; background:var(--sea-2); border-top: 1px solid var(--rule); color:var(--ink); font-size: 14px; }
+  /* A pill docked bottom centre, sized to its content: it must not cost the
+     page a band of its height, and it leaves the corners to the chat
+     launcher and the depth readout. */
+  .req-bar { position: fixed; left: 50%; bottom: 16px; translate: -50% 0; z-index: 350; display: flex; align-items: center; gap: 14px; padding: 5px 5px 5px 18px; border-radius: 100px; background:var(--sea-2); border: 1px solid var(--rule); color:var(--ink-2); font-size: 13px; white-space: nowrap; }
+  .req-bar .btn { padding: 9px 16px; font-size: 13px; gap: 6px; min-height: 0; }
   .req-bar[hidden] { display: none; }
-  @media (max-width: 700px) { .req-bar span { display: none; } }
+  @media (max-width: 700px) { .req-bar { padding: 5px; bottom: 12px; } .req-bar > span { display: none; } }
   @media (prefers-reduced-motion: no-preference) {
     .req-bar { animation: req-in .25s ease-out; }
-    @keyframes req-in { from { transform: translateY(100%); } }
+    @keyframes req-in { from { translate: -50% 160%; } }
   }
 </style>
 
 <script>
-  // No JS = the bar stays hidden. Shown once the first spec table has entered
+  // No JS = the pill stays hidden. Shown once the first spec table has entered
   // the viewport, and stays shown after that.
   const init = () => {
     const bar = document.querySelector<HTMLElement>('[data-req-bar]');
@@ -173,7 +177,6 @@ const datasheetHref = datasheetPage ? `${datasheetPage.slug}?equipment=${encodeU
     const io = new IntersectionObserver((es) => {
       if (es.some((e) => e.isIntersecting)) {
         bar.hidden = false;
-        document.body.style.paddingBottom = `${bar.offsetHeight}px`;
         io.disconnect();
       }
     });

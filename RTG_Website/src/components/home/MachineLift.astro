@@ -5,10 +5,10 @@ import { CONDITIONS, MACHINES } from '@data/home';
 const first = MACHINES[0];
 ---
 <section data-zone="Engineering" class="sec sm cond">
-  <div class="wrap">
+  <div class="wrap cond-in">
     <h2 class="d2"><span class="rl"><span>{CONDITIONS.heading}</span></span></h2>
     <ul class="cond-list stag">
-      {CONDITIONS.points.map((p) => <li>{p}</li>)}
+      {CONDITIONS.points.map((p) => <li><b>{p.lead}</b><span>{p.text}</span></li>)}
     </ul>
   </div>
 </section>

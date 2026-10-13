@@ -98,9 +98,6 @@ html{scrollbar-color:var(--sea-0) var(--sea-2)}
 /* Section labels above a heading repeat the heading. */
 .sechd > .mono,.frow-copy > .mono,.tier-eyebrow,.hz-head .mono,.strack-head .mono,.pstage-head .mono{display:none}
 
-/* Fixed controls give way to the product page's request bar. */
-body:has(.req-bar:not([hidden])) .chat-open{bottom:76px}
-@media (max-width:900px){body:has(.req-bar:not([hidden])) .gauge-read{bottom:76px}}
 
 /* Spec tables: hairlines only, so the caption and body read as one table. */
 table.spec{border:0;border-radius:0;background:none;overflow:visible}

@@ -245,14 +245,21 @@
 .stmt-side h3{font-size:clamp(20px,1.8vw,26px)}
 .stmt-side p{margin:12px 0 18px;color:var(--ink-2);max-width:44ch}
 
-/* ---------- engineered for offshore conditions ---------- */
+/* ---------- engineered for offshore conditions ----------
+   The heading on the left, the four points as a ruled register on the right,
+   each led by the figure it turns on. It introduces the showroom below, so
+   it carries no bottom padding of its own. */
 .cond{padding-bottom:0}
-.cond .d2{max-width:16ch}
-.cond-list{list-style:none;margin:clamp(26px,3vw,44px) 0 0;padding:0;display:grid;
-  grid-template-columns:repeat(4,minmax(0,1fr));gap:0 clamp(20px,2.4vw,36px)}
-.cond-list li{border-top:1px solid var(--rule);padding-top:16px;font-size:16px;line-height:1.45}
-@media (max-width:900px){.cond-list{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:22px}}
-@media (max-width:520px){.cond-list{grid-template-columns:minmax(0,1fr)}}
+.cond-in{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(32px,6vw,96px);align-items:start}
+.cond .d2{max-width:12ch}
+.cond-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
+.cond-list li{display:grid;grid-template-columns:minmax(0,11.5rem) minmax(0,1fr);gap:8px 24px;align-items:baseline;
+  padding:18px 0 20px;border-bottom:1px solid var(--rule)}
+.cond-list b{font-family:var(--f-d);font-weight:800;font-size:clamp(20px,1.9vw,26px);letter-spacing:-.03em;
+  line-height:1.15;color:var(--ink);white-space:nowrap}
+.cond-list span{font-size:16px;line-height:1.5;color:var(--ink-2)}
+@media (max-width:900px){.cond-in{grid-template-columns:minmax(0,1fr);gap:26px}.cond .d2{max-width:16ch}}
+@media (max-width:520px){.cond-list li{grid-template-columns:minmax(0,1fr)}}
 
 /* ---------- sectors head, tiers intro, service ---------- */
 .hz-head h2{max-width:none}
