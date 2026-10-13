@@ -17,6 +17,11 @@ const PINNED = '.strack.on, .pstage.on';
 /** The homepage tiers and sector track pin by CSS, and only above 900px. */
 const PINNED_WIDE = `#tiers, #sectors, ${PINNED}`;
 
+/** Metres of water per pixel of descent. The homepage on a desktop is about
+ *  6,000 px of real descent, which makes it the full scale; a shorter page
+ *  bottoms out proportionally shallower. */
+const METRES_PER_PX = 0.5;
+
 /** The readout's label for a section: its data-zone if it has one, else its
  *  own first heading, cut to fit the readout. */
 export function zoneOf(el: HTMLElement): string {
@@ -68,10 +73,13 @@ export function initDepth(): void {
     }
     const span = document.documentElement.scrollHeight - innerHeight - holdable;
     const p = span > 0 ? Math.min(1, Math.max(0, (scrollY - held) / span)) : 0;
-    gauge.style.setProperty('--depth', p.toFixed(4));
+    // How deep this page goes: its own length, never past the proven depth.
+    const floor = Math.min(max, Math.round((Math.max(0, span) * METRES_PER_PX) / 10) * 10);
+    // The rail is the full scale, so on a short page the bob stops part way.
+    gauge.style.setProperty('--depth', (max > 0 ? (p * floor) / max : 0).toFixed(4));
     // Squared, so the shallow water gets a fair share of the page instead of
     // the first 200 m flashing past in the first few percent of scroll.
-    const m = p >= 1 ? max : Math.round((max * p * p) / 10) * 10;
+    const m = p >= 1 ? floor : Math.round((floor * p * p) / 10) * 10;
     metres.textContent = `${m.toLocaleString('en-GB')} m`;
     // The section under the middle of the screen; at the very bottom that is
     // always the last one, however short it is.
