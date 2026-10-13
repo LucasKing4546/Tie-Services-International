@@ -17,8 +17,13 @@ units for offshore research, hydrographic survey and geotechnical vessels.
   deck machinery since 1978; Romica Tie Group itself dates from 2003.
 - **Copy source:** `RTG_Website_Copy_Concise.docx` (Draft 1, October 2026) is the
   text for 52 of the 70 pages. Where it contradicts itself on a figure, the lower,
-  datasheet-backed value is used: winches 240 kg to 30 t, LARS 20 to 40 Te, survey
-  300 to 4,000 m, and "since 1978" rather than "50 years".
+  datasheet-backed value is used: survey 300 to 4,000 m, and "since 1978" rather
+  than "50 years".
+- **Equipment figures:** `src/data/equipment.ts` is generated from RTG's datasheet
+  index workbook (`npm run equipment -- "<path>"`) and feeds the finder on the
+  Equipment hub. The workbook holds client names, costs and component makes and
+  is never committed. The headline ranges follow it: winches 240 kg to 48 t,
+  A-frames 5 to 40 Te (decided by the site owner on 2026-10-13).
 - Replaces a legacy PHP site that has no meta descriptions, no canonicals, no
   structured data, three `<h1>` elements on the homepage and a sitemap pointing
   at the wrong host over the wrong protocol.
@@ -184,6 +189,7 @@ npm run build      # static build to dist/, then both audits — a failed audit 
 npm run strip-exif # remove camera metadata (GPS, device) from photos — run after adding any image
 npm run check      # astro + TypeScript diagnostics
 npm run pagemap    # regenerate src/data/pages.ts from the workbook
+npm run equipment -- "<workbook>"  # regenerate src/data/equipment.ts from the datasheet index
 npm run audit      # SEO + content-protection gates — must pass before deploy
 ```
 

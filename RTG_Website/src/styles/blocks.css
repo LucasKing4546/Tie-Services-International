@@ -835,3 +835,39 @@ table.spec .gap{text-transform:uppercase;letter-spacing:.1em;font-size:.8em}
 .prose.lists ul,.prose.lists ol,.prose.lists p,.prose.lists li{break-inside:avoid}
 .prose.lists p,.prose.lists ul{font-size:16px}
 @media (max-width:900px){.prose.lists{columns:1}}
+
+/* ---------- equipment finder (EquipmentFinder.astro) ----------
+   Filter bar over a ruled spec list. Controls reuse .field; rows follow the
+   index-rows register rather than cards. */
+.finder-bar{display:grid;grid-template-columns:minmax(0,1fr);gap:22px;margin-bottom:28px}
+.finder-bar[hidden],.finder-list li[hidden],.finder [data-more][hidden]{display:none}
+.finder-bar .field{max-width:520px}
+.finder-group{border:0;margin:0;padding:0;min-width:0}
+.finder-group legend{font-family:var(--f-m);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-2);padding:0;margin-bottom:10px}
+.finder-chips{display:flex;flex-wrap:wrap;gap:8px}
+.finder-chip{font-family:var(--f-b);font-size:14px;color:var(--ink);background:transparent;
+  border:1px solid var(--rule);border-radius:100px;padding:9px 16px;min-height:44px;cursor:pointer}
+.finder-chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--on-ink)}
+.finder-chip:focus-visible,.finder-links a:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.finder-ranges{display:grid;grid-template-columns:repeat(2,minmax(0,260px));gap:18px}
+.finder-count{margin:0 0 14px}
+.finder-list{list-style:none;margin:0 0 28px;padding:0;border-top:1px solid var(--rule)}
+.finder-list li{display:grid;grid-template-columns:72px minmax(0,2fr) repeat(3,minmax(0,.8fr)) minmax(0,1.1fr);
+  gap:18px;align-items:baseline;padding:18px 0;border-bottom:1px solid var(--rule)}
+.finder-code{color:var(--ink)}
+.finder-name{font-family:var(--f-d);font-weight:700;font-size:17px;letter-spacing:-.015em;line-height:1.25;color:var(--ink)}
+.finder-fig{font-family:var(--f-m);font-size:14px;color:var(--ink)}
+.finder-name small,.finder-fig small{display:block;margin-top:4px;font-family:var(--f-b);font-weight:400;
+  font-size:12.5px;letter-spacing:0;color:var(--ink-2)}
+.finder-links{display:flex;flex-direction:column;gap:6px;font-size:14px;justify-self:end;text-align:right}
+.finder-links a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+.finder-links a + a{color:var(--ink-2)}
+.finder-empty{color:var(--ink-2);margin:0 0 28px}
+.finder-empty a{color:var(--ink)}
+@media (max-width:900px){
+  .finder-list li{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px 16px}
+  .finder-code,.finder-name,.finder-links{grid-column:1/-1}
+  .finder-links{flex-direction:row;gap:18px;justify-self:start;text-align:left}
+  .finder-ranges{grid-template-columns:1fr 1fr}
+}

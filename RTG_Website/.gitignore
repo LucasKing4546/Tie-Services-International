@@ -13,3 +13,6 @@ graphify-out/20*/
 .vercel
 .env*
 .impeccable/review/
+
+# RTG datasheet index workbook: holds client names and costs, never commit
+*Build History*.xlsx

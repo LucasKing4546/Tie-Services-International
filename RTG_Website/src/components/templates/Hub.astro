@@ -12,6 +12,9 @@
  * ChildCards' `extra` prop rather than a second, disconnected one. A card
  * naming one of the hub's own children rewords that child's row instead
  * (E-00's family rows carry the range figures).
+ *
+ * E-00 alone also carries the equipment finder, the "link to selector"
+ * block in its workbook row.
  */
 import { render } from 'astro:content';
 import { childrenOf, type PageMeta } from '@data/pages';
@@ -23,6 +26,7 @@ import PageHero from '@components/blocks/PageHero.astro';
 import Section from '@components/blocks/Section.astro';
 import Prose from '@components/blocks/Prose.astro';
 import ChildCards from '@components/blocks/ChildCards.astro';
+import EquipmentFinder from '@components/blocks/EquipmentFinder.astro';
 import FeatureRow from '@components/blocks/FeatureRow.astro';
 import Skeleton from '@components/blocks/Skeleton.astro';
 import PageEnding from '@components/blocks/PageEnding.astro';
@@ -114,6 +118,8 @@ const jsonLdPage =
       label={`Pages under ${page.h1}`}
     />
   )}
+
+  {page.id === 'E-00' && <EquipmentFinder />}
 
   {data.draft && !hasBody(entry) && (
     <Skeleton label="Section introduction" kind="copy" count={4} />

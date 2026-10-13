@@ -225,6 +225,58 @@
       "source_location": "L52"
     },
     {
+      "id": "src_data_equipment_equipmentapp",
+      "label": "EquipmentApp",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 113,
+      "community_name": "equipment.ts",
+      "file_type": "code",
+      "norm_label": "equipmentapp",
+      "source_file": "src/data/equipment.ts",
+      "source_location": "L5"
+    },
+    {
+      "id": "src_data_equipment_equipmentdrive",
+      "label": "EquipmentDrive",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 113,
+      "community_name": "equipment.ts",
+      "file_type": "code",
+      "norm_label": "equipmentdrive",
+      "source_file": "src/data/equipment.ts",
+      "source_location": "L6"
+    },
+    {
+      "id": "src_data_equipment_equipmentitem",
+      "label": "EquipmentItem",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 113,
+      "community_name": "equipment.ts",
+      "file_type": "code",
+      "norm_label": "equipmentitem",
+      "source_file": "src/data/equipment.ts",
+      "source_location": "L8"
+    },
+    {
+      "id": "src_data_equipment_equipmenttype",
+      "label": "EquipmentType",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 113,
+      "community_name": "equipment.ts",
+      "file_type": "code",
+      "norm_label": "equipmenttype",
+      "source_file": "src/data/equipment.ts",
+      "source_location": "L4"
+    },
+    {
       "id": "src_lib_home_scroll_machine",
       "label": "Machine",
       "_callable": true,
@@ -822,12 +874,96 @@
       "source_location": "L162"
     },
     {
+      "id": "scripts_build_equipment_driveof",
+      "label": "driveOf()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "build-equipment.mjs",
+      "file_type": "code",
+      "norm_label": "driveof()",
+      "source_file": "scripts/build-equipment.mjs",
+      "source_location": "L67"
+    },
+    {
+      "id": "scripts_build_equipment_num",
+      "label": "num()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "build-equipment.mjs",
+      "file_type": "code",
+      "norm_label": "num()",
+      "source_file": "scripts/build-equipment.mjs",
+      "source_location": "L53"
+    },
+    {
+      "id": "scripts_build_equipment_numbersin",
+      "label": "numbersIn()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "build-equipment.mjs",
+      "file_type": "code",
+      "norm_label": "numbersin()",
+      "source_file": "scripts/build-equipment.mjs",
+      "source_location": "L54"
+    },
+    {
+      "id": "scripts_build_equipment_range",
+      "label": "range()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "build-equipment.mjs",
+      "file_type": "code",
+      "norm_label": "range()",
+      "source_file": "scripts/build-equipment.mjs",
+      "source_location": "L138"
+    },
+    {
+      "id": "scripts_build_equipment_text",
+      "label": "text()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "build-equipment.mjs",
+      "file_type": "code",
+      "norm_label": "text()",
+      "source_file": "scripts/build-equipment.mjs",
+      "source_location": "L52"
+    },
+    {
+      "id": "scripts_build_equipment_typeof",
+      "label": "typeOf()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "build-equipment.mjs",
+      "file_type": "code",
+      "norm_label": "typeof()",
+      "source_file": "scripts/build-equipment.mjs",
+      "source_location": "L59"
+    },
+    {
+      "id": "scripts_build_equipment_within",
+      "label": "within()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "build-equipment.mjs",
+      "file_type": "code",
+      "norm_label": "within()",
+      "source_file": "scripts/build-equipment.mjs",
+      "source_location": "L57"
+    },
+    {
       "id": "scripts_strip_exif_walk",
       "label": "walk()",
       "_callable": true,
       "_origin": "ast",
-      "community": 20,
-      "community_name": "strip-exif.mjs",
+      "community": 21,
+      "community_name": "gen-stubs.mjs",
       "file_type": "code",
       "norm_label": "walk()",
       "source_file": "scripts/strip-exif.mjs",
@@ -1567,6 +1703,17 @@
       "source_location": "L1"
     },
     {
+      "id": "src_components_blocks_equipmentfinder",
+      "label": "EquipmentFinder.astro",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "blocks.ts",
+      "file_type": "code",
+      "norm_label": "equipmentfinder.astro",
+      "source_file": "src/components/blocks/EquipmentFinder.astro",
+      "source_location": "L1"
+    },
+    {
       "id": "src_components_blocks_faq",
       "label": "Faq.astro",
       "_origin": "ast",
@@ -1949,7 +2096,7 @@
       "file_type": "code",
       "norm_label": "children",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L40"
+      "source_location": "L44"
     },
     {
       "id": "src_components_templates_hub_extracards",
@@ -1960,7 +2107,7 @@
       "file_type": "code",
       "norm_label": "extracards",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L41"
+      "source_location": "L45"
     },
     {
       "id": "src_components_templates_hub_griditems",
@@ -1971,7 +2118,7 @@
       "file_type": "code",
       "norm_label": "griditems",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L59"
+      "source_location": "L63"
     },
     {
       "id": "src_components_templates_ladder",
@@ -2477,7 +2624,7 @@
       "file_type": "concept",
       "norm_label": "xlsx",
       "source_file": "package.json",
-      "source_location": "L31"
+      "source_location": "L32"
     },
     {
       "id": "agents_skills_design_taste_frontend_skill_10_reference_vocabulary_pattern_names_the_agent_should_know",
@@ -2600,66 +2747,6 @@
       "source_location": "L757"
     },
     {
-      "id": "agents_skills_design_taste_frontend_skill_0_a_read_these_signals_first",
-      "label": "0.A Read these signals first",
-      "_origin": "ast",
-      "community": 101,
-      "community_name": "tasteskill: Anti-Slop Frontend Skill",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "0.a read these signals first",
-      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
-      "source_location": "L17"
-    },
-    {
-      "id": "agents_skills_design_taste_frontend_skill_0_b_output_a_one_line_design_read_before_generating",
-      "label": "0.B Output a one-line \"Design Read\" before generating",
-      "_origin": "ast",
-      "community": 101,
-      "community_name": "tasteskill: Anti-Slop Frontend Skill",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "0.b output a one-line \"design read\" before generating",
-      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
-      "source_location": "L25"
-    },
-    {
-      "id": "agents_skills_design_taste_frontend_skill_0_brief_inference_read_the_room_before_anything_else",
-      "label": "0. BRIEF INFERENCE (Read the Room Before Anything Else)",
-      "_origin": "ast",
-      "community": 101,
-      "community_name": "tasteskill: Anti-Slop Frontend Skill",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "0. brief inference (read the room before anything else)",
-      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
-      "source_location": "L13"
-    },
-    {
-      "id": "agents_skills_design_taste_frontend_skill_0_c_if_the_brief_is_ambiguous_ask_one_question_do_not_guess",
-      "label": "0.C If the brief is ambiguous, ask one question, do not guess",
-      "_origin": "ast",
-      "community": 101,
-      "community_name": "tasteskill: Anti-Slop Frontend Skill",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "0.c if the brief is ambiguous, ask one question, do not guess",
-      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
-      "source_location": "L33"
-    },
-    {
-      "id": "agents_skills_design_taste_frontend_skill_0_d_anti_default_discipline",
-      "label": "0.D Anti-Default Discipline",
-      "_origin": "ast",
-      "community": 101,
-      "community_name": "tasteskill: Anti-Slop Frontend Skill",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "0.d anti-default discipline",
-      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
-      "source_location": "L38"
-    },
-    {
       "id": "agents_skills_design_taste_frontend_skill_13_out_of_scope",
       "label": "13. OUT OF SCOPE",
       "_origin": "ast",
@@ -2682,6 +2769,54 @@
       "norm_label": "14. final pre-flight check",
       "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
       "source_location": "L910"
+    },
+    {
+      "id": "agents_skills_design_taste_frontend_skill_1_a_dial_inference_design_read_dial_values",
+      "label": "1.A Dial Inference (design read \u2192 dial values)",
+      "_origin": "ast",
+      "community": 101,
+      "community_name": "tasteskill: Anti-Slop Frontend Skill",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "1.a dial inference (design read \u2192 dial values)",
+      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
+      "source_location": "L53"
+    },
+    {
+      "id": "agents_skills_design_taste_frontend_skill_1_b_use_case_presets",
+      "label": "1.B Use-Case Presets",
+      "_origin": "ast",
+      "community": 101,
+      "community_name": "tasteskill: Anti-Slop Frontend Skill",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "1.b use-case presets",
+      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
+      "source_location": "L64"
+    },
+    {
+      "id": "agents_skills_design_taste_frontend_skill_1_c_how_the_dials_drive_output",
+      "label": "1.C How the Dials Drive Output",
+      "_origin": "ast",
+      "community": 101,
+      "community_name": "tasteskill: Anti-Slop Frontend Skill",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "1.c how the dials drive output",
+      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
+      "source_location": "L77"
+    },
+    {
+      "id": "agents_skills_design_taste_frontend_skill_1_the_three_dials_core_configuration",
+      "label": "1. THE THREE DIALS (Core Configuration)",
+      "_origin": "ast",
+      "community": 101,
+      "community_name": "tasteskill: Anti-Slop Frontend Skill",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "1. the three dials (core configuration)",
+      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
+      "source_location": "L43"
     },
     {
       "id": "agents_skills_design_taste_frontend_skill_2_a_when_to_reach_for_a_real_design_system_use_official_packages",
@@ -2795,7 +2930,7 @@
       "file_type": "concept",
       "norm_label": "@astrojs/mdx",
       "source_file": "package.json",
-      "source_location": "L19"
+      "source_location": "L20"
     },
     {
       "id": "ref_astrojs_sitemap",
@@ -2806,7 +2941,7 @@
       "file_type": "concept",
       "norm_label": "@astrojs/sitemap",
       "source_file": "package.json",
-      "source_location": "L20"
+      "source_location": "L21"
     },
     {
       "id": "agents_skills_design_taste_frontend_skill_9_a_visual_css",
@@ -3574,52 +3709,26 @@
       "source_location": "L565"
     },
     {
-      "id": "agents_skills_design_taste_frontend_skill_1_a_dial_inference_design_read_dial_values",
-      "label": "1.A Dial Inference (design read \u2192 dial values)",
+      "id": "src_data_equipment",
+      "label": "equipment.ts",
       "_origin": "ast",
       "community": 113,
-      "community_name": "1. THE THREE DIALS (Core Configuration)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "1.a dial inference (design read \u2192 dial values)",
-      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
-      "source_location": "L53"
+      "community_name": "equipment.ts",
+      "file_type": "code",
+      "norm_label": "equipment.ts",
+      "source_file": "src/data/equipment.ts",
+      "source_location": "L1"
     },
     {
-      "id": "agents_skills_design_taste_frontend_skill_1_b_use_case_presets",
-      "label": "1.B Use-Case Presets",
+      "id": "src_data_equipment_equipment",
+      "label": "EQUIPMENT",
       "_origin": "ast",
       "community": 113,
-      "community_name": "1. THE THREE DIALS (Core Configuration)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "1.b use-case presets",
-      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
-      "source_location": "L64"
-    },
-    {
-      "id": "agents_skills_design_taste_frontend_skill_1_c_how_the_dials_drive_output",
-      "label": "1.C How the Dials Drive Output",
-      "_origin": "ast",
-      "community": 113,
-      "community_name": "1. THE THREE DIALS (Core Configuration)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "1.c how the dials drive output",
-      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
-      "source_location": "L77"
-    },
-    {
-      "id": "agents_skills_design_taste_frontend_skill_1_the_three_dials_core_configuration",
-      "label": "1. THE THREE DIALS (Core Configuration)",
-      "_origin": "ast",
-      "community": 113,
-      "community_name": "1. THE THREE DIALS (Core Configuration)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "1. the three dials (core configuration)",
-      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
-      "source_location": "L43"
+      "community_name": "equipment.ts",
+      "file_type": "code",
+      "norm_label": "equipment",
+      "source_file": "src/data/equipment.ts",
+      "source_location": "L26"
     },
     {
       "id": "src_lib_depth",
@@ -3852,6 +3961,66 @@
       "norm_label": "prefill",
       "source_file": "src/lib/forms.ts",
       "source_location": "L15"
+    },
+    {
+      "id": "agents_skills_design_taste_frontend_skill_0_a_read_these_signals_first",
+      "label": "0.A Read these signals first",
+      "_origin": "ast",
+      "community": 126,
+      "community_name": "0. BRIEF INFERENCE (Read the Room Before Anything Else)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "0.a read these signals first",
+      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
+      "source_location": "L17"
+    },
+    {
+      "id": "agents_skills_design_taste_frontend_skill_0_b_output_a_one_line_design_read_before_generating",
+      "label": "0.B Output a one-line \"Design Read\" before generating",
+      "_origin": "ast",
+      "community": 126,
+      "community_name": "0. BRIEF INFERENCE (Read the Room Before Anything Else)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "0.b output a one-line \"design read\" before generating",
+      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
+      "source_location": "L25"
+    },
+    {
+      "id": "agents_skills_design_taste_frontend_skill_0_brief_inference_read_the_room_before_anything_else",
+      "label": "0. BRIEF INFERENCE (Read the Room Before Anything Else)",
+      "_origin": "ast",
+      "community": 126,
+      "community_name": "0. BRIEF INFERENCE (Read the Room Before Anything Else)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "0. brief inference (read the room before anything else)",
+      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
+      "source_location": "L13"
+    },
+    {
+      "id": "agents_skills_design_taste_frontend_skill_0_c_if_the_brief_is_ambiguous_ask_one_question_do_not_guess",
+      "label": "0.C If the brief is ambiguous, ask one question, do not guess",
+      "_origin": "ast",
+      "community": 126,
+      "community_name": "0. BRIEF INFERENCE (Read the Room Before Anything Else)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "0.c if the brief is ambiguous, ask one question, do not guess",
+      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
+      "source_location": "L33"
+    },
+    {
+      "id": "agents_skills_design_taste_frontend_skill_0_d_anti_default_discipline",
+      "label": "0.D Anti-Default Discipline",
+      "_origin": "ast",
+      "community": 126,
+      "community_name": "0. BRIEF INFERENCE (Read the Room Before Anything Else)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "0.d anti-default discipline",
+      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
+      "source_location": "L38"
     },
     {
       "id": "tsconfig",
@@ -4380,37 +4549,125 @@
       "source_location": "L98"
     },
     {
-      "id": "scripts_strip_exif",
-      "label": "strip-exif.mjs",
+      "id": "scripts_build_equipment",
+      "label": "build-equipment.mjs",
       "_origin": "ast",
       "community": 20,
-      "community_name": "strip-exif.mjs",
+      "community_name": "build-equipment.mjs",
       "file_type": "code",
-      "norm_label": "strip-exif.mjs",
-      "source_file": "scripts/strip-exif.mjs",
+      "norm_label": "build-equipment.mjs",
+      "source_file": "scripts/build-equipment.mjs",
       "source_location": "L1"
     },
     {
-      "id": "scripts_strip_exif_exif",
-      "label": "EXIF",
+      "id": "scripts_build_equipment_apps",
+      "label": "APPS",
       "_origin": "ast",
       "community": 20,
-      "community_name": "strip-exif.mjs",
+      "community_name": "build-equipment.mjs",
       "file_type": "code",
-      "norm_label": "exif",
-      "source_file": "scripts/strip-exif.mjs",
-      "source_location": "L19"
+      "norm_label": "apps",
+      "source_file": "scripts/build-equipment.mjs",
+      "source_location": "L37"
     },
     {
-      "id": "scripts_strip_exif_root",
+      "id": "scripts_build_equipment_col",
+      "label": "COL",
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "build-equipment.mjs",
+      "file_type": "code",
+      "norm_label": "col",
+      "source_file": "scripts/build-equipment.mjs",
+      "source_location": "L33"
+    },
+    {
+      "id": "scripts_build_equipment_items",
+      "label": "items",
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "build-equipment.mjs",
+      "file_type": "code",
+      "norm_label": "items",
+      "source_file": "scripts/build-equipment.mjs",
+      "source_location": "L77"
+    },
+    {
+      "id": "scripts_build_equipment_out",
+      "label": "OUT",
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "build-equipment.mjs",
+      "file_type": "code",
+      "norm_label": "out",
+      "source_file": "scripts/build-equipment.mjs",
+      "source_location": "L24"
+    },
+    {
+      "id": "scripts_build_equipment_root",
       "label": "root",
       "_origin": "ast",
       "community": 20,
-      "community_name": "strip-exif.mjs",
+      "community_name": "build-equipment.mjs",
       "file_type": "code",
       "norm_label": "root",
-      "source_file": "scripts/strip-exif.mjs",
-      "source_location": "L17"
+      "source_file": "scripts/build-equipment.mjs",
+      "source_location": "L23"
+    },
+    {
+      "id": "scripts_build_equipment_rows",
+      "label": "rows",
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "build-equipment.mjs",
+      "file_type": "code",
+      "norm_label": "rows",
+      "source_file": "scripts/build-equipment.mjs",
+      "source_location": "L75"
+    },
+    {
+      "id": "scripts_build_equipment_seen",
+      "label": "seen",
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "build-equipment.mjs",
+      "file_type": "code",
+      "norm_label": "seen",
+      "source_file": "scripts/build-equipment.mjs",
+      "source_location": "L79"
+    },
+    {
+      "id": "scripts_build_equipment_skipped",
+      "label": "skipped",
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "build-equipment.mjs",
+      "file_type": "code",
+      "norm_label": "skipped",
+      "source_file": "scripts/build-equipment.mjs",
+      "source_location": "L78"
+    },
+    {
+      "id": "scripts_build_equipment_wb",
+      "label": "wb",
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "build-equipment.mjs",
+      "file_type": "code",
+      "norm_label": "wb",
+      "source_file": "scripts/build-equipment.mjs",
+      "source_location": "L74"
+    },
+    {
+      "id": "scripts_build_equipment_winch_family",
+      "label": "WINCH_FAMILY",
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "build-equipment.mjs",
+      "file_type": "code",
+      "norm_label": "winch_family",
+      "source_file": "scripts/build-equipment.mjs",
+      "source_location": "L50"
     },
     {
       "id": "scripts_gen_stubs",
@@ -4455,6 +4712,39 @@
       "norm_label": "skip",
       "source_file": "scripts/gen-stubs.mjs",
       "source_location": "L25"
+    },
+    {
+      "id": "scripts_strip_exif",
+      "label": "strip-exif.mjs",
+      "_origin": "ast",
+      "community": 21,
+      "community_name": "gen-stubs.mjs",
+      "file_type": "code",
+      "norm_label": "strip-exif.mjs",
+      "source_file": "scripts/strip-exif.mjs",
+      "source_location": "L1"
+    },
+    {
+      "id": "scripts_strip_exif_exif",
+      "label": "EXIF",
+      "_origin": "ast",
+      "community": 21,
+      "community_name": "gen-stubs.mjs",
+      "file_type": "code",
+      "norm_label": "exif",
+      "source_file": "scripts/strip-exif.mjs",
+      "source_location": "L19"
+    },
+    {
+      "id": "scripts_strip_exif_root",
+      "label": "root",
+      "_origin": "ast",
+      "community": 21,
+      "community_name": "gen-stubs.mjs",
+      "file_type": "code",
+      "norm_label": "root",
+      "source_file": "scripts/strip-exif.mjs",
+      "source_location": "L17"
     },
     {
       "id": "src_data_pages_pages",
@@ -5062,7 +5352,7 @@
       "file_type": "concept",
       "norm_label": "three",
       "source_file": "package.json",
-      "source_location": "L25"
+      "source_location": "L26"
     },
     {
       "id": "src_content_pages_l_00",
@@ -6407,7 +6697,7 @@
       "node_kind": "heading",
       "norm_label": "2. the workflow \u2014 follow this for every feature and every page",
       "source_file": "CLAUDE.md",
-      "source_location": "L43"
+      "source_location": "L48"
     },
     {
       "id": "claude_3_stack_and_conventions",
@@ -6419,7 +6709,7 @@
       "node_kind": "heading",
       "norm_label": "3. stack and conventions",
       "source_file": "CLAUDE.md",
-      "source_location": "L100"
+      "source_location": "L105"
     },
     {
       "id": "claude_3d",
@@ -6431,7 +6721,7 @@
       "node_kind": "heading",
       "norm_label": "3d",
       "source_file": "CLAUDE.md",
-      "source_location": "L337"
+      "source_location": "L343"
     },
     {
       "id": "claude_4_the_17_templates",
@@ -6443,7 +6733,7 @@
       "node_kind": "heading",
       "norm_label": "4. the 17 templates",
       "source_file": "CLAUDE.md",
-      "source_location": "L192"
+      "source_location": "L198"
     },
     {
       "id": "claude_5_known_gaps_do_not_paper_over_these",
@@ -6455,7 +6745,7 @@
       "node_kind": "heading",
       "norm_label": "5. known gaps \u2014 do not paper over these",
       "source_file": "CLAUDE.md",
-      "source_location": "L224"
+      "source_location": "L230"
     },
     {
       "id": "claude_6_what_must_never_be_published",
@@ -6467,7 +6757,7 @@
       "node_kind": "heading",
       "norm_label": "6. what must never be published",
       "source_file": "CLAUDE.md",
-      "source_location": "L271"
+      "source_location": "L277"
     },
     {
       "id": "claude_7_design_system",
@@ -6479,7 +6769,7 @@
       "node_kind": "heading",
       "norm_label": "7. design system",
       "source_file": "CLAUDE.md",
-      "source_location": "L289"
+      "source_location": "L295"
     },
     {
       "id": "claude_8_tone_of_voice",
@@ -6491,7 +6781,7 @@
       "node_kind": "heading",
       "norm_label": "8. tone of voice",
       "source_file": "CLAUDE.md",
-      "source_location": "L354"
+      "source_location": "L360"
     },
     {
       "id": "claude_9_1_how_the_site_actually_takes_real_content",
@@ -6503,7 +6793,7 @@
       "node_kind": "heading",
       "norm_label": "9.1 how the site actually takes real content",
       "source_file": "CLAUDE.md",
-      "source_location": "L378"
+      "source_location": "L384"
     },
     {
       "id": "claude_9_2_steps_per_page",
@@ -6515,7 +6805,7 @@
       "node_kind": "heading",
       "norm_label": "9.2 steps, per page",
       "source_file": "CLAUDE.md",
-      "source_location": "L421"
+      "source_location": "L427"
     },
     {
       "id": "claude_9_3_current_intake",
@@ -6527,7 +6817,7 @@
       "node_kind": "heading",
       "norm_label": "9.3 current intake",
       "source_file": "CLAUDE.md",
-      "source_location": "L441"
+      "source_location": "L447"
     },
     {
       "id": "claude_9_bringing_in_a_content_drop_photography_copy_specs",
@@ -6539,7 +6829,7 @@
       "node_kind": "heading",
       "norm_label": "9. bringing in a content drop (photography, copy, specs)",
       "source_file": "CLAUDE.md",
-      "source_location": "L371"
+      "source_location": "L377"
     },
     {
       "id": "claude_commands",
@@ -6551,7 +6841,7 @@
       "node_kind": "heading",
       "norm_label": "commands",
       "source_file": "CLAUDE.md",
-      "source_location": "L179"
+      "source_location": "L184"
     },
     {
       "id": "claude_definition_of_done_for_any_page_or_template",
@@ -6563,7 +6853,7 @@
       "node_kind": "heading",
       "norm_label": "definition of done for any page or template",
       "source_file": "CLAUDE.md",
-      "source_location": "L88"
+      "source_location": "L93"
     },
     {
       "id": "claude_directory_map",
@@ -6575,7 +6865,7 @@
       "node_kind": "heading",
       "norm_label": "directory map",
       "source_file": "CLAUDE.md",
-      "source_location": "L111"
+      "source_location": "L116"
     },
     {
       "id": "claude_graphify",
@@ -6587,7 +6877,7 @@
       "node_kind": "heading",
       "norm_label": "graphify",
       "source_file": "CLAUDE.md",
-      "source_location": "L450"
+      "source_location": "L456"
     },
     {
       "id": "claude_routing",
@@ -6599,7 +6889,7 @@
       "node_kind": "heading",
       "norm_label": "routing",
       "source_file": "CLAUDE.md",
-      "source_location": "L157"
+      "source_location": "L162"
     },
     {
       "id": "claude_rtg_website_project_guide_for_claude_code",
@@ -6623,7 +6913,7 @@
       "node_kind": "heading",
       "norm_label": "rules",
       "source_file": "CLAUDE.md",
-      "source_location": "L169"
+      "source_location": "L174"
     },
     {
       "id": "claude_step_1_research_the_best_approach_first",
@@ -6635,7 +6925,7 @@
       "node_kind": "heading",
       "norm_label": "step 1 \u2014 research the best approach first",
       "source_file": "CLAUDE.md",
-      "source_location": "L47"
+      "source_location": "L52"
     },
     {
       "id": "claude_step_2_implement_and_review_with_feature_dev",
@@ -6647,7 +6937,7 @@
       "node_kind": "heading",
       "norm_label": "step 2 \u2014 implement and review with `/feature-dev`",
       "source_file": "CLAUDE.md",
-      "source_location": "L68"
+      "source_location": "L73"
     },
     {
       "id": "claude_the_three_buyer_routes_avatars",
@@ -6659,7 +6949,7 @@
       "node_kind": "heading",
       "norm_label": "the three buyer routes (avatars)",
       "source_file": "CLAUDE.md",
-      "source_location": "L30"
+      "source_location": "L35"
     },
     {
       "id": "readme",
@@ -6791,11 +7081,11 @@
         "cards": [
           {
             "pageId": "E-01",
-            "blurb": "Geotechnical, survey, seismic, ROV and umbilical, mooring and utility. 240 kg to 30 t WLL."
+            "blurb": "Geotechnical, survey, seismic, ROV and umbilical, mooring and utility. 240 kg to 48 t WLL."
           },
           {
             "pageId": "E-07",
-            "blurb": "A-frames and LARS, 20 to 40 Te WLL, rated to 3.9 m Hs."
+            "blurb": "A-frames and LARS, 5 to 40 Te WLL, rated to 3.9 m Hs."
           },
           {
             "pageId": "E-08",
@@ -7883,7 +8173,7 @@
       "file_type": "code",
       "norm_label": "dependencies",
       "source_file": "package.json",
-      "source_location": "L18"
+      "source_location": "L19"
     },
     {
       "id": "package_dependencies_astro",
@@ -7894,7 +8184,7 @@
       "file_type": "code",
       "norm_label": "astro",
       "source_file": "package.json",
-      "source_location": "L24"
+      "source_location": "L25"
     },
     {
       "id": "package_dependencies_astrojs_mdx",
@@ -7905,7 +8195,7 @@
       "file_type": "code",
       "norm_label": "@astrojs/mdx",
       "source_file": "package.json",
-      "source_location": "L19"
+      "source_location": "L20"
     },
     {
       "id": "package_dependencies_astrojs_sitemap",
@@ -7916,7 +8206,7 @@
       "file_type": "code",
       "norm_label": "@astrojs/sitemap",
       "source_file": "package.json",
-      "source_location": "L20"
+      "source_location": "L21"
     },
     {
       "id": "package_dependencies_fontsource_jetbrains_mono",
@@ -7927,7 +8217,7 @@
       "file_type": "code",
       "norm_label": "@fontsource/jetbrains-mono",
       "source_file": "package.json",
-      "source_location": "L23"
+      "source_location": "L24"
     },
     {
       "id": "package_dependencies_fontsource_variable_archivo",
@@ -7938,7 +8228,7 @@
       "file_type": "code",
       "norm_label": "@fontsource-variable/archivo",
       "source_file": "package.json",
-      "source_location": "L21"
+      "source_location": "L22"
     },
     {
       "id": "package_dependencies_fontsource_variable_inter",
@@ -7949,7 +8239,7 @@
       "file_type": "code",
       "norm_label": "@fontsource-variable/inter",
       "source_file": "package.json",
-      "source_location": "L22"
+      "source_location": "L23"
     },
     {
       "id": "package_dependencies_three",
@@ -7960,7 +8250,7 @@
       "file_type": "code",
       "norm_label": "three",
       "source_file": "package.json",
-      "source_location": "L25"
+      "source_location": "L26"
     },
     {
       "id": "package_description",
@@ -7982,7 +8272,7 @@
       "file_type": "code",
       "norm_label": "devdependencies",
       "source_file": "package.json",
-      "source_location": "L27"
+      "source_location": "L28"
     },
     {
       "id": "package_devdependencies_astrojs_check",
@@ -7993,7 +8283,7 @@
       "file_type": "code",
       "norm_label": "@astrojs/check",
       "source_file": "package.json",
-      "source_location": "L28"
+      "source_location": "L29"
     },
     {
       "id": "package_devdependencies_types_three",
@@ -8004,7 +8294,7 @@
       "file_type": "code",
       "norm_label": "@types/three",
       "source_file": "package.json",
-      "source_location": "L29"
+      "source_location": "L30"
     },
     {
       "id": "package_devdependencies_typescript",
@@ -8015,7 +8305,7 @@
       "file_type": "code",
       "norm_label": "typescript",
       "source_file": "package.json",
-      "source_location": "L30"
+      "source_location": "L31"
     },
     {
       "id": "package_devdependencies_xlsx",
@@ -8026,7 +8316,7 @@
       "file_type": "code",
       "norm_label": "xlsx",
       "source_file": "package.json",
-      "source_location": "L31"
+      "source_location": "L32"
     },
     {
       "id": "package_name",
@@ -8070,7 +8360,7 @@
       "file_type": "code",
       "norm_label": "audit",
       "source_file": "package.json",
-      "source_location": "L16"
+      "source_location": "L17"
     },
     {
       "id": "package_scripts_audit_protection",
@@ -8081,7 +8371,7 @@
       "file_type": "code",
       "norm_label": "audit:protection",
       "source_file": "package.json",
-      "source_location": "L14"
+      "source_location": "L15"
     },
     {
       "id": "package_scripts_audit_seo",
@@ -8092,7 +8382,7 @@
       "file_type": "code",
       "norm_label": "audit:seo",
       "source_file": "package.json",
-      "source_location": "L13"
+      "source_location": "L14"
     },
     {
       "id": "package_scripts_build",
@@ -8128,6 +8418,17 @@
       "source_location": "L8"
     },
     {
+      "id": "package_scripts_equipment",
+      "label": "equipment",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "equipment",
+      "source_file": "package.json",
+      "source_location": "L13"
+    },
+    {
       "id": "package_scripts_pagemap",
       "label": "pagemap",
       "_origin": "ast",
@@ -8158,7 +8459,7 @@
       "file_type": "code",
       "norm_label": "strip-exif",
       "source_file": "package.json",
-      "source_location": "L15"
+      "source_location": "L16"
     },
     {
       "id": "package_type",
@@ -8191,7 +8492,7 @@
       "file_type": "concept",
       "norm_label": "astro",
       "source_file": "package.json",
-      "source_location": "L24"
+      "source_location": "L25"
     },
     {
       "id": "ref_astrojs_check",
@@ -8202,7 +8503,7 @@
       "file_type": "concept",
       "norm_label": "@astrojs/check",
       "source_file": "package.json",
-      "source_location": "L28"
+      "source_location": "L29"
     },
     {
       "id": "ref_fontsource_jetbrains_mono",
@@ -8213,7 +8514,7 @@
       "file_type": "concept",
       "norm_label": "@fontsource/jetbrains-mono",
       "source_file": "package.json",
-      "source_location": "L23"
+      "source_location": "L24"
     },
     {
       "id": "ref_fontsource_variable_archivo",
@@ -8224,7 +8525,7 @@
       "file_type": "concept",
       "norm_label": "@fontsource-variable/archivo",
       "source_file": "package.json",
-      "source_location": "L21"
+      "source_location": "L22"
     },
     {
       "id": "ref_fontsource_variable_inter",
@@ -8235,7 +8536,7 @@
       "file_type": "concept",
       "norm_label": "@fontsource-variable/inter",
       "source_file": "package.json",
-      "source_location": "L22"
+      "source_location": "L23"
     },
     {
       "id": "ref_types_three",
@@ -8246,7 +8547,7 @@
       "file_type": "concept",
       "norm_label": "@types/three",
       "source_file": "package.json",
-      "source_location": "L29"
+      "source_location": "L30"
     },
     {
       "id": "ref_typescript",
@@ -8257,7 +8558,7 @@
       "file_type": "concept",
       "norm_label": "typescript",
       "source_file": "package.json",
-      "source_location": "L30"
+      "source_location": "L31"
     },
     {
       "id": "src_content_pages_e_11",
@@ -11056,14 +11357,14 @@
       "type": "external"
     },
     {
-      "id": "ref_node_path",
-      "label": "ref_node_path",
+      "id": "ref_node_fs",
+      "label": "ref_node_fs",
       "_origin": "semantic",
       "community": 19,
       "community_name": "audit-protection.mjs",
       "external": true,
       "file_type": "concept",
-      "norm_label": "ref_node_path",
+      "norm_label": "ref_node_fs",
       "source_file": "",
       "type": "external"
     },
@@ -11608,26 +11909,14 @@
       "type": "external"
     },
     {
-      "id": "ref_node_fs",
-      "label": "ref_node_fs",
+      "id": "ref_node_path",
+      "label": "ref_node_path",
       "_origin": "semantic",
-      "community": 20,
-      "community_name": "strip-exif.mjs",
+      "community": 21,
+      "community_name": "gen-stubs.mjs",
       "external": true,
       "file_type": "concept",
-      "norm_label": "ref_node_fs",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "ref_sharp",
-      "label": "ref_sharp",
-      "_origin": "semantic",
-      "community": 20,
-      "community_name": "strip-exif.mjs",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "ref_sharp",
+      "norm_label": "ref_node_path",
       "source_file": "",
       "type": "external"
     },
@@ -11640,6 +11929,18 @@
       "external": true,
       "file_type": "concept",
       "norm_label": "ref_node_url",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "ref_sharp",
+      "label": "ref_sharp",
+      "_origin": "semantic",
+      "community": 21,
+      "community_name": "gen-stubs.mjs",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "ref_sharp",
       "source_file": "",
       "type": "external"
     },
@@ -11990,6 +12291,17 @@
       "norm_label": "src_styles_tokens",
       "source_file": "",
       "type": "external"
+    },
+    {
+      "id": "ref_node_assert_strict",
+      "label": "ref_node_assert_strict",
+      "community": 20,
+      "community_name": "build-equipment.mjs",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "ref_node_assert_strict",
+      "source_file": "",
+      "type": "external"
     }
   ],
   "links": [
@@ -12099,6 +12411,18 @@
       "context": "call",
       "source_file": "research/rtg-website/rtg-website/site_build/site_data.py",
       "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_build_equipment_num",
+      "target": "scripts_build_equipment_text",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "scripts/build-equipment.mjs",
+      "source_location": "L53",
       "weight": 1.0
     },
     {
@@ -13022,7 +13346,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L19",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -13034,7 +13358,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L20",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -13046,7 +13370,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L21",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -13058,7 +13382,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L22",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -13070,7 +13394,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L23",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -13082,7 +13406,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L24",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -13094,7 +13418,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L25",
+      "source_location": "L26",
       "weight": 1.0
     },
     {
@@ -13106,7 +13430,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L28",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
@@ -13118,7 +13442,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L29",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -13130,7 +13454,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L30",
+      "source_location": "L31",
       "weight": 1.0
     },
     {
@@ -13142,7 +13466,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "package.json",
-      "source_location": "L31",
+      "source_location": "L32",
       "weight": 1.0
     },
     {
@@ -13299,6 +13623,18 @@
       "context": "import",
       "source_file": "src/components/blocks/ChildCards.astro",
       "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_blocks_equipmentfinder",
+      "target": "src_data_pages_page",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/blocks/EquipmentFinder.astro",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -14114,7 +14450,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L17",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -14126,7 +14462,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L17",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -14138,7 +14474,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L18",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -14150,7 +14486,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L18",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -14162,7 +14498,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L19",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -14174,7 +14510,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L19",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -14186,7 +14522,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L20",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -14198,7 +14534,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L29",
+      "source_location": "L33",
       "weight": 1.0
     },
     {
@@ -15390,6 +15726,66 @@
       "weight": 1.0
     },
     {
+      "source": "scripts_build_equipment",
+      "target": "ref_node_fs",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "scripts/build-equipment.mjs",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_build_equipment",
+      "target": "ref_node_url",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "scripts/build-equipment.mjs",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_build_equipment",
+      "target": "ref_node_path",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "scripts/build-equipment.mjs",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_build_equipment",
+      "target": "ref_node_assert_strict",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "scripts/build-equipment.mjs",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_build_equipment",
+      "target": "ref_xlsx",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "scripts/build-equipment.mjs",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
       "source": "scripts_build_page_map",
       "target": "ref_node_fs",
       "relation": "imports_from",
@@ -15603,6 +15999,18 @@
       "context": "import",
       "source_file": "src/components/blocks/EnquiryForm.astro",
       "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_blocks_equipmentfinder",
+      "target": "src_data_pages",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/blocks/EquipmentFinder.astro",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -17054,7 +17462,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L17",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -17066,7 +17474,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L18",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -17078,7 +17486,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L19",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -17090,7 +17498,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L20",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -17102,7 +17510,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L21",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -17114,7 +17522,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L22",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -17126,7 +17534,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L23",
+      "source_location": "L26",
       "weight": 1.0
     },
     {
@@ -17138,7 +17546,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L24",
+      "source_location": "L27",
       "weight": 1.0
     },
     {
@@ -17150,7 +17558,19 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L25",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_templates_hub",
+      "target": "src_components_blocks_equipmentfinder",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/templates/Hub.astro",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
@@ -17162,7 +17582,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L26",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -17174,7 +17594,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L27",
+      "source_location": "L31",
       "weight": 1.0
     },
     {
@@ -17186,7 +17606,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L28",
+      "source_location": "L32",
       "weight": 1.0
     },
     {
@@ -17198,7 +17618,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L29",
+      "source_location": "L33",
       "weight": 1.0
     },
     {
@@ -21258,7 +21678,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L30",
+      "source_location": "L35",
       "weight": 1.0
     },
     {
@@ -21269,7 +21689,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L47",
+      "source_location": "L52",
       "weight": 1.0
     },
     {
@@ -21280,7 +21700,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L68",
+      "source_location": "L73",
       "weight": 1.0
     },
     {
@@ -21291,7 +21711,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L88",
+      "source_location": "L93",
       "weight": 1.0
     },
     {
@@ -21302,7 +21722,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L111",
+      "source_location": "L116",
       "weight": 1.0
     },
     {
@@ -21313,7 +21733,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L157",
+      "source_location": "L162",
       "weight": 1.0
     },
     {
@@ -21324,7 +21744,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L169",
+      "source_location": "L174",
       "weight": 1.0
     },
     {
@@ -21335,7 +21755,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L179",
+      "source_location": "L184",
       "weight": 1.0
     },
     {
@@ -21346,7 +21766,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L337",
+      "source_location": "L343",
       "weight": 1.0
     },
     {
@@ -21357,7 +21777,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L378",
+      "source_location": "L384",
       "weight": 1.0
     },
     {
@@ -21368,7 +21788,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L421",
+      "source_location": "L427",
       "weight": 1.0
     },
     {
@@ -21379,7 +21799,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L441",
+      "source_location": "L447",
       "weight": 1.0
     },
     {
@@ -21390,7 +21810,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L100",
+      "source_location": "L105",
       "weight": 1.0
     },
     {
@@ -21401,7 +21821,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L192",
+      "source_location": "L198",
       "weight": 1.0
     },
     {
@@ -21412,7 +21832,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L224",
+      "source_location": "L230",
       "weight": 1.0
     },
     {
@@ -21423,7 +21843,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L271",
+      "source_location": "L277",
       "weight": 1.0
     },
     {
@@ -21434,7 +21854,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L289",
+      "source_location": "L295",
       "weight": 1.0
     },
     {
@@ -21445,7 +21865,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L354",
+      "source_location": "L360",
       "weight": 1.0
     },
     {
@@ -21456,18 +21876,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L371",
-      "weight": 1.0
-    },
-    {
-      "source": "claude_rtg_website_project_guide_for_claude_code",
-      "target": "claude_2_the_workflow_follow_this_for_every_feature_and_every_page",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "CLAUDE.md",
-      "source_location": "L43",
+      "source_location": "L377",
       "weight": 1.0
     },
     {
@@ -21478,7 +21887,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L450",
+      "source_location": "L456",
+      "weight": 1.0
+    },
+    {
+      "source": "claude_rtg_website_project_guide_for_claude_code",
+      "target": "claude_2_the_workflow_follow_this_for_every_feature_and_every_page",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": "L48",
       "weight": 1.0
     },
     {
@@ -21951,7 +22371,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L18",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -21973,7 +22393,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L27",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -22039,7 +22459,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L19",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -22050,7 +22470,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L20",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -22061,7 +22481,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L21",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -22072,7 +22492,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L22",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -22083,7 +22503,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L23",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -22094,7 +22514,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L24",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -22105,7 +22525,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L25",
+      "source_location": "L26",
       "weight": 1.0
     },
     {
@@ -22116,7 +22536,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L28",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
@@ -22127,7 +22547,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L29",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -22138,7 +22558,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L30",
+      "source_location": "L31",
       "weight": 1.0
     },
     {
@@ -22149,7 +22569,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
-      "source_location": "L31",
+      "source_location": "L32",
       "weight": 1.0
     },
     {
@@ -22187,7 +22607,7 @@
     },
     {
       "source": "package_scripts",
-      "target": "package_scripts_audit_seo",
+      "target": "package_scripts_equipment",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -22198,7 +22618,7 @@
     },
     {
       "source": "package_scripts",
-      "target": "package_scripts_audit_protection",
+      "target": "package_scripts_audit_seo",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -22209,7 +22629,7 @@
     },
     {
       "source": "package_scripts",
-      "target": "package_scripts_strip_exif",
+      "target": "package_scripts_audit_protection",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -22220,13 +22640,24 @@
     },
     {
       "source": "package_scripts",
-      "target": "package_scripts_audit",
+      "target": "package_scripts_strip_exif",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "package.json",
       "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_audit",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "package.json",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -22956,6 +23387,193 @@
       "weight": 1.0
     },
     {
+      "source": "scripts_build_equipment",
+      "target": "scripts_build_equipment_range",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/build-equipment.mjs",
+      "source_location": "L138",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_build_equipment",
+      "target": "scripts_build_equipment_root",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/build-equipment.mjs",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_build_equipment",
+      "target": "scripts_build_equipment_out",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/build-equipment.mjs",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_build_equipment",
+      "target": "scripts_build_equipment_col",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/build-equipment.mjs",
+      "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_build_equipment",
+      "target": "scripts_build_equipment_apps",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/build-equipment.mjs",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_build_equipment",
+      "target": "scripts_build_equipment_winch_family",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/build-equipment.mjs",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_build_equipment",
+      "target": "scripts_build_equipment_text",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/build-equipment.mjs",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_build_equipment",
+      "target": "scripts_build_equipment_num",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/build-equipment.mjs",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_build_equipment",
+      "target": "scripts_build_equipment_numbersin",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/build-equipment.mjs",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_build_equipment",
+      "target": "scripts_build_equipment_within",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/build-equipment.mjs",
+      "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_build_equipment",
+      "target": "scripts_build_equipment_typeof",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/build-equipment.mjs",
+      "source_location": "L59",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_build_equipment",
+      "target": "scripts_build_equipment_driveof",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/build-equipment.mjs",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_build_equipment",
+      "target": "scripts_build_equipment_wb",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/build-equipment.mjs",
+      "source_location": "L74",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_build_equipment",
+      "target": "scripts_build_equipment_rows",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/build-equipment.mjs",
+      "source_location": "L75",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_build_equipment",
+      "target": "scripts_build_equipment_items",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/build-equipment.mjs",
+      "source_location": "L77",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_build_equipment",
+      "target": "scripts_build_equipment_skipped",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/build-equipment.mjs",
+      "source_location": "L78",
+      "weight": 1.0
+    },
+    {
+      "source": "scripts_build_equipment",
+      "target": "scripts_build_equipment_seen",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "scripts/build-equipment.mjs",
+      "source_location": "L79",
+      "weight": 1.0
+    },
+    {
       "source": "scripts_build_page_map",
       "target": "scripts_build_page_map_root",
       "relation": "contains",
@@ -23326,7 +23944,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L40",
+      "source_location": "L44",
       "weight": 1.0
     },
     {
@@ -23337,7 +23955,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L41",
+      "source_location": "L45",
       "weight": 1.0
     },
     {
@@ -23348,7 +23966,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L59",
+      "source_location": "L63",
       "weight": 1.0
     },
     {
@@ -24316,6 +24934,61 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/content/pages/z-04.mdx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_data_equipment",
+      "target": "src_data_equipment_equipment",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/data/equipment.ts",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "src_data_equipment",
+      "target": "src_data_equipment_equipmenttype",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/data/equipment.ts",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_data_equipment",
+      "target": "src_data_equipment_equipmentapp",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/data/equipment.ts",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_data_equipment",
+      "target": "src_data_equipment_equipmentdrive",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/data/equipment.ts",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_data_equipment",
+      "target": "src_data_equipment_equipmentitem",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/data/equipment.ts",
       "source_location": "L8",
       "weight": 1.0
     },
@@ -25809,6 +26482,15 @@
       "source_file": "src/components/blocks/EnquiryForm.astro"
     },
     {
+      "source": "src_components_blocks_equipmentfinder",
+      "target": "src_data_equipment",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/blocks/EquipmentFinder.astro"
+    },
+    {
       "source": "src_components_blocks_featuredcase",
       "target": "src_data_pages",
       "relation": "imports_from",
@@ -26384,7 +27066,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L41",
+      "source_location": "L45",
       "weight": 1.0
     },
     {
@@ -26468,7 +27150,7 @@
       "confidence_score": 0.95,
       "context": "createViewer()",
       "source_file": "CLAUDE.md",
-      "source_location": "L344",
+      "source_location": "L350",
       "weight": 1.0
     },
     {
@@ -26480,7 +27162,7 @@
       "confidence_score": 0.95,
       "context": "entryFor()",
       "source_file": "CLAUDE.md",
-      "source_location": "L161",
+      "source_location": "L166",
       "weight": 1.0
     },
     {
@@ -26492,10 +27174,10 @@
       "confidence_score": 0.95,
       "context": "pagesByTemplate()",
       "source_file": "CLAUDE.md",
-      "source_location": "L424",
+      "source_location": "L430",
       "weight": 1.0
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "7205bf622a4691d01f31a635e7ec905b2da40f5d"
+  "built_at_commit": "e8e57a673d2cfe9aa035a3e73999fb1d3fd1d265"
 }

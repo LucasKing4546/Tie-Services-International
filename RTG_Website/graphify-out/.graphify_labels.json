@@ -19,7 +19,7 @@
   "17": "l-01.mdx",
   "18": "p-03.mdx",
   "19": "audit-protection.mjs",
-  "20": "strip-exif.mjs",
+  "20": "build-equipment.mjs",
   "21": "gen-stubs.mjs",
   "22": "c-00.mdx",
   "23": "c-01.mdx",
@@ -112,7 +112,7 @@
   "110": "5. CONTEXT-AWARE PROACTIVITY",
   "111": "8. DARK MODE PROTOCOL",
   "112": "7. DIAL DEFINITIONS (Technical Reference)",
-  "113": "1. THE THREE DIALS (Core Configuration)",
+  "113": "equipment.ts",
   "114": "depth.ts",
   "115": "vercel.json",
   "116": "src_assets_contact_x01_team",
@@ -124,5 +124,6 @@
   "122": "src_assets_sectors_s05_research_vessel",
   "123": "PinnedStages.astro",
   "124": "Site-wide ocean world (homepage first surface)",
-  "125": "forms.ts"
+  "125": "forms.ts",
+  "126": "0. BRIEF INFERENCE (Read the Room Before Anything Else)"
 }

@@ -1,17 +1,17 @@
-# Graph Report - RTG_Website  (2026-10-12)
+# Graph Report - RTG_Website  (2026-10-13)
 
 ## Corpus Check
-- 174 files · ~3,079,454 words
+- 177 files · ~3,082,510 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 11 file(s) not represented in the graph (top: .css 9, (none) 1, .xml 1)
 
 ## Summary
-- 810 nodes · 1267 edges · 126 communities (52 shown, 74 thin omitted)
+- 837 nodes · 1300 edges · 127 communities (53 shown, 74 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 12 edges (avg confidence: 0.87)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `7205bf62`
+- Built from commit: `e8e57a67`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -34,7 +34,7 @@
 - motion.ts
 - l-01.mdx
 - audit-protection.mjs
-- strip-exif.mjs
+- build-equipment.mjs
 - gen-stubs.mjs
 - c-00.mdx
 - c-01.mdx
@@ -81,7 +81,7 @@
 - 5. CONTEXT-AWARE PROACTIVITY
 - 8. DARK MODE PROTOCOL
 - 7. DIAL DEFINITIONS (Technical Reference)
-- 1. THE THREE DIALS (Core Configuration)
+- equipment.ts
 - depth.ts
 - vercel.json
 - src_assets_contact_x01_team
@@ -93,6 +93,7 @@
 - src_assets_sectors_s05_research_vessel
 - Site-wide ocean world (homepage first surface)
 - forms.ts
+- 0. BRIEF INFERENCE (Read the Room Before Anything Else)
 
 ## God Nodes (most connected - your core abstractions)
 1. `[]` - 30 edges
@@ -121,7 +122,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (126 total, 74 thin omitted)
+## Communities (127 total, 74 thin omitted)
 
 ### Community 0 - "blocks.ts"
 Cohesion: 0.09
@@ -148,8 +149,8 @@ Cohesion: 0.06
 Nodes (34): 1. What this is, 2. The workflow — follow this for every feature and every page, 3. Stack and conventions, 3D, 4. The 17 templates, 5. Known gaps — do not paper over these, 6. What must never be published, 7. Design system (+26 more)
 
 ### Community 6 - "package.json"
-Cohesion: 0.06
-Nodes (35): dependencies, astro, @astrojs/mdx, @astrojs/sitemap, @fontsource/jetbrains-mono, @fontsource-variable/archivo, @fontsource-variable/inter, three (+27 more)
+Cohesion: 0.05
+Nodes (36): dependencies, astro, @astrojs/mdx, @astrojs/sitemap, @fontsource/jetbrains-mono, @fontsource-variable/archivo, @fontsource-variable/inter, three (+28 more)
 
 ### Community 7 - "home.ts"
 Cohesion: 0.13
@@ -189,15 +190,15 @@ Nodes (10): initCarousels(), initCompare(), initCounters(), initMotion(), initPa
 
 ### Community 19 - "audit-protection.mjs"
 Cohesion: 0.22
-Nodes (8): ref_node_path, BANNED, ds, EXIF, exts, hits, root, roots
+Nodes (8): ref_node_fs, BANNED, ds, EXIF, exts, hits, root, roots
 
-### Community 20 - "strip-exif.mjs"
-Cohesion: 0.33
-Nodes (5): ref_node_fs, ref_sharp, EXIF, root, walk()
+### Community 20 - "build-equipment.mjs"
+Cohesion: 0.11
+Nodes (13): ref_node_assert_strict, APPS, COL, items, num(), OUT, root, rows (+5 more)
 
 ### Community 21 - "gen-stubs.mjs"
-Cohesion: 0.33
-Nodes (5): ref_node_url, outDir, root, SKIP, PAGES
+Cohesion: 0.18
+Nodes (10): ref_node_path, ref_node_url, ref_sharp, outDir, root, SKIP, EXIF, root (+2 more)
 
 ### Community 22 - "c-00.mdx"
 Cohesion: 0.40
@@ -276,8 +277,8 @@ Cohesion: 0.20
 Nodes (10): 10. REFERENCE VOCABULARY (Pattern Names the Agent Should Know), Animation Library Choice, Cards & Containers, Galleries & Media, Hero Paradigms, Layout & Grids, Micro-Interactions & Effects, Navigation & Menus (+2 more)
 
 ### Community 101 - "tasteskill: Anti-Slop Frontend Skill"
-Cohesion: 0.18
-Nodes (11): 0.A Read these signals first, 0.B Output a one-line "Design Read" before generating, 0. BRIEF INFERENCE (Read the Room Before Anything Else), 0.C If the brief is ambiguous, ask one question, do not guess, 0.D Anti-Default Discipline, 13. OUT OF SCOPE, 14. FINAL PRE-FLIGHT CHECK, 2.A When to reach for a real design system (use official packages) (+3 more)
+Cohesion: 0.20
+Nodes (10): 13. OUT OF SCOPE, 14. FINAL PRE-FLIGHT CHECK, 1.A Dial Inference (design read → dial values), 1.B Use-Case Presets, 1.C How the Dials Drive Output, 1. THE THREE DIALS (Core Configuration), 2.A When to reach for a real design system (use official packages), 2.B When the brief is an aesthetic, not a system (+2 more)
 
 ### Community 102 - "astro.config.mjs"
 Cohesion: 0.25
@@ -323,30 +324,34 @@ Nodes (5): 8.A Token Strategy (pick one, stick to it), 8.B Do Not Prescribe Spec
 Cohesion: 0.50
 Nodes (4): 7. DIAL DEFINITIONS (Technical Reference), DESIGN_VARIANCE (Level 1-10), MOTION_INTENSITY (Level 1-10), VISUAL_DENSITY (Level 1-10)
 
-### Community 113 - "1. THE THREE DIALS (Core Configuration)"
-Cohesion: 0.50
-Nodes (4): 1.A Dial Inference (design read → dial values), 1.B Use-Case Presets, 1.C How the Dials Drive Output, 1. THE THREE DIALS (Core Configuration)
+### Community 113 - "equipment.ts"
+Cohesion: 0.33
+Nodes (5): EQUIPMENT, EquipmentApp, EquipmentDrive, EquipmentItem, EquipmentType
 
 ### Community 124 - "Site-wide ocean world (homepage first surface)"
 Cohesion: 0.50
 Nodes (3): Direction contract, Site-wide ocean world (homepage first surface), Unresolved
 
+### Community 126 - "0. BRIEF INFERENCE (Read the Room Before Anything Else)"
+Cohesion: 0.40
+Nodes (5): 0.A Read these signals first, 0.B Output a one-line "Design Read" before generating, 0. BRIEF INFERENCE (Read the Room Before Anything Else), 0.C If the brief is ambiguous, ask one question, do not guess, 0.D Anti-Default Discipline
+
 ## Knowledge Gaps
-- **369 isolated node(s):** `pagesDir`, `pagesTs`, `unfinished`, `name`, `version` (+364 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 547 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **385 isolated node(s):** `pagesDir`, `pagesTs`, `unfinished`, `name`, `version` (+380 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 569 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **74 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `astro` connect `package.json` to `media.ts`?**
-  _High betweenness centrality (0.023) - this node is a cross-community bridge._
-- **Why does `tasteskill: Anti-Slop Frontend Skill` connect `tasteskill: Anti-Slop Frontend Skill` to `Appendix B - Canonical Sources (read these before reinventing)`, `4. DESIGN ENGINEERING DIRECTIVES (Bias Correction)`, `10. REFERENCE VOCABULARY (Pattern Names the Agent Should Know)`, `9. AI TELLS (Forbidden Patterns)`, `11. REDESIGN PROTOCOL`, `3. DEFAULT ARCHITECTURE & CONVENTIONS`, `6. PERFORMANCE & ACCESSIBILITY GUARDRAILS`, `12. THE BLOCK LIBRARY (Contract - Implementations Land Here Iteratively)`, `5. CONTEXT-AWARE PROACTIVITY`, `8. DARK MODE PROTOCOL`, `7. DIAL DEFINITIONS (Technical Reference)`, `1. THE THREE DIALS (Core Configuration)`?**
+  _High betweenness centrality (0.025) - this node is a cross-community bridge._
+- **Why does `xlsx` connect `build-page-map.mjs` to `build-equipment.mjs`, `package.json`?**
   _High betweenness centrality (0.016) - this node is a cross-community bridge._
 - **What connects `pagesDir`, `pagesTs`, `unfinished` to the rest of the system?**
-  _369 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _385 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `blocks.ts` be split into smaller, more focused modules?**
-  _Cohesion score 0.09320175438596491 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.09192439862542956 - nodes in this community are weakly interconnected._
 - **Should `media.ts` be split into smaller, more focused modules?**
   _Cohesion score 0.041666666666666664 - nodes in this community are weakly interconnected._
 - **Should `rtg3d.ts` be split into smaller, more focused modules?**

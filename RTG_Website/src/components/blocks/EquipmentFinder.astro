@@ -1,0 +1,225 @@
+---
+/**
+ * The equipment finder on the Equipment hub (E-00): search and filter every
+ * standard design that has a datasheet. Data is src/data/equipment.ts,
+ * generated from RTG's datasheet index by scripts/build-equipment.mjs.
+ *
+ * Every row is in the HTML, so with no JS the full list is still there and
+ * the filter bar simply stays hidden. Filter state lives in the query
+ * string (?type=winch&app=survey&wll=5), so any other page can link in
+ * pre-filtered. A row ends in a datasheet request carrying the design's
+ * name, never a file: datasheets stay gated (CLAUDE.md §5.3).
+ */
+import { EQUIPMENT, type EquipmentApp, type EquipmentDrive, type EquipmentType } from '@data/equipment';
+import { page } from '@data/pages';
+
+const TYPES: Record<EquipmentType, string> = {
+  winch: 'Winches',
+  lars: 'A-frames and LARS',
+  hpu: 'Power units',
+  other: 'Tensioners, booms and other',
+};
+const APPS: Record<EquipmentApp, string> = {
+  survey: 'Survey',
+  geotech: 'Geotechnical',
+  seismic: 'Seismic',
+  rov: 'ROV and subsea',
+  mooring: 'Mooring and tow',
+  lift: 'Lift and utility',
+  cable: 'Cable lay',
+};
+const DRIVES: Record<EquipmentDrive, string> = {
+  electric: 'Electric',
+  hydraulic: 'Hydraulic',
+  'electro-hydraulic': 'Electro-hydraulic',
+};
+const GROUPS = [
+  { key: 'type', legend: 'Type', options: TYPES },
+  { key: 'app', legend: 'Application', options: APPS },
+  { key: 'drive', legend: 'Drive', options: DRIVES },
+];
+/** Bands, not sliders: most designs sit under 5 Te, so a linear slider
+ *  would spend nearly all its travel on a handful of rows. */
+const LOADS = [1, 5, 15, 30];
+const CAPACITIES = [500, 1500, 3000];
+/** Rows shown before "Show all", to keep the hub short. */
+const FIRST = 12;
+
+const datasheets = page('R-01').slug;
+const quote = page('X-03').slug;
+const load = (kg: number) => (kg < 1000 ? `${kg} kg` : `${Number((kg / 1000).toFixed(2))} Te`);
+
+const rows = EQUIPMENT.map((e) => {
+  const family = page(e.family);
+  const tags = [e.drive && DRIVES[e.drive], ...e.apps.map((a) => APPS[a])].filter(Boolean).join(' · ');
+  return {
+    ...e,
+    family,
+    tags,
+    text: `${e.code} ${e.name} ${TYPES[e.type]} ${tags}`.toLowerCase(),
+    request: `${datasheets}?equipment=${encodeURIComponent(`${e.code} ${e.name}`)}`,
+  };
+});
+---
+
+<section class="sec finder" id="finder" data-finder data-first={FIRST}>
+  <div class="wrap">
+    <div class="sechd">
+      <p class="mono red">Selector</p>
+      <h2 class="d3"><span class="rl"><span>Find a standard design</span></span></h2>
+      <p class="lede">
+        {rows.length} designs with a datasheet. Every one can be adapted to the vessel, or we design from the duty.
+      </p>
+    </div>
+
+    <form class="finder-bar" role="search" aria-label="Filter standard designs" hidden>
+      <div class="field">
+        <label for="finder-q">Search</label>
+        <input id="finder-q" name="q" type="search" placeholder="Datasheet number or description" autocomplete="off" />
+      </div>
+      {GROUPS.map((g) => (
+        <fieldset class="finder-group">
+          <legend>{g.legend}</legend>
+          <div class="finder-chips">
+            <button type="button" class="finder-chip" data-key={g.key} data-value="" aria-pressed="true">All</button>
+            {Object.entries(g.options).map(([value, label]) => (
+              <button type="button" class="finder-chip" data-key={g.key} data-value={value} aria-pressed="false">{label}</button>
+            ))}
+          </div>
+        </fieldset>
+      ))}
+      <div class="finder-ranges">
+        <div class="field">
+          <label for="finder-wll">Working load</label>
+          <select id="finder-wll" name="wll">
+            <option value="">Any</option>
+            {LOADS.map((t) => <option value={t}>{t} Te or more</option>)}
+          </select>
+        </div>
+        <div class="field">
+          <label for="finder-cap">Cable capacity</label>
+          <select id="finder-cap" name="cap">
+            <option value="">Any</option>
+            {CAPACITIES.map((m) => <option value={m}>{m.toLocaleString('en-GB')} m or more</option>)}
+          </select>
+        </div>
+      </div>
+    </form>
+
+    <p class="finder-count mono" aria-live="polite" data-count>{rows.length} standard designs</p>
+
+    <ul class="finder-list">
+      {rows.map((r) => (
+        <li
+          data-row
+          data-type={r.type}
+          data-app={r.apps.join(' ')}
+          data-drive={r.drive ?? ''}
+          data-wll={r.wllKg ?? ''}
+          data-cap={r.capM ?? ''}
+          data-text={r.text}
+        >
+          <span class="finder-code mono">{r.code}</span>
+          <span class="finder-name">
+            {r.name}
+            {r.tags && <small>{r.tags}</small>}
+          </span>
+          <span class="finder-fig">{r.wllKg ? load(r.wllKg) : '—'}<small>working load</small></span>
+          <span class="finder-fig">{r.cap ?? '—'}<small>cable capacity</small></span>
+          <span class="finder-fig">{r.speed ? `${r.speed} m/min` : '—'}<small>line speed</small></span>
+          <span class="finder-links">
+            <a href={r.request} aria-label={`Request the ${r.code} datasheet`}>Request datasheet</a>
+            <a href={r.family.slug}>{r.family.name}</a>
+          </span>
+        </li>
+      ))}
+    </ul>
+
+    <p class="finder-empty" data-empty hidden>
+      No standard design matches, which usually means a bespoke system.
+      <a href={quote}>Tell us the duty</a> and we will design one.
+    </p>
+    <button type="button" class="btn btn-o" data-more hidden></button>
+  </div>
+</section>
+
+<script>
+  const KEYS = ['q', 'type', 'app', 'drive', 'wll', 'cap'] as const;
+
+  const init = () => {
+    const root = document.querySelector<HTMLElement>('[data-finder]');
+    const form = root?.querySelector('form');
+    if (!root || !form) return;
+
+    const rows = [...root.querySelectorAll<HTMLElement>('[data-row]')];
+    const chips = [...root.querySelectorAll<HTMLButtonElement>('.finder-chip')];
+    const count = root.querySelector<HTMLElement>('[data-count]')!;
+    const empty = root.querySelector<HTMLElement>('[data-empty]')!;
+    const more = root.querySelector<HTMLButtonElement>('[data-more]')!;
+    const first = Number(root.dataset.first);
+    const field = (k: string) => form.elements.namedItem(k) as HTMLInputElement | HTMLSelectElement | null;
+
+    const params = new URLSearchParams(location.search);
+    const state = Object.fromEntries(KEYS.map((k) => [k, params.get(k) ?? ''])) as Record<(typeof KEYS)[number], string>;
+    // a link can carry any value: one no chip offers falls back to "All"
+    (['type', 'app', 'drive'] as const).forEach((k) => {
+      if (!chips.some((c) => c.dataset.key === k && c.dataset.value === state[k])) state[k] = '';
+    });
+    let all = false;
+
+    const matches = (r: HTMLElement) => {
+      const d = r.dataset;
+      return (
+        state.q.toLowerCase().split(/\s+/).every((w) => d.text!.includes(w)) &&
+        (!state.type || d.type === state.type) &&
+        (!state.app || d.app!.split(' ').includes(state.app)) &&
+        (!state.drive || d.drive === state.drive) &&
+        (!Number(state.wll) || Number(d.wll) >= Number(state.wll) * 1000) &&
+        (!Number(state.cap) || Number(d.cap) >= Number(state.cap))
+      );
+    };
+
+    const render = () => {
+      let n = 0;
+      for (const r of rows) {
+        const ok = matches(r);
+        if (ok) n++;
+        r.hidden = !ok || (!all && n > first);
+      }
+      count.textContent = `${n} standard ${n === 1 ? 'design' : 'designs'}`;
+      empty.hidden = n > 0;
+      more.hidden = all || n <= first;
+      more.textContent = `Show all ${n}`;
+      chips.forEach((c) => c.setAttribute('aria-pressed', String(state[c.dataset.key as 'type'] === c.dataset.value)));
+
+      const next = new URLSearchParams(location.search);
+      KEYS.forEach((k) => (state[k] ? next.set(k, state[k]) : next.delete(k)));
+      const qs = next.toString();
+      history.replaceState(history.state, '', location.pathname + (qs ? `?${qs}` : '') + location.hash);
+    };
+
+    (['q', 'wll', 'cap'] as const).forEach((k) => {
+      const el = field(k);
+      if (!el) return;
+      el.value = state[k];
+      state[k] = el.value; // a select drops a band the link invented
+      el.addEventListener('input', () => { state[k] = el.value.trim(); all = false; render(); });
+    });
+    chips.forEach((c) => c.addEventListener('click', () => {
+      state[c.dataset.key as 'type'] = c.dataset.value ?? '';
+      all = false;
+      render();
+    }));
+    more.addEventListener('click', () => {
+      all = true;
+      render();
+      // the button has just hidden itself: hand focus to the first row it revealed
+      rows.filter((r) => !r.hidden)[first]?.querySelector('a')?.focus();
+    });
+    form.addEventListener('submit', (e) => e.preventDefault());
+
+    form.hidden = false;
+    render();
+  };
+  document.addEventListener('astro:page-load', init);
+</script>
