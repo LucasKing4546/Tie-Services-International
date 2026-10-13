@@ -4,15 +4,16 @@
    The whole descent is ONE background: <main> carries a single gradient from
    the surface navy down to near-black, and every section sits transparent on
    top of it. That is what makes the page darken continuously on any length
-   of page with no script, and why pinned sections darken behind their own
-   content. --sea-0, the lightest stop, already passes 4.5:1 against white,
+   of page with no script. With script, initDepth() (lib/depth.ts) holds the
+   gradient still behind a pinned section, so the water only darkens while
+   the page is actually descending. --sea-0, the lightest stop, already passes 4.5:1 against white,
    so type is legible at every depth.
    ========================================================================== */
 
 /* --sea-top holds the surface colour flat for the first stretch, so the
    waterline's front wave (also --sea-0) meets it with no seam. */
 main{--sea-top:120px;
-  background:linear-gradient(to bottom,var(--sea-0) var(--sea-top),var(--sea-1) 52%,var(--sea-2))}
+  background:var(--sea-2) linear-gradient(to bottom,var(--sea-0) var(--sea-top),var(--sea-1) 52%,var(--sea-2)) no-repeat}
 main:has(> .hero){--sea-top:118svh}
 
 ::selection{background:var(--red);color:#fff}
