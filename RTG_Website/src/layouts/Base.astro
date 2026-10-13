@@ -118,36 +118,23 @@ const robots = offMap || unfinished ? 'noindex, follow' : 'index, follow, max-im
       document.addEventListener('astro:page-load', initDepth);
     </script>
 
-    {/* Chatra live chat, same ID as production — but nothing third-party
-       loads until the visitor presses this button, which is the consent
-       (CLAUDE.md §5.4). Hidden without JS, since it can do nothing there. */}
-    <button type="button" class="btn b-navy chat-open" id="chatOpen" hidden>
-      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z" /></svg>
-      <span>Chat with us</span>
-    </button>
-
-    {/* is:inline so Astro ships it verbatim. Listeners are registered once
-       (w.__chat) because this markup rides along on every ClientRouter
-       navigation; w.ChatraID guards against a second chatra.js. Once the
-       widget is loaded it persists across client-side navigations, so the
-       button stays hidden on every later page. */}
+    {/* Chatra live chat, same ID as production. Its own "Message us" button
+       is the only chat control: the site owner asked on 2026-10-13 for our
+       separate launcher to go, so the script now loads with the page rather
+       than on a click. That makes it a third party loaded before consent
+       (CLAUDE.md §5.4), which a consent banner has to cover before launch.
+       is:inline so Astro ships it verbatim; w.ChatraID guards against a
+       second load, since this markup rides along on every ClientRouter
+       navigation and the widget persists across them. */}
     <script is:inline>
       (function (d, w, c) {
-        if (w.__chat) return;
-        w.__chat = true;
-        function sync() { var b = d.getElementById('chatOpen'); if (b) b.hidden = !!w.ChatraID; }
-        d.addEventListener('astro:page-load', sync);
-        d.addEventListener('click', function (e) {
-          if (!e.target.closest || !e.target.closest('#chatOpen') || w.ChatraID) return;
-          w.ChatraID = 'iraKxKmohhNY38Mu9';
-          var s = d.createElement('script');
-          w[c] = w[c] || function () { (w[c].q = w[c].q || []).push(arguments); };
-          w[c]('openChat', true);
-          s.async = true;
-          s.src = 'https://call.chatra.io/chatra.js';
-          d.head.appendChild(s);
-          sync();
-        });
+        if (w.ChatraID) return;
+        w.ChatraID = 'iraKxKmohhNY38Mu9';
+        var s = d.createElement('script');
+        w[c] = w[c] || function () { (w[c].q = w[c].q || []).push(arguments); };
+        s.async = true;
+        s.src = 'https://call.chatra.io/chatra.js';
+        d.head.appendChild(s);
       })(document, window, 'Chatra');
     </script>
   </body>

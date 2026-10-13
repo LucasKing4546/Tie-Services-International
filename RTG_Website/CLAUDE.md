@@ -244,8 +244,11 @@ These are real and unresolved. Flag them; do not invent content to fill them.
    stripped, and delivered by a short-lived signed URL. Never a static file path.
 4. **Consent management.** Analytics must be genuinely withheld until consent,
    not merely declared to be. UK and EU GDPR both apply. The Chatra chat
-   script is the only third party and loads only when the visitor presses
-   "Chat with us" (`Base.astro`); there is still no general consent banner.
+   script is the only third party. Since 2026-10-13, on the site owner's
+   instruction, it loads with every page so that its own "Message us" button
+   is the only chat control (`Base.astro`); before that it loaded only on a
+   click. It is therefore a third party loaded before consent, and there is
+   still no consent banner: one must cover it before launch.
 5a. **No security headers.** The host is undecided (not Vercel), so no
    `Content-Security-Policy`, `frame-ancestors` or `X-Content-Type-Options`
    is set anywhere. They have to be configured on whichever host is chosen.
