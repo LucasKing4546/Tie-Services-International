@@ -7,8 +7,7 @@ import SectorTrack from '@components/home/SectorTrack.astro';
 import TierLadder from '@components/home/TierLadder.astro';
 import LifecycleSteps from '@components/home/LifecycleSteps.astro';
 import IndexRows from '@components/blocks/IndexRows.astro';
-import Section from '@components/blocks/Section.astro';
-import ProofBar from '@components/blocks/ProofBar.astro';
+import FinderEntry from '@components/home/FinderEntry.astro';
 import { EQUIPMENT } from '@data/home';
 import '@/styles/home.css';
 ---
@@ -18,9 +17,9 @@ import '@/styles/home.css';
   <MachineLift />
   <SectorTrack />
   <IndexRows items={EQUIPMENT} heading="Equipment" tone="default" />
+  <FinderEntry />
   <TierLadder />
   <LifecycleSteps />
-  <Section size="sm"><ProofBar /></Section>
 
   <Fragment slot="body-end">
     <script>

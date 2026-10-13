@@ -839,6 +839,7 @@ table.spec .gap{text-transform:uppercase;letter-spacing:.1em;font-size:.8em}
 /* ---------- equipment finder (EquipmentFinder.astro) ----------
    Filter bar over a ruled spec list. Controls reuse .field; rows follow the
    index-rows register rather than cards. */
+.finder{scroll-margin-top:72px}
 .finder-bar{display:grid;grid-template-columns:minmax(0,1fr);gap:22px;margin-bottom:28px}
 .finder-bar[hidden],.finder-list li[hidden],.finder [data-more][hidden]{display:none}
 .finder-bar .field{max-width:520px}

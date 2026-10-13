@@ -1,0 +1,35 @@
+---
+/**
+ * The way into the equipment finder from the homepage: a plain GET form
+ * whose field names are the finder's own query keys, so it lands on
+ * /equipment/#finder already filtered with no script of its own.
+ */
+import { EQUIPMENT } from '@data/equipment';
+import { page } from '@data/pages';
+import { EQUIPMENT_APPS, EQUIPMENT_LOADS } from '@lib/equipment';
+---
+<section data-zone="Equipment" class="sec sm fentry">
+  <div class="wrap fentry-in">
+    <div>
+      <h2 class="d3"><span class="rl"><span>Know the duty? Find the design.</span></span></h2>
+      <p class="fentry-lede">{EQUIPMENT.length} standard designs with a datasheet, by application, working load and cable capacity.</p>
+    </div>
+    <form class="fentry-form" action={`${page('E-00').slug}#finder`} method="get">
+      <div class="field">
+        <label for="fentry-app">Application</label>
+        <select id="fentry-app" name="app">
+          <option value="">Any</option>
+          {Object.entries(EQUIPMENT_APPS).map(([value, label]) => <option value={value}>{label}</option>)}
+        </select>
+      </div>
+      <div class="field">
+        <label for="fentry-wll">Working load</label>
+        <select id="fentry-wll" name="wll">
+          <option value="">Any</option>
+          {EQUIPMENT_LOADS.map((t) => <option value={t}>{t} Te or more</option>)}
+        </select>
+      </div>
+      <button type="submit" class="btn b-red">Show designs<span class="dot"></span></button>
+    </form>
+  </div>
+</section>

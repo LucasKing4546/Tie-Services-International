@@ -12,7 +12,7 @@
 .hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
 .hero-origin{margin:26px 0 0;font-size:14px;color:var(--ink-2)}
 
-.vessel{--vw:clamp(230px,36vw,540px);position:absolute;right:max(170px,11vw);bottom:34px;width:var(--vw);
+.vessel{--vw:clamp(280px,48vw,760px);position:absolute;right:max(64px,6vw);bottom:34px;width:var(--vw);
   animation:sail-in 9s cubic-bezier(.2,.6,.2,1) both,bob 5.5s ease-in-out infinite alternate}
 .vessel svg{display:block;width:100%;height:auto;overflow:visible}
 .vessel-hull{fill:var(--navy);stroke:var(--navy)}
@@ -285,3 +285,16 @@
   .zf .spec{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;padding:0}
   .zf .spec div{padding-right:0}
 }
+
+/* ---------- finder entry (FinderEntry.astro) ----------
+   Closes the Equipment rows above it, so it gives up its own top padding. */
+.fentry{padding-top:0}
+.fentry-in{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:28px clamp(32px,5vw,80px);align-items:end}
+.fentry-lede{margin:12px 0 0;color:var(--ink-2);max-width:46ch}
+.fentry-form{display:flex;flex-wrap:wrap;align-items:flex-end;gap:14px}
+.fentry-form .field{width:200px}
+@media (max-width:900px){
+  .fentry-in{grid-template-columns:minmax(0,1fr)}
+  .fentry-form .field{flex:1 1 150px;width:auto}
+}
+.sec.irows:has(+ .fentry){padding-bottom:clamp(28px,3.4vw,48px)}

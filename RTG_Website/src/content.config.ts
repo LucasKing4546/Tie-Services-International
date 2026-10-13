@@ -47,6 +47,9 @@ const imgBrief = z.object({
  *  one configuration (E-07 launch and recovery systems, for instance). */
 const specTable = z.object({
   caption: z.string().default('Representative specification'),
+  /** RTG datasheet number this table is drawn from. The equipment finder
+   *  uses it to link a design straight to this table on its page. */
+  datasheet: z.string().regex(/^DS\d+[A-Z]?$/, 'datasheet number like "DS83"').optional(),
   rows: z
     .array(
       z.object({

@@ -8,7 +8,7 @@ export const HERO = {
   lede: `Winches, launch and recovery systems, tensioners and cranes, engineered to the vessel and the duty, load tested to ${PROOF.loadTestTe} Te in our own facility and supported for the full service life.`,
   ctas: [
     { label: 'Find your sector', href: '/sectors/' },
-    { label: 'Equipment range', href: '/equipment/' },
+    { label: 'Find equipment', href: '/equipment/#finder' },
   ],
   note: `Family-owned deck machinery specialists since ${PROOF.since}`,
 };

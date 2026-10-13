@@ -7,26 +7,21 @@
  * Every row is in the HTML, so with no JS the full list is still there and
  * the filter bar simply stays hidden. Filter state lives in the query
  * string (?type=winch&app=survey&wll=5), so any other page can link in
- * pre-filtered. A row ends in a datasheet request carrying the design's
- * name, never a file: datasheets stay gated (CLAUDE.md §5.3).
+ * pre-filtered. A row ends in two links: the design's own spec table on its
+ * product page where it has one (else the family page), and a datasheet
+ * request carrying its name, never a file: datasheets stay gated (CLAUDE.md
+ * §5.3).
  */
-import { EQUIPMENT, type EquipmentApp, type EquipmentDrive, type EquipmentType } from '@data/equipment';
+import { EQUIPMENT, type EquipmentDrive, type EquipmentType } from '@data/equipment';
+import { getCollection } from 'astro:content';
 import { page } from '@data/pages';
+import { EQUIPMENT_APPS as APPS, EQUIPMENT_LOADS as LOADS } from '@lib/equipment';
 
 const TYPES: Record<EquipmentType, string> = {
   winch: 'Winches',
   lars: 'A-frames and LARS',
   hpu: 'Power units',
   other: 'Tensioners, booms and other',
-};
-const APPS: Record<EquipmentApp, string> = {
-  survey: 'Survey',
-  geotech: 'Geotechnical',
-  seismic: 'Seismic',
-  rov: 'ROV and subsea',
-  mooring: 'Mooring and tow',
-  lift: 'Lift and utility',
-  cable: 'Cable lay',
 };
 const DRIVES: Record<EquipmentDrive, string> = {
   electric: 'Electric',
@@ -38,9 +33,6 @@ const GROUPS = [
   { key: 'app', legend: 'Application', options: APPS },
   { key: 'drive', legend: 'Drive', options: DRIVES },
 ];
-/** Bands, not sliders: most designs sit under 5 Te, so a linear slider
- *  would spend nearly all its travel on a handful of rows. */
-const LOADS = [1, 5, 15, 30];
 const CAPACITIES = [500, 1500, 3000];
 /** Rows shown before "Show all", to keep the hub short. */
 const FIRST = 12;
@@ -49,12 +41,24 @@ const datasheets = page('R-01').slug;
 const quote = page('X-03').slug;
 const load = (kg: number) => (kg < 1000 ? `${kg} kg` : `${Number((kg / 1000).toFixed(2))} Te`);
 
+// A design that has its own spec table on a product page links straight to
+// that table (Product.astro numbers them #config-1, #config-2...); the rest
+// link to the family page.
+const shown = new Map<string, string>();
+for (const entry of await getCollection('pages')) {
+  entry.data.specs.forEach((s, i) => {
+    if (s.datasheet) shown.set(s.datasheet, `${page(entry.data.pageId).slug}#config-${i + 1}`);
+  });
+}
+
 const rows = EQUIPMENT.map((e) => {
   const family = page(e.family);
+  // "DS38 and DS38A" is one design; the first number is the one a page cites
+  const deep = shown.get(e.code.split(' ')[0]);
   const tags = [e.drive && DRIVES[e.drive], ...e.apps.map((a) => APPS[a])].filter(Boolean).join(' · ');
   return {
     ...e,
-    family,
+    view: deep ? { href: deep, label: 'Photos and full specification' } : { href: family.slug, label: family.name },
     tags,
     text: `${e.code} ${e.name} ${TYPES[e.type]} ${tags}`.toLowerCase(),
     request: `${datasheets}?equipment=${encodeURIComponent(`${e.code} ${e.name}`)}`,
@@ -128,8 +132,8 @@ const rows = EQUIPMENT.map((e) => {
           <span class="finder-fig">{r.cap ?? '—'}<small>cable capacity</small></span>
           <span class="finder-fig">{r.speed ? `${r.speed} m/min` : '—'}<small>line speed</small></span>
           <span class="finder-links">
+            <a href={r.view.href}>{r.view.label} <span aria-hidden="true">→</span></a>
             <a href={r.request} aria-label={`Request the ${r.code} datasheet`}>Request datasheet</a>
-            <a href={r.family.slug}>{r.family.name}</a>
           </span>
         </li>
       ))}
@@ -220,6 +224,10 @@ const rows = EQUIPMENT.map((e) => {
 
     form.hidden = false;
     render();
+    // Arriving on #finder (the homepage form, a pre-filtered link): the browser
+    // has already jumped, but the filter bar has only now appeared and the
+    // pinned sections above have only now taken their height, so go again.
+    if (location.hash === '#finder') requestAnimationFrame(() => root.scrollIntoView());
   };
   document.addEventListener('astro:page-load', init);
 </script>
