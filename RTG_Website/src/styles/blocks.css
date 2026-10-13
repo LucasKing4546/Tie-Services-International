@@ -862,7 +862,8 @@ table.spec .gap{text-transform:uppercase;letter-spacing:.1em;font-size:.8em}
 .finder-name small,.finder-fig small{display:block;margin-top:4px;font-family:var(--f-b);font-weight:400;
   font-size:12.5px;letter-spacing:0;color:var(--ink-2)}
 .finder-links{display:flex;flex-direction:column;gap:6px;font-size:14px;justify-self:end;text-align:right}
-.finder-links a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+.finder-links a{color:var(--ink);text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+@media (pointer:coarse){.finder-links a{padding-block:11px}}
 .finder-links a + a{color:var(--ink-2)}
 .finder-empty{color:var(--ink-2);margin:0 0 28px}
 .finder-empty a{color:var(--ink)}

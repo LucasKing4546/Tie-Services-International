@@ -64,7 +64,7 @@
 .phero .crumbs a:hover{color:#fff;background:rgba(255,255,255,.12)}
 .phero .crumbs li:not(:last-child)::after{color:rgba(255,255,255,.4);opacity:1}
 .phero .crumbs li[aria-current] span{color:#fff;background:rgba(255,255,255,.14)}
-@media (max-width:560px){.crumbs ol{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}.crumbs li{flex:none}}
+@media (max-width:560px){.crumbs ol{row-gap:0}}
 
 /* ---------- forms ---------- */
 .form-side{display:flex;flex-direction:column;gap:32px;min-width:0}

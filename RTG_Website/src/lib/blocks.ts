@@ -68,9 +68,12 @@ export type SectionSize = 'lg' | 'sm';
 export type MotionHint = 'parallax' | 'sticky' | 'none';
 
 /** Splits a stat value like "1,500" or "250+" into the leading digits (for
- *  the .ct count-up span) and a trailing suffix rendered as plain text. */
-export const isNumericStat = (v: string): boolean => /^[\d,]+/.test(v);
-export const statDigits = (v: string): string => v.replace(/[^\d]/g, '');
+ *  the .ct count-up span) and a trailing suffix rendered as plain text.
+ *  Only a single whole figure qualifies: a range ("0 to 10 Te") or a decimal
+ *  ("3.9 m") has more digits after the first run, and counting up the lot
+ *  as one number prints the wrong figure, so those render as written. */
+export const isNumericStat = (v: string): boolean => /^[\d,]+[^\d.]*$/.test(v);
+export const statDigits = (v: string): string => (v.match(/^[\d,]+/)?.[0] ?? '').replace(/,/g, '');
 export const statSuffix = (v: string): string => v.replace(/^[\d,]+/, '');
 
 /** A page's closing buttons: its own `cta` block if it has one, otherwise

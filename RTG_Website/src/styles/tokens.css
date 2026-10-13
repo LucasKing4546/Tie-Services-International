@@ -113,7 +113,7 @@ p{margin:0 0 1em;max-width:62ch}
 .b-red:hover{background:var(--red-dk)}
 .b-navy{background:var(--ink);color:var(--on-ink)}
 .b-navy:hover{opacity:.88}
-.btn-o{border-color:var(--rule);color:var(--ink)}
+.btn-o{background:transparent;border-color:var(--rule);color:var(--ink)}
 .btn-o:hover{border-color:var(--ink);background:var(--ink);color:var(--on-ink)}
 .btn-o.inv{border-color:rgba(255,255,255,.35);color:#fff}
 .btn-o.inv:hover{background:var(--panel);color:var(--ink);border-color:#fff}

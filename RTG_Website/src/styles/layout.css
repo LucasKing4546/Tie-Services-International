@@ -23,6 +23,7 @@
 }
 
 /* ---------- feature rows: overlap, offsets, caption plate ---------- */
+.frow + .mband{padding-top:0}
 .frow{overflow:visible;position:relative;z-index:1}
 .frow-grid{gap:clamp(40px,6vw,110px)}
 .frow-copy h2{font-size:clamp(28px,3.6vw,52px);letter-spacing:-.04em;line-height:1.02;max-width:14ch}
@@ -77,7 +78,7 @@
   .phero[data-tpl="Product"]::after{background:
     linear-gradient(to right,rgba(2,14,44,.82) 0%,rgba(2,14,44,.5) 34%,transparent 62%),
     linear-gradient(to top,rgba(2,14,44,.5) 0%,transparent 40%)}
-  .phero[data-tpl="Product"] h1{max-width:11ch}
+  .phero[data-tpl="Product"]:has(.phero-media-shot) h1{max-width:12ch}
   .phero[data-tpl="Product"] .lede{max-width:40ch}
 }
 .phero-in > *{min-width:0}
@@ -121,3 +122,12 @@
 .stats .stat,.stats .stat:first-child{margin-top:0;border-top:1px solid var(--rule)}
 @media (max-width:900px){.stats:not(.frow-copy .stats),.stats:not(.frow-copy .stats):has(> .stat:nth-child(4):last-child){grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:520px){.stats:not(.frow-copy .stats),.stats:not(.frow-copy .stats):has(> .stat:nth-child(4):last-child),.stats:not(.frow-copy .stats):has(> .stat:nth-child(2):last-child){grid-template-columns:minmax(0,1fr)}}
+
+/* On a phone the hero text lies straight on the photograph, so the whole
+   picture is darkened, not just one side of it. */
+@media (max-width:900px){
+  .phero:has(.phero-media-shot)::after{background:linear-gradient(to bottom,rgba(2,14,44,.58),rgba(2,14,44,.8))}
+  .sechd .lede{margin-top:14px!important}
+}
+/* "Applications" is a tag list under the configurations, not a peer of them. */
+.apps .sechd .d2{font-size:clamp(24px,3vw,40px)}

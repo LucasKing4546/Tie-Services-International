@@ -58,7 +58,7 @@ const rows = EQUIPMENT.map((e) => {
   const tags = [e.drive && DRIVES[e.drive], ...e.apps.map((a) => APPS[a])].filter(Boolean).join(' · ');
   return {
     ...e,
-    view: deep ? { href: deep, label: 'Photos and full specification' } : { href: family.slug, label: family.name },
+    view: deep ? { href: deep, label: 'View specification' } : { href: family.slug, label: 'View family' },
     tags,
     text: `${e.code} ${e.name} ${TYPES[e.type]} ${tags}`.toLowerCase(),
     request: `${datasheets}?equipment=${encodeURIComponent(`${e.code} ${e.name}`)}`,

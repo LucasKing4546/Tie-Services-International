@@ -67,6 +67,8 @@ const datasheetPage = data.product?.datasheetPageId ? lookupPage(data.product.da
 // never has to retype it — see lib/forms.ts's generic name-matched prefill.
 // The page name, not the h1: an h1 may be a claim ("A-frames and LARS rated
 // to 3.9 m Hs") rather than something to file a request under.
+const datasheetLabel =
+  data.hero.ctas.find((c) => datasheetPage && c.href.startsWith(datasheetPage.slug))?.label ?? 'Request the datasheet';
 const datasheetHref = datasheetPage ? `${datasheetPage.slug}?equipment=${encodeURIComponent(page.name)}` : undefined;
 ---
 
@@ -98,7 +100,7 @@ const datasheetHref = datasheetPage ? `${datasheetPage.slug}?equipment=${encodeU
     <nav class="cfg-nav" aria-label="Configurations">
       <ul class="wrap">
         {data.specs.map((s, i) => (
-          <li><a href={`#config-${i + 1}`} title={s.caption}>{s.caption.split(',')[0]}</a></li>
+          <li><a href={`#config-${i + 1}`} title={s.caption}>{s.label ?? s.caption.split(',')[0]}</a></li>
         ))}
       </ul>
     </nav>
@@ -127,7 +129,7 @@ const datasheetHref = datasheetPage ? `${datasheetPage.slug}?equipment=${encodeU
   {datasheetHref && data.specs.length > 0 && (
     <div class="req-bar" data-req-bar hidden>
       <span>Full specification, sent to you by name</span>
-      <a class="btn b-navy" href={datasheetHref}>Request the datasheet <span aria-hidden="true">→</span></a>
+      <a class="btn b-navy" href={datasheetHref}>{datasheetLabel} <span aria-hidden="true">→</span></a>
     </div>
   )}
 
@@ -136,7 +138,7 @@ const datasheetHref = datasheetPage ? `${datasheetPage.slug}?equipment=${encodeU
   )}
 
   {data.product && data.product.applications.length > 0 && (
-    <Section tone="off">
+    <Section tone="off" class="apps">
       <SectionHead heading="Applications" level={2} />
       <TagList items={data.product.applications} />
     </Section>

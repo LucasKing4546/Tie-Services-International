@@ -24,7 +24,9 @@
   
   transform:translateY(0);transition:transform .45s var(--e-heavy)}
 .mband-grid[data-count="1"] .mband-item{flex-direction:column;align-items:stretch}
-.mband-grid[data-count="1"] .mband-plate{max-width:min(100%,var(--imgslot-maxw,1100px))}
+/* Width is capped by the photo's own size and by the width that keeps it
+   within about two thirds of a screen at its own proportions. */
+.mband-grid[data-count="1"] .mband-plate{max-width:min(100%,var(--imgslot-maxw,1100px),calc(min(68svh,600px) * var(--imgslot-ratio,4/3)))}
 .mband-grid[data-count="1"] .mband-item figcaption{flex:none;padding:11px 15px}
 @media (hover:hover) and (prefers-reduced-motion:no-preference){
   .mband-item img{transition:transform .8s var(--e-heavy)}

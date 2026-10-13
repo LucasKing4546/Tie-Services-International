@@ -87,7 +87,9 @@ for (const r of rows) {
   const name = text(r[COL.desc])
     .replace(/[–—]/g, '-').replace(/\s*-\s*DS\d+$/, '').replace(/(\d)Te\b/g, '$1 Te')
     .replace(/\bWInch\b/, 'Winch').replace(/Kw\b/g, 'kW').replace(/\bLars\b/, 'LARS')
-    .replace(/\bA\s?-?\s?Frame\b/g, 'A-frame');
+    .replace(/\bA\s?-?\s?Frame\b/g, 'A-frame')
+    .replace(/(\d+)\s?m\b/g, (_, n) => `${Number(n).toLocaleString('en-GB')} m`)
+    .replace(/(\d)\s?kW\b/gi, '$1 kW');
   if (!name) { skip('no description'); continue; }
   if (!text(r[COL.sheet])) { skip('no datasheet listed'); continue; }
   if (seen.has(code)) { skip('duplicate row'); continue; }

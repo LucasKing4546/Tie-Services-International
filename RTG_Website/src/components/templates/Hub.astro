@@ -54,7 +54,9 @@ const tallSlot = introMedia ?? {
   ratio: '3/4',
 };
 
-const trackHeading = children.length > 0 ? `Everything in ${page.section.toLowerCase()}` : 'Where to go next';
+// A hub below the section's own (Winches under Equipment) names itself.
+const trackScope = page.slug.split('/').filter(Boolean).length > 1 ? page.name : page.section;
+const trackHeading = children.length > 0 ? `Everything in ${trackScope.toLowerCase()}` : 'Where to go next';
 
 // gridItems mirrors exactly what ChildCards renders below, built from the
 // same two sources, so the ItemList structured data can never disagree with
