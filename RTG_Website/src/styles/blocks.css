@@ -881,7 +881,9 @@ table.spec .gap{text-transform:uppercase;letter-spacing:.1em;font-size:.8em}
 .finder-code-in{display:none}
 /* a family list's row that a finder link pointed at */
 .finder-list li{scroll-margin-top:118px}
-.finder-list li:target{background:var(--panel)}
+/* unmistakable: the list is full of rows with the same name */
+.finder-list li:target{background:rgba(255,255,255,.1);outline:1px solid var(--ink);outline-offset:-1px;
+  border-radius:12px;padding-inline:16px}
 .fam .sechd .lede a{color:var(--ink)}
 .fam .btn{margin-top:0}
 table.spec .spec-opt{display:block}

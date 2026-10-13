@@ -58,8 +58,20 @@ const tableAbove = (code: string) => {
     const rows = [...root.querySelectorAll<HTMLElement>('[data-row]')];
     const more = root.querySelector<HTMLButtonElement>('[data-more]')!;
     const first = Number(root.dataset.first);
-    // Arrived on one design's link: leave every row in place.
-    if (rows.length <= first || rows.some((r) => `#${r.id}` === location.hash)) return;
+    // Arrived on one design's link: leave every row in place and put that row
+    // in the middle of the screen. The browser has already jumped to it, but
+    // on a client-side navigation that can happen before the page above has
+    // its final height (photographs, the hero), which strands the row off
+    // screen; so go again now and once more when everything has loaded.
+    const target = rows.find((r) => `#${r.id}` === location.hash);
+    if (target) {
+      const show = () => target.scrollIntoView({ block: 'center' });
+      requestAnimationFrame(show);
+      setTimeout(show, 600);
+      addEventListener('load', show, { once: true });
+      return;
+    }
+    if (rows.length <= first) return;
 
     rows.slice(first).forEach((r) => (r.hidden = true));
     more.textContent = `Show all ${rows.length}`;
