@@ -1,17 +1,17 @@
-# Graph Report - RTG_Website  (2026-10-13)
+# Graph Report - RTG_Website  (2026-10-29)
 
 ## Corpus Check
-- 177 files · ~3,082,510 words
+- 180 files · ~3,084,181 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 11 file(s) not represented in the graph (top: .css 9, (none) 1, .xml 1)
 
 ## Summary
-- 837 nodes · 1300 edges · 127 communities (53 shown, 74 thin omitted)
-- Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 12 edges (avg confidence: 0.87)
+- 876 nodes · 1366 edges · 127 communities (54 shown, 73 thin omitted)
+- Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 10 edges (avg confidence: 0.88)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `e8e57a67`
+- Built from commit: `739cee57`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -60,7 +60,7 @@
 - z-04.mdx
 - ImageSlot.astro
 - src_assets_equipment_e04_reel_winch
-- page.ts
+- lib/equipment.ts
 - src_assets_equipment_e07_aframe_dusk
 - src_assets_equipment_e08_knuckle_boom
 - src_assets_equipment_e08_proof_load_test
@@ -76,13 +76,13 @@
 - 11. REDESIGN PROTOCOL
 - 3. DEFAULT ARCHITECTURE & CONVENTIONS
 - 6. PERFORMANCE & ACCESSIBILITY GUARDRAILS
-- ProofBar.astro
+- By equipment family
 - 12. THE BLOCK LIBRARY (Contract - Implementations Land Here Iteratively)
 - 5. CONTEXT-AWARE PROACTIVITY
 - 8. DARK MODE PROTOCOL
 - 7. DIAL DEFINITIONS (Technical Reference)
-- equipment.ts
-- depth.ts
+- 2026-10-13T10-00-11Z__src-pages-index-astro.md
+- 2026-10-13T16-18-36Z__src-components-templates-product-astro.md
 - vercel.json
 - src_assets_contact_x01_team
 - src_assets_sectors_s02_pipeline_survey
@@ -100,18 +100,18 @@
 2. `[]` - 29 edges
 3. `[]` - 27 edges
 4. `[]` - 26 edges
-5. `[]` - 24 edges
-6. `PageMeta` - 24 edges
+5. `PageMeta` - 25 edges
+6. `[]` - 24 edges
 7. `[]` - 22 edges
 8. `PageEntry` - 20 edges
 9. `mdxComponents` - 18 edges
 10. `Template inventory` - 18 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `3D` --references--> `createViewer()`  [INFERRED]
-  CLAUDE.md → src/lib/rtg3d.ts
 - `Routing` --references--> `entryFor()`  [INFERRED]
   CLAUDE.md → src/lib/content.ts
+- `3D` --references--> `createViewer()`  [INFERRED]
+  CLAUDE.md → src/lib/rtg3d.ts
 - `9.2 Steps, per page` --references--> `pagesByTemplate()`  [INFERRED]
   CLAUDE.md → src/data/pages.ts
 - `ResolvedPage` --references--> `PageMeta`  [EXTRACTED]
@@ -122,23 +122,23 @@
 ## Import Cycles
 - None detected.
 
-## Communities (127 total, 74 thin omitted)
+## Communities (127 total, 73 thin omitted)
 
 ### Community 0 - "blocks.ts"
-Cohesion: 0.09
-Nodes (48): trail, jsonLdPage, siblings, jobPostings, [], jsonLdPage, contactPoints, children (+40 more)
+Cohesion: 0.08
+Nodes (56): trail, jsonLdPage, siblings, jobPostings, [], jsonLdPage, contactPoints, children (+48 more)
 
 ### Community 1 - "site.js"
 Cohesion: 0.15
-Nodes (6): year, FOOTER_NAV, LEGAL_NAV, NAV, PROOF, PROOF_DISPLAY
+Nodes (7): year, CONSENT, FOOTER_NAV, LEGAL_NAV, NAV, PROOF, PROOF_DISPLAY
 
 ### Community 2 - "media.ts"
 Cohesion: 0.04
 Nodes (46): src_assets_equipment_e00_deck_spread, src_assets_equipment_e00_system_overview, src_assets_equipment_e02_deployment_frame, src_assets_equipment_e02_ds01_guarded, src_assets_equipment_e02_ds01_panel, src_assets_equipment_e02_ds38_hpu_b, src_assets_equipment_e02_ds38_winch, src_assets_equipment_e02_hpu (+38 more)
 
 ### Community 3 - "rtg3d.ts"
-Cohesion: 0.12
-Nodes (35): three, MACHINES, destroyHome(), initHome(), finishedWinch(), frame(), makeStage(), onResize() (+27 more)
+Cohesion: 0.13
+Nodes (31): three, MACHINES, destroyHome(), initHome(), finishedWinch(), makeStage(), setModel(), Machine (+23 more)
 
 ### Community 4 - "build.py"
 Cohesion: 0.08
@@ -146,7 +146,7 @@ Nodes (24): collections, datetime, glob, html, json, os, re, build() (+16 more)
 
 ### Community 5 - "RTG Website — project guide for Claude Code"
 Cohesion: 0.06
-Nodes (34): 1. What this is, 2. The workflow — follow this for every feature and every page, 3. Stack and conventions, 3D, 4. The 17 templates, 5. Known gaps — do not paper over these, 6. What must never be published, 7. Design system (+26 more)
+Nodes (30): 1. What this is, 2. The workflow — follow this for every feature and every page, 3. Stack and conventions, 3D, 4. The 17 templates, 5. Known gaps — do not paper over these, 6. What must never be published, 7. Design system (+22 more)
 
 ### Community 6 - "package.json"
 Cohesion: 0.05
@@ -185,8 +185,8 @@ Cohesion: 0.17
 Nodes (9): descs, dist, fails, ids, root, slugs, src, titles (+1 more)
 
 ### Community 15 - "motion.ts"
-Cohesion: 0.30
-Nodes (10): initCarousels(), initCompare(), initCounters(), initMotion(), initParallax(), apply(), initPinStages(), initReveals() (+2 more)
+Cohesion: 0.31
+Nodes (7): initCarousels(), initCompare(), initCounters(), initMotion(), initParallax(), initReveals(), teardownFns
 
 ### Community 19 - "audit-protection.mjs"
 Cohesion: 0.22
@@ -252,9 +252,9 @@ Nodes (3): Known issues, Telling us about a problem, The standard we target
 Cohesion: 0.32
 Nodes (4): photo, tiles, mediaFor(), MotionHint
 
-### Community 92 - "page.ts"
-Cohesion: 0.31
-Nodes (6): OFF_MAP_IDS, OFF_MAP_PAGES, BY_ID, ResolvedPage, resolvePage(), { p }
+### Community 92 - "lib/equipment.ts"
+Cohesion: 0.12
+Nodes (24): tags, designs, EQUIPMENT, EquipmentApp, EquipmentDrive, EquipmentItem, EquipmentType, OFF_MAP_IDS (+16 more)
 
 ### Community 96 - "Base.astro"
 Cohesion: 0.08
@@ -289,8 +289,8 @@ Cohesion: 0.25
 Nodes (8): 9.A Visual & CSS, 9. AI TELLS (Forbidden Patterns), 9.B Typography, 9.C Layout & Spacing, 9.D Content & Data ("Jane Doe" Effect), 9.E External Resources & Components, 9.F Production-Test Tells (banned outright), 9.G EM-DASH BAN (the single most-violated Tell)
 
 ### Community 104 - "seo.ts"
-Cohesion: 0.46
-Nodes (7): ancestorsOf(), absolute(), breadcrumbNode(), buildJsonLd(), faqPageJsonLd(), ogImageFor(), organizationNode()
+Cohesion: 0.57
+Nodes (6): ancestorsOf(), absolute(), breadcrumbNode(), buildJsonLd(), ogImageFor(), organizationNode()
 
 ### Community 105 - "11. REDESIGN PROTOCOL"
 Cohesion: 0.29
@@ -304,9 +304,9 @@ Nodes (7): 3.A Stack, 3.B State, 3.C Icons, 3.D Emoji Policy, 3. DEFAULT ARCHITE
 Cohesion: 0.29
 Nodes (7): 6.A Hardware Acceleration, 6.B Reduced Motion (mandatory), 6.C Dark Mode (mandatory for any consumer-facing page), 6.D Core Web Vitals Targets, 6.E DOM Cost, 6.F Z-Index Restraint, 6. PERFORMANCE & ACCESSIBILITY GUARDRAILS
 
-### Community 108 - "ProofBar.astro"
-Cohesion: 0.60
-Nodes (3): isNumericStat(), statDigits(), statSuffix()
+### Community 108 - "By equipment family"
+Cohesion: 0.12
+Nodes (16): Application information (archived 2026-10-29), By equipment family, Claude plugins for social media posts (searched 2026-10-29), E-01 Winches (hub): "Marine Winches | Survey, Geotechnical, Seismic & ROV | RTG", E-02 Geotechnical & Coring Winches: "Geotechnical & Coring Winches | CPT & Piston Corer | RTG", E-03 Survey & Oceanographic Winches: "Survey & Oceanographic Winches | 300 to 4,000 m | RTG", E-04 Seismic Winches: "Seismic Winches & Source Handling | RTG", E-05 ROV, Tow & Umbilical Winches: "ROV, Tow & Umbilical Winches | RTG" (+8 more)
 
 ### Community 109 - "12. THE BLOCK LIBRARY (Contract - Implementations Land Here Iteratively)"
 Cohesion: 0.40
@@ -324,9 +324,13 @@ Nodes (5): 8.A Token Strategy (pick one, stick to it), 8.B Do Not Prescribe Spec
 Cohesion: 0.50
 Nodes (4): 7. DIAL DEFINITIONS (Technical Reference), DESIGN_VARIANCE (Level 1-10), MOTION_INTENSITY (Level 1-10), VISUAL_DENSITY (Level 1-10)
 
-### Community 113 - "equipment.ts"
-Cohesion: 0.33
-Nodes (5): EQUIPMENT, EquipmentApp, EquipmentDrive, EquipmentItem, EquipmentType
+### Community 113 - "2026-10-13T10-00-11Z__src-pages-index-astro.md"
+Cohesion: 0.29
+Nodes (6): Design health score: 19/28 (Acceptable, 68%). Heuristics 7, 9, 10 n/a., Design specificity verdict, Minor observations, Persona red flags, Priority issues, Questions
+
+### Community 114 - "2026-10-13T16-18-36Z__src-components-templates-product-astro.md"
+Cohesion: 0.40
+Nodes (4): Design health score: 26/36 (Good, 72%). Heuristic 10 n/a., Detector and measurements, Fixed in this pass, Open
 
 ### Community 124 - "Site-wide ocean world (homepage first surface)"
 Cohesion: 0.50
@@ -337,24 +341,24 @@ Cohesion: 0.40
 Nodes (5): 0.A Read these signals first, 0.B Output a one-line "Design Read" before generating, 0. BRIEF INFERENCE (Read the Room Before Anything Else), 0.C If the brief is ambiguous, ask one question, do not guess, 0.D Anti-Default Discipline
 
 ## Knowledge Gaps
-- **385 isolated node(s):** `pagesDir`, `pagesTs`, `unfinished`, `name`, `version` (+380 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 569 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **74 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **408 isolated node(s):** `pagesDir`, `pagesTs`, `unfinished`, `name`, `version` (+403 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 596 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **73 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `astro` connect `package.json` to `media.ts`?**
-  _High betweenness centrality (0.025) - this node is a cross-community bridge._
-- **Why does `xlsx` connect `build-page-map.mjs` to `build-equipment.mjs`, `package.json`?**
+  _High betweenness centrality (0.024) - this node is a cross-community bridge._
+- **Why does `pagesByTemplate()` connect `RTG Website — project guide for Claude Code` to `blocks.ts`?**
   _High betweenness centrality (0.016) - this node is a cross-community bridge._
 - **What connects `pagesDir`, `pagesTs`, `unfinished` to the rest of the system?**
-  _385 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _408 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `blocks.ts` be split into smaller, more focused modules?**
-  _Cohesion score 0.09192439862542956 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.08327109783420462 - nodes in this community are weakly interconnected._
 - **Should `media.ts` be split into smaller, more focused modules?**
   _Cohesion score 0.041666666666666664 - nodes in this community are weakly interconnected._
 - **Should `rtg3d.ts` be split into smaller, more focused modules?**
-  _Cohesion score 0.12091038406827881 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.1253968253968254 - nodes in this community are weakly interconnected._
 - **Should `build.py` be split into smaller, more focused modules?**
   _Cohesion score 0.0766488413547237 - nodes in this community are weakly interconnected._

@@ -206,8 +206,7 @@ const tables = await specTableLinks();
     form.hidden = false;
     render();
     // Arriving on #finder (the homepage form, a pre-filtered link): the browser
-    // has already jumped, but the filter bar has only now appeared and the
-    // pinned sections above have only now taken their height, so go again.
+    // has already jumped, but the filter bar has only now appeared, so go again.
     if (location.hash === '#finder') requestAnimationFrame(() => root.scrollIntoView());
   };
   document.addEventListener('astro:page-load', init);

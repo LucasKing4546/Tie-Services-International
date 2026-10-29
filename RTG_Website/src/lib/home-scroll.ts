@@ -3,10 +3,10 @@
  * count-ups and the header scroll toggle are shared across every template
  * (src/lib/motion.ts + Header.astro) and are not duplicated here.
  *
- * Three behaviours, all driven from one rAF loop so they share a frame budget:
- *   1. pinned manufacturing-tier assembly, built up in 3D one tier at a time
- *   2. horizontal sector track
- *   3. the equipment showroom: one machine in open water, turned by drag
+ * Two behaviours, driven from one rAF loop so they share a frame budget:
+ *   1. manufacturing-tier assembly, built up in 3D to the tier selected in
+ *      the Tiers tabs (TierLadder.astro dispatches 'tierchange')
+ *   2. the equipment showroom: one machine in open water, turned by drag
  *
  * 3D stages are created lazily by the caller so three.js is only fetched on
  * pages that need it.
@@ -219,55 +219,23 @@ export function initHome(): void {
     zf.addEventListener('pointerup', up); zf.addEventListener('pointercancel', up);
   }
 
-  /* pinned tiers */
-  const pinWrap = document.getElementById('tiers');
-  const tiers   = [...document.querySelectorAll('.tier')];
-  const bars    = [...document.querySelectorAll('.pin-bar i')];
-  // Under 900px the CSS lists the four tiers one under another, unpinned.
-  function sizePin(){ if (pinWrap) pinWrap.style.height = innerWidth < 900 ? '' : (tiers.length * 90) + 'vh'; }
-  sizePin();
-
-  /* horizontal sectors */
-  const hzWrap = document.getElementById('sectors');
-  const track  = document.getElementById('hzTrack');
-  const fill   = document.getElementById('hzFill');
-  let hzDist = 0;
-  function sizeHz(){
-    if (!hzWrap || !track) return;
-    if (innerWidth < 900) { hzWrap.style.height = ''; track.style.transform = ''; return; }
-    hzDist = Math.max(0, track.scrollWidth - innerWidth);
-    hzWrap.style.height = (innerHeight + hzDist) + 'px';
+  /* tiers: the tabs in TierLadder.astro pick the tier; the model builds up
+     to it and the camera eases round (tierP: 0 at tier 1, 1 at the last) */
+  const tierRoot = document.getElementById('tiers');
+  const tierTabs = [...document.querySelectorAll('#tiers [role="tab"]')];
+  let tierP = 0, tierRot = 0;
+  function setTier(idx: number){
+    if (tierModel) tierModel.userData.tiers.forEach((g, i) => { g.userData.want = i <= idx ? 1 : 0; });
+    tierP = tierTabs.length > 1 ? idx / (tierTabs.length - 1) : 0;
+    if (rm) tierRot = tierP;
+    poke();
   }
+  const onTier = (e: Event) => setTier((e as CustomEvent<number>).detail);
+  tierRoot?.addEventListener('tierchange', onTier);
+  cleanups.push(() => tierRoot?.removeEventListener('tierchange', onTier));
 
-  function frame(){
-    /* tiers — the 3D winch builds up one manufacturing stage at a time */
-    if (pinWrap) {
-      const r = pinWrap.getBoundingClientRect();
-      const total = r.height - innerHeight;
-      const p = total > 0 ? Math.min(1, Math.max(0, -r.top / total)) : 1;
-      const idx = Math.min(tiers.length - 1, Math.floor(p * tiers.length * 0.999));
-      tiers.forEach((t, i) => t.classList.toggle('on', i === idx));
-      bars.forEach((b, i) => b.classList.toggle('on', i <= idx));
-      if (tierV && tierModel) {
-        tierModel.userData.tiers.forEach((g, i) => { g.userData.want = i <= idx ? 1 : 0; });
-        tierV.pivot.rotation.y = -0.62 + p * 1.15;
-        tierV.frame(tierV.baseDist - p * 1.4, tierV.baseH, tierV.lookY);
-      }
-    }
-
-    /* horizontal */
-    if (hzWrap && track && innerWidth >= 900 && hzDist > 0) {
-      const r = hzWrap.getBoundingClientRect();
-      const p = Math.min(1, Math.max(0, -r.top / (r.height - innerHeight)));
-      track.style.transform = `translate3d(${-p * hzDist}px,0,0)`;
-      if (fill) fill.style.width = (p * 100) + '%';
-    }
-    ticking = false;
-  }
-
-  let ticking = false;
-  function onScroll(){ poke(); if (!ticking) { ticking = true; requestAnimationFrame(frame); } }
-  function onResize(){ sizePin(); sizeHz(); stages.forEach(v => v.resize()); onScroll(); }
+  const onScroll = poke;
+  function onResize(){ stages.forEach(v => v.resize()); poke(); }
   addEventListener('scroll', onScroll, {passive:true});
   addEventListener('resize', onResize);
   cleanups.push(() => {
@@ -279,6 +247,8 @@ export function initHome(): void {
   if (tierModel) tierModel.userData.tiers.forEach((g, i) => {
     g.userData.want = i === 0 ? 1 : 0; g.userData.have = i === 0 ? 1 : 0;
   });
+  // A tab may have been picked before three.js finished loading.
+  setTier(Math.max(0, tierTabs.findIndex((t) => t.getAttribute('aria-selected') === 'true')));
 
   const smooth = (t: number) => t * t * (3 - 2 * t);
 
@@ -304,6 +274,11 @@ export function initHome(): void {
       g.scale.setScalar(lerp(0.86, 1, h));
       g.position.y = lerp(-0.55, 0, h);
     });
+    if (tierV) {
+      tierRot = lerp(tierRot, tierP, aMove);
+      tierV.pivot.rotation.y = -0.62 + tierRot * 1.15;
+      tierV.frame(tierV.baseDist - tierRot * 1.4, tierV.baseH, tierV.lookY);
+    }
 
     /* machines ride a carousel — each keeps its own space, so nothing ever
        renders through anything else, and the settled one is fully solid */
@@ -321,9 +296,7 @@ export function initHome(): void {
     if (showV  && showV.onScreen)  showV.render();
   }
 
-  sizeHz();
   stages.forEach(v => v.resize());
-  frame();
   poke();
   if (stages.length) loop();
 

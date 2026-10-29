@@ -1,29 +1,67 @@
 ---
-// Contract manufacturing: the pinned four-tier ladder, with the 3D winch
-// built up one tier at a time (home-scroll.ts).
+// Contract manufacturing: the four tiers as tabs, with the 3D winch built up
+// to the selected tier (home-scroll.ts listens for 'tierchange').
 import { MANUFACTURING, TIERS } from '@data/home';
 ---
-<section data-zone="Manufacturing" class="pin-wrap" id="tiers">
-  <div class="pin-stick">
-    <div class="wrap pin-grid">
-      <div class="pin-vis"><canvas id="tierGL" role="img"
-        aria-label="3D winch assembly building up one manufacturing tier at a time"></canvas></div>
-      <div>
-        <h2 class="d3 tier-h">{MANUFACTURING.heading}</h2>
-        <p class="tier-intro">{MANUFACTURING.body}</p>
-        <div class="pin-copy">
-          {TIERS.map((t, i) => (
-            <article class={`tier${i === 0 ? ' on' : ''}`} data-t={i}>
-              <div class="num">{t.n}</div>
-              <h3 class="d3">{t.title}</h3>
-              <p class="lede">{t.lede}</p>
-              <ul>{t.points.map((pt) => <li>{pt}</li>)}</ul>
-            </article>
-          ))}
-        </div>
-        <div class="pin-bar" aria-hidden="true">{TIERS.map((t, i) => <i class={i === 0 ? 'on' : ''}><b>{t.n}</b><span>{t.title}</span></i>)}</div>
-        <p style="margin-top:30px"><a class="arw" href={MANUFACTURING.link.href}>{MANUFACTURING.link.label} →</a></p>
+<section class="tiers-sec" id="tiers">
+  <div class="wrap pin-grid">
+    <div class="pin-vis"><canvas id="tierGL" role="img"
+      aria-label="3D winch assembly, built up to the selected manufacturing tier"></canvas></div>
+    <div>
+      <h2 class="d3 tier-h">{MANUFACTURING.heading}</h2>
+      <p class="tier-intro">{MANUFACTURING.body}</p>
+      <div class="pin-bar" role="tablist" aria-label="Manufacturing tiers">
+        {TIERS.map((t, i) => (
+          <button type="button" role="tab" id={`tier-tab-${i}`} aria-controls={`tier-${i}`}
+            aria-selected={i === 0 ? 'true' : 'false'} tabindex={i === 0 ? 0 : -1}
+            class={i === 0 ? 'on' : ''}><b>{t.n}</b><span>{t.title}</span></button>
+        ))}
       </div>
+      <div class="pin-copy">
+        {TIERS.map((t, i) => (
+          <article class={`tier${i === 0 ? ' on' : ''}`} id={`tier-${i}`} role="tabpanel" tabindex="0"
+            aria-labelledby={`tier-tab-${i}`}>
+            <div class="num">{t.n}</div>
+            <h3 class="d3">{t.title}</h3>
+            <p class="lede">{t.lede}</p>
+            <ul>{t.points.map((pt) => <li>{pt}</li>)}</ul>
+          </article>
+        ))}
+      </div>
+      <p style="margin-top:30px"><a class="arw" href={MANUFACTURING.link.href}>{MANUFACTURING.link.label} →</a></p>
     </div>
   </div>
 </section>
+
+<script>
+  // WAI-ARIA tabs: click, or arrow keys / Home / End with roving tabindex.
+  const boot = () => {
+    const root = document.getElementById('tiers');
+    if (!root) return;
+    const tabs = [...root.querySelectorAll<HTMLButtonElement>('[role="tab"]')];
+    const panels = [...root.querySelectorAll<HTMLElement>('[role="tabpanel"]')];
+    const select = (idx: number, focus = false) => {
+      tabs.forEach((t, i) => {
+        const on = i === idx;
+        t.classList.toggle('on', i <= idx); // the rule fills up to the selected tier
+        t.setAttribute('aria-selected', String(on));
+        t.tabIndex = on ? 0 : -1;
+      });
+      panels.forEach((p, i) => p.classList.toggle('on', i === idx));
+      if (focus) tabs[idx].focus();
+      root.dispatchEvent(new CustomEvent('tierchange', { detail: idx }));
+    };
+    tabs.forEach((t, i) => {
+      t.addEventListener('click', () => select(i));
+      t.addEventListener('keydown', (e) => {
+        if (e.altKey || e.ctrlKey || e.metaKey) return; // leave browser shortcuts alone
+        const n = tabs.length;
+        const to = { ArrowRight: (i + 1) % n, ArrowLeft: (i - 1 + n) % n, Home: 0, End: n - 1 }[e.key];
+        if (to === undefined) return;
+        e.preventDefault();
+        select(to, true);
+      });
+    });
+  };
+  document.addEventListener('astro:page-load', boot);
+</script>

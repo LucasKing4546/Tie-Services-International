@@ -3,8 +3,8 @@
  * The Product template — equipment detail pages (winches, LARS, cranes,
  * power units...). Composition: hero (heading, one-line intro, two buttons)
  * -> the body's short feature lists in two columns -> one row per
- * configuration, its photograph beside its own spec table -> applications
- * -> buttons and the standard band.
+ * configuration, its photograph beside its own spec table -> buttons and
+ * the standard band.
  *
  * Deliberately short, like Sector.astro: the copy is a list a buyer checks
  * against a specification. The "full datasheet on request" line is each
@@ -19,13 +19,11 @@ import Base from '@layouts/Base.astro';
 import PageHero from '@components/blocks/PageHero.astro';
 import Section from '@components/blocks/Section.astro';
 import FamilyDesigns from '@components/blocks/FamilyDesigns.astro';
-import SectionHead from '@components/blocks/SectionHead.astro';
 import Prose from '@components/blocks/Prose.astro';
 import SpecTable from '@components/blocks/SpecTable.astro';
 import FeatureRow from '@components/blocks/FeatureRow.astro';
 import MediaBand from '@components/blocks/MediaBand.astro';
 import StatsStrip from '@components/blocks/StatsStrip.astro';
-import TagList from '@components/blocks/TagList.astro';
 import Skeleton from '@components/blocks/Skeleton.astro';
 import PageEnding from '@components/blocks/PageEnding.astro';
 import { mdxComponents } from '@lib/mdx';
@@ -139,17 +137,6 @@ const datasheetHref = datasheetPage ? `${datasheetPage.slug}?equipment=${encodeU
   )}
 
   <FamilyDesigns page={page} />
-
-  {data.product && data.product.applications.length > 0 && (
-    <Section tone="off" class="apps">
-      <SectionHead heading="Applications" level={2} />
-      <TagList items={data.product.applications} />
-    </Section>
-  )}
-
-  {data.draft && (!data.product || data.product.applications.length === 0) && (
-    <Skeleton label="Applications" kind="rows" count={2} tone="off" />
-  )}
 
   <PageEnding page={page} proofBar cta={endingCta(data)} draft={data.draft} outline={data.outline} />
 </Base>

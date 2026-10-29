@@ -9,7 +9,6 @@ import Gap from '@components/blocks/Gap.astro';
 import Fig from '@components/blocks/Fig.astro';
 import Note from '@components/blocks/Note.astro';
 import SpecTable from '@components/blocks/SpecTable.astro';
-import TagList from '@components/blocks/TagList.astro';
 import ImageSlot from '@components/blocks/ImageSlot.astro';
 import Quote from '@components/blocks/Quote.astro';
 
@@ -18,7 +17,6 @@ export const mdxComponents = {
   Fig,
   Note,
   SpecTable,
-  TagList,
   ImageSlot,
   Quote,
 };

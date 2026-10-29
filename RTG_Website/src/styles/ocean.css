@@ -4,10 +4,8 @@
    The whole descent is ONE background: <main> carries a single gradient from
    the surface navy down to near-black, and every section sits transparent on
    top of it. That is what makes the page darken continuously on any length
-   of page with no script. With script, initDepth() (lib/depth.ts) holds the
-   gradient still behind a pinned section, so the water only darkens while
-   the page is actually descending. --sea-0, the lightest stop, already passes 4.5:1 against white,
-   so type is legible at every depth.
+   of page with no script. --sea-0, the lightest stop, already passes 4.5:1
+   against white, so type is legible at every depth.
    ========================================================================== */
 
 /* --sea-top holds the surface colour flat for the first stretch, so the
@@ -35,53 +33,9 @@ html{scrollbar-color:var(--sea-0) var(--sea-2)}
 .waterline.slim .wv-back{height:44px}
 .waterline.slim .wv-mid{height:39px}
 
-/* ---------- depth gauge (DepthGauge.astro) ---------- */
-.gauge{--depth:0;--rail:26svh;position:fixed;inset:0;z-index:300;pointer-events:none}
-/* Light from the surface: strongest at the top of the page, gone by a third
-   of the way down. */
-.gauge-light{position:absolute;inset:0 -8% auto -8%;height:86svh;mix-blend-mode:screen;
-  background:
-    repeating-linear-gradient(102deg,rgba(255,255,255,.07) 0 46px,transparent 46px 170px,rgba(255,255,255,.04) 170px 250px,transparent 250px 380px),
-    radial-gradient(70% 100% at 50% 0%,rgba(255,255,255,.22),transparent 72%);
-  mask-image:linear-gradient(to bottom,#000,transparent);
-  opacity:calc(1 - var(--depth) * 2.2);animation:shafts 14s ease-in-out infinite alternate}
-@keyframes shafts{from{transform:translateX(-3%)}to{transform:translateX(3%)}}
-.gauge-rail{position:absolute;right:13px;top:50%;width:2px;height:var(--rail);margin-top:calc(var(--rail) / -2);
-  border-radius:2px;background:color-mix(in oklab,var(--sea-0) 45%,var(--sky))}
-.gauge-rail i{position:absolute;right:-4px;width:10px;height:1px;background:inherit}
-.gauge-bob{position:absolute;left:-3px;top:calc(var(--depth) * 100%);width:8px;height:8px;margin-top:-4px;
-  border-radius:50%;background:var(--red);outline:2px solid #fff}
-/* The readout rides beside the bob, so the figure is always at the point on
-   the rail it describes. */
-.gauge-read{position:absolute;right:28px;top:calc(50% - var(--rail) / 2 + var(--depth) * var(--rail));transform:translateY(-50%);margin:0;max-width:none;padding:5px 9px 6px;
-  border-radius:7px;background:rgba(1,10,36,.82);border:1px solid rgba(255,255,255,.16);
-  font-family:var(--f-m);font-size:9px;line-height:1.3;letter-spacing:.08em;text-transform:uppercase;
-  color:rgba(255,255,255,.78);text-align:right;white-space:nowrap}
-.gauge-read b{display:block;font-size:12.5px;font-weight:500;letter-spacing:0;color:#fff;
-  font-variant-numeric:tabular-nums;text-transform:none}
-/* Up to 1560px there is little room beside the content, so the readout
-   drops the section name and shows the metres alone. */
-@media (min-width:901px) and (max-width:1560px){
-  .gauge-read{right:24px;padding:4px 7px}
-  .gauge-read span{display:none}
-}
-/* Between the phone layout and about 1100px the readout has no margin to
-   sit in and would lie on the content, so the rail and bob stand alone. */
-@media (min-width:901px) and (max-width:1100px){.gauge-read{display:none}}
-@media (max-width:900px){
-  .gauge-rail{display:none}
-  /* No rail on a phone, so the readout parks in the corner: the left one,
-     the chat launcher has the right. */
-  .gauge-read{top:auto;transform:none;right:auto;left:12px;bottom:12px;padding:7px 11px 8px;min-width:0}
-  .gauge-read span{display:none}
-  .gauge-read b{font-size:14px}
-}
-@media print{.gauge{display:none}}
-
 /* ---------- seabed (Footer.astro) ---------- */
-.ftr{background:#00061a}
 .seabed{position:absolute;left:0;bottom:calc(100% - 1px);width:100%;height:46px;display:block}
-.seabed path{fill:#00061a;stroke:rgba(255,255,255,.2);stroke-width:1;vector-effect:non-scaling-stroke}
+.seabed path{fill:var(--navy);stroke:rgba(255,255,255,.2);stroke-width:1;vector-effect:non-scaling-stroke}
 
 /* ---------- page hero under the surface ---------- */
 .phero{--fade:clamp(40px,6vw,84px);background:none;padding-top:var(--fade)}
@@ -91,15 +45,15 @@ html{scrollbar-color:var(--sea-0) var(--sea-2)}
 .phero:has(.phero-media-shot){mask-image:linear-gradient(to bottom,transparent,#000 var(--fade))}
 
 @media (prefers-reduced-motion:reduce){
-  .wv,.gauge-light{animation:none}
+  .wv{animation:none}
 }
 
 /* ---------- nothing paints over the water ----------
    Section-level tones stay transparent so the descent reads as one unbroken
    darkening; a tone only ever marks a card or a callout, never a band. */
-.sec.off,.navy,.strack,.pstage,.pstage.off,.pstage.navy,.fleet{background:none}
+.sec.off,.navy,.strack,.fleet{background:none}
 /* Section labels above a heading repeat the heading. */
-.sechd > .mono,.frow-copy > .mono,.tier-eyebrow,.hz-head .mono,.strack-head .mono,.pstage-head .mono{display:none}
+.sechd > .mono,.frow-copy > .mono,.tier-eyebrow,.strack-head .mono{display:none}
 
 
 /* Spec tables: hairlines only, so the caption and body read as one table. */

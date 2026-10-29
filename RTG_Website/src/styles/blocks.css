@@ -27,8 +27,7 @@
 
 /* ---------- section head (SectionHead.astro) ----------
    A hairline rule, deliberately no number — numbering is reserved for the
-   three places order is a real sequence: StepList, the Ladder's tiers, and
-   PinnedStages. Elsewhere a section head's content isn't a numbered step. */
+   places order is a real sequence: StepList and the tiers. Elsewhere a section head's content isn't a numbered step. */
 .sechd{position:relative;margin-bottom:52px;border-top:1px solid var(--rule);padding-top:28px}
 .sechd > *{max-width:900px}
 .navy .sechd{border-top-color:rgba(255,255,255,.2)}
@@ -73,8 +72,8 @@
    out by an even overlay. */
 .phero:has(.phero-media-shot)::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
   background:
-    linear-gradient(to top,rgba(2,14,44,.82) 0%,rgba(2,14,44,.55) 38%,rgba(2,14,44,.12) 72%,transparent 100%),
-    linear-gradient(to right,rgba(2,14,44,.45) 0%,rgba(2,14,44,.18) 45%,transparent 70%)}
+    linear-gradient(to top,rgba(6,21,32,.82) 0%,rgba(6,21,32,.55) 38%,rgba(6,21,32,.12) 72%,transparent 100%),
+    linear-gradient(to right,rgba(6,21,32,.45) 0%,rgba(6,21,32,.18) 45%,transparent 70%)}
 
 .phero-in{padding-bottom:64px}
 .phero .crumbs{margin-bottom:30px}
@@ -101,9 +100,6 @@
    needs to breathe rather than pay full padding too. */
 .phero + .sec,.phero + .sec.sm{padding-top:76px}
 @media (max-width:900px){.phero + .sec,.phero + .sec.sm{padding-top:56px}}
-/* Against a navy set-piece there's no tone change to mark the seam, and a
-   pinned band already arrives with its own leading space. */
-.phero + .strack .strack-stick,.phero + .pstage .pstage-stick{padding-top:24px}
 
 /* ---------- feature row (FeatureRow.astro) ----------
    Copy one side, media the other, alternating down the page. */
@@ -341,19 +337,11 @@ html.js .car-nav{display:flex}
 @media (max-width:700px){.info-grid{grid-template-columns:1fr}}
 
 /* ---------- scroll track (ScrollTrack.astro) ----------
-   A pinned full-height navy band where vertical scroll drives the cards
-   sideways — the generic, id-free version of the homepage's .hz-*, driven
-   by initScrollTracks() in lib/motion.ts.
-
-   Progressive enhancement, each state usable on its own:
-     no JS      -> .strack-rail is a native horizontally scrollable row
-     JS         -> .strack.on pins the section, drives the rail by
-                   transform, with a progress rail
-     reduced motion / under 900px -> stays the native scrollable row */
+   A full-bleed band with a native scroll-snapped row of cards. It moves only
+   by swipe/drag or the prev/next buttons (initCarousels() in lib/motion.ts),
+   never by page scroll. */
 .strack{position:relative;background:var(--panel-2);color:#fff}
 .strack-stick{padding:64px 0}
-.strack.on .strack-stick{position:sticky;top:0;height:100svh;padding:0;
-  display:flex;flex-direction:column;justify-content:center;overflow:hidden}
 .strack-head{display:flex;flex-direction:column;align-items:flex-start;gap:18px;margin-bottom:44px}
 .strack-head h2{color:#fff;max-width:16ch}
 .strack-head .lede{color:rgba(255,255,255,.66);max-width:36ch;margin:0}
@@ -362,136 +350,20 @@ html.js .car-nav{display:flex}
   padding-inline:max(var(--gut),calc((100vw - var(--wrap))/2 + var(--gut)))}
 .strack-rail::-webkit-scrollbar{display:none}
 .strack-rail > *{flex:none;width:330px;scroll-snap-align:start}
-/* overflow:visible, NOT hidden. An element's own overflow clip is applied in
-   its untransformed box and then carried along by the transform, so
-   clipping the rail (the element the transform moves) would cut away any
-   card past clientWidth and travel the clip window left with the cards as
-   they slide, permanently hiding the tail of the track. The clip belongs on
-   .strack-stick instead, which is full-width and doesn't move — same as the
-   homepage's .hz-track/.hz-stick pair. The rail is only a scroll container
-   in the unpinned fallback state. */
-.strack.on .strack-rail{overflow:visible;scroll-snap-type:none;will-change:transform}
-/* .strack-foot: the progress rail (pinned state only) and the prev/next
-   buttons (every state — see the doc comment above ScrollTrack.astro for
-   why the buttons can't wait for .on). Either can be the row's only child,
-   so justify-content:space-between degrades to "the one visible item",
-   never a lone element stranded mid-row. */
-.strack-foot{margin-top:44px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-.strack-prog{flex:1;display:none}
-.strack.on .strack-prog{display:block}
-.strack-prog .rail{height:2px;background:rgba(255,255,255,.18);border-radius:2px;position:relative}
-.strack-prog .fill{position:absolute;inset:0 auto 0 0;width:0;background:var(--red);border-radius:2px}
+.strack-foot{margin-top:44px;display:flex;justify-content:flex-end}
 .strack-nav{display:none;gap:10px;flex:none;margin-left:auto}
 html.js .strack-nav{display:flex}
 .strack-btn{width:44px;height:44px;flex:none;border-radius:50%;border:1px solid rgba(255,255,255,.28);
   background:transparent;display:grid;place-items:center;font-size:19px;line-height:1;color:#fff;
   cursor:pointer;transition:border-color .25s var(--e),background .25s var(--e)}
 .strack-btn:hover{border-color:var(--red);background:var(--red)}
+.strack-btn:disabled{opacity:.32;cursor:default}
+.strack-btn:disabled:hover{border-color:rgba(255,255,255,.28);background:transparent}
 /* Cards on the navy ground reuse .ecard.inv rather than a second card style. */
 .strack .ecard{min-height:390px}
 @media (max-width:900px){
-  .strack{height:auto!important}
-  .strack.on .strack-stick{position:static;height:auto;padding:76px 0;overflow:visible}
   .strack-rail{padding-inline:var(--gut)}
-  .strack.on .strack-rail{overflow-x:auto;transform:none!important}
   .strack-rail > *{width:min(78vw,330px)}
-  .strack-prog,.strack.on .strack-prog{display:none}
-}
-
-/* ---------- pinned stages (PinnedStages.astro + PinnedStage.astro) ----------
-   The section holds the viewport while its stages cross-fade one at a time
-   — the homepage's manufacturing-tier set-piece (.pin-* in home.css)
-   generalised, minus the 3D column.
-
-   Everything that hides a stage is scoped to .pstage.on, added only by
-   initPinStages() (lib/motion.ts). With no JS, under reduced-motion, below
-   900px, or with too few stages, it stays an ordinary stacked column with
-   every stage visible. */
-.pstage{position:relative;background:var(--panel)}
-.pstage.off{background:var(--panel)}
-.pstage.navy{background:var(--panel-2);color:#fff}
-/* Narrow exception to "no gradients" (CLAUDE.md §7): a monochrome
-   navy-to-navy-2 vignette (no colour shift) behind the focused stage, so a
-   full-viewport pinned band doesn't read as a flat slab. Only while
-   pinned — the stacked fallback has no single active stage to centre it
-   on. */
-.pstage.navy h2,.pstage.navy h3{color:#fff}
-.pstage.navy .lede{color:rgba(255,255,255,.72)}
-.pstage-stick{padding:68px 0}
-.pstage.on .pstage-stick{position:sticky;top:0;height:100svh;padding:0;
-  display:flex;align-items:center;overflow:hidden}
-.pstage-grid{display:grid;grid-template-columns:.72fr 1fr;gap:70px;align-items:center}
-.pstage-head .lede{margin-top:20px}
-
-/* The live index — see the component's doc comment for why a pinned section
-   needs one rather than a bare progress bar. */
-.pstage-index{list-style:none;margin:38px 0 0;padding:0;display:flex;flex-direction:column;gap:2px;
-  border-top:1px solid var(--rule)}
-.pstage.navy .pstage-index{border-top-color:rgba(255,255,255,.18)}
-.pstage-index li{display:flex;gap:16px;align-items:baseline;padding:13px 0;
-  border-bottom:1px solid var(--rule);opacity:.42;
-  transition:opacity .4s var(--e),transform .4s var(--e)}
-.pstage.navy .pstage-index li{border-bottom-color:rgba(255,255,255,.18)}
-.pstage-index li.on{opacity:1;transform:translateX(10px)}
-.pstage-index .n{font-family:var(--f-m);font-size:11px;letter-spacing:.14em;flex:none;
-  color:var(--ink-2);font-variant-numeric:tabular-nums}
-.pstage.navy .pstage-index .n{color:rgba(255,255,255,.6)}
-.pstage-index li.on .n{color:var(--accent)}
-.pstage.navy .pstage-index li.on .n{color:#fff}
-.pstage-index .t{font-family:var(--f-d);font-weight:600;font-size:15px;letter-spacing:-.01em;
-  line-height:1.35}
-
-.pstage-bar{display:flex;gap:6px;margin-top:26px}
-.pstage-bar i{height:2.5px;flex:1;background:var(--rule);border-radius:2px;transition:background .4s var(--e)}
-.pstage.navy .pstage-bar i{background:rgba(255,255,255,.2)}
-.pstage-bar i.on{background:var(--red)}
-.pstage.navy .pstage-bar i.on{background:#fff}
-
-/* Unpinned: a plain stacked column. Pinned: one stage in the box at a time. */
-.pstage-list{position:relative;display:flex;flex-direction:column;gap:52px}
-.pstage.on .pstage-list{display:block;gap:0}
-/* Every stage is absolutely positioned once pinned, including the active
-   one, so box height comes solely from the min-height initPinStages()
-   measures from the tallest stage — an active stage left in normal flow
-   would resize the box on every change and shunt the whole layout up and
-   down as you scroll.
-   visibility, not just opacity: an opacity:0 stage stays focusable and in
-   the accessibility tree, so a keyboard visitor would tab into invisible
-   stages. Delaying the visibility transition until the fade finishes keeps
-   it present through the fade, then removes it properly. */
-.pstage.on .pstage-list > *{position:absolute;inset:0 0 auto 0;opacity:0;visibility:hidden;
-  transform:translateY(24px);pointer-events:none;
-  transition:opacity .55s var(--e),transform .55s var(--e),visibility 0s linear .55s}
-.pstage.on .pstage-list > *.on{opacity:1;visibility:visible;transform:none;pointer-events:auto;
-  transition:opacity .55s var(--e),transform .55s var(--e),visibility 0s}
-
-.pstage-num{font-family:var(--f-d);font-weight:800;font-size:clamp(64px,8vw,128px);line-height:.92;
-  color:var(--panel);letter-spacing:-.05em;margin:0 0 14px;font-variant-numeric:tabular-nums lining-nums}
-.pstage.off .pstage-num{color:rgba(255,255,255,.22)}
-.pstage.navy .pstage-num{color:rgba(255,255,255,.22)}
-.pstage.on .pstage-list > *.on .pstage-num{color:var(--accent)}
-.pstage.navy.on .pstage-list > *.on .pstage-num{color:#fff}
-.pstage-num .lc-n{display:block;margin-bottom:14px}
-.pstage.navy .pstage-num .lc-n{color:rgba(255,255,255,.6)}
-.pstage-item h3{margin-bottom:16px;max-width:20ch;font-size:clamp(26px,3.2vw,42px)}
-.pstage-body{margin:0;color:var(--ink-2);font-size:clamp(16.5px,1.35vw,19px);line-height:1.6;max-width:52ch}
-.pstage.navy .pstage-body{color:rgba(255,255,255,.72)}
-.pstage-item .lc-l{margin-top:22px}
-.pstage.navy .lc-l li{color:rgba(255,255,255,.72)}
-
-@media (max-width:900px){
-  .pstage{height:auto!important}
-  .pstage.on .pstage-stick{position:static;height:auto;padding:76px 0;overflow:visible}
-  .pstage-grid{grid-template-columns:1fr;gap:34px}
-  .pstage.on .pstage-list{display:flex;gap:52px}
-  .pstage.on .pstage-list > *{position:relative;inset:auto;opacity:1;visibility:visible;
-    transform:none;pointer-events:auto}
-  .pstage.on .pstage-list > * .pstage-num{color:var(--accent)}
-  .pstage.navy.on .pstage-list > * .pstage-num{color:#fff}
-  /* Every stage is on the page in the stacked fallback, so an index of what
-     is coming next is redundant — and repeating all six titles immediately
-     above the six stages themselves reads as a duplicate. */
-  .pstage-index,.pstage-bar{display:none}
 }
 
 /* ---------- before/after comparison (CompareSlot.astro) ----------
@@ -613,7 +485,7 @@ html.js .cmp.sweep .cmp-handle{transition:left .8s var(--e-heavy)}
   letter-spacing:-.06em;color:rgba(255,255,255,.13);font-variant-numeric:tabular-nums;
   pointer-events:none}
 .tier-card::after{content:"";position:absolute;inset:0;z-index:0;
-  background:linear-gradient(180deg,rgba(3,29,91,.1) 0%,rgba(3,29,91,.55) 55%,rgba(3,29,91,.94) 100%)}
+  background:linear-gradient(180deg,rgba(13,43,59,.1) 0%,rgba(13,43,59,.55) 55%,rgba(13,43,59,.94) 100%)}
 .tier-card-body{position:relative;z-index:1;padding:30px}
 .tier-card-body .lc-n{color:rgba(255,255,255,.7)}
 .tier-card-body h3{color:#fff}
@@ -672,11 +544,6 @@ table.spec .foot{margin-top:16px;font-size:13.5px;color:var(--ink-2)}
 .note h3{font-size:16px;margin-bottom:10px}
 .note p{font-size:15px;color:var(--ink-2);margin:0}
 .note.warn{background:var(--panel);border-color:var(--rule)}
-
-/* ---------- tag list (TagList.astro) ---------- */
-.taglist{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
-.tag{font-family:var(--f-m);font-size:11px;letter-spacing:.06em;text-transform:uppercase;
-  color:var(--ink);background:var(--panel);border:1px solid var(--rule);border-radius:100px;padding:7px 14px}
 
 /* ---------- image placeholder (ImageSlot.astro) ----------
    No <img> until real photography exists - a <figure role="img"

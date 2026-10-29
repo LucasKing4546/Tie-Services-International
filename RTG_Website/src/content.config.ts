@@ -196,10 +196,6 @@ const pages = defineCollection({
         .object({
           category: z.string().optional(),
           drive: z.array(z.string()).default([]),
-          /** A cross-cut facet, not a top-level taxonomy — see the workbook's
-           *  Meta Tag Rules sheet: "Applications" is shown only on equipment
-           *  pages, "Sectors" stays the top-level term. */
-          applications: z.array(z.string()).default([]),
           datasheetPageId: knownId('product.datasheetPageId').default('R-01'),
         })
         .optional(),

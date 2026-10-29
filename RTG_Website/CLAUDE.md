@@ -136,8 +136,10 @@ src/
                           Fallback.astro is the temporary stand-in for any
                           template not yet built.
   lib/rtg3d.ts            Procedural 3D models of RTG equipment.
-  lib/home-scroll.ts      Homepage scroll choreography (3D only — motion.ts
-                          below owns everything shared).
+  lib/home-scroll.ts      Homepage 3D: the tier winch (driven by the Tiers
+                          tabs) and the equipment showroom. motion.ts below
+                          owns everything shared.
+  lib/hoist.ts            Pays out the homepage hoist line on scroll.
   lib/motion.ts           Shared reveal/count-up/parallax system every page
                           boots on 'astro:page-load'. Templates opt in
                           declaratively (a class, a data-motion attribute).
@@ -152,7 +154,7 @@ src/
                           every MDX body gets with no import.
   styles/                 tokens.css (global), blocks.css (every non-Home
                           page), home.css (homepage only), ocean.css
-                          (the water, waterline, depth gauge, seabed).
+                          (the water, waterline, seabed).
   pages/[...slug].astro   The routing dispatcher — see below.
   pages/index.astro, 404.astro  The two explicit route files.
 scripts/                 Page-map regeneration and pre-deploy audits.
@@ -304,23 +306,30 @@ enforces it and **fails the build**.
 
 The site is an ocean descent. The homepage opens above the water (pale sky,
 navy type), crosses an animated waterline, and every page then darkens
-continuously to the seabed at the footer. A depth gauge on the right edge reads
-the descent, from 0 m to `PROOF.cptDepthM`.
+continuously to the seabed, where the footer takes the logo navy. There is no
+depth gauge (removed by the site owner on 2026-10-29).
+
+**Carousels never move with page scroll** (decided 2026-10-29). Card rails
+(`ScrollTrack`, `Carousel`) are native scroll-snap rows moved by swipe/drag or
+their prev/next buttons; the homepage Tiers are tabs. Nothing pins.
 
 **The descent is one background, not per-section colours**: `<main>` carries a
 single gradient (`--sea-0` → `--sea-1` → `--sea-2`, `src/styles/ocean.css`) and
 every section sits transparent on it. Do not give a section its own opaque
 background. `Section`'s `tone="off"` / `tone="navy"` are faint translucent panels.
 
-Palette is the brand navy and red from the live RTG stylesheet, unchanged.
+Two palettes (decided 2026-10-29). The brand navy and red from the live RTG
+stylesheet, unchanged, colour the logo, the header, the footer and the
+buttons. The water is the ambient, desaturated teal-grey ramp from the
+concept file (`romica-website-concept.html`), without its hi-vis yellow.
 
 | Token | Value | Use |
 |---|---|---|
-| `--navy` | `#031d5b` | The water at mid-depth; type above the waterline. |
-| `--red` | `#AB3241` | Fills and marks only: primary buttons, rules, bullets, the gauge bob. Never type on navy (about 2.3:1). |
-| `--sky` | `#EEF2FA` | Above the waterline: homepage hero and the header bar. |
-| `--sea-0` / `--sea-1` / `--sea-2` | `#17409a` / navy / `#010a24` | Surface, mid-water, seabed. `--sea-0` is the lightest ground white type sits on. |
-| `--ink`, `--ink-2` | white, white 76% | Text. Always use these, never `--navy` or `--muted`, for type. |
+| `--navy` | `#031d5b` | Logo navy: header type, the footer ground, the seabed edge. |
+| `--red` | `#AB3241` | Fills and marks only: primary buttons, rules, bullets. Never type under water. |
+| `--sky` | `#DCE7EA` | Mist above the waterline: homepage hero and inner-page sky band. Type on it is `#0D2B3B` (`.above`). |
+| `--sea-0` / `--sea-1` / `--sea-2` | `#1F5467` / `#0D2B3B` / `#061520` | Teal surface, deep mid-water, abyss. `--sea-0` is the lightest ground white type sits on (about 8.6:1). |
+| `--ink`, `--ink-2` | white, `#BFD2D8` | Text. Always use these, never `--navy` or `--muted`, for type. |
 | `--rule`, `--panel`, `--panel-2` | white alphas / dark alpha | Hairlines and faint panels. |
 | `--accent` | white under water, red above | Accented type. |
 
@@ -337,10 +346,10 @@ no reversed version.
 - **Minimal surfaces: no drop shadows, no textures, no glows, no stock-photo
   collages.** The one gradient is the water itself. Cards use
   1px hairline borders and 16px radius. Buttons are fully rounded pills.
-- **Never navy text on navy, never red text on navy.**
-- **Motion budget, five pieces:** waves, the vessel arriving, the hoist line, the
-  depth gauge, surface light fading with depth. Masked reveals are the only
-  entrance motion. Do not add scattered hover effects.
+- **Never navy text on navy, never red text on the water.**
+- **Motion budget, three pieces:** waves, the vessel arriving, the hoist line.
+  Masked reveals are the only entrance motion. Never drive a carousel, pin or
+  content switch from page scroll. Do not add scattered hover effects.
 - **Compact.** Pages are meant to be short: one idea per screen. Section padding
   and display sizes were cut for this; do not grow them back.
 - Masked line reveals (`.rl`) need `padding-bottom` inside the mask or descenders

@@ -9,7 +9,6 @@ import { resolvePage } from '@lib/page';
 import { entryFor, UNFINISHED } from '@lib/content';
 import Header from '@components/site/Header.astro';
 import Footer from '@components/site/Footer.astro';
-import DepthGauge from '@components/site/DepthGauge.astro';
 import '@fontsource-variable/archivo/wght.css';
 import '@fontsource-variable/inter/wght.css';
 import '@fontsource/jetbrains-mono/400.css';
@@ -187,13 +186,12 @@ const robots = offMap || unfinished ? 'noindex, follow' : 'index, follow, max-im
       <slot />
     </main>
     <Footer />
-    <DepthGauge />
     <slot name="body-end" />
 
     <script>
       import { initMotion } from '@lib/motion';
       import { initFormPrefill } from '@lib/forms';
-      import { initDepth } from '@lib/depth';
+      import { initHoist } from '@lib/hoist';
       // astro:page-load fires on first load and after every client-side
       // navigation — the one place reveals, counters and parallax get
       // booted. Don't call initMotion() again from a template: home-scroll.ts
@@ -201,7 +199,7 @@ const robots = offMap || unfinished ? 'noindex, follow' : 'index, follow, max-im
       // 3D on top.
       document.addEventListener('astro:page-load', initMotion);
       document.addEventListener('astro:page-load', initFormPrefill);
-      document.addEventListener('astro:page-load', initDepth);
+      document.addEventListener('astro:page-load', initHoist);
     </script>
 
   </body>

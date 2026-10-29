@@ -2,7 +2,7 @@
 /**
  * The homepage opens above the water: headline on the sky, a survey vessel
  * arriving on the waterline, and its hoist line paying out as you scroll
- * (--sy, set by src/lib/depth.ts). The proof figures are the first thing
+ * (--sy, set by src/lib/hoist.ts). The proof figures are the first thing
  * under the surface.
  *
  * The vessel is a drawn silhouette, not a model of any real ship.
@@ -12,7 +12,7 @@ import Waterline from '@components/site/Waterline.astro';
 
 const [lead, accent, rest] = HERO.h1;
 ---
-<section data-zone="Surface" class="hero">
+<section class="hero">
   <div class="hero-sky above">
     <div class="wrap">
       <h1 class="d1"><span class="rl"><span>{lead} <i>{accent}</i> {rest}</span></span></h1>

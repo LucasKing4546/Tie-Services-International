@@ -225,58 +225,6 @@
       "source_location": "L52"
     },
     {
-      "id": "src_data_equipment_equipmentapp",
-      "label": "EquipmentApp",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 113,
-      "community_name": "equipment.ts",
-      "file_type": "code",
-      "norm_label": "equipmentapp",
-      "source_file": "src/data/equipment.ts",
-      "source_location": "L5"
-    },
-    {
-      "id": "src_data_equipment_equipmentdrive",
-      "label": "EquipmentDrive",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 113,
-      "community_name": "equipment.ts",
-      "file_type": "code",
-      "norm_label": "equipmentdrive",
-      "source_file": "src/data/equipment.ts",
-      "source_location": "L6"
-    },
-    {
-      "id": "src_data_equipment_equipmentitem",
-      "label": "EquipmentItem",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 113,
-      "community_name": "equipment.ts",
-      "file_type": "code",
-      "norm_label": "equipmentitem",
-      "source_file": "src/data/equipment.ts",
-      "source_location": "L8"
-    },
-    {
-      "id": "src_data_equipment_equipmenttype",
-      "label": "EquipmentType",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 113,
-      "community_name": "equipment.ts",
-      "file_type": "code",
-      "norm_label": "equipmenttype",
-      "source_file": "src/data/equipment.ts",
-      "source_location": "L4"
-    },
-    {
       "id": "src_lib_home_scroll_machine",
       "label": "Machine",
       "_callable": true,
@@ -381,13 +329,65 @@
       "source_location": "L68"
     },
     {
+      "id": "src_data_equipment_equipmentapp",
+      "label": "EquipmentApp",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 92,
+      "community_name": "lib/equipment.ts",
+      "file_type": "code",
+      "norm_label": "equipmentapp",
+      "source_file": "src/data/equipment.ts",
+      "source_location": "L5"
+    },
+    {
+      "id": "src_data_equipment_equipmentdrive",
+      "label": "EquipmentDrive",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 92,
+      "community_name": "lib/equipment.ts",
+      "file_type": "code",
+      "norm_label": "equipmentdrive",
+      "source_file": "src/data/equipment.ts",
+      "source_location": "L6"
+    },
+    {
+      "id": "src_data_equipment_equipmentitem",
+      "label": "EquipmentItem",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 92,
+      "community_name": "lib/equipment.ts",
+      "file_type": "code",
+      "norm_label": "equipmentitem",
+      "source_file": "src/data/equipment.ts",
+      "source_location": "L8"
+    },
+    {
+      "id": "src_data_equipment_equipmenttype",
+      "label": "EquipmentType",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 92,
+      "community_name": "lib/equipment.ts",
+      "file_type": "code",
+      "norm_label": "equipmenttype",
+      "source_file": "src/data/equipment.ts",
+      "source_location": "L4"
+    },
+    {
       "id": "src_lib_page_resolvedpage",
       "label": "ResolvedPage",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 92,
-      "community_name": "page.ts",
+      "community_name": "lib/equipment.ts",
       "file_type": "code",
       "norm_label": "resolvedpage",
       "source_file": "src/lib/page.ts",
@@ -404,18 +404,6 @@
       "norm_label": "childrenof()",
       "source_file": "src/data/pages.ts",
       "source_location": "L1051"
-    },
-    {
-      "id": "src_data_pages_page",
-      "label": "page()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "blocks.ts",
-      "file_type": "code",
-      "norm_label": "page()",
-      "source_file": "src/data/pages.ts",
-      "source_location": "L1032"
     },
     {
       "id": "src_data_pages_pagebyslug",
@@ -451,7 +439,67 @@
       "file_type": "code",
       "norm_label": "endingcta()",
       "source_file": "src/lib/blocks.ts",
-      "source_location": "L79"
+      "source_location": "L92"
+    },
+    {
+      "id": "src_lib_blocks_isnumericstat",
+      "label": "isNumericStat()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "blocks.ts",
+      "file_type": "code",
+      "norm_label": "isnumericstat()",
+      "source_file": "src/lib/blocks.ts",
+      "source_location": "L75"
+    },
+    {
+      "id": "src_lib_blocks_sentencecase",
+      "label": "sentenceCase()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "blocks.ts",
+      "file_type": "code",
+      "norm_label": "sentencecase()",
+      "source_file": "src/lib/blocks.ts",
+      "source_location": "L82"
+    },
+    {
+      "id": "src_lib_blocks_statdigits",
+      "label": "statDigits()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "blocks.ts",
+      "file_type": "code",
+      "norm_label": "statdigits()",
+      "source_file": "src/lib/blocks.ts",
+      "source_location": "L76"
+    },
+    {
+      "id": "src_lib_blocks_statsuffix",
+      "label": "statSuffix()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "blocks.ts",
+      "file_type": "code",
+      "norm_label": "statsuffix()",
+      "source_file": "src/lib/blocks.ts",
+      "source_location": "L77"
+    },
+    {
+      "id": "src_lib_content_byid",
+      "label": "byId()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "blocks.ts",
+      "file_type": "code",
+      "norm_label": "byid()",
+      "source_file": "src/lib/content.ts",
+      "source_location": "L18"
     },
     {
       "id": "src_lib_content_cardfrom",
@@ -464,6 +512,42 @@
       "norm_label": "cardfrom()",
       "source_file": "src/lib/content.ts",
       "source_location": "L49"
+    },
+    {
+      "id": "src_lib_content_childentries",
+      "label": "childEntries()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "blocks.ts",
+      "file_type": "code",
+      "norm_label": "childentries()",
+      "source_file": "src/lib/content.ts",
+      "source_location": "L40"
+    },
+    {
+      "id": "src_lib_content_entriesfor",
+      "label": "entriesFor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "blocks.ts",
+      "file_type": "code",
+      "norm_label": "entriesfor()",
+      "source_file": "src/lib/content.ts",
+      "source_location": "L33"
+    },
+    {
+      "id": "src_lib_content_entryfor",
+      "label": "entryFor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "blocks.ts",
+      "file_type": "code",
+      "norm_label": "entryfor()",
+      "source_file": "src/lib/content.ts",
+      "source_location": "L25"
     },
     {
       "id": "src_lib_content_hasbody",
@@ -500,6 +584,18 @@
       "norm_label": "articlejsonld()",
       "source_file": "src/lib/seo.ts",
       "source_location": "L84"
+    },
+    {
+      "id": "src_lib_seo_faqpagejsonld",
+      "label": "faqPageJsonLd()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "blocks.ts",
+      "file_type": "code",
+      "norm_label": "faqpagejsonld()",
+      "source_file": "src/lib/seo.ts",
+      "source_location": "L96"
     },
     {
       "id": "src_components_site_header_isactive",
@@ -598,18 +694,6 @@
       "source_location": "L54"
     },
     {
-      "id": "src_lib_seo_faqpagejsonld",
-      "label": "faqPageJsonLd()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 104,
-      "community_name": "seo.ts",
-      "file_type": "code",
-      "norm_label": "faqpagejsonld()",
-      "source_file": "src/lib/seo.ts",
-      "source_location": "L96"
-    },
-    {
       "id": "src_lib_seo_ogimagefor",
       "label": "ogImageFor()",
       "_callable": true,
@@ -634,66 +718,6 @@
       "source_location": "L12"
     },
     {
-      "id": "src_lib_blocks_isnumericstat",
-      "label": "isNumericStat()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 108,
-      "community_name": "ProofBar.astro",
-      "file_type": "code",
-      "norm_label": "isnumericstat()",
-      "source_file": "src/lib/blocks.ts",
-      "source_location": "L72"
-    },
-    {
-      "id": "src_lib_blocks_statdigits",
-      "label": "statDigits()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 108,
-      "community_name": "ProofBar.astro",
-      "file_type": "code",
-      "norm_label": "statdigits()",
-      "source_file": "src/lib/blocks.ts",
-      "source_location": "L73"
-    },
-    {
-      "id": "src_lib_blocks_statsuffix",
-      "label": "statSuffix()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 108,
-      "community_name": "ProofBar.astro",
-      "file_type": "code",
-      "norm_label": "statsuffix()",
-      "source_file": "src/lib/blocks.ts",
-      "source_location": "L74"
-    },
-    {
-      "id": "src_lib_depth_initdepth",
-      "label": "initDepth()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 114,
-      "community_name": "depth.ts",
-      "file_type": "code",
-      "norm_label": "initdepth()",
-      "source_file": "src/lib/depth.ts",
-      "source_location": "L24"
-    },
-    {
-      "id": "src_lib_depth_zoneof",
-      "label": "zoneOf()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 114,
-      "community_name": "depth.ts",
-      "file_type": "code",
-      "norm_label": "zoneof()",
-      "source_file": "src/lib/depth.ts",
-      "source_location": "L19"
-    },
-    {
       "id": "src_content_config_knownid",
       "label": "knownId()",
       "_callable": true,
@@ -704,6 +728,18 @@
       "norm_label": "knownid()",
       "source_file": "src/content.config.ts",
       "source_location": "L6"
+    },
+    {
+      "id": "src_lib_hoist_inithoist",
+      "label": "initHoist()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 123,
+      "community_name": "hoist.ts",
+      "file_type": "code",
+      "norm_label": "inithoist()",
+      "source_file": "src/lib/hoist.ts",
+      "source_location": "L11"
     },
     {
       "id": "src_lib_forms_initformprefill",
@@ -751,7 +787,7 @@
       "file_type": "code",
       "norm_label": "initcarousels()",
       "source_file": "src/lib/motion.ts",
-      "source_location": "L189"
+      "source_location": "L181"
     },
     {
       "id": "src_lib_motion_initcompare",
@@ -763,7 +799,7 @@
       "file_type": "code",
       "norm_label": "initcompare()",
       "source_file": "src/lib/motion.ts",
-      "source_location": "L538"
+      "source_location": "L222"
     },
     {
       "id": "src_lib_motion_initcounters",
@@ -775,7 +811,7 @@
       "file_type": "code",
       "norm_label": "initcounters()",
       "source_file": "src/lib/motion.ts",
-      "source_location": "L91"
+      "source_location": "L83"
     },
     {
       "id": "src_lib_motion_initmotion",
@@ -787,7 +823,7 @@
       "file_type": "code",
       "norm_label": "initmotion()",
       "source_file": "src/lib/motion.ts",
-      "source_location": "L39"
+      "source_location": "L33"
     },
     {
       "id": "src_lib_motion_initparallax",
@@ -799,7 +835,7 @@
       "file_type": "code",
       "norm_label": "initparallax()",
       "source_file": "src/lib/motion.ts",
-      "source_location": "L131"
+      "source_location": "L123"
     },
     {
       "id": "src_lib_motion_initparallax_apply",
@@ -811,19 +847,7 @@
       "file_type": "code",
       "norm_label": "apply()",
       "source_file": "src/lib/motion.ts",
-      "source_location": "L156"
-    },
-    {
-      "id": "src_lib_motion_initpinstages",
-      "label": "initPinStages()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 15,
-      "community_name": "motion.ts",
-      "file_type": "code",
-      "norm_label": "initpinstages()",
-      "source_file": "src/lib/motion.ts",
-      "source_location": "L391"
+      "source_location": "L148"
     },
     {
       "id": "src_lib_motion_initreveals",
@@ -835,19 +859,7 @@
       "file_type": "code",
       "norm_label": "initreveals()",
       "source_file": "src/lib/motion.ts",
-      "source_location": "L65"
-    },
-    {
-      "id": "src_lib_motion_initscrolltracks",
-      "label": "initScrollTracks()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 15,
-      "community_name": "motion.ts",
-      "file_type": "code",
-      "norm_label": "initscrolltracks()",
-      "source_file": "src/lib/motion.ts",
-      "source_location": "L231"
+      "source_location": "L57"
     },
     {
       "id": "src_lib_motion_motionbooted",
@@ -859,7 +871,7 @@
       "file_type": "code",
       "norm_label": "motionbooted()",
       "source_file": "src/lib/motion.ts",
-      "source_location": "L60"
+      "source_location": "L52"
     },
     {
       "id": "src_data_media_orientationof",
@@ -919,7 +931,7 @@
       "file_type": "code",
       "norm_label": "range()",
       "source_file": "scripts/build-equipment.mjs",
-      "source_location": "L138"
+      "source_location": "L152"
     },
     {
       "id": "scripts_build_equipment_text",
@@ -1006,18 +1018,6 @@
       "source_location": "L132"
     },
     {
-      "id": "src_lib_home_scroll_inithome_frame",
-      "label": "frame()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "rtg3d.ts",
-      "file_type": "code",
-      "norm_label": "frame()",
-      "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L240"
-    },
-    {
       "id": "src_lib_home_scroll_inithome_loop",
       "label": "loop()",
       "_callable": true,
@@ -1027,7 +1027,7 @@
       "file_type": "code",
       "norm_label": "loop()",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L285"
+      "source_location": "L257"
     },
     {
       "id": "src_lib_home_scroll_inithome_makestage",
@@ -1051,19 +1051,7 @@
       "file_type": "code",
       "norm_label": "onresize()",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L268"
-    },
-    {
-      "id": "src_lib_home_scroll_inithome_onscroll",
-      "label": "onScroll()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "rtg3d.ts",
-      "file_type": "code",
-      "norm_label": "onscroll()",
-      "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L267"
+      "source_location": "L238"
     },
     {
       "id": "src_lib_home_scroll_inithome_setmodel",
@@ -1078,16 +1066,16 @@
       "source_location": "L179"
     },
     {
-      "id": "src_lib_home_scroll_inithome_sizehz",
-      "label": "sizeHz()",
+      "id": "src_lib_home_scroll_inithome_settier",
+      "label": "setTier()",
       "_callable": true,
       "_origin": "ast",
       "community": 3,
       "community_name": "rtg3d.ts",
       "file_type": "code",
-      "norm_label": "sizehz()",
+      "norm_label": "settier()",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L233"
+      "source_location": "L227"
     },
     {
       "id": "src_lib_rtg3d_box",
@@ -1486,54 +1474,6 @@
       "source_location": "L1042"
     },
     {
-      "id": "src_lib_content_byid",
-      "label": "byId()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "RTG Website \u2014 project guide for Claude Code",
-      "file_type": "code",
-      "norm_label": "byid()",
-      "source_file": "src/lib/content.ts",
-      "source_location": "L18"
-    },
-    {
-      "id": "src_lib_content_childentries",
-      "label": "childEntries()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "RTG Website \u2014 project guide for Claude Code",
-      "file_type": "code",
-      "norm_label": "childentries()",
-      "source_file": "src/lib/content.ts",
-      "source_location": "L40"
-    },
-    {
-      "id": "src_lib_content_entriesfor",
-      "label": "entriesFor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "RTG Website \u2014 project guide for Claude Code",
-      "file_type": "code",
-      "norm_label": "entriesfor()",
-      "source_file": "src/lib/content.ts",
-      "source_location": "L33"
-    },
-    {
-      "id": "src_lib_content_entryfor",
-      "label": "entryFor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "RTG Website \u2014 project guide for Claude Code",
-      "file_type": "code",
-      "norm_label": "entryfor()",
-      "source_file": "src/lib/content.ts",
-      "source_location": "L25"
-    },
-    {
       "id": "src_components_site_waterline_wave",
       "label": "wave()",
       "_callable": true,
@@ -1570,12 +1510,120 @@
       "source_location": "L148"
     },
     {
+      "id": "src_components_blocks_familydesigns_tableabove",
+      "label": "tableAbove()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 92,
+      "community_name": "lib/equipment.ts",
+      "file_type": "code",
+      "norm_label": "tableabove()",
+      "source_file": "src/components/blocks/FamilyDesigns.astro",
+      "source_location": "L30"
+    },
+    {
+      "id": "src_data_pages_page",
+      "label": "page()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 92,
+      "community_name": "lib/equipment.ts",
+      "file_type": "code",
+      "norm_label": "page()",
+      "source_file": "src/data/pages.ts",
+      "source_location": "L1032"
+    },
+    {
+      "id": "src_lib_equipment_datasheetrequest",
+      "label": "datasheetRequest()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 92,
+      "community_name": "lib/equipment.ts",
+      "file_type": "code",
+      "norm_label": "datasheetrequest()",
+      "source_file": "src/lib/equipment.ts",
+      "source_location": "L46"
+    },
+    {
+      "id": "src_lib_equipment_designanchor",
+      "label": "designAnchor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 92,
+      "community_name": "lib/equipment.ts",
+      "file_type": "code",
+      "norm_label": "designanchor()",
+      "source_file": "src/lib/equipment.ts",
+      "source_location": "L42"
+    },
+    {
+      "id": "src_lib_equipment_designlink",
+      "label": "designLink()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 92,
+      "community_name": "lib/equipment.ts",
+      "file_type": "code",
+      "norm_label": "designlink()",
+      "source_file": "src/lib/equipment.ts",
+      "source_location": "L63"
+    },
+    {
+      "id": "src_lib_equipment_designnumber",
+      "label": "designNumber()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 92,
+      "community_name": "lib/equipment.ts",
+      "file_type": "code",
+      "norm_label": "designnumber()",
+      "source_file": "src/lib/equipment.ts",
+      "source_location": "L39"
+    },
+    {
+      "id": "src_lib_equipment_designtags",
+      "label": "designTags()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 92,
+      "community_name": "lib/equipment.ts",
+      "file_type": "code",
+      "norm_label": "designtags()",
+      "source_file": "src/lib/equipment.ts",
+      "source_location": "L35"
+    },
+    {
+      "id": "src_lib_equipment_formatload",
+      "label": "formatLoad()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 92,
+      "community_name": "lib/equipment.ts",
+      "file_type": "code",
+      "norm_label": "formatload()",
+      "source_file": "src/lib/equipment.ts",
+      "source_location": "L32"
+    },
+    {
+      "id": "src_lib_equipment_spectablelinks",
+      "label": "specTableLinks()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 92,
+      "community_name": "lib/equipment.ts",
+      "file_type": "code",
+      "norm_label": "spectablelinks()",
+      "source_file": "src/lib/equipment.ts",
+      "source_location": "L51"
+    },
+    {
       "id": "src_lib_page_resolvepage",
       "label": "resolvePage()",
       "_callable": true,
       "_origin": "ast",
       "community": 92,
-      "community_name": "page.ts",
+      "community_name": "lib/equipment.ts",
       "file_type": "code",
       "norm_label": "resolvepage()",
       "source_file": "src/lib/page.ts",
@@ -1703,17 +1751,6 @@
       "source_location": "L1"
     },
     {
-      "id": "src_components_blocks_equipmentfinder",
-      "label": "EquipmentFinder.astro",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "blocks.ts",
-      "file_type": "code",
-      "norm_label": "equipmentfinder.astro",
-      "source_file": "src/components/blocks/EquipmentFinder.astro",
-      "source_location": "L1"
-    },
-    {
       "id": "src_components_blocks_faq",
       "label": "Faq.astro",
       "_origin": "ast",
@@ -1813,14 +1850,14 @@
       "source_location": "L1"
     },
     {
-      "id": "src_components_blocks_pinnedstage",
-      "label": "PinnedStage.astro",
+      "id": "src_components_blocks_proofbar",
+      "label": "ProofBar.astro",
       "_origin": "ast",
       "community": 0,
       "community_name": "blocks.ts",
       "file_type": "code",
-      "norm_label": "pinnedstage.astro",
-      "source_file": "src/components/blocks/PinnedStage.astro",
+      "norm_label": "proofbar.astro",
+      "source_file": "src/components/blocks/ProofBar.astro",
       "source_location": "L1"
     },
     {
@@ -1901,6 +1938,17 @@
       "source_location": "L1"
     },
     {
+      "id": "src_components_blocks_statsstrip",
+      "label": "StatsStrip.astro",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "blocks.ts",
+      "file_type": "code",
+      "norm_label": "statsstrip.astro",
+      "source_file": "src/components/blocks/StatsStrip.astro",
+      "source_location": "L1"
+    },
+    {
       "id": "src_components_blocks_steplist",
       "label": "StepList.astro",
       "_origin": "ast",
@@ -1909,17 +1957,6 @@
       "file_type": "code",
       "norm_label": "steplist.astro",
       "source_file": "src/components/blocks/StepList.astro",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_blocks_taglist",
-      "label": "TagList.astro",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "blocks.ts",
-      "file_type": "code",
-      "norm_label": "taglist.astro",
-      "source_file": "src/components/blocks/TagList.astro",
       "source_location": "L1"
     },
     {
@@ -2096,7 +2133,7 @@
       "file_type": "code",
       "norm_label": "children",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L44"
+      "source_location": "L46"
     },
     {
       "id": "src_components_templates_hub_extracards",
@@ -2107,7 +2144,7 @@
       "file_type": "code",
       "norm_label": "extracards",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L45"
+      "source_location": "L47"
     },
     {
       "id": "src_components_templates_hub_griditems",
@@ -2118,7 +2155,7 @@
       "file_type": "code",
       "norm_label": "griditems",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L63"
+      "source_location": "L67"
     },
     {
       "id": "src_components_templates_ladder",
@@ -2184,7 +2221,7 @@
       "file_type": "code",
       "norm_label": "additionalproperty",
       "source_file": "src/components/templates/Product.astro",
-      "source_location": "L47"
+      "source_location": "L46"
     },
     {
       "id": "src_components_templates_proof",
@@ -2327,7 +2364,7 @@
       "file_type": "code",
       "norm_label": "mdxcomponents",
       "source_file": "src/lib/mdx.ts",
-      "source_location": "L16"
+      "source_location": "L15"
     },
     {
       "id": "src_pages_slug",
@@ -2360,17 +2397,6 @@
       "file_type": "code",
       "norm_label": "fig.astro",
       "source_file": "src/components/blocks/Fig.astro",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_site_depthgauge",
-      "label": "DepthGauge.astro",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "site.js",
-      "file_type": "code",
-      "norm_label": "depthgauge.astro",
-      "source_file": "src/components/site/DepthGauge.astro",
       "source_location": "L1"
     },
     {
@@ -2418,6 +2444,17 @@
       "source_location": "L1"
     },
     {
+      "id": "src_data_site_consent",
+      "label": "CONSENT",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "site.js",
+      "file_type": "code",
+      "norm_label": "consent",
+      "source_file": "src/data/site.js",
+      "source_location": "L64"
+    },
+    {
       "id": "src_data_site_footer_nav",
       "label": "FOOTER_NAV",
       "_origin": "ast",
@@ -2437,7 +2474,7 @@
       "file_type": "code",
       "norm_label": "legal_nav",
       "source_file": "src/data/site.js",
-      "source_location": "L60"
+      "source_location": "L72"
     },
     {
       "id": "src_data_site_nav",
@@ -2459,7 +2496,7 @@
       "file_type": "code",
       "norm_label": "proof",
       "source_file": "src/data/site.js",
-      "source_location": "L69"
+      "source_location": "L81"
     },
     {
       "id": "src_data_site_proof_display",
@@ -2470,7 +2507,7 @@
       "file_type": "code",
       "norm_label": "proof_display",
       "source_file": "src/data/site.js",
-      "source_location": "L85"
+      "source_location": "L97"
     },
     {
       "id": "scripts_build_page_map",
@@ -3303,26 +3340,208 @@
       "source_location": "L519"
     },
     {
-      "id": "src_components_blocks_proofbar",
-      "label": "ProofBar.astro",
+      "id": "research_application_information",
+      "label": "application-information.md",
       "_origin": "ast",
       "community": 108,
-      "community_name": "ProofBar.astro",
-      "file_type": "code",
-      "norm_label": "proofbar.astro",
-      "source_file": "src/components/blocks/ProofBar.astro",
+      "community_name": "By equipment family",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "application-information.md",
+      "source_file": "research/application-information.md",
       "source_location": "L1"
     },
     {
-      "id": "src_components_blocks_statsstrip",
-      "label": "StatsStrip.astro",
+      "id": "research_application_information_application_information_archived_2026_10_29",
+      "label": "Application information (archived 2026-10-29)",
       "_origin": "ast",
       "community": 108,
-      "community_name": "ProofBar.astro",
-      "file_type": "code",
-      "norm_label": "statsstrip.astro",
-      "source_file": "src/components/blocks/StatsStrip.astro",
+      "community_name": "By equipment family",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "application information (archived 2026-10-29)",
+      "source_file": "research/application-information.md",
       "source_location": "L1"
+    },
+    {
+      "id": "research_application_information_by_equipment_family",
+      "label": "By equipment family",
+      "_origin": "ast",
+      "community": 108,
+      "community_name": "By equipment family",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "by equipment family",
+      "source_file": "research/application-information.md",
+      "source_location": "L24"
+    },
+    {
+      "id": "research_application_information_claude_plugins_for_social_media_posts_searched_2026_10_29",
+      "label": "Claude plugins for social media posts (searched 2026-10-29)",
+      "_origin": "ast",
+      "community": 108,
+      "community_name": "By equipment family",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "claude plugins for social media posts (searched 2026-10-29)",
+      "source_file": "research/application-information.md",
+      "source_location": "L145"
+    },
+    {
+      "id": "research_application_information_e_01_winches_hub_marine_winches_survey_geotechnical_seismic_rov_rtg",
+      "label": "E-01 Winches (hub): \"Marine Winches | Survey, Geotechnical, Seismic & ROV | RTG\"",
+      "_origin": "ast",
+      "community": 108,
+      "community_name": "By equipment family",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "e-01 winches (hub): \"marine winches | survey, geotechnical, seismic & rov | rtg\"",
+      "source_file": "research/application-information.md",
+      "source_location": "L26"
+    },
+    {
+      "id": "research_application_information_e_02_geotechnical_coring_winches_geotechnical_coring_winches_cpt_piston_corer_rtg",
+      "label": "E-02 Geotechnical & Coring Winches: \"Geotechnical & Coring Winches | CPT & Piston Corer | RTG\"",
+      "_origin": "ast",
+      "community": 108,
+      "community_name": "By equipment family",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "e-02 geotechnical & coring winches: \"geotechnical & coring winches | cpt & piston corer | rtg\"",
+      "source_file": "research/application-information.md",
+      "source_location": "L30"
+    },
+    {
+      "id": "research_application_information_e_03_survey_oceanographic_winches_survey_oceanographic_winches_300_to_4_000_m_rtg",
+      "label": "E-03 Survey & Oceanographic Winches: \"Survey & Oceanographic Winches | 300 to 4,000 m | RTG\"",
+      "_origin": "ast",
+      "community": 108,
+      "community_name": "By equipment family",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "e-03 survey & oceanographic winches: \"survey & oceanographic winches | 300 to 4,000 m | rtg\"",
+      "source_file": "research/application-information.md",
+      "source_location": "L43"
+    },
+    {
+      "id": "research_application_information_e_04_seismic_winches_seismic_winches_source_handling_rtg",
+      "label": "E-04 Seismic Winches: \"Seismic Winches & Source Handling | RTG\"",
+      "_origin": "ast",
+      "community": 108,
+      "community_name": "By equipment family",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "e-04 seismic winches: \"seismic winches & source handling | rtg\"",
+      "source_file": "research/application-information.md",
+      "source_location": "L67"
+    },
+    {
+      "id": "research_application_information_e_05_rov_tow_umbilical_winches_rov_tow_umbilical_winches_rtg",
+      "label": "E-05 ROV, Tow & Umbilical Winches: \"ROV, Tow & Umbilical Winches | RTG\"",
+      "_origin": "ast",
+      "community": 108,
+      "community_name": "By equipment family",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "e-05 rov, tow & umbilical winches: \"rov, tow & umbilical winches | rtg\"",
+      "source_file": "research/application-information.md",
+      "source_location": "L78"
+    },
+    {
+      "id": "research_application_information_e_06_mooring_utility_winches_mooring_utility_winches_for_offshore_vessels_rtg",
+      "label": "E-06 Mooring & Utility Winches: \"Mooring & Utility Winches for Offshore Vessels | RTG\"",
+      "_origin": "ast",
+      "community": 108,
+      "community_name": "By equipment family",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "e-06 mooring & utility winches: \"mooring & utility winches for offshore vessels | rtg\"",
+      "source_file": "research/application-information.md",
+      "source_location": "L84"
+    },
+    {
+      "id": "research_application_information_e_07_launch_recovery_systems_launch_and_recovery_systems_a_frames_lars_rtg",
+      "label": "E-07 Launch & Recovery Systems: \"Launch and Recovery Systems | A-Frames & LARS | RTG\"",
+      "_origin": "ast",
+      "community": 108,
+      "community_name": "By equipment family",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "e-07 launch & recovery systems: \"launch and recovery systems | a-frames & lars | rtg\"",
+      "source_file": "research/application-information.md",
+      "source_location": "L94"
+    },
+    {
+      "id": "research_application_information_e_08_cranes_lifting_marine_cranes_lifting_equipment_class_certified_rtg",
+      "label": "E-08 Cranes & Lifting: \"Marine Cranes & Lifting Equipment | Class Certified | RTG\"",
+      "_origin": "ast",
+      "community": 108,
+      "community_name": "By equipment family",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "e-08 cranes & lifting: \"marine cranes & lifting equipment | class certified | rtg\"",
+      "source_file": "research/application-information.md",
+      "source_location": "L102"
+    },
+    {
+      "id": "research_application_information_e_09_handling_systems_corer_seismic_cable_handling_systems_rtg",
+      "label": "E-09 Handling Systems: \"Corer, Seismic & Cable Handling Systems | RTG\"",
+      "_origin": "ast",
+      "community": 108,
+      "community_name": "By equipment family",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "e-09 handling systems: \"corer, seismic & cable handling systems | rtg\"",
+      "source_file": "research/application-information.md",
+      "source_location": "L106"
+    },
+    {
+      "id": "research_application_information_e_10_cable_pipe_tensioners_cable_pipe_tensioners_5_to_20_te_rtg",
+      "label": "E-10 Cable & Pipe Tensioners: \"Cable & Pipe Tensioners | 5 to 20 Te | RTG\"",
+      "_origin": "ast",
+      "community": 108,
+      "community_name": "By equipment family",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "e-10 cable & pipe tensioners: \"cable & pipe tensioners | 5 to 20 te | rtg\"",
+      "source_file": "research/application-information.md",
+      "source_location": "L116"
+    },
+    {
+      "id": "research_application_information_e_11_power_units_and_e_12_portable_containerised_systems",
+      "label": "E-11 Power Units and E-12 Portable & Containerised Systems",
+      "_origin": "ast",
+      "community": 108,
+      "community_name": "By equipment family",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "e-11 power units and e-12 portable & containerised systems",
+      "source_file": "research/application-information.md",
+      "source_location": "L123"
+    },
+    {
+      "id": "research_application_information_finder_application_labels_src_lib_equipment_ts",
+      "label": "Finder application labels (`src/lib/equipment.ts`)",
+      "_origin": "ast",
+      "community": 108,
+      "community_name": "By equipment family",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "finder application labels (`src/lib/equipment.ts`)",
+      "source_file": "research/application-information.md",
+      "source_location": "L8"
+    },
+    {
+      "id": "research_application_information_related_copy_that_is_useful_for_posts_still_on_the_site",
+      "label": "Related copy that is useful for posts (still on the site)",
+      "_origin": "ast",
+      "community": 108,
+      "community_name": "By equipment family",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "related copy that is useful for posts (still on the site)",
+      "source_file": "research/application-information.md",
+      "source_location": "L129"
     },
     {
       "id": "agents_skills_design_taste_frontend_skill_12_a_file_location",
@@ -3709,37 +3928,174 @@
       "source_location": "L565"
     },
     {
-      "id": "src_data_equipment",
-      "label": "equipment.ts",
+      "id": "impeccable_critique_2026_10_13t10_00_11z_src_pages_index_astro",
+      "label": "2026-10-13T10-00-11Z__src-pages-index-astro.md",
       "_origin": "ast",
       "community": 113,
-      "community_name": "equipment.ts",
-      "file_type": "code",
-      "norm_label": "equipment.ts",
-      "source_file": "src/data/equipment.ts",
+      "community_name": "2026-10-13T10-00-11Z__src-pages-index-astro.md",
+      "file_type": "document",
+      "frontmatter": {
+        "target": "homepage placement and styling",
+        "total_score": 19,
+        "max_score": 28,
+        "na_heuristics": "7,9,10",
+        "p0_count": 0,
+        "p1_count": 5,
+        "target_identity": "file:C:\\GitHub\\Tie-Services-International\\RTG_Website\\src\\pages\\index.astro",
+        "target_fingerprint": "sha256:efd05e04fd3295ac402b9d05e9537a8d8136079a71f77bbd8827174ac4a71481",
+        "target_path": "C:\\GitHub\\Tie-Services-International\\RTG_Website\\src\\pages\\index.astro",
+        "timestamp": "2026-10-13T10-00-11Z",
+        "slug": "src-pages-index-astro"
+      },
+      "node_kind": "page",
+      "norm_label": "2026-10-13t10-00-11z__src-pages-index-astro.md",
+      "source_file": ".impeccable/critique/2026-10-13T10-00-11Z__src-pages-index-astro.md",
       "source_location": "L1"
     },
     {
-      "id": "src_data_equipment_equipment",
-      "label": "EQUIPMENT",
+      "id": "impeccable_critique_2026_10_13t10_00_11z_src_pages_index_astro_design_health_score_19_28_acceptable_68_heuristics_7_9_10_n_a",
+      "label": "Design health score: 19/28 (Acceptable, 68%). Heuristics 7, 9, 10 n/a.",
       "_origin": "ast",
       "community": 113,
-      "community_name": "equipment.ts",
-      "file_type": "code",
-      "norm_label": "equipment",
-      "source_file": "src/data/equipment.ts",
-      "source_location": "L26"
+      "community_name": "2026-10-13T10-00-11Z__src-pages-index-astro.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "design health score: 19/28 (acceptable, 68%). heuristics 7, 9, 10 n/a.",
+      "source_file": ".impeccable/critique/2026-10-13T10-00-11Z__src-pages-index-astro.md",
+      "source_location": "L16"
     },
     {
-      "id": "src_lib_depth",
-      "label": "depth.ts",
+      "id": "impeccable_critique_2026_10_13t10_00_11z_src_pages_index_astro_design_specificity_verdict",
+      "label": "Design specificity verdict",
+      "_origin": "ast",
+      "community": 113,
+      "community_name": "2026-10-13T10-00-11Z__src-pages-index-astro.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "design specificity verdict",
+      "source_file": ".impeccable/critique/2026-10-13T10-00-11Z__src-pages-index-astro.md",
+      "source_location": "L19"
+    },
+    {
+      "id": "impeccable_critique_2026_10_13t10_00_11z_src_pages_index_astro_minor_observations",
+      "label": "Minor observations",
+      "_origin": "ast",
+      "community": 113,
+      "community_name": "2026-10-13T10-00-11Z__src-pages-index-astro.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "minor observations",
+      "source_file": ".impeccable/critique/2026-10-13T10-00-11Z__src-pages-index-astro.md",
+      "source_location": "L32"
+    },
+    {
+      "id": "impeccable_critique_2026_10_13t10_00_11z_src_pages_index_astro_persona_red_flags",
+      "label": "Persona red flags",
+      "_origin": "ast",
+      "community": 113,
+      "community_name": "2026-10-13T10-00-11Z__src-pages-index-astro.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "persona red flags",
+      "source_file": ".impeccable/critique/2026-10-13T10-00-11Z__src-pages-index-astro.md",
+      "source_location": "L29"
+    },
+    {
+      "id": "impeccable_critique_2026_10_13t10_00_11z_src_pages_index_astro_priority_issues",
+      "label": "Priority issues",
+      "_origin": "ast",
+      "community": 113,
+      "community_name": "2026-10-13T10-00-11Z__src-pages-index-astro.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "priority issues",
+      "source_file": ".impeccable/critique/2026-10-13T10-00-11Z__src-pages-index-astro.md",
+      "source_location": "L22"
+    },
+    {
+      "id": "impeccable_critique_2026_10_13t10_00_11z_src_pages_index_astro_questions",
+      "label": "Questions",
+      "_origin": "ast",
+      "community": 113,
+      "community_name": "2026-10-13T10-00-11Z__src-pages-index-astro.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "questions",
+      "source_file": ".impeccable/critique/2026-10-13T10-00-11Z__src-pages-index-astro.md",
+      "source_location": "L35"
+    },
+    {
+      "id": "impeccable_critique_2026_10_13t16_18_36z_src_components_templates_product_astro",
+      "label": "2026-10-13T16-18-36Z__src-components-templates-product-astro.md",
       "_origin": "ast",
       "community": 114,
-      "community_name": "depth.ts",
-      "file_type": "code",
-      "norm_label": "depth.ts",
-      "source_file": "src/lib/depth.ts",
+      "community_name": "2026-10-13T16-18-36Z__src-components-templates-product-astro.md",
+      "file_type": "document",
+      "frontmatter": {
+        "target": "equipment pages E-00 to E-12",
+        "total_score": 26,
+        "max_score": 36,
+        "na_heuristics": 10,
+        "p0_count": 0,
+        "p1_count": 0,
+        "target_identity": "file:C:\\GitHub\\Tie-Services-International\\RTG_Website\\src\\components\\templates\\Product.astro",
+        "target_fingerprint": "sha256:391ac5bbfab26df1274c82f7a614cdbac34807172ed104025c5ccded0714d2a8",
+        "target_path": "C:\\GitHub\\Tie-Services-International\\RTG_Website\\src\\components\\templates\\Product.astro",
+        "timestamp": "2026-10-13T16-18-36Z",
+        "slug": "src-components-templates-product-astro"
+      },
+      "node_kind": "page",
+      "norm_label": "2026-10-13t16-18-36z__src-components-templates-product-astro.md",
+      "source_file": ".impeccable/critique/2026-10-13T16-18-36Z__src-components-templates-product-astro.md",
       "source_location": "L1"
+    },
+    {
+      "id": "impeccable_critique_2026_10_13t16_18_36z_src_components_templates_product_astro_design_health_score_26_36_good_72_heuristic_10_n_a",
+      "label": "Design health score: 26/36 (Good, 72%). Heuristic 10 n/a.",
+      "_origin": "ast",
+      "community": 114,
+      "community_name": "2026-10-13T16-18-36Z__src-components-templates-product-astro.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "design health score: 26/36 (good, 72%). heuristic 10 n/a.",
+      "source_file": ".impeccable/critique/2026-10-13T16-18-36Z__src-components-templates-product-astro.md",
+      "source_location": "L16"
+    },
+    {
+      "id": "impeccable_critique_2026_10_13t16_18_36z_src_components_templates_product_astro_detector_and_measurements",
+      "label": "Detector and measurements",
+      "_origin": "ast",
+      "community": 114,
+      "community_name": "2026-10-13T16-18-36Z__src-components-templates-product-astro.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "detector and measurements",
+      "source_file": ".impeccable/critique/2026-10-13T16-18-36Z__src-components-templates-product-astro.md",
+      "source_location": "L19"
+    },
+    {
+      "id": "impeccable_critique_2026_10_13t16_18_36z_src_components_templates_product_astro_fixed_in_this_pass",
+      "label": "Fixed in this pass",
+      "_origin": "ast",
+      "community": 114,
+      "community_name": "2026-10-13T16-18-36Z__src-components-templates-product-astro.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "fixed in this pass",
+      "source_file": ".impeccable/critique/2026-10-13T16-18-36Z__src-components-templates-product-astro.md",
+      "source_location": "L22"
+    },
+    {
+      "id": "impeccable_critique_2026_10_13t16_18_36z_src_components_templates_product_astro_open",
+      "label": "Open",
+      "_origin": "ast",
+      "community": 114,
+      "community_name": "2026-10-13T16-18-36Z__src-components-templates-product-astro.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "open",
+      "source_file": ".impeccable/critique/2026-10-13T16-18-36Z__src-components-templates-product-astro.md",
+      "source_location": "L25"
     },
     {
       "id": "vercel",
@@ -3794,7 +4150,7 @@
       "file_type": "code",
       "norm_label": "collections",
       "source_file": "src/content.config.ts",
-      "source_location": "L271"
+      "source_location": "L273"
     },
     {
       "id": "src_content_config_formfield",
@@ -3805,7 +4161,7 @@
       "file_type": "code",
       "norm_label": "formfield",
       "source_file": "src/content.config.ts",
-      "source_location": "L68"
+      "source_location": "L74"
     },
     {
       "id": "src_content_config_ids",
@@ -3849,7 +4205,7 @@
       "file_type": "code",
       "norm_label": "pages",
       "source_file": "src/content.config.ts",
-      "source_location": "L101"
+      "source_location": "L107"
     },
     {
       "id": "src_content_config_sitepath",
@@ -3874,14 +4230,14 @@
       "source_location": "L48"
     },
     {
-      "id": "src_components_blocks_pinnedstages",
-      "label": "PinnedStages.astro",
+      "id": "src_lib_hoist",
+      "label": "hoist.ts",
       "_origin": "ast",
       "community": 123,
-      "community_name": "PinnedStages.astro",
+      "community_name": "hoist.ts",
       "file_type": "code",
-      "norm_label": "pinnedstages.astro",
-      "source_file": "src/components/blocks/PinnedStages.astro",
+      "norm_label": "hoist.ts",
+      "source_file": "src/lib/hoist.ts",
       "source_location": "L1"
     },
     {
@@ -4284,7 +4640,7 @@
       "file_type": "code",
       "norm_label": "teardownfns",
       "source_file": "src/lib/motion.ts",
-      "source_location": "L37"
+      "source_location": "L31"
     },
     {
       "id": "src_content_pages_p_06",
@@ -5297,7 +5653,7 @@
       "file_type": "code",
       "norm_label": "machines",
       "source_file": "src/data/home.ts",
-      "source_location": "L46"
+      "source_location": "L48"
     },
     {
       "id": "src_lib_home_scroll",
@@ -5537,6 +5893,7 @@
         "specs": [
           {
             "caption": "2.75 Te WLL, 3,500 m electric winch",
+            "datasheet": "DS01",
             "rows": [
               {
                 "k": "Working load limit, first layer",
@@ -5600,6 +5957,7 @@
           },
           {
             "caption": "12 Te WLL, 2,300 m hydraulic winch with power unit",
+            "datasheet": "DS38",
             "rows": [
               {
                 "k": "Working load limit, first layer",
@@ -5676,6 +6034,7 @@
           },
           {
             "caption": "5 Te WLL hydraulic gravity corer chute",
+            "datasheet": "DS61",
             "rows": [
               {
                 "k": "Working load limit",
@@ -5713,14 +6072,6 @@
           "drive": [
             "Electric",
             "Hydraulic"
-          ],
-          "applications": [
-            "Piston coring",
-            "Gravity coring",
-            "Box coring",
-            "Vibrocoring",
-            "CPT deployment",
-            "Seabed sampling"
           ],
           "datasheetPageId": "R-01"
         }
@@ -6721,7 +7072,7 @@
       "node_kind": "heading",
       "norm_label": "3d",
       "source_file": "CLAUDE.md",
-      "source_location": "L343"
+      "source_location": "L360"
     },
     {
       "id": "claude_4_the_17_templates",
@@ -6733,7 +7084,7 @@
       "node_kind": "heading",
       "norm_label": "4. the 17 templates",
       "source_file": "CLAUDE.md",
-      "source_location": "L198"
+      "source_location": "L200"
     },
     {
       "id": "claude_5_known_gaps_do_not_paper_over_these",
@@ -6745,7 +7096,7 @@
       "node_kind": "heading",
       "norm_label": "5. known gaps \u2014 do not paper over these",
       "source_file": "CLAUDE.md",
-      "source_location": "L230"
+      "source_location": "L232"
     },
     {
       "id": "claude_6_what_must_never_be_published",
@@ -6757,7 +7108,7 @@
       "node_kind": "heading",
       "norm_label": "6. what must never be published",
       "source_file": "CLAUDE.md",
-      "source_location": "L277"
+      "source_location": "L287"
     },
     {
       "id": "claude_7_design_system",
@@ -6769,7 +7120,7 @@
       "node_kind": "heading",
       "norm_label": "7. design system",
       "source_file": "CLAUDE.md",
-      "source_location": "L295"
+      "source_location": "L305"
     },
     {
       "id": "claude_8_tone_of_voice",
@@ -6781,7 +7132,7 @@
       "node_kind": "heading",
       "norm_label": "8. tone of voice",
       "source_file": "CLAUDE.md",
-      "source_location": "L360"
+      "source_location": "L377"
     },
     {
       "id": "claude_9_1_how_the_site_actually_takes_real_content",
@@ -6793,7 +7144,7 @@
       "node_kind": "heading",
       "norm_label": "9.1 how the site actually takes real content",
       "source_file": "CLAUDE.md",
-      "source_location": "L384"
+      "source_location": "L401"
     },
     {
       "id": "claude_9_2_steps_per_page",
@@ -6805,7 +7156,7 @@
       "node_kind": "heading",
       "norm_label": "9.2 steps, per page",
       "source_file": "CLAUDE.md",
-      "source_location": "L427"
+      "source_location": "L444"
     },
     {
       "id": "claude_9_3_current_intake",
@@ -6817,7 +7168,7 @@
       "node_kind": "heading",
       "norm_label": "9.3 current intake",
       "source_file": "CLAUDE.md",
-      "source_location": "L447"
+      "source_location": "L464"
     },
     {
       "id": "claude_9_bringing_in_a_content_drop_photography_copy_specs",
@@ -6829,7 +7180,7 @@
       "node_kind": "heading",
       "norm_label": "9. bringing in a content drop (photography, copy, specs)",
       "source_file": "CLAUDE.md",
-      "source_location": "L377"
+      "source_location": "L394"
     },
     {
       "id": "claude_commands",
@@ -6841,7 +7192,7 @@
       "node_kind": "heading",
       "norm_label": "commands",
       "source_file": "CLAUDE.md",
-      "source_location": "L184"
+      "source_location": "L186"
     },
     {
       "id": "claude_definition_of_done_for_any_page_or_template",
@@ -6877,7 +7228,7 @@
       "node_kind": "heading",
       "norm_label": "graphify",
       "source_file": "CLAUDE.md",
-      "source_location": "L456"
+      "source_location": "L473"
     },
     {
       "id": "claude_routing",
@@ -6889,7 +7240,7 @@
       "node_kind": "heading",
       "norm_label": "routing",
       "source_file": "CLAUDE.md",
-      "source_location": "L162"
+      "source_location": "L164"
     },
     {
       "id": "claude_rtg_website_project_guide_for_claude_code",
@@ -6913,7 +7264,7 @@
       "node_kind": "heading",
       "norm_label": "rules",
       "source_file": "CLAUDE.md",
-      "source_location": "L174"
+      "source_location": "L176"
     },
     {
       "id": "claude_step_1_research_the_best_approach_first",
@@ -7147,6 +7498,7 @@
         "specs": [
           {
             "caption": "0.24 Te WLL compact electric winch",
+            "datasheet": "DS83",
             "rows": [
               {
                 "k": "Working load limit, first layer",
@@ -7215,14 +7567,6 @@
             "Electric",
             "Hydraulic"
           ],
-          "applications": [
-            "Side-scan sonar towing",
-            "Magnetometer systems",
-            "Sub-bottom profiler",
-            "Water samplers",
-            "CTD deployment",
-            "Drop-down cameras"
-          ],
           "datasheetPageId": "R-01"
         }
       },
@@ -7261,6 +7605,7 @@
         "specs": [
           {
             "caption": "2.1 Te WLL, 1,500 m hydraulic reel winch",
+            "datasheet": "DS11",
             "rows": [
               {
                 "k": "Working load limit, first layer",
@@ -7328,11 +7673,6 @@
           "drive": [
             "Hydraulic"
           ],
-          "applications": [
-            "Source handling",
-            "Streamer handling",
-            "Continuous-duty spread deployment"
-          ],
           "datasheetPageId": "R-01"
         }
       },
@@ -7351,7 +7691,7 @@
       "node_kind": "heading",
       "norm_label": "duty rating",
       "source_file": "src/content/pages/e-04.mdx",
-      "source_location": "L64"
+      "source_location": "L61"
     },
     {
       "id": "src_content_pages_e_05",
@@ -7383,6 +7723,7 @@
         "specs": [
           {
             "caption": "3.5 Te WLL, 1,600 m hydraulic umbilical winch",
+            "datasheet": "DS63",
             "rows": [
               {
                 "k": "Working load limit, first layer",
@@ -7451,11 +7792,6 @@
           "drive": [
             "Hydraulic"
           ],
-          "applications": [
-            "ROV launch and recovery",
-            "Deep tow",
-            "Umbilical handling"
-          ],
           "datasheetPageId": "R-01"
         }
       },
@@ -7494,6 +7830,8 @@
         "specs": [
           {
             "caption": "30 Te WLL, 350 m hydraulic winch with level wind",
+            "label": "30 Te with level wind",
+            "datasheet": "DS74",
             "rows": [
               {
                 "k": "Working load limit, first layer",
@@ -7565,6 +7903,8 @@
           },
           {
             "caption": "30 Te WLL, 350 m hydraulic winch without level wind",
+            "label": "30 Te without level wind",
+            "datasheet": "DS80",
             "rows": [
               {
                 "k": "Working load limit, first layer",
@@ -7636,11 +7976,6 @@
           "drive": [
             "Hydraulic"
           ],
-          "applications": [
-            "Mooring",
-            "Towing",
-            "General deck utility handling"
-          ],
           "datasheetPageId": "R-01"
         }
       },
@@ -7679,6 +8014,7 @@
         "specs": [
           {
             "caption": "20 Te WLL A-frame",
+            "datasheet": "DS96",
             "rows": [
               {
                 "k": "Working load limit",
@@ -7753,6 +8089,7 @@
           },
           {
             "caption": "40 Te WLL A-frame",
+            "datasheet": "DS33",
             "rows": [
               {
                 "k": "Working load limit",
@@ -7818,12 +8155,6 @@
           "drive": [
             "Hydraulic"
           ],
-          "applications": [
-            "Stern and side A-frames",
-            "ROV launch and recovery",
-            "Survey spread deployment",
-            "Cable and umbilical handling"
-          ],
           "datasheetPageId": "R-01"
         }
       },
@@ -7846,12 +8177,12 @@
         "hero": {
           "ctas": [
             {
-              "label": "Request the datasheet",
-              "href": "/resources/datasheets/?equipment=Cranes%20and%20lifting"
-            },
-            {
               "label": "Request a quotation",
               "href": "/contact/request-a-quotation/"
+            },
+            {
+              "label": "Talk to an engineer",
+              "href": "/contact/"
             }
           ]
         },
@@ -7859,14 +8190,6 @@
           "category": "Marine deck crane",
           "drive": [
             "Hydraulic"
-          ],
-          "applications": [
-            "Over-the-side deployment",
-            "Moonpool handling",
-            "Container and equipment transfer",
-            "Stores and mobilisation",
-            "Deck maintenance",
-            "Personnel and basket handling"
           ],
           "datasheetPageId": "R-01"
         }
@@ -7886,7 +8209,7 @@
       "node_kind": "heading",
       "norm_label": "certification",
       "source_file": "src/content/pages/e-08.mdx",
-      "source_location": "L33"
+      "source_location": "L26"
     },
     {
       "id": "src_content_pages_e_09",
@@ -7970,6 +8293,7 @@
         "specs": [
           {
             "caption": "10 Te unit, self-contained on one skid",
+            "label": "10 Te unit",
             "rows": [
               {
                 "k": "Maximum tension (bi-directional)",
@@ -8045,6 +8369,8 @@
           },
           {
             "caption": "15 Te electro-hydraulic unit with integrated power unit",
+            "label": "15 Te unit",
+            "datasheet": "DS57",
             "rows": [
               {
                 "k": "Maximum tension (bi-directional)",
@@ -8122,17 +8448,6 @@
           "drive": [
             "Electro-hydraulic"
           ],
-          "applications": [
-            "Inter-array cable lay",
-            "Export cable and interconnector lay",
-            "Pull-in and J-tube entry",
-            "Shore-end pulls",
-            "Cable recovery and repair",
-            "Umbilical and dynamic cable handling",
-            "Flexible pipe lay",
-            "Spooling and FAT",
-            "Recovery and abandonment"
-          ],
           "datasheetPageId": "R-01"
         }
       },
@@ -8151,7 +8466,7 @@
       "node_kind": "heading",
       "norm_label": "to specify",
       "source_file": "src/content/pages/e-10.mdx",
-      "source_location": "L116"
+      "source_location": "L109"
     },
     {
       "id": "package",
@@ -8574,8 +8889,8 @@
         "hero": {
           "ctas": [
             {
-              "label": "Request the datasheet",
-              "href": "/resources/datasheets/?equipment=Power%20units"
+              "label": "Request a quotation",
+              "href": "/contact/request-a-quotation/"
             },
             {
               "label": "Talk to an engineer",
@@ -9022,7 +9337,7 @@
       "file_type": "code",
       "norm_label": "equipment",
       "source_file": "src/data/home.ts",
-      "source_location": "L78"
+      "source_location": "L80"
     },
     {
       "id": "src_data_home_hero",
@@ -9055,7 +9370,7 @@
       "file_type": "code",
       "norm_label": "manufacturing",
       "source_file": "src/data/home.ts",
-      "source_location": "L93"
+      "source_location": "L95"
     },
     {
       "id": "src_data_home_sectors",
@@ -9066,7 +9381,7 @@
       "file_type": "code",
       "norm_label": "sectors",
       "source_file": "src/data/home.ts",
-      "source_location": "L60"
+      "source_location": "L62"
     },
     {
       "id": "src_data_home_service",
@@ -9077,7 +9392,7 @@
       "file_type": "code",
       "norm_label": "service",
       "source_file": "src/data/home.ts",
-      "source_location": "L117"
+      "source_location": "L119"
     },
     {
       "id": "src_data_home_story",
@@ -9099,7 +9414,7 @@
       "file_type": "code",
       "norm_label": "tiers",
       "source_file": "src/data/home.ts",
-      "source_location": "L100"
+      "source_location": "L102"
     },
     {
       "id": "src_pages_index",
@@ -9826,7 +10141,7 @@
       "frontmatter": {
         "pageId": "Z-01",
         "draft": true,
-        "updated": "2026-10-05",
+        "updated": "2026-10-13",
         "lede": "What this website collects when you send us an enquiry, why we hold it, how long for, and what you can ask us to do with it."
       },
       "node_kind": "page",
@@ -9844,7 +10159,7 @@
       "node_kind": "heading",
       "norm_label": "changes to this notice",
       "source_file": "src/content/pages/z-01.mdx",
-      "source_location": "L68"
+      "source_location": "L73"
     },
     {
       "id": "src_content_pages_z_01_how_long_we_keep_it",
@@ -9856,7 +10171,7 @@
       "node_kind": "heading",
       "norm_label": "how long we keep it",
       "source_file": "src/content/pages/z-01.mdx",
-      "source_location": "L43"
+      "source_location": "L48"
     },
     {
       "id": "src_content_pages_z_01_how_to_contact_us_or_complain",
@@ -9868,7 +10183,7 @@
       "node_kind": "heading",
       "norm_label": "how to contact us or complain",
       "source_file": "src/content/pages/z-01.mdx",
-      "source_location": "L60"
+      "source_location": "L65"
     },
     {
       "id": "src_content_pages_z_01_what_we_collect",
@@ -9904,7 +10219,7 @@
       "node_kind": "heading",
       "norm_label": "who we share it with",
       "source_file": "src/content/pages/z-01.mdx",
-      "source_location": "L37"
+      "source_location": "L40"
     },
     {
       "id": "src_content_pages_z_01_why_we_hold_it_and_the_lawful_basis",
@@ -9916,7 +10231,7 @@
       "node_kind": "heading",
       "norm_label": "why we hold it, and the lawful basis",
       "source_file": "src/content/pages/z-01.mdx",
-      "source_location": "L26"
+      "source_location": "L28"
     },
     {
       "id": "src_content_pages_z_01_your_rights",
@@ -9928,7 +10243,7 @@
       "node_kind": "heading",
       "norm_label": "your rights",
       "source_file": "src/content/pages/z-01.mdx",
-      "source_location": "L47"
+      "source_location": "L52"
     },
     {
       "id": "src_content_pages_z_02",
@@ -9940,8 +10255,8 @@
       "frontmatter": {
         "pageId": "Z-02",
         "draft": true,
-        "updated": "2026-10-05",
-        "lede": "This site sets very little. Here is what it does store on your device, what each item is for, and how to refuse it."
+        "updated": "2026-10-13",
+        "lede": "What this site stores on your device, what each item is for, and how to refuse or change it. Nothing optional is set until you agree."
       },
       "node_kind": "page",
       "norm_label": "z-02.mdx",
@@ -9970,7 +10285,7 @@
       "node_kind": "heading",
       "norm_label": "changing your mind",
       "source_file": "src/content/pages/z-02.mdx",
-      "source_location": "L30"
+      "source_location": "L39"
     },
     {
       "id": "src_content_pages_z_02_each_item_named",
@@ -9982,7 +10297,7 @@
       "node_kind": "heading",
       "norm_label": "each item named",
       "source_file": "src/content/pages/z-02.mdx",
-      "source_location": "L24"
+      "source_location": "L26"
     },
     {
       "id": "src_content_pages_z_02_more_about_your_data",
@@ -9994,7 +10309,7 @@
       "node_kind": "heading",
       "norm_label": "more about your data",
       "source_file": "src/content/pages/z-02.mdx",
-      "source_location": "L36"
+      "source_location": "L48"
     },
     {
       "id": "src_content_pages_z_02_the_short_version",
@@ -10132,7 +10447,7 @@
       "frontmatter": {
         "pageId": "Z-04",
         "draft": true,
-        "updated": "2026-10-05",
+        "updated": "2026-10-13",
         "lede": "The standard this website is built to, the parts that fall short of it today, and how to tell us when something does not work for you."
       },
       "node_kind": "page",
@@ -10162,7 +10477,7 @@
       "node_kind": "heading",
       "norm_label": "telling us about a problem",
       "source_file": "src/content/pages/z-04.mdx",
-      "source_location": "L35"
+      "source_location": "L36"
     },
     {
       "id": "src_content_pages_z_04_the_standard_we_target",
@@ -10460,11 +10775,99 @@
       "source_location": "L29"
     },
     {
+      "id": "src_components_blocks_designrow",
+      "label": "DesignRow.astro",
+      "_origin": "ast",
+      "community": 92,
+      "community_name": "lib/equipment.ts",
+      "file_type": "code",
+      "norm_label": "designrow.astro",
+      "source_file": "src/components/blocks/DesignRow.astro",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_blocks_designrow_tags",
+      "label": "tags",
+      "_origin": "ast",
+      "community": 92,
+      "community_name": "lib/equipment.ts",
+      "file_type": "code",
+      "norm_label": "tags",
+      "source_file": "src/components/blocks/DesignRow.astro",
+      "source_location": "L19"
+    },
+    {
+      "id": "src_components_blocks_equipmentfinder",
+      "label": "EquipmentFinder.astro",
+      "_origin": "ast",
+      "community": 92,
+      "community_name": "lib/equipment.ts",
+      "file_type": "code",
+      "norm_label": "equipmentfinder.astro",
+      "source_file": "src/components/blocks/EquipmentFinder.astro",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_blocks_familydesigns",
+      "label": "FamilyDesigns.astro",
+      "_origin": "ast",
+      "community": 92,
+      "community_name": "lib/equipment.ts",
+      "file_type": "code",
+      "norm_label": "familydesigns.astro",
+      "source_file": "src/components/blocks/FamilyDesigns.astro",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_blocks_familydesigns_designs",
+      "label": "designs",
+      "_origin": "ast",
+      "community": 92,
+      "community_name": "lib/equipment.ts",
+      "file_type": "code",
+      "norm_label": "designs",
+      "source_file": "src/components/blocks/FamilyDesigns.astro",
+      "source_location": "L23"
+    },
+    {
+      "id": "src_components_home_finderentry",
+      "label": "FinderEntry.astro",
+      "_origin": "ast",
+      "community": 92,
+      "community_name": "lib/equipment.ts",
+      "file_type": "code",
+      "norm_label": "finderentry.astro",
+      "source_file": "src/components/home/FinderEntry.astro",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_data_equipment",
+      "label": "data/equipment.ts",
+      "_origin": "ast",
+      "community": 92,
+      "community_name": "lib/equipment.ts",
+      "file_type": "code",
+      "norm_label": "data/equipment.ts",
+      "source_file": "src/data/equipment.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_data_equipment_equipment",
+      "label": "EQUIPMENT",
+      "_origin": "ast",
+      "community": 92,
+      "community_name": "lib/equipment.ts",
+      "file_type": "code",
+      "norm_label": "equipment",
+      "source_file": "src/data/equipment.ts",
+      "source_location": "L26"
+    },
+    {
       "id": "src_data_pages_extra",
       "label": "pages-extra.ts",
       "_origin": "ast",
       "community": 92,
-      "community_name": "page.ts",
+      "community_name": "lib/equipment.ts",
       "file_type": "code",
       "norm_label": "pages-extra.ts",
       "source_file": "src/data/pages-extra.ts",
@@ -10475,7 +10878,7 @@
       "label": "OFF_MAP_IDS",
       "_origin": "ast",
       "community": 92,
-      "community_name": "page.ts",
+      "community_name": "lib/equipment.ts",
       "file_type": "code",
       "norm_label": "off_map_ids",
       "source_file": "src/data/pages-extra.ts",
@@ -10486,18 +10889,62 @@
       "label": "OFF_MAP_PAGES",
       "_origin": "ast",
       "community": 92,
-      "community_name": "page.ts",
+      "community_name": "lib/equipment.ts",
       "file_type": "code",
       "norm_label": "off_map_pages",
       "source_file": "src/data/pages-extra.ts",
       "source_location": "L8"
     },
     {
+      "id": "src_lib_equipment",
+      "label": "lib/equipment.ts",
+      "_origin": "ast",
+      "community": 92,
+      "community_name": "lib/equipment.ts",
+      "file_type": "code",
+      "norm_label": "lib/equipment.ts",
+      "source_file": "src/lib/equipment.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_lib_equipment_equipment_apps",
+      "label": "EQUIPMENT_APPS",
+      "_origin": "ast",
+      "community": 92,
+      "community_name": "lib/equipment.ts",
+      "file_type": "code",
+      "norm_label": "equipment_apps",
+      "source_file": "src/lib/equipment.ts",
+      "source_location": "L11"
+    },
+    {
+      "id": "src_lib_equipment_equipment_drives",
+      "label": "EQUIPMENT_DRIVES",
+      "_origin": "ast",
+      "community": 92,
+      "community_name": "lib/equipment.ts",
+      "file_type": "code",
+      "norm_label": "equipment_drives",
+      "source_file": "src/lib/equipment.ts",
+      "source_location": "L21"
+    },
+    {
+      "id": "src_lib_equipment_equipment_loads",
+      "label": "EQUIPMENT_LOADS",
+      "_origin": "ast",
+      "community": 92,
+      "community_name": "lib/equipment.ts",
+      "file_type": "code",
+      "norm_label": "equipment_loads",
+      "source_file": "src/lib/equipment.ts",
+      "source_location": "L30"
+    },
+    {
       "id": "src_lib_page",
       "label": "page.ts",
       "_origin": "ast",
       "community": 92,
-      "community_name": "page.ts",
+      "community_name": "lib/equipment.ts",
       "file_type": "code",
       "norm_label": "page.ts",
       "source_file": "src/lib/page.ts",
@@ -10508,7 +10955,7 @@
       "label": "BY_ID",
       "_origin": "ast",
       "community": 92,
-      "community_name": "page.ts",
+      "community_name": "lib/equipment.ts",
       "file_type": "code",
       "norm_label": "by_id",
       "source_file": "src/lib/page.ts",
@@ -10519,7 +10966,7 @@
       "label": "404.astro",
       "_origin": "ast",
       "community": 92,
-      "community_name": "page.ts",
+      "community_name": "lib/equipment.ts",
       "file_type": "code",
       "norm_label": "404.astro",
       "source_file": "src/pages/404.astro",
@@ -10530,7 +10977,7 @@
       "label": "{ p }",
       "_origin": "ast",
       "community": 92,
-      "community_name": "page.ts",
+      "community_name": "lib/equipment.ts",
       "file_type": "code",
       "norm_label": "{ p }",
       "source_file": "src/pages/404.astro",
@@ -10622,7 +11069,7 @@
       "file_type": "code",
       "norm_label": "canonical",
       "source_file": "src/layouts/Base.astro",
-      "source_location": "L40"
+      "source_location": "L39"
     },
     {
       "id": "src_layouts_base_ogimage",
@@ -10633,7 +11080,7 @@
       "file_type": "code",
       "norm_label": "ogimage",
       "source_file": "src/layouts/Base.astro",
-      "source_location": "L41"
+      "source_location": "L40"
     },
     {
       "id": "src_layouts_base_p_offmap",
@@ -10644,7 +11091,7 @@
       "file_type": "code",
       "norm_label": "{ p, offmap }",
       "source_file": "src/layouts/Base.astro",
-      "source_location": "L38"
+      "source_location": "L37"
     },
     {
       "id": "src_layouts_base_schema",
@@ -10655,7 +11102,7 @@
       "file_type": "code",
       "norm_label": "schema",
       "source_file": "src/layouts/Base.astro",
-      "source_location": "L42"
+      "source_location": "L41"
     },
     {
       "id": "src_lib_content_unfinished",
@@ -11909,6 +12356,18 @@
       "type": "external"
     },
     {
+      "id": "ref_node_assert_strict",
+      "label": "ref_node_assert_strict",
+      "_origin": "semantic",
+      "community": 20,
+      "community_name": "build-equipment.mjs",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "ref_node_assert_strict",
+      "source_file": "",
+      "type": "external"
+    },
+    {
       "id": "ref_node_path",
       "label": "ref_node_path",
       "_origin": "semantic",
@@ -12291,17 +12750,6 @@
       "norm_label": "src_styles_tokens",
       "source_file": "",
       "type": "external"
-    },
-    {
-      "id": "ref_node_assert_strict",
-      "label": "ref_node_assert_strict",
-      "community": 20,
-      "community_name": "build-equipment.mjs",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "ref_node_assert_strict",
-      "source_file": "",
-      "type": "external"
     }
   ],
   "links": [
@@ -12474,6 +12922,18 @@
       "weight": 1.0
     },
     {
+      "source": "src_lib_content_cardfrom",
+      "target": "src_lib_blocks_sentencecase",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/lib/content.ts",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
       "source": "src_lib_content_childentries",
       "target": "src_data_pages_childrenof",
       "relation": "calls",
@@ -12522,15 +12982,75 @@
       "weight": 1.0
     },
     {
-      "source": "src_lib_depth_initdepth",
-      "target": "src_lib_depth_zoneof",
+      "source": "src_lib_equipment_datasheetrequest",
+      "target": "src_data_pages_page",
       "relation": "calls",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
-      "source_file": "src/lib/depth.ts",
-      "source_location": "L37",
+      "source_file": "src/lib/equipment.ts",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_equipment_designanchor",
+      "target": "src_lib_equipment_designnumber",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/lib/equipment.ts",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_equipment_designlink",
+      "target": "src_lib_equipment_designnumber",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/lib/equipment.ts",
+      "source_location": "L64",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_equipment_designlink",
+      "target": "src_data_pages_page",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/lib/equipment.ts",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_equipment_designlink",
+      "target": "src_lib_equipment_designanchor",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/lib/equipment.ts",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_equipment_spectablelinks",
+      "target": "src_data_pages_page",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/lib/equipment.ts",
+      "source_location": "L55",
       "weight": 1.0
     },
     {
@@ -12606,18 +13126,6 @@
       "weight": 1.0
     },
     {
-      "source": "src_lib_home_scroll_inithome_frame",
-      "target": "src_lib_home_scroll_inithome_frame",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L252",
-      "weight": 1.0
-    },
-    {
       "source": "src_lib_home_scroll_inithome_makestage",
       "target": "src_lib_rtg3d_createviewer",
       "relation": "calls",
@@ -12642,42 +13150,6 @@
       "weight": 1.0
     },
     {
-      "source": "src_lib_home_scroll_inithome_makestage",
-      "target": "src_lib_home_scroll_inithome_frame",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L119",
-      "weight": 1.0
-    },
-    {
-      "source": "src_lib_home_scroll_inithome_onresize",
-      "target": "src_lib_home_scroll_inithome_onscroll",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L268",
-      "weight": 1.0
-    },
-    {
-      "source": "src_lib_home_scroll_inithome_onresize",
-      "target": "src_lib_home_scroll_inithome_sizehz",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L268",
-      "weight": 1.0
-    },
-    {
       "source": "src_lib_motion_initmotion",
       "target": "src_lib_motion_initreveals",
       "relation": "calls",
@@ -12686,7 +13158,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/motion.ts",
-      "source_location": "L48",
+      "source_location": "L42",
       "weight": 1.0
     },
     {
@@ -12698,7 +13170,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/motion.ts",
-      "source_location": "L49",
+      "source_location": "L43",
       "weight": 1.0
     },
     {
@@ -12710,7 +13182,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/motion.ts",
-      "source_location": "L50",
+      "source_location": "L44",
       "weight": 1.0
     },
     {
@@ -12722,31 +13194,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/motion.ts",
-      "source_location": "L51",
-      "weight": 1.0
-    },
-    {
-      "source": "src_lib_motion_initmotion",
-      "target": "src_lib_motion_initscrolltracks",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/lib/motion.ts",
-      "source_location": "L52",
-      "weight": 1.0
-    },
-    {
-      "source": "src_lib_motion_initmotion",
-      "target": "src_lib_motion_initpinstages",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/lib/motion.ts",
-      "source_location": "L53",
+      "source_location": "L45",
       "weight": 1.0
     },
     {
@@ -12758,31 +13206,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/motion.ts",
-      "source_location": "L54",
-      "weight": 1.0
-    },
-    {
-      "source": "src_lib_motion_initpinstages",
-      "target": "src_lib_motion_initparallax_apply",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/lib/motion.ts",
-      "source_location": "L498",
-      "weight": 1.0
-    },
-    {
-      "source": "src_lib_motion_initscrolltracks",
-      "target": "src_lib_motion_initparallax_apply",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/lib/motion.ts",
-      "source_location": "L346",
+      "source_location": "L46",
       "weight": 1.0
     },
     {
@@ -13267,26 +13691,14 @@
     },
     {
       "source": "src_lib_home_scroll_inithome",
-      "target": "src_lib_home_scroll_inithome_sizehz",
+      "target": "src_lib_home_scroll_inithome_settier",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L233",
-      "weight": 1.0
-    },
-    {
-      "source": "src_lib_home_scroll_inithome",
-      "target": "src_lib_home_scroll_inithome_frame",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L240",
+      "source_location": "L227",
       "weight": 1.0
     },
     {
@@ -13298,7 +13710,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L285",
+      "source_location": "L257",
       "weight": 1.0
     },
     {
@@ -13626,6 +14038,54 @@
       "weight": 1.0
     },
     {
+      "source": "src_components_blocks_childcards",
+      "target": "src_lib_blocks_sentencecase",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/blocks/ChildCards.astro",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_blocks_designrow",
+      "target": "src_lib_equipment_datasheetrequest",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/blocks/DesignRow.astro",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_blocks_designrow",
+      "target": "src_lib_equipment_designtags",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/blocks/DesignRow.astro",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_blocks_designrow",
+      "target": "src_lib_equipment_formatload",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/blocks/DesignRow.astro",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
       "source": "src_components_blocks_equipmentfinder",
       "target": "src_data_pages_page",
       "relation": "imports",
@@ -13634,7 +14094,127 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/blocks/EquipmentFinder.astro",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_blocks_equipmentfinder",
+      "target": "src_lib_equipment_designlink",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/blocks/EquipmentFinder.astro",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_blocks_equipmentfinder",
+      "target": "src_lib_equipment_designtags",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/blocks/EquipmentFinder.astro",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_blocks_equipmentfinder",
+      "target": "src_lib_equipment_equipment_apps",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/blocks/EquipmentFinder.astro",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_blocks_equipmentfinder",
+      "target": "src_lib_equipment_equipment_drives",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/blocks/EquipmentFinder.astro",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_blocks_equipmentfinder",
+      "target": "src_lib_equipment_equipment_loads",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/blocks/EquipmentFinder.astro",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_blocks_equipmentfinder",
+      "target": "src_lib_equipment_spectablelinks",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/blocks/EquipmentFinder.astro",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_blocks_familydesigns",
+      "target": "src_data_pages_page",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/blocks/FamilyDesigns.astro",
       "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_blocks_familydesigns",
+      "target": "src_data_pages_pagemeta",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/blocks/FamilyDesigns.astro",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_blocks_familydesigns",
+      "target": "src_lib_equipment_designanchor",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/blocks/FamilyDesigns.astro",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_blocks_familydesigns",
+      "target": "src_lib_equipment_spectablelinks",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/blocks/FamilyDesigns.astro",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -13830,6 +14410,42 @@
       "weight": 1.0
     },
     {
+      "source": "src_components_home_finderentry",
+      "target": "src_data_pages_page",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/home/FinderEntry.astro",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_home_finderentry",
+      "target": "src_lib_equipment_equipment_apps",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/home/FinderEntry.astro",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_home_finderentry",
+      "target": "src_lib_equipment_equipment_loads",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/home/FinderEntry.astro",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
       "source": "src_components_home_sectortrack",
       "target": "src_data_home_sectors",
       "relation": "imports",
@@ -13838,7 +14454,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/home/SectorTrack.astro",
-      "source_location": "L3",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -13850,7 +14466,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/home/SectorTrack.astro",
-      "source_location": "L4",
+      "source_location": "L6",
       "weight": 1.0
     },
     {
@@ -14450,7 +15066,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L20",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -14462,7 +15078,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L20",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -14474,7 +15090,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L21",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -14486,7 +15102,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L21",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -14498,7 +15114,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L22",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -14510,7 +15126,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L22",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -14522,7 +15138,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L23",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -14534,7 +15150,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L33",
+      "source_location": "L35",
       "weight": 1.0
     },
     {
@@ -14810,7 +15426,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Product.astro",
-      "source_location": "L30",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
@@ -15199,6 +15815,18 @@
     },
     {
       "source": "src_layouts_base",
+      "target": "src_data_site_consent",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/layouts/Base.astro",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_layouts_base",
       "target": "src_data_site_site",
       "relation": "imports",
       "_origin": "ast",
@@ -15351,6 +15979,66 @@
       "context": "import",
       "source_file": "src/lib/content.ts",
       "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_content",
+      "target": "src_lib_blocks_sentencecase",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/lib/content.ts",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_equipment",
+      "target": "src_data_equipment_equipmentapp",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/lib/equipment.ts",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_equipment",
+      "target": "src_data_equipment_equipmentdrive",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/lib/equipment.ts",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_equipment",
+      "target": "src_data_equipment_equipmentitem",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/lib/equipment.ts",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_equipment",
+      "target": "src_data_pages_page",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/lib/equipment.ts",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -15542,7 +16230,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/pages/index.astro",
-      "source_location": "L12",
+      "source_location": "L11",
       "weight": 1.0
     },
     {
@@ -15990,6 +16678,18 @@
       "weight": 1.0
     },
     {
+      "source": "src_components_blocks_designrow",
+      "target": "src_lib_equipment",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/blocks/DesignRow.astro",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
       "source": "src_components_blocks_enquiryform",
       "target": "src_components_blocks_formfield",
       "relation": "imports_from",
@@ -16010,7 +16710,67 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/blocks/EquipmentFinder.astro",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_blocks_equipmentfinder",
+      "target": "src_lib_equipment",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/blocks/EquipmentFinder.astro",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_blocks_equipmentfinder",
+      "target": "src_components_blocks_designrow",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/blocks/EquipmentFinder.astro",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_blocks_familydesigns",
+      "target": "src_data_pages",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/blocks/FamilyDesigns.astro",
       "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_blocks_familydesigns",
+      "target": "src_lib_equipment",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/blocks/FamilyDesigns.astro",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_blocks_familydesigns",
+      "target": "src_components_blocks_designrow",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/blocks/FamilyDesigns.astro",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -16278,6 +17038,30 @@
       "weight": 1.0
     },
     {
+      "source": "src_components_home_finderentry",
+      "target": "src_data_pages",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/home/FinderEntry.astro",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_home_finderentry",
+      "target": "src_lib_equipment",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/home/FinderEntry.astro",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
       "source": "src_components_home_hero",
       "target": "src_components_site_waterline",
       "relation": "imports_from",
@@ -16291,6 +17075,18 @@
     },
     {
       "source": "src_components_home_sectortrack",
+      "target": "src_components_blocks_scrolltrack",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/home/SectorTrack.astro",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_home_sectortrack",
       "target": "src_data_home",
       "relation": "imports_from",
       "_origin": "ast",
@@ -16298,7 +17094,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/home/SectorTrack.astro",
-      "source_location": "L3",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -16310,7 +17106,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/home/SectorTrack.astro",
-      "source_location": "L4",
+      "source_location": "L6",
       "weight": 1.0
     },
     {
@@ -17462,7 +18258,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L20",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -17474,7 +18270,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L21",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -17486,7 +18282,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L22",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -17498,7 +18294,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L23",
+      "source_location": "L24",
       "weight": 1.0
     },
     {
@@ -17510,7 +18306,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L24",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -17522,7 +18318,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L25",
+      "source_location": "L26",
       "weight": 1.0
     },
     {
@@ -17534,7 +18330,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L26",
+      "source_location": "L27",
       "weight": 1.0
     },
     {
@@ -17546,7 +18342,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L27",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -17558,7 +18354,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L28",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
@@ -17570,24 +18366,12 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L29",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_templates_hub",
-      "target": "src_components_blocks_featurerow",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/templates/Hub.astro",
       "source_location": "L30",
       "weight": 1.0
     },
     {
       "source": "src_components_templates_hub",
-      "target": "src_components_blocks_skeleton",
+      "target": "src_components_blocks_familydesigns",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -17599,7 +18383,7 @@
     },
     {
       "source": "src_components_templates_hub",
-      "target": "src_components_blocks_pageending",
+      "target": "src_components_blocks_featurerow",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -17611,7 +18395,7 @@
     },
     {
       "source": "src_components_templates_hub",
-      "target": "src_lib_mdx",
+      "target": "src_components_blocks_skeleton",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -17619,6 +18403,30 @@
       "context": "import",
       "source_file": "src/components/templates/Hub.astro",
       "source_location": "L33",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_templates_hub",
+      "target": "src_components_blocks_pageending",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/templates/Hub.astro",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_templates_hub",
+      "target": "src_lib_mdx",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/templates/Hub.astro",
+      "source_location": "L35",
       "weight": 1.0
     },
     {
@@ -18151,7 +18959,7 @@
     },
     {
       "source": "src_components_templates_product",
-      "target": "src_components_blocks_sectionhead",
+      "target": "src_components_blocks_familydesigns",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -18223,7 +19031,7 @@
     },
     {
       "source": "src_components_templates_product",
-      "target": "src_components_blocks_taglist",
+      "target": "src_components_blocks_skeleton",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -18235,7 +19043,7 @@
     },
     {
       "source": "src_components_templates_product",
-      "target": "src_components_blocks_skeleton",
+      "target": "src_components_blocks_pageending",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -18247,18 +19055,6 @@
     },
     {
       "source": "src_components_templates_product",
-      "target": "src_components_blocks_pageending",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/templates/Product.astro",
-      "source_location": "L29",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_templates_product",
       "target": "src_lib_mdx",
       "relation": "imports_from",
       "_origin": "ast",
@@ -18266,7 +19062,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Product.astro",
-      "source_location": "L30",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
@@ -19593,7 +20389,7 @@
     },
     {
       "source": "src_layouts_base",
-      "target": "src_components_site_depthgauge",
+      "target": "ref_fontsource_variable_archivo_wght_css",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -19605,7 +20401,7 @@
     },
     {
       "source": "src_layouts_base",
-      "target": "ref_fontsource_variable_archivo_wght_css",
+      "target": "ref_fontsource_variable_inter_wght_css",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -19617,7 +20413,7 @@
     },
     {
       "source": "src_layouts_base",
-      "target": "ref_fontsource_variable_inter_wght_css",
+      "target": "ref_fontsource_jetbrains_mono_400_css",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -19629,7 +20425,7 @@
     },
     {
       "source": "src_layouts_base",
-      "target": "ref_fontsource_jetbrains_mono_400_css",
+      "target": "ref_fontsource_jetbrains_mono_500_css",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -19641,7 +20437,7 @@
     },
     {
       "source": "src_layouts_base",
-      "target": "ref_fontsource_jetbrains_mono_500_css",
+      "target": "ref_fontsource_variable_archivo_files_archivo_latin_wght_normal_woff2_url",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -19653,7 +20449,7 @@
     },
     {
       "source": "src_layouts_base",
-      "target": "ref_fontsource_variable_archivo_files_archivo_latin_wght_normal_woff2_url",
+      "target": "ref_fontsource_variable_inter_files_inter_latin_wght_normal_woff2_url",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -19665,7 +20461,7 @@
     },
     {
       "source": "src_layouts_base",
-      "target": "ref_fontsource_variable_inter_files_inter_latin_wght_normal_woff2_url",
+      "target": "src_styles_tokens",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -19677,7 +20473,7 @@
     },
     {
       "source": "src_layouts_base",
-      "target": "src_styles_tokens",
+      "target": "src_styles_blocks",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -19689,7 +20485,7 @@
     },
     {
       "source": "src_layouts_base",
-      "target": "src_styles_blocks",
+      "target": "src_styles_surfaces",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -19701,7 +20497,7 @@
     },
     {
       "source": "src_layouts_base",
-      "target": "src_styles_surfaces",
+      "target": "src_styles_layout",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -19713,7 +20509,7 @@
     },
     {
       "source": "src_layouts_base",
-      "target": "src_styles_layout",
+      "target": "src_styles_parts_site",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -19725,7 +20521,7 @@
     },
     {
       "source": "src_layouts_base",
-      "target": "src_styles_parts_site",
+      "target": "src_styles_parts_content",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -19737,7 +20533,7 @@
     },
     {
       "source": "src_layouts_base",
-      "target": "src_styles_parts_content",
+      "target": "src_styles_parts_sections",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -19749,18 +20545,6 @@
     },
     {
       "source": "src_layouts_base",
-      "target": "src_styles_parts_sections",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/layouts/Base.astro",
-      "source_location": "L25",
-      "weight": 1.0
-    },
-    {
-      "source": "src_layouts_base",
       "target": "src_styles_ocean",
       "relation": "imports_from",
       "_origin": "ast",
@@ -19768,7 +20552,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/layouts/Base.astro",
-      "source_location": "L26",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -19866,7 +20650,43 @@
       "context": "import",
       "source_file": "src/lib/content.ts",
       "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_equipment",
+      "target": "ref_astro_content",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/lib/equipment.ts",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_equipment",
+      "target": "src_data_equipment",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/lib/equipment.ts",
+      "source_location": "L8",
       "type_only": true,
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_equipment",
+      "target": "src_data_pages",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/lib/equipment.ts",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -19932,7 +20752,7 @@
     },
     {
       "source": "src_lib_mdx",
-      "target": "src_components_blocks_taglist",
+      "target": "src_components_blocks_imageslot",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -19944,18 +20764,6 @@
     },
     {
       "source": "src_lib_mdx",
-      "target": "src_components_blocks_imageslot",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/lib/mdx.ts",
-      "source_location": "L13",
-      "weight": 1.0
-    },
-    {
-      "source": "src_lib_mdx",
       "target": "src_components_blocks_quote",
       "relation": "imports_from",
       "_origin": "ast",
@@ -19963,7 +20771,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/lib/mdx.ts",
-      "source_location": "L14",
+      "source_location": "L13",
       "weight": 1.0
     },
     {
@@ -20090,7 +20898,7 @@
     },
     {
       "source": "src_pages_index",
-      "target": "src_components_blocks_section",
+      "target": "src_components_home_finderentry",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -20102,7 +20910,7 @@
     },
     {
       "source": "src_pages_index",
-      "target": "src_components_blocks_proofbar",
+      "target": "src_data_home",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -20114,18 +20922,6 @@
     },
     {
       "source": "src_pages_index",
-      "target": "src_data_home",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/pages/index.astro",
-      "source_location": "L12",
-      "weight": 1.0
-    },
-    {
-      "source": "src_pages_index",
       "target": "src_styles_home",
       "relation": "imports_from",
       "_origin": "ast",
@@ -20133,7 +20929,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/pages/index.astro",
-      "source_location": "L13",
+      "source_location": "L12",
       "weight": 1.0
     },
     {
@@ -21733,7 +22529,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L162",
+      "source_location": "L164",
       "weight": 1.0
     },
     {
@@ -21744,7 +22540,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L174",
+      "source_location": "L176",
       "weight": 1.0
     },
     {
@@ -21755,7 +22551,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L184",
+      "source_location": "L186",
       "weight": 1.0
     },
     {
@@ -21766,7 +22562,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L343",
+      "source_location": "L360",
       "weight": 1.0
     },
     {
@@ -21777,7 +22573,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L384",
+      "source_location": "L401",
       "weight": 1.0
     },
     {
@@ -21788,7 +22584,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L427",
+      "source_location": "L444",
       "weight": 1.0
     },
     {
@@ -21799,7 +22595,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L447",
+      "source_location": "L464",
       "weight": 1.0
     },
     {
@@ -21821,7 +22617,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L198",
+      "source_location": "L200",
       "weight": 1.0
     },
     {
@@ -21832,7 +22628,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L230",
+      "source_location": "L232",
       "weight": 1.0
     },
     {
@@ -21843,7 +22639,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L277",
+      "source_location": "L287",
       "weight": 1.0
     },
     {
@@ -21854,7 +22650,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L295",
+      "source_location": "L305",
       "weight": 1.0
     },
     {
@@ -21865,7 +22661,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L360",
+      "source_location": "L377",
       "weight": 1.0
     },
     {
@@ -21876,7 +22672,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L377",
+      "source_location": "L394",
       "weight": 1.0
     },
     {
@@ -21887,7 +22683,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "CLAUDE.md",
-      "source_location": "L456",
+      "source_location": "L473",
       "weight": 1.0
     },
     {
@@ -22328,6 +23124,116 @@
       "confidence_score": 1.0,
       "source_file": "docs/templates.md",
       "source_location": "L93",
+      "weight": 1.0
+    },
+    {
+      "source": "impeccable_critique_2026_10_13t10_00_11z_src_pages_index_astro",
+      "target": "impeccable_critique_2026_10_13t10_00_11z_src_pages_index_astro_design_health_score_19_28_acceptable_68_heuristics_7_9_10_n_a",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".impeccable/critique/2026-10-13T10-00-11Z__src-pages-index-astro.md",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "impeccable_critique_2026_10_13t10_00_11z_src_pages_index_astro",
+      "target": "impeccable_critique_2026_10_13t10_00_11z_src_pages_index_astro_design_specificity_verdict",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".impeccable/critique/2026-10-13T10-00-11Z__src-pages-index-astro.md",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "impeccable_critique_2026_10_13t10_00_11z_src_pages_index_astro",
+      "target": "impeccable_critique_2026_10_13t10_00_11z_src_pages_index_astro_priority_issues",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".impeccable/critique/2026-10-13T10-00-11Z__src-pages-index-astro.md",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "impeccable_critique_2026_10_13t10_00_11z_src_pages_index_astro",
+      "target": "impeccable_critique_2026_10_13t10_00_11z_src_pages_index_astro_persona_red_flags",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".impeccable/critique/2026-10-13T10-00-11Z__src-pages-index-astro.md",
+      "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "impeccable_critique_2026_10_13t10_00_11z_src_pages_index_astro",
+      "target": "impeccable_critique_2026_10_13t10_00_11z_src_pages_index_astro_minor_observations",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".impeccable/critique/2026-10-13T10-00-11Z__src-pages-index-astro.md",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "impeccable_critique_2026_10_13t10_00_11z_src_pages_index_astro",
+      "target": "impeccable_critique_2026_10_13t10_00_11z_src_pages_index_astro_questions",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".impeccable/critique/2026-10-13T10-00-11Z__src-pages-index-astro.md",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "impeccable_critique_2026_10_13t16_18_36z_src_components_templates_product_astro",
+      "target": "impeccable_critique_2026_10_13t16_18_36z_src_components_templates_product_astro_design_health_score_26_36_good_72_heuristic_10_n_a",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".impeccable/critique/2026-10-13T16-18-36Z__src-components-templates-product-astro.md",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "impeccable_critique_2026_10_13t16_18_36z_src_components_templates_product_astro",
+      "target": "impeccable_critique_2026_10_13t16_18_36z_src_components_templates_product_astro_detector_and_measurements",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".impeccable/critique/2026-10-13T16-18-36Z__src-components-templates-product-astro.md",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "impeccable_critique_2026_10_13t16_18_36z_src_components_templates_product_astro",
+      "target": "impeccable_critique_2026_10_13t16_18_36z_src_components_templates_product_astro_fixed_in_this_pass",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".impeccable/critique/2026-10-13T16-18-36Z__src-components-templates-product-astro.md",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "impeccable_critique_2026_10_13t16_18_36z_src_components_templates_product_astro",
+      "target": "impeccable_critique_2026_10_13t16_18_36z_src_components_templates_product_astro_open",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".impeccable/critique/2026-10-13T16-18-36Z__src-components-templates-product-astro.md",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -22870,6 +23776,182 @@
       "weight": 1.0
     },
     {
+      "source": "research_application_information",
+      "target": "research_application_information_application_information_archived_2026_10_29",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "research/application-information.md",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "research_application_information_application_information_archived_2026_10_29",
+      "target": "research_application_information_related_copy_that_is_useful_for_posts_still_on_the_site",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "research/application-information.md",
+      "source_location": "L129",
+      "weight": 1.0
+    },
+    {
+      "source": "research_application_information_application_information_archived_2026_10_29",
+      "target": "research_application_information_claude_plugins_for_social_media_posts_searched_2026_10_29",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "research/application-information.md",
+      "source_location": "L145",
+      "weight": 1.0
+    },
+    {
+      "source": "research_application_information_application_information_archived_2026_10_29",
+      "target": "research_application_information_by_equipment_family",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "research/application-information.md",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "research_application_information_application_information_archived_2026_10_29",
+      "target": "research_application_information_finder_application_labels_src_lib_equipment_ts",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "research/application-information.md",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "research_application_information_by_equipment_family",
+      "target": "research_application_information_e_08_cranes_lifting_marine_cranes_lifting_equipment_class_certified_rtg",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "research/application-information.md",
+      "source_location": "L102",
+      "weight": 1.0
+    },
+    {
+      "source": "research_application_information_by_equipment_family",
+      "target": "research_application_information_e_09_handling_systems_corer_seismic_cable_handling_systems_rtg",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "research/application-information.md",
+      "source_location": "L106",
+      "weight": 1.0
+    },
+    {
+      "source": "research_application_information_by_equipment_family",
+      "target": "research_application_information_e_10_cable_pipe_tensioners_cable_pipe_tensioners_5_to_20_te_rtg",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "research/application-information.md",
+      "source_location": "L116",
+      "weight": 1.0
+    },
+    {
+      "source": "research_application_information_by_equipment_family",
+      "target": "research_application_information_e_11_power_units_and_e_12_portable_containerised_systems",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "research/application-information.md",
+      "source_location": "L123",
+      "weight": 1.0
+    },
+    {
+      "source": "research_application_information_by_equipment_family",
+      "target": "research_application_information_e_01_winches_hub_marine_winches_survey_geotechnical_seismic_rov_rtg",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "research/application-information.md",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "research_application_information_by_equipment_family",
+      "target": "research_application_information_e_02_geotechnical_coring_winches_geotechnical_coring_winches_cpt_piston_corer_rtg",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "research/application-information.md",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "research_application_information_by_equipment_family",
+      "target": "research_application_information_e_03_survey_oceanographic_winches_survey_oceanographic_winches_300_to_4_000_m_rtg",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "research/application-information.md",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "research_application_information_by_equipment_family",
+      "target": "research_application_information_e_04_seismic_winches_seismic_winches_source_handling_rtg",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "research/application-information.md",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "research_application_information_by_equipment_family",
+      "target": "research_application_information_e_05_rov_tow_umbilical_winches_rov_tow_umbilical_winches_rtg",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "research/application-information.md",
+      "source_location": "L78",
+      "weight": 1.0
+    },
+    {
+      "source": "research_application_information_by_equipment_family",
+      "target": "research_application_information_e_06_mooring_utility_winches_mooring_utility_winches_for_offshore_vessels_rtg",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "research/application-information.md",
+      "source_location": "L84",
+      "weight": 1.0
+    },
+    {
+      "source": "research_application_information_by_equipment_family",
+      "target": "research_application_information_e_07_launch_recovery_systems_launch_and_recovery_systems_a_frames_lars_rtg",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "research/application-information.md",
+      "source_location": "L94",
+      "weight": 1.0
+    },
+    {
       "source": "research_rtg_website_rtg_website_readme",
       "target": "research_rtg_website_rtg_website_readme_rtg_website_build",
       "relation": "contains",
@@ -23394,7 +24476,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "scripts/build-equipment.mjs",
-      "source_location": "L138",
+      "source_location": "L152",
       "weight": 1.0
     },
     {
@@ -23805,6 +24887,39 @@
       "weight": 1.0
     },
     {
+      "source": "src_components_blocks_designrow",
+      "target": "src_components_blocks_designrow_tags",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/blocks/DesignRow.astro",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_blocks_familydesigns",
+      "target": "src_components_blocks_familydesigns_designs",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/blocks/FamilyDesigns.astro",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_blocks_familydesigns",
+      "target": "src_components_blocks_familydesigns_tableabove",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/blocks/FamilyDesigns.astro",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
       "source": "src_components_blocks_imageslot",
       "target": "src_components_blocks_imageslot_photo",
       "relation": "contains",
@@ -23944,7 +25059,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L44",
+      "source_location": "L46",
       "weight": 1.0
     },
     {
@@ -23955,7 +25070,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L45",
+      "source_location": "L47",
       "weight": 1.0
     },
     {
@@ -23966,7 +25081,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L63",
+      "source_location": "L67",
       "weight": 1.0
     },
     {
@@ -23999,7 +25114,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/templates/Product.astro",
-      "source_location": "L47",
+      "source_location": "L46",
       "weight": 1.0
     },
     {
@@ -24065,7 +25180,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/content.config.ts",
-      "source_location": "L101",
+      "source_location": "L107",
       "weight": 1.0
     },
     {
@@ -24109,7 +25224,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/content.config.ts",
-      "source_location": "L271",
+      "source_location": "L273",
       "weight": 1.0
     },
     {
@@ -24164,7 +25279,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/content.config.ts",
-      "source_location": "L68",
+      "source_location": "L74",
       "weight": 1.0
     },
     {
@@ -24351,7 +25466,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/content/pages/e-04.mdx",
-      "source_location": "L64",
+      "source_location": "L61",
       "weight": 1.0
     },
     {
@@ -24362,7 +25477,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/content/pages/e-08.mdx",
-      "source_location": "L33",
+      "source_location": "L26",
       "weight": 1.0
     },
     {
@@ -24373,7 +25488,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/content/pages/e-10.mdx",
-      "source_location": "L116",
+      "source_location": "L109",
       "weight": 1.0
     },
     {
@@ -24692,7 +25807,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/content/pages/z-01.mdx",
-      "source_location": "L26",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -24703,7 +25818,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/content/pages/z-01.mdx",
-      "source_location": "L37",
+      "source_location": "L40",
       "weight": 1.0
     },
     {
@@ -24714,7 +25829,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/content/pages/z-01.mdx",
-      "source_location": "L43",
+      "source_location": "L48",
       "weight": 1.0
     },
     {
@@ -24725,7 +25840,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/content/pages/z-01.mdx",
-      "source_location": "L47",
+      "source_location": "L52",
       "weight": 1.0
     },
     {
@@ -24736,7 +25851,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/content/pages/z-01.mdx",
-      "source_location": "L60",
+      "source_location": "L65",
       "weight": 1.0
     },
     {
@@ -24747,7 +25862,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/content/pages/z-01.mdx",
-      "source_location": "L68",
+      "source_location": "L73",
       "weight": 1.0
     },
     {
@@ -24780,7 +25895,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/content/pages/z-02.mdx",
-      "source_location": "L24",
+      "source_location": "L26",
       "weight": 1.0
     },
     {
@@ -24791,7 +25906,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/content/pages/z-02.mdx",
-      "source_location": "L30",
+      "source_location": "L39",
       "weight": 1.0
     },
     {
@@ -24802,7 +25917,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/content/pages/z-02.mdx",
-      "source_location": "L36",
+      "source_location": "L48",
       "weight": 1.0
     },
     {
@@ -24923,7 +26038,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/content/pages/z-04.mdx",
-      "source_location": "L35",
+      "source_location": "L36",
       "weight": 1.0
     },
     {
@@ -25000,7 +26115,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/data/home.ts",
-      "source_location": "L100",
+      "source_location": "L102",
       "weight": 1.0
     },
     {
@@ -25011,7 +26126,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/data/home.ts",
-      "source_location": "L117",
+      "source_location": "L119",
       "weight": 1.0
     },
     {
@@ -25055,7 +26170,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/data/home.ts",
-      "source_location": "L46",
+      "source_location": "L48",
       "weight": 1.0
     },
     {
@@ -25077,7 +26192,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/data/home.ts",
-      "source_location": "L60",
+      "source_location": "L62",
       "weight": 1.0
     },
     {
@@ -25088,7 +26203,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/data/home.ts",
-      "source_location": "L78",
+      "source_location": "L80",
       "weight": 1.0
     },
     {
@@ -25099,7 +26214,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/data/home.ts",
-      "source_location": "L93",
+      "source_location": "L95",
       "weight": 1.0
     },
     {
@@ -25357,13 +26472,24 @@
     },
     {
       "source": "src_data_site",
+      "target": "src_data_site_consent",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/data/site.js",
+      "source_location": "L64",
+      "weight": 1.0
+    },
+    {
+      "source": "src_data_site",
       "target": "src_data_site_legal_nav",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/data/site.js",
-      "source_location": "L60",
+      "source_location": "L72",
       "weight": 1.0
     },
     {
@@ -25374,7 +26500,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/data/site.js",
-      "source_location": "L69",
+      "source_location": "L81",
       "weight": 1.0
     },
     {
@@ -25385,7 +26511,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/data/site.js",
-      "source_location": "L85",
+      "source_location": "L97",
       "weight": 1.0
     },
     {
@@ -25396,7 +26522,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/layouts/Base.astro",
-      "source_location": "L38",
+      "source_location": "L37",
       "weight": 1.0
     },
     {
@@ -25407,7 +26533,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/layouts/Base.astro",
-      "source_location": "L40",
+      "source_location": "L39",
       "weight": 1.0
     },
     {
@@ -25418,7 +26544,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/layouts/Base.astro",
-      "source_location": "L41",
+      "source_location": "L40",
       "weight": 1.0
     },
     {
@@ -25429,7 +26555,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/layouts/Base.astro",
-      "source_location": "L42",
+      "source_location": "L41",
       "weight": 1.0
     },
     {
@@ -25572,7 +26698,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/lib/blocks.ts",
-      "source_location": "L72",
+      "source_location": "L75",
       "weight": 1.0
     },
     {
@@ -25583,7 +26709,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/lib/blocks.ts",
-      "source_location": "L73",
+      "source_location": "L76",
       "weight": 1.0
     },
     {
@@ -25594,18 +26720,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/lib/blocks.ts",
-      "source_location": "L74",
+      "source_location": "L77",
       "weight": 1.0
     },
     {
       "source": "src_lib_blocks",
-      "target": "src_lib_blocks_endingcta",
+      "target": "src_lib_blocks_sentencecase",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/lib/blocks.ts",
-      "source_location": "L79",
+      "source_location": "L82",
       "weight": 1.0
     },
     {
@@ -25617,6 +26743,17 @@
       "confidence_score": 1.0,
       "source_file": "src/lib/blocks.ts",
       "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_blocks",
+      "target": "src_lib_blocks_endingcta",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/lib/blocks.ts",
+      "source_location": "L92",
       "weight": 1.0
     },
     {
@@ -25708,25 +26845,113 @@
       "weight": 1.0
     },
     {
-      "source": "src_lib_depth",
-      "target": "src_lib_depth_zoneof",
+      "source": "src_lib_equipment",
+      "target": "src_lib_equipment_equipment_apps",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "src/lib/depth.ts",
-      "source_location": "L19",
+      "source_file": "src/lib/equipment.ts",
+      "source_location": "L11",
       "weight": 1.0
     },
     {
-      "source": "src_lib_depth",
-      "target": "src_lib_depth_initdepth",
+      "source": "src_lib_equipment",
+      "target": "src_lib_equipment_equipment_drives",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "src/lib/depth.ts",
-      "source_location": "L24",
+      "source_file": "src/lib/equipment.ts",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_equipment",
+      "target": "src_lib_equipment_equipment_loads",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/lib/equipment.ts",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_equipment",
+      "target": "src_lib_equipment_formatload",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/lib/equipment.ts",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_equipment",
+      "target": "src_lib_equipment_designtags",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/lib/equipment.ts",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_equipment",
+      "target": "src_lib_equipment_designnumber",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/lib/equipment.ts",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_equipment",
+      "target": "src_lib_equipment_designanchor",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/lib/equipment.ts",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_equipment",
+      "target": "src_lib_equipment_datasheetrequest",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/lib/equipment.ts",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_equipment",
+      "target": "src_lib_equipment_spectablelinks",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/lib/equipment.ts",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_equipment",
+      "target": "src_lib_equipment_designlink",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/lib/equipment.ts",
+      "source_location": "L63",
       "weight": 1.0
     },
     {
@@ -25749,6 +26974,17 @@
       "confidence_score": 1.0,
       "source_file": "src/lib/forms.ts",
       "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_hoist",
+      "target": "src_lib_hoist_inithoist",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/lib/hoist.ts",
+      "source_location": "L11",
       "weight": 1.0
     },
     {
@@ -25814,7 +27050,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/lib/mdx.ts",
-      "source_location": "L16",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -25825,7 +27061,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/lib/motion.ts",
-      "source_location": "L131",
+      "source_location": "L123",
       "weight": 1.0
     },
     {
@@ -25836,51 +27072,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/lib/motion.ts",
-      "source_location": "L189",
-      "weight": 1.0
-    },
-    {
-      "source": "src_lib_motion",
-      "target": "src_lib_motion_initscrolltracks",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/lib/motion.ts",
-      "source_location": "L231",
-      "weight": 1.0
-    },
-    {
-      "source": "src_lib_motion",
-      "target": "src_lib_motion_teardownfns",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/lib/motion.ts",
-      "source_location": "L37",
-      "weight": 1.0
-    },
-    {
-      "source": "src_lib_motion",
-      "target": "src_lib_motion_initmotion",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/lib/motion.ts",
-      "source_location": "L39",
-      "weight": 1.0
-    },
-    {
-      "source": "src_lib_motion",
-      "target": "src_lib_motion_initpinstages",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/lib/motion.ts",
-      "source_location": "L391",
+      "source_location": "L181",
       "weight": 1.0
     },
     {
@@ -25891,7 +27083,29 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/lib/motion.ts",
-      "source_location": "L538",
+      "source_location": "L222",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_motion",
+      "target": "src_lib_motion_teardownfns",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/lib/motion.ts",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "src_lib_motion",
+      "target": "src_lib_motion_initmotion",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/lib/motion.ts",
+      "source_location": "L33",
       "weight": 1.0
     },
     {
@@ -25902,7 +27116,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/lib/motion.ts",
-      "source_location": "L60",
+      "source_location": "L52",
       "weight": 1.0
     },
     {
@@ -25913,7 +27127,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/lib/motion.ts",
-      "source_location": "L65",
+      "source_location": "L57",
       "weight": 1.0
     },
     {
@@ -25924,7 +27138,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/lib/motion.ts",
-      "source_location": "L91",
+      "source_location": "L83",
       "weight": 1.0
     },
     {
@@ -26464,6 +27678,15 @@
       "source_file": "src/components/blocks/CtaBand.astro"
     },
     {
+      "source": "src_components_blocks_designrow",
+      "target": "src_data_equipment",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/blocks/DesignRow.astro"
+    },
+    {
       "source": "src_components_blocks_draftpanel",
       "target": "src_data_pages",
       "relation": "imports_from",
@@ -26489,6 +27712,15 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/blocks/EquipmentFinder.astro"
+    },
+    {
+      "source": "src_components_blocks_familydesigns",
+      "target": "src_data_equipment",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/blocks/FamilyDesigns.astro"
     },
     {
       "source": "src_components_blocks_featuredcase",
@@ -26572,15 +27804,6 @@
       "source_file": "src/components/blocks/PageHero.astro"
     },
     {
-      "source": "src_components_blocks_pinnedstage",
-      "target": "src_lib_blocks",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/components/blocks/PinnedStage.astro"
-    },
-    {
       "source": "src_components_blocks_proofbar",
       "target": "src_data_site",
       "relation": "imports_from",
@@ -26624,6 +27847,15 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/blocks/TierCard.astro"
+    },
+    {
+      "source": "src_components_home_finderentry",
+      "target": "src_data_equipment",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/home/FinderEntry.astro"
     },
     {
       "source": "src_components_home_hero",
@@ -26678,15 +27910,6 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/home/TierLadder.astro"
-    },
-    {
-      "source": "src_components_site_depthgauge",
-      "target": "src_data_site",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/components/site/DepthGauge.astro"
     },
     {
       "source": "src_components_site_footer",
@@ -26906,7 +28129,7 @@
     },
     {
       "source": "src_layouts_base",
-      "target": "src_lib_depth",
+      "target": "src_lib_forms",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -26915,7 +28138,7 @@
     },
     {
       "source": "src_layouts_base",
-      "target": "src_lib_forms",
+      "target": "src_lib_hoist",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -27066,7 +28289,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "src/components/templates/Hub.astro",
-      "source_location": "L45",
+      "source_location": "L47",
       "weight": 1.0
     },
     {
@@ -27083,18 +28306,6 @@
     },
     {
       "source": "src_lib_home_scroll_inithome",
-      "target": "src_lib_home_scroll_inithome_onscroll",
-      "relation": "indirect_call",
-      "_origin": "ast",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
-      "context": "argument",
-      "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L269",
-      "weight": 1.0
-    },
-    {
-      "source": "src_lib_home_scroll_inithome",
       "target": "src_lib_home_scroll_inithome_onresize",
       "relation": "indirect_call",
       "_origin": "ast",
@@ -27102,19 +28313,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L270",
-      "weight": 1.0
-    },
-    {
-      "source": "src_lib_home_scroll_inithome_onscroll",
-      "target": "src_lib_home_scroll_inithome_frame",
-      "relation": "indirect_call",
-      "_origin": "ast",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
-      "context": "argument",
-      "source_file": "src/lib/home-scroll.ts",
-      "source_location": "L267",
+      "source_location": "L240",
       "weight": 1.0
     },
     {
@@ -27126,7 +28325,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "src/lib/motion.ts",
-      "source_location": "L169",
+      "source_location": "L161",
       "weight": 1.0
     },
     {
@@ -27150,7 +28349,7 @@
       "confidence_score": 0.95,
       "context": "createViewer()",
       "source_file": "CLAUDE.md",
-      "source_location": "L350",
+      "source_location": "L367",
       "weight": 1.0
     },
     {
@@ -27162,7 +28361,7 @@
       "confidence_score": 0.95,
       "context": "entryFor()",
       "source_file": "CLAUDE.md",
-      "source_location": "L166",
+      "source_location": "L168",
       "weight": 1.0
     },
     {
@@ -27174,10 +28373,10 @@
       "confidence_score": 0.95,
       "context": "pagesByTemplate()",
       "source_file": "CLAUDE.md",
-      "source_location": "L430",
+      "source_location": "L447",
       "weight": 1.0
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "e8e57a673d2cfe9aa035a3e73999fb1d3fd1d265"
+  "built_at_commit": "739cee571d1f0de08ba21358852bbfc1054eb2ae"
 }

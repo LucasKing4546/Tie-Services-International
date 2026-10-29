@@ -1,7 +1,8 @@
 /* ==========================================================================
    RTG design tokens + global element styles.
-   Palette is taken from the live romicatiegroup.com stylesheet:
-     #AB3241 crimson · #031d5b navy · #FFFFFF
+   Brand colours (logo, header, footer, buttons) are from the live
+   romicatiegroup.com stylesheet: #AB3241 crimson · #031d5b navy.
+   The water is the concept file's ambient teal-grey ramp.
    Every colour pairing used for text is >= 4.5:1 on its background.
    ========================================================================== */
 :root{
@@ -15,23 +16,24 @@
   --line:#DFE3EA;
   --muted:#5A6478;
 
-  /* The water. One ramp, all from the brand navy: pale sky above the
-     waterline, then lighter navy at the surface down to near-black navy at
-     the seabed. --sea-0 is the lightest ground white type ever sits on, and
-     white passes 4.5:1 on it, so contrast holds at every depth. */
-  --sky:#EEF2FA;
-  --sea-0:#17409a;
-  --sea-1:var(--navy);
-  --sea-2:#010a24;
+  /* The water: an ambient, desaturated teal-grey ramp (the concept file),
+     not the brand navy. North Sea mist above the waterline, teal at the
+     surface, down to near-black at the seabed. --sea-0 is the lightest
+     ground white type ever sits on (about 8.6:1), so contrast holds at
+     every depth. */
+  --sky:#DCE7EA;
+  --sea-0:#1F5467;
+  --sea-1:#0D2B3B;
+  --sea-2:#061520;
 
   /* Semantic colours. The defaults are the SUBMERGED values, because almost
      everything is under water. .above (below) restores the light ones for the
      few things at the surface: the homepage hero and the header bar. */
   --ink:#fff;
-  --ink-2:rgba(255,255,255,.76);
-  --rule:rgba(255,255,255,.2);
+  --ink-2:#BFD2D8;
+  --rule:rgba(220,231,234,.18);
   --panel:rgba(255,255,255,.055);
-  --panel-2:rgba(1,10,36,.34);
+  --panel-2:rgba(6,21,32,.35);
   /* Text accent. Red on navy is ~2.3:1, so under water red is for fills and
      marks only and accented type goes white. */
   --accent:#fff;
@@ -64,6 +66,9 @@
 
 .above,.hdr{--ink:var(--navy);--ink-2:var(--muted);--rule:var(--line);--panel:var(--off);
   --panel-2:var(--navy);--accent:var(--red);--on-ink:#fff;color:var(--ink);color-scheme:light}
+/* Above the water the type takes the concept's deep teal; the header keeps
+   the logo navy. */
+.above{--ink:#0D2B3B;--ink-2:#3B5967;--rule:rgba(13,43,59,.18)}
 
 *,*::before,*::after{box-sizing:border-box}
 /* Dark, so native controls (select popups, autofill, scrollbars) match the
@@ -223,8 +228,8 @@ html.js .stag.in > *{opacity:1;transform:none}
    CTA goes, since the mobile panel still carries it. */
 @media (max-width:560px){.nav{display:none}}
 
-/* ---------- footer ---------- */
-.ftr{position:relative;padding:96px 0 34px;background:var(--sea-2);color:#fff}
+/* ---------- footer: the logo navy, not the water ---------- */
+.ftr{position:relative;padding:96px 0 34px;background:var(--navy);color:#fff}
 .ftr-g{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:44px;margin-bottom:60px}
 @media (max-width:820px){.ftr-g{grid-template-columns:1fr 1fr}}
 @media (max-width:520px){.ftr-g{grid-template-columns:1fr;gap:36px;margin-bottom:44px}}

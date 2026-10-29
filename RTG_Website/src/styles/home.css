@@ -96,16 +96,18 @@
 @media (max-width:900px){.stmt-grid{grid-template-columns:1fr;gap:34px}}
 
 /* ---------- pinned tiers ---------- */
-.pin-wrap{position:relative}
-.pin-stick{position:sticky;top:0;height:100svh;display:flex;align-items:center;overflow:hidden}
 .pin-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
 @media (max-width:900px){.pin-grid{grid-template-columns:1fr;gap:32px}}
 .pin-vis{position:relative;aspect-ratio:1/1;max-height:56vh;margin:0 auto;width:100%}
 .pin-vis canvas{width:100%;height:100%;display:block}
-.pin-copy{position:relative;min-height:330px}
-.tier{position:absolute;inset:0;opacity:0;transform:translateY(24px);pointer-events:none;
-  transition:opacity .55s var(--e),transform .55s var(--e)}
-.tier.on{opacity:1;transform:none;pointer-events:auto}
+/* Tier panels share one grid cell, so the box is as tall as the longest
+   panel and nothing shifts when the tab changes. visibility (delayed until
+   the fade ends) keeps hidden panels out of the tab order and a11y tree. */
+.pin-copy{display:grid}
+.tier{grid-area:1/1;opacity:0;visibility:hidden;transform:translateY(24px);pointer-events:none;
+  transition:opacity .55s var(--e),transform .55s var(--e),visibility 0s linear .55s}
+.tier.on{opacity:1;visibility:visible;transform:none;pointer-events:auto;
+  transition:opacity .55s var(--e),transform .55s var(--e),visibility 0s}
 .tier .num{font-family:var(--f-d);font-weight:900;font-size:clamp(56px,7vw,104px);line-height:.8;
   color:var(--panel);letter-spacing:-.04em;margin-bottom:8px}
 .tier.on .num{color:var(--accent)}
@@ -113,19 +115,9 @@
 .tier ul{list-style:disc;margin:22px 0 0;padding:0 0 0 20px;display:flex;flex-direction:column;gap:9px}
 .tier li{font-size:15px;color:var(--ink-2);display:list-item}
 .tier li::marker{color:var(--accent)}
-.pin-bar{display:flex;gap:6px;margin-top:34px}
-.pin-bar i{height:2.5px;flex:1;background:var(--rule);border-radius:2px;transition:background .4s var(--e)}
-.pin-bar i.on{background:var(--red)}
 
-/* ---------- horizontal sectors ---------- */
-.hz-wrap{position:relative;overflow:clip}
-.hz-stick{position:sticky;top:0;height:100svh;display:flex;flex-direction:column;justify-content:center;
-  overflow:hidden}
-.hz-head{padding:0 var(--gut);max-width:var(--wrap);margin:0 auto 56px;width:100%;
-  display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
-.hz-track{display:flex;gap:22px;padding:0 max(var(--gut),calc((100vw - var(--wrap))/2 + var(--gut)));
-  will-change:transform}
-.scard{position:relative;overflow:hidden;isolation:isolate;flex:none;width:370px;min-height:430px;background:rgba(255,255,255,.06);
+/* ---------- sector cards (inside a ScrollTrack) ---------- */
+.strack-rail > .scard,.scard{position:relative;overflow:hidden;isolation:isolate;flex:none;width:min(78vw,370px);min-height:430px;background:rgba(255,255,255,.06);
   border:1px solid rgba(255,255,255,.16);border-radius:20px;padding:32px 30px;display:flex;
   flex-direction:column;justify-content:space-between;transition:background .35s var(--e),border-color .35s var(--e),transform .35s var(--e)}
 .scard:hover{background:var(--red);border-color:var(--red);transform:translateY(-8px);}
@@ -134,14 +126,7 @@
 .scard h3{font-size:29px;letter-spacing:-.03em;line-height:1.12;margin:20px 0 14px;color:#fff}
 .scard p{font-size:14.5px;color:rgba(255,255,255,.86);margin:0}
 .scard .arw{color:#fff;margin-top:26px}
-.hz-prog{max-width:var(--wrap);margin:44px auto 0;padding:0 var(--gut);width:100%}
-.hz-prog .rail{height:2px;background:rgba(255,255,255,.18);border-radius:2px;position:relative}
-.hz-prog .fill{position:absolute;left:0;top:0;bottom:0;background:var(--red);border-radius:2px;width:0}
-@media (max-width:900px){.hz-wrap{height:auto!important}
-  .hz-stick{position:relative;height:auto;padding:72px 0}
-  .hz-track{transform:none!important;flex-direction:column;padding:0 var(--gut);max-width:var(--wrap);margin:0 auto}
-  .scard{width:auto;min-height:300px}
-  .hz-prog{display:none}}
+@media (max-width:900px){.scard{min-height:300px}}
 
 /* statement: navy band with photo, glow and grid; tight */
 .stmt{position:relative;overflow:hidden;isolation:isolate;padding:clamp(52px,6vw,92px) 0 clamp(36px,4vw,56px)}
@@ -155,13 +140,10 @@
 /* tiers: off band with a quiet glow */
 .tier:not(.on) .num{color:rgba(255,255,255,.22)}
 
-/* sectors: navy with glow. No ruled lines here: this layer scrolls while
-   the cards stay pinned, so lines would slide up and down behind them. */
-.hz-stick{z-index:1}
 .scard-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;
   transition:transform .6s var(--e),opacity .35s var(--e)}
 .scard.has-img::before{content:"";position:absolute;inset:0;z-index:-1;
-  background:linear-gradient(180deg,rgba(3,29,91,.55) 0%,rgba(3,29,91,.82) 55%,rgba(3,29,91,.96) 100%);
+  background:linear-gradient(180deg,rgba(13,43,59,.55) 0%,rgba(13,43,59,.82) 55%,rgba(13,43,59,.96) 100%);
   transition:opacity .35s}
 .scard.has-img:hover .scard-img{transform:scale(1.06);opacity:.5}
 .scard.has-img:hover::before{opacity:.75}
@@ -170,16 +152,7 @@
 @media (prefers-reduced-motion:reduce){.scard,.scard-img,.eq-track > .ecard{transition:none}
   .scard:hover,.eq-track > .ecard:hover{transform:none}}
 
-/* pinned tiers: white surface for the copy, chunkier progress */
-#tiers .pin-copy{background:var(--panel);border:1px solid var(--rule);border-radius:22px;padding:32px 34px;
-  min-height:500px}
-#tiers .tier .num{font-size:clamp(48px,5vw,72px)}
-#tiers .tier{inset:32px 34px}
 #tiers .tier li{color:var(--ink)}
-#tiers .pin-bar i{height:5px;border-radius:3px}
-#tiers .pin-vis{border-radius:22px;background:var(--panel);border:1px solid var(--rule);
-  }
-@media (max-width:900px){#tiers .pin-copy{padding:24px 22px;min-height:600px}#tiers .tier{inset:24px 22px}}
 
 /* machine lift: heading spacing and pick buttons */
 .zf-pick button{transition:transform .25s var(--e),background .25s var(--e),border-color .25s var(--e)}
@@ -199,41 +172,40 @@
 @media (max-width:900px){.stmt-grid{grid-template-columns:minmax(0,1fr);align-items:start}}
 
 /* ---- pinned tiers, redesigned: open stage, no boxes, labelled steps ---- */
-#tiers .pin-stick{padding-top:96px}
+#tiers{padding:clamp(72px,8vw,112px) 0}
 #tiers .pin-grid{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(40px,6vw,96px);align-items:center}
 #tiers .pin-vis{background:none;border:0;border-radius:0;max-height:62svh}
 #tiers .pin-vis::after{content:"";position:absolute;left:8%;right:8%;bottom:6%;height:1px;background:var(--rule)}
 .tier-h{margin-bottom:28px;max-width:26ch;font-size:clamp(26px,2.5vw,38px)}
-#tiers .pin-copy{background:none;border:0;border-radius:0;padding:0;min-height:300px}
-#tiers .tier{inset:0}
 #tiers .tier .num{font-size:clamp(44px,4vw,60px);line-height:1;margin-bottom:14px}
 #tiers .tier h3{font-size:clamp(26px,2.4vw,34px);letter-spacing:-.03em;margin-bottom:12px}
 #tiers .tier .lede{font-size:17px;max-width:44ch;margin:0}
 #tiers .tier ul{margin-top:18px;gap:8px}
 #tiers .tier li{font-size:15px}
-#tiers .pin-bar{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:30px}
-#tiers .pin-bar i{height:auto;background:none;border-radius:0;border-top:3px solid var(--rule);padding-top:10px;
+#tiers .pin-bar{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:0 0 26px}
+#tiers .pin-bar button{appearance:none;font:inherit;text-align:left;color:inherit;cursor:pointer;
+  background:none;border:0;border-radius:0;border-top:3px solid var(--rule);padding:10px 0 0;
   display:flex;flex-direction:column;gap:2px;transition:border-color .4s var(--e),color .4s var(--e)}
-#tiers .pin-bar i.on{background:none;border-top-color:var(--red)}
+#tiers .pin-bar button.on{border-top-color:var(--red)}
+#tiers .pin-bar button:hover span{color:var(--ink)}
+#tiers .pin-bar button:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
 #tiers .pin-bar b{font-family:var(--f-m);font-size:11px;letter-spacing:.14em;color:var(--ink-2);font-weight:500}
 #tiers .pin-bar span{font-size:13px;line-height:1.25;color:var(--ink-2);font-weight:600}
-#tiers .pin-bar i.on b{color:var(--accent)}
-#tiers .pin-bar i.on span{color:var(--ink)}
+#tiers .pin-bar button.on b{color:var(--accent)}
+#tiers .pin-bar button.on span{color:var(--ink)}
 @media (max-width:900px){#tiers .pin-grid{grid-template-columns:minmax(0,1fr);gap:20px}
   #tiers .pin-vis{max-height:30svh}
-  #tiers .pin-copy{min-height:270px}
-  #tiers .pin-bar span{display:none}
+  #tiers .pin-bar{gap:10px}
+  #tiers .pin-bar span{font-size:11.5px}
   .tier-h{font-size:clamp(22px,5.4vw,30px)}}
-#tiers .pin-bar i{font-style:normal}
-@media (min-width:901px) and (max-height:820px){#tiers .pin-stick{padding-top:84px}
+@media (min-width:901px) and (max-height:820px){
   .tier-h{font-size:clamp(24px,2.2vw,32px);margin-bottom:16px;max-width:30ch}
-  #tiers .pin-copy{min-height:250px}
   #tiers .tier .num{font-size:36px;margin-bottom:8px}
   #tiers .tier h3{font-size:24px}
   #tiers .tier .lede{font-size:15.5px}
   #tiers .tier ul{margin-top:12px;gap:5px}
-  #tiers .pin-bar{margin-top:16px}
-  #tiers .pin-wrap p,#tiers .pin-stick p:last-child{margin-top:16px!important}}
+  #tiers .pin-bar{margin-bottom:16px}
+  #tiers .pin-grid > div > p:last-child{margin-top:16px!important}}
 
 /* ---------- family business ----------
    Story on the left at reading size, the client line as a quieter block on
@@ -262,31 +234,20 @@
 @media (max-width:520px){.cond-list li{grid-template-columns:minmax(0,1fr)}}
 
 /* ---------- sectors head, tiers intro, service ---------- */
-.hz-head h2{max-width:none}
 .tier-intro{margin:0 0 22px;color:var(--ink-2);max-width:46ch}
 .service .lede{margin-top:20px;max-width:62ch}
 .tier-h{margin-bottom:12px}
 
 /* ---------- layout fixes from the homepage review ---------- */
-/* A pinned panel is a full screen under a fixed header: keep its heading
-   clear of the bar, and tighten it on a short laptop screen. */
-@media (min-width:901px){.hz-stick{padding-top:82px}}
+/* Tighten the hero on a short laptop screen. */
 @media (min-width:901px) and (max-height:820px){
-  .hz-head{margin-bottom:36px}
-  .hz-prog{margin-top:28px}
   .hero .d1{font-size:clamp(34px,4.1vw,56px)}
 }
-@media (max-width:900px){
-  /* the stacked cards fill the column the heading sits on */
-  .hz-track{width:100%}
-  /* Tiers: no pin on a small screen. Four panels of text do not fit one
-     screen there, so they are listed under the model instead. */
-  #tiers .pin-stick{position:static;height:auto;overflow:visible;display:block;padding:72px 0 56px}
-  #tiers .pin-copy{min-height:0}
-  #tiers .tier{position:static;opacity:1;transform:none;pointer-events:auto;
-    border-top:1px solid var(--rule);padding:22px 0 26px}
-  #tiers .pin-bar{display:none}
-}
+/* No JS: the tabs can't work, so list every tier and hide the tab row. */
+html:not(.js) #tiers .pin-bar{display:none}
+html:not(.js) #tiers .pin-copy{display:flex;flex-direction:column;gap:28px}
+html:not(.js) #tiers .tier{opacity:1;visibility:visible;transform:none;pointer-events:auto}
+@media (prefers-reduced-motion:reduce){.tier,.tier.on{transition:none}}
 @media (max-width:820px){
   .zf .spec{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;padding:0}
   .zf .spec div{padding-right:0}

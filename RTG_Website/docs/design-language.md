@@ -64,8 +64,8 @@ no art still reads as deliberate rather than broken.
 
 Lean on this hardest, because **RTG already has three-quarters of it**: `steps[]` in
 `content.config.ts` already carries an optional `media` field, `StepList` renders the
-numbered rows, and `PinnedStages` already does the pinned one-at-a-time reveal with a
-live index.
+numbered rows. (`PinnedStages`, the pinned one-at-a-time reveal, was removed on
+2026-10-29: nothing on the site is driven by page scroll any more.)
 
 The only missing piece is the image per step. Add it to `StepList` and the O1–O7
 pattern exists across Service, Guide, Ladder and Sector at once.
@@ -118,7 +118,7 @@ visual to ~60% without writing a single new page of copy.
 | Trademarked tagline treatment | Theirs |
 | Centred body copy | iCOMAT centres several text blocks. RTG's prose is left-set at a fixed measure and stays there — it reads as a technical document, which is the point |
 | Mesh gradients / glassmorphism | Considered and rejected: SaaS-dashboard aesthetic, fights "heavy machinery, not a startup" |
-| Momentum / smooth-scroll hijacking | Fights the pinned scroll-track and pinned-stage machinery already built; breaks keyboard expectations |
+| Momentum / smooth-scroll hijacking | Breaks keyboard expectations; the site owner ruled out scroll-driven carousels on 2026-10-29 |
 
 ---
 
@@ -204,9 +204,9 @@ explicit width/height, lazy below the fold. Supplied originals run to 6016×4000
 | `.stats.bare` | **Upgrade** | Chrome-free figures |
 | `LogoStrip` | **New, empty** | Reuse the `.mq` marquee animation from `home.css` |
 | Footer → dark | **Rework** | Currently white |
-| `PinnedStages` | Built | Pinned one-at-a-time reveal |
+| `PinnedStages` | Removed 2026-10-29 | Scroll-driven, ruled out |
 | `CompareSlot` | Built | Before/after divider |
-| `ScrollTrack` | Built | Carousel band |
+| `ScrollTrack` | Built | Carousel band: swipe and prev/next only, never page scroll |
 | `CardGrid` / `ChildCards` | Built | Sibling cards — no change |
 
 ## Verification

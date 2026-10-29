@@ -19,7 +19,7 @@
 .mband-item{position:relative;gap:0;border-radius:20px}
 .mband-item figcaption{position:absolute;left:12px;right:12px;bottom:12px;max-width:none;z-index:2;
   padding:11px 15px;border-radius:12px;font-size:12.5px;line-height:1.4;font-weight:500;
-  color:#fff;background:rgba(1,10,36,.72);
+  color:#fff;background:rgba(6,21,32,.72);
   -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
   
   transform:translateY(0);transition:transform .45s var(--e-heavy)}
@@ -65,31 +65,11 @@
   .irows-list a:hover .irows-blurb,.irows-list a:hover .irows-go{transform:none}
 }
 
-/* ---------- PinnedStage(s): larger numeral, panel-like stage ---------- */
-.pstage-grid{gap:clamp(40px,6vw,96px)}
-.pstage-head h2{max-width:14ch}
-.pstage-index li{padding:15px 0}
-.pstage-index .t{font-size:16px}
-.pstage-index li.on .t{color:var(--ink)}
-.pstage.navy .pstage-index li.on .t{color:#fff}
-.pstage-bar i{height:4px;border-radius:4px}
-.pstage-num{font-size:clamp(52px,6vw,72px);letter-spacing:-.04em}
-.pstage-item h3{font-size:clamp(28px,3.6vw,48px);letter-spacing:-.035em;line-height:1.08}
-.pstage-body{font-size:clamp(17px,1.4vw,20px)}
-.pstage-item .lc-l li::marker{color:var(--accent)}
-.pstage.navy .pstage-item .lc-l li::marker{color:#fff}
-@media (min-width:901px){
-  .pstage:not(.navy) .pstage-item{background:var(--panel);border:1px solid var(--rule);border-radius:24px;
-    padding:clamp(28px,3.4vw,52px);}
-  .pstage.navy .pstage-item{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);
-    border-radius:24px;padding:clamp(28px,3.4vw,52px);}
-}
-
 /* ---------- TierCard: the four-tier ladder ---------- */
 .tier-card{min-height:440px;border-radius:24px;border:1px solid rgba(255,255,255,.12);
   
   transition:transform .45s var(--e-heavy),box-shadow .45s var(--e)}
-.tier-card::after{background:linear-gradient(180deg,rgba(3,29,91,.05) 0%,rgba(3,29,91,.6) 50%,rgba(3,29,91,.96) 100%)}
+.tier-card::after{background:linear-gradient(180deg,rgba(13,43,59,.05) 0%,rgba(13,43,59,.6) 50%,rgba(13,43,59,.96) 100%)}
 .tier-num{top:10px;right:20px;font-size:clamp(120px,14vw,168px);letter-spacing:-.04em;color:rgba(255,255,255,.16)}
 .tier-card-body{padding:32px}
 .tier-card-body .lc-n{display:inline-block;background:var(--red);color:#fff;padding:5px 12px;border-radius:999px;
