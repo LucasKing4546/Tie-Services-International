@@ -167,7 +167,8 @@ html.js .stag.in > *{opacity:1;transform:none}
 
 /* ---------- header ---------- */
 .hdr{position:fixed;inset:0 0 auto 0;z-index:400;padding:22px 0}
-.hdr::before{content:"";position:absolute;inset:0;background:rgba(238,242,250,.9);
+/* The mist, so the bar meets the sky band with no seam. */
+.hdr::before{content:"";position:absolute;inset:0;background:color-mix(in srgb,var(--sky) 90%,transparent);
   backdrop-filter:blur(14px);border-bottom:1px solid var(--rule)}
 .hdr.on{padding:12px 0}
 .hdr-in{position:relative;display:flex;align-items:center;justify-content:space-between;gap:20px}
@@ -216,6 +217,9 @@ html.js .stag.in > *{opacity:1;transform:none}
 .mnav-panel a:hover{background:var(--panel)}
 .mnav-panel a[aria-current="page"]{background:var(--panel);color:var(--accent)}
 .mnav-panel .btn{margin-top:10px;justify-content:center}
+/* `.mnav-panel a` above would make this navy on red (2.45:1). */
+.mnav-panel .btn.b-red{color:#fff}
+.mnav-panel .btn.b-red:hover{background:var(--red-dk)}
 .mnav-panel .btn[aria-current="page"]{background:var(--red);color:#fff}
 .mnav[open] .mnav-panel{animation:mnav-in .26s var(--e) both}
 @keyframes mnav-in{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}

@@ -1,8 +1,24 @@
 ---
-/** Typographic rhythm for an MDX body — .prose (blocks.css). */
+/**
+ * Typographic rhythm for an MDX body — .prose (blocks.css).
+ *
+ * class="lists" bodies are flat MDX (h2, list, closing line, h2...) set in
+ * two columns. Each h2 and everything up to the next one is wrapped in a
+ * .lgrp so a group can't split across the column break, which otherwise
+ * strands a closing line or link at the top of the next column.
+ */
 interface Props {
   class?: string;
 }
 const { class: cls } = Astro.props;
+const lists = cls?.split(' ').includes('lists');
+const html = lists ? await Astro.slots.render('default') : '';
+const groups = lists ? html.split(/(?=<h2[\s>])/).filter((g) => g.trim()) : [];
 ---
-<div class:list={['prose', cls]}><slot /></div>
+{lists ? (
+  <div class:list={['prose', cls]}>
+    {groups.map((g) => <div class="lgrp" set:html={g} />)}
+  </div>
+) : (
+  <div class:list={['prose', cls]}><slot /></div>
+)}

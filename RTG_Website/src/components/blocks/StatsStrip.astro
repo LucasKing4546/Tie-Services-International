@@ -7,7 +7,7 @@
  * About.astro.
  */
 import type { PageData } from '@lib/blocks';
-import { isNumericStat, statDigits, statSuffix } from '@lib/blocks';
+import { isNumericStat, statDigits, statLead, statSuffix } from '@lib/blocks';
 
 interface Props {
   items: PageData['stats'];
@@ -23,7 +23,7 @@ const { items, tone = 'light' } = Astro.props;
       <b class:list={{ accent: item.accent }}>
         {isNumericStat(item.value) ? (
           <>
-            <span class="ct" data-to={statDigits(item.value)}>0</span>
+            <span class="ct" data-to={statDigits(item.value)}>{statLead(item.value)}</span>
             <i class="u">{statSuffix(item.value)}</i>
           </>
         ) : item.value}

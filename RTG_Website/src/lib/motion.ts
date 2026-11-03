@@ -81,8 +81,11 @@ function initReveals(rm: boolean): void {
 
 // ---------------------------------------------------------------- counters
 function initCounters(rm: boolean): void {
+  // The HTML carries the real figure (crawlers, screen readers, no-JS);
+  // it is zeroed here only when it is about to count up.
   const targets = document.querySelectorAll<HTMLElement>('.ct');
-  if (!targets.length) return;
+  if (!targets.length || rm) return;
+  targets.forEach((el) => (el.textContent = '0'));
 
   const done = new WeakSet<Element>();
   const cio = new IntersectionObserver(
@@ -92,10 +95,6 @@ function initCounters(rm: boolean): void {
         done.add(entry.target);
         const el = entry.target as HTMLElement;
         const to = Number(el.dataset.to ?? 0);
-        if (rm) {
-          el.textContent = to.toLocaleString('en-GB');
-          return;
-        }
         const t0 = performance.now();
         const dur = 1400;
         (function tick(now: number) {

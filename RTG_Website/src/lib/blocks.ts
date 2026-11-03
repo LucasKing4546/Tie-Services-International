@@ -73,6 +73,8 @@ export type MotionHint = 'parallax' | 'sticky' | 'none';
  *  ("3.9 m") has more digits after the first run, and counting up the lot
  *  as one number prints the wrong figure, so those render as written. */
 export const isNumericStat = (v: string): boolean => /^[\d,]+[^\d.]*$/.test(v);
+/** The figure as written ("1,240"): what the HTML carries before any count-up. */
+export const statLead = (v: string): string => v.match(/^[\d,]+/)?.[0] ?? '';
 export const statDigits = (v: string): string => (v.match(/^[\d,]+/)?.[0] ?? '').replace(/,/g, '');
 export const statSuffix = (v: string): string => v.replace(/^[\d,]+/, '');
 

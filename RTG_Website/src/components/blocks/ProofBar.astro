@@ -6,7 +6,7 @@
  * Never hardcode a figure directly in a template or MDX body.
  */
 import { PROOF, PROOF_DISPLAY } from '@data/site.js';
-import { isNumericStat, statDigits, statSuffix } from '@lib/blocks';
+import { isNumericStat, statDigits, statLead, statSuffix } from '@lib/blocks';
 
 type ProofKey = keyof typeof PROOF;
 
@@ -29,7 +29,7 @@ const items = keys.map((k) => ({ key: k, ...PROOF_DISPLAY[k] }));
       <b>
         {isNumericStat(item.value) ? (
           <>
-            <span class="ct" data-to={statDigits(item.value)}>0</span>
+            <span class="ct" data-to={statDigits(item.value)}>{statLead(item.value)}</span>
             <i class="u">{statSuffix(item.value)}</i>
           </>
         ) : item.value}

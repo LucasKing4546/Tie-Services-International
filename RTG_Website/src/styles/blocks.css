@@ -72,14 +72,17 @@
    out by an even overlay. */
 .phero:has(.phero-media-shot)::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
   background:
-    linear-gradient(to top,rgba(6,21,32,.82) 0%,rgba(6,21,32,.55) 38%,rgba(6,21,32,.12) 72%,transparent 100%),
+    linear-gradient(to top,rgba(6,21,32,.85) 0%,rgba(6,21,32,.66) 42%,rgba(6,21,32,.22) 74%,transparent 100%),
     linear-gradient(to right,rgba(6,21,32,.45) 0%,rgba(6,21,32,.18) 45%,transparent 70%)}
 
 .phero-in{padding-bottom:64px}
 .phero .crumbs{margin-bottom:30px}
-.phero .crumbs li,.phero .crumbs a{color:rgba(255,255,255,.58)}
+.phero .crumbs li,.phero .crumbs a{color:rgba(255,255,255,.82)}
 .phero .crumbs a:hover{color:#fff}
-.phero .crumbs li:not(:last-child)::after{color:rgba(255,255,255,.28)}
+.phero .crumbs li:not(:last-child)::after{color:rgba(255,255,255,.5)}
+/* Over a photograph the trail sits where the scrim is thinnest; a dark
+   chip keeps it at 4.5:1 whatever the picture does underneath. */
+.phero:has(.phero-media-shot) .crumbs ol{width:fit-content;padding:0 12px;border-radius:100px;background:rgba(6,21,32,.62)}
 .phero .crumbs li[aria-current] span{color:#fff}
 .phero h1{color:#fff;max-width:17ch}
 .phero .lede{color:rgba(255,255,255,.76);max-width:54ch;margin-top:26px}
@@ -389,6 +392,12 @@ html.js .cmp.on .cmp-reveal{position:absolute;inset:0;width:50%;overflow:hidden;
    Scoped to the plate itself: the label is also a direct child, and pinning
    it to the frame width stretches a pill that should shrink to its text. */
 html.js .cmp.on .cmp-reveal > .imgslot{width:var(--cmp-w,100%);max-width:none}
+/* Two placeholders overlaid: the before brief keeps the left, the after
+   brief takes the right, each under half the frame, so they never print
+   over each other at the resting 50% split. */
+html.js .cmp.on .imgslot:not(.imgslot-shot) span{max-width:min(42ch,40%)}
+html.js .cmp.on .cmp-base .imgslot:not(.imgslot-shot){align-items:flex-end;text-align:right}
+html.js .cmp.on .cmp-base .imgslot:not(.imgslot-shot) b{align-self:flex-end}
 html.js .cmp.on .cmp-handle{display:flex;position:absolute;top:0;bottom:0;left:50%;z-index:3;
   width:46px;margin-left:-23px;align-items:center;justify-content:center;
   background:none;border:0;padding:0;cursor:ew-resize;touch-action:none}
@@ -694,11 +703,15 @@ table.spec .gap{text-transform:uppercase;letter-spacing:.1em;font-size:.8em}
    Pages whose copy is a few short headed lists. The groups flow into two
    columns so "What we supply / Testing / Track record" sit side by side
    rather than stacking down a long page. A heading never parts from the
-   list under it. */
-.prose.lists{columns:2;column-gap:clamp(36px,5vw,88px)}
+   list under it: Prose.astro wraps each heading's group in a .lgrp that
+   never splits. A body with fewer than two groups stays one column; split,
+   a single list leaves the right half empty. Groups are spaced by margin,
+   not a rule, so nothing surfaces at the top of the second column. */
+.prose.lists:has(> .lgrp ~ .lgrp){columns:2;column-gap:clamp(36px,5vw,88px)}
+.prose.lists .lgrp{break-inside:avoid;padding-bottom:34px}
+.prose.lists .lgrp > :last-child{margin-bottom:0}
 .prose.lists h2{font-size:clamp(20px,1.8vw,26px);letter-spacing:-.02em;max-width:none;
-  margin:34px 0 14px;padding-top:18px;border-top:1px solid var(--rule);break-after:avoid}
-.prose.lists > h2:first-child{margin-top:0}
+  margin:0 0 14px;padding-top:0;border-top:0}
 .prose.lists ul,.prose.lists ol,.prose.lists p,.prose.lists li{break-inside:avoid}
 .prose.lists p,.prose.lists ul{font-size:16px}
 @media (max-width:900px){.prose.lists{columns:1}}
