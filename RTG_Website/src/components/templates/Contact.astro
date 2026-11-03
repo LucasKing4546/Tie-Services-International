@@ -11,7 +11,7 @@
  */
 import { render } from 'astro:content';
 import { pagesByTemplate, type PageMeta } from '@data/pages';
-import { endingCta, type PageEntry, type CardItem } from '@lib/blocks';
+import type { PageEntry, CardItem } from '@lib/blocks';
 import { cardFrom, hasBody } from '@lib/content';
 import Base from '@layouts/Base.astro';
 import PageHero from '@components/blocks/PageHero.astro';
@@ -124,5 +124,5 @@ const jsonLdPage = contactPoints.length > 0 ? { contactPoint: contactPoints } : 
     </ScrollTrack>
   )}
 
-  <PageEnding page={page} proofBar cta={endingCta(data)} draft={data.draft} outline={data.outline} />
+  <PageEnding page={page} proofBar cta={data.cta} draft={data.draft} outline={data.outline} />
 </Base>

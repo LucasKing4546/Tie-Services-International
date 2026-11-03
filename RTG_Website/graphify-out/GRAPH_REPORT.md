@@ -1,17 +1,17 @@
-# Graph Report - RTG_Website  (2026-10-29)
+# Graph Report - RTG_Website  (2026-11-03)
 
 ## Corpus Check
-- 180 files · ~3,084,181 words
+- 180 files · ~3,086,010 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 11 file(s) not represented in the graph (top: .css 9, (none) 1, .xml 1)
 
 ## Summary
-- 876 nodes · 1366 edges · 127 communities (54 shown, 73 thin omitted)
+- 887 nodes · 1375 edges · 131 communities (57 shown, 74 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 10 edges (avg confidence: 0.88)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `739cee57`
+- Built from commit: `903096c4`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -93,16 +93,20 @@
 - src_assets_sectors_s05_research_vessel
 - Site-wide ocean world (homepage first surface)
 - forms.ts
-- 0. BRIEF INFERENCE (Read the Room Before Anything Else)
+- 1. THE THREE DIALS (Core Configuration)
+- page.ts
+- ProofBar.astro
+- FormField.astro
+- src_lib_blocks_type
 
 ## God Nodes (most connected - your core abstractions)
-1. `[]` - 30 edges
-2. `[]` - 29 edges
-3. `[]` - 27 edges
-4. `[]` - 26 edges
+1. `[]` - 29 edges
+2. `[]` - 28 edges
+3. `[]` - 26 edges
+4. `[]` - 25 edges
 5. `PageMeta` - 25 edges
-6. `[]` - 24 edges
-7. `[]` - 22 edges
+6. `[]` - 23 edges
+7. `[]` - 21 edges
 8. `PageEntry` - 20 edges
 9. `mdxComponents` - 18 edges
 10. `Template inventory` - 18 edges
@@ -122,11 +126,11 @@
 ## Import Cycles
 - None detected.
 
-## Communities (127 total, 73 thin omitted)
+## Communities (131 total, 74 thin omitted)
 
 ### Community 0 - "blocks.ts"
-Cohesion: 0.08
-Nodes (56): trail, jsonLdPage, siblings, jobPostings, [], jsonLdPage, contactPoints, children (+48 more)
+Cohesion: 0.09
+Nodes (51): trail, lists, jsonLdPage, siblings, [], jsonLdPage, children, extraCards (+43 more)
 
 ### Community 1 - "site.js"
 Cohesion: 0.15
@@ -146,7 +150,7 @@ Nodes (24): collections, datetime, glob, html, json, os, re, build() (+16 more)
 
 ### Community 5 - "RTG Website — project guide for Claude Code"
 Cohesion: 0.06
-Nodes (30): 1. What this is, 2. The workflow — follow this for every feature and every page, 3. Stack and conventions, 3D, 4. The 17 templates, 5. Known gaps — do not paper over these, 6. What must never be published, 7. Design system (+22 more)
+Nodes (29): 1. What this is, 2. The workflow — follow this for every feature and every page, 3. Stack and conventions, 3D, 4. The 17 templates, 5. Known gaps — do not paper over these, 6. What must never be published, 7. Design system (+21 more)
 
 ### Community 6 - "package.json"
 Cohesion: 0.05
@@ -253,8 +257,8 @@ Cohesion: 0.32
 Nodes (4): photo, tiles, mediaFor(), MotionHint
 
 ### Community 92 - "lib/equipment.ts"
-Cohesion: 0.12
-Nodes (24): tags, designs, EQUIPMENT, EquipmentApp, EquipmentDrive, EquipmentItem, EquipmentType, OFF_MAP_IDS (+16 more)
+Cohesion: 0.15
+Nodes (22): extra, tags, designs, figs, EQUIPMENT, EquipmentApp, EquipmentDrive, EquipmentItem (+14 more)
 
 ### Community 96 - "Base.astro"
 Cohesion: 0.08
@@ -277,8 +281,8 @@ Cohesion: 0.20
 Nodes (10): 10. REFERENCE VOCABULARY (Pattern Names the Agent Should Know), Animation Library Choice, Cards & Containers, Galleries & Media, Hero Paradigms, Layout & Grids, Micro-Interactions & Effects, Navigation & Menus (+2 more)
 
 ### Community 101 - "tasteskill: Anti-Slop Frontend Skill"
-Cohesion: 0.20
-Nodes (10): 13. OUT OF SCOPE, 14. FINAL PRE-FLIGHT CHECK, 1.A Dial Inference (design read → dial values), 1.B Use-Case Presets, 1.C How the Dials Drive Output, 1. THE THREE DIALS (Core Configuration), 2.A When to reach for a real design system (use official packages), 2.B When the brief is an aesthetic, not a system (+2 more)
+Cohesion: 0.18
+Nodes (11): 0.A Read these signals first, 0.B Output a one-line "Design Read" before generating, 0. BRIEF INFERENCE (Read the Room Before Anything Else), 0.C If the brief is ambiguous, ask one question, do not guess, 0.D Anti-Default Discipline, 13. OUT OF SCOPE, 14. FINAL PRE-FLIGHT CHECK, 2.A When to reach for a real design system (use official packages) (+3 more)
 
 ### Community 102 - "astro.config.mjs"
 Cohesion: 0.25
@@ -336,26 +340,38 @@ Nodes (4): Design health score: 26/36 (Good, 72%). Heuristic 10 n/a., Detector a
 Cohesion: 0.50
 Nodes (3): Direction contract, Site-wide ocean world (homepage first surface), Unresolved
 
-### Community 126 - "0. BRIEF INFERENCE (Read the Room Before Anything Else)"
-Cohesion: 0.40
-Nodes (5): 0.A Read these signals first, 0.B Output a one-line "Design Read" before generating, 0. BRIEF INFERENCE (Read the Room Before Anything Else), 0.C If the brief is ambiguous, ask one question, do not guess, 0.D Anti-Default Discipline
+### Community 125 - "forms.ts"
+Cohesion: 0.48
+Nodes (5): errLine(), initForms(), message(), PREFILL, showError()
+
+### Community 126 - "1. THE THREE DIALS (Core Configuration)"
+Cohesion: 0.50
+Nodes (4): 1.A Dial Inference (design read → dial values), 1.B Use-Case Presets, 1.C How the Dials Drive Output, 1. THE THREE DIALS (Core Configuration)
+
+### Community 127 - "page.ts"
+Cohesion: 0.31
+Nodes (6): OFF_MAP_IDS, OFF_MAP_PAGES, BY_ID, ResolvedPage, resolvePage(), { p }
+
+### Community 128 - "ProofBar.astro"
+Cohesion: 0.43
+Nodes (6): statDigits(), statDigits(), isNumericStat(), statDigits(), statLead(), statSuffix()
 
 ## Knowledge Gaps
-- **408 isolated node(s):** `pagesDir`, `pagesTs`, `unfinished`, `name`, `version` (+403 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 596 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **73 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **411 isolated node(s):** `pagesDir`, `pagesTs`, `unfinished`, `name`, `version` (+406 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 599 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **74 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `astro` connect `package.json` to `media.ts`?**
-  _High betweenness centrality (0.024) - this node is a cross-community bridge._
-- **Why does `pagesByTemplate()` connect `RTG Website — project guide for Claude Code` to `blocks.ts`?**
-  _High betweenness centrality (0.016) - this node is a cross-community bridge._
+  _High betweenness centrality (0.023) - this node is a cross-community bridge._
+- **Why does `pagesByTemplate()` connect `blocks.ts` to `RTG Website — project guide for Claude Code`?**
+  _High betweenness centrality (0.015) - this node is a cross-community bridge._
 - **What connects `pagesDir`, `pagesTs`, `unfinished` to the rest of the system?**
-  _408 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _411 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `blocks.ts` be split into smaller, more focused modules?**
-  _Cohesion score 0.08327109783420462 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.09272116461366181 - nodes in this community are weakly interconnected._
 - **Should `media.ts` be split into smaller, more focused modules?**
   _Cohesion score 0.041666666666666664 - nodes in this community are weakly interconnected._
 - **Should `rtg3d.ts` be split into smaller, more focused modules?**

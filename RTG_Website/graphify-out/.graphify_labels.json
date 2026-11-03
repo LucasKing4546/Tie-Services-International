@@ -125,5 +125,9 @@
   "123": "hoist.ts",
   "124": "Site-wide ocean world (homepage first surface)",
   "125": "forms.ts",
-  "126": "0. BRIEF INFERENCE (Read the Room Before Anything Else)"
+  "126": "1. THE THREE DIALS (Core Configuration)",
+  "127": "page.ts",
+  "128": "ProofBar.astro",
+  "129": "FormField.astro",
+  "130": "src_lib_blocks_type"
 }

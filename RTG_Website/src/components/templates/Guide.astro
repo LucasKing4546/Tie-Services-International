@@ -11,7 +11,7 @@
  */
 import { render } from 'astro:content';
 import type { PageMeta } from '@data/pages';
-import { endingCta, type PageEntry, type Step } from '@lib/blocks';
+import type { PageEntry, Step } from '@lib/blocks';
 import { hasBody } from '@lib/content';
 import { articleJsonLd, faqPageJsonLd } from '@lib/seo';
 import Base from '@layouts/Base.astro';
@@ -65,5 +65,5 @@ const factors: Step[] = data.steps.length > 0
     <Skeleton label="Guidance" kind="copy" count={4} />
   )}
 
-  <PageEnding page={page} proofBar cta={endingCta(data)} draft={data.draft} outline={data.outline} />
+  <PageEnding page={page} proofBar cta={data.cta} draft={data.draft} outline={data.outline} />
 </Base>

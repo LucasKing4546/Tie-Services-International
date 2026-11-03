@@ -108,9 +108,9 @@
     "semantic_hash": ""
   },
   "src/components/blocks/EnquiryForm.astro": {
-    "mtime": 1789738920.6954517,
-    "seen": 1789914311.2928,
-    "ast_hash": "000c6ed6801c4c1af29fb9b5a7c66996",
+    "mtime": 1793700916.5929296,
+    "seen": 1793701947.637566,
+    "ast_hash": "13d713207f036ad4d83641384a7d77f2",
     "semantic_hash": ""
   },
   "src/components/blocks/Faq.astro": {
@@ -138,9 +138,9 @@
     "semantic_hash": ""
   },
   "src/components/blocks/FormField.astro": {
-    "mtime": 1789738880.8721142,
-    "seen": 1789914311.2928,
-    "ast_hash": "e1065d122806b9d9971a4f1dbb1e90e4",
+    "mtime": 1793700896.9512048,
+    "seen": 1793701947.637566,
+    "ast_hash": "d1f6009a12a582cf38c7d585d244ae7a",
     "semantic_hash": ""
   },
   "src/components/blocks/Gap.astro": {
@@ -162,8 +162,8 @@
     "semantic_hash": ""
   },
   "src/components/blocks/MediaBand.astro": {
-    "mtime": 1789738971.434019,
-    "seen": 1789914311.2928,
+    "mtime": 1793701490.9706616,
+    "seen": 1793701947.637566,
     "ast_hash": "04729d92df82942717b6470487022538",
     "semantic_hash": ""
   },
@@ -180,21 +180,21 @@
     "semantic_hash": ""
   },
   "src/components/blocks/PageHero.astro": {
-    "mtime": 1793269130.8116665,
-    "seen": 1793269583.7698767,
-    "ast_hash": "e340686551004a36b8dc029cfc02c77c",
+    "mtime": 1793701696.5928125,
+    "seen": 1793701947.637566,
+    "ast_hash": "e50988b029f6925dece13272da1edb05",
     "semantic_hash": ""
   },
   "src/components/blocks/ProofBar.astro": {
-    "mtime": 1791451911.162365,
-    "seen": 1791833524.1252165,
-    "ast_hash": "f310991371a2c844c760f12c25c9e952",
+    "mtime": 1793701262.1976724,
+    "seen": 1793701947.637566,
+    "ast_hash": "7af3d398067cb3e5d90d5fdee7e51cc9",
     "semantic_hash": ""
   },
   "src/components/blocks/Prose.astro": {
-    "mtime": 1788527439.6469882,
-    "seen": 1789731804.2681696,
-    "ast_hash": "dd85797bf24ddd53c3281c4f712aca76",
+    "mtime": 1793701503.6903887,
+    "seen": 1793701947.637566,
+    "ast_hash": "0076a48c4d77c92223c3123b0eeaafaf",
     "semantic_hash": ""
   },
   "src/components/blocks/Quote.astro": {
@@ -234,9 +234,9 @@
     "semantic_hash": ""
   },
   "src/components/blocks/StatsStrip.astro": {
-    "mtime": 1787840495.6242971,
-    "seen": 1789731804.2681696,
-    "ast_hash": "616a632e2188ebf0a92499f788cc5736",
+    "mtime": 1793701262.2795496,
+    "seen": 1793701947.637566,
+    "ast_hash": "5bf71a06e5f3e35ab5474c209214a105",
     "semantic_hash": ""
   },
   "src/components/blocks/StepList.astro": {
@@ -282,9 +282,9 @@
     "semantic_hash": ""
   },
   "src/components/home/TierLadder.astro": {
-    "mtime": 1793269017.101863,
-    "seen": 1793269583.7698767,
-    "ast_hash": "1bfe4b1ae9b8681f6063ac2e55200b62",
+    "mtime": 1793269714.1292064,
+    "seen": 1793701947.637566,
+    "ast_hash": "82dfb5bdf0af2de5ec841f84f5bf4310",
     "semantic_hash": ""
   },
   "src/components/site/Footer.astro": {
@@ -300,111 +300,111 @@
     "semantic_hash": ""
   },
   "src/components/templates/About.astro": {
-    "mtime": 1791834554.1974583,
-    "seen": 1791834593.615945,
-    "ast_hash": "8c2cedf4000ad1e4c97a06436d07de3d",
+    "mtime": 1793702272.45456,
+    "seen": 1793702357.1241882,
+    "ast_hash": "a36e5303fb488e093d2f0e5d79bba95a",
     "semantic_hash": ""
   },
   "src/components/templates/Article.astro": {
-    "mtime": 1791834133.9684117,
-    "seen": 1791834161.8782053,
-    "ast_hash": "80e972ecfab1a7342e781d2c13cd6681",
+    "mtime": 1793702272.458832,
+    "seen": 1793702357.1241882,
+    "ast_hash": "9f257309e753f349dcd267aaeca9fba0",
     "semantic_hash": ""
   },
   "src/components/templates/Careers.astro": {
-    "mtime": 1791834554.1974583,
-    "seen": 1791834593.615945,
-    "ast_hash": "b63f6dc8b0a867144657c9cab3b14484",
+    "mtime": 1793702272.461686,
+    "seen": 1793702357.1241882,
+    "ast_hash": "74e26d0f17bdb28dbe94d3519d11aa58",
     "semantic_hash": ""
   },
   "src/components/templates/Case.astro": {
-    "mtime": 1791834356.4601321,
-    "seen": 1791834384.6657526,
-    "ast_hash": "119f00f11fde6c8bfeb15733e8be6719",
+    "mtime": 1793702272.4641843,
+    "seen": 1793702357.1241882,
+    "ast_hash": "42029e4ab37ac5230ff12a13ead7ffaf",
     "semantic_hash": ""
   },
   "src/components/templates/Contact.astro": {
-    "mtime": 1791834554.1984563,
-    "seen": 1791834593.615945,
-    "ast_hash": "a31cc17c177c9c1792c2c0670004c8aa",
+    "mtime": 1793702272.4661992,
+    "seen": 1793702357.1241882,
+    "ast_hash": "ad6bd86f0e7ec14fb1b2f0f4d888f4c0",
     "semantic_hash": ""
   },
   "src/components/templates/Fallback.astro": {
-    "mtime": 1789738981.5209987,
-    "seen": 1789914311.2928,
-    "ast_hash": "278a2685ccfa7eb845c6f04576d907f3",
+    "mtime": 1793702272.469231,
+    "seen": 1793702357.1241882,
+    "ast_hash": "fa31521258ef4efd7fcf3301dd7d9148",
     "semantic_hash": ""
   },
   "src/components/templates/Form.astro": {
-    "mtime": 1789920154.362425,
-    "seen": 1791367962.076949,
-    "ast_hash": "0ac72f7ffef2b90a91d40a76b7d6efa1",
+    "mtime": 1793702272.470726,
+    "seen": 1793702357.1241882,
+    "ast_hash": "cc717745bd99734a07d497d09b387eea",
     "semantic_hash": ""
   },
   "src/components/templates/Guide.astro": {
-    "mtime": 1791833941.5319965,
-    "seen": 1791833974.4273129,
-    "ast_hash": "7cd5f9a07a356e333414fa5095399245",
+    "mtime": 1793702272.4726858,
+    "seen": 1793702357.1241882,
+    "ast_hash": "8ff030fc91f639b76aff14bf816ec351",
     "semantic_hash": ""
   },
   "src/components/templates/Hub.astro": {
-    "mtime": 1791909516.7547195,
-    "seen": 1793269583.7698767,
-    "ast_hash": "494c9e4c39d6766781368410b1c229fb",
+    "mtime": 1793702272.4750423,
+    "seen": 1793702357.1241882,
+    "ast_hash": "9e81facc7cf85a9d1e5e44d6d296a705",
     "semantic_hash": ""
   },
   "src/components/templates/Ladder.astro": {
-    "mtime": 1791834133.9659936,
-    "seen": 1791834161.8782053,
-    "ast_hash": "4f2055d7cc065855c5ab45cb5f9169c9",
+    "mtime": 1793702272.4779618,
+    "seen": 1793702357.1241882,
+    "ast_hash": "934a4add2d116b1ef204110adfae2b96",
     "semantic_hash": ""
   },
   "src/components/templates/Legal.astro": {
-    "mtime": 1789739021.2316418,
-    "seen": 1789914311.2928,
-    "ast_hash": "83349561a374f67c49886d5bf51b3130",
+    "mtime": 1793702272.48049,
+    "seen": 1793702357.1241882,
+    "ast_hash": "e3c3d8dd0760f982b2aa6c39c100933f",
     "semantic_hash": ""
   },
   "src/components/templates/Policy.astro": {
-    "mtime": 1791834133.9669936,
-    "seen": 1791834161.8782053,
-    "ast_hash": "8e5c5a87048a0fd681a5bfa6356d3741",
+    "mtime": 1793702272.4819005,
+    "seen": 1793702357.1241882,
+    "ast_hash": "b1742d68db02082930cc4c1e02102d43",
     "semantic_hash": ""
   },
   "src/components/templates/Product.astro": {
-    "mtime": 1793269226.989637,
-    "seen": 1793269583.7698767,
-    "ast_hash": "d6199c9f7c2071a0e072e2d64e988afe",
+    "mtime": 1793702272.4842725,
+    "seen": 1793702357.1241882,
+    "ast_hash": "cf69cad2a8f1fac88d1e129572dd928b",
     "semantic_hash": ""
   },
   "src/components/templates/Proof.astro": {
-    "mtime": 1791834254.2567647,
-    "seen": 1791834281.460189,
-    "ast_hash": "822937b3bc0a4918ae088a1fc53579d5",
+    "mtime": 1793702272.4864354,
+    "seen": 1793702357.1241882,
+    "ast_hash": "87ef605672c9b2cdc5f38742ee079cfd",
     "semantic_hash": ""
   },
   "src/components/templates/Sector.astro": {
-    "mtime": 1791468793.724163,
-    "seen": 1791833524.1252165,
-    "ast_hash": "bdbea7bf113d9d86f6dea293826f13c1",
+    "mtime": 1793702272.4894583,
+    "seen": 1793702357.1241882,
+    "ast_hash": "92633729caae86f4e73df9b91e6ecd41",
     "semantic_hash": ""
   },
   "src/components/templates/Service.astro": {
-    "mtime": 1791833941.5319965,
-    "seen": 1791833974.4273129,
-    "ast_hash": "e2b0d46a009daea2efef013f9bedfba8",
+    "mtime": 1793702272.4909656,
+    "seen": 1793702357.1241882,
+    "ast_hash": "7e12edc2109b98f7ecc9bc84cb5f8459",
     "semantic_hash": ""
   },
   "src/components/templates/Tier.astro": {
-    "mtime": 1791834133.9669936,
-    "seen": 1791834161.8782053,
-    "ast_hash": "79d5c45095ed0f95bc3c206472685502",
+    "mtime": 1793702272.4929874,
+    "seen": 1793702357.1241882,
+    "ast_hash": "7f5a6ad3409c5f282d5381db196558a5",
     "semantic_hash": ""
   },
   "src/content.config.ts": {
-    "mtime": 1793269213.9766345,
-    "seen": 1793269583.7698767,
-    "ast_hash": "6ff75f01cd545d963cacf418ab2b5e2a",
+    "mtime": 1793700886.147797,
+    "seen": 1793701947.637566,
+    "ast_hash": "e53a3346d2e94518a40624bdc65a0a74",
     "semantic_hash": ""
   },
   "src/data/home.ts": {
@@ -438,15 +438,15 @@
     "semantic_hash": ""
   },
   "src/layouts/Base.astro": {
-    "mtime": 1793269122.6782887,
-    "seen": 1793269583.7698767,
-    "ast_hash": "e40b6d4d22607aa5cd71b465a66baf7d",
+    "mtime": 1793701686.1260774,
+    "seen": 1793701947.637566,
+    "ast_hash": "12a800e253c0ba61376a555cb890cbb7",
     "semantic_hash": ""
   },
   "src/lib/blocks.ts": {
-    "mtime": 1791909516.7547195,
-    "seen": 1793269583.7698767,
-    "ast_hash": "2cc042a4f9cebed455c62b35a7380606",
+    "mtime": 1793702278.447082,
+    "seen": 1793702357.1241882,
+    "ast_hash": "3ccc6b7f19d3a43e6b2bfacce2fb363c",
     "semantic_hash": ""
   },
   "src/lib/content.ts": {
@@ -456,9 +456,9 @@
     "semantic_hash": ""
   },
   "src/lib/forms.ts": {
-    "mtime": 1791370237.576427,
-    "seen": 1791370493.514169,
-    "ast_hash": "37a352fc59450142599c06d9026e1285",
+    "mtime": 1793700936.9125352,
+    "seen": 1793701947.637566,
+    "ast_hash": "4455426156373e5e590d377d2f948ed1",
     "semantic_hash": ""
   },
   "src/lib/home-scroll.ts": {
@@ -474,9 +474,9 @@
     "semantic_hash": ""
   },
   "src/lib/motion.ts": {
-    "mtime": 1793268916.2533386,
-    "seen": 1793269583.7698767,
-    "ast_hash": "9f284bf117aa0f6b32967942606da2f0",
+    "mtime": 1793701270.1911838,
+    "seen": 1793701947.637566,
+    "ast_hash": "7a229fbc27034ddf594ae0a7999f4648",
     "semantic_hash": ""
   },
   "src/lib/page.ts": {
@@ -492,9 +492,9 @@
     "semantic_hash": ""
   },
   "src/lib/seo.ts": {
-    "mtime": 1789738947.6473944,
-    "seen": 1789914311.2928,
-    "ast_hash": "63d4a04650f11886a5bc1a361a6c6873",
+    "mtime": 1793701684.402375,
+    "seen": 1793701947.637566,
+    "ast_hash": "4e05c941b3f32213c06af07d13ad6018",
     "semantic_hash": ""
   },
   "src/pages/404.astro": {
@@ -1074,9 +1074,9 @@
     "semantic_hash": ""
   },
   "src/content/pages/c-09.mdx": {
-    "mtime": 1787243316.7845478,
-    "seen": 1789731804.2681696,
-    "ast_hash": "859a611d5115b2b09676c63fc6c45ff1",
+    "mtime": 1793700997.582929,
+    "seen": 1793701947.637566,
+    "ast_hash": "38b00163217a82d2886c85a54b72324e",
     "semantic_hash": ""
   },
   "src/content/pages/e-00.mdx": {
@@ -1260,9 +1260,9 @@
     "semantic_hash": ""
   },
   "src/content/pages/r-01.mdx": {
-    "mtime": 1789916653.802534,
-    "seen": 1791367962.076949,
-    "ast_hash": "7c9ef0bd0c3abb174db45ff29ecb884c",
+    "mtime": 1793700982.2811153,
+    "seen": 1793701947.637566,
+    "ast_hash": "49e8ec2b32c4ed0e96e26c95f3254e4b",
     "semantic_hash": ""
   },
   "src/content/pages/r-02.mdx": {
@@ -1350,9 +1350,9 @@
     "semantic_hash": ""
   },
   "src/content/pages/x-04.mdx": {
-    "mtime": 1787243316.80986,
-    "seen": 1789731804.2681696,
-    "ast_hash": "6fbf5077566f9d18eb4f00bffd1c4153",
+    "mtime": 1793700998.9043744,
+    "seen": 1793701947.637566,
+    "ast_hash": "64a733234b27909d7d5fe740b26bb0b8",
     "semantic_hash": ""
   },
   "src/content/pages/y-00.mdx": {
@@ -1404,9 +1404,9 @@
     "semantic_hash": ""
   },
   "src/content/pages/z-04.mdx": {
-    "mtime": 1791924935.510416,
-    "seen": 1793269583.7698767,
-    "ast_hash": "d16202ee3bab9f529b8555408e1dedba",
+    "mtime": 1793701709.9070888,
+    "seen": 1793701947.637566,
+    "ast_hash": "3214caad0ff6ee4137f1fda2362e5160",
     "semantic_hash": ""
   },
   "public/favicon.svg": {
@@ -1758,9 +1758,9 @@
     "semantic_hash": ""
   },
   "src/components/blocks/EquipmentFinder.astro": {
-    "mtime": 1791909502.358474,
-    "seen": 1793269583.7698767,
-    "ast_hash": "09dd4f513a305a51b8b24379424a29c0",
+    "mtime": 1793269714.1302106,
+    "seen": 1793701947.637566,
+    "ast_hash": "d861770c484ddac8684b36142509a87b",
     "semantic_hash": ""
   },
   "src/data/equipment.ts": {
@@ -1770,15 +1770,15 @@
     "semantic_hash": ""
   },
   "src/components/blocks/DesignRow.astro": {
-    "mtime": 1791909444.2483544,
-    "seen": 1793269583.7698767,
-    "ast_hash": "18db9f149a213b1749cc994c0b17cfc2",
+    "mtime": 1793701828.4942658,
+    "seen": 1793701947.637566,
+    "ast_hash": "bcd5d597c86b73a913e0c7ab1ac32155",
     "semantic_hash": ""
   },
   "src/components/blocks/FamilyDesigns.astro": {
-    "mtime": 1791923533.1295638,
-    "seen": 1793269583.7698767,
-    "ast_hash": "33f4cd1a64482cef745007c9742cfb02",
+    "mtime": 1793701833.6405072,
+    "seen": 1793701947.637566,
+    "ast_hash": "c218ed5b003cb8b42aad918747c27f4e",
     "semantic_hash": ""
   },
   "src/components/home/FinderEntry.astro": {
@@ -1788,15 +1788,15 @@
     "semantic_hash": ""
   },
   "src/lib/equipment.ts": {
-    "mtime": 1791909444.1729474,
-    "seen": 1793269583.7698767,
-    "ast_hash": "fdfdf68e1746c9a9c8898aa6f45c5a52",
+    "mtime": 1793701830.0810487,
+    "seen": 1793701947.637566,
+    "ast_hash": "d19b645e4c72cfafb57ae06e061c5f07",
     "semantic_hash": ""
   },
   "src/lib/hoist.ts": {
-    "mtime": 1793269122.549456,
-    "seen": 1793269583.7698767,
-    "ast_hash": "04b47f543a0e342b396608eb2e356016",
+    "mtime": 1793701629.627944,
+    "seen": 1793701947.637566,
+    "ast_hash": "9aa00372bcc96c09a2647f19c9b926a2",
     "semantic_hash": ""
   },
   ".impeccable/critique/2026-10-13T10-00-11Z__src-pages-index-astro.md": {
@@ -1815,6 +1815,12 @@
     "mtime": 1793268890.9865365,
     "seen": 1793269583.7698767,
     "ast_hash": "d9348ddec3f8a1c006c2024130748db3",
+    "semantic_hash": ""
+  },
+  "public/assets/og/default.jpg": {
+    "mtime": 1793701670.045826,
+    "seen": 1793701947.637566,
+    "ast_hash": "116116d65e0ab66407c905a7bfc5d4ec",
     "semantic_hash": ""
   }
 }

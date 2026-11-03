@@ -88,8 +88,3 @@ export const sentenceCase = (name: string): string =>
     .map((w, i) => (/^[A-Z]{2}/.test(w) ? w : i === 0 ? w[0].toUpperCase() + w.slice(1).toLowerCase() : w.toLowerCase()))
     .join(' ');
 
-/** A page's closing buttons: its own `cta` block if it has one, otherwise
- *  the hero's buttons again, so a reader at the bottom of a page has the same
- *  two actions the top offered without their being written twice. */
-export const endingCta = (data: PageData): PageData['cta'] =>
-  data.cta ?? (data.hero.ctas[0] ? { primary: data.hero.ctas[0], secondary: data.hero.ctas[1] } : undefined);

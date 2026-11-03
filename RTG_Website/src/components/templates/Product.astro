@@ -13,7 +13,7 @@
  */
 import { render } from 'astro:content';
 import { page as lookupPage, type PageMeta } from '@data/pages';
-import { endingCta, type PageEntry } from '@lib/blocks';
+import type { PageEntry } from '@lib/blocks';
 import { hasBody } from '@lib/content';
 import Base from '@layouts/Base.astro';
 import PageHero from '@components/blocks/PageHero.astro';
@@ -138,7 +138,7 @@ const datasheetHref = datasheetPage ? `${datasheetPage.slug}?equipment=${encodeU
 
   <FamilyDesigns page={page} />
 
-  <PageEnding page={page} proofBar cta={endingCta(data)} draft={data.draft} outline={data.outline} />
+  <PageEnding page={page} proofBar cta={data.cta} draft={data.draft} outline={data.outline} />
 </Base>
 
 <style is:global>
