@@ -12,7 +12,7 @@
  */
 import { EQUIPMENT } from '@data/equipment';
 import { page as lookupPage, type PageMeta } from '@data/pages';
-import { designAnchor, specTableLinks } from '@lib/equipment';
+import { designAnchor, familyFigs, specTableLinks } from '@lib/equipment';
 import DesignRow from './DesignRow.astro';
 
 interface Props {
@@ -21,6 +21,7 @@ interface Props {
 
 const { page } = Astro.props;
 const designs = EQUIPMENT.filter((e) => e.family === page.id);
+const figs = familyFigs(designs);
 const tables = await specTableLinks();
 /** Rows shown before "Show all". */
 const FIRST = 6;
@@ -43,8 +44,8 @@ const tableAbove = (code: string) => {
           <a href={finder}>Search the whole range</a> by load, capacity and drive.
         </p>
       </div>
-      <ul class="finder-list">
-        {designs.map((e) => <DesignRow item={e} view={tableAbove(e.code)} id={designAnchor(e)} data-row />)}
+      <ul class="finder-list" data-figs={figs.length}>
+        {designs.map((e) => <DesignRow item={e} view={tableAbove(e.code)} figs={figs} id={designAnchor(e)} data-row />)}
       </ul>
       <button type="button" class="btn btn-o" data-more hidden></button>
     </div>

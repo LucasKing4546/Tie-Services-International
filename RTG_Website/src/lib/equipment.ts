@@ -32,6 +32,16 @@ export const EQUIPMENT_LOADS = [1, 5, 15, 30];
 export const formatLoad = (kg: number): string => (kg < 1000 ? `${kg} kg` : `${Number((kg / 1000).toFixed(2))} Te`);
 
 /** "Electric · Survey": a design's drive and duties, for the line under its name. */
+/** The three figure columns a design row can show (DesignRow.astro). */
+export type DesignFig = 'wll' | 'cap' | 'speed';
+
+/** The figure columns worth a family list: those at least half its designs
+ *  have. Fewer than that and the column is mostly dashes. */
+export const familyFigs = (designs: EquipmentItem[]): DesignFig[] => {
+  const has: Record<DesignFig, (e: EquipmentItem) => unknown> = { wll: (e) => e.wllKg, cap: (e) => e.cap, speed: (e) => e.speed };
+  return (Object.keys(has) as DesignFig[]).filter((k) => designs.filter(has[k]).length * 2 >= designs.length);
+};
+
 export const designTags = (e: EquipmentItem): string =>
   [e.drive && EQUIPMENT_DRIVES[e.drive], ...e.apps.map((a) => EQUIPMENT_APPS[a])].filter(Boolean).join(' · ');
 

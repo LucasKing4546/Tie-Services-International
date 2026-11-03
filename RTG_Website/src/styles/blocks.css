@@ -736,6 +736,10 @@ table.spec .gap{text-transform:uppercase;letter-spacing:.1em;font-size:.8em}
 .finder-list{list-style:none;margin:0 0 28px;padding:0;border-top:1px solid var(--rule)}
 .finder-list li{display:grid;grid-template-columns:72px minmax(0,2fr) repeat(3,minmax(0,.8fr)) minmax(0,1.1fr);
   gap:18px;align-items:baseline;padding:18px 0;border-bottom:1px solid var(--rule)}
+/* A family list shows only the figure columns its designs have (familyFigs). */
+.finder-list[data-figs="2"] li{grid-template-columns:72px minmax(0,2fr) repeat(2,minmax(0,.8fr)) minmax(0,1.1fr)}
+.finder-list[data-figs="1"] li{grid-template-columns:72px minmax(0,2.8fr) minmax(0,.8fr) minmax(0,1.1fr)}
+.finder-list[data-figs="0"] li{grid-template-columns:72px minmax(0,3.6fr) minmax(0,1.1fr)}
 .finder-code{color:var(--ink)}
 .finder-name{font-family:var(--f-d);font-weight:700;font-size:17px;letter-spacing:-.015em;line-height:1.25;color:var(--ink)}
 .finder-fig{font-family:var(--f-m);font-size:14px;color:var(--ink)}
@@ -771,7 +775,10 @@ table.spec .spec-opt{display:block}
   /* three lines a row: name, the datasheet number with its tags, the figures
      without their captions (the units say what each is), then the links */
   .finder-list li{padding:14px 0;gap:8px 16px}
-  .finder-code,.finder-fig small{display:none}
+  .finder-code{display:none}
+  /* Visually hidden, still read: a screen reader hears "5 t working load",
+     not a bare number. */
+  .finder-fig small{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
   .finder-code-in{display:inline;font-family:var(--f-m);letter-spacing:.06em;color:var(--ink)}
   .finder-name small .finder-code-in{margin-right:8px}
 }

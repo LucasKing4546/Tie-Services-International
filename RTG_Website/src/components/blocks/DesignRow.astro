@@ -1,22 +1,35 @@
 ---
 /**
- * One standard design as a ruled row: datasheet number, name, three figures
+ * One standard design as a ruled row: datasheet number, name, its figures
  * and its links. Shared by the finder and the per-family lists so a design
  * reads the same wherever it is listed. Extra attributes (an id, the
  * finder's data-* filter fields) pass straight through to the <li>.
+ *
+ * `figs` names the figure columns the list shows (all three by default). A
+ * figure this design has but the list doesn't show rides on its tag line,
+ * so a family of A-frames isn't a column of dashes and nothing is lost.
  */
 import type { EquipmentItem } from '@data/equipment';
-import { datasheetRequest, designTags, formatLoad } from '@lib/equipment';
+import { datasheetRequest, designTags, formatLoad, type DesignFig } from '@lib/equipment';
 
 interface Props {
   item: EquipmentItem;
   /** The onward link, if this list has one to offer for the row. */
   view?: { href: string; label: string };
+  figs?: DesignFig[];
   [attr: string]: unknown;
 }
 
-const { item, view, ...attrs } = Astro.props;
-const tags = designTags(item);
+const { item, view, figs = ['wll', 'cap', 'speed'], ...attrs } = Astro.props;
+const FIG: Record<DesignFig, { v: string | null; label: string }> = {
+  wll: { v: item.wllKg ? formatLoad(item.wllKg) : null, label: 'working load' },
+  cap: { v: item.cap, label: 'cable capacity' },
+  speed: { v: item.speed ? `${item.speed} m/min` : null, label: 'line speed' },
+};
+const extra = (Object.keys(FIG) as DesignFig[])
+  .filter((k) => !figs.includes(k) && FIG[k].v)
+  .map((k) => `${FIG[k].v} ${FIG[k].label}`);
+const tags = [designTags(item), ...extra].filter(Boolean).join(' · ');
 ---
 
 <li {...attrs}>
@@ -26,9 +39,9 @@ const tags = designTags(item);
     {/* the number rides here on a phone, where it has no column of its own */}
     <small><span class="finder-code-in">{item.code}</span>{tags}</small>
   </span>
-  <span class="finder-fig">{item.wllKg ? formatLoad(item.wllKg) : '—'}<small>working load</small></span>
-  <span class="finder-fig">{item.cap ?? '—'}<small>cable capacity</small></span>
-  <span class="finder-fig">{item.speed ? `${item.speed} m/min` : '—'}<small>line speed</small></span>
+  {figs.map((k) => (
+    <span class="finder-fig">{FIG[k].v ?? '—'}<small>{FIG[k].label}</small></span>
+  ))}
   <span class="finder-links">
     {view && <a href={view.href}>{view.label} <span aria-hidden="true">→</span></a>}
     <a href={datasheetRequest(item)} aria-label={`Request the ${item.code} datasheet`}>Request datasheet</a>
