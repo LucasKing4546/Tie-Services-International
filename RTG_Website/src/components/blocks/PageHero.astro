@@ -33,8 +33,7 @@ const photo = media ? mediaFor(media.ref) : undefined;
   <div
     class:list={['phero-media', { 'phero-media-shot': photo }]}
     data-motion="parallax"
-    role={media && !photo ? 'img' : undefined}
-    aria-label={media && !photo ? media.brief : undefined}
+    aria-hidden={photo ? undefined : 'true'}
   >
     {photo && (
       <Image

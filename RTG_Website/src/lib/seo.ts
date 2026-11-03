@@ -1,3 +1,5 @@
+import { existsSync } from 'node:fs';
+import { join } from 'node:path';
 import type { PageMeta } from '@data/pages';
 import { ancestorsOf } from '@data/pages';
 import { SITE } from '@data/site.js';
@@ -5,9 +7,15 @@ import type { PageData } from '@lib/blocks';
 
 export const absolute = (path: string) => new URL(path, SITE.origin).href;
 
-/** Deterministic OG card path per page id, e.g. /assets/og/s-02.jpg */
-export const ogImageFor = (p: PageMeta) =>
-  absolute(`${SITE.ogImageDir}/${p.id.toLowerCase()}.jpg`);
+/** OG card per page id, e.g. /assets/og/s-02.jpg, once that file exists in
+ *  public/; until then the site card (default.jpg, logo on the sky), whose
+ *  alt is the logo rather than the page's unshot ogBrief. */
+export const ogImageFor = (p: PageMeta): { url: string; alt?: string } => {
+  const own = `${SITE.ogImageDir}/${p.id.toLowerCase()}.jpg`;
+  return existsSync(join(process.cwd(), 'public', own))
+    ? { url: absolute(own), alt: p.ogBrief || undefined }
+    : { url: absolute(`${SITE.ogImageDir}/default.jpg`), alt: `${SITE.name} logo` };
+};
 
 const organizationNode = () => ({
   '@type': 'Organization',

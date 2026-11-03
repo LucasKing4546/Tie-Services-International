@@ -25,7 +25,7 @@
    the run from the A-frame tip to the water, in terms of the vessel's own
    width, so the colour change stays on the waterline at every size. */
 .hoist{--air:calc(var(--vw) * .258 - 14px);position:absolute;left:96.4%;top:33%;width:2px;
-  height:calc(170px + var(--sy,0) * .55px);
+  height:calc(170px + var(--pay,0px));
   background:linear-gradient(to bottom,var(--navy) var(--air),rgba(255,255,255,.75) var(--air))}
 .hoist-load{position:absolute;left:-9px;top:100%;width:20px;height:28px;border:2px solid #fff;border-radius:2px;
   background:linear-gradient(var(--red),var(--red)) center/100% 6px no-repeat}
