@@ -38,7 +38,7 @@ export interface ImgBrief {
   ratio?: string;
 }
 
-export type FieldType = 'text' | 'email' | 'tel' | 'number' | 'date' | 'textarea' | 'select';
+export type FieldType = 'text' | 'email' | 'tel' | 'number' | 'date' | 'textarea' | 'select' | 'file';
 
 export interface FieldSpec {
   label: string;

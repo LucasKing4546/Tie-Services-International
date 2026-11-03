@@ -3,7 +3,11 @@
  * Every form on the site renders through this so the honeypot field
  * (name="website" — reject any submission that fills it, CLAUDE.md §5.2)
  * is guaranteed present rather than left for each template to remember.
- * No backend exists yet — `action` defaults to '#' and submission is inert.
+ *
+ * `novalidate` turns off the browser's own bubbles so initForms()
+ * (lib/forms.ts) can show inline, announced errors instead. No backend
+ * exists yet: with action '#' a valid submit is stopped in the browser and
+ * the status line says plainly that nothing was sent.
  */
 import type { FieldSpec } from '@lib/blocks';
 import FormField from './FormField.astro';
@@ -16,9 +20,10 @@ interface Props {
 }
 
 const { fields, submit = 'Send', action = '#', consent = true } = Astro.props;
+const enctype = fields.some((f) => f.type === 'file') ? 'multipart/form-data' : undefined;
 ---
 
-<form class="form" method="post" action={action} novalidate>
+<form class="form" method="post" action={action} enctype={enctype} novalidate>
   <slot name="intro" />
 
   {fields.map((field) => <FormField field={field} />)}
@@ -27,14 +32,16 @@ const { fields, submit = 'Send', action = '#', consent = true } = Astro.props;
 
   {consent && (
     <div class="consent">
-      <input type="checkbox" id="consent" name="consent" required />
+      <input type="checkbox" id="consent" name="consent" required aria-describedby="consent-err" />
       <label for="consent">
         I agree that RTG may contact me about this enquiry and store my details as set out in the
         <a href="/privacy/">privacy notice</a>.
       </label>
+      <p class="err" id="consent-err" hidden></p>
     </div>
   )}
 
   <button class="btn b-red" type="submit">{submit}</button>
+  <p class="form-status" role="status" hidden></p>
   <p class="hint">Fields marked * are required. We reply to enquiries within one working day.</p>
 </form>

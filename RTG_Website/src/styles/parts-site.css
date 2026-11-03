@@ -69,6 +69,11 @@
 /* ---------- forms ---------- */
 .form-side{display:flex;flex-direction:column;gap:32px;min-width:0}
 .two > div:has(> .form){min-width:0}
+/* A form page's columns differ in height by hundreds of px, so centring
+   (parts-sections .two) floats the short one; top-align them, and on a
+   phone put the form before the notes about it. */
+.two:has(> div > .form){align-items:start}
+@media (max-width:900px){.two > div:has(> .form){order:-1}}
 .form{max-width:none;gap:20px;padding:36px;background:var(--panel);border:1px solid var(--rule);border-radius:22px;
   position:relative}
 .form::before{content:"";position:absolute;left:36px;top:-1px;width:64px;height:4px;border-radius:0 0 4px 4px;background:var(--red)}
@@ -76,7 +81,9 @@
 .field{gap:8px;min-width:0}
 .field label{font-size:11.5px;letter-spacing:.1em;color:var(--ink);font-weight:500}
 .field label em{color:var(--accent)}
-.field input,.field select,.field textarea{font-size:16px;padding:14px 16px;min-height:50px;border:1.5px solid var(--rule);border-radius:12px;
+/* Control borders at ~4:1 against the panel (WCAG 1.4.11 needs 3:1);
+   --rule is a hairline for decoration and too faint for an input. */
+.field input,.field select,.field textarea{font-size:16px;padding:14px 16px;min-height:50px;border:1.5px solid color-mix(in srgb,var(--ink-2) 60%,transparent);border-radius:12px;
   background:var(--panel);
   transition:border-color .2s,background .2s,box-shadow .25s var(--e)}
 .field textarea{min-height:130px}
@@ -84,10 +91,20 @@
 .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--ink);background:var(--panel);
   }
 .field input:focus-visible,.field select:focus-visible,.field textarea:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
-.field input:user-valid,.field textarea:user-valid,.field select:user-valid{border-color:#1E7A4F}
 .field input:user-invalid,.field textarea:user-invalid,.field select:user-invalid{border-color:var(--red);background:var(--panel);
   }
 .field:has(:user-invalid) label,.field:has(:user-invalid) .hint{color:var(--accent)}
+/* initForms() (lib/forms.ts) sets aria-invalid and fills .err. The message
+   text carries the error, so the red is a mark only, never the type (§7). */
+.field [aria-invalid="true"]{border-color:var(--red);border-width:2px}
+.err{display:flex;gap:8px;align-items:baseline;margin:0;font-size:13.5px;color:var(--ink);font-weight:500}
+.err::before{content:"";flex:none;width:8px;height:8px;border-radius:50%;background:var(--red);transform:translateY(-1px)}
+.err[hidden]{display:none}
+.consent{flex-wrap:wrap}
+.consent .err{flex-basis:100%}
+.form-status{margin:0;padding:14px 16px;border-radius:12px;border:1px solid var(--rule);background:var(--panel);color:var(--ink);font-size:14.5px}
+.form-status[hidden]{display:none}
+.field input[type=file]{padding:12px 16px;cursor:pointer}
 .field select{appearance:none;-webkit-appearance:none;padding-right:44px;cursor:pointer;
   background-image:linear-gradient(45deg,transparent 50%,var(--ink) 50%),linear-gradient(135deg,var(--ink) 50%,transparent 50%);
   background-position:calc(100% - 22px) 55%,calc(100% - 16px) 55%;background-size:6px 6px;background-repeat:no-repeat}

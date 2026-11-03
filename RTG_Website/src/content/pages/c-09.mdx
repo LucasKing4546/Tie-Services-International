@@ -1,4 +1,30 @@
 ---
 pageId: "C-09"
 draft: true
+form:
+  submit: "Submit under NDA"
+  fields:
+    - { label: "Your name", name: "name", type: "text", required: true }
+    - { label: "Company", name: "company", type: "text", required: true }
+    - { label: "Work email", name: "email", type: "email", required: true }
+    - { label: "Phone", name: "phone", type: "tel", required: false }
+    - label: "Tier required"
+      name: "tier"
+      type: "select"
+      options:
+        - "Tier 1: structural fabrication"
+        - "Tier 2: mechanical assembly"
+        - "Tier 3: hydraulic and electrical build"
+        - "Tier 4: automation, test and commissioning"
+        - "Not sure yet"
+      required: true
+    - { label: "Scope", name: "scope", type: "textarea", hint: "What is to be built, and roughly how much of it", required: true }
+    - { label: "Documentation", name: "documents", type: "file", hint: "Drawings, specifications or a parts list", required: false }
+    - { label: "Required date", name: "required_date", type: "date", required: false }
 ---
+
+<Gap>RTG to supply: how the NDA works. Whether RTG signs the customer's NDA or issues its own, and whether it must be in place before any drawing is sent.</Gap>
+
+<Gap>RTG to supply: what to send for each tier, from fabrication drawings for Tier 1 to the control philosophy for Tier 4.</Gap>
+
+<Gap>RTG to supply: what comes back (scope, tier options, indicative price) and how many working days it takes.</Gap>

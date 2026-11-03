@@ -1,7 +1,8 @@
 ---
 /**
  * The Form template — the eight gated enquiry/request forms. Composition:
- * hero -> .two (what it covers + EnquiryForm). EnquiryForm.astro itself
+ * hero -> .two (what it covers + EnquiryForm). "What happens next" is the
+ * form's own `next` list, or the reply line alone. EnquiryForm.astro itself
  * guarantees the honeypot field and the no-backend action="#" default
  * (CLAUDE.md §5.2) — this template only ever passes frontmatter through.
  *
@@ -51,9 +52,7 @@ const { Content } = await render(entry);
           <aside class="form-next" aria-label="What happens next">
             <h2>What happens next</h2>
             <ol>
-              <li>An engineer reads your enquiry and replies to you directly.</li>
-              <li>Datasheets are issued to a named recipient, watermarked with a unique serial.</li>
-              <li>General arrangement drawings are issued only against a named project.</li>
+              {(data.form.next ?? ['An engineer reads your enquiry and replies to you directly.']).map((s) => <li>{s}</li>)}
             </ol>
             <p>Your details are used only as set out in the <a href="/privacy/">privacy notice</a>.</p>
           </aside>

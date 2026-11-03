@@ -75,10 +75,9 @@ const formField = z
   .object({
     label: z.string(),
     name: z.string().regex(/^[a-z][a-z0-9_]*$/, 'field name must be lower_snake_case'),
-    // No 'file'/'upload' type yet — C-09 (send-documentation)'s workbook block
-    // list calls for an "upload form" and will need one added here before its
-    // real content can be written. A stub today, so not yet a live gap.
-    type: z.enum(['text', 'email', 'tel', 'number', 'date', 'textarea', 'select']).default('text'),
+    // 'file' is C-09's upload form (multiple files; the form switches to
+    // multipart encoding when any field is a file).
+    type: z.enum(['text', 'email', 'tel', 'number', 'date', 'textarea', 'select', 'file']).default('text'),
     /** Populated only when type is 'select'. */
     options: z.array(z.string()).default([]),
     hint: z.string().optional(),
@@ -185,6 +184,9 @@ const pages = defineCollection({
           fields: z.array(formField).min(1),
           submit: z.string().default('Send'),
           consent: z.boolean().default(true),
+          /** "What happens next" steps. Defaults to the reply line alone;
+           *  only forms that issue documents add the datasheet/GA steps. */
+          next: z.array(z.string()).optional(),
           // '#' until a backend exists; only ever a same-site path, so a
           // pasted value can't send enquiry data to another host
           action: z.union([z.literal('#'), sitePath]).default('#'),

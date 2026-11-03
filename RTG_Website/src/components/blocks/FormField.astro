@@ -1,9 +1,30 @@
 ---
-/** One form field, rendered from a FieldSpec. */
+/**
+ * One form field, rendered from a FieldSpec. The hint and the error line
+ * (filled by initForms() in lib/forms.ts) are both tied to the control with
+ * aria-describedby, so a screen reader hears them with the label.
+ */
 import type { FieldSpec } from '@lib/blocks';
 
 interface Props { field: FieldSpec }
 const { field } = Astro.props;
+
+// Browser autofill tokens for the field names the forms share.
+const AUTOCOMPLETE: Record<string, string> = {
+  name: 'name',
+  email: 'email',
+  phone: 'tel',
+  company: 'organization',
+};
+
+const hintId = field.hint ? `${field.name}-hint` : undefined;
+const errId = `${field.name}-err`;
+const common = {
+  id: field.name,
+  name: field.name,
+  required: field.required,
+  'aria-describedby': [hintId, errId].filter(Boolean).join(' '),
+};
 ---
 
 <div class="field">
@@ -12,14 +33,17 @@ const { field } = Astro.props;
     {field.required && <em> *</em>}
   </label>
   {field.type === 'textarea' ? (
-    <textarea id={field.name} name={field.name} required={field.required}></textarea>
+    <textarea {...common}></textarea>
   ) : field.type === 'select' ? (
-    <select id={field.name} name={field.name} required={field.required}>
+    <select {...common}>
       <option value="">Please choose…</option>
       {field.options.map((o) => <option value={o}>{o}</option>)}
     </select>
+  ) : field.type === 'file' ? (
+    <input type="file" multiple {...common} />
   ) : (
-    <input type={field.type} id={field.name} name={field.name} required={field.required} />
+    <input type={field.type} autocomplete={AUTOCOMPLETE[field.name]} {...common} />
   )}
-  {field.hint && <p class="hint">{field.hint}</p>}
+  {field.hint && <p class="hint" id={hintId}>{field.hint}</p>}
+  <p class="err" id={errId} hidden></p>
 </div>
