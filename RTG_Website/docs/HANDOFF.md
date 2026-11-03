@@ -9,8 +9,8 @@ Read this first in a new chat. It picks up the full-site audit from
   RTG or the site owner, B = fixable in code). The per-section reports next to it
   have file:line detail. `BRIEF.md` is what the 12 review agents were told.
   Line numbers in the reports are from commit `7e032005` and have drifted.
-- **Branch:** `main`, 6 commits ahead of `origin/main`, **not pushed**. Push only
-  when the user asks.
+- **Branch:** `main`. Everything after `7e032005` (the commits below plus this
+  handoff) is local and **not pushed**. Push only when the user asks.
 - **Build:** `npm run build` passes, 0 SEO failures (53 warnings, all meta
   description length, pre-existing), 0 content-protection violations.
   `npx astro check`: 0 errors.
