@@ -4,11 +4,21 @@
 // need no script). Each column links to its tier page.
 import Icon from '@components/site/Icon.astro';
 import SectionHead from '@components/blocks/SectionHead.astro';
+import { Image } from 'astro:assets';
+import { mediaFor } from '@data/media';
 import { MANUFACTURING, TIERS } from '@data/home';
+
+// An A-frame and its winch assembled on the shop floor in Satu Mare.
+const photo = mediaFor('IMG-S07-C');
 ---
 <section class="sec tiers-sec" id="tiers">
   <div class="wrap">
     <SectionHead heading={MANUFACTURING.heading} lede={MANUFACTURING.body} />
+    {photo && (
+      <figure class="band-photo tiers-photo fu">
+        <Image src={photo} alt="" widths={[900, 1600]} sizes="(max-width:1320px) 100vw, 1256px" loading="lazy" />
+      </figure>
+    )}
     <ol class="tiers stag">
       {TIERS.map((t) => (
         <li>

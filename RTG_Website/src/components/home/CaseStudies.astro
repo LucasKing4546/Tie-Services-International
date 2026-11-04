@@ -1,0 +1,50 @@
+---
+// The four case studies, sized by the scale of the work (the user's call,
+// 2026-11-05): the Fugro fleet programme leads with its vessel, the yard
+// programme and the OEM manufacturing follow, the single-winch rebuild
+// closes as a strip. Titles and blurbs are the Case studies index's own
+// (P-01); the figures are read from those blurbs (CASE_FIGS). Three of the
+// four case pages are still drafts awaiting RTG's figures.
+import Icon from '@components/site/Icon.astro';
+import { Image } from 'astro:assets';
+import SectionHead from '@components/blocks/SectionHead.astro';
+import { entryFor } from '@lib/content';
+import { page } from '@data/pages';
+import { mediaFor } from '@data/media';
+import { CASE_FIGS } from '@data/home';
+
+const index = await entryFor('P-01');
+const intro = await entryFor('P-00');
+const cards = CASE_FIGS.map((f) => {
+  const card = index.data.cards?.find((c) => c.pageId === f.id);
+  if (!card) throw new Error(`CaseStudies: no P-01 card for ${f.id}`);
+  const [ref, ...rest] = (card.title ?? '').split(' ');
+  return { ...f, ref, title: rest.join(' '), blurb: card.blurb, href: page(f.id).slug };
+});
+---
+<section class="sec cases-sec">
+  <div class="wrap">
+    <SectionHead heading="Case studies" lede={intro.data.lede} />
+    <div class="cs-grid">
+      {cards.map((c, i) => {
+        const photo = c.photo ? mediaFor(c.photo) : undefined;
+        return (
+          <a class:list={['cs-card', `cs-${i}`, { 'has-img': photo }]} href={c.href}>
+            {photo && (
+              <figure class="cs-img">
+                <Image src={photo} alt="" widths={[800, 1400]} sizes="(max-width:900px) 100vw, 760px" loading="lazy" />
+              </figure>
+            )}
+            <div class="cs-body">
+              <span class="cs-ref">{c.ref}</span>
+              <p class="cs-fig">{c.fig}</p>
+              <h3>{c.title}</h3>
+              <p class="cs-blurb">{c.blurb}</p>
+              <span class="arw">Read the case study <Icon name="arrow" /></span>
+            </div>
+          </a>
+        );
+      })}
+    </div>
+  </div>
+</section>

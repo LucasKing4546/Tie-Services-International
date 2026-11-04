@@ -1,0 +1,31 @@
+---
+// Sectors as the concept's market register: one ruled row per sector, led
+// by a photograph of RTG equipment at work in it, so the first thing under
+// the proof strip is the work itself rather than a menu.
+import Icon from '@components/site/Icon.astro';
+import { Image } from 'astro:assets';
+import { SECTORS } from '@data/home';
+import { mediaFor } from '@data/media';
+---
+<section class="sec mkts">
+  <div class="wrap">
+    <h2 class="d2"><span class="rl"><span>Sectors</span></span></h2>
+    <ul class="mkt-list stag">
+      {SECTORS.map((s) => {
+        const photo = s.ref ? mediaFor(s.ref) : undefined;
+        return (
+          <li>
+            <a href={s.href}>
+              <span class="mkt-img">
+                {photo && <Image src={photo} alt="" widths={[240, 480]} sizes="200px" loading="lazy" decoding="async" />}
+              </span>
+              <h3>{s.name}</h3>
+              <p>{s.blurb}</p>
+              <span class="mkt-go" aria-hidden="true"><Icon name="arrow" /></span>
+            </a>
+          </li>
+        );
+      })}
+    </ul>
+  </div>
+</section>

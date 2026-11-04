@@ -1,5 +1,3 @@
-> **Superseded 2026-11-05:** the hoist line and spine described below were removed, and the homepage is being restyled after `romica-website-concept.html`.
-
 ---
 version: 1
 slug: "src-pages-index-astro"
@@ -9,23 +7,23 @@ related_targets: []
 
 # Homepage (H-01)
 
-Scope: the homepage only; the ocean world (CLAUDE.md §7) is settled and binds it. Mode: Persuade. Audience: sceptical technical buyers (operator, design authority, yard) checking RTG against a specification. Actions: the hero buttons (sector, equipment), the finder form, the service buttons.
+Scope: the homepage only. Mode: Persuade. Audience: sceptical technical buyers (operator, design authority, yard). Actions: hero buttons, case-study links, finder entry form, service buttons.
 
-Constraints from the user (2026-11-04): every word of existing homepage text kept verbatim, only the 3D showroom text removed; no route doors; testimonials and bulletin sign-up left out until RTG supplies them (no Gap markers, the homepage must stay indexable); hero vessel and hoist line kept.
+Constraints from the user: existing site text verbatim; no invented content (concept quotes, certifications and component makes are unverified and stay out); keep the ocean descent (sky, waterline, then bands one step deeper each, never a light band under water); site corners (pills, 20px cards, round discs); all four case studies featured by size and importance even though three are drafts; keep the finder entry form, not the live finder. Structure follows romica-website-concept.html's front page.
 
 ## Direction contract
 
-THESIS: The hoist line the vessel pays out in the hero does not stop at the hero: it is the page's spine, one still line every section hangs from. Refuses the stacked-bands homepage where each section is its own unconnected slab.
+THESIS: The homepage shows the work, not the menu: real machines, real vessels, real cases and figures, in the concept's order (markets, projects, products, engineering, build, service, company). Refuses the stacked list-of-links homepage.
 
-OWN-WORLD: The settled ocean world: one water gradient on main, white type under water, red only for fills and marks, 1px hairlines, 16px card radius, pill buttons, Archivo 800 / Inter / JetBrains Mono. The spine is the hoist's own 2px line, carried straight down from where it hangs in the hero, on the right of the page; content keeps to its left, and each section's top hairline runs across to meet it (on a phone it moves into the right gutter). No numbers, no readouts, no motion on the line.
+OWN-WORLD: The ocean world (DESIGN.md) with the concept's solid bands: each section one shade deeper, teal to abyss. White type, red marks, hairline rules, 20px photo cards, pills. Real photography graded cool, large tabular figures.
 
-STORY: A buyer reads who RTG is, what it has proved, then follows the line down through sectors, equipment, manufacturing and service, where the hoist load lands beside the service actions.
+STORY: A buyer sees what RTG builds, for which markets, proved on which projects, finds a design, sees the engineering and the factory, then service and the family behind it.
 
-FIRST VIEWPORT: Unchanged hero: sky, headline top left, lede, two pill buttons, waterline, vessel, hoist paying out; the proof figures sit just under the surface, and the line continues from where the load stops, past the figures, into the family story.
+FIRST VIEWPORT: Unchanged sky hero, vessel on the waterline, proof strip under the surface; the sector rows with photo thumbnails start just below.
 
-FORM: Code-led. Structure 7 of 7 grounded candidates, dealt lead; seed key 5700ef21 (degraded roll, no challengers). Signature: the static spine with heading ticks and the load landing at service. Motion grammar: waves, vessel arrival, hoist payout in the hero, masked reveals; nothing below the hero moves with scroll.
+FORM: Brief-pinned structure (the concept's section split); no concept roll, seed key: none (user-pinned).
 
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
 
 ## Unresolved
-None for layout. The page-map blocks still absent (avatar doors and strips, testimonials, featured case, bulletin sign-up) are a recorded deviation, not a gap to fill.
+Case studies CS-01, CS-03 and CS-04 still lack RTG's headline figures; their cards use only facts already in the Case studies index blurbs.

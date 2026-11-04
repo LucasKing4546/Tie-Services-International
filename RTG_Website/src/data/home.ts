@@ -109,3 +109,13 @@ export const SERVICE = {
     { label: 'Talk to an engineer', href: '/contact/' },
   ],
 };
+
+/** The homepage's four case studies, in order of the scale of the work.
+ *  Each `fig` is read straight from that case's blurb on the Case studies
+ *  index (P-01); RTG's own headline figures are still to come (P-01 Gap). */
+export const CASE_FIGS: { id: string; fig: string; photo?: string }[] = [
+  { id: 'P-02', fig: 'Seven vessels, fourteen years', photo: 'IMG-H01-A' },
+  { id: 'P-05', fig: 'Hyundai Heavy Industries' },
+  { id: 'P-04', fig: 'Tier 4' },
+  { id: 'P-03', fig: '2009 to 2021' },
+];

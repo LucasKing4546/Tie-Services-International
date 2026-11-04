@@ -46,31 +46,7 @@
    panel and nothing shifts when the tab changes. visibility (delayed until
    the fade ends) keeps hidden panels out of the tab order and a11y tree. */
 
-/* ---------- sector cards (inside a ScrollTrack) ---------- */
-.strack-rail > .scard,.scard{position:relative;overflow:hidden;isolation:isolate;flex:none;width:min(78vw,370px);min-height:430px;background:rgba(255,255,255,.06);
-  border:1px solid rgba(255,255,255,.16);border-radius:20px;padding:32px 30px;display:flex;
-  flex-direction:column;justify-content:space-between;transition:background .35s var(--e),border-color .35s var(--e),transform .35s var(--e)}
-.scard:hover{background:var(--red);border-color:var(--red);transform:translateY(-8px);}
-.scard .n{font-family:var(--f-d);font-weight:800;font-size:44px;letter-spacing:-.04em;line-height:1;color:rgba(255,255,255,.9)}
-.scard h3{font-size:29px;letter-spacing:-.03em;line-height:1.12;margin:20px 0 14px;color:#fff}
-.scard p{font-size:14.5px;color:rgba(255,255,255,.86);margin:0}
-.scard .arw{color:#fff;margin-top:26px}
-@media (max-width:900px){.scard{min-height:300px}}
-
 /* statement: photo panel; tight */
-
-
-.scard-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;
-  transition:transform .6s var(--e),opacity .35s var(--e)}
-.scard.has-img::before{content:"";position:absolute;inset:0;z-index:-1;
-  background:linear-gradient(180deg,rgba(13,43,59,.55) 0%,rgba(13,43,59,.82) 55%,rgba(13,43,59,.96) 100%);
-  transition:opacity .35s}
-.scard.has-img:hover .scard-img{transform:scale(1.06);opacity:.5}
-.scard.has-img:hover::before{opacity:.75}
-.scard .arw{font-weight:700}
-
-@media (prefers-reduced-motion:reduce){.scard,.scard-img,.eq-track > .ecard{transition:none}
-  .scard:hover,.eq-track > .ecard:hover{transform:none}}
 
 @media (prefers-reduced-motion:reduce){.ecard.lc,.case-vis,.lc-ph img{transition:none}
   .ecard.lc:hover,.case-vis:hover{transform:none}}
@@ -136,27 +112,83 @@
 
 /* Tiers: the panel uses the width the 3D winch left, points beside the lede. */
 
-
 /* ---------- concept bands (romica-website-concept.html, 2026-11-05) ----------
-   Homepage only. Below the waterline each section is its own solid band,
-   one step deeper than the last, from the teal surface the hero ends on
-   down to the abyss above the seabed footer. Ruled lists, larger reading
-   type; corners stay the site's own (cards 20px, buttons pills). */
+   Homepage only, in the concept's order. Below the waterline each section
+   is its own solid band, one shade deeper than the last, from the teal the
+   hero ends on down to the abyss above the seabed footer. */
 .home-main{--hivis:#F2B632}
-.home-main > .stmt{background:var(--sea-0)}
-.home-main > .cond{background:#19495B}
-.home-main > .strack{background:#143F52}
-.home-main > .irows{background:var(--sea-1)}
-.home-main > .tiers-sec{background:#0A2231}
-.home-main > .service{background:var(--sea-2)}
-.home-main > .sec{padding:clamp(48px,5vw,76px) 0}
-.home-main .strack-stick{padding:clamp(48px,5vw,76px) 0}
+.home-main > .mkts{background:var(--sea-0)}
+.home-main > .cases-sec{background:#1A4B5D}
+.home-main > .irows{background:#164253}
+.home-main > .cond{background:#123A4A}
+.home-main > .tiers-sec{background:var(--sea-1)}
+.home-main > .service{background:#0A2231}
+.home-main > .stmt{background:var(--sea-2)}
+.home-main > .sec{padding:clamp(52px,5.4vw,84px) 0}
 .home-main .lede{font-size:clamp(18px,1.4vw,20px);line-height:1.55}
+.home-main h2.d2{margin:0 0 clamp(24px,2.6vw,36px)}
+.home-main .sechd h2.d2{margin:0}
 
-/* Statement photo: the concept's cool North Sea grade. */
-.stmt-photo{margin:0 0 24px;overflow:hidden;border-radius:16px;aspect-ratio:16/10;background:var(--sea-0)}
-.stmt-photo img{width:100%;height:100%;object-fit:cover;filter:saturate(.6) contrast(1.05)}
-.stmt-side{border-top:0;padding-top:0}
+/* Real photographs, graded cool so they sit in the water. */
+.band-photo{margin:0;overflow:hidden;border-radius:20px;background:var(--sea-1)}
+.band-photo img{width:100%;height:100%;object-fit:cover;filter:saturate(.62) contrast(1.06) brightness(.94)}
+
+/* Sectors: the market register, one ruled row per sector with its photo. */
+.mkt-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
+.mkt-list a{display:grid;grid-template-columns:132px minmax(0,1fr) minmax(0,1.25fr) 44px;gap:clamp(18px,2.6vw,40px);
+  align-items:center;padding:14px 0;border-bottom:1px solid var(--rule);color:var(--ink)}
+.mkt-img{display:block;aspect-ratio:3/2;border-radius:12px;overflow:hidden;background:var(--panel)}
+.mkt-img img{width:100%;height:100%;object-fit:cover;filter:saturate(.62) contrast(1.06);transition:filter .35s var(--e)}
+.mkt-list h3{margin:0;font-size:clamp(20px,1.9vw,27px);letter-spacing:-.03em;line-height:1.15}
+.mkt-list p{margin:0;font-size:16px;line-height:1.5;color:var(--ink-2)}
+.mkt-go{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:1px solid var(--rule);
+  transition:background .3s var(--e),border-color .3s var(--e)}
+.mkt-list a:hover .mkt-go,.mkt-list a:focus-visible .mkt-go{background:var(--red);border-color:var(--red)}
+.mkt-list a:hover .mkt-img img{filter:none}
+.mkt-list a:focus-visible{outline-offset:2px;border-radius:12px}
+@media (max-width:900px){.mkt-list a{grid-template-columns:104px minmax(0,1fr) 44px;row-gap:6px}
+  .mkt-img{grid-row:1 / span 2}.mkt-list p{grid-column:2;grid-row:2}.mkt-go{grid-column:3;grid-row:1 / span 2}}
+@media (max-width:520px){.mkt-list a{grid-template-columns:84px minmax(0,1fr)}.mkt-go{display:none}}
+
+/* Case studies: sized by the scale of the work. */
+.cs-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:20px}
+.cs-card{display:flex;flex-direction:column;border:1px solid var(--rule);border-radius:20px;overflow:hidden;
+  background:var(--panel);color:var(--ink);transition:border-color .3s var(--e),transform .35s var(--e)}
+.cs-card:hover{border-color:rgba(255,255,255,.45);transform:translateY(-8px)}
+.cs-0{grid-row:span 2}
+.cs-3{grid-column:1 / -1}
+.cs-img{margin:0;flex:1;min-height:300px;overflow:hidden}
+.cs-img img{width:100%;height:100%;object-fit:cover;filter:saturate(.62) contrast(1.06)}
+.cs-body{padding:26px 28px 28px;display:flex;flex-direction:column;gap:10px}
+.cs-ref{font-family:var(--f-m);font-size:12px;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.cs-fig{margin:0;font-family:var(--f-d);font-weight:800;font-size:clamp(28px,2.9vw,44px);letter-spacing:-.04em;
+  line-height:1.06;font-variant-numeric:tabular-nums lining-nums;text-wrap:balance}
+.cs-0 .cs-fig{font-size:clamp(32px,3.6vw,56px)}
+.cs-card h3{margin:0;font-size:clamp(19px,1.6vw,23px);letter-spacing:-.02em;line-height:1.2}
+.cs-blurb{margin:0;font-size:16px;line-height:1.5;color:var(--ink-2);max-width:52ch}
+.cs-card .arw{margin-top:8px}
+.cs-3 .cs-body{display:grid;grid-template-columns:auto minmax(0,1fr) auto;column-gap:clamp(24px,4vw,64px);align-items:center}
+.cs-3 .cs-ref{grid-column:1 / -1}
+.cs-3 .cs-fig{grid-row:2 / span 2}
+.cs-3 .arw{grid-column:3;grid-row:2 / span 2;margin:0}
+@media (max-width:900px){.cs-grid{grid-template-columns:minmax(0,1fr)}.cs-0{grid-row:auto}
+  .cs-img{min-height:220px;flex:none;aspect-ratio:16/10}
+  .cs-3 .cs-body{display:flex;align-items:flex-start;text-align:left}}
+@media (prefers-reduced-motion:reduce){.cs-card{transition:none}.cs-card:hover{transform:none}}
+
+/* Engineered for offshore conditions: heading over the machine, points beside. */
+.cond-head{display:flex;flex-direction:column;gap:clamp(24px,2.6vw,36px)}
+.cond-head h2.d2{margin:0}
+.cond-photo{aspect-ratio:4/3}
+
+/* Contract manufacturing: the shop floor under the head. */
+.tiers-photo{aspect-ratio:21/8;margin:0 0 clamp(28px,3vw,40px)}
+.tiers-photo img{object-position:50% 45%}
+
+/* Service: words and actions, then the deck. */
+.service-in{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(32px,5vw,80px);align-items:center}
+.service-photo{aspect-ratio:16/10}
+@media (max-width:900px){.service-in{grid-template-columns:minmax(0,1fr)}}
 
 /* Contract manufacturing: four ruled columns. */
 .tiers{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));

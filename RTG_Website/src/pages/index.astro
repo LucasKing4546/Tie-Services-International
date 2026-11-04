@@ -1,6 +1,9 @@
 ---
 /**
- * The homepage.
+ * The homepage, in the order of romica-website-concept.html's front page:
+ * sectors, case studies, equipment, engineering, manufacturing, service,
+ * then the company. Every section is a solid band one shade deeper than
+ * the last (home.css).
  *
  * Deliberate gaps from the page map's H-01 blocks (decided 2026-11-04):
  * no avatar doors or strips (the routes are the sections themselves), and
@@ -11,7 +14,8 @@ import Base from '@layouts/Base.astro';
 import Hero from '@components/home/Hero.astro';
 import Statement from '@components/home/Statement.astro';
 import Conditions from '@components/home/Conditions.astro';
-import SectorTrack from '@components/home/SectorTrack.astro';
+import SectorRows from '@components/home/SectorRows.astro';
+import CaseStudies from '@components/home/CaseStudies.astro';
 import TierLadder from '@components/home/TierLadder.astro';
 import LifecycleSteps from '@components/home/LifecycleSteps.astro';
 import IndexRows from '@components/blocks/IndexRows.astro';
@@ -22,13 +26,14 @@ import '@/styles/home.css';
 <Base pageId="H-01">
   <Hero />
   <div class="home-main">
-    <Statement />
-    <Conditions />
-    <SectorTrack />
+    <SectorRows />
+    <CaseStudies />
     <IndexRows items={EQUIPMENT} heading="Equipment" tone="default">
       <FinderEntry />
     </IndexRows>
+    <Conditions />
     <TierLadder />
     <LifecycleSteps />
+    <Statement />
   </div>
 </Base>
