@@ -1,7 +1,8 @@
-# Handoff: audit fixes, state at 2026-11-03
+# Handoff: audit fixes and homepage redesign, state at 2026-11-04
 
 Read this first in a new chat. It picks up the full-site audit from
-2026-10-29 and the fixes made against it on 2026-11-03.
+2026-10-29, the fixes made against it on 2026-11-03, and the homepage
+redesign of 2026-11-04 (3D removed).
 
 ## Where things are
 
@@ -25,29 +26,24 @@ Read this first in a new chat. It picks up the full-site audit from
 | `903096c4` | **B10.** Family design lists show a figure column only when at least half the designs have it; stray figures move to the tag line. Phone figure labels visually hidden, still read aloud. |
 | `18e7f63f` | **B6.** Closing band removed where it only repeated the hero buttons (the user's choice). `endingCta` deleted; a page that sets its own `cta` still gets a band. None do today. |
 
-## Next big job: remove the 3D, redesign the homepage layout
+## Done on 2026-11-04: 3D removed, homepage redesigned
 
-**The site owner's decision (2026-11-03): the 3D models are going, so the
-homepage needs a whole new layout.** This is a design job, not a deletion:
-the homepage's sections were built around the models, and taking them out
-leaves the page without its structure. Run it as a new feature (CLAUDE.md
-§2: research first, then `/feature-dev`), and ask the user about the
-direction before building.
+| Commit | What |
+|---|---|
+| `91329c4a` | 3D gone: `rtg3d.ts`, `home-scroll.ts`, the showroom, the tier winch canvas, the `three` dependency, the z-04 known issue, CLAUDE.md's 3D sections. |
+| `e33e935f` | **Homepage hangs off the hoist line** (the user's pick from three structures). The hoist pays out down to the hero's bottom; below it one still line carries on at the hoist's exact x (right side), every section's top rule runs across to it, and the load rests on the footer crest beside "Service life support". On phones the line sits in the right gutter. Folds in **B24**: one h2 size, finder inside Equipment, compact rows, sector rail stops short of the line, tier points beside the lede, phone tabs 2x2. |
+| `e079a49c` | Drawn arrow and chevrons (`src/components/site/Icon.astro`) replace every → ‹ › on the site. |
 
-What depends on the 3D today:
-- `src/lib/rtg3d.ts`: the four procedural machines (traction winch, A-frame LARS, HPU, deck crane).
-- `src/lib/home-scroll.ts`: the tier winch driven by the Tiers tabs, and the equipment showroom.
-- `src/components/home/TierLadder.astro` (Tiers tabs + winch) and `src/components/home/MachineLift.astro` (showroom).
-- `src/pages/index.astro`, `src/data/home.ts`, `src/styles/home.css`, and a comment in `src/layouts/Base.astro` (the boot script) that names `home-scroll.ts`.
-- The `three` dependency in `package.json` can go once nothing imports it.
-- `src/content/pages/z-04.mdx`: the "Three-dimensional models" known issue comes out with them.
-- CLAUDE.md §1/§3/§7 describe the 3D (stack table, `lib/` map, the "3D" subsection); update them in the same change.
+Rules the user set for this work: **existing site text is kept word for
+word** (only the 3D showroom text went); no route "doors"; testimonials,
+featured case and bulletin sign-up stay off the homepage until RTG supplies
+them (a Gap marker would noindex it). The deviation from the page map's H-01
+blocks is recorded in `src/pages/index.astro`'s doc comment.
 
-Effects on the rest of this list: **B24 mostly falls away** (model colour,
-tier-4 crop, drag-only showroom). Its other points (four h2 sizes on the
-homepage, the 990 px Equipment block) feed into the redesign brief. The
-hoist line and the vessel in the hero are not 3D (SVG + CSS) and are part of
-the §7 motion budget; whether they stay is a question for the redesign.
+The direction contract is in `.impeccable/surfaces/src-pages-index-astro.md`.
+impeccable's finish review ended **ship**. DESIGN.md is written from the
+built site by impeccable's documenter. One non-material note stays open: on
+a phone the spine has no visible link to the hoist (accepted).
 
 ## Still to do in code (B items, medium)
 
@@ -58,11 +54,11 @@ the §7 motion budget; whether they stay is a question for the redesign.
 - **B20:** Proof hub opens on an empty draft card (Y-04); blank space on Y-04 and R-02; R-04 linked from nowhere.
 - **B21:** tablet header CTA centred; mobile menu doesn't close when focus leaves it.
 - **B22:** heading levels (draft panel h3 after h1, footer h3s with no h2, StepList h3s, Legal "On this page" h3); `lang="en"` should be `en-GB`.
-- **B23:** design-system drift (21 radius values, ~12 focus-ring overrides, `.stats` defined three times, dead rules).
-- **B24 (superseded by the homepage redesign above):** homepage 3D models royal blue `0x24478C` clash with teal; tier winch crops at tier 4; four h2 sizes; Equipment block ~990 px tall; showroom drag-only (WCAG 2.5.7) with low-contrast 10 px labels.
+- **B23:** design-system drift (21 radius values, ~12 focus-ring overrides, `.stats` defined three times, dead rules); the glyph arrows part is done (`Icon.astro`).
 - **B25:** finder: no "Clear filters", placeholder 2.8:1, collapsed mobile filters hide the active count, exact DS match not ranked first.
 - **B26:** spec tables styled by three conflicting stylesheets; units orphan on mobile.
 - **B27:** sticky datasheet pill covers table rows; 22 px tap targets (`.arw`, finder links).
+- **New, from DESIGN.md (2026-11-04), fix first:** the global focus ring (`tokens.css:84`, 3px `--red`) is about 2.3:1 on `--sea-1` and 1.3:1 on `--sea-0`, failing WCAG 1.4.11 (3:1). Under water it should be `--ink` (white), which most component overrides already use. DESIGN.md also lists where the code and CLAUDE.md §7 disagree (card radius 20 vs 16 px, `.fu`/`.stag` entrance motion, the hover set, mono uppercase footer headings); decide which wins.
 - **Not in the audit:** Y-04 (vendor pack) and R-02 (catalogues) are Form-template pages with no form.
 - **Low items** (copy polish, units, stale comments, figures hard-coded instead of from `PROOF`) are in each section report.
 

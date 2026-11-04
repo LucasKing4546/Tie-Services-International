@@ -504,9 +504,9 @@
     "semantic_hash": ""
   },
   "CLAUDE.md": {
-    "mtime": 1793774348.864633,
-    "seen": 1793774430.2622213,
-    "ast_hash": "f039f9ba6c0e7fe060df34943cdafb51",
+    "mtime": 1793777693.1533148,
+    "seen": 1793778729.6399403,
+    "ast_hash": "05a6d61eaddf2d281072c589bc8f9ca2",
     "semantic_hash": ""
   },
   "README.md": {
@@ -1818,9 +1818,9 @@
     "semantic_hash": ""
   },
   "docs/HANDOFF.md": {
-    "mtime": 1793702476.9923544,
-    "seen": 1793774430.2622213,
-    "ast_hash": "dc72c263ad86c0e29140c58d731f1f4b",
+    "mtime": 1793778724.8966713,
+    "seen": 1793778729.6399403,
+    "ast_hash": "f975430c2e5b523d47eb06f6aa9e8f04",
     "semantic_hash": ""
   },
   "docs/audit-2026-10-29/BRIEF.md": {
@@ -1923,6 +1923,18 @@
     "mtime": 1793777384.9157462,
     "seen": 1793777632.0614955,
     "ast_hash": "e980b8308d5956a8be9499f4748a8186",
+    "semantic_hash": ""
+  },
+  ".impeccable/design.json": {
+    "mtime": 1793778684.2708306,
+    "seen": 1793778729.6399403,
+    "ast_hash": "2e6f5146b97c16c4d108f5c5ac9d7af5",
+    "semantic_hash": ""
+  },
+  "DESIGN.md": {
+    "mtime": 1793778622.9930277,
+    "seen": 1793778729.6399403,
+    "ast_hash": "34dfac9a40f5196b9265b181f337c67c",
     "semantic_hash": ""
   }
 }

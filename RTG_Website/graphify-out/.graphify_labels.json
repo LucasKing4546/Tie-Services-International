@@ -111,7 +111,7 @@
   "109": "12. THE BLOCK LIBRARY (Contract - Implementations Land Here Iteratively)",
   "110": "5. CONTEXT-AWARE PROACTIVITY",
   "111": "8. DARK MODE PROTOCOL",
-  "112": "7. DIAL DEFINITIONS (Technical Reference)",
+  "112": "Design System: Romica Tie Group",
   "113": "2026-10-13T10-00-11Z__src-pages-index-astro.md",
   "114": "2026-10-13T16-18-36Z__src-components-templates-product-astro.md",
   "115": "vercel.json",
@@ -133,10 +133,11 @@
   "131": "Audit: equipment / winches (E-02 to E-06, Product template)",
   "132": "forms-check.cjs",
   "133": "0. BRIEF INFERENCE (Read the Room Before Anything Else)",
-  "134": "scripts",
+  "134": "page.ts",
   "135": "astro.config.mjs",
-  "136": "dependencies",
+  "136": "seo.ts",
   "137": "forms.ts",
-  "138": "devDependencies",
-  "139": "FormField.astro"
+  "138": "1. THE THREE DIALS (Core Configuration)",
+  "139": "FormField.astro",
+  "140": "hoist.ts"
 }

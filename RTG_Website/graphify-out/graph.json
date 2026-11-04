@@ -225,6 +225,19 @@
       "source_location": "L52"
     },
     {
+      "id": "src_lib_page_resolvedpage",
+      "label": "ResolvedPage",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 134,
+      "community_name": "page.ts",
+      "file_type": "code",
+      "norm_label": "resolvedpage",
+      "source_file": "src/lib/page.ts",
+      "source_location": "L11"
+    },
+    {
       "id": "src_lib_blocks_motionhint",
       "label": "MotionHint",
       "_callable": true,
@@ -303,19 +316,6 @@
       "source_location": "L36"
     },
     {
-      "id": "src_lib_page_resolvedpage",
-      "label": "ResolvedPage",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
-      "file_type": "code",
-      "norm_label": "resolvedpage",
-      "source_file": "src/lib/page.ts",
-      "source_location": "L11"
-    },
-    {
       "id": "src_data_pages_childrenof",
       "label": "childrenOf()",
       "_callable": true,
@@ -338,6 +338,18 @@
       "norm_label": "pagebyslug()",
       "source_file": "src/data/pages.ts",
       "source_location": "L1038"
+    },
+    {
+      "id": "src_data_pages_pagesbytemplate",
+      "label": "pagesByTemplate()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "blocks.ts",
+      "file_type": "code",
+      "norm_label": "pagesbytemplate()",
+      "source_file": "src/data/pages.ts",
+      "source_location": "L1042"
     },
     {
       "id": "src_data_pages_pagesinsection",
@@ -724,6 +736,90 @@
       "source_location": "L47"
     },
     {
+      "id": "src_lib_page_resolvepage",
+      "label": "resolvePage()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 134,
+      "community_name": "page.ts",
+      "file_type": "code",
+      "norm_label": "resolvepage()",
+      "source_file": "src/lib/page.ts",
+      "source_location": "L17"
+    },
+    {
+      "id": "src_data_pages_ancestorsof",
+      "label": "ancestorsOf()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 136,
+      "community_name": "seo.ts",
+      "file_type": "code",
+      "norm_label": "ancestorsof()",
+      "source_file": "src/data/pages.ts",
+      "source_location": "L1059"
+    },
+    {
+      "id": "src_lib_seo_absolute",
+      "label": "absolute()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 136,
+      "community_name": "seo.ts",
+      "file_type": "code",
+      "norm_label": "absolute()",
+      "source_file": "src/lib/seo.ts",
+      "source_location": "L8"
+    },
+    {
+      "id": "src_lib_seo_breadcrumbnode",
+      "label": "breadcrumbNode()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 136,
+      "community_name": "seo.ts",
+      "file_type": "code",
+      "norm_label": "breadcrumbnode()",
+      "source_file": "src/lib/seo.ts",
+      "source_location": "L38"
+    },
+    {
+      "id": "src_lib_seo_buildjsonld",
+      "label": "buildJsonLd()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 136,
+      "community_name": "seo.ts",
+      "file_type": "code",
+      "norm_label": "buildjsonld()",
+      "source_file": "src/lib/seo.ts",
+      "source_location": "L62"
+    },
+    {
+      "id": "src_lib_seo_ogimagefor",
+      "label": "ogImageFor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 136,
+      "community_name": "seo.ts",
+      "file_type": "code",
+      "norm_label": "ogimagefor()",
+      "source_file": "src/lib/seo.ts",
+      "source_location": "L13"
+    },
+    {
+      "id": "src_lib_seo_organizationnode",
+      "label": "organizationNode()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 136,
+      "community_name": "seo.ts",
+      "file_type": "code",
+      "norm_label": "organizationnode()",
+      "source_file": "src/lib/seo.ts",
+      "source_location": "L20"
+    },
+    {
       "id": "src_lib_forms_errline",
       "label": "errLine()",
       "_callable": true,
@@ -806,6 +902,18 @@
       "norm_label": "grab()",
       "source_file": "scripts/audit-seo.mjs",
       "source_location": "L16"
+    },
+    {
+      "id": "src_lib_hoist_inithoist",
+      "label": "initHoist()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 140,
+      "community_name": "hoist.ts",
+      "file_type": "code",
+      "norm_label": "inithoist()",
+      "source_file": "src/lib/hoist.ts",
+      "source_location": "L17"
     },
     {
       "id": "src_lib_motion_initcarousels",
@@ -1096,18 +1204,6 @@
       "source_location": "L87"
     },
     {
-      "id": "src_data_pages_pagesbytemplate",
-      "label": "pagesByTemplate()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "RTG Website \u2014 project guide for Claude Code",
-      "file_type": "code",
-      "norm_label": "pagesbytemplate()",
-      "source_file": "src/data/pages.ts",
-      "source_location": "L1042"
-    },
-    {
       "id": "src_components_site_waterline_wave",
       "label": "wave()",
       "_callable": true,
@@ -1262,102 +1358,6 @@
       "norm_label": "spectablelinks()",
       "source_file": "src/lib/equipment.ts",
       "source_location": "L61"
-    },
-    {
-      "id": "src_data_pages_ancestorsof",
-      "label": "ancestorsOf()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
-      "file_type": "code",
-      "norm_label": "ancestorsof()",
-      "source_file": "src/data/pages.ts",
-      "source_location": "L1059"
-    },
-    {
-      "id": "src_lib_hoist_inithoist",
-      "label": "initHoist()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
-      "file_type": "code",
-      "norm_label": "inithoist()",
-      "source_file": "src/lib/hoist.ts",
-      "source_location": "L17"
-    },
-    {
-      "id": "src_lib_page_resolvepage",
-      "label": "resolvePage()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
-      "file_type": "code",
-      "norm_label": "resolvepage()",
-      "source_file": "src/lib/page.ts",
-      "source_location": "L17"
-    },
-    {
-      "id": "src_lib_seo_absolute",
-      "label": "absolute()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
-      "file_type": "code",
-      "norm_label": "absolute()",
-      "source_file": "src/lib/seo.ts",
-      "source_location": "L8"
-    },
-    {
-      "id": "src_lib_seo_breadcrumbnode",
-      "label": "breadcrumbNode()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
-      "file_type": "code",
-      "norm_label": "breadcrumbnode()",
-      "source_file": "src/lib/seo.ts",
-      "source_location": "L38"
-    },
-    {
-      "id": "src_lib_seo_buildjsonld",
-      "label": "buildJsonLd()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
-      "file_type": "code",
-      "norm_label": "buildjsonld()",
-      "source_file": "src/lib/seo.ts",
-      "source_location": "L62"
-    },
-    {
-      "id": "src_lib_seo_ogimagefor",
-      "label": "ogImageFor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
-      "file_type": "code",
-      "norm_label": "ogimagefor()",
-      "source_file": "src/lib/seo.ts",
-      "source_location": "L13"
-    },
-    {
-      "id": "src_lib_seo_organizationnode",
-      "label": "organizationNode()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
-      "file_type": "code",
-      "norm_label": "organizationnode()",
-      "source_file": "src/lib/seo.ts",
-      "source_location": "L20"
     },
     {
       "id": "astro",
@@ -2453,7 +2453,7 @@
       "node_kind": "heading",
       "norm_label": "do not touch without rtg / the owner (a items)",
       "source_file": "docs/HANDOFF.md",
-      "source_location": "L69"
+      "source_location": "L65"
     },
     {
       "id": "docs_handoff_done_on_2026_11_03",
@@ -2465,17 +2465,29 @@
       "node_kind": "heading",
       "norm_label": "done on 2026-11-03",
       "source_file": "docs/HANDOFF.md",
-      "source_location": "L18"
+      "source_location": "L19"
     },
     {
-      "id": "docs_handoff_handoff_audit_fixes_state_at_2026_11_03",
-      "label": "Handoff: audit fixes, state at 2026-11-03",
+      "id": "docs_handoff_done_on_2026_11_04_3d_removed_homepage_redesigned",
+      "label": "Done on 2026-11-04: 3D removed, homepage redesigned",
       "_origin": "ast",
       "community": 1,
       "community_name": "site_data.py",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "handoff: audit fixes, state at 2026-11-03",
+      "norm_label": "done on 2026-11-04: 3d removed, homepage redesigned",
+      "source_file": "docs/HANDOFF.md",
+      "source_location": "L29"
+    },
+    {
+      "id": "docs_handoff_handoff_audit_fixes_and_homepage_redesign_state_at_2026_11_04",
+      "label": "Handoff: audit fixes and homepage redesign, state at 2026-11-04",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "site_data.py",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "handoff: audit fixes and homepage redesign, state at 2026-11-04",
       "source_file": "docs/HANDOFF.md",
       "source_location": "L1"
     },
@@ -2489,19 +2501,7 @@
       "node_kind": "heading",
       "norm_label": "how the fixes were checked",
       "source_file": "docs/HANDOFF.md",
-      "source_location": "L79"
-    },
-    {
-      "id": "docs_handoff_next_big_job_remove_the_3d_redesign_the_homepage_layout",
-      "label": "Next big job: remove the 3D, redesign the homepage layout",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "site_data.py",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "next big job: remove the 3d, redesign the homepage layout",
-      "source_file": "docs/HANDOFF.md",
-      "source_location": "L28"
+      "source_location": "L75"
     },
     {
       "id": "docs_handoff_open_points_for_the_user",
@@ -2513,7 +2513,7 @@
       "node_kind": "heading",
       "norm_label": "open points for the user",
       "source_file": "docs/HANDOFF.md",
-      "source_location": "L92"
+      "source_location": "L88"
     },
     {
       "id": "docs_handoff_still_to_do_in_code_b_items_medium",
@@ -2525,7 +2525,7 @@
       "node_kind": "heading",
       "norm_label": "still to do in code (b items, medium)",
       "source_file": "docs/HANDOFF.md",
-      "source_location": "L52"
+      "source_location": "L48"
     },
     {
       "id": "docs_handoff_where_things_are",
@@ -2537,7 +2537,7 @@
       "node_kind": "heading",
       "norm_label": "where things are",
       "source_file": "docs/HANDOFF.md",
-      "source_location": "L6"
+      "source_location": "L7"
     },
     {
       "id": "research_rtg_website_rtg_website_site_build_site_data_rationale_2",
@@ -2838,54 +2838,6 @@
       "source_location": "L910"
     },
     {
-      "id": "agents_skills_design_taste_frontend_skill_1_a_dial_inference_design_read_dial_values",
-      "label": "1.A Dial Inference (design read \u2192 dial values)",
-      "_origin": "ast",
-      "community": 101,
-      "community_name": "tasteskill: Anti-Slop Frontend Skill",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "1.a dial inference (design read \u2192 dial values)",
-      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
-      "source_location": "L53"
-    },
-    {
-      "id": "agents_skills_design_taste_frontend_skill_1_b_use_case_presets",
-      "label": "1.B Use-Case Presets",
-      "_origin": "ast",
-      "community": 101,
-      "community_name": "tasteskill: Anti-Slop Frontend Skill",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "1.b use-case presets",
-      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
-      "source_location": "L64"
-    },
-    {
-      "id": "agents_skills_design_taste_frontend_skill_1_c_how_the_dials_drive_output",
-      "label": "1.C How the Dials Drive Output",
-      "_origin": "ast",
-      "community": 101,
-      "community_name": "tasteskill: Anti-Slop Frontend Skill",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "1.c how the dials drive output",
-      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
-      "source_location": "L77"
-    },
-    {
-      "id": "agents_skills_design_taste_frontend_skill_1_the_three_dials_core_configuration",
-      "label": "1. THE THREE DIALS (Core Configuration)",
-      "_origin": "ast",
-      "community": 101,
-      "community_name": "tasteskill: Anti-Slop Frontend Skill",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "1. the three dials (core configuration)",
-      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
-      "source_location": "L43"
-    },
-    {
       "id": "agents_skills_design_taste_frontend_skill_2_a_when_to_reach_for_a_real_design_system_use_official_packages",
       "label": "2.A When to reach for a real design system (use official packages)",
       "_origin": "ast",
@@ -2922,6 +2874,42 @@
       "source_location": "L82"
     },
     {
+      "id": "agents_skills_design_taste_frontend_skill_7_dial_definitions_technical_reference",
+      "label": "7. DIAL DEFINITIONS (Technical Reference)",
+      "_origin": "ast",
+      "community": 101,
+      "community_name": "tasteskill: Anti-Slop Frontend Skill",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "7. dial definitions (technical reference)",
+      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
+      "source_location": "L552"
+    },
+    {
+      "id": "agents_skills_design_taste_frontend_skill_design_variance_level_1_10",
+      "label": "DESIGN_VARIANCE (Level 1-10)",
+      "_origin": "ast",
+      "community": 101,
+      "community_name": "tasteskill: Anti-Slop Frontend Skill",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "design_variance (level 1-10)",
+      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
+      "source_location": "L554"
+    },
+    {
+      "id": "agents_skills_design_taste_frontend_skill_motion_intensity_level_1_10",
+      "label": "MOTION_INTENSITY (Level 1-10)",
+      "_origin": "ast",
+      "community": 101,
+      "community_name": "tasteskill: Anti-Slop Frontend Skill",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "motion_intensity (level 1-10)",
+      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
+      "source_location": "L560"
+    },
+    {
       "id": "agents_skills_design_taste_frontend_skill_tasteskill_anti_slop_frontend_skill",
       "label": "tasteskill: Anti-Slop Frontend Skill",
       "_origin": "ast",
@@ -2932,6 +2920,18 @@
       "norm_label": "tasteskill: anti-slop frontend skill",
       "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
       "source_location": "L6"
+    },
+    {
+      "id": "agents_skills_design_taste_frontend_skill_visual_density_level_1_10",
+      "label": "VISUAL_DENSITY (Level 1-10)",
+      "_origin": "ast",
+      "community": 101,
+      "community_name": "tasteskill: Anti-Slop Frontend Skill",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "visual_density (level 1-10)",
+      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
+      "source_location": "L565"
     },
     {
       "id": "docs_audit_2026_10_29_home",
@@ -4026,52 +4026,463 @@
       "source_location": "L572"
     },
     {
-      "id": "agents_skills_design_taste_frontend_skill_7_dial_definitions_technical_reference",
-      "label": "7. DIAL DEFINITIONS (Technical Reference)",
+      "id": "design",
+      "label": "DESIGN.md",
       "_origin": "ast",
       "community": 112,
-      "community_name": "7. DIAL DEFINITIONS (Technical Reference)",
+      "community_name": "Design System: Romica Tie Group",
       "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "7. dial definitions (technical reference)",
-      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
-      "source_location": "L552"
+      "frontmatter": {
+        "name": "Romica Tie Group",
+        "description": "Heavy marine deck equipment, presented as one continuous descent from the sky to the seabed.",
+        "colors": {
+          "navy": "#031d5b",
+          "red": "#AB3241",
+          "red-deep": "#8C2635",
+          "sky": "#DCE7EA",
+          "sea-surface": "#1F5467",
+          "sea-mid": "#0D2B3B",
+          "sea-abyss": "#061520",
+          "ink": "#FFFFFF",
+          "ink-soft": "#BFD2D8",
+          "sky-ink": "#0D2B3B",
+          "sky-ink-soft": "#3B5967",
+          "header-muted": "#5A6478",
+          "header-line": "#DFE3EA",
+          "header-panel": "#F5F6F8",
+          "rule": "rgba(220,231,234,.18)",
+          "panel": "rgba(255,255,255,.055)",
+          "panel-deep": "rgba(6,21,32,.35)",
+          "line-wet": "rgba(255,255,255,.75)"
+        },
+        "typography": {
+          "display": {
+            "fontFamily": "Archivo Variable, Archivo, Helvetica, Arial, sans-serif",
+            "fontSize": "clamp(36px,5.2vw,76px)",
+            "fontWeight": 800,
+            "lineHeight": 1.06,
+            "letterSpacing": "-0.04em"
+          },
+          "headline": {
+            "fontFamily": "Archivo Variable, Archivo, Helvetica, Arial, sans-serif",
+            "fontSize": "clamp(30px,4.2vw,60px)",
+            "fontWeight": 800,
+            "lineHeight": 1.06,
+            "letterSpacing": "-0.035em"
+          },
+          "title": {
+            "fontFamily": "Archivo Variable, Archivo, Helvetica, Arial, sans-serif",
+            "fontSize": "clamp(24px,3vw,40px)",
+            "fontWeight": 800,
+            "lineHeight": 1.1,
+            "letterSpacing": "-0.028em"
+          },
+          "figure": {
+            "fontFamily": "Archivo Variable, Archivo, Helvetica, Arial, sans-serif",
+            "fontSize": "clamp(32px,3.4vw,50px)",
+            "fontWeight": 800,
+            "lineHeight": 1,
+            "letterSpacing": "-0.04em",
+            "fontFeature": "&quot;tnum&quot;, &quot;lnum&quot;"
+          },
+          "lede": {
+            "fontFamily": "Inter Variable, Inter, system-ui, -apple-system, sans-serif",
+            "fontSize": "clamp(17px,1.5vw,21px)",
+            "fontWeight": 400,
+            "lineHeight": 1.5
+          },
+          "body": {
+            "fontFamily": "Inter Variable, Inter, system-ui, -apple-system, sans-serif",
+            "fontSize": "17px",
+            "fontWeight": 400,
+            "lineHeight": 1.6
+          },
+          "button": {
+            "fontFamily": "Archivo Variable, Archivo, Helvetica, Arial, sans-serif",
+            "fontSize": "14px",
+            "fontWeight": 700,
+            "letterSpacing": "-0.01em"
+          },
+          "label": {
+            "fontFamily": "JetBrains Mono, ui-monospace, monospace",
+            "fontSize": "11.5px",
+            "fontWeight": 500,
+            "letterSpacing": "0.16em"
+          }
+        },
+        "rounded": {
+          "hairline": "2px",
+          "control": "12px",
+          "panel": "16px",
+          "card": "20px",
+          "pill": "100px"
+        },
+        "spacing": {
+          "gutter": "32px",
+          "gutter-phone": "20px",
+          "wrap": "1320px",
+          "prose": "680px",
+          "section": "clamp(52px,6vw,92px)",
+          "section-sm": "clamp(40px,4.6vw,68px)"
+        },
+        "components": {
+          "button-primary": {
+            "backgroundColor": "{colors.red}",
+            "textColor": "{colors.ink}",
+            "typography": "{typography.button}",
+            "rounded": "{rounded.pill}",
+            "padding": "17px 30px"
+          },
+          "button-primary-hover": {
+            "backgroundColor": "{colors.red-deep}"
+          },
+          "button-light": {
+            "backgroundColor": "{colors.ink}",
+            "textColor": "{colors.navy}",
+            "typography": "{typography.button}",
+            "rounded": "{rounded.pill}",
+            "padding": "17px 30px"
+          },
+          "button-outline": {
+            "backgroundColor": "transparent",
+            "textColor": "{colors.ink}",
+            "typography": "{typography.button}",
+            "rounded": "{rounded.pill}",
+            "padding": "17px 30px"
+          },
+          "button-outline-hover": {
+            "backgroundColor": "{colors.ink}",
+            "textColor": "{colors.navy}"
+          },
+          "card": {
+            "backgroundColor": "{colors.panel}",
+            "textColor": "{colors.ink}",
+            "rounded": "{rounded.card}",
+            "padding": "32px 30px"
+          },
+          "callout": {
+            "backgroundColor": "{colors.panel}",
+            "textColor": "{colors.ink}",
+            "rounded": "{rounded.panel}",
+            "padding": "26px 28px"
+          },
+          "input": {
+            "backgroundColor": "{colors.panel}",
+            "textColor": "{colors.ink}",
+            "rounded": "{rounded.control}",
+            "padding": "14px 16px",
+            "height": "50px"
+          },
+          "nav-link": {
+            "textColor": "{colors.navy}",
+            "rounded": "{rounded.pill}",
+            "padding": "9px 15px"
+          },
+          "nav-link-active": {
+            "backgroundColor": "{colors.header-panel}",
+            "textColor": "{colors.red}"
+          },
+          "mark-pill": {
+            "backgroundColor": "{colors.red}",
+            "textColor": "{colors.ink}",
+            "typography": "{typography.label}",
+            "rounded": "{rounded.pill}",
+            "padding": "5px 10px"
+          }
+        }
+      },
+      "node_kind": "page",
+      "norm_label": "design.md",
+      "source_file": "DESIGN.md",
+      "source_location": "L1"
     },
     {
-      "id": "agents_skills_design_taste_frontend_skill_design_variance_level_1_10",
-      "label": "DESIGN_VARIANCE (Level 1-10)",
+      "id": "design_buttons",
+      "label": "Buttons",
       "_origin": "ast",
       "community": 112,
-      "community_name": "7. DIAL DEFINITIONS (Technical Reference)",
+      "community_name": "Design System: Romica Tie Group",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "design_variance (level 1-10)",
-      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
-      "source_location": "L554"
+      "norm_label": "buttons",
+      "source_file": "DESIGN.md",
+      "source_location": "L235"
     },
     {
-      "id": "agents_skills_design_taste_frontend_skill_motion_intensity_level_1_10",
-      "label": "MOTION_INTENSITY (Level 1-10)",
+      "id": "design_cards_containers",
+      "label": "Cards / Containers",
       "_origin": "ast",
       "community": 112,
-      "community_name": "7. DIAL DEFINITIONS (Technical Reference)",
+      "community_name": "Design System: Romica Tie Group",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "motion_intensity (level 1-10)",
-      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
-      "source_location": "L560"
+      "norm_label": "cards / containers",
+      "source_file": "DESIGN.md",
+      "source_location": "L244"
     },
     {
-      "id": "agents_skills_design_taste_frontend_skill_visual_density_level_1_10",
-      "label": "VISUAL_DENSITY (Level 1-10)",
+      "id": "design_colors",
+      "label": "Colors",
       "_origin": "ast",
       "community": 112,
-      "community_name": "7. DIAL DEFINITIONS (Technical Reference)",
+      "community_name": "Design System: Romica Tie Group",
       "file_type": "document",
       "node_kind": "heading",
-      "norm_label": "visual_density (level 1-10)",
-      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
-      "source_location": "L565"
+      "norm_label": "colors",
+      "source_file": "DESIGN.md",
+      "source_location": "L157"
+    },
+    {
+      "id": "design_components",
+      "label": "Components",
+      "_origin": "ast",
+      "community": 112,
+      "community_name": "Design System: Romica Tie Group",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "components",
+      "source_file": "DESIGN.md",
+      "source_location": "L233"
+    },
+    {
+      "id": "design_design_system_romica_tie_group",
+      "label": "Design System: Romica Tie Group",
+      "_origin": "ast",
+      "community": 112,
+      "community_name": "Design System: Romica Tie Group",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "design system: romica tie group",
+      "source_file": "DESIGN.md",
+      "source_location": "L137"
+    },
+    {
+      "id": "design_do",
+      "label": "Do:",
+      "_origin": "ast",
+      "community": 112,
+      "community_name": "Design System: Romica Tie Group",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "do:",
+      "source_file": "DESIGN.md",
+      "source_location": "L274"
+    },
+    {
+      "id": "design_do_s_and_don_ts",
+      "label": "Do's and Don'ts",
+      "_origin": "ast",
+      "community": 112,
+      "community_name": "Design System: Romica Tie Group",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "do's and don'ts",
+      "source_file": "DESIGN.md",
+      "source_location": "L272"
+    },
+    {
+      "id": "design_don_t",
+      "label": "Don't:",
+      "_origin": "ast",
+      "community": 112,
+      "community_name": "Design System: Romica Tie Group",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "don't:",
+      "source_file": "DESIGN.md",
+      "source_location": "L285"
+    },
+    {
+      "id": "design_elevation_depth",
+      "label": "Elevation & Depth",
+      "_origin": "ast",
+      "community": 112,
+      "community_name": "Design System: Romica Tie Group",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "elevation & depth",
+      "source_file": "DESIGN.md",
+      "source_location": "L219"
+    },
+    {
+      "id": "design_hierarchy",
+      "label": "Hierarchy",
+      "_origin": "ast",
+      "community": 112,
+      "community_name": "Design System: Romica Tie Group",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "hierarchy",
+      "source_file": "DESIGN.md",
+      "source_location": "L192"
+    },
+    {
+      "id": "design_index_rows",
+      "label": "Index Rows",
+      "_origin": "ast",
+      "community": 112,
+      "community_name": "Design System: Romica Tie Group",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "index rows",
+      "source_file": "DESIGN.md",
+      "source_location": "L263"
+    },
+    {
+      "id": "design_inputs_fields",
+      "label": "Inputs / Fields",
+      "_origin": "ast",
+      "community": 112,
+      "community_name": "Design System: Romica Tie Group",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "inputs / fields",
+      "source_file": "DESIGN.md",
+      "source_location": "L252"
+    },
+    {
+      "id": "design_layout",
+      "label": "Layout",
+      "_origin": "ast",
+      "community": 112,
+      "community_name": "Design System: Romica Tie Group",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "layout",
+      "source_file": "DESIGN.md",
+      "source_location": "L209"
+    },
+    {
+      "id": "design_named_rules",
+      "label": "Named Rules",
+      "_origin": "ast",
+      "community": 112,
+      "community_name": "Design System: Romica Tie Group",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "named rules",
+      "source_file": "DESIGN.md",
+      "source_location": "L177"
+    },
+    {
+      "id": "design_named_rules_202",
+      "label": "Named Rules",
+      "_origin": "ast",
+      "community": 112,
+      "community_name": "Design System: Romica Tie Group",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "named rules",
+      "source_file": "DESIGN.md",
+      "source_location": "L202"
+    },
+    {
+      "id": "design_navigation",
+      "label": "Navigation",
+      "_origin": "ast",
+      "community": 112,
+      "community_name": "Design System: Romica Tie Group",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "navigation",
+      "source_file": "DESIGN.md",
+      "source_location": "L258"
+    },
+    {
+      "id": "design_neutral_above_the_water",
+      "label": "Neutral: above the water",
+      "_origin": "ast",
+      "community": 112,
+      "community_name": "Design System: Romica Tie Group",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "neutral: above the water",
+      "source_file": "DESIGN.md",
+      "source_location": "L174"
+    },
+    {
+      "id": "design_neutral_the_water",
+      "label": "Neutral: the water",
+      "_origin": "ast",
+      "community": 112,
+      "community_name": "Design System: Romica Tie Group",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "neutral: the water",
+      "source_file": "DESIGN.md",
+      "source_location": "L165"
+    },
+    {
+      "id": "design_overview",
+      "label": "Overview",
+      "_origin": "ast",
+      "community": 112,
+      "community_name": "Design System: Romica Tie Group",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "overview",
+      "source_file": "DESIGN.md",
+      "source_location": "L139"
+    },
+    {
+      "id": "design_primary",
+      "label": "Primary",
+      "_origin": "ast",
+      "community": 112,
+      "community_name": "Design System: Romica Tie Group",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "primary",
+      "source_file": "DESIGN.md",
+      "source_location": "L161"
+    },
+    {
+      "id": "design_shapes",
+      "label": "Shapes",
+      "_origin": "ast",
+      "community": 112,
+      "community_name": "Design System: Romica Tie Group",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "shapes",
+      "source_file": "DESIGN.md",
+      "source_location": "L227"
+    },
+    {
+      "id": "design_the_hoist_line_and_spine_homepage_signature",
+      "label": "The hoist line and spine (homepage signature)",
+      "_origin": "ast",
+      "community": 112,
+      "community_name": "Design System: Romica Tie Group",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "the hoist line and spine (homepage signature)",
+      "source_file": "DESIGN.md",
+      "source_location": "L269"
+    },
+    {
+      "id": "design_typography",
+      "label": "Typography",
+      "_origin": "ast",
+      "community": 112,
+      "community_name": "Design System: Romica Tie Group",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "typography",
+      "source_file": "DESIGN.md",
+      "source_location": "L184"
+    },
+    {
+      "id": "design_waterline_signature",
+      "label": "Waterline (signature)",
+      "_origin": "ast",
+      "community": 112,
+      "community_name": "Design System: Romica Tie Group",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "waterline (signature)",
+      "source_file": "DESIGN.md",
+      "source_location": "L266"
     },
     {
       "id": "impeccable_critique_2026_10_13t10_00_11z_src_pages_index_astro",
@@ -5242,125 +5653,81 @@
       "source_location": "L38"
     },
     {
-      "id": "package_scripts",
-      "label": "scripts",
+      "id": "src_data_pages_extra",
+      "label": "pages-extra.ts",
       "_origin": "ast",
       "community": 134,
-      "community_name": "scripts",
+      "community_name": "page.ts",
       "file_type": "code",
-      "norm_label": "scripts",
-      "source_file": "package.json",
-      "source_location": "L7"
+      "norm_label": "pages-extra.ts",
+      "source_file": "src/data/pages-extra.ts",
+      "source_location": "L1"
     },
     {
-      "id": "package_scripts_audit",
-      "label": "audit",
+      "id": "src_data_pages_extra_off_map_ids",
+      "label": "OFF_MAP_IDS",
       "_origin": "ast",
       "community": 134,
-      "community_name": "scripts",
+      "community_name": "page.ts",
       "file_type": "code",
-      "norm_label": "audit",
-      "source_file": "package.json",
-      "source_location": "L17"
+      "norm_label": "off_map_ids",
+      "source_file": "src/data/pages-extra.ts",
+      "source_location": "L33"
     },
     {
-      "id": "package_scripts_audit_protection",
-      "label": "audit:protection",
+      "id": "src_data_pages_extra_off_map_pages",
+      "label": "OFF_MAP_PAGES",
       "_origin": "ast",
       "community": 134,
-      "community_name": "scripts",
+      "community_name": "page.ts",
       "file_type": "code",
-      "norm_label": "audit:protection",
-      "source_file": "package.json",
-      "source_location": "L15"
-    },
-    {
-      "id": "package_scripts_audit_seo",
-      "label": "audit:seo",
-      "_origin": "ast",
-      "community": 134,
-      "community_name": "scripts",
-      "file_type": "code",
-      "norm_label": "audit:seo",
-      "source_file": "package.json",
-      "source_location": "L14"
-    },
-    {
-      "id": "package_scripts_build",
-      "label": "build",
-      "_origin": "ast",
-      "community": 134,
-      "community_name": "scripts",
-      "file_type": "code",
-      "norm_label": "build",
-      "source_file": "package.json",
-      "source_location": "L9"
-    },
-    {
-      "id": "package_scripts_check",
-      "label": "check",
-      "_origin": "ast",
-      "community": 134,
-      "community_name": "scripts",
-      "file_type": "code",
-      "norm_label": "check",
-      "source_file": "package.json",
-      "source_location": "L11"
-    },
-    {
-      "id": "package_scripts_dev",
-      "label": "dev",
-      "_origin": "ast",
-      "community": 134,
-      "community_name": "scripts",
-      "file_type": "code",
-      "norm_label": "dev",
-      "source_file": "package.json",
+      "norm_label": "off_map_pages",
+      "source_file": "src/data/pages-extra.ts",
       "source_location": "L8"
     },
     {
-      "id": "package_scripts_equipment",
-      "label": "equipment",
+      "id": "src_lib_page",
+      "label": "page.ts",
       "_origin": "ast",
       "community": 134,
-      "community_name": "scripts",
+      "community_name": "page.ts",
       "file_type": "code",
-      "norm_label": "equipment",
-      "source_file": "package.json",
-      "source_location": "L13"
+      "norm_label": "page.ts",
+      "source_file": "src/lib/page.ts",
+      "source_location": "L1"
     },
     {
-      "id": "package_scripts_pagemap",
-      "label": "pagemap",
+      "id": "src_lib_page_by_id",
+      "label": "BY_ID",
       "_origin": "ast",
       "community": 134,
-      "community_name": "scripts",
+      "community_name": "page.ts",
       "file_type": "code",
-      "norm_label": "pagemap",
-      "source_file": "package.json",
-      "source_location": "L12"
+      "norm_label": "by_id",
+      "source_file": "src/lib/page.ts",
+      "source_location": "L9"
     },
     {
-      "id": "package_scripts_preview",
-      "label": "preview",
+      "id": "src_pages_404",
+      "label": "404.astro",
       "_origin": "ast",
       "community": 134,
-      "community_name": "scripts",
+      "community_name": "page.ts",
       "file_type": "code",
-      "norm_label": "preview",
-      "source_file": "package.json",
-      "source_location": "L10"
+      "norm_label": "404.astro",
+      "source_file": "src/pages/404.astro",
+      "source_location": "L1"
     },
     {
-      "id": "package_scripts_strip_exif",
-      "label": "strip-exif",
+      "id": "src_pages_404_p",
+      "label": "{ p }",
       "_origin": "ast",
       "community": 134,
-      "community_name": "scripts",
+      "community_name": "page.ts",
       "file_type": "code",
-      "norm_label": "strip-exif",
-      "source_file": "package.json",
-      "source_location": "L16"
+      "norm_label": "{ p }",
+      "source_file": "src/pages/404.astro",
+      "source_location": "L8"
     },
     {
       "id": "astro_config",
@@ -5440,81 +5807,15 @@
       "source_location": "L21"
     },
     {
-      "id": "package_dependencies",
-      "label": "dependencies",
+      "id": "src_lib_seo",
+      "label": "seo.ts",
       "_origin": "ast",
       "community": 136,
-      "community_name": "dependencies",
+      "community_name": "seo.ts",
       "file_type": "code",
-      "norm_label": "dependencies",
-      "source_file": "package.json",
-      "source_location": "L19"
-    },
-    {
-      "id": "package_dependencies_astro",
-      "label": "astro",
-      "_origin": "ast",
-      "community": 136,
-      "community_name": "dependencies",
-      "file_type": "code",
-      "norm_label": "astro",
-      "source_file": "package.json",
-      "source_location": "L25"
-    },
-    {
-      "id": "package_dependencies_astrojs_mdx",
-      "label": "@astrojs/mdx",
-      "_origin": "ast",
-      "community": 136,
-      "community_name": "dependencies",
-      "file_type": "code",
-      "norm_label": "@astrojs/mdx",
-      "source_file": "package.json",
-      "source_location": "L20"
-    },
-    {
-      "id": "package_dependencies_astrojs_sitemap",
-      "label": "@astrojs/sitemap",
-      "_origin": "ast",
-      "community": 136,
-      "community_name": "dependencies",
-      "file_type": "code",
-      "norm_label": "@astrojs/sitemap",
-      "source_file": "package.json",
-      "source_location": "L21"
-    },
-    {
-      "id": "package_dependencies_fontsource_jetbrains_mono",
-      "label": "@fontsource/jetbrains-mono",
-      "_origin": "ast",
-      "community": 136,
-      "community_name": "dependencies",
-      "file_type": "code",
-      "norm_label": "@fontsource/jetbrains-mono",
-      "source_file": "package.json",
-      "source_location": "L24"
-    },
-    {
-      "id": "package_dependencies_fontsource_variable_archivo",
-      "label": "@fontsource-variable/archivo",
-      "_origin": "ast",
-      "community": 136,
-      "community_name": "dependencies",
-      "file_type": "code",
-      "norm_label": "@fontsource-variable/archivo",
-      "source_file": "package.json",
-      "source_location": "L22"
-    },
-    {
-      "id": "package_dependencies_fontsource_variable_inter",
-      "label": "@fontsource-variable/inter",
-      "_origin": "ast",
-      "community": 136,
-      "community_name": "dependencies",
-      "file_type": "code",
-      "norm_label": "@fontsource-variable/inter",
-      "source_file": "package.json",
-      "source_location": "L23"
+      "norm_label": "seo.ts",
+      "source_file": "src/lib/seo.ts",
+      "source_location": "L1"
     },
     {
       "id": "src_lib_forms",
@@ -5539,48 +5840,52 @@
       "source_location": "L100"
     },
     {
-      "id": "package_devdependencies",
-      "label": "devDependencies",
+      "id": "agents_skills_design_taste_frontend_skill_1_a_dial_inference_design_read_dial_values",
+      "label": "1.A Dial Inference (design read \u2192 dial values)",
       "_origin": "ast",
       "community": 138,
-      "community_name": "devDependencies",
-      "file_type": "code",
-      "norm_label": "devdependencies",
-      "source_file": "package.json",
-      "source_location": "L27"
+      "community_name": "1. THE THREE DIALS (Core Configuration)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "1.a dial inference (design read \u2192 dial values)",
+      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
+      "source_location": "L53"
     },
     {
-      "id": "package_devdependencies_astrojs_check",
-      "label": "@astrojs/check",
+      "id": "agents_skills_design_taste_frontend_skill_1_b_use_case_presets",
+      "label": "1.B Use-Case Presets",
       "_origin": "ast",
       "community": 138,
-      "community_name": "devDependencies",
-      "file_type": "code",
-      "norm_label": "@astrojs/check",
-      "source_file": "package.json",
-      "source_location": "L28"
+      "community_name": "1. THE THREE DIALS (Core Configuration)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "1.b use-case presets",
+      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
+      "source_location": "L64"
     },
     {
-      "id": "package_devdependencies_typescript",
-      "label": "typescript",
+      "id": "agents_skills_design_taste_frontend_skill_1_c_how_the_dials_drive_output",
+      "label": "1.C How the Dials Drive Output",
       "_origin": "ast",
       "community": 138,
-      "community_name": "devDependencies",
-      "file_type": "code",
-      "norm_label": "typescript",
-      "source_file": "package.json",
-      "source_location": "L29"
+      "community_name": "1. THE THREE DIALS (Core Configuration)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "1.c how the dials drive output",
+      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
+      "source_location": "L77"
     },
     {
-      "id": "package_devdependencies_xlsx",
-      "label": "xlsx",
+      "id": "agents_skills_design_taste_frontend_skill_1_the_three_dials_core_configuration",
+      "label": "1. THE THREE DIALS (Core Configuration)",
       "_origin": "ast",
       "community": 138,
-      "community_name": "devDependencies",
-      "file_type": "code",
-      "norm_label": "xlsx",
-      "source_file": "package.json",
-      "source_location": "L30"
+      "community_name": "1. THE THREE DIALS (Core Configuration)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "1. the three dials (core configuration)",
+      "source_file": ".agents/skills/design-taste-frontend/SKILL.md",
+      "source_location": "L43"
     },
     {
       "id": "src_components_blocks_formfield",
@@ -5724,6 +6029,17 @@
       "norm_label": "warns",
       "source_file": "scripts/audit-seo.mjs",
       "source_location": "L12"
+    },
+    {
+      "id": "src_lib_hoist",
+      "label": "hoist.ts",
+      "_origin": "ast",
+      "community": 140,
+      "community_name": "hoist.ts",
+      "file_type": "code",
+      "norm_label": "hoist.ts",
+      "source_file": "src/lib/hoist.ts",
+      "source_location": "L1"
     },
     {
       "id": "src_lib_motion",
@@ -9859,6 +10175,83 @@
       "source_location": "L1"
     },
     {
+      "id": "package_dependencies",
+      "label": "dependencies",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "dependencies",
+      "source_file": "package.json",
+      "source_location": "L19"
+    },
+    {
+      "id": "package_dependencies_astro",
+      "label": "astro",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "astro",
+      "source_file": "package.json",
+      "source_location": "L25"
+    },
+    {
+      "id": "package_dependencies_astrojs_mdx",
+      "label": "@astrojs/mdx",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "@astrojs/mdx",
+      "source_file": "package.json",
+      "source_location": "L20"
+    },
+    {
+      "id": "package_dependencies_astrojs_sitemap",
+      "label": "@astrojs/sitemap",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "@astrojs/sitemap",
+      "source_file": "package.json",
+      "source_location": "L21"
+    },
+    {
+      "id": "package_dependencies_fontsource_jetbrains_mono",
+      "label": "@fontsource/jetbrains-mono",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "@fontsource/jetbrains-mono",
+      "source_file": "package.json",
+      "source_location": "L24"
+    },
+    {
+      "id": "package_dependencies_fontsource_variable_archivo",
+      "label": "@fontsource-variable/archivo",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "@fontsource-variable/archivo",
+      "source_file": "package.json",
+      "source_location": "L22"
+    },
+    {
+      "id": "package_dependencies_fontsource_variable_inter",
+      "label": "@fontsource-variable/inter",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "@fontsource-variable/inter",
+      "source_file": "package.json",
+      "source_location": "L23"
+    },
+    {
       "id": "package_description",
       "label": "description",
       "_origin": "ast",
@@ -9868,6 +10261,50 @@
       "norm_label": "description",
       "source_file": "package.json",
       "source_location": "L6"
+    },
+    {
+      "id": "package_devdependencies",
+      "label": "devDependencies",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "devdependencies",
+      "source_file": "package.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "package_devdependencies_astrojs_check",
+      "label": "@astrojs/check",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "@astrojs/check",
+      "source_file": "package.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "package_devdependencies_typescript",
+      "label": "typescript",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "typescript",
+      "source_file": "package.json",
+      "source_location": "L29"
+    },
+    {
+      "id": "package_devdependencies_xlsx",
+      "label": "xlsx",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "xlsx",
+      "source_file": "package.json",
+      "source_location": "L30"
     },
     {
       "id": "package_name",
@@ -9890,6 +10327,127 @@
       "norm_label": "private",
       "source_file": "package.json",
       "source_location": "L4"
+    },
+    {
+      "id": "package_scripts",
+      "label": "scripts",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "scripts",
+      "source_file": "package.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "package_scripts_audit",
+      "label": "audit",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "audit",
+      "source_file": "package.json",
+      "source_location": "L17"
+    },
+    {
+      "id": "package_scripts_audit_protection",
+      "label": "audit:protection",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "audit:protection",
+      "source_file": "package.json",
+      "source_location": "L15"
+    },
+    {
+      "id": "package_scripts_audit_seo",
+      "label": "audit:seo",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "audit:seo",
+      "source_file": "package.json",
+      "source_location": "L14"
+    },
+    {
+      "id": "package_scripts_build",
+      "label": "build",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "build",
+      "source_file": "package.json",
+      "source_location": "L9"
+    },
+    {
+      "id": "package_scripts_check",
+      "label": "check",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "check",
+      "source_file": "package.json",
+      "source_location": "L11"
+    },
+    {
+      "id": "package_scripts_dev",
+      "label": "dev",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "dev",
+      "source_file": "package.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "package_scripts_equipment",
+      "label": "equipment",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "equipment",
+      "source_file": "package.json",
+      "source_location": "L13"
+    },
+    {
+      "id": "package_scripts_pagemap",
+      "label": "pagemap",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "pagemap",
+      "source_file": "package.json",
+      "source_location": "L12"
+    },
+    {
+      "id": "package_scripts_preview",
+      "label": "preview",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "preview",
+      "source_file": "package.json",
+      "source_location": "L10"
+    },
+    {
+      "id": "package_scripts_strip_exif",
+      "label": "strip-exif",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "strip-exif",
+      "source_file": "package.json",
+      "source_location": "L16"
     },
     {
       "id": "package_type",
@@ -10332,17 +10890,6 @@
       "norm_label": "p-04.mdx",
       "source_file": "src/content/pages/p-04.mdx",
       "source_location": "L1"
-    },
-    {
-      "id": "astro_assets",
-      "label": "astro:assets",
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "home.ts",
-      "confidence": "EXTRACTED",
-      "file_type": "code",
-      "norm_label": "astro:assets",
-      "source_file": "astro:assets"
     },
     {
       "id": "src_components_home_conditions",
@@ -11896,6 +12443,17 @@
       "source_location": "L155"
     },
     {
+      "id": "astro_assets",
+      "label": "astro:assets",
+      "_origin": "ast",
+      "community": 90,
+      "community_name": "ImageSlot.astro",
+      "confidence": "EXTRACTED",
+      "file_type": "code",
+      "norm_label": "astro:assets",
+      "source_file": "astro:assets"
+    },
+    {
       "id": "src_components_blocks_compareslot",
       "label": "CompareSlot.astro",
       "_origin": "ast",
@@ -12171,39 +12729,6 @@
       "source_file": "@fontsource-variable/archivo/wght.css"
     },
     {
-      "id": "src_data_pages_extra",
-      "label": "pages-extra.ts",
-      "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
-      "file_type": "code",
-      "norm_label": "pages-extra.ts",
-      "source_file": "src/data/pages-extra.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_data_pages_extra_off_map_ids",
-      "label": "OFF_MAP_IDS",
-      "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
-      "file_type": "code",
-      "norm_label": "off_map_ids",
-      "source_file": "src/data/pages-extra.ts",
-      "source_location": "L33"
-    },
-    {
-      "id": "src_data_pages_extra_off_map_pages",
-      "label": "OFF_MAP_PAGES",
-      "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
-      "file_type": "code",
-      "norm_label": "off_map_pages",
-      "source_file": "src/data/pages-extra.ts",
-      "source_location": "L8"
-    },
-    {
       "id": "src_layouts_base",
       "label": "Base.astro",
       "_origin": "ast",
@@ -12268,72 +12793,6 @@
       "norm_label": "unfinished",
       "source_file": "src/lib/content.ts",
       "source_location": "L16"
-    },
-    {
-      "id": "src_lib_hoist",
-      "label": "hoist.ts",
-      "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
-      "file_type": "code",
-      "norm_label": "hoist.ts",
-      "source_file": "src/lib/hoist.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_lib_page",
-      "label": "page.ts",
-      "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
-      "file_type": "code",
-      "norm_label": "page.ts",
-      "source_file": "src/lib/page.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_lib_page_by_id",
-      "label": "BY_ID",
-      "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
-      "file_type": "code",
-      "norm_label": "by_id",
-      "source_file": "src/lib/page.ts",
-      "source_location": "L9"
-    },
-    {
-      "id": "src_lib_seo",
-      "label": "seo.ts",
-      "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
-      "file_type": "code",
-      "norm_label": "seo.ts",
-      "source_file": "src/lib/seo.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_pages_404",
-      "label": "404.astro",
-      "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
-      "file_type": "code",
-      "norm_label": "404.astro",
-      "source_file": "src/pages/404.astro",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_pages_404_p",
-      "label": "{ p }",
-      "_origin": "ast",
-      "community": 96,
-      "community_name": "Base.astro",
-      "file_type": "code",
-      "norm_label": "{ p }",
-      "source_file": "src/pages/404.astro",
-      "source_location": "L8"
     },
     {
       "id": "agents_skills_design_taste_frontend_skill",
@@ -13768,6 +14227,18 @@
       "type": "external"
     },
     {
+      "id": "ref_astro_assets",
+      "label": "ref_astro_assets",
+      "_origin": "semantic",
+      "community": 7,
+      "community_name": "home.ts",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "ref_astro_assets",
+      "source_file": "",
+      "type": "external"
+    },
+    {
       "id": "src_assets_home_home_fleet_vessel",
       "label": "src_assets_home_home_fleet_vessel",
       "_origin": "semantic",
@@ -14004,17 +14475,6 @@
       "external": true,
       "file_type": "concept",
       "norm_label": "src_styles_tokens",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "ref_astro_assets",
-      "label": "ref_astro_assets",
-      "community": 7,
-      "community_name": "home.ts",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "ref_astro_assets",
       "source_file": "",
       "type": "external"
     }
@@ -23532,6 +23992,270 @@
       "weight": 1.0
     },
     {
+      "source": "design",
+      "target": "design_design_system_romica_tie_group",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "DESIGN.md",
+      "source_location": "L137",
+      "weight": 1.0
+    },
+    {
+      "source": "design_colors",
+      "target": "design_primary",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "DESIGN.md",
+      "source_location": "L161",
+      "weight": 1.0
+    },
+    {
+      "source": "design_colors",
+      "target": "design_neutral_the_water",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "DESIGN.md",
+      "source_location": "L165",
+      "weight": 1.0
+    },
+    {
+      "source": "design_colors",
+      "target": "design_neutral_above_the_water",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "DESIGN.md",
+      "source_location": "L174",
+      "weight": 1.0
+    },
+    {
+      "source": "design_colors",
+      "target": "design_named_rules",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "DESIGN.md",
+      "source_location": "L177",
+      "weight": 1.0
+    },
+    {
+      "source": "design_components",
+      "target": "design_buttons",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "DESIGN.md",
+      "source_location": "L235",
+      "weight": 1.0
+    },
+    {
+      "source": "design_components",
+      "target": "design_cards_containers",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "DESIGN.md",
+      "source_location": "L244",
+      "weight": 1.0
+    },
+    {
+      "source": "design_components",
+      "target": "design_inputs_fields",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "DESIGN.md",
+      "source_location": "L252",
+      "weight": 1.0
+    },
+    {
+      "source": "design_components",
+      "target": "design_navigation",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "DESIGN.md",
+      "source_location": "L258",
+      "weight": 1.0
+    },
+    {
+      "source": "design_components",
+      "target": "design_index_rows",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "DESIGN.md",
+      "source_location": "L263",
+      "weight": 1.0
+    },
+    {
+      "source": "design_components",
+      "target": "design_waterline_signature",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "DESIGN.md",
+      "source_location": "L266",
+      "weight": 1.0
+    },
+    {
+      "source": "design_components",
+      "target": "design_the_hoist_line_and_spine_homepage_signature",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "DESIGN.md",
+      "source_location": "L269",
+      "weight": 1.0
+    },
+    {
+      "source": "design_design_system_romica_tie_group",
+      "target": "design_overview",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "DESIGN.md",
+      "source_location": "L139",
+      "weight": 1.0
+    },
+    {
+      "source": "design_design_system_romica_tie_group",
+      "target": "design_colors",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "DESIGN.md",
+      "source_location": "L157",
+      "weight": 1.0
+    },
+    {
+      "source": "design_design_system_romica_tie_group",
+      "target": "design_typography",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "DESIGN.md",
+      "source_location": "L184",
+      "weight": 1.0
+    },
+    {
+      "source": "design_design_system_romica_tie_group",
+      "target": "design_layout",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "DESIGN.md",
+      "source_location": "L209",
+      "weight": 1.0
+    },
+    {
+      "source": "design_design_system_romica_tie_group",
+      "target": "design_elevation_depth",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "DESIGN.md",
+      "source_location": "L219",
+      "weight": 1.0
+    },
+    {
+      "source": "design_design_system_romica_tie_group",
+      "target": "design_shapes",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "DESIGN.md",
+      "source_location": "L227",
+      "weight": 1.0
+    },
+    {
+      "source": "design_design_system_romica_tie_group",
+      "target": "design_components",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "DESIGN.md",
+      "source_location": "L233",
+      "weight": 1.0
+    },
+    {
+      "source": "design_design_system_romica_tie_group",
+      "target": "design_do_s_and_don_ts",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "DESIGN.md",
+      "source_location": "L272",
+      "weight": 1.0
+    },
+    {
+      "source": "design_do_s_and_don_ts",
+      "target": "design_do",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "DESIGN.md",
+      "source_location": "L274",
+      "weight": 1.0
+    },
+    {
+      "source": "design_do_s_and_don_ts",
+      "target": "design_don_t",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "DESIGN.md",
+      "source_location": "L285",
+      "weight": 1.0
+    },
+    {
+      "source": "design_typography",
+      "target": "design_hierarchy",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "DESIGN.md",
+      "source_location": "L192",
+      "weight": 1.0
+    },
+    {
+      "source": "design_typography",
+      "target": "design_named_rules_202",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "DESIGN.md",
+      "source_location": "L202",
+      "weight": 1.0
+    },
+    {
       "source": "docs_audit_2026_10_29_about_contact_legal",
       "target": "docs_audit_2026_10_29_about_contact_legal_audit_about_contact_forms_legal_404_14_pages",
       "relation": "contains",
@@ -24798,7 +25522,7 @@
     },
     {
       "source": "docs_handoff",
-      "target": "docs_handoff_handoff_audit_fixes_state_at_2026_11_03",
+      "target": "docs_handoff_handoff_audit_fixes_and_homepage_redesign_state_at_2026_11_04",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -24808,80 +25532,80 @@
       "weight": 1.0
     },
     {
-      "source": "docs_handoff_handoff_audit_fixes_state_at_2026_11_03",
+      "source": "docs_handoff_handoff_audit_fixes_and_homepage_redesign_state_at_2026_11_04",
       "target": "docs_handoff_done_on_2026_11_03",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/HANDOFF.md",
-      "source_location": "L18",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
-      "source": "docs_handoff_handoff_audit_fixes_state_at_2026_11_03",
-      "target": "docs_handoff_next_big_job_remove_the_3d_redesign_the_homepage_layout",
+      "source": "docs_handoff_handoff_audit_fixes_and_homepage_redesign_state_at_2026_11_04",
+      "target": "docs_handoff_done_on_2026_11_04_3d_removed_homepage_redesigned",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/HANDOFF.md",
-      "source_location": "L28",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
-      "source": "docs_handoff_handoff_audit_fixes_state_at_2026_11_03",
+      "source": "docs_handoff_handoff_audit_fixes_and_homepage_redesign_state_at_2026_11_04",
       "target": "docs_handoff_still_to_do_in_code_b_items_medium",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/HANDOFF.md",
-      "source_location": "L52",
+      "source_location": "L48",
       "weight": 1.0
     },
     {
-      "source": "docs_handoff_handoff_audit_fixes_state_at_2026_11_03",
-      "target": "docs_handoff_where_things_are",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "docs/HANDOFF.md",
-      "source_location": "L6",
-      "weight": 1.0
-    },
-    {
-      "source": "docs_handoff_handoff_audit_fixes_state_at_2026_11_03",
+      "source": "docs_handoff_handoff_audit_fixes_and_homepage_redesign_state_at_2026_11_04",
       "target": "docs_handoff_do_not_touch_without_rtg_the_owner_a_items",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/HANDOFF.md",
-      "source_location": "L69",
+      "source_location": "L65",
       "weight": 1.0
     },
     {
-      "source": "docs_handoff_handoff_audit_fixes_state_at_2026_11_03",
+      "source": "docs_handoff_handoff_audit_fixes_and_homepage_redesign_state_at_2026_11_04",
+      "target": "docs_handoff_where_things_are",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/HANDOFF.md",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "docs_handoff_handoff_audit_fixes_and_homepage_redesign_state_at_2026_11_04",
       "target": "docs_handoff_how_the_fixes_were_checked",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/HANDOFF.md",
-      "source_location": "L79",
+      "source_location": "L75",
       "weight": 1.0
     },
     {
-      "source": "docs_handoff_handoff_audit_fixes_state_at_2026_11_03",
+      "source": "docs_handoff_handoff_audit_fixes_and_homepage_redesign_state_at_2026_11_04",
       "target": "docs_handoff_open_points_for_the_user",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/HANDOFF.md",
-      "source_location": "L92",
+      "source_location": "L88",
       "weight": 1.0
     },
     {
@@ -30255,7 +30979,7 @@
       "confidence_score": 0.95,
       "context": "cta",
       "source_file": "docs/HANDOFF.md",
-      "source_location": "L26",
+      "source_location": "L27",
       "weight": 1.0
     },
     {
@@ -30308,5 +31032,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "e33e935f564e7b8d105db0921ed53cd9290c15bc"
+  "built_at_commit": "e079a49cf9701dc34c45d6616a48b7371f638eaf"
 }

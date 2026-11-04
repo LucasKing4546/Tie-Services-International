@@ -198,7 +198,7 @@ Build order follows workbook priority: **P1 earns revenue or unblocks a sale.**
 
 | Template | Pages | Status | Notes |
 |---|---|---|---|
-| `Home` | 1 | **Redesign pending** | 3D models removed on 2026-11-04 (site owner's decision); a new layout is being designed. Hero vessel and hoist line stay. |
+| `Home` | 1 | **Done** | Redesigned 2026-11-04 after the 3D was removed: the hero's hoist line carries on as a still spine down the right, every section's top rule meets it, the load rests at its foot. Contract in `.impeccable/surfaces/src-pages-index-astro.md`. |
 | `Hub` | 11 | **Done** | Section landing pages. Sectors, Equipment, Winches, Proof, Resources… |
 | `Sector` | 7 | **Done** | S-01…S-07. The market the buyer identifies with. P1. |
 | `Product` | 10 | **Done** | Equipment detail with open Tier 1 spec tables. `Product` schema. P1. |

@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-04T00:00:00Z",
+  "title": "Design System: Romica Tie Group",
+  "extensions": {
+    "colorMeta": {
+      "navy":         { "role": "primary",   "displayName": "Logo Navy",     "canonical": "#031d5b", "tonalRamp": ["oklch(15% 0.09 265)", "oklch(25% 0.12 265)", "oklch(35% 0.13 265)", "oklch(45% 0.12 265)", "oklch(55% 0.10 265)", "oklch(65% 0.08 265)", "oklch(80% 0.05 265)", "oklch(95% 0.02 265)"] },
+      "red":          { "role": "primary",   "displayName": "Signal Red",    "canonical": "#AB3241", "tonalRamp": ["oklch(15% 0.06 15)", "oklch(25% 0.09 15)", "oklch(35% 0.12 15)", "oklch(45% 0.15 15)", "oklch(51% 0.16 15)", "oklch(65% 0.13 15)", "oklch(80% 0.07 15)", "oklch(95% 0.02 15)"] },
+      "red-deep":     { "role": "primary",   "displayName": "Deep Crimson",  "canonical": "#8C2635" },
+      "sky":          { "role": "neutral",   "displayName": "Mist",          "canonical": "#DCE7EA", "tonalRamp": ["#061520", "#0D2B3B", "#1F5467", "oklch(52% 0.05 220)", "oklch(64% 0.04 215)", "oklch(76% 0.03 212)", "oklch(86% 0.02 210)", "#DCE7EA"] },
+      "sea-surface":  { "role": "neutral",   "displayName": "Teal Surface",  "canonical": "#1F5467", "tonalRamp": ["#061520", "#0D2B3B", "#1F5467", "oklch(52% 0.05 220)", "oklch(64% 0.04 215)", "oklch(76% 0.03 212)", "oklch(86% 0.02 210)", "#DCE7EA"] },
+      "sea-mid":      { "role": "neutral",   "displayName": "Mid-Water",     "canonical": "#0D2B3B" },
+      "sea-abyss":    { "role": "neutral",   "displayName": "Abyss",         "canonical": "#061520" },
+      "ink":          { "role": "neutral",   "displayName": "Foam White",    "canonical": "#FFFFFF" },
+      "ink-soft":     { "role": "neutral",   "displayName": "Kelp Grey",     "canonical": "#BFD2D8" },
+      "sky-ink":      { "role": "neutral",   "displayName": "Sky Ink",       "canonical": "#0D2B3B" },
+      "sky-ink-soft": { "role": "neutral",   "displayName": "Sky Ink Soft",  "canonical": "#3B5967" },
+      "header-muted": { "role": "neutral",   "displayName": "Header Muted",  "canonical": "#5A6478" },
+      "header-line":  { "role": "neutral",   "displayName": "Header Line",   "canonical": "#DFE3EA" },
+      "header-panel": { "role": "neutral",   "displayName": "Header Panel",  "canonical": "#F5F6F8" },
+      "rule":         { "role": "neutral",   "displayName": "Hairline",      "canonical": "rgba(220,231,234,.18)" },
+      "panel":        { "role": "neutral",   "displayName": "Glass Panel",   "canonical": "rgba(255,255,255,.055)" },
+      "panel-deep":   { "role": "neutral",   "displayName": "Deep Panel",    "canonical": "rgba(6,21,32,.35)" },
+      "line-wet":     { "role": "neutral",   "displayName": "Wet Line",      "canonical": "rgba(255,255,255,.75)" }
+    },
+    "typographyMeta": {
+      "display":  { "displayName": "Display",  "purpose": "The single h1 in each hero." },
+      "headline": { "displayName": "Headline", "purpose": "Section headings; one size down the whole homepage." },
+      "title":    { "displayName": "Title",    "purpose": "Card and sub-section headings." },
+      "figure":   { "displayName": "Figure",   "purpose": "Proof figures and stat numerals, tabular lining figures." },
+      "lede":     { "displayName": "Lede",     "purpose": "The paragraph that opens a section, max 52ch." },
+      "body":     { "displayName": "Body",     "purpose": "Running copy, max 62ch (72ch in long prose)." },
+      "button":   { "displayName": "Button",   "purpose": "Buttons, nav links and arrow links." },
+      "label":    { "displayName": "Label",    "purpose": "Small uppercase technical labels only; never above a heading." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "ease", "value": "cubic-bezier(.16,.9,.2,1)", "purpose": "Buttons, links, reveals, small state changes." },
+      { "name": "ease-heavy", "value": "cubic-bezier(.625,.05,0,1)", "purpose": "Large elements only: panels, media, index-row slides." },
+      { "name": "waves", "value": "translateX(-50%) loops, linear, 22s / 13s / 9s", "purpose": "The three waterline layers (back, mid reversed, front)." },
+      { "name": "vessel-arrival", "value": "sail-in 9s cubic-bezier(.2,.6,.2,1), then bob 5.5s ease-in-out alternate", "purpose": "Homepage hero vessel, once on load." },
+      { "name": "hoist-payout", "value": "height grows with scroll via --pay (lib/hoist.ts)", "purpose": "The hero hoist line; the only scroll-linked motion." },
+      { "name": "reveal-line", "value": "translateY(105%) to 0, 1s ease, 70ms per line", "purpose": "Masked heading reveals (.rl)." },
+      { "name": "reveal-fade", "value": "opacity + translateY(26px), .9s ease; stagger 70ms per child", "purpose": "Entrance for blocks and grids (.fu, .stag)." },
+      { "name": "button-state", "value": ".3s ease, translateY(-2px) on hover", "purpose": "Button hover." },
+      { "name": "card-state", "value": ".35s ease, translateY(-8px) on hover", "purpose": "Link card hover." }
+    ],
+    "breakpoints": [
+      { "name": "nav-collapse", "value": "1080px" },
+      { "name": "two-column", "value": "901px" },
+      { "name": "spine-gutter", "value": "820px" },
+      { "name": "gutter", "value": "700px" },
+      { "name": "phone", "value": "560px" },
+      { "name": "narrow", "value": "520px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The red pill: the main action on a page and the header CTA.",
+      "html": "<a class=\"ds-btn ds-btn-primary\" href=\"#\">Find your sector <svg viewBox=\"0 0 24 24\" width=\"1em\" height=\"1em\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M4 12h15M13 6l6 6-6 6\"/></svg></a>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;gap:12px;font-family:var(--f-d);font-weight:700;font-size:14px;letter-spacing:-.01em;padding:17px 30px;border-radius:100px;border:1.5px solid transparent;text-decoration:none;transition:background .3s var(--e),color .3s var(--e),border-color .3s var(--e),transform .3s var(--e)} .ds-btn:hover{transform:translateY(-2px)} .ds-btn:focus-visible{outline:3px solid #fff;outline-offset:3px} .ds-btn-primary{background:var(--red);color:#fff} .ds-btn-primary:hover{background:var(--red-dk)}"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Secondary action under water: hairline pill that fills with ink on hover.",
+      "html": "<a class=\"ds-btn-o\" href=\"#\">Browse equipment</a>",
+      "css": ".ds-btn-o{display:inline-flex;align-items:center;gap:12px;font-family:var(--f-d);font-weight:700;font-size:14px;letter-spacing:-.01em;padding:17px 30px;border-radius:100px;border:1.5px solid rgba(220,231,234,.18);background:transparent;color:#fff;text-decoration:none;transition:background .3s var(--e),color .3s var(--e),border-color .3s var(--e),transform .3s var(--e)} .ds-btn-o:hover{transform:translateY(-2px);border-color:#fff;background:#fff;color:var(--navy)} .ds-btn-o:focus-visible{outline:3px solid #fff;outline-offset:3px}"
+    },
+    {
+      "name": "Arrow Link",
+      "kind": "custom",
+      "description": "Inline text link with a drawn arrow; the gap opens on hover.",
+      "html": "<a class=\"ds-arw\" href=\"#\">See the sector <svg viewBox=\"0 0 24 24\" width=\"1em\" height=\"1em\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M4 12h15M13 6l6 6-6 6\"/></svg></a>",
+      "css": ".ds-arw{display:inline-flex;align-items:center;gap:9px;font-family:var(--f-d);font-weight:700;font-size:13.5px;color:#fff;text-decoration:none;transition:gap .3s var(--e)} .ds-arw:hover{gap:15px} .ds-arw:focus-visible{outline:3px solid #fff;outline-offset:3px}"
+    },
+    {
+      "name": "Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Link card on the water: glass panel, hairline, 20px radius, lifts on hover.",
+      "html": "<a class=\"ds-card\" href=\"#\"><span class=\"ds-card-n\">01</span><h3>Hydrographic survey</h3><p>Winches and LARS for multibeam and towed sensors.</p></a>",
+      "css": ".ds-card{display:flex;flex-direction:column;gap:12px;max-width:370px;padding:32px 30px;border-radius:20px;background:rgba(255,255,255,.055);border:1px solid rgba(220,231,234,.18);color:#fff;text-decoration:none;transition:background .35s var(--e),border-color .35s var(--e),transform .35s var(--e)} .ds-card:hover{transform:translateY(-8px);background:var(--red);border-color:var(--red)} .ds-card:focus-visible{outline:3px solid #fff;outline-offset:3px} .ds-card-n{font-family:var(--f-d);font-weight:800;font-size:44px;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums} .ds-card h3{margin:0;font-family:var(--f-d);font-weight:800;font-size:29px;letter-spacing:-.03em;line-height:1.12} .ds-card p{margin:0;font-size:14.5px;color:rgba(255,255,255,.86)}"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Form control on the water: glass fill, 1.5px border at about 4:1, 12px radius.",
+      "html": "<label class=\"ds-field\"><span>WORKING LOAD</span><input type=\"text\" placeholder=\"e.g. 10 t\"></label>",
+      "css": ".ds-field{display:flex;flex-direction:column;gap:8px;max-width:320px} .ds-field span{font-family:var(--f-m);font-size:11.5px;letter-spacing:.1em;color:#fff;font-weight:500} .ds-field input{font-family:var(--f-b);font-size:16px;padding:14px 16px;min-height:50px;border:1.5px solid color-mix(in srgb,#BFD2D8 60%,transparent);border-radius:12px;background:rgba(255,255,255,.055);color:#fff;transition:border-color .2s,background .2s} .ds-field input:hover{border-color:#fff} .ds-field input:focus-visible{outline:2px solid #fff;outline-offset:2px;border-color:#fff}"
+    },
+    {
+      "name": "Header Navigation",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "The light mist bar, on every page: navy pill links, red pill CTA.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#\">Sectors</a><a href=\"#\" aria-current=\"page\">Equipment</a><a href=\"#\">Manufacturing</a><a class=\"ds-nav-cta\" href=\"#\">Contact</a></nav>",
+      "css": ".ds-nav{display:flex;align-items:center;gap:4px;padding:12px 16px;background:color-mix(in srgb,#DCE7EA 90%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid #DFE3EA} .ds-nav a{font-family:var(--f-d);font-weight:600;font-size:14px;letter-spacing:-.01em;padding:9px 15px;border-radius:100px;color:#031d5b;text-decoration:none;transition:background .25s,color .25s} .ds-nav a:hover{background:#F5F6F8} .ds-nav a[aria-current=page]{background:#F5F6F8;color:#AB3241} .ds-nav a:focus-visible{outline:3px solid #AB3241;outline-offset:3px} .ds-nav .ds-nav-cta{margin-left:10px;padding:12px 22px;font-weight:700;font-size:13.5px;background:#AB3241;color:#fff} .ds-nav .ds-nav-cta:hover{background:#8C2635}"
+    },
+    {
+      "name": "Index Row",
+      "kind": "custom",
+      "description": "Ruled list row: large title, blurb, circular arrow disc that slides and fills red.",
+      "html": "<div class=\"ds-irows\"><a href=\"#\"><span class=\"ds-irows-t\">Winches</span><span class=\"ds-irows-b\">240 kg to 48 t, electric and hydraulic.</span><span class=\"ds-irows-go\"><svg viewBox=\"0 0 24 24\" width=\"1em\" height=\"1em\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M4 12h15M13 6l6 6-6 6\"/></svg></span></a></div>",
+      "css": ".ds-irows{border-top:1px solid rgba(220,231,234,.18)} .ds-irows a{position:relative;isolation:isolate;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr) 56px;align-items:center;gap:24px;padding:20px 0;border-bottom:1px solid rgba(220,231,234,.18);color:#fff;text-decoration:none} .ds-irows a::before{content:'';position:absolute;inset:0 -20px;z-index:-1;border-radius:18px;background:rgba(255,255,255,.055);opacity:0;transform:scaleY(.92);transition:opacity .35s var(--e),transform .45s var(--e-heavy)} .ds-irows a:hover::before,.ds-irows a:focus-visible::before{opacity:1;transform:none} .ds-irows-t{font-family:var(--f-d);font-weight:800;font-size:26px;letter-spacing:-.035em;line-height:1.05} .ds-irows-b{font-size:16px;color:#BFD2D8;transition:transform .45s var(--e-heavy)} .ds-irows a:hover .ds-irows-b{transform:translateX(8px)} .ds-irows-go{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;font-size:24px;border:1px solid rgba(220,231,234,.18);background:rgba(255,255,255,.055);transition:transform .45s var(--e-heavy),background .3s var(--e),border-color .3s var(--e)} .ds-irows a:hover .ds-irows-go,.ds-irows a:focus-visible .ds-irows-go{transform:translateX(6px);background:var(--red);border-color:var(--red)} .ds-irows a:focus-visible{outline:3px solid #fff;outline-offset:4px;border-radius:12px}"
+    },
+    {
+      "name": "Mark Pill",
+      "kind": "chip",
+      "refersTo": "mark-pill",
+      "description": "Small red pill carrying a mono label, used on placeholder plates and tier step numbers.",
+      "html": "<span class=\"ds-mark\">IMG-S03-B</span>",
+      "css": ".ds-mark{display:inline-block;background:#AB3241;color:#fff;font-family:var(--f-m);font-size:11.5px;font-weight:500;letter-spacing:.12em;padding:5px 10px;border-radius:999px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Descent",
+    "overview": "Every page is a dive. It opens in pale North Sea mist under a light header bar, crosses an animated waterline, and then darkens without a break, from a teal surface through deep mid-water to near-black, until the footer lands on the seabed in the logo navy. The descent is one background on the page's main element, not a stack of coloured bands, so the depth reads as continuous on a page of any length and needs no script.\n\nUnder the water everything is quiet and technical: white type, faint translucent panels, 1px hairlines, generous rounded cards, fully rounded pill buttons. Colour is held back so the figures can carry the argument. The buyer is a sceptical engineer; the system gives numbers the largest type on the page, sets them in tabular figures, and keeps decoration out of their way. Pages are compact, one idea per screen.\n\nThe brand's two colours come from the live RTG stylesheet and keep their own jobs: navy for the logo, header type and the seabed footer; red for fills and marks. The water is a separate, desaturated teal-grey ramp, so the brand navy is never asked to be the sea.",
+    "keyCharacteristics": [
+      "One water gradient on main; every section transparent on top of it.",
+      "White type under water, deep teal type above it; the header is always the light bar.",
+      "Red is a fill or a mark, never body type under water.",
+      "Flat: no drop shadows anywhere. Depth is the water itself.",
+      "Archivo 800 display, Inter body, JetBrains Mono for small technical labels; sentence case.",
+      "Motion is a budget: waves, the vessel arriving, the hoist paying out, and quiet entrance reveals."
+    ],
+    "rules": [
+      { "name": "The One Water Rule", "body": "The page background is the single gradient on main (sea-surface held flat under the waterline, then sea-mid at 52%, then sea-abyss). No section gets its own opaque background; a tone only ever marks a card or a callout, never a band.", "section": "colors" },
+      { "name": "The Red Is a Mark Rule", "body": "Under the water red fills a button, draws a rule or dots a marker. It never sets type there (it falls to about 2.3:1 on mid-water and 1.3:1 at the surface). Accented type under water is white.", "section": "colors" },
+      { "name": "The Light Bar Rule", "body": "The header is the mist bar on every page, never reversed: the logo is a two-colour mark with no reversed version.", "section": "colors" },
+      { "name": "The Sentence Case Rule", "body": "Headings are sentence case. Uppercase belongs to the mono label alone.", "section": "typography" },
+      { "name": "The Descender Rule", "body": "Display line-height stays at 1.06 or looser: tighter, a descender on a two-line heading touches the cap height of the line below. Headings use balanced wrapping; paragraphs use pretty wrapping.", "section": "typography" },
+      { "name": "The Tabular Figures Rule", "body": "Every number read as data (stats, spec tables, count-ups, step numbers) uses tabular lining figures so digits never shuffle.", "section": "typography" },
+      { "name": "The Compact Rule", "body": "One idea per screen. Section padding and display sizes were cut deliberately; do not grow them back.", "section": "layout" },
+      { "name": "The No Shadow Rule", "body": "No drop shadows, no glows, no hard offset shadows. If something needs to stand forward, give it a hairline and a panel fill.", "section": "elevation" },
+      { "name": "The One Gradient Rule", "body": "The water is the only background gradient. Gradients elsewhere are functional only: legibility scrims over photographs and fade masks at photo edges.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep every section transparent on the one water gradient (The One Water Rule).",
+      "Do set type under water in ink or ink-soft only; red stays a fill or a mark.",
+      "Do keep the header the light mist bar on every page.",
+      "Do give figures the largest type in their block, in Archivo 800 with tabular lining figures.",
+      "Do use hairlines (1px, rule) and Glass Panel fills to separate surfaces; card radius 20px for cards, 16px for callouts and tables, pills for buttons.",
+      "Do keep the motion budget: waves, the vessel's arrival, the hoist payout, and masked line reveals or short fade-ups on entrance. Honour prefers-reduced-motion everywhere.",
+      "Do keep masked line reveals padded at the bottom so descenders do not clip.",
+      "Do draw icons with Icon.astro's single-stroke paths rather than typing glyphs.",
+      "Do use an ink (white) focus ring under the water, where red cannot reach 3:1."
+    ],
+    "donts": [
+      "Don't give a section its own opaque background colour.",
+      "Don't set red type on the water or navy type on navy.",
+      "Don't use drop shadows, glows or textures on surfaces. The drawing-sheet grid belongs only to image placeholders.",
+      "Don't drive a carousel, a pin or a content switch from page scroll.",
+      "Don't put a mono label above a heading that only repeats it.",
+      "Don't set headings in all caps or tighten display line-height below 1.06.",
+      "Don't add hover devices beyond the established set (2px button lift, 8px card lift, red fill on link targets, the index row slide).",
+      "Don't grow section padding or display sizes back up."
+    ]
+  }
+}
