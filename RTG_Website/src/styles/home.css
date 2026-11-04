@@ -42,15 +42,6 @@
 .stmt-grid{display:grid;grid-template-columns:1fr 400px;gap:64px;align-items:start}
 @media (max-width:900px){.stmt-grid{grid-template-columns:1fr;gap:34px}}
 
-/* Tier panels share one grid cell, so the box is as tall as the longest
-   panel and nothing shifts when the tab changes. visibility (delayed until
-   the fade ends) keeps hidden panels out of the tab order and a11y tree. */
-
-/* statement: photo panel; tight */
-
-@media (prefers-reduced-motion:reduce){.ecard.lc,.case-vis,.lc-ph img{transition:none}
-  .ecard.lc:hover,.case-vis:hover{transform:none}}
-
 /* statement: title and lede as one balanced block, centred on each other */
 .stmt-grid{grid-template-columns:minmax(0,1fr) minmax(0,500px);gap:56px;align-items:center}
 @media (max-width:900px){.stmt-grid{grid-template-columns:minmax(0,1fr);align-items:start}}
@@ -104,13 +95,6 @@
 
 /* One h2 size down the whole page. */
 .home-main h2.d2,.home-main h2.d3{font-size:clamp(30px,3.6vw,52px);letter-spacing:-.035em;line-height:1.06}
-
-/* Equipment: six compact rows, the finder under them. */
-.home-main .irows-list a{padding:20px 0;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr) 56px}
-.home-main .irows-title{font-size:clamp(20px,1.9vw,26px)}
-@media (max-width:820px){.home-main .irows-list a{grid-template-columns:1fr 44px;padding:18px 0}}
-
-/* Tiers: the panel uses the width the 3D winch left, points beside the lede. */
 
 /* ---------- concept bands (romica-website-concept.html, 2026-11-05) ----------
    Homepage only, in the concept's order. Below the waterline each section
