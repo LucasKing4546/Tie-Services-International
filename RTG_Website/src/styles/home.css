@@ -12,7 +12,11 @@
 .hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
 .hero-origin{margin:26px 0 0;font-size:14px;color:var(--ink-2)}
 
-.vessel{--vw:clamp(280px,48vw,760px);position:absolute;right:max(64px,6vw);bottom:34px;width:var(--vw);
+/* The vessel's size and inset, shared with .home-spine so the spine can sit
+   exactly under the hoist. */
+.hero,.home-spine{--vw:clamp(280px,48vw,760px);--vr:max(64px,6vw)}
+@media (max-width:820px){.hero,.home-spine{--vr:76px}}
+.vessel{position:absolute;right:var(--vr);bottom:34px;width:var(--vw);
   animation:sail-in 9s cubic-bezier(.2,.6,.2,1) both,bob 5.5s ease-in-out infinite alternate}
 .vessel svg{display:block;width:100%;height:auto;overflow:visible}
 .vessel-hull{fill:var(--navy);stroke:var(--navy)}
@@ -27,8 +31,10 @@
 .hoist{--air:calc(var(--vw) * .258 - 14px);position:absolute;left:96.4%;top:33%;width:2px;
   height:calc(170px + var(--pay,0px));
   background:linear-gradient(to bottom,var(--navy) var(--air),rgba(255,255,255,.75) var(--air))}
-.hoist-load{position:absolute;left:-9px;top:100%;width:20px;height:28px;border:2px solid #fff;border-radius:2px;
-  background:linear-gradient(var(--red),var(--red)) center/100% 6px no-repeat}
+
+.hoist-wet{position:absolute;bottom:0;right:calc(var(--vr) + var(--vw) * .036 - 2px);width:2px;height:48px;
+  background:rgba(255,255,255,.75);pointer-events:none}
+@media (max-width:820px){.hoist-wet{display:none}}
 
 .hero-under{position:relative;padding-top:34px;padding-bottom:clamp(48px,6vw,80px)}
 .hero-proof{display:grid;grid-template-columns:repeat(4,auto);justify-content:start;gap:0;margin:0;padding:0}
@@ -39,10 +45,8 @@
   letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums;white-space:nowrap}
 .hero-proof dt{order:2;font-size:13.5px;color:var(--ink-2)}
 @media (max-width:820px){.hero-sky{min-height:0;padding-bottom:200px;align-items:flex-start}
-  .vessel{right:76px}
   /* On a phone the line would run straight through the proof figures. */
   .hoist{height:calc(var(--air) + 44px)}
-  .hoist-load{display:none}
   .hero-proof{grid-template-columns:1fr 1fr;row-gap:24px}
   .hero-proof div{margin-right:0;padding-right:12px}
   .hero-proof div:nth-child(2n){border-right:0;padding-left:16px}}
@@ -114,12 +118,11 @@
 
 /* statement: title and lede as one balanced block, centred on each other */
 .stmt-grid{grid-template-columns:minmax(0,1fr) minmax(0,500px);gap:56px;align-items:center}
-.stmt .d2{font-size:clamp(38px,4.3vw,68px);max-width:none}
 @media (max-width:900px){.stmt-grid{grid-template-columns:minmax(0,1fr);align-items:start}}
 
 /* ---- pinned tiers, redesigned: open stage, no boxes, labelled steps ---- */
-#tiers{padding:clamp(72px,8vw,112px) 0}
-.tier-h{margin-bottom:28px;max-width:26ch;font-size:clamp(26px,2.5vw,38px)}
+#tiers{padding:clamp(72px,8vw,112px) 0 clamp(40px,4vw,64px)}
+.tier-h{margin-bottom:28px;max-width:26ch}
 #tiers .tier .num{font-size:clamp(44px,4vw,60px);line-height:1;margin-bottom:14px}
 #tiers .tier h3{font-size:clamp(26px,2.4vw,34px);letter-spacing:-.03em;margin-bottom:12px}
 #tiers .tier .lede{font-size:17px;max-width:44ch;margin:0}
@@ -134,13 +137,14 @@
 #tiers .pin-bar button:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
 #tiers .pin-bar b{font-family:var(--f-m);font-size:11px;letter-spacing:.14em;color:var(--ink-2);font-weight:500}
 #tiers .pin-bar span{font-size:13px;line-height:1.25;color:var(--ink-2);font-weight:600}
+/* Narrow phones: two by two, so "commissioning" fits without breaking. */
+@media (max-width:520px){#tiers .pin-bar{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:16px}}
 #tiers .pin-bar button.on b{color:var(--accent)}
 #tiers .pin-bar button.on span{color:var(--ink)}
 @media (max-width:900px){#tiers .pin-bar{gap:10px}
-  #tiers .pin-bar span{font-size:11.5px}
-  .tier-h{font-size:clamp(22px,5.4vw,30px)}}
+  #tiers .pin-bar span{font-size:11.5px}}
 @media (min-width:901px) and (max-height:820px){
-  .tier-h{font-size:clamp(24px,2.2vw,32px);margin-bottom:16px;max-width:30ch}
+  .tier-h{margin-bottom:16px;max-width:30ch}
   #tiers .tier .num{font-size:36px;margin-bottom:8px}
   #tiers .tier h3{font-size:24px}
   #tiers .tier .lede{font-size:15.5px}
@@ -151,18 +155,16 @@
 /* ---------- family business ----------
    Story on the left at reading size, the client line as a quieter block on
    the right. Later rules in this file set the grid; these set the type. */
-.stmt .d2{font-size:clamp(30px,3.8vw,56px);max-width:18ch}
+.stmt .d2{max-width:18ch}
 .stmt .lede{margin-top:22px;max-width:56ch}
 .stmt-grid{align-items:end}
 .stmt-side{border-top:1px solid var(--rule);padding-top:22px}
 .stmt-side h3{font-size:clamp(20px,1.8vw,26px)}
-.stmt-side p{margin:12px 0 18px;color:var(--ink-2);max-width:44ch}
+.stmt-side p{margin:12px 0 18px;color:rgba(255,255,255,.86);max-width:44ch}
 
 /* ---------- engineered for offshore conditions ----------
    The heading on the left, the four points as a ruled register on the right,
-   each led by the figure it turns on. It introduces the showroom below, so
-   it carries no bottom padding of its own. */
-.cond{padding-bottom:0}
+   each led by the figure it turns on. */
 .cond-in{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(32px,6vw,96px);align-items:start}
 .cond .d2{max-width:12ch}
 .cond-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
@@ -191,8 +193,9 @@ html:not(.js) #tiers .tier{opacity:1;visibility:visible;transform:none;pointer-e
 @media (prefers-reduced-motion:reduce){.tier,.tier.on{transition:none}}
 
 /* ---------- finder entry (FinderEntry.astro) ----------
-   Closes the Equipment rows above it, so it gives up its own top padding. */
-.fentry{padding-top:0}
+   Slotted under the Equipment rows, inside the same section. */
+.fentry{margin-top:clamp(32px,3.6vw,52px)}
+.fentry-h{font-size:clamp(20px,1.9vw,26px);letter-spacing:-.03em;line-height:1.15;margin:0}
 .fentry-in{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:28px clamp(32px,5vw,80px);align-items:end}
 .fentry-lede{margin:12px 0 0;color:var(--ink-2);max-width:46ch}
 .fentry-form{display:flex;flex-wrap:wrap;align-items:flex-end;gap:14px}
@@ -201,8 +204,53 @@ html:not(.js) #tiers .tier{opacity:1;visibility:visible;transform:none;pointer-e
   .fentry-in{grid-template-columns:minmax(0,1fr)}
   .fentry-form .field{flex:1 1 150px;width:auto}
 }
-.sec.irows:has(+ .fentry){padding-bottom:clamp(28px,3.4vw,48px)}
-/* "Equipment" is a section title like "Sectors" and "Service life support",
-   so it is set at their size, not at the sub-heading size IndexRows uses on
-   inner pages. */
-.irows .sechd .d3{font-size:clamp(30px,4.2vw,60px);letter-spacing:-.04em}
+
+/* ---------- the spine ----------
+   The hoist line carried on below the hero: one still line straight down
+   from where the hoist hangs (--sc, its centre measured from the right edge,
+   from the same --vw/--vr the vessel uses), ending at the load beside the
+   last section. Content keeps to its left (--pr) and each section's top
+   rule runs across to meet it. It never moves and carries no figures: it is
+   not a depth gauge (removed 2026-10-29). On a phone there is no room beside
+   the content, so it moves into the right gutter.
+   --dw is the gap between the spine box and a centred .wrap. */
+.home-spine{container-type:inline-size;position:relative;
+  --sc:calc(var(--vr) + var(--vw) * .036 - 1px);
+  --dw:max(0px,(100cqw - var(--wrap)) / 2);
+  --pr:max(var(--gut),calc(var(--sc) + 44px - var(--dw)))}
+@media (max-width:820px){.home-spine{--sc:calc(var(--gut) / 2);--pr:var(--gut)}}
+.home-spine::before,.home-spine::after{content:"";position:absolute;z-index:1;pointer-events:none}
+.home-spine::before{top:0;bottom:56px;right:calc(var(--sc) - 1px);width:2px;
+  background:rgba(255,255,255,.75)}
+/* The load the hoist carries, resting on the footer's wave crest (which
+   rises about 28px into the spine) beside the last section: the same box the hero used to hang. */
+.home-spine::after{bottom:28px;right:calc(var(--sc) - 10px);width:20px;height:28px;
+  border:2px solid #fff;border-radius:2px;
+  background:linear-gradient(var(--red),var(--red)) center/100% 6px no-repeat}
+
+.home-spine .wrap{padding-right:var(--pr)}
+.home-spine > section > .wrap,.home-spine .strack-head{position:relative}
+.home-spine > section > .wrap::before,.home-spine .strack-head::before{content:"";position:absolute;
+  top:-30px;left:var(--gut);right:calc(var(--sc) - var(--dw));height:1px;background:rgba(255,255,255,.3)}
+.home-spine .strack-head{margin-top:30px}
+.home-spine .sechd{border-top:0;padding-top:0}
+/* The sector rail stops short of the line rather than running under it. */
+.home-spine .strack-rail{margin-right:calc(var(--sc) + 28px);padding-right:0}
+@media (max-width:820px){.home-spine .strack-rail{margin-right:var(--gut)}}
+
+/* One h2 size down the whole page. */
+.home-spine h2.d2,.home-spine h2.d3{font-size:clamp(30px,3.6vw,52px);letter-spacing:-.035em;line-height:1.06}
+
+/* Equipment: six compact rows, the finder under them. */
+.home-spine .irows-list a{padding:20px 0;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr) 56px}
+.home-spine .irows-title{font-size:clamp(20px,1.9vw,26px)}
+@media (max-width:820px){.home-spine .irows-list a{grid-template-columns:1fr 44px;padding:18px 0}}
+
+/* Tiers: the panel uses the width the 3D winch left, points beside the lede. */
+@media (min-width:901px){
+  .home-spine .tier{grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:clamp(32px,5vw,80px);
+    align-items:start}
+  html.js .home-spine .tier{display:grid}
+  .home-spine .tier > *{grid-column:1}
+  .home-spine #tiers .tier ul{grid-column:2;grid-row:1 / span 3;margin-top:0;align-self:end}
+}

@@ -5,7 +5,8 @@
  * to scroll (see ChildCards.astro's TRACK_MIN), and deliberately not a
  * grid either (site rule: carousels, not grids). Each title is set at
  * section-heading scale so a handful of rows still fill the band. No
- * numbering: these are alternatives, not steps.
+ * numbering: these are alternatives, not steps. Anything slotted renders
+ * under the rows, inside the same section.
  */
 import type { CardItem } from '@lib/blocks';
 
@@ -43,6 +44,7 @@ const toneClass = tone === 'off' ? 'off' : tone === 'navy' ? 'navy' : '';
           </li>
         ))}
       </ul>
+      <slot />
     </div>
   </section>
 )}

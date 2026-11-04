@@ -1,4 +1,14 @@
 ---
+/**
+ * The homepage. The hero's hoist line carries on below the surface as the
+ * page's spine (.home-spine, home.css): every section's top rule runs across
+ * to it, and the hoist load lands at its foot beside "Service life support".
+ *
+ * Deliberate gaps from the page map's H-01 blocks (decided 2026-11-04):
+ * no avatar doors or strips (the routes are the sections themselves), and
+ * no testimonials, featured case or bulletin sign-up until RTG supplies the
+ * content. A Gap marker here would noindex the homepage (CLAUDE.md §5b).
+ */
 import Base from '@layouts/Base.astro';
 import Hero from '@components/home/Hero.astro';
 import Statement from '@components/home/Statement.astro';
@@ -13,11 +23,14 @@ import '@/styles/home.css';
 ---
 <Base pageId="H-01">
   <Hero />
-  <Statement />
-  <Conditions />
-  <SectorTrack />
-  <IndexRows items={EQUIPMENT} heading="Equipment" tone="default" />
-  <FinderEntry />
-  <TierLadder />
-  <LifecycleSteps />
+  <div class="home-spine">
+    <Statement />
+    <Conditions />
+    <SectorTrack />
+    <IndexRows items={EQUIPMENT} heading="Equipment" tone="default">
+      <FinderEntry />
+    </IndexRows>
+    <TierLadder />
+    <LifecycleSteps />
+  </div>
 </Base>

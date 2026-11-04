@@ -2,16 +2,17 @@
 /**
  * The way into the equipment finder from the homepage: a plain GET form
  * whose field names are the finder's own query keys, so it lands on
- * /equipment/#finder already filtered with no script of its own.
+ * /equipment/#finder already filtered with no script of its own. Rendered
+ * inside the homepage's Equipment section, under its rows.
  */
 import { EQUIPMENT } from '@data/equipment';
 import { page } from '@data/pages';
 import { EQUIPMENT_APPS, EQUIPMENT_LOADS } from '@lib/equipment';
 ---
-<section class="sec sm fentry">
-  <div class="wrap fentry-in">
+<div class="fentry">
+  <div class="fentry-in">
     <div>
-      <h2 class="d3"><span class="rl"><span>Know the duty? Find the design.</span></span></h2>
+      <h3 class="fentry-h">Know the duty? Find the design.</h3>
       <p class="fentry-lede">{EQUIPMENT.length} standard designs with a datasheet, by application, working load and cable capacity.</p>
     </div>
     <form class="fentry-form" action={`${page('E-00').slug}#finder`} method="get">
@@ -32,4 +33,4 @@ import { EQUIPMENT_APPS, EQUIPMENT_LOADS } from '@lib/equipment';
       <button type="submit" class="btn b-red">Show designs<span class="dot"></span></button>
     </form>
   </div>
-</section>
+</div>

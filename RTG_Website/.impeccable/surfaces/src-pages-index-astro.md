@@ -2,26 +2,28 @@
 version: 1
 slug: "src-pages-index-astro"
 primary_target: "src/pages/index.astro"
-related_targets: ["src/layouts/Base.astro"]
+related_targets: []
 ---
 
-# Site-wide ocean world (homepage first surface)
+# Homepage (H-01)
 
-Scope: every page. Mode: Persuade. Audience: sceptical technical buyers (operator, design authority, yard) checking RTG against a specification. Action: a datasheet or quotation request. Brief-pinned by the user's concept file; the direction roll (seed af952e0d) was run and overridden by that pin.
+Scope: the homepage only; the ocean world (CLAUDE.md §7) is settled and binds it. Mode: Persuade. Audience: sceptical technical buyers (operator, design authority, yard) checking RTG against a specification. Actions: the hero buttons (sector, equipment), the finder form, the service buttons.
+
+Constraints from the user (2026-11-04): every word of existing homepage text kept verbatim, only the 3D showroom text removed; no route doors; testimonials and bulletin sign-up left out until RTG supplies them (no Gap markers, the homepage must stay indexable); hero vessel and hoist line kept.
 
 ## Direction contract
 
-THESIS: The page is a descent. You start on deck above the water and go down to the seabed, the depth RTG's equipment is proven to work at. Refuses the white-canvas industrial brochure with alternating grey bands.
+THESIS: The hoist line the vessel pays out in the hero does not stop at the hero: it is the page's spine, one still line every section hangs from. Refuses the stacked-bands homepage where each section is its own unconnected slab.
 
-OWN-WORLD: Brand navy #031d5b and red #AB3241 only. One continuous gradient on main from a lighter surface navy to near-black navy; sections are transparent on it. White type under water, navy type on the pale sky. Red is for fills and marks, never type on navy. Hairlines and faint panels, no shadows, no textures.
+OWN-WORLD: The settled ocean world: one water gradient on main, white type under water, red only for fills and marks, 1px hairlines, 16px card radius, pill buttons, Archivo 800 / Inter / JetBrains Mono. The spine is the hoist's own 2px line, carried straight down from where it hangs in the hero, on the right of the page; content keeps to its left, and each section's top hairline runs across to meet it (on a phone it moves into the right gutter). No numbers, no readouts, no motion on the line.
 
-STORY: RTG builds deck equipment that works at depth; the figures (3,000 m, 150 Te) are the first thing under the surface; the enquiry sits at the seabed.
+STORY: A buyer reads who RTG is, what it has proved, then follows the line down through sectors, equipment, manufacturing and service, where the hoist load lands beside the service actions.
 
-FIRST VIEWPORT: Pale sky. Headline top-left at display scale, lede and two pill CTAs beneath. Bottom edge is an animated three-layer waterline; a navy survey-vessel silhouette sails in from the right and rides it, its hoist line paying out as you start to scroll and ending with the hero, just under the surface. Depth gauge rail on the right edge, readout bottom-right.
+FIRST VIEWPORT: Unchanged hero: sky, headline top left, lede, two pill buttons, waterline, vessel, hoist paying out; the proof figures sit just under the surface, and the line continues from where the load stops, past the figures, into the family story.
 
-FORM: Code-led. Signature interaction: the depth gauge (0 m to the PROOF maximum) plus the hoist line in the hero, both driven by scroll. Motion grammar: waves, vessel arrival, hoist, gauge, surface light fading with depth; existing masked reveals are the only entrance motion. Seed key af952e0d.
+FORM: Code-led. Structure 7 of 7 grounded candidates, dealt lead; seed key 5700ef21 (degraded roll, no challengers). Signature: the static spine with heading ticks and the load landing at service. Motion grammar: waves, vessel arrival, hoist payout in the hero, masked reveals; nothing below the hero moves with scroll.
 
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
 
 ## Unresolved
-Homepage section list and condensed copy arrive from the user in a follow-up pass. No reversed logo asset, so the header stays a light bar.
+None for layout. The page-map blocks still absent (avatar doors and strips, testimonials, featured case, bulletin sign-up) are a recorded deviation, not a gap to fill.

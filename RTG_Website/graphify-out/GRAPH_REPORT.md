@@ -1,25 +1,25 @@
-# Graph Report - RTG_Website  (2026-11-03)
+# Graph Report - RTG_Website  (2026-11-04)
 
 ## Corpus Check
-- 180 files · ~3,086,010 words
+- 194 files · ~3,126,334 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 11 file(s) not represented in the graph (top: .css 9, (none) 1, .xml 1)
 
 ## Summary
-- 887 nodes · 1375 edges · 131 communities (57 shown, 74 thin omitted)
-- Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 10 edges (avg confidence: 0.88)
+- 969 nodes · 1406 edges · 139 communities (67 shown, 72 thin omitted)
+- Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 21 edges (avg confidence: 0.92)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `903096c4`
+- Built from commit: `91329c4a`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
 - blocks.ts
-- site.js
+- site_data.py
 - media.ts
-- rtg3d.ts
+- Contract manufacturing audit (C-00 to C-09), review only
 - build.py
 - RTG Website — project guide for Claude Code
 - package.json
@@ -35,7 +35,7 @@
 - l-01.mdx
 - audit-protection.mjs
 - build-equipment.mjs
-- gen-stubs.mjs
+- ref_node_fs
 - c-00.mdx
 - c-01.mdx
 - c-02.mdx
@@ -70,9 +70,9 @@
 - Product
 - 10. REFERENCE VOCABULARY (Pattern Names the Agent Should Know)
 - tasteskill: Anti-Slop Frontend Skill
-- astro.config.mjs
+- Homepage (H-01, `/`) audit, 2026-10-29
 - 9. AI TELLS (Forbidden Patterns)
-- seo.ts
+- Audit: equipment-other (E-07 to E-12)
 - 11. REDESIGN PROTOCOL
 - 3. DEFAULT ARCHITECTURE & CONVENTIONS
 - 6. PERFORMANCE & ACCESSIBILITY GUARDRAILS
@@ -91,13 +91,22 @@
 - src_assets_sectors_s03_wind_array
 - src_assets_sectors_s05_research_deck
 - src_assets_sectors_s05_research_vessel
-- Site-wide ocean world (homepage first surface)
-- forms.ts
-- 1. THE THREE DIALS (Core Configuration)
-- page.ts
+- Findings
+- Homepage (H-01)
+- Findings
+- Audit brief (shared by every review agent)
+- B. Broken or below standard: fixable in code now
 - ProofBar.astro
-- FormField.astro
+- site.js
 - src_lib_blocks_type
+- Audit: equipment / winches (E-02 to E-06, Product template)
+- forms-check.cjs
+- 0. BRIEF INFERENCE (Read the Room Before Anything Else)
+- scripts
+- astro.config.mjs
+- dependencies
+- forms.ts
+- devDependencies
 
 ## God Nodes (most connected - your core abstractions)
 1. `[]` - 29 edges
@@ -114,47 +123,47 @@
 ## Surprising Connections (you probably didn't know these)
 - `Routing` --references--> `entryFor()`  [INFERRED]
   CLAUDE.md → src/lib/content.ts
-- `3D` --references--> `createViewer()`  [INFERRED]
-  CLAUDE.md → src/lib/rtg3d.ts
-- `9.2 Steps, per page` --references--> `pagesByTemplate()`  [INFERRED]
-  CLAUDE.md → src/data/pages.ts
-- `ResolvedPage` --references--> `PageMeta`  [EXTRACTED]
-  src/lib/page.ts → src/data/pages.ts
-- `tiles` --calls--> `mediaFor()`  [EXTRACTED]
-  src/components/blocks/MediaBand.astro → src/data/media.ts
+- `Critical` --references--> `cardFrom()`  [INFERRED]
+  docs/audit-2026-10-29/about-contact-legal.md → src/lib/content.ts
+- `Medium` --references--> `articleJsonLd()`  [INFERRED]
+  docs/audit-2026-10-29/lifecycle-yards.md → src/lib/seo.ts
+- `Medium` --references--> `render()`  [INFERRED]
+  docs/audit-2026-10-29/equipment-hubs.md → research/rtg-website/rtg-website/site_build/build.py
+- `Low` --references--> `cta()`  [INFERRED]
+  docs/audit-2026-10-29/proof-resources.md → research/rtg-website/rtg-website/site_build/site_data.py
 
 ## Import Cycles
 - None detected.
 
-## Communities (131 total, 74 thin omitted)
+## Communities (139 total, 72 thin omitted)
 
 ### Community 0 - "blocks.ts"
 Cohesion: 0.09
-Nodes (51): trail, lists, jsonLdPage, siblings, [], jsonLdPage, children, extraCards (+43 more)
+Nodes (53): trail, common, string, lists, jsonLdPage, siblings, [], jsonLdPage (+45 more)
 
-### Community 1 - "site.js"
-Cohesion: 0.15
-Nodes (7): year, CONSENT, FOOTER_NAV, LEGAL_NAV, NAV, PROOF, PROOF_DISPLAY
+### Community 1 - "site_data.py"
+Cohesion: 0.05
+Nodes (36): Audit: About, Contact, Forms, Legal, 404 (14 pages), Critical, High, Low, Medium, Audit: Proof and Resources (15 pages), High, Low (+28 more)
 
 ### Community 2 - "media.ts"
 Cohesion: 0.04
 Nodes (46): src_assets_equipment_e00_deck_spread, src_assets_equipment_e00_system_overview, src_assets_equipment_e02_deployment_frame, src_assets_equipment_e02_ds01_guarded, src_assets_equipment_e02_ds01_panel, src_assets_equipment_e02_ds38_hpu_b, src_assets_equipment_e02_ds38_winch, src_assets_equipment_e02_hpu (+38 more)
 
-### Community 3 - "rtg3d.ts"
-Cohesion: 0.13
-Nodes (31): three, MACHINES, destroyHome(), initHome(), finishedWinch(), makeStage(), setModel(), Machine (+23 more)
+### Community 3 - "Contract manufacturing audit (C-00 to C-09), review only"
+Cohesion: 0.22
+Nodes (8): Checked and fine, Contract manufacturing audit (C-00 to C-09), review only, Critical, High, Integrity summary, Intentional gaps (not bugs), Low, Medium
 
 ### Community 4 - "build.py"
-Cohesion: 0.08
-Nodes (24): collections, datetime, glob, html, json, os, re, build() (+16 more)
+Cohesion: 0.09
+Nodes (27): collections, datetime, Audit: equipment hubs — `/equipment/` (E-00) and `/equipment/winches/` (E-01), Checked and fine, Findings, High, Low, Medium (+19 more)
 
 ### Community 5 - "RTG Website — project guide for Claude Code"
-Cohesion: 0.06
-Nodes (29): 1. What this is, 2. The workflow — follow this for every feature and every page, 3. Stack and conventions, 3D, 4. The 17 templates, 5. Known gaps — do not paper over these, 6. What must never be published, 7. Design system (+21 more)
+Cohesion: 0.07
+Nodes (28): 1. What this is, 2. The workflow — follow this for every feature and every page, 3. Stack and conventions, 4. The 17 templates, 5. Known gaps — do not paper over these, 6. What must never be published, 7. Design system, 8. Tone of voice (+20 more)
 
 ### Community 6 - "package.json"
-Cohesion: 0.05
-Nodes (36): dependencies, astro, @astrojs/mdx, @astrojs/sitemap, @fontsource/jetbrains-mono, @fontsource-variable/archivo, @fontsource-variable/inter, three (+28 more)
+Cohesion: 0.15
+Nodes (12): description, name, private, type, version, astro, @astrojs/check, @fontsource/jetbrains-mono (+4 more)
 
 ### Community 7 - "home.ts"
 Cohesion: 0.13
@@ -169,8 +178,8 @@ Cohesion: 0.11
 Nodes (18): About — 4 pages, Article — 1 page, Careers — 1 page, Case — 4 pages, Contact — 2 pages, Form — 8 pages, Guide — 1 page, Home — 1 page (+10 more)
 
 ### Community 10 - "build-page-map.mjs"
-Cohesion: 0.13
-Nodes (14): xlsx, body, closeIdx, current, head, OUT, pages, pagesStart (+6 more)
+Cohesion: 0.14
+Nodes (13): body, closeIdx, current, head, OUT, pages, pagesStart, root (+5 more)
 
 ### Community 11 - "RTG Website — Build"
 Cohesion: 0.15
@@ -189,20 +198,20 @@ Cohesion: 0.17
 Nodes (9): descs, dist, fails, ids, root, slugs, src, titles (+1 more)
 
 ### Community 15 - "motion.ts"
-Cohesion: 0.31
-Nodes (7): initCarousels(), initCompare(), initCounters(), initMotion(), initParallax(), initReveals(), teardownFns
+Cohesion: 0.13
+Nodes (15): Baseline (passes), Critical, Design-system audit: shared tokens, CSS, header/footer, blocks, type, Gaps present (intentional, not bugs), High, Low, Medium, Scores (impeccable audit) (+7 more)
 
 ### Community 19 - "audit-protection.mjs"
 Cohesion: 0.22
-Nodes (8): ref_node_fs, BANNED, ds, EXIF, exts, hits, root, roots
+Nodes (8): ref_node_url, BANNED, ds, EXIF, exts, hits, root, roots
 
 ### Community 20 - "build-equipment.mjs"
 Cohesion: 0.11
 Nodes (13): ref_node_assert_strict, APPS, COL, items, num(), OUT, root, rows (+5 more)
 
-### Community 21 - "gen-stubs.mjs"
+### Community 21 - "ref_node_fs"
 Cohesion: 0.18
-Nodes (10): ref_node_path, ref_node_url, ref_sharp, outDir, root, SKIP, EXIF, root (+2 more)
+Nodes (10): ref_node_fs, ref_node_path, ref_sharp, outDir, root, SKIP, EXIF, root (+2 more)
 
 ### Community 22 - "c-00.mdx"
 Cohesion: 0.40
@@ -261,8 +270,8 @@ Cohesion: 0.15
 Nodes (22): extra, tags, designs, figs, EQUIPMENT, EquipmentApp, EquipmentDrive, EquipmentItem (+14 more)
 
 ### Community 96 - "Base.astro"
-Cohesion: 0.08
-Nodes (19): ref_fontsource_jetbrains_mono_400_css, ref_fontsource_jetbrains_mono_500_css, ref_fontsource_variable_archivo_files_archivo_latin_wght_normal_woff2_url, ref_fontsource_variable_archivo_wght_css, ref_fontsource_variable_inter_files_inter_latin_wght_normal_woff2_url, ref_fontsource_variable_inter_wght_css, canonical, ogImage (+11 more)
+Cohesion: 0.06
+Nodes (31): ref_fontsource_jetbrains_mono_400_css, ref_fontsource_jetbrains_mono_500_css, ref_fontsource_variable_archivo_files_archivo_latin_wght_normal_woff2_url, ref_fontsource_variable_archivo_wght_css, ref_fontsource_variable_inter_files_inter_latin_wght_normal_woff2_url, ref_fontsource_variable_inter_wght_css, ancestorsOf(), OFF_MAP_IDS (+23 more)
 
 ### Community 97 - "Appendix B - Canonical Sources (read these before reinventing)"
 Cohesion: 0.09
@@ -281,20 +290,20 @@ Cohesion: 0.20
 Nodes (10): 10. REFERENCE VOCABULARY (Pattern Names the Agent Should Know), Animation Library Choice, Cards & Containers, Galleries & Media, Hero Paradigms, Layout & Grids, Micro-Interactions & Effects, Navigation & Menus (+2 more)
 
 ### Community 101 - "tasteskill: Anti-Slop Frontend Skill"
-Cohesion: 0.18
-Nodes (11): 0.A Read these signals first, 0.B Output a one-line "Design Read" before generating, 0. BRIEF INFERENCE (Read the Room Before Anything Else), 0.C If the brief is ambiguous, ask one question, do not guess, 0.D Anti-Default Discipline, 13. OUT OF SCOPE, 14. FINAL PRE-FLIGHT CHECK, 2.A When to reach for a real design system (use official packages) (+3 more)
+Cohesion: 0.20
+Nodes (10): 13. OUT OF SCOPE, 14. FINAL PRE-FLIGHT CHECK, 1.A Dial Inference (design read → dial values), 1.B Use-Case Presets, 1.C How the Dials Drive Output, 1. THE THREE DIALS (Core Configuration), 2.A When to reach for a real design system (use official packages), 2.B When the brief is an aesthetic, not a system (+2 more)
 
-### Community 102 - "astro.config.mjs"
-Cohesion: 0.25
-Nodes (7): pagesDir, pagesTs, unfinished, ref_astro_config, @astrojs/mdx, @astrojs/sitemap, SITE
+### Community 102 - "Homepage (H-01, `/`) audit, 2026-10-29"
+Cohesion: 0.22
+Nodes (8): Code leftovers from today's changes (Low), Hoist line and hero, Homepage (H-01, `/`) audit, 2026-10-29, Integrity, Sectors, equipment, finder, Service, seabed, footer, Statement, conditions, showroom, Tiers (WAI-ARIA tabs + 3D)
 
 ### Community 103 - "9. AI TELLS (Forbidden Patterns)"
 Cohesion: 0.25
 Nodes (8): 9.A Visual & CSS, 9. AI TELLS (Forbidden Patterns), 9.B Typography, 9.C Layout & Spacing, 9.D Content & Data ("Jane Doe" Effect), 9.E External Resources & Components, 9.F Production-Test Tells (banned outright), 9.G EM-DASH BAN (the single most-violated Tell)
 
-### Community 104 - "seo.ts"
-Cohesion: 0.57
-Nodes (6): ancestorsOf(), absolute(), breadcrumbNode(), buildJsonLd(), ogImageFor(), organizationNode()
+### Community 104 - "Audit: equipment-other (E-07 to E-12)"
+Cohesion: 0.25
+Nodes (7): Audit: equipment-other (E-07 to E-12), Critical, Gap / draft markers (intentional, listed only), High, Low, Medium, Passes (not repeated below)
 
 ### Community 105 - "11. REDESIGN PROTOCOL"
 Cohesion: 0.29
@@ -336,45 +345,85 @@ Nodes (6): Design health score: 19/28 (Acceptable, 68%). Heuristics 7, 9, 10 n/a
 Cohesion: 0.40
 Nodes (4): Design health score: 26/36 (Good, 72%). Heuristic 10 n/a., Detector and measurements, Fixed in this pass, Open
 
-### Community 124 - "Site-wide ocean world (homepage first surface)"
+### Community 123 - "Findings"
+Cohesion: 0.25
+Nodes (7): Audit: Lifecycle and Yards & Integrators (10 pages), Baseline (passes), Critical, Findings, High, Low, Medium
+
+### Community 124 - "Homepage (H-01)"
 Cohesion: 0.50
-Nodes (3): Direction contract, Site-wide ocean world (homepage first surface), Unresolved
+Nodes (3): Direction contract, Homepage (H-01), Unresolved
 
-### Community 125 - "forms.ts"
-Cohesion: 0.48
-Nodes (5): errLine(), initForms(), message(), PREFILL, showError()
+### Community 125 - "Findings"
+Cohesion: 0.25
+Nodes (7): Audit: sectors-b (S-03, S-04, S-05), Critical, Findings, High, Low, Medium, What passed
 
-### Community 126 - "1. THE THREE DIALS (Core Configuration)"
-Cohesion: 0.50
-Nodes (4): 1.A Dial Inference (design read → dial values), 1.B Use-Case Presets, 1.C How the Dials Drive Output, 1. THE THREE DIALS (Core Configuration)
+### Community 126 - "Audit brief (shared by every review agent)"
+Cohesion: 0.29
+Nodes (6): Audit brief (shared by every review agent), Check, Context: what changed today (commit 7e032005), Output, Read first, Tools
 
-### Community 127 - "page.ts"
-Cohesion: 0.31
-Nodes (6): OFF_MAP_IDS, OFF_MAP_PAGES, BY_ID, ResolvedPage, resolvePage(), { p }
+### Community 127 - "B. Broken or below standard: fixable in code now"
+Cohesion: 0.29
+Nodes (6): A. Needs RTG / owner decision (content, rights, figures), B. Broken or below standard: fixable in code now, Critical, High, Medium, RTG site audit: combined findings (2026-10-29)
 
 ### Community 128 - "ProofBar.astro"
 Cohesion: 0.43
 Nodes (6): statDigits(), statDigits(), isNumericStat(), statDigits(), statLead(), statSuffix()
 
+### Community 129 - "site.js"
+Cohesion: 0.15
+Nodes (7): year, CONSENT, FOOTER_NAV, LEGAL_NAV, NAV, PROOF, PROOF_DISPLAY
+
+### Community 131 - "Audit: equipment / winches (E-02 to E-06, Product template)"
+Cohesion: 0.29
+Nodes (6): §6, Audit: equipment / winches (E-02 to E-06, Product template), Critical, High, Low, Medium
+
+### Community 132 - "forms-check.cjs"
+Cohesion: 0.33
+Nodes (5): c_users_lucas_appdata_local_npm_cache_npx_e41f203b7505f1fb_node_modules_playwright_index_chromium, assert, { chromium }, ext_users_lucas_appdata_local_npm_cache_npx_e41f203b7505f1fb_node_modules_playwright_index_js, ref_assert
+
+### Community 133 - "0. BRIEF INFERENCE (Read the Room Before Anything Else)"
+Cohesion: 0.40
+Nodes (5): 0.A Read these signals first, 0.B Output a one-line "Design Read" before generating, 0. BRIEF INFERENCE (Read the Room Before Anything Else), 0.C If the brief is ambiguous, ask one question, do not guess, 0.D Anti-Default Discipline
+
+### Community 134 - "scripts"
+Cohesion: 0.18
+Nodes (11): scripts, audit, audit:protection, audit:seo, build, check, dev, equipment (+3 more)
+
+### Community 135 - "astro.config.mjs"
+Cohesion: 0.25
+Nodes (7): pagesDir, pagesTs, unfinished, ref_astro_config, @astrojs/mdx, @astrojs/sitemap, SITE
+
+### Community 136 - "dependencies"
+Cohesion: 0.29
+Nodes (7): dependencies, astro, @astrojs/mdx, @astrojs/sitemap, @fontsource/jetbrains-mono, @fontsource-variable/archivo, @fontsource-variable/inter
+
+### Community 137 - "forms.ts"
+Cohesion: 0.48
+Nodes (5): errLine(), initForms(), message(), PREFILL, showError()
+
+### Community 138 - "devDependencies"
+Cohesion: 0.50
+Nodes (4): devDependencies, @astrojs/check, typescript, xlsx
+
 ## Knowledge Gaps
-- **411 isolated node(s):** `pagesDir`, `pagesTs`, `unfinished`, `name`, `version` (+406 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 599 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **74 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **477 isolated node(s):** `pagesDir`, `pagesTs`, `unfinished`, `{ chromium }`, `assert` (+472 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 679 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **72 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `astro` connect `package.json` to `media.ts`?**
-  _High betweenness centrality (0.023) - this node is a cross-community bridge._
-- **Why does `pagesByTemplate()` connect `blocks.ts` to `RTG Website — project guide for Claude Code`?**
-  _High betweenness centrality (0.015) - this node is a cross-community bridge._
+- **Why does `cardFrom()` connect `blocks.ts` to `site_data.py`, `lib/equipment.ts`?**
+  _High betweenness centrality (0.077) - this node is a cross-community bridge._
+- **Why does `Critical` connect `site_data.py` to `blocks.ts`?**
+  _High betweenness centrality (0.076) - this node is a cross-community bridge._
 - **What connects `pagesDir`, `pagesTs`, `unfinished` to the rest of the system?**
-  _411 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _477 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `blocks.ts` be split into smaller, more focused modules?**
-  _Cohesion score 0.09272116461366181 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.08658008658008658 - nodes in this community are weakly interconnected._
+- **Should `site_data.py` be split into smaller, more focused modules?**
+  _Cohesion score 0.04609929078014184 - nodes in this community are weakly interconnected._
 - **Should `media.ts` be split into smaller, more focused modules?**
   _Cohesion score 0.041666666666666664 - nodes in this community are weakly interconnected._
-- **Should `rtg3d.ts` be split into smaller, more focused modules?**
-  _Cohesion score 0.1253968253968254 - nodes in this community are weakly interconnected._
 - **Should `build.py` be split into smaller, more focused modules?**
-  _Cohesion score 0.0766488413547237 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.08505747126436781 - nodes in this community are weakly interconnected._

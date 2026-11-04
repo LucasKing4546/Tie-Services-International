@@ -2,7 +2,10 @@
 /**
  * The homepage opens above the water: headline on the sky, a survey vessel
  * arriving on the waterline, and its hoist line paying out as you scroll
- * (--sy, set by src/lib/hoist.ts). The proof figures are the first thing
+ * (--pay, set by src/lib/hoist.ts) down to the bottom of the hero, where the
+ * page spine (.home-spine) carries it on. .hoist-wet redraws the stretch the
+ * front wave covers, so the line reads unbroken through the surface. On a
+ * phone the hoist stays short and the spine starts in the gutter instead. The proof figures are the first thing
  * under the surface.
  *
  * The vessel is a drawn silhouette, not a model of any real ship.
@@ -42,9 +45,10 @@ const [lead, accent, rest] = HERO.h1;
           <rect class="vessel-band" x="252" y="108" width="30" height="8" />
           <rect class="vessel-glass" x="136" y="76" width="68" height="7" />
         </svg>
-        <div class="hoist"><span class="hoist-load"></span></div>
+        <div class="hoist"></div>
       </div>
     </Waterline>
+    <span class="hoist-wet" aria-hidden="true"></span>
   </div>
 
   <div class="wrap hero-under">

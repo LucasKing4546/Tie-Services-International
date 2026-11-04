@@ -43,21 +43,6 @@ export const CONDITIONS = {
   ],
 };
 
-/** Headline figures per machine family. Not rendered since the 3D showroom
- *  went (2026-11-04); kept for the homepage redesign. */
-export const MACHINES = [
-  { key: 'winch', label: 'Winch', name: 'Winches',
-    desc: 'Geotechnical, survey, seismic, ROV and umbilical, mooring and utility.',
-    spec: [['240 kg to 48 t', 'Working load limit'], ['1.5 × WLL', 'Static brake holding, minimum'],
-           [`${PROOF.cptDepthM.toLocaleString('en-GB')} m`, 'Proven working depth']] },
-  { key: 'aframe', label: 'A-frame LARS', name: 'Launch &amp; recovery systems',
-    desc: 'A-frames and LARS engineered to the deck arrangement and the sea state.',
-    spec: [['5 to 40 Te', 'Working load limit'], ['3.9 m Hs', 'Rated sea state']] },
-  { key: 'hpu', label: 'Power unit', name: 'Power units',
-    desc: 'Hydraulic power units built and flushed to a defined cleanliness class.',
-    spec: [['2 × 55 kW', 'Example unit'], ['Function tested', 'With the machine it drives']] },
-];
-
 /** Mirrors S-01…S-07 in the Page Map. */
 export const SECTORS = [
   { id: 'S-01', ref: 'IMG-S01-C', name: 'Ocean Survey & Hydrography', href: '/sectors/ocean-survey-hydrography/',
