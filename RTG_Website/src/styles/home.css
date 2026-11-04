@@ -163,43 +163,35 @@
   .cond-list{grid-column:2;grid-row:2;align-self:center}
 }
 
-/* Contract manufacturing: the A-frame beside the four tiers, two by two,
-   sharing one height. */
+/* Contract manufacturing: the A-frame beside the tier register, sharing
+   one height. */
 .tiers-in{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,4vw,56px);align-items:stretch}
 .tiers-photo{min-height:360px}
 .tiers-photo img{object-position:50% 35%}
-.tiers-in .tiers{grid-template-columns:repeat(2,minmax(0,1fr))}
-.tiers-in .tiers > li:nth-child(2n){border-right:0;margin-right:0}
-.tiers-in .tiers > li:nth-child(-n+2){border-bottom:1px solid var(--rule)}
 @media (max-width:900px){.tiers-in{grid-template-columns:minmax(0,1fr)}.tiers-photo{min-height:0;aspect-ratio:4/3}}
-@media (max-width:620px){.tiers-in .tiers{grid-template-columns:minmax(0,1fr)}
-  .tiers-in .tiers > li{border-right:0;margin-right:0;padding-right:0;border-bottom:1px solid var(--rule)}
-  .tiers-in .tiers > li:last-child{border-bottom:0}}
 
 /* Service: words and actions, then the deck. */
 .service-in{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(32px,5vw,80px);align-items:center}
 .service-photo{aspect-ratio:16/10}
 @media (max-width:900px){.service-in{grid-template-columns:minmax(0,1fr)}}
 
-/* Contract manufacturing: four ruled columns. */
-.tiers{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
-  border-top:1.5px solid var(--ink)}
-.tiers > li{padding:26px 24px 30px 0;margin-right:24px;border-right:1px solid var(--rule)}
-.tiers > li:last-child{border-right:0;margin-right:0}
-.tiers h3{font-size:clamp(20px,1.6vw,23px);letter-spacing:-.02em;line-height:1.2;margin:10px 0 10px}
+/* Contract manufacturing: the four tiers as a ruled register, one row per
+   tier (name and scope left, points right), so uneven lengths never leave
+   holes. */
+.tiers{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
+.tiers > li{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);column-gap:clamp(20px,2.4vw,36px);
+  grid-template-rows:auto 1fr;align-items:start;padding:22px 0;border-bottom:1px solid var(--rule)}
+.tiers h3{grid-column:1;font-size:clamp(19px,1.6vw,22px);letter-spacing:-.02em;line-height:1.2;margin:0 0 8px}
 .tiers h3 a{color:var(--ink);text-decoration:underline;text-decoration-color:transparent;text-underline-offset:5px;
   transition:text-decoration-color .2s}
 .tiers h3 a:hover{text-decoration-color:currentColor}
-.tiers p{margin:0;font-size:16px;line-height:1.5;color:var(--ink)}
-.tiers ul{list-style:none;margin:16px 0 0;padding:0;display:flex;flex-direction:column;gap:8px}
+.tiers p{grid-column:1;margin:0;font-size:16px;line-height:1.5;color:var(--ink)}
+.tiers ul{grid-column:2;grid-row:1 / span 2;list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px}
 .tiers ul li{position:relative;padding-left:16px;font-size:15.5px;line-height:1.45;color:var(--ink-2)}
 .tiers ul li::before{content:"";position:absolute;left:0;top:.62em;width:8px;height:2px;background:var(--red)}
 .tiers-more{margin:30px 0 0}
-@media (max-width:1080px){.tiers{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .tiers > li:nth-child(2n){border-right:0;margin-right:0}
-  .tiers > li{border-bottom:1px solid var(--rule)}}
-@media (max-width:620px){.tiers{grid-template-columns:minmax(0,1fr)}
-  .tiers > li{border-right:0;margin-right:0;padding-right:0}}
+@media (max-width:620px){.tiers > li{grid-template-columns:minmax(0,1fr)}
+  .tiers ul{grid-column:1;grid-row:auto;margin-top:14px}}
 
 .stmt-side .hero-cta{margin-top:28px}
 

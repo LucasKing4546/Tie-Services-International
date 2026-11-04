@@ -297,7 +297,7 @@ The four case studies sized by the scale of the work: a feature card whose photo
 Contract manufacturing's four cumulative tiers side by side, all visible: under a 1.5px ink rule, four columns divided by 1px hairlines, each a linked title (its underline appears on hover), a lede and points marked with a 7px red dash. No tabs, no number labels. Two columns under 1080px, one under 620px.
 
 ### Band Photo (homepage)
-A photograph standing on its own in a band, at card radius: 16/10 for engineering and service; in contract manufacturing the A-frame photo stands beside the tiers (laid two by two) at their height, and goes 4/3 above them under 900px.
+A photograph standing on its own in a band, at card radius: 16/10 for engineering and service; in contract manufacturing the A-frame photo stands beside the tier register (one ruled row per tier: name and scope left, points right) at its height, and goes 4/3 above it under 900px.
 
 ### Waterline (signature)
 Three looping wave layers, each twice its box's width, sliding at 22s, 13s and 9s, tinted from mist towards the teal surface; the front wave is exactly the surface colour so it runs into the water with no seam. The homepage hero holds it full height with the vessel riding between the back and front waves; inner pages use a slim 132px band of mist under the header.
