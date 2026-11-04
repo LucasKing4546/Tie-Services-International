@@ -1,9 +1,6 @@
 /* Interaction states shared by every page. Loaded after blocks.css. */
 
 .btn:active{transform:scale(.98)}
-/* --ink, not red: red on navy is ~2.3:1, too faint for a focus ring. In the
-   light regions (.above, .hdr) --ink is navy. */
-:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 .prose a{text-decoration-thickness:1px;text-underline-offset:3px;
   transition:text-underline-offset .2s var(--e),color .2s var(--e)}
 .prose a:hover{text-underline-offset:6px}

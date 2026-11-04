@@ -6,7 +6,6 @@
    ========================================================================== */
 
 /* ---------- generic section ---------- */
-.sec{padding:112px 0}
 .sec.sm{padding:96px 0}
 .sec.off{background:var(--panel)}
 /* Where two sections of the same tone meet, collapse the join so they don't
@@ -38,13 +37,11 @@
   height:1px;background:rgba(255,255,255,.2)}
 .sechd .mono{display:block;margin-bottom:22px}
 @media (max-width:900px){
-  .sec{padding:76px 0}
   .sec.sm{padding:64px 0}
   .sechd{margin-bottom:38px}
   .sechd .mono{margin-bottom:16px}
 }
 @media (max-width:560px){
-  .sec{padding:60px 0}
   .sec.sm{padding:48px 0}
   .sechd{margin-bottom:30px}
 }
@@ -265,7 +262,7 @@
 
 /* ---------- stats / proof bar ---------- */
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);
-  border:1px solid var(--rule);border-radius:18px;overflow:hidden}
+  border:1px solid var(--rule);border-radius:20px;overflow:hidden}
 @media (max-width:820px){.stats{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:520px){.stats{grid-template-columns:1fr}}
 .stats.compact .stat{padding:30px 26px}
@@ -421,7 +418,7 @@ html.js .cmp.sweep .cmp-handle{transition:left .8s var(--e-heavy)}
 
 /* ---------- card grid (CardGrid.astro + Card.astro) ---------- */
 .ecard{border:1px solid var(--rule);border-radius:16px;padding:34px 30px;background:var(--panel);
-  transition:border-color .35s var(--e),transform .35s var(--e),box-shadow .35s var(--e);
+  transition:border-color .35s var(--e),transform .35s var(--e);
   display:flex;flex-direction:column;min-height:250px;justify-content:space-between}
 .ecard:hover{border-color:var(--ink);transform:translateY(-5px)}
 /* Hovering one card quietens the rest. The most premium effect available
@@ -432,7 +429,7 @@ html.js .cmp.sweep .cmp-handle{transition:left .8s var(--e-heavy)}
   .eq:has(.ecard:hover) .ecard:not(:hover),
   .car-track:has(.ecard:hover) .ecard:not(:hover){opacity:.5}
   .ecard{transition:border-color .35s var(--e),transform .35s var(--e),
-    box-shadow .35s var(--e),opacity .35s var(--e)}
+    opacity .35s var(--e)}
 }
 .ecard.inv{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.14);color:#fff}
 .ecard.inv:hover{border-color:var(--red);background:rgba(255,255,255,.08)}
@@ -509,7 +506,7 @@ html.js .cmp.sweep .cmp-handle{transition:left .8s var(--e-heavy)}
 .quote-c{font-family:var(--f-m);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
 
 /* ---------- cta band (CtaBand.astro) - site-wide closer ---------- */
-.cta{background:var(--panel-2);color:#fff;border-radius:24px;padding:80px 64px;position:relative;overflow:hidden;
+.cta{background:var(--panel-2);color:#fff;border-radius:20px;padding:80px 64px;position:relative;overflow:hidden;
   display:flex;justify-content:space-between;align-items:center;gap:40px;flex-wrap:wrap}
 .cta h1,.cta h2,.cta h3{color:#fff}
 @media (max-width:700px){.cta{padding:52px 32px}}
@@ -620,9 +617,8 @@ table.spec .gap{text-transform:uppercase;letter-spacing:.1em;font-size:.8em}
 .field label{font-family:var(--f-m);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
 .field label em{color:var(--accent);font-style:normal}
 .field input,.field select,.field textarea{font-family:var(--f-b);font-size:15px;color:var(--ink);
-  border:1px solid var(--rule);border-radius:10px;padding:13px 15px;background:var(--panel);width:100%}
+  border:1px solid var(--rule);border-radius:12px;padding:13px 15px;background:var(--panel);width:100%}
 .field textarea{min-height:110px;resize:vertical}
-.field input:focus,.field select:focus,.field textarea:focus{outline:3px solid var(--red);outline-offset:1px}
 /* Set by initFormPrefill() (lib/forms.ts) when a field arrives pre-filled
    from a referring page (e.g. Product.astro's datasheet-request link) — a
    visual cue that the field is intentionally locked, not broken. */
@@ -729,7 +725,6 @@ table.spec .gap{text-transform:uppercase;letter-spacing:.1em;font-size:.8em}
 .finder-chip{font-family:var(--f-b);font-size:14px;color:var(--ink);background:transparent;
   border:1px solid var(--rule);border-radius:100px;padding:9px 16px;min-height:44px;cursor:pointer}
 .finder-chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--on-ink)}
-.finder-chip:focus-visible,.finder-links a:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
 .finder-ranges{display:grid;grid-template-columns:repeat(2,minmax(0,260px));gap:18px}
 .finder-count{margin:0 0 14px}
 .finder-list{list-style:none;margin:0 0 28px;padding:0;border-top:1px solid var(--rule)}
@@ -789,5 +784,4 @@ table.spec .spec-opt{display:block}
   .finder-more > summary::after{content:"+";font-family:var(--f-m)}
   .finder-more[open] > summary::after{content:"−"}
   .finder-more[open] > summary{margin-bottom:22px}
-  .finder-more > summary:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
 }

@@ -257,7 +257,7 @@ Confident, rounded and few.
 
 ### Navigation
 - **Header:** fixed mist bar with a hairline foot; it tightens from 22px to 12px vertical padding once scrolled. Links are Archivo 600, 14px, pill-shaped, with a light panel on hover; the current page gets the panel and red type. The primary CTA is a red pill.
-- **Mobile:** under 1080px a no-JS disclosure menu: a 44px circular button whose three bars turn into a cross, opening an 18px-radius panel of 12px-radius links.
+- **Mobile:** under 1080px a no-JS disclosure menu: a 44px circular button whose three bars turn into a cross, opening a 20px-radius panel of 12px-radius links.
 - **Footer:** the navy seabed, topped by a drawn wave crest with a faint white edge; muted white links that brighten on hover.
 
 ### Index Rows

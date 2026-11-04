@@ -19,16 +19,15 @@ interface Props {
   tone?: 'default' | 'off' | 'navy';
 }
 
-const { items, eyebrow, heading, lede, tone = 'navy' } = Astro.props;
+const { items, heading, lede, tone = 'navy' } = Astro.props;
 const toneClass = tone === 'off' ? 'off' : tone === 'navy' ? 'navy' : '';
 ---
 
 {items.length > 0 && (
   <section class:list={['sec', 'irows', toneClass]}>
     <div class="wrap">
-      {(eyebrow || heading) && (
+      {heading && (
         <div class="sechd">
-          {eyebrow && <p class="mono red">{eyebrow}</p>}
           {heading && <h2 class="d3"><span class="rl"><span>{heading}</span></span></h2>}
           {lede && <p class="lede">{lede}</p>}
         </div>

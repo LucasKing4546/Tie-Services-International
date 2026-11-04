@@ -115,7 +115,7 @@
       "refersTo": "mark-pill",
       "description": "Small red pill carrying a mono label, used on placeholder plates and tier step numbers.",
       "html": "<span class=\"ds-mark\">IMG-S03-B</span>",
-      "css": ".ds-mark{display:inline-block;background:#AB3241;color:#fff;font-family:var(--f-m);font-size:11.5px;font-weight:500;letter-spacing:.12em;padding:5px 10px;border-radius:999px}"
+      "css": ".ds-mark{display:inline-block;background:#AB3241;color:#fff;font-family:var(--f-m);font-size:11.5px;font-weight:500;letter-spacing:.12em;padding:5px 10px;border-radius:100px}"
     }
   ],
   "narrative": {

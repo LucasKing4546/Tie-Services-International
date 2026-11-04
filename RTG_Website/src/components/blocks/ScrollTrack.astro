@@ -11,7 +11,7 @@ interface Props {
   lede?: string;
 }
 
-const { eyebrow, heading, lede } = Astro.props;
+const { heading, lede } = Astro.props;
 import Icon from '@components/site/Icon.astro';
 ---
 
@@ -19,7 +19,6 @@ import Icon from '@components/site/Icon.astro';
   <div class="strack-stick">
     <div class="wrap strack-head">
       <div>
-        {eyebrow && <p class="mono on-navy fu" style="margin:0 0 18px">{eyebrow}</p>}
         <h2 class="d3"><span class="rl"><span>{heading}</span></span></h2>
       </div>
       {lede && <p class="lede">{lede}</p>}

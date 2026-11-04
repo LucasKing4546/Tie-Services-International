@@ -12,7 +12,7 @@
 .sechd{display:grid;grid-template-columns:minmax(0,1fr);column-gap:clamp(32px,6vw,96px);
   margin-bottom:clamp(26px,3.2vw,44px);padding-top:24px;border-top:1px solid var(--rule)}
 .sechd > *{max-width:none}
-.sechd .d2,.sechd .d3{letter-spacing:-.04em;line-height:1.02;max-width:16ch}
+.sechd .d2,.sechd .d3{letter-spacing:-.04em;line-height:1.06;max-width:16ch}
 .sechd .d2{font-size:clamp(30px,4.2vw,60px)}
 .sechd .lede{margin:0!important;max-width:40ch}
 @media (min-width:901px){
@@ -32,7 +32,7 @@
 @media (min-width:901px){.frow.frow + .mband.mband{padding-top:clamp(48px,5vw,72px)}}
 .frow{overflow:visible;position:relative;z-index:1}
 .frow-grid{gap:clamp(40px,6vw,110px)}
-.frow-copy h2{font-size:clamp(28px,3.6vw,52px);letter-spacing:-.04em;line-height:1.02;max-width:14ch}
+.frow-copy h2{font-size:clamp(28px,3.6vw,52px);letter-spacing:-.04em;line-height:1.06;max-width:14ch}
 @media (min-width:901px){
   .frow-media{margin-bottom:calc(-1 * clamp(40px,6vw,88px));margin-top:calc(-1 * clamp(24px,3vw,44px));
 }
@@ -68,7 +68,7 @@
 .cta{border-radius:0;background:none;
   padding:clamp(52px,6.5vw,96px) max(var(--gut),calc((100vw - var(--wrap))/2 + var(--gut)));
   border-top:1px solid var(--rule);gap:clamp(32px,5vw,72px)}
-.cta .d3{font-size:clamp(30px,4.4vw,60px);letter-spacing:-.04em;line-height:1.02;max-width:14ch}
+.cta .d3{font-size:clamp(30px,4.4vw,60px);letter-spacing:-.04em;line-height:1.06;max-width:14ch}
 .cta .btn{padding-block:18px}
 @media (max-width:700px){.cta{padding:72px var(--gut)}}
 
@@ -94,10 +94,9 @@
 .strack .ecard{min-height:430px;padding:32px 30px;border-radius:20px;background:rgba(255,255,255,.06);
   border-color:rgba(255,255,255,.16);justify-content:space-between;
   
-  transition:background .35s var(--e),border-color .35s var(--e),transform .35s var(--e),box-shadow .35s var(--e)}
+  transition:background .35s var(--e),border-color .35s var(--e),transform .35s var(--e)}
 .strack .ecard:hover{background:var(--red);border-color:var(--red);transform:translateY(-8px);
   }
-.strack .ecard:focus-visible{outline:3px solid #fff;outline-offset:3px}
 .strack .ecard .lc-n{font-family:var(--f-d);font-weight:800;font-size:44px;letter-spacing:-.04em;
   line-height:1;text-transform:none;color:rgba(255,255,255,.9);margin-bottom:0}
 .strack .ecard h3{font-size:29px;letter-spacing:-.03em;line-height:1.12;margin:20px 0 14px;color:#fff}

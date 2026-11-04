@@ -52,8 +52,6 @@ html{scrollbar-color:var(--sea-0) var(--sea-2)}
    Section-level tones stay transparent so the descent reads as one unbroken
    darkening; a tone only ever marks a card or a callout, never a band. */
 .sec.off,.navy,.strack,.fleet{background:none}
-/* Section labels above a heading repeat the heading. */
-.sechd > .mono,.frow-copy > .mono,.tier-eyebrow,.strack-head .mono{display:none}
 
 
 /* Spec tables: hairlines only, so the caption and body read as one table. */

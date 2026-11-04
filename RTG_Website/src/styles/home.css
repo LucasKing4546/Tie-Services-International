@@ -57,7 +57,7 @@
 .stmt-grid{display:grid;grid-template-columns:1fr 400px;gap:64px;align-items:start}
 @media (max-width:900px){.stmt-grid{grid-template-columns:1fr;gap:34px}}
 
-/* ---------- pinned tiers ---------- */
+/* ---------- tiers ---------- */
 .pin-grid{display:grid}
 /* Tier panels share one grid cell, so the box is as tall as the longest
    panel and nothing shifts when the tab changes. visibility (delayed until
@@ -80,14 +80,13 @@
   border:1px solid rgba(255,255,255,.16);border-radius:20px;padding:32px 30px;display:flex;
   flex-direction:column;justify-content:space-between;transition:background .35s var(--e),border-color .35s var(--e),transform .35s var(--e)}
 .scard:hover{background:var(--red);border-color:var(--red);transform:translateY(-8px);}
-.scard:focus-visible{outline:3px solid #fff;outline-offset:3px}
 .scard .n{font-family:var(--f-d);font-weight:800;font-size:44px;letter-spacing:-.04em;line-height:1;color:rgba(255,255,255,.9)}
 .scard h3{font-size:29px;letter-spacing:-.03em;line-height:1.12;margin:20px 0 14px;color:#fff}
 .scard p{font-size:14.5px;color:rgba(255,255,255,.86);margin:0}
 .scard .arw{color:#fff;margin-top:26px}
 @media (max-width:900px){.scard{min-height:300px}}
 
-/* statement: navy band with photo, glow and grid; tight */
+/* statement: photo panel; tight */
 .stmt{position:relative;overflow:hidden;isolation:isolate;padding:clamp(52px,6vw,92px) 0 clamp(36px,4vw,56px)}
 .stmt-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-3;opacity:.22;
   mask-image:linear-gradient(to bottom,transparent,#000 30%,#000 55%,transparent 96%)}
@@ -120,7 +119,7 @@
 .stmt-grid{grid-template-columns:minmax(0,1fr) minmax(0,500px);gap:56px;align-items:center}
 @media (max-width:900px){.stmt-grid{grid-template-columns:minmax(0,1fr);align-items:start}}
 
-/* ---- pinned tiers, redesigned: open stage, no boxes, labelled steps ---- */
+/* ---- tiers, redesigned: open stage, no boxes, labelled steps ---- */
 #tiers{padding:clamp(72px,8vw,112px) 0 clamp(40px,4vw,64px)}
 .tier-h{margin-bottom:28px;max-width:26ch}
 #tiers .tier .num{font-size:clamp(44px,4vw,60px);line-height:1;margin-bottom:14px}

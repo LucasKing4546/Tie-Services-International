@@ -3,25 +3,22 @@
 
 /* ---------- header ---------- */
 .hdr .hdr-in{min-width:0}
-.hdr .brand{border-radius:10px;transition:transform .3s var(--e),opacity .2s}
+.hdr .brand{border-radius:12px;transition:transform .3s var(--e),opacity .2s}
 .hdr .brand:hover{transform:translateY(-1px)}
 .hdr .brand:active{transform:scale(.97)}
 .hdr .nav{padding:4px;border-radius:100px;border:1px solid transparent;transition:border-color .3s,background .3s}
 .hdr.on .nav{background:var(--panel);border-color:var(--rule)}
-.hdr .nav a:not(.btn){position:relative;transition:background .25s var(--e),color .25s,box-shadow .25s,transform .2s}
+.hdr .nav a:not(.btn){position:relative;transition:background .25s var(--e),color .25s,transform .2s}
 .hdr .nav a:not(.btn):hover{background:var(--panel);}
 .hdr .nav a:not(.btn):active{transform:scale(.96)}
 .hdr .nav a[aria-current="page"]:not(.btn){background:var(--panel-2);color:#fff;}
 .hdr .nav a[aria-current="page"]:not(.btn):hover{background:var(--navy-2)}
 .hdr .nav .btn{margin-left:6px;}
-.hdr .nav .btn:hover{}
-.hdr .nav .btn:active{}
-.mnav-btn{border-color:var(--rule);transition:border-color .25s,box-shadow .25s,transform .2s,background .25s}
-.mnav-btn:hover{}
+.mnav-btn{border-color:var(--rule);transition:border-color .25s,transform .2s,background .25s}
 .mnav-btn:active{transform:scale(.94)}
 .mnav[open] .mnav-btn{background:var(--panel-2);border-color:var(--ink)}
 .mnav[open] .mnav-bars::before,.mnav[open] .mnav-bars::after{background:var(--panel)}
-.mnav-panel{border:1px solid var(--rule);border-radius:22px;padding:12px;}
+.mnav-panel{border:1px solid var(--rule);border-radius:20px;padding:12px;}
 .mnav-panel a{display:flex;align-items:center;justify-content:space-between;min-height:48px;padding:12px 16px;transition:background .2s,color .2s,transform .15s}
 .mnav-panel a:not(.btn)::after{content:"\2192";color:var(--ink-2);transition:transform .25s var(--e),color .2s}
 .mnav-panel a:not(.btn):hover::after{transform:translateX(4px);color:var(--accent)}
@@ -74,7 +71,7 @@
    phone put the form before the notes about it. */
 .two:has(> div > .form){align-items:start}
 @media (max-width:900px){.two > div:has(> .form){order:-1}}
-.form{max-width:none;gap:20px;padding:36px;background:var(--panel);border:1px solid var(--rule);border-radius:22px;
+.form{max-width:none;gap:20px;padding:36px;background:var(--panel);border:1px solid var(--rule);border-radius:20px;
   position:relative}
 .form::before{content:"";position:absolute;left:36px;top:-1px;width:64px;height:4px;border-radius:0 0 4px 4px;background:var(--red)}
 @media (max-width:560px){.form{padding:26px 20px}.form::before{left:20px}}
@@ -85,7 +82,7 @@
    --rule is a hairline for decoration and too faint for an input. */
 .field input,.field select,.field textarea{font-size:16px;padding:14px 16px;min-height:50px;border:1.5px solid color-mix(in srgb,var(--ink-2) 60%,transparent);border-radius:12px;
   background:var(--panel);
-  transition:border-color .2s,background .2s,box-shadow .25s var(--e)}
+  transition:border-color .2s,background .2s}
 .field textarea{min-height:130px}
 .field input:hover,.field select:hover,.field textarea:hover{border-color:var(--ink);background:var(--panel)}
 .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--ink);background:var(--panel);
@@ -109,13 +106,12 @@
   background-image:linear-gradient(45deg,transparent 50%,var(--ink) 50%),linear-gradient(135deg,var(--ink) 50%,transparent 50%);
   background-position:calc(100% - 22px) 55%,calc(100% - 16px) 55%;background-size:6px 6px;background-repeat:no-repeat}
 .field input:read-only,.field select:disabled{background:var(--panel);border-style:dashed;color:var(--ink-2)}
-.consent{gap:12px;padding:16px;border-radius:14px;background:var(--panel);border:1px solid var(--rule)}
+.consent{gap:12px;padding:16px;border-radius:16px;background:var(--panel);border:1px solid var(--rule)}
 .consent input{flex:none;width:22px;height:22px;margin:1px 0 0;accent-color:var(--red);cursor:pointer}
 .consent a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
 .consent a:hover{color:var(--accent)}
 .form > .btn{align-self:flex-start;justify-content:center;padding:18px 36px;font-size:15.5px;
   }
-.form > .btn:hover{}
 .form > .btn:active{transform:translateY(1px) scale(.98);}
 @media (max-width:560px){.form > .btn{align-self:stretch}}
 
@@ -134,7 +130,7 @@
 /* ---------- FAQ ---------- */
 .faq{display:flex;flex-direction:column;gap:12px}
 .faq > div{padding:22px 26px 22px 72px;position:relative;border:1px solid var(--rule);border-radius:16px;
-  background:var(--panel);transition:border-color .25s var(--e),box-shadow .3s var(--e),transform .3s var(--e)}
+  background:var(--panel);transition:border-color .25s var(--e),transform .3s var(--e)}
 .faq > div:last-child{border-bottom:1px solid var(--rule)}
 .faq > div::before{content:"?";position:absolute;left:22px;top:20px;width:34px;height:34px;border-radius:50%;display:grid;
   place-items:center;font-family:var(--f-d);font-weight:800;font-size:16px;background:var(--panel);color:var(--accent);
@@ -146,10 +142,10 @@
 @media (max-width:560px){.faq > div{padding:20px 18px}.faq > div::before{position:static;margin-bottom:12px}}
 
 /* ---------- quote ---------- */
-.quote{position:relative;max-width:none;margin:0;padding:44px 40px 36px;border-radius:22px 22px 0 0;background:var(--panel);
+.quote{position:relative;max-width:none;margin:0;padding:44px 40px 36px;border-radius:20px 20px 0 0;background:var(--panel);
   border:1px solid var(--rule);border-bottom:0;font-size:clamp(22px,2.6vw,32px);letter-spacing:-.03em;text-wrap:balance}
 .quote::before{content:"";position:absolute;left:40px;top:0;width:64px;height:4px;background:var(--red);border-radius:0 0 4px 4px}
-.quote + .quote-c{margin:0 0 28px;padding:16px 40px 22px;border-radius:0 0 22px 22px;background:var(--panel-2);
+.quote + .quote-c{margin:0 0 28px;padding:16px 40px 22px;border-radius:0 0 20px 20px;background:var(--panel-2);
   color:rgba(255,255,255,.86);}
 @media (max-width:560px){.quote{padding:36px 22px 26px}.quote::before{left:22px}.quote + .quote-c{padding:14px 22px 18px}}
 

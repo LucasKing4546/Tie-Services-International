@@ -332,18 +332,28 @@ The semantic tokens default to their under-water values. The `.above` class
 works in both. The header stays a light bar on every page because the logo has
 no reversed version.
 
-- **Type**: Archivo 800 for display (letter-spacing −3.5%, line-height 1.06 — it
+- **Type**: Archivo 800 for display (letter-spacing −0.04em, line-height 1.06 — it
   was 0.92, which is tight enough that a descender nearly touches the cap of
   the line below on any two-line heading),
   Inter for body, JetBrains Mono for small technical labels. Sentence case,
-  never all-caps headings.
+  never all-caps headings (footer column headings included).
 - **Minimal surfaces: no drop shadows, no textures, no glows, no stock-photo
-  collages.** The one gradient is the water itself. Cards use
-  1px hairline borders and 16px radius. Buttons are fully rounded pills.
-- **Never navy text on navy, never red text on the water.**
+  collages.** The one texture allowed is the drawing-sheet grid on image
+  placeholders. The one gradient is the water itself. Cards use
+  1px hairline borders and 20px radius; callouts, notes, spec tables and draft
+  panels 16px; form controls and menu items 12px. Buttons are fully rounded pills.
+- **Never navy text on navy, never red text on the water.** Red type is allowed
+  only on the sky (the homepage hero accent word, about 5.5:1).
+- **Focus ring:** 3px `--ink` (white under water, navy on `.above`/`.hdr`) from
+  one rule in `tokens.css`. Red cannot reach 3:1 on the water.
+- **Homepage spine:** below the hero the still line carries on at the hoist's x;
+  every section's top rule runs to it and the load rests on the footer crest.
 - **Motion budget, three pieces:** waves, the vessel arriving, the hoist line.
-  Masked reveals are the only entrance motion. Never drive a carousel, pin or
-  content switch from page scroll. Do not add scattered hover effects.
+  Entrance motion is a closed set: masked reveals (`.rl`), `.fu` fade-up,
+  `.stag` stagger, the tier tab crossfade and the mobile menu. Hover is a closed
+  set too: 2px button lift, 8px card lift, red fill on link targets, the image
+  zoom, the index-row slide and the arrow disc. Add nothing to either. Never
+  drive a carousel, pin or content switch from page scroll.
 - **Compact.** Pages are meant to be short: one idea per screen. Section padding
   and display sizes were cut for this; do not grow them back.
 - Masked line reveals (`.rl`) need `padding-bottom` inside the mask or descenders
