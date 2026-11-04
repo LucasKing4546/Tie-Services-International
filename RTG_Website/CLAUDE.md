@@ -265,7 +265,11 @@ These are real and unresolved. Flag them; do not invent content to fill them.
    the site owner on 2026-10-08, overriding the earlier hold-back rule. The
    document itself still describes names as "subject to written permission", so
    that permission remains RTG's to hold. Names not in the document are still
-   not to be added.
+   not to be added. Exception (site owner, 2026-11-05): the homepage "What our clients
+   say" band carries the three quotes from `romica-website-concept.html`
+   (Fugro, Hyundai Heavy Industries, Fisher Offshore). They are not in the
+   copy document and Fisher Offshore is not among its clients: RTG must hold
+   written permission from each person quoted before launch.
 7a. **Only RTG can supply**: certificate
    numbers and expiry dates; insurance limits; refurbishment lead times by scope
    band; current capacity by tier; the tariff and origin position confirmed with

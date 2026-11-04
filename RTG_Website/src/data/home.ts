@@ -120,3 +120,26 @@ export const CASE_FIGS: { id: string; fig: string; photo?: string }[] = [
   { id: 'P-04', fig: 'Tier 4' },
   { id: 'P-03', fig: '2009 to 2021' },
 ];
+
+/** "What our clients say" — the three client quotes from the concept file
+ *  (romica-website-concept.html), added on the site owner's instruction of
+ *  2026-11-05. Not in RTG_Website_Copy_Concise.docx, and Fisher Offshore is
+ *  not among its listed clients: written permission from each person quoted
+ *  is RTG's to hold before launch (CLAUDE.md §5.7). */
+export const VOICES = [
+  { quote: 'Winches have been designed to meet specific deck arrangements or deck space determined by Fugro. Fugro is happy to work with REL.',
+    name: 'Blair McGunnigle', role: 'Product Owner, Marine Seismic Operations, Fugro' },
+  { quote: 'The quality of the design, good communication with the customer and the equipment delivery in time were highly appreciated.',
+    name: 'Ki-su Kim', role: 'Deputy General Manager, Hyundai Heavy Industries' },
+  { quote: 'Quality new-build winches from Romica Engineering will enhance the turnkey capability and commitment to our customers.',
+    name: 'Mike Robertson', role: 'Director, Commercial and Technical, Fisher Offshore' },
+];
+
+/** The company timeline: STORY.body's own sentences, one per year, plus the
+ *  verified delivery figure from PROOF. */
+export const TIMELINE = [
+  { year: `${PROOF.since}`, text: `In ${PROOF.since} Robert Turner, a qualified electrical engineer, entered the deck machinery industry.` },
+  { year: '2003', text: 'In 2003 the family business continued as Romica Tie Group under his son Mike Turner, combining British design with Romanian manufacturing.' },
+  { year: 'Today', text: `Today a team of around ${PROOF.staff} engineers, welders, fabricators and technicians designs, builds, tests and supports RTG equipment working worldwide.` },
+  { year: PROOF.machines.toLocaleString('en-GB'), text: 'Machines delivered' },
+];

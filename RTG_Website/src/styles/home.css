@@ -39,12 +39,8 @@
 
 /* ---------- statement ---------- */
 .stmt .d2{max-width:19ch}
-.stmt-grid{display:grid;grid-template-columns:1fr 400px;gap:64px;align-items:start}
-@media (max-width:900px){.stmt-grid{grid-template-columns:1fr;gap:34px}}
 
 /* statement: title and lede as one balanced block, centred on each other */
-.stmt-grid{grid-template-columns:minmax(0,1fr) minmax(0,500px);gap:56px;align-items:center}
-@media (max-width:900px){.stmt-grid{grid-template-columns:minmax(0,1fr);align-items:start}}
 
 /* Narrow phones: two by two, so "commissioning" fits without breaking. */
 
@@ -53,7 +49,6 @@
    the right. Later rules in this file set the grid; these set the type. */
 .stmt .d2{max-width:18ch}
 .stmt .lede{margin-top:22px;max-width:56ch}
-.stmt-grid{align-items:center}
 .stmt-side{border-top:1px solid var(--rule);padding-top:22px}
 .stmt-side h3{font-size:clamp(20px,1.8vw,26px)}
 .stmt-side p{margin:12px 0 18px;color:var(--ink-2);max-width:44ch}
@@ -106,8 +101,9 @@
 .home-main > .cond{background:#123A4A}
 .home-main > .tiers-sec{background:var(--sea-1)}
 .home-main > .service{background:#0A2231}
+.home-main > .voices-sec{background:#081B28}
 .home-main > .stmt{background:var(--sea-2)}
-.home-main > .sec{padding:clamp(52px,5.4vw,84px) 0}
+.home-main > .sec{padding:clamp(40px,4vw,60px) 0}
 .home-main > .mkts{padding-top:clamp(28px,3vw,44px)}
 .home-main .lede{font-size:clamp(18px,1.4vw,20px);line-height:1.55}
 .home-main h2.d2{margin:0 0 clamp(24px,2.6vw,36px)}
@@ -210,3 +206,28 @@
 .mkt-img.is-plate::before{content:"";position:absolute;inset:0;opacity:.5;
   background-image:linear-gradient(var(--rule) 1px,transparent 1px),linear-gradient(90deg,var(--rule) 1px,transparent 1px);
   background-size:14px 14px;background-position:center}
+
+/* No hairline above a section head on the homepage: the band edge is the rule. */
+.home-main .sechd{border-top:0;padding-top:0}
+
+/* What our clients say: three quotes, a red mark above each. */
+.voices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(28px,3vw,44px)}
+.voice{margin:0;display:flex;flex-direction:column}
+.voice::before{content:"";width:32px;height:3px;background:var(--red);margin-bottom:22px}
+.voice blockquote{margin:0;font-size:clamp(18px,1.5vw,21px);line-height:1.45;color:var(--ink);text-wrap:pretty}
+.voice figcaption{margin-top:auto;padding-top:20px;font-size:14px;color:var(--ink-2)}
+.voice figcaption b{display:block;color:var(--ink);font-size:15px;margin-bottom:2px}
+@media (max-width:900px){.voices{grid-template-columns:minmax(0,1fr)}}
+
+/* About: timeline left, the machine and the client line right. */
+.about{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,5vw,72px);align-items:start}
+.timeline{list-style:none;margin:0;padding:0;border-left:1.5px solid var(--rule)}
+.timeline li{position:relative;padding:0 0 28px 28px}
+.timeline li:last-child{padding-bottom:0}
+.timeline li::before{content:"";position:absolute;left:-6px;top:10px;width:10px;height:10px;border-radius:50%;background:var(--red)}
+.tl-year{display:block;font-family:var(--f-d);font-weight:800;font-size:clamp(24px,2.2vw,32px);letter-spacing:-.03em;
+  line-height:1.1;font-variant-numeric:tabular-nums lining-nums}
+.tl-text{display:block;margin-top:6px;font-size:16.5px;line-height:1.55;color:var(--ink-2);max-width:52ch}
+.about-photo{aspect-ratio:16/10;margin-bottom:28px}
+.about-side .stmt-side{border-top:0;padding-top:0}
+@media (max-width:900px){.about{grid-template-columns:minmax(0,1fr)}}

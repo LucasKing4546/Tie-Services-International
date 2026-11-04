@@ -1,0 +1,18 @@
+---
+// "What our clients say": three quotes side by side, as in the concept's
+// voices band. Source and permission note on VOICES in @data/home.
+import { VOICES } from '@data/home';
+---
+<section class="sec voices-sec">
+  <div class="wrap">
+    <h2 class="d2"><span class="rl"><span>What our clients say</span></span></h2>
+    <div class="voices stag">
+      {VOICES.map((v) => (
+        <figure class="voice">
+          <blockquote>{v.quote}</blockquote>
+          <figcaption><b>{v.name}</b>{v.role}</figcaption>
+        </figure>
+      ))}
+    </div>
+  </div>
+</section>

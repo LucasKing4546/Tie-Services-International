@@ -161,9 +161,16 @@ const robots = offMap || unfinished ? 'noindex, follow' : 'index, follow, max-im
             if (el.parentElement === d.body) e.newDocument.body.appendChild(el);
           });
           // ...and the stylesheets they injected into <head>, which the
-          // router would otherwise drop, leaving the panel as bare text.
-          d.head.querySelectorAll('style[id^="onetrust"], style[id*="hatra"], style[class*="hatra"]').forEach(function (el) {
-            e.newDocument.head.appendChild(el);
+          // router would otherwise drop: without them the OneTrust panel is
+          // bare text and the Chatra button loses its fixed position and
+          // drops to the end of the page, under the footer. Chatra's styles
+          // are matched by content as well as id/class/href, because not
+          // every tag it injects is named.
+          var vendor = /onetrust|chatra/i;
+          d.head.querySelectorAll('style, link[rel="stylesheet"]').forEach(function (el) {
+            var named = vendor.test(el.id + ' ' + el.className + ' ' + (el.getAttribute('href') || ''));
+            var styled = el.tagName === 'STYLE' && /[#.]chatra/i.test(el.textContent || '');
+            if (named || styled) e.newDocument.head.appendChild(el);
           });
         });
         d.addEventListener('click', function (e) {

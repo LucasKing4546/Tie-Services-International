@@ -7,12 +7,15 @@
  *
  * Deliberate gaps from the page map's H-01 blocks (decided 2026-11-04):
  * no avatar doors or strips (the routes are the sections themselves), and
- * no testimonials, featured case or bulletin sign-up until RTG supplies the
- * content. A Gap marker here would noindex the homepage (CLAUDE.md §5b).
+ * no featured case or bulletin sign-up until RTG supplies the content. The
+ * client quotes (Voices) were added on the site owner's instruction of
+ * 2026-11-05; see VOICES in @data/home for their permission note. A Gap
+ * marker here would noindex the homepage (CLAUDE.md §5b).
  */
 import Base from '@layouts/Base.astro';
 import Hero from '@components/home/Hero.astro';
 import Statement from '@components/home/Statement.astro';
+import Voices from '@components/home/Voices.astro';
 import Conditions from '@components/home/Conditions.astro';
 import PhotoRows from '@components/home/PhotoRows.astro';
 import CaseStudies from '@components/home/CaseStudies.astro';
@@ -35,6 +38,7 @@ const sectors = SECTORS.map((s) => ({ title: s.name, blurb: s.blurb, href: s.hre
     <Conditions />
     <TierLadder />
     <LifecycleSteps />
+    <Voices />
     <Statement />
   </div>
 </Base>
