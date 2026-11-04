@@ -242,7 +242,7 @@ The homepage runs in a fixed order under its sky hero: the proof strip (four fig
 
 ## Elevation & Depth
 
-The system is flat. There is no box-shadow anywhere in the build. Depth comes from the water: the page darkens as the reader descends, and surfaces separate from it only by a faint translucent fill (panel) and a 1px hairline. Photographs fade up out of the water through a mask rather than starting on a hard edge, and photo cards use a dark teal scrim (a gradient over the image) so white type stays legible. Homepage photographs carry no scrim and never carry type; they are graded cool instead (The Cool Grade Rule). The header's 14px backdrop blur is the only blur.
+The system is flat. There is no box-shadow anywhere in the build. Depth comes from the water: the page darkens as the reader descends, and surfaces separate from it only by a faint translucent fill (panel) and a 1px hairline. Photographs fade up out of the water through a mask rather than starting on a hard edge, and photo cards use a dark teal scrim (a gradient over the image) so white type stays legible. Homepage photographs carry no scrim and never carry type; they are shown in their true colour (The True Colour Rule). The header's 14px backdrop blur is the only blur.
 
 **The No Shadow Rule.** No drop shadows, no glows, no hard offset shadows. If something needs to stand forward, give it a hairline and a panel fill.
 
