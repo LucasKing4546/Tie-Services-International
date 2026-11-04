@@ -19,7 +19,7 @@
   .sechd{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);align-items:end}
   .sechd > .mono{grid-column:1 / -1}
   .sechd > .d2,.sechd > .d3{grid-column:1}
-  .sechd > .lede{grid-column:2;padding-bottom:.6em;border-left:1px solid var(--red);padding-left:24px}
+  .sechd > .lede{grid-column:2;padding-bottom:.6em;border-left:0;padding-left:0}
 }
 
 /* ---------- feature rows: overlap, offsets, caption plate ---------- */

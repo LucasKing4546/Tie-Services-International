@@ -203,8 +203,6 @@
   background-image:linear-gradient(var(--rule) 1px,transparent 1px),linear-gradient(90deg,var(--rule) 1px,transparent 1px);
   background-size:14px 14px;background-position:center}
 
-/* No hairline above a section head on the homepage: the band edge is the rule. */
-.home-main .sechd{border-top:0;padding-top:0}
 
 /* What our clients say: three quotes, a red mark above each. */
 .voices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(28px,3vw,44px)}

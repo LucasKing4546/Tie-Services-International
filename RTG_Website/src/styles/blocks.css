@@ -26,15 +26,9 @@
 /* ---------- section head (SectionHead.astro) ----------
    A hairline rule, deliberately no number — numbering is reserved for the
    places order is a real sequence: StepList and the tiers. Elsewhere a section head's content isn't a numbered step. */
-.sechd{position:relative;margin-bottom:32px;border-top:1px solid var(--rule);padding-top:28px}
+.sechd{position:relative;margin-bottom:32px}
 .sechd > *{max-width:900px}
-.navy .sechd{border-top-color:rgba(255,255,255,.2)}
-/* .strack-head is itself a .wrap, so an inset-0 pseudo-element spans its
-   padding box and the rule would start a gutter to the left of the cards it
-   sits above. Inset it by the gutter to line up with the content column. */
-.strack-head{position:relative;margin-top:26px}
-.strack-head::before{content:"";position:absolute;top:-26px;left:var(--gut);right:var(--gut);
-  height:1px;background:rgba(255,255,255,.2)}
+.strack-head{position:relative}
 .sechd .mono{display:block;margin-bottom:22px}
 @media (max-width:900px){
   .sec.sm{padding:64px 0}

@@ -180,7 +180,7 @@ Two palettes that never trade roles: the brand's navy and red, and an ambient te
 
 ### Primary
 - **Logo Navy** (navy): the logo wordmark, header type, the footer ground and the seabed edge, the vessel hull. Never type on the water and never type on itself.
-- **Signal Red** (red): primary button fills, active tab rules, list markers, the red rule beside a section's lede, placeholder labels, text selection. Hovers deepen to **Deep Crimson** (red-deep). Above the water (the sky) red may colour an accented word in a heading, where it holds about 5.5:1.
+- **Signal Red** (red): primary button fills, active tab rules, list markers, placeholder labels, text selection. Hovers deepen to **Deep Crimson** (red-deep). Above the water (the sky) red may colour an accented word in a heading, where it holds about 5.5:1.
 
 ### Neutral: the water
 - **Mist** (sky): the band above the waterline on every page and the full homepage hero. The header bar is this mist at 90% with a 14px backdrop blur.
@@ -232,7 +232,7 @@ Two palettes that never trade roles: the brand's navy and red, and an ambient te
 
 A centred container (wrap, 1320px) with a 32px gutter that drops to 20px under 700px. Body copy is set to a narrower measure (prose, 680px) so figures and tables can break wider than the text they belong to.
 
-Sections are compact: vertical padding is the section clamp (smaller sections use section-sm), and the first section after a page hero starts closer. Section heads are asymmetric on wide screens: the heading on the left (about 1.5 parts, max 16ch) and the lede on the right (1 part), bottom-aligned, led by a 1px red rule; a hairline sits above the whole head. Below 901px everything stacks to one column.
+Sections are compact: vertical padding is the section clamp (smaller sections use section-sm), and the first section after a page hero starts closer. Section heads are asymmetric on wide screens: the heading on the left (about 1.5 parts, max 16ch) and the lede on the right (1 part), bottom-aligned, with no rule beside the lede and no hairline above the head (removed by the site owner, 2026-11-05). Below 901px everything stacks to one column.
 
 Card rails on inner pages (scroll tracks, carousels) are native horizontal scroll-snap rows moved by swipe, drag or their prev/next buttons. Nothing pins and nothing is driven by page scroll. Breakpoints in use: 1080px (desktop nav collapses to the menu), 901/900px (two columns to one), 820px (homepage hero: the proof strip goes two by two), 700px (gutter), 620px (homepage tier columns to one), 560px (header CTA hides; 44px touch targets also apply on coarse pointers), 520px.
 
