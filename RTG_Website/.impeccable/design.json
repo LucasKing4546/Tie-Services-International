@@ -99,11 +99,6 @@
         "displayName": "Abyss",
         "canonical": "#061520"
       },
-      "photo-grade": {
-        "role": "neutral",
-        "displayName": "Grade Teal",
-        "canonical": "#3E7C90"
-      },
       "ink": {
         "role": "neutral",
         "displayName": "Foam White",
@@ -240,11 +235,6 @@
         "name": "case-card-state",
         "value": ".3s ease, border-color to rgba(255,255,255,.45) on hover",
         "purpose": "Homepage case cards: hover changes only the border."
-      },
-      {
-        "name": "photo-grade",
-        "value": "filter: saturate(.45) contrast(1.08) brightness(1.04); ::after #3E7C90, mix-blend-mode multiply, opacity .55",
-        "purpose": "Homepage photographs (band photos, row thumbnails, case photos). Not motion; carried here because the frontmatter cannot hold filters."
       }
     ],
     "breakpoints": [
@@ -337,7 +327,7 @@
       "name": "Photo Row",
       "kind": "custom",
       "refersTo": "photo-row-thumb",
-      "description": "Homepage register row (Sectors, Equipment): graded 132px 3/2 thumbnail, title, blurb, 44px disc that fills red. No photo shows a small drawing-sheet plate.",
+      "description": "Homepage register row (Sectors, Equipment): 132px 3/2 thumbnail, title, blurb, 44px disc that fills red. No photo shows a small drawing-sheet plate.",
       "html": "<ul class=\"ds-prow\"><li><a href=\"#\"><span class=\"ds-prow-img\"></span><h3>Hydrographic survey</h3><p>Winches and LARS for multibeam and towed sensors.</p><span class=\"ds-prow-go\"><svg viewBox=\"0 0 24 24\" width=\"1em\" height=\"1em\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M4 12h15M13 6l6 6-6 6\"/></svg></span></a></li></ul>",
       "css": ".ds-prow{list-style:none;margin:0;padding:0;border-top:1px solid rgba(220,231,234,.18)} .ds-prow a{display:grid;grid-template-columns:132px minmax(0,1fr) minmax(0,1.25fr) 44px;gap:32px;align-items:center;padding:14px 0;border-bottom:1px solid rgba(220,231,234,.18);color:#fff;text-decoration:none} .ds-prow-img{position:relative;display:block;aspect-ratio:3/2;border-radius:12px;overflow:hidden;border:1px solid rgba(220,231,234,.18);background:rgba(6,21,32,.35);background-image:linear-gradient(rgba(220,231,234,.09) 1px,transparent 1px),linear-gradient(90deg,rgba(220,231,234,.09) 1px,transparent 1px);background-size:14px 14px} .ds-prow h3{margin:0;font-family:var(--f-d);font-weight:800;font-size:24px;letter-spacing:-.03em;line-height:1.15} .ds-prow p{margin:0;font-size:16px;line-height:1.5;color:#BFD2D8} .ds-prow-go{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:1px solid rgba(220,231,234,.18);transition:background .3s var(--e),border-color .3s var(--e)} .ds-prow a:hover .ds-prow-go,.ds-prow a:focus-visible .ds-prow-go{background:#AB3241;border-color:#AB3241} .ds-prow a:focus-visible{outline:3px solid #fff;outline-offset:2px;border-radius:12px}"
     },
@@ -376,8 +366,8 @@
         "section": "colors"
       },
       {
-        "name": "The Cool Grade Rule",
-        "body": "Homepage photographs are graded into the water: saturate(.45) contrast(1.08) brightness(1.04), then Grade Teal multiplied over at 55%. No photograph enters the homepage at full colour.",
+        "name": "The True Colour Rule",
+        "body": "Photographs are shown as taken: no filter, no tint, no overlay (the site owner's call, 2026-11-05). Only photo cards that carry type keep their legibility scrim.",
         "section": "colors"
       },
       {
@@ -423,7 +413,7 @@
     ],
     "dos": [
       "Do keep every inner-page section transparent on the one water gradient; on the homepage, step each band one shade deeper than the last (The One Water Rule).",
-      "Do grade every homepage photograph cool (The Cool Grade Rule).",
+      "Do show photographs in their true colour (The True Colour Rule).",
       "Do set type under water in ink or ink-soft only; red stays a fill or a mark.",
       "Do keep the header the light mist bar on every page.",
       "Do give figures the largest type in their block, in Archivo 800 with tabular lining figures.",

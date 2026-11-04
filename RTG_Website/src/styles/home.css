@@ -109,14 +109,10 @@
 .home-main h2.d2{margin:0 0 clamp(24px,2.6vw,36px)}
 .home-main .sechd h2.d2{margin:0}
 
-/* Real photographs, graded cool so they sit in the water: desaturated,
-   then a surface-teal multiply over each one. */
+/* Real photographs, shown as taken: no filter, no tint. */
 .band-photo{margin:0;overflow:hidden;border-radius:20px;background:var(--sea-1)}
-.band-photo,.mkt-img,.cs-img{position:relative;isolation:isolate}
-.band-photo::after,.mkt-img::after,.cs-img::after{content:"";position:absolute;inset:0;pointer-events:none;
-  background:#3E7C90;mix-blend-mode:multiply;opacity:.55}
-.band-photo img,.mkt-img img,.cs-img img{width:100%;height:100%;object-fit:cover;
-  filter:saturate(.45) contrast(1.08) brightness(1.04)}
+.band-photo,.mkt-img,.cs-img{position:relative}
+.band-photo img,.mkt-img img,.cs-img img{width:100%;height:100%;object-fit:cover}
 
 /* Sectors: the market register, one ruled row per sector with its photo. */
 .mkt-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
@@ -201,7 +197,7 @@
 
 /* No photograph yet: the site's drawing-sheet plate (ImageSlot), in small. */
 .mkt-img.is-plate{border:1px solid var(--rule);background:var(--panel-2)}
-.mkt-img.is-plate::after{inset:auto;top:8px;right:8px;width:9px;height:9px;background:none;mix-blend-mode:normal;
+.mkt-img.is-plate::after{content:"";position:absolute;top:8px;right:8px;width:9px;height:9px;
   opacity:.7;border-top:1px solid var(--red);border-right:1px solid var(--red)}
 .mkt-img.is-plate::before{content:"";position:absolute;inset:0;opacity:.5;
   background-image:linear-gradient(var(--rule) 1px,transparent 1px),linear-gradient(90deg,var(--rule) 1px,transparent 1px);

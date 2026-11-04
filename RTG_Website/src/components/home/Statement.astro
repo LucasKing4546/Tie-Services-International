@@ -1,6 +1,6 @@
 ---
 // The company, last before the seabed, in the concept's About layout: the
-// heading across the top, the timeline on the left (STORY's own sentences,
+// heading and timeline on the left (STORY's own sentences,
 // TIMELINE in @data/home), a machine on test and the client line on the
 // right. The client names in STORY were authorised on 2026-10-08. The page
 // closes on the two enquiry routes (labels as used by the hub heroes and
@@ -14,11 +14,13 @@ const photo = mediaFor('IMG-E02-D');
 ---
 <section class="sec stmt">
   <div class="wrap">
-    <h2 class="d2"><span class="rl"><span>{STORY.heading}</span></span></h2>
     <div class="about">
-      <ol class="timeline stag">
-        {TIMELINE.map((t) => <li><span class="tl-year">{t.year}</span><span class="tl-text">{t.text}</span></li>)}
-      </ol>
+      <div>
+        <h2 class="d2"><span class="rl"><span>{STORY.heading}</span></span></h2>
+        <ol class="timeline stag">
+          {TIMELINE.map((t) => <li><span class="tl-year">{t.year}</span><span class="tl-text">{t.text}</span></li>)}
+        </ol>
+      </div>
       <div class="about-side fu">
         {photo && (
           <figure class="band-photo about-photo">

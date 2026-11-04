@@ -13,7 +13,6 @@ colors:
   sea-mid: "#0D2B3B"
   sea-deep: "#0A2231"
   sea-abyss: "#061520"
-  photo-grade: "#3E7C90"
   ink: "#FFFFFF"
   ink-soft: "#BFD2D8"
   sky-ink: "#0D2B3B"
@@ -189,7 +188,6 @@ Two palettes that never trade roles: the brand's navy and red, and an ambient te
 - **Mid-Water** (sea-mid): the gradient's middle stop, at 52% of the page.
 - **Abyss** (sea-abyss): the bottom stop and the body background behind everything.
 - **Shallows** (sea-shallows), **Shelf** (sea-shelf), **Slope** (sea-slope) and **Deep Water** (sea-deep): homepage band shades only, filling the steps between the three gradient stops. The homepage order is Teal Surface (sectors), Shallows (case studies), Shelf (equipment), Slope (engineered for offshore conditions), Mid-Water (contract manufacturing), Deep Water (service), Abyss (company), then the navy seabed footer.
-- **Grade Teal** (photo-grade): never a surface. It is multiplied over homepage photographs to grade them into the water.
 - **Foam White** (ink) and **Kelp Grey** (ink-soft): the two type colours under water, primary and secondary.
 - **Hairline** (rule), **Glass Panel** (panel), **Deep Panel** (panel-deep): white-alpha hairlines, the faint card fill, and the darker fill for drawing-sheet placeholders and the mobile menu bars.
 
@@ -199,7 +197,7 @@ Two palettes that never trade roles: the brand's navy and red, and an ambient te
 ### Named Rules
 **The One Water Rule.** On inner pages the page background is the single gradient on main (sea-surface held flat under the waterline, then sea-mid at 52%, then sea-abyss). No section there gets its own opaque background; a tone only ever marks a card or a callout, never a band. The homepage is the one exception: every section below the waterline is a solid band one shade deeper than the one above it, from sea-surface down to sea-abyss. Bands only step darker; never a light band under water.
 
-**The Cool Grade Rule.** Homepage photographs are graded into the water: saturate(.45) contrast(1.08) brightness(1.04), then Grade Teal multiplied over at 55%. No photograph enters the homepage at full colour.
+**The True Colour Rule.** Photographs are shown as taken: no filter, no tint, no overlay (the site owner's call, 2026-11-05). Only photo cards that carry type keep their legibility scrim.
 
 **The Red Is a Mark Rule.** Under the water red fills a button, draws a rule or dots a marker. It never sets type there (it falls to about 2.3:1 on mid-water and 1.3:1 at the surface). Accented type under water is white.
 
@@ -290,7 +288,7 @@ Confident, rounded and few.
 A ruled list of large titles, each with a short blurb and a 56px circular arrow disc. On hover or focus a rounded panel fades in behind the row, the blurb slides 8px, and the disc slides 6px and fills red. Inner pages only: related equipment on sector pages, the tier list on the manufacturing ladder, proof lists, and the fallback for child cards too few to scroll.
 
 ### Photo Register (homepage)
-The homepage's Sectors and Equipment bands: one ruled row per item, led by a photograph of the work. Each row is a 132px thumbnail at 3/2 and control radius, graded cool, then the Title-weight name, a Kelp Grey blurb and a 44px circular disc with a drawn arrow. Hover and focus only fill the disc red. A row with no photograph yet shows a small drawing-sheet plate: Deep Panel fill, hairline border, a 14px grid and a red corner tick. The thumbnail drops to 104px under 900px and 84px under 520px, where the disc goes.
+The homepage's Sectors and Equipment bands: one ruled row per item, led by a photograph of the work. Each row is a 132px thumbnail at 3/2 and control radius, then the Title-weight name, a Kelp Grey blurb and a 44px circular disc with a drawn arrow. Hover and focus only fill the disc red. A row with no photograph yet shows a small drawing-sheet plate: Deep Panel fill, hairline border, a 14px grid and a red corner tick. The thumbnail drops to 104px under 900px and 84px under 520px, where the disc goes.
 
 ### Case-study Grid (homepage)
 The four case studies sized by the scale of the work: a feature card whose photograph spans two rows, two stacked cards beside it, and a full-width strip with figure, text and arrow link in a row. Cards are figure-led: an Archivo 800 figure in tabular lining figures (up to 44px, 56px on the feature card) above the title, blurb and arrow link. Glass Panel fill, hairline border, card radius. Hover changes only the border, to 45% white. One column under 900px, photos at 16/10.
@@ -299,7 +297,7 @@ The four case studies sized by the scale of the work: a feature card whose photo
 Contract manufacturing's four cumulative tiers side by side, all visible: under a 1.5px ink rule, four columns divided by 1px hairlines, each a linked title (its underline appears on hover), a lede and points marked with a 7px red dash. No tabs, no number labels. Two columns under 1080px, one under 620px.
 
 ### Band Photo (homepage)
-A graded photograph standing on its own in a band, at card radius: 16/10 for engineering and service, a 21/8 wide strip for the manufacturing shop floor that returns to 16/10 under 900px.
+A photograph standing on its own in a band, at card radius: 16/10 for engineering and service, a 21/8 wide strip for the manufacturing shop floor that returns to 16/10 under 900px.
 
 ### Waterline (signature)
 Three looping wave layers, each twice its box's width, sliding at 22s, 13s and 9s, tinted from mist towards the teal surface; the front wave is exactly the surface colour so it runs into the water with no seam. The homepage hero holds it full height with the vessel riding between the back and front waves; inner pages use a slim 132px band of mist under the header.
@@ -309,7 +307,7 @@ Three looping wave layers, each twice its box's width, sliding at 22s, 13s and 9
 
 ### Do:
 - **Do** keep every inner-page section transparent on the one water gradient; on the homepage, step each band one shade deeper than the last (The One Water Rule).
-- **Do** grade every homepage photograph cool (The Cool Grade Rule).
+- **Do** show photographs in their true colour (The True Colour Rule).
 - **Do** set type under water in ink or ink-soft only; red stays a fill or a mark.
 - **Do** keep the header the light mist bar on every page.
 - **Do** give figures the largest type in their block, in Archivo 800 with tabular lining figures.
