@@ -163,10 +163,18 @@
   .cond-list{grid-column:2;grid-row:2;align-self:center}
 }
 
-/* Contract manufacturing: the shop floor under the head. */
-.tiers-photo{aspect-ratio:21/8;margin:0 0 clamp(28px,3vw,40px)}
-.tiers-photo img{object-position:50% 45%}
-@media (max-width:900px){.tiers-photo{aspect-ratio:16/10}}
+/* Contract manufacturing: the A-frame beside the four tiers, two by two,
+   sharing one height. */
+.tiers-in{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,4vw,56px);align-items:stretch}
+.tiers-photo{min-height:360px}
+.tiers-photo img{object-position:50% 35%}
+.tiers-in .tiers{grid-template-columns:repeat(2,minmax(0,1fr))}
+.tiers-in .tiers > li:nth-child(2n){border-right:0;margin-right:0}
+.tiers-in .tiers > li:nth-child(-n+2){border-bottom:1px solid var(--rule)}
+@media (max-width:900px){.tiers-in{grid-template-columns:minmax(0,1fr)}.tiers-photo{min-height:0;aspect-ratio:4/3}}
+@media (max-width:620px){.tiers-in .tiers{grid-template-columns:minmax(0,1fr)}
+  .tiers-in .tiers > li{border-right:0;margin-right:0;padding-right:0;border-bottom:1px solid var(--rule)}
+  .tiers-in .tiers > li:last-child{border-bottom:0}}
 
 /* Service: words and actions, then the deck. */
 .service-in{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(32px,5vw,80px);align-items:center}
@@ -185,7 +193,7 @@
 .tiers p{margin:0;font-size:16px;line-height:1.5;color:var(--ink)}
 .tiers ul{list-style:none;margin:16px 0 0;padding:0;display:flex;flex-direction:column;gap:8px}
 .tiers ul li{position:relative;padding-left:16px;font-size:15.5px;line-height:1.45;color:var(--ink-2)}
-.tiers ul li::before{content:"";position:absolute;left:0;top:.65em;width:7px;height:1.5px;background:var(--red)}
+.tiers ul li::before{content:"";position:absolute;left:0;top:.62em;width:8px;height:2px;background:var(--red)}
 .tiers-more{margin:30px 0 0}
 @media (max-width:1080px){.tiers{grid-template-columns:repeat(2,minmax(0,1fr))}
   .tiers > li:nth-child(2n){border-right:0;margin-right:0}

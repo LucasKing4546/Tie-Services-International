@@ -8,15 +8,16 @@ import { Image } from 'astro:assets';
 import { mediaFor } from '@data/media';
 import { MANUFACTURING, TIERS } from '@data/home';
 
-// An A-frame and its winch assembled on the shop floor in Satu Mare.
-const photo = mediaFor('IMG-S07-C');
+// The DS96 A-frame, fabricated and erected on its base outside the plant.
+const photo = mediaFor('IMG-E07-B');
 ---
 <section class="sec tiers-sec" id="tiers">
   <div class="wrap">
     <SectionHead heading={MANUFACTURING.heading} lede={MANUFACTURING.body} />
+    <div class="tiers-in">
     {photo && (
       <figure class="band-photo tiers-photo fu">
-        <Image src={photo} alt="" widths={[900, 1600]} sizes="(max-width:1320px) 100vw, 1256px" loading="lazy" />
+        <Image src={photo} alt="" widths={[700, 1200]} sizes="(max-width:900px) 100vw, 560px" loading="lazy" />
       </figure>
     )}
     <ol class="tiers stag">
@@ -28,6 +29,7 @@ const photo = mediaFor('IMG-S07-C');
         </li>
       ))}
     </ol>
+    </div>
     <p class="tiers-more"><a class="arw" href={MANUFACTURING.link.href}>{MANUFACTURING.link.label} <Icon name="arrow" /></a></p>
   </div>
 </section>
