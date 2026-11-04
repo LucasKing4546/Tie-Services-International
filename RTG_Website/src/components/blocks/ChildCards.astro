@@ -7,8 +7,8 @@
 import { childEntries } from '@lib/content';
 import { sentenceCase, type CardItem } from '@lib/blocks';
 import CardGrid from './CardGrid.astro';
-import ScrollTrack from './ScrollTrack.astro';
-import IndexRows from './IndexRows.astro';
+import PhotoList from './PhotoList.astro';
+import { mediaFor } from '@data/media';
 import Card from './Card.astro';
 
 interface Props {
@@ -22,16 +22,12 @@ interface Props {
    *  One that points at a derived child replaces that child's card where it
    *  stands, so a hub can word its own rows; the rest append after. */
   extra?: CardItem[];
-  /** Ask for the full-bleed navy set-piece rather than a light carousel —
-   *  see TRACK_MIN below: asking is not the same as getting one. */
+  /** A hub's own list: ruled photo rows (PhotoList) instead of a card
+   *  grid. Hubs were carousels until 2026-11-05. */
   track?: boolean;
   eyebrow?: string;
   heading?: string;
 }
-
-/** Below this a track has nothing to scroll — the rail never moves and the
- *  pin refuses to engage — so it falls back to IndexRows instead. */
-const TRACK_MIN = 5;
 
 const {
   of, cols = 3, label = 'Related pages', exclude = [], extra = [],
@@ -39,22 +35,31 @@ const {
 } = Astro.props;
 const pairs = (await childEntries(of)).filter(({ page }) => !exclude.includes(page.id));
 const curated = new Map(extra.map((c) => [c.href, c]));
+// Each child's photograph: the first of its own images (hero, then
+// supporting) that has a real photo registered in @data/media.
+// A child with none of its own (the Winches hub) borrows the first photo
+// found on its own child pages.
+type Entry = (typeof pairs)[number]['entry'];
+const ownPhoto = (entry: Entry) =>
+  [entry.data.hero.media?.ref, ...entry.data.media.map((m) => m.ref)].find((r) => r && mediaFor(r));
+const photoOf = async (slug: string, entry: Entry) =>
+  ownPhoto(entry) ?? (await childEntries(slug)).map(({ entry: e }) => ownPhoto(e)).find(Boolean);
+const photos = new Map(await Promise.all(pairs.map(async ({ page, entry }) => [page.slug, await photoOf(page.slug, entry)] as const)));
 const items: CardItem[] = [
-  ...pairs.map(({ page, entry }) => curated.get(page.slug) ?? {
-    title: sentenceCase(page.name),
-    href: page.slug,
-    blurb: entry.data.lede ?? page.description,
-  }),
+  ...pairs.map(({ page, entry }) => ({
+    ...(curated.get(page.slug) ?? {
+      title: sentenceCase(page.name),
+      href: page.slug,
+      blurb: entry.data.lede ?? page.description,
+    }),
+    ref: photos.get(page.slug),
+  })),
   ...extra.filter((c) => !pairs.some(({ page }) => page.slug === c.href)),
 ];
 ---
 
-{track && items.length >= TRACK_MIN ? (
-  <ScrollTrack eyebrow={eyebrow} heading={heading ?? label}>
-    {items.map((item) => <Card item={item} tone="dark" />)}
-  </ScrollTrack>
-) : track ? (
-  <IndexRows items={items} eyebrow={eyebrow} heading={heading ?? label} />
+{track ? (
+  <PhotoList heading={heading ?? label} items={items} label={label} />
 ) : (
   <CardGrid cols={cols} label={label}>
     {items.map((item) => <Card item={item} />)}

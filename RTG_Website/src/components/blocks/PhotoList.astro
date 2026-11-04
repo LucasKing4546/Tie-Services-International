@@ -1,0 +1,48 @@
+---
+// A ruled list, one row per item, led by a photograph of the work: thumbnail,
+// title, line, arrow disc. The homepage uses it for Sectors and Equipment;
+// ChildCards uses it for every hub's list of child pages (they were
+// carousels until 2026-11-05). An item with no photograph yet shows the
+// drawing-sheet plate.
+import Icon from '@components/site/Icon.astro';
+import { Image } from 'astro:assets';
+import { mediaFor } from '@data/media';
+
+interface Props {
+  heading: string;
+  items: { title: string; blurb?: string; href: string; ref?: string }[];
+  class?: string;
+  /** Accessible name for the list when the heading alone is not enough. */
+  label?: string;
+}
+const { heading, items, class: cls, label } = Astro.props;
+const rows = items.map((s) => ({ ...s, photo: s.ref ? mediaFor(s.ref) : undefined }));
+// The photo column only shows when at least half the rows have a real
+// photograph; otherwise a column of placeholders would outweigh the list.
+const withPhotos = rows.filter((r) => r.photo).length * 2 >= rows.length;
+---
+<section class:list={['sec', 'plist', cls]}>
+  <div class="wrap">
+    <h2 class="d2"><span class="rl"><span>{heading}</span></span></h2>
+    <ul class:list={['mkt-list', 'stag', { 'no-img': !withPhotos }]} aria-label={label}>
+      {rows.map((s) => {
+        const photo = s.photo;
+        return (
+          <li>
+            <a href={s.href}>
+              {withPhotos && (
+                <span class:list={['mkt-img', { 'is-plate': !photo }]}>
+                  {photo && <Image src={photo} alt="" widths={[240, 480]} sizes="200px" loading="lazy" decoding="async" />}
+                </span>
+              )}
+              <h3>{s.title}</h3>
+              {s.blurb && <p>{s.blurb}</p>}
+              <span class="mkt-go" aria-hidden="true"><Icon name="arrow" /></span>
+            </a>
+          </li>
+        );
+      })}
+    </ul>
+    <slot />
+  </div>
+</section>

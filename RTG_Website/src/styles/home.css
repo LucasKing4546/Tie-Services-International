@@ -111,23 +111,8 @@
 
 /* Real photographs, shown as taken: no filter, no tint. */
 .band-photo{margin:0;overflow:hidden;border-radius:20px;background:var(--sea-1)}
-.band-photo,.mkt-img,.cs-img{position:relative}
-.band-photo img,.mkt-img img,.cs-img img{width:100%;height:100%;object-fit:cover}
-
-/* Sectors: the market register, one ruled row per sector with its photo. */
-.mkt-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
-.mkt-list a{display:grid;grid-template-columns:132px minmax(0,1fr) minmax(0,1.25fr) 44px;gap:clamp(18px,2.6vw,40px);
-  align-items:center;padding:14px 0;border-bottom:1px solid var(--rule);color:var(--ink)}
-.mkt-img{display:block;aspect-ratio:3/2;border-radius:12px;overflow:hidden;background:var(--panel)}
-.mkt-list h3{margin:0;font-size:clamp(20px,1.9vw,27px);letter-spacing:-.03em;line-height:1.15}
-.mkt-list p{margin:0;font-size:16px;line-height:1.5;color:var(--ink-2)}
-.mkt-go{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:1px solid var(--rule);
-  transition:background .3s var(--e),border-color .3s var(--e)}
-.mkt-list a:hover .mkt-go,.mkt-list a:focus-visible .mkt-go{background:var(--red);border-color:var(--red)}
-.mkt-list a:focus-visible{outline-offset:2px;border-radius:12px}
-@media (max-width:900px){.mkt-list a{grid-template-columns:104px minmax(0,1fr) 44px;row-gap:6px}
-  .mkt-img{grid-row:1 / span 2}.mkt-list p{grid-column:2;grid-row:2}.mkt-go{grid-column:3;grid-row:1 / span 2}}
-@media (max-width:520px){.mkt-list a{grid-template-columns:84px minmax(0,1fr)}.mkt-go{display:none}}
+.band-photo,.cs-img{position:relative}
+.band-photo img,.cs-img img{width:100%;height:100%;object-fit:cover}
 
 /* Case studies: sized by the scale of the work. */
 .cs-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:20px}
@@ -194,34 +179,3 @@
   .tiers ul{grid-column:1;grid-row:auto;margin-top:14px}}
 
 .stmt-side .hero-cta{margin-top:28px}
-
-/* No photograph yet: the site's drawing-sheet plate (ImageSlot), in small. */
-.mkt-img.is-plate{border:1px solid var(--rule);background:var(--panel-2)}
-.mkt-img.is-plate::after{content:"";position:absolute;top:8px;right:8px;width:9px;height:9px;
-  opacity:.7;border-top:1px solid var(--red);border-right:1px solid var(--red)}
-.mkt-img.is-plate::before{content:"";position:absolute;inset:0;opacity:.5;
-  background-image:linear-gradient(var(--rule) 1px,transparent 1px),linear-gradient(90deg,var(--rule) 1px,transparent 1px);
-  background-size:14px 14px;background-position:center}
-
-
-/* What our clients say: three quotes, a red mark above each. */
-.voices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(28px,3vw,44px)}
-.voice{margin:0;display:flex;flex-direction:column}
-.voice::before{content:"";width:32px;height:3px;background:var(--red);margin-bottom:22px}
-.voice blockquote{margin:0;font-size:clamp(18px,1.5vw,21px);line-height:1.45;color:var(--ink);text-wrap:pretty}
-.voice figcaption{margin-top:auto;padding-top:20px;font-size:14px;color:var(--ink-2)}
-.voice figcaption b{display:block;color:var(--ink);font-size:15px;margin-bottom:2px}
-@media (max-width:900px){.voices{grid-template-columns:minmax(0,1fr)}}
-
-/* About: timeline left, the machine and the client line right. */
-.about{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,5vw,72px);align-items:start}
-.timeline{list-style:none;margin:0;padding:0;border-left:1.5px solid var(--rule)}
-.timeline li{position:relative;padding:0 0 28px 28px}
-.timeline li:last-child{padding-bottom:0}
-.timeline li::before{content:"";position:absolute;left:-6px;top:10px;width:10px;height:10px;border-radius:50%;background:var(--red)}
-.tl-year{display:block;font-family:var(--f-d);font-weight:800;font-size:clamp(24px,2.2vw,32px);letter-spacing:-.03em;
-  line-height:1.1;font-variant-numeric:tabular-nums lining-nums}
-.tl-text{display:block;margin-top:6px;font-size:16.5px;line-height:1.55;color:var(--ink-2);max-width:52ch}
-.about-photo{aspect-ratio:16/10;margin-bottom:28px}
-.about-side .stmt-side{border-top:0;padding-top:0}
-@media (max-width:900px){.about{grid-template-columns:minmax(0,1fr)}}

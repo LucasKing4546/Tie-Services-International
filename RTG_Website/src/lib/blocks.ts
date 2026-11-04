@@ -22,6 +22,8 @@ export interface CardItem {
   /** Raw <svg> path/shape markup, viewBox 0 0 24 24 — see src/data/home.ts
    *  for the existing icon convention. Rendered with set:html. */
   icon?: string;
+  /** Image Brief ref of a photograph for this item (looked up in @data/media). */
+  ref?: string;
 }
 
 export type SpecRow = { k: string; v: string; note?: string };

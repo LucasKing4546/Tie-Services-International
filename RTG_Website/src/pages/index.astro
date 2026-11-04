@@ -17,7 +17,7 @@ import Hero from '@components/home/Hero.astro';
 import Statement from '@components/home/Statement.astro';
 import Voices from '@components/home/Voices.astro';
 import Conditions from '@components/home/Conditions.astro';
-import PhotoRows from '@components/home/PhotoRows.astro';
+import PhotoList from '@components/blocks/PhotoList.astro';
 import CaseStudies from '@components/home/CaseStudies.astro';
 import TierLadder from '@components/home/TierLadder.astro';
 import LifecycleSteps from '@components/home/LifecycleSteps.astro';
@@ -30,11 +30,11 @@ const sectors = SECTORS.map((s) => ({ title: s.name, blurb: s.blurb, href: s.hre
 <Base pageId="H-01">
   <Hero />
   <div class="home-main">
-    <PhotoRows class="mkts" heading="Sectors" items={sectors} />
+    <PhotoList class="mkts" heading="Sectors" items={sectors} />
     <CaseStudies />
-    <PhotoRows class="equip" heading="Equipment" items={EQUIPMENT}>
+    <PhotoList class="equip" heading="Equipment" items={EQUIPMENT}>
       <FinderEntry />
-    </PhotoRows>
+    </PhotoList>
     <Conditions />
     <TierLadder />
     <LifecycleSteps />
