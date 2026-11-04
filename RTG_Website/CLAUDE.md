@@ -134,7 +134,6 @@ src/
                           { page: PageMeta; entry: CollectionEntry<'pages'> }.
                           Fallback.astro is the temporary stand-in for any
                           template not yet built.
-  lib/hoist.ts            Pays out the homepage hoist line on scroll.
   lib/motion.ts           Shared reveal/count-up/parallax system every page
                           boots on 'astro:page-load'. Templates opt in
                           declaratively (a class, a data-motion attribute).
@@ -198,7 +197,7 @@ Build order follows workbook priority: **P1 earns revenue or unblocks a sale.**
 
 | Template | Pages | Status | Notes |
 |---|---|---|---|
-| `Home` | 1 | **Done** | Redesigned 2026-11-04 after the 3D was removed: the hero's hoist line carries on as a still spine down the right, every section's top rule meets it, the load rests at its foot. Contract in `.impeccable/surfaces/src-pages-index-astro.md`. |
+| `Home` | 1 | **Done** | Redesigned 2026-11-04 after the 3D was removed: the hoist line and spine were removed on 2026-11-05; a restyle in the concept file's flat-band style is in progress. Contract in `.impeccable/surfaces/src-pages-index-astro.md`. |
 | `Hub` | 11 | **Done** | Section landing pages. Sectors, Equipment, Winches, Proof, Resources… |
 | `Sector` | 7 | **Done** | S-01…S-07. The market the buyer identifies with. P1. |
 | `Product` | 10 | **Done** | Equipment detail with open Tier 1 spec tables. `Product` schema. P1. |
@@ -346,9 +345,7 @@ no reversed version.
   only on the sky (the homepage hero accent word, about 5.5:1).
 - **Focus ring:** 3px `--ink` (white under water, navy on `.above`/`.hdr`) from
   one rule in `tokens.css`. Red cannot reach 3:1 on the water.
-- **Homepage spine:** below the hero the still line carries on at the hoist's x;
-  every section's top rule runs to it and the load rests on the footer crest.
-- **Motion budget, three pieces:** waves, the vessel arriving, the hoist line.
+- **Motion budget, three pieces:** waves, the vessel arriving, the quiet reveals.
   Entrance motion is a closed set: masked reveals (`.rl`), `.fu` fade-up,
   `.stag` stagger, the tier tab crossfade and the mobile menu. Hover is a closed
   set too: 2px button lift, 8px card lift, red fill on link targets, the image

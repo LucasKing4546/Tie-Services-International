@@ -12,10 +12,9 @@
 .hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
 .hero-origin{margin:26px 0 0;font-size:14px;color:var(--ink-2)}
 
-/* The vessel's size and inset, shared with .home-spine so the spine can sit
-   exactly under the hoist. */
-.hero,.home-spine{--vw:clamp(280px,48vw,760px);--vr:max(64px,6vw)}
-@media (max-width:820px){.hero,.home-spine{--vr:76px}}
+
+.hero{--vw:clamp(280px,48vw,760px);--vr:max(64px,6vw)}
+@media (max-width:820px){.hero{--vr:76px}}
 .vessel{position:absolute;right:var(--vr);bottom:34px;width:var(--vw);
   animation:sail-in 9s cubic-bezier(.2,.6,.2,1) both,bob 5.5s ease-in-out infinite alternate}
 .vessel svg{display:block;width:100%;height:auto;overflow:visible}
@@ -25,16 +24,6 @@
 @keyframes sail-in{from{translate:70vw 0}to{translate:0 0}}
 @keyframes bob{from{transform:translateY(-2px)}to{transform:translateY(3px)}}
 
-/* The hoist: navy in the air, white once it is under the surface. --air is
-   the run from the A-frame tip to the water, in terms of the vessel's own
-   width, so the colour change stays on the waterline at every size. */
-.hoist{--air:calc(var(--vw) * .258 - 14px);position:absolute;left:96.4%;top:33%;width:2px;
-  height:calc(170px + var(--pay,0px));
-  background:linear-gradient(to bottom,var(--navy) var(--air),rgba(255,255,255,.75) var(--air))}
-
-.hoist-wet{position:absolute;bottom:0;right:calc(var(--vr) + var(--vw) * .036 - 2px);width:2px;height:48px;
-  background:rgba(255,255,255,.75);pointer-events:none}
-@media (max-width:820px){.hoist-wet{display:none}}
 
 .hero-under{position:relative;padding-top:34px;padding-bottom:clamp(48px,6vw,80px)}
 .hero-proof{display:grid;grid-template-columns:repeat(4,auto);justify-content:start;gap:0;margin:0;padding:0}
@@ -45,8 +34,6 @@
   letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums;white-space:nowrap}
 .hero-proof dt{order:2;font-size:13.5px;color:var(--ink-2)}
 @media (max-width:820px){.hero-sky{min-height:0;padding-bottom:200px;align-items:flex-start}
-  /* On a phone the line would run straight through the proof figures. */
-  .hoist{height:calc(var(--air) + 44px)}
   .hero-proof{grid-template-columns:1fr 1fr;row-gap:24px}
   .hero-proof div{margin-right:0;padding-right:12px}
   .hero-proof div:nth-child(2n){border-right:0;padding-left:16px}}
@@ -204,52 +191,19 @@ html:not(.js) #tiers .tier{opacity:1;visibility:visible;transform:none;pointer-e
   .fentry-form .field{flex:1 1 150px;width:auto}
 }
 
-/* ---------- the spine ----------
-   The hoist line carried on below the hero: one still line straight down
-   from where the hoist hangs (--sc, its centre measured from the right edge,
-   from the same --vw/--vr the vessel uses), ending at the load beside the
-   last section. Content keeps to its left (--pr) and each section's top
-   rule runs across to meet it. It never moves and carries no figures: it is
-   not a depth gauge (removed 2026-10-29). On a phone there is no room beside
-   the content, so it moves into the right gutter.
-   --dw is the gap between the spine box and a centred .wrap. */
-.home-spine{container-type:inline-size;position:relative;
-  --sc:calc(var(--vr) + var(--vw) * .036 - 1px);
-  --dw:max(0px,(100cqw - var(--wrap)) / 2);
-  --pr:max(var(--gut),calc(var(--sc) + 44px - var(--dw)))}
-@media (max-width:820px){.home-spine{--sc:calc(var(--gut) / 2);--pr:var(--gut)}}
-.home-spine::before,.home-spine::after{content:"";position:absolute;z-index:1;pointer-events:none}
-.home-spine::before{top:0;bottom:56px;right:calc(var(--sc) - 1px);width:2px;
-  background:rgba(255,255,255,.75)}
-/* The load the hoist carries, resting on the footer's wave crest (which
-   rises about 28px into the spine) beside the last section: the same box the hero used to hang. */
-.home-spine::after{bottom:28px;right:calc(var(--sc) - 10px);width:20px;height:28px;
-  border:2px solid #fff;border-radius:2px;
-  background:linear-gradient(var(--red),var(--red)) center/100% 6px no-repeat}
-
-.home-spine .wrap{padding-right:var(--pr)}
-.home-spine > section > .wrap,.home-spine .strack-head{position:relative}
-.home-spine > section > .wrap::before,.home-spine .strack-head::before{content:"";position:absolute;
-  top:-30px;left:var(--gut);right:calc(var(--sc) - var(--dw));height:1px;background:rgba(255,255,255,.3)}
-.home-spine .strack-head{margin-top:30px}
-.home-spine .sechd{border-top:0;padding-top:0}
-/* The sector rail stops short of the line rather than running under it. */
-.home-spine .strack-rail{margin-right:calc(var(--sc) + 28px);padding-right:0}
-@media (max-width:820px){.home-spine .strack-rail{margin-right:var(--gut)}}
-
 /* One h2 size down the whole page. */
-.home-spine h2.d2,.home-spine h2.d3{font-size:clamp(30px,3.6vw,52px);letter-spacing:-.035em;line-height:1.06}
+.home-main h2.d2,.home-main h2.d3{font-size:clamp(30px,3.6vw,52px);letter-spacing:-.035em;line-height:1.06}
 
 /* Equipment: six compact rows, the finder under them. */
-.home-spine .irows-list a{padding:20px 0;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr) 56px}
-.home-spine .irows-title{font-size:clamp(20px,1.9vw,26px)}
-@media (max-width:820px){.home-spine .irows-list a{grid-template-columns:1fr 44px;padding:18px 0}}
+.home-main .irows-list a{padding:20px 0;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr) 56px}
+.home-main .irows-title{font-size:clamp(20px,1.9vw,26px)}
+@media (max-width:820px){.home-main .irows-list a{grid-template-columns:1fr 44px;padding:18px 0}}
 
 /* Tiers: the panel uses the width the 3D winch left, points beside the lede. */
 @media (min-width:901px){
-  .home-spine .tier{grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:clamp(32px,5vw,80px);
+  .home-main .tier{grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:clamp(32px,5vw,80px);
     align-items:start}
-  html.js .home-spine .tier{display:grid}
-  .home-spine .tier > *{grid-column:1}
-  .home-spine #tiers .tier ul{grid-column:2;grid-row:1 / span 3;margin-top:0;align-self:end}
+  html.js .home-main .tier{display:grid}
+  .home-main .tier > *{grid-column:1}
+  .home-main #tiers .tier ul{grid-column:2;grid-row:1 / span 3;margin-top:0;align-self:end}
 }

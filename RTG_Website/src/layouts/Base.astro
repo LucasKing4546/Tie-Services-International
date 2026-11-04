@@ -191,14 +191,12 @@ const robots = offMap || unfinished ? 'noindex, follow' : 'index, follow, max-im
     <script>
       import { initMotion } from '@lib/motion';
       import { initForms, initFormPrefill } from '@lib/forms';
-      import { initHoist } from '@lib/hoist';
       // astro:page-load fires on first load and after every client-side
       // navigation — the one place reveals, counters and parallax get
       // booted. Don't call initMotion() again from a template.
       document.addEventListener('astro:page-load', initMotion);
       document.addEventListener('astro:page-load', initForms);
       document.addEventListener('astro:page-load', initFormPrefill);
-      document.addEventListener('astro:page-load', initHoist);
     </script>
 
   </body>

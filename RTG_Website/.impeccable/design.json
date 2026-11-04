@@ -39,7 +39,6 @@
       { "name": "ease-heavy", "value": "cubic-bezier(.625,.05,0,1)", "purpose": "Large elements only: panels, media, index-row slides." },
       { "name": "waves", "value": "translateX(-50%) loops, linear, 22s / 13s / 9s", "purpose": "The three waterline layers (back, mid reversed, front)." },
       { "name": "vessel-arrival", "value": "sail-in 9s cubic-bezier(.2,.6,.2,1), then bob 5.5s ease-in-out alternate", "purpose": "Homepage hero vessel, once on load." },
-      { "name": "hoist-payout", "value": "height grows with scroll via --pay (lib/hoist.ts)", "purpose": "The hero hoist line; the only scroll-linked motion." },
       { "name": "reveal-line", "value": "translateY(105%) to 0, 1s ease, 70ms per line", "purpose": "Masked heading reveals (.rl)." },
       { "name": "reveal-fade", "value": "opacity + translateY(26px), .9s ease; stagger 70ms per child", "purpose": "Entrance for blocks and grids (.fu, .stag)." },
       { "name": "button-state", "value": ".3s ease, translateY(-2px) on hover", "purpose": "Button hover." },
@@ -48,7 +47,6 @@
     "breakpoints": [
       { "name": "nav-collapse", "value": "1080px" },
       { "name": "two-column", "value": "901px" },
-      { "name": "spine-gutter", "value": "820px" },
       { "name": "gutter", "value": "700px" },
       { "name": "phone", "value": "560px" },
       { "name": "narrow", "value": "520px" }
@@ -127,7 +125,7 @@
       "Red is a fill or a mark, never body type under water.",
       "Flat: no drop shadows anywhere. Depth is the water itself.",
       "Archivo 800 display, Inter body, JetBrains Mono for small technical labels; sentence case.",
-      "Motion is a budget: waves, the vessel arriving, the hoist paying out, and quiet entrance reveals."
+      "Motion is a budget: waves, the vessel arriving, and quiet entrance reveals."
     ],
     "rules": [
       { "name": "The One Water Rule", "body": "The page background is the single gradient on main (sea-surface held flat under the waterline, then sea-mid at 52%, then sea-abyss). No section gets its own opaque background; a tone only ever marks a card or a callout, never a band.", "section": "colors" },
@@ -146,7 +144,7 @@
       "Do keep the header the light mist bar on every page.",
       "Do give figures the largest type in their block, in Archivo 800 with tabular lining figures.",
       "Do use hairlines (1px, rule) and Glass Panel fills to separate surfaces; card radius 20px for cards, 16px for callouts and tables, pills for buttons.",
-      "Do keep the motion budget: waves, the vessel's arrival, the hoist payout, and masked line reveals or short fade-ups on entrance. Honour prefers-reduced-motion everywhere.",
+      "Do keep the motion budget: waves, the vessel's arrival, and masked line reveals or short fade-ups on entrance. Honour prefers-reduced-motion everywhere.",
       "Do keep masked line reveals padded at the bottom so descenders do not clip.",
       "Do draw icons with Icon.astro's single-stroke paths rather than typing glyphs.",
       "Do use an ink (white) focus ring under the water, where red cannot reach 3:1."

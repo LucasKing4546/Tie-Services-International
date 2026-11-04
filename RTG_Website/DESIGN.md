@@ -152,7 +152,7 @@ The brand's two colours come from the live RTG stylesheet and keep their own job
 - Red is a fill or a mark, never body type under water.
 - Flat: no drop shadows anywhere. Depth is the water itself.
 - Archivo 800 display, Inter body, JetBrains Mono for small technical labels; sentence case.
-- Motion is a budget: waves, the vessel arriving, the hoist paying out, and quiet entrance reveals.
+- Motion is a budget: waves, the vessel arriving, and quiet entrance reveals.
 
 ## Colors
 
@@ -160,7 +160,7 @@ Two palettes that never trade roles: the brand's navy and red, and an ambient te
 
 ### Primary
 - **Logo Navy** (navy): the logo wordmark, header type, the footer ground and the seabed edge, the vessel hull. Never type on the water and never type on itself.
-- **Signal Red** (red): primary button fills, the red mark on the hoist load, active tab rules, list markers, the red rule beside a section's lede, placeholder labels, text selection. Hovers deepen to **Deep Crimson** (red-deep). Above the water (the sky) red may colour an accented word in a heading, where it holds about 5.5:1.
+- **Signal Red** (red): primary button fills, active tab rules, list markers, the red rule beside a section's lede, placeholder labels, text selection. Hovers deepen to **Deep Crimson** (red-deep). Above the water (the sky) red may colour an accented word in a heading, where it holds about 5.5:1.
 
 ### Neutral: the water
 - **Mist** (sky): the band above the waterline on every page and the full homepage hero. The header bar is this mist at 90% with a 14px backdrop blur.
@@ -169,7 +169,6 @@ Two palettes that never trade roles: the brand's navy and red, and an ambient te
 - **Abyss** (sea-abyss): the bottom stop and the body background behind everything.
 - **Foam White** (ink) and **Kelp Grey** (ink-soft): the two type colours under water, primary and secondary.
 - **Hairline** (rule), **Glass Panel** (panel), **Deep Panel** (panel-deep): white-alpha hairlines, the faint card fill, and the darker fill for drawing-sheet placeholders and the mobile menu bars.
-- **Wet Line** (line-wet): the hoist line once it is under the surface, and the homepage spine.
 
 ### Neutral: above the water
 - **Sky Ink** (sky-ink) and **Sky Ink Soft** (sky-ink-soft): type on the mist. The header instead keeps Logo Navy, with **Header Muted**, **Header Line** and **Header Panel** for its secondary type, hairline and hover fill.
@@ -266,8 +265,6 @@ A ruled list of large titles, each with a short blurb and a 56px circular arrow 
 ### Waterline (signature)
 Three looping wave layers, each twice its box's width, sliding at 22s, 13s and 9s, tinted from mist towards the teal surface; the front wave is exactly the surface colour so it runs into the water with no seam. The homepage hero holds it full height with the vessel riding between the back and front waves; inner pages use a slim 132px band of mist under the header.
 
-### The hoist line and spine (homepage signature)
-The vessel sails in once and pays out a 2px hoist line, navy in the air and Wet Line under the surface, with the colour change pinned to the waterline at every width. Below the hero the line continues as a still spine on the right of the page: content keeps to its left, each section's top hairline runs across to meet it, and the hoist load rests at its foot beside the service section. It never moves and carries no figures or readouts. On phones it moves into the right gutter. This belongs to the homepage; inner pages do not inherit it.
 
 ## Do's and Don'ts
 
@@ -277,7 +274,7 @@ The vessel sails in once and pays out a 2px hoist line, navy in the air and Wet 
 - **Do** keep the header the light mist bar on every page.
 - **Do** give figures the largest type in their block, in Archivo 800 with tabular lining figures.
 - **Do** use hairlines (1px, rule) and Glass Panel fills to separate surfaces; card radius 20px for cards, 16px for callouts and tables, pills for buttons.
-- **Do** keep the motion budget: waves, the vessel's arrival, the hoist payout, and masked line reveals or short fade-ups on entrance. Honour prefers-reduced-motion everywhere.
+- **Do** keep the motion budget: waves, the vessel's arrival, and masked line reveals or short fade-ups on entrance. Honour prefers-reduced-motion everywhere.
 - **Do** keep masked line reveals padded at the bottom so descenders do not clip.
 - **Do** draw icons with Icon.astro's single-stroke paths rather than typing glyphs.
 - **Do** use an ink (white) focus ring under the water, where red cannot reach 3:1.

@@ -1,3 +1,5 @@
+> **Superseded 2026-11-05:** the hoist line and spine described below were removed, and the homepage is being restyled after `romica-website-concept.html`.
+
 ---
 version: 1
 slug: "src-pages-index-astro"
