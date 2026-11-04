@@ -26,7 +26,7 @@
 /* ---------- section head (SectionHead.astro) ----------
    A hairline rule, deliberately no number — numbering is reserved for the
    places order is a real sequence: StepList and the tiers. Elsewhere a section head's content isn't a numbered step. */
-.sechd{position:relative;margin-bottom:52px;border-top:1px solid var(--rule);padding-top:28px}
+.sechd{position:relative;margin-bottom:32px;border-top:1px solid var(--rule);padding-top:28px}
 .sechd > *{max-width:900px}
 .navy .sechd{border-top-color:rgba(255,255,255,.2)}
 /* .strack-head is itself a .wrap, so an inset-0 pseudo-element spans its
@@ -38,12 +38,12 @@
 .sechd .mono{display:block;margin-bottom:22px}
 @media (max-width:900px){
   .sec.sm{padding:64px 0}
-  .sechd{margin-bottom:38px}
+  .sechd{margin-bottom:26px}
   .sechd .mono{margin-bottom:16px}
 }
 @media (max-width:560px){
   .sec.sm{padding:48px 0}
-  .sechd{margin-bottom:30px}
+  .sechd{margin-bottom:22px}
 }
 
 /* ---------- page hero (PageHero.astro) ----------
@@ -340,8 +340,8 @@ html.js .car-nav{display:flex}
    by swipe/drag or the prev/next buttons (initCarousels() in lib/motion.ts),
    never by page scroll. */
 .strack{position:relative;background:var(--panel-2);color:#fff}
-.strack-stick{padding:64px 0}
-.strack-head{display:flex;flex-direction:column;align-items:flex-start;gap:18px;margin-bottom:44px}
+.strack-stick{padding:40px 0}
+.strack-head{display:flex;flex-direction:column;align-items:flex-start;gap:18px;margin-bottom:28px}
 .strack-head h2{color:#fff;max-width:16ch}
 .strack-head .lede{color:rgba(255,255,255,.66);max-width:36ch;margin:0}
 .strack-rail{display:flex;gap:22px;overflow-x:auto;overscroll-behavior-x:contain;
@@ -349,7 +349,7 @@ html.js .car-nav{display:flex}
   padding-inline:max(var(--gut),calc((100vw - var(--wrap))/2 + var(--gut)))}
 .strack-rail::-webkit-scrollbar{display:none}
 .strack-rail > *{flex:none;width:330px;scroll-snap-align:start}
-.strack-foot{margin-top:44px;display:flex;justify-content:flex-end}
+.strack-foot{margin-top:20px;display:flex;justify-content:flex-end}
 .strack-nav{display:none;gap:10px;flex:none;margin-left:auto}
 html.js .strack-nav{display:flex}
 .strack-btn{width:44px;height:44px;flex:none;border-radius:50%;border:1px solid rgba(255,255,255,.28);

@@ -1,9 +1,9 @@
 /* Layout: rhythm, asymmetry and overlap for the shared blocks. Loaded after surfaces.css. */
 
 /* ---------- whitespace ---------- */
-.sec{padding:clamp(52px,6vw,92px) 0}
-.sec.sm{padding:clamp(40px,4.6vw,68px) 0}
-.phero + .sec,.phero + .sec.sm{padding-top:clamp(36px,4vw,60px)}
+.sec{padding:clamp(32px,3.6vw,52px) 0}
+.sec.sm{padding:clamp(28px,3vw,40px) 0}
+.phero + .sec,.phero + .sec.sm{padding-top:clamp(24px,2.6vw,36px)}
 .sec.off + .sec.off,.sec.navy + .sec.navy{padding-top:0}
 .sec:has(> .wrap > .prose:empty):not(:has(> .wrap > :not(.prose))){padding:0}
 .sec:has(> .wrap > .two > .prose:empty):not(:has(> .wrap > .two > :not(.prose))){padding:0}
@@ -91,7 +91,7 @@
 
 /* ScrollTrack cards on inner pages share the homepage sector-card look. */
 .strack-rail > *{width:370px}
-.strack .ecard{min-height:430px;padding:32px 30px;border-radius:20px;background:rgba(255,255,255,.06);
+.strack .ecard{min-height:300px;padding:32px 30px;border-radius:20px;background:rgba(255,255,255,.06);
   border-color:rgba(255,255,255,.16);justify-content:space-between;
   
   transition:background .35s var(--e),border-color .35s var(--e),transform .35s var(--e)}
@@ -102,7 +102,7 @@
 .strack .ecard h3{font-size:29px;letter-spacing:-.03em;line-height:1.12;margin:20px 0 14px;color:#fff}
 .strack .ecard p{font-size:14.5px;color:rgba(255,255,255,.86)}
 .strack .ecard .arw{color:#fff;font-weight:700}
-@media (max-width:900px){.strack-rail > *{width:min(78vw,340px)}.strack .ecard{min-height:320px}}
+@media (max-width:900px){.strack-rail > *{width:min(78vw,340px)}.strack .ecard{min-height:260px}}
 @media (prefers-reduced-motion:reduce){.strack .ecard{transition:none}.strack .ecard:hover{transform:none}}
 .strack-rail{scroll-padding-inline:max(var(--gut),calc((100vw - var(--wrap))/2 + var(--gut)))}
 

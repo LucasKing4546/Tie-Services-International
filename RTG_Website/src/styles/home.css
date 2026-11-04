@@ -12,7 +12,6 @@
 .hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
 .hero-origin{margin:26px 0 0;font-size:14px;color:var(--ink-2)}
 
-
 .hero{--vw:clamp(280px,48vw,760px);--vr:max(64px,6vw)}
 @media (max-width:820px){.hero{--vr:76px}}
 .vessel{position:absolute;right:var(--vr);bottom:34px;width:var(--vw);
@@ -23,7 +22,6 @@
 .vessel-glass{fill:var(--sky)}
 @keyframes sail-in{from{translate:70vw 0}to{translate:0 0}}
 @keyframes bob{from{transform:translateY(-2px)}to{transform:translateY(3px)}}
-
 
 .hero-under{position:relative;padding-top:34px;padding-bottom:clamp(48px,6vw,80px)}
 .hero-proof{display:grid;grid-template-columns:repeat(4,auto);justify-content:start;gap:0;margin:0;padding:0}
@@ -44,23 +42,9 @@
 .stmt-grid{display:grid;grid-template-columns:1fr 400px;gap:64px;align-items:start}
 @media (max-width:900px){.stmt-grid{grid-template-columns:1fr;gap:34px}}
 
-/* ---------- tiers ---------- */
-.pin-grid{display:grid}
 /* Tier panels share one grid cell, so the box is as tall as the longest
    panel and nothing shifts when the tab changes. visibility (delayed until
    the fade ends) keeps hidden panels out of the tab order and a11y tree. */
-.pin-copy{display:grid}
-.tier{grid-area:1/1;opacity:0;visibility:hidden;transform:translateY(24px);pointer-events:none;
-  transition:opacity .55s var(--e),transform .55s var(--e),visibility 0s linear .55s}
-.tier.on{opacity:1;visibility:visible;transform:none;pointer-events:auto;
-  transition:opacity .55s var(--e),transform .55s var(--e),visibility 0s}
-.tier .num{font-family:var(--f-d);font-weight:900;font-size:clamp(56px,7vw,104px);line-height:.8;
-  color:var(--panel);letter-spacing:-.04em;margin-bottom:8px}
-.tier.on .num{color:var(--accent)}
-.tier h3{margin-bottom:16px}
-.tier ul{list-style:disc;margin:22px 0 0;padding:0 0 0 20px;display:flex;flex-direction:column;gap:9px}
-.tier li{font-size:15px;color:var(--ink-2);display:list-item}
-.tier li::marker{color:var(--accent)}
 
 /* ---------- sector cards (inside a ScrollTrack) ---------- */
 .strack-rail > .scard,.scard{position:relative;overflow:hidden;isolation:isolate;flex:none;width:min(78vw,370px);min-height:430px;background:rgba(255,255,255,.06);
@@ -74,16 +58,7 @@
 @media (max-width:900px){.scard{min-height:300px}}
 
 /* statement: photo panel; tight */
-.stmt{position:relative;overflow:hidden;isolation:isolate;padding:clamp(52px,6vw,92px) 0 clamp(36px,4vw,56px)}
-.stmt-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-3;opacity:.22;
-  mask-image:linear-gradient(to bottom,transparent,#000 30%,#000 55%,transparent 96%)}
-.stmt .d2{color:#fff}
-.stmt .lede{color:rgba(255,255,255,.86)}
-.stmt .arw{color:#fff}
-@media (max-width:900px){.stmt{padding:60px 0}}
 
-/* tiers: off band with a quiet glow */
-.tier:not(.on) .num{color:rgba(255,255,255,.22)}
 
 .scard-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;
   transition:transform .6s var(--e),opacity .35s var(--e)}
@@ -97,8 +72,6 @@
 @media (prefers-reduced-motion:reduce){.scard,.scard-img,.eq-track > .ecard{transition:none}
   .scard:hover,.eq-track > .ecard:hover{transform:none}}
 
-#tiers .tier li{color:var(--ink)}
-
 @media (prefers-reduced-motion:reduce){.ecard.lc,.case-vis,.lc-ph img{transition:none}
   .ecard.lc:hover,.case-vis:hover{transform:none}}
 
@@ -106,47 +79,17 @@
 .stmt-grid{grid-template-columns:minmax(0,1fr) minmax(0,500px);gap:56px;align-items:center}
 @media (max-width:900px){.stmt-grid{grid-template-columns:minmax(0,1fr);align-items:start}}
 
-/* ---- tiers, redesigned: open stage, no boxes, labelled steps ---- */
-#tiers{padding:clamp(72px,8vw,112px) 0 clamp(40px,4vw,64px)}
-.tier-h{margin-bottom:28px;max-width:26ch}
-#tiers .tier .num{font-size:clamp(44px,4vw,60px);line-height:1;margin-bottom:14px}
-#tiers .tier h3{font-size:clamp(26px,2.4vw,34px);letter-spacing:-.03em;margin-bottom:12px}
-#tiers .tier .lede{font-size:17px;max-width:44ch;margin:0}
-#tiers .tier ul{margin-top:18px;gap:8px}
-#tiers .tier li{font-size:15px}
-#tiers .pin-bar{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:0 0 26px}
-#tiers .pin-bar button{appearance:none;font:inherit;text-align:left;color:inherit;cursor:pointer;
-  background:none;border:0;border-radius:0;border-top:3px solid var(--rule);padding:10px 0 0;
-  display:flex;flex-direction:column;gap:2px;transition:border-color .4s var(--e),color .4s var(--e)}
-#tiers .pin-bar button.on{border-top-color:var(--red)}
-#tiers .pin-bar button:hover span{color:var(--ink)}
-#tiers .pin-bar button:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
-#tiers .pin-bar b{font-family:var(--f-m);font-size:11px;letter-spacing:.14em;color:var(--ink-2);font-weight:500}
-#tiers .pin-bar span{font-size:13px;line-height:1.25;color:var(--ink-2);font-weight:600}
 /* Narrow phones: two by two, so "commissioning" fits without breaking. */
-@media (max-width:520px){#tiers .pin-bar{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:16px}}
-#tiers .pin-bar button.on b{color:var(--accent)}
-#tiers .pin-bar button.on span{color:var(--ink)}
-@media (max-width:900px){#tiers .pin-bar{gap:10px}
-  #tiers .pin-bar span{font-size:11.5px}}
-@media (min-width:901px) and (max-height:820px){
-  .tier-h{margin-bottom:16px;max-width:30ch}
-  #tiers .tier .num{font-size:36px;margin-bottom:8px}
-  #tiers .tier h3{font-size:24px}
-  #tiers .tier .lede{font-size:15.5px}
-  #tiers .tier ul{margin-top:12px;gap:5px}
-  #tiers .pin-bar{margin-bottom:16px}
-  #tiers .pin-grid > div > p:last-child{margin-top:16px!important}}
 
 /* ---------- family business ----------
    Story on the left at reading size, the client line as a quieter block on
    the right. Later rules in this file set the grid; these set the type. */
 .stmt .d2{max-width:18ch}
 .stmt .lede{margin-top:22px;max-width:56ch}
-.stmt-grid{align-items:end}
+.stmt-grid{align-items:center}
 .stmt-side{border-top:1px solid var(--rule);padding-top:22px}
 .stmt-side h3{font-size:clamp(20px,1.8vw,26px)}
-.stmt-side p{margin:12px 0 18px;color:rgba(255,255,255,.86);max-width:44ch}
+.stmt-side p{margin:12px 0 18px;color:var(--ink-2);max-width:44ch}
 
 /* ---------- engineered for offshore conditions ----------
    The heading on the left, the four points as a ruled register on the right,
@@ -162,21 +105,13 @@
 @media (max-width:900px){.cond-in{grid-template-columns:minmax(0,1fr);gap:26px}.cond .d2{max-width:16ch}}
 @media (max-width:520px){.cond-list li{grid-template-columns:minmax(0,1fr)}}
 
-/* ---------- sectors head, tiers intro, service ---------- */
-.tier-intro{margin:0 0 22px;color:var(--ink-2);max-width:46ch}
 .service .lede{margin-top:20px;max-width:62ch}
-.tier-h{margin-bottom:12px}
 
 /* ---------- layout fixes from the homepage review ---------- */
 /* Tighten the hero on a short laptop screen. */
 @media (min-width:901px) and (max-height:820px){
   .hero .d1{font-size:clamp(34px,4.1vw,56px)}
 }
-/* No JS: the tabs can't work, so list every tier and hide the tab row. */
-html:not(.js) #tiers .pin-bar{display:none}
-html:not(.js) #tiers .pin-copy{display:flex;flex-direction:column;gap:28px}
-html:not(.js) #tiers .tier{opacity:1;visibility:visible;transform:none;pointer-events:auto}
-@media (prefers-reduced-motion:reduce){.tier,.tier.on{transition:none}}
 
 /* ---------- finder entry (FinderEntry.astro) ----------
    Slotted under the Equipment rows, inside the same section. */
@@ -200,10 +135,53 @@ html:not(.js) #tiers .tier{opacity:1;visibility:visible;transform:none;pointer-e
 @media (max-width:820px){.home-main .irows-list a{grid-template-columns:1fr 44px;padding:18px 0}}
 
 /* Tiers: the panel uses the width the 3D winch left, points beside the lede. */
-@media (min-width:901px){
-  .home-main .tier{grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:clamp(32px,5vw,80px);
-    align-items:start}
-  html.js .home-main .tier{display:grid}
-  .home-main .tier > *{grid-column:1}
-  .home-main #tiers .tier ul{grid-column:2;grid-row:1 / span 3;margin-top:0;align-self:end}
-}
+
+
+/* ---------- concept bands (romica-website-concept.html, 2026-11-05) ----------
+   Homepage only. Each section is its own solid band, stepping from paper to
+   the abyss, instead of sitting on main's single gradient. The first two
+   bands are light (dark type); the rest darken one step each. Square 2px
+   corners, ruled lists, larger reading type. */
+.home-main{--paper:#F4F7F7;--hivis:#F2B632}
+.band-light{--ink:#0D2B3B;--ink-2:#3B5967;--rule:rgba(13,43,59,.18);--panel:rgba(13,43,59,.05);
+  --accent:var(--red);--on-ink:#fff;color:var(--ink);color-scheme:light}
+.home-main > .stmt{background:var(--paper)}
+.home-main > .cond{background:#E3ECEE}
+.home-main > .strack{background:var(--sea-0)}
+.home-main > .irows{background:#143F52}
+.home-main > .tiers-sec{background:var(--sea-1)}
+.home-main > .service{background:var(--sea-2)}
+.home-main > .sec{padding:clamp(48px,5vw,76px) 0}
+.home-main .strack-stick{padding:clamp(48px,5vw,76px) 0}
+.home-main .lede{font-size:clamp(18px,1.4vw,20px);line-height:1.55}
+
+/* Square corners: buttons, cards, controls, discs. */
+.hero .btn,.home-main .btn,.home-main .scard,.home-main .field select,.home-main .strack-btn,
+.home-main .irows-go,.home-main .irows-list a::before,.stmt-photo{border-radius:2px}
+.home-main .scard:hover{transform:none}
+
+/* Statement photo: the concept's cool North Sea grade. */
+.stmt-photo{margin:0 0 24px;overflow:hidden;aspect-ratio:16/10;background:var(--sea-0)}
+.stmt-photo img{width:100%;height:100%;object-fit:cover;filter:saturate(.6) contrast(1.05)}
+.stmt-side{border-top:0;padding-top:0}
+
+/* Contract manufacturing: four ruled columns. */
+.tiers{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+  border-top:1.5px solid var(--ink)}
+.tiers > li{padding:26px 24px 30px 0;margin-right:24px;border-right:1px solid var(--rule)}
+.tiers > li:last-child{border-right:0;margin-right:0}
+.tier-n{display:block;font-family:var(--f-m);font-size:13px;color:var(--hivis);font-variant-numeric:tabular-nums}
+.tiers h3{font-size:clamp(20px,1.6vw,23px);letter-spacing:-.02em;line-height:1.2;margin:10px 0 10px}
+.tiers h3 a{color:var(--ink);text-decoration:underline;text-decoration-color:transparent;text-underline-offset:5px;
+  transition:text-decoration-color .2s}
+.tiers h3 a:hover{text-decoration-color:currentColor}
+.tiers p{margin:0;font-size:16px;line-height:1.5;color:var(--ink)}
+.tiers ul{list-style:none;margin:16px 0 0;padding:0;display:flex;flex-direction:column;gap:8px}
+.tiers ul li{position:relative;padding-left:16px;font-size:15.5px;line-height:1.45;color:var(--ink-2)}
+.tiers ul li::before{content:"";position:absolute;left:0;top:.65em;width:7px;height:1.5px;background:var(--red)}
+.tiers-more{margin:30px 0 0}
+@media (max-width:1080px){.tiers{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .tiers > li:nth-child(2n){border-right:0;margin-right:0}
+  .tiers > li{border-bottom:1px solid var(--rule)}}
+@media (max-width:620px){.tiers{grid-template-columns:minmax(0,1fr)}
+  .tiers > li{border-right:0;margin-right:0;padding-right:0}}

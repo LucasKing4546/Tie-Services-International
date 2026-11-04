@@ -1,5 +1,5 @@
 ---
-// The family business and who it works for, over a real vessel at sea with
+// The family business and who it works for, beside a real vessel at sea with
 // RTG equipment fitted. The vessel is a named client's (visible on the
 // wheelhouse), published on the user's explicit instruction; the client
 // names in STORY were authorised on 2026-10-08. See @data/media for the
@@ -9,14 +9,16 @@ import { Image } from 'astro:assets';
 import { STORY } from '@data/home';
 import fleet from '../../assets/home/home-fleet-vessel.jpg';
 ---
-<section class="sec stmt">
-  <Image src={fleet} alt="" widths={[1200, 2000]} sizes="100vw" loading="lazy" class="stmt-bg" />
+<section class="sec stmt band-light">
   <div class="wrap stmt-grid">
     <div>
       <h2 class="d2"><span class="rl"><span>{STORY.heading}</span></span></h2>
       <p class="lede fu">{STORY.body}</p>
     </div>
     <div class="stmt-side fu">
+      <figure class="stmt-photo">
+        <Image src={fleet} alt="" widths={[640, 1000]} sizes="(max-width:900px) 100vw, 500px" loading="lazy" />
+      </figure>
       <h3 class="d3">{STORY.trustedHeading}</h3>
       <p>{STORY.trusted}</p>
       <a class="arw" href={STORY.link.href}>{STORY.link.label} <Icon name="arrow" /></a>

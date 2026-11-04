@@ -197,7 +197,7 @@ Build order follows workbook priority: **P1 earns revenue or unblocks a sale.**
 
 | Template | Pages | Status | Notes |
 |---|---|---|---|
-| `Home` | 1 | **Done** | Redesigned 2026-11-04 after the 3D was removed: the hoist line and spine were removed on 2026-11-05; a restyle in the concept file's flat-band style is in progress. Contract in `.impeccable/surfaces/src-pages-index-astro.md`. |
+| `Home` | 1 | **Done** | Redesigned 2026-11-04 after the 3D was removed: the hoist line and spine were removed on 2026-11-05; restyled on 2026-11-05 in the concept file's flat-band style (see §7). Contract in `.impeccable/surfaces/src-pages-index-astro.md`. |
 | `Hub` | 11 | **Done** | Section landing pages. Sectors, Equipment, Winches, Proof, Resources… |
 | `Sector` | 7 | **Done** | S-01…S-07. The market the buyer identifies with. P1. |
 | `Product` | 10 | **Done** | Equipment detail with open Tier 1 spec tables. `Product` schema. P1. |
@@ -309,7 +309,11 @@ their prev/next buttons; the homepage Tiers are tabs. Nothing pins.
 **The descent is one background, not per-section colours**: `<main>` carries a
 single gradient (`--sea-0` → `--sea-1` → `--sea-2`, `src/styles/ocean.css`) and
 every section sits transparent on it. Do not give a section its own opaque
-background. `Section`'s `tone="off"` / `tone="navy"` are faint translucent panels.
+background. **Exception, the homepage (2026-11-05):** it follows
+`romica-website-concept.html` — each section is a solid band stepping from
+paper to the abyss (two light bands first), with 2px square corners, ruled
+lists and the contract-manufacturing tiers as four visible columns. Scoped in
+`home.css` under `.home-main` and `.band-light`; inner pages are unchanged. `Section`'s `tone="off"` / `tone="navy"` are faint translucent panels.
 
 Two palettes (decided 2026-10-29). The brand navy and red from the live RTG
 stylesheet, unchanged, colour the logo, the header, the footer and the
