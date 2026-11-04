@@ -11,6 +11,7 @@
  * table's footnote, and the datasheet request itself is the sticky bar, so
  * there is no separate datasheet section.
  */
+import Icon from '@components/site/Icon.astro';
 import { render } from 'astro:content';
 import { page as lookupPage, type PageMeta } from '@data/pages';
 import type { PageEntry } from '@lib/blocks';
@@ -128,7 +129,7 @@ const datasheetHref = datasheetPage ? `${datasheetPage.slug}?equipment=${encodeU
   {datasheetHref && data.specs.length > 0 && (
     <div class="req-bar" data-req-bar hidden>
       <span>Full specification, sent to you by name</span>
-      <a class="btn b-navy" href={datasheetHref}>{datasheetLabel} <span aria-hidden="true">→</span></a>
+      <a class="btn b-navy" href={datasheetHref}>{datasheetLabel} <Icon name="arrow" /></a>
     </div>
   )}
 

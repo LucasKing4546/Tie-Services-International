@@ -66,9 +66,9 @@
     "semantic_hash": ""
   },
   "src/components/blocks/Card.astro": {
-    "mtime": 1789918056.8415115,
-    "seen": 1791367962.076949,
-    "ast_hash": "2df6ae86031e28c64a4d5dffd51a5c25",
+    "mtime": 1793777386.3355174,
+    "seen": 1793777632.0614955,
+    "ast_hash": "691f758411cb131a19b91227bbe4058c",
     "semantic_hash": ""
   },
   "src/components/blocks/CardGrid.astro": {
@@ -78,9 +78,9 @@
     "semantic_hash": ""
   },
   "src/components/blocks/Carousel.astro": {
-    "mtime": 1789916843.5155716,
-    "seen": 1791367962.076949,
-    "ast_hash": "087fdf74984cf8f962a7f071caec40ef",
+    "mtime": 1793777386.337077,
+    "seen": 1793777632.0614955,
+    "ast_hash": "e8938bfbbe080c955053c00211499325",
     "semantic_hash": ""
   },
   "src/components/blocks/ChildCards.astro": {
@@ -120,15 +120,15 @@
     "semantic_hash": ""
   },
   "src/components/blocks/FeatureRow.astro": {
-    "mtime": 1789918061.602045,
-    "seen": 1791367962.076949,
-    "ast_hash": "7f512b6830ebb55ae0a2871d2c70d492",
+    "mtime": 1793777386.3380802,
+    "seen": 1793777632.0614955,
+    "ast_hash": "3809cff8b90ce041736702454f0de523",
     "semantic_hash": ""
   },
   "src/components/blocks/FeaturedCase.astro": {
-    "mtime": 1791444521.1792798,
-    "seen": 1791445537.123424,
-    "ast_hash": "2da55a21ba9e298d8bb33f356c1f8ec8",
+    "mtime": 1793777386.3380802,
+    "seen": 1793777632.0614955,
+    "ast_hash": "fb5ffb0ab174594910760eecf0145ffc",
     "semantic_hash": ""
   },
   "src/components/blocks/Fig.astro": {
@@ -156,9 +156,9 @@
     "semantic_hash": ""
   },
   "src/components/blocks/IndexRows.astro": {
-    "mtime": 1793776058.6693723,
-    "seen": 1793776695.5964708,
-    "ast_hash": "699f318236ba8612d03ccc8211fd7831",
+    "mtime": 1793777386.3390803,
+    "seen": 1793777632.0614955,
+    "ast_hash": "0fcea6eb6a16a5baa0658e1b43435a58",
     "semantic_hash": ""
   },
   "src/components/blocks/MediaBand.astro": {
@@ -204,9 +204,9 @@
     "semantic_hash": ""
   },
   "src/components/blocks/ScrollTrack.astro": {
-    "mtime": 1793268950.9120846,
-    "seen": 1793269583.7698767,
-    "ast_hash": "1f7f0688eba3f44ffa2e607b9f400297",
+    "mtime": 1793777386.3390803,
+    "seen": 1793777632.0614955,
+    "ast_hash": "b4d7c912134a73c2768148831d71752c",
     "semantic_hash": ""
   },
   "src/components/blocks/Section.astro": {
@@ -264,21 +264,21 @@
     "semantic_hash": ""
   },
   "src/components/home/SectorTrack.astro": {
-    "mtime": 1793268984.578909,
-    "seen": 1793269583.7698767,
-    "ast_hash": "23277a2de404a145fec3223b7e1e4b8c",
+    "mtime": 1793777386.3390803,
+    "seen": 1793777632.0614955,
+    "ast_hash": "44e0c4d84d1e7fffed98b4773e3ec87d",
     "semantic_hash": ""
   },
   "src/components/home/Statement.astro": {
-    "mtime": 1793269130.8248296,
-    "seen": 1793269583.7698767,
-    "ast_hash": "cab2cda19b860a101aa957a569f56842",
+    "mtime": 1793777386.3400824,
+    "seen": 1793777632.0614955,
+    "ast_hash": "481c3c45f70e36dfde012fe6eb1af2bf",
     "semantic_hash": ""
   },
   "src/components/home/TierLadder.astro": {
-    "mtime": 1793774327.0605338,
-    "seen": 1793774430.2622213,
-    "ast_hash": "87dd832a8ce8ad2cfd30b1bd9800b2da",
+    "mtime": 1793777386.3400824,
+    "seen": 1793777632.0614955,
+    "ast_hash": "73ded2a60524dc34f1a760ee68bb522a",
     "semantic_hash": ""
   },
   "src/components/site/Footer.astro": {
@@ -366,9 +366,9 @@
     "semantic_hash": ""
   },
   "src/components/templates/Product.astro": {
-    "mtime": 1793702272.4842725,
-    "seen": 1793702357.1241882,
-    "ast_hash": "cf69cad2a8f1fac88d1e129572dd928b",
+    "mtime": 1793777386.3410826,
+    "seen": 1793777632.0614955,
+    "ast_hash": "f9691c195334579f4092deeb8f2d82a0",
     "semantic_hash": ""
   },
   "src/components/templates/Proof.astro": {
@@ -1752,9 +1752,9 @@
     "semantic_hash": ""
   },
   "src/components/blocks/DesignRow.astro": {
-    "mtime": 1793701828.4942658,
-    "seen": 1793701947.637566,
-    "ast_hash": "bcd5d597c86b73a913e0c7ab1ac32155",
+    "mtime": 1793777386.337077,
+    "seen": 1793777632.0614955,
+    "ast_hash": "72ef9ffa3aa3a2fe13a6bf46c6f19c57",
     "semantic_hash": ""
   },
   "src/components/blocks/FamilyDesigns.astro": {
@@ -1917,6 +1917,12 @@
     "mtime": 1793776146.8425589,
     "seen": 1793776695.5964708,
     "ast_hash": "8688b86276858db3c31a352ef741e39c",
+    "semantic_hash": ""
+  },
+  "src/components/site/Icon.astro": {
+    "mtime": 1793777384.9157462,
+    "seen": 1793777632.0614955,
+    "ast_hash": "e980b8308d5956a8be9499f4748a8186",
     "semantic_hash": ""
   }
 }

@@ -8,6 +8,7 @@
  * comes to — a short paragraph no longer leaves a letterboxed plate
  * stranded beside it.
  */
+import Icon from '@components/site/Icon.astro';
 import type { ImgBrief, Link } from '@lib/blocks';
 import ImageSlot from './ImageSlot.astro';
 
@@ -32,7 +33,7 @@ const toneClass = tone === 'off' ? 'off' : tone === 'navy' ? 'navy' : '';
       {eyebrow && <p class="mono red fu">{eyebrow}</p>}
       {heading && <h2 class="d2"><span class="rl"><span>{heading}</span></span></h2>}
       <slot />
-      {cta && <p class="frow-cta"><a class="arw" href={cta.href}>{cta.label} →</a></p>}
+      {cta && <p class="frow-cta"><a class="arw" href={cta.href}>{cta.label} <Icon name="arrow" /></a></p>}
     </div>
 
     {media && (

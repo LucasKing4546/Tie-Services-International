@@ -340,18 +340,6 @@
       "source_location": "L1038"
     },
     {
-      "id": "src_data_pages_pagesbytemplate",
-      "label": "pagesByTemplate()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "blocks.ts",
-      "file_type": "code",
-      "norm_label": "pagesbytemplate()",
-      "source_file": "src/data/pages.ts",
-      "source_location": "L1042"
-    },
-    {
       "id": "src_data_pages_pagesinsection",
       "label": "pagesInSection()",
       "_callable": true,
@@ -1108,6 +1096,18 @@
       "source_location": "L87"
     },
     {
+      "id": "src_data_pages_pagesbytemplate",
+      "label": "pagesByTemplate()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "RTG Website \u2014 project guide for Claude Code",
+      "file_type": "code",
+      "norm_label": "pagesbytemplate()",
+      "source_file": "src/data/pages.ts",
+      "source_location": "L1042"
+    },
+    {
       "id": "src_components_site_waterline_wave",
       "label": "wave()",
       "_callable": true,
@@ -1514,39 +1514,6 @@
       "source_location": "L1"
     },
     {
-      "id": "src_components_blocks_formfield",
-      "label": "FormField.astro",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "blocks.ts",
-      "file_type": "code",
-      "norm_label": "formfield.astro",
-      "source_file": "src/components/blocks/FormField.astro",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_blocks_formfield_common",
-      "label": "common",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "blocks.ts",
-      "file_type": "code",
-      "norm_label": "common",
-      "source_file": "src/components/blocks/FormField.astro",
-      "source_location": "L22"
-    },
-    {
-      "id": "src_components_blocks_formfield_string",
-      "label": "string",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "blocks.ts",
-      "file_type": "code",
-      "norm_label": "string",
-      "source_file": "src/components/blocks/FormField.astro",
-      "source_location": "L13"
-    },
-    {
       "id": "src_components_blocks_gap",
       "label": "Gap.astro",
       "_origin": "ast",
@@ -1710,6 +1677,28 @@
       "norm_label": "tiercard.astro",
       "source_file": "src/components/blocks/TierCard.astro",
       "source_location": "L1"
+    },
+    {
+      "id": "src_components_site_icon",
+      "label": "Icon.astro",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "blocks.ts",
+      "file_type": "code",
+      "norm_label": "icon.astro",
+      "source_file": "src/components/site/Icon.astro",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_site_icon_paths",
+      "label": "PATHS",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "blocks.ts",
+      "file_type": "code",
+      "norm_label": "paths",
+      "source_file": "src/components/site/Icon.astro",
+      "source_location": "L8"
     },
     {
       "id": "src_components_templates_about",
@@ -1940,7 +1929,7 @@
       "file_type": "code",
       "norm_label": "additionalproperty",
       "source_file": "src/components/templates/Product.astro",
-      "source_location": "L46"
+      "source_location": "L47"
     },
     {
       "id": "src_components_templates_proof",
@@ -5592,6 +5581,39 @@
       "norm_label": "xlsx",
       "source_file": "package.json",
       "source_location": "L30"
+    },
+    {
+      "id": "src_components_blocks_formfield",
+      "label": "FormField.astro",
+      "_origin": "ast",
+      "community": 139,
+      "community_name": "FormField.astro",
+      "file_type": "code",
+      "norm_label": "formfield.astro",
+      "source_file": "src/components/blocks/FormField.astro",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_blocks_formfield_common",
+      "label": "common",
+      "_origin": "ast",
+      "community": 139,
+      "community_name": "FormField.astro",
+      "file_type": "code",
+      "norm_label": "common",
+      "source_file": "src/components/blocks/FormField.astro",
+      "source_location": "L22"
+    },
+    {
+      "id": "src_components_blocks_formfield_string",
+      "label": "string",
+      "_origin": "ast",
+      "community": 139,
+      "community_name": "FormField.astro",
+      "file_type": "code",
+      "norm_label": "string",
+      "source_file": "src/components/blocks/FormField.astro",
+      "source_location": "L13"
     },
     {
       "id": "scripts_audit_seo",
@@ -11948,7 +11970,7 @@
       "file_type": "code",
       "norm_label": "extra",
       "source_file": "src/components/blocks/DesignRow.astro",
-      "source_location": "L29"
+      "source_location": "L30"
     },
     {
       "id": "src_components_blocks_designrow_tags",
@@ -11959,7 +11981,7 @@
       "file_type": "code",
       "norm_label": "tags",
       "source_file": "src/components/blocks/DesignRow.astro",
-      "source_location": "L32"
+      "source_location": "L33"
     },
     {
       "id": "src_components_blocks_equipmentfinder",
@@ -12870,6 +12892,18 @@
       "source_location": "L9"
     },
     {
+      "id": "ref_astro_content",
+      "label": "ref_astro_content",
+      "_origin": "semantic",
+      "community": 0,
+      "community_name": "blocks.ts",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "ref_astro_content",
+      "source_file": "",
+      "type": "external"
+    },
+    {
       "id": "src_assets_contact_x01_team",
       "label": "src_assets_contact_x01_team",
       "_origin": "semantic",
@@ -12914,18 +12948,6 @@
       "external": true,
       "file_type": "concept",
       "norm_label": "src_assets_sectors_s03_cable_work",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "ref_astro_content",
-      "label": "ref_astro_content",
-      "_origin": "semantic",
-      "community": 12,
-      "community_name": "content.config.ts",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "ref_astro_content",
       "source_file": "",
       "type": "external"
     },
@@ -13984,6 +14006,17 @@
       "norm_label": "src_styles_tokens",
       "source_file": "",
       "type": "external"
+    },
+    {
+      "id": "ref_astro_assets",
+      "label": "ref_astro_assets",
+      "community": 7,
+      "community_name": "home.ts",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "ref_astro_assets",
+      "source_file": "",
+      "type": "external"
     }
   ],
   "links": [
@@ -14804,6 +14837,18 @@
       "weight": 1.0
     },
     {
+      "source": "src_components_blocks_card",
+      "target": "src_lib_blocks_carditem",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/blocks/Card.astro",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
       "source": "src_components_blocks_childcards",
       "target": "src_lib_blocks_carditem",
       "relation": "imports",
@@ -14829,7 +14874,7 @@
     },
     {
       "source": "src_components_blocks_designrow",
-      "target": "src_lib_equipment_datasheetrequest",
+      "target": "src_data_equipment_equipmentitem",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -14837,6 +14882,18 @@
       "context": "import",
       "source_file": "src/components/blocks/DesignRow.astro",
       "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_blocks_designrow",
+      "target": "src_lib_equipment_datasheetrequest",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/blocks/DesignRow.astro",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -14848,7 +14905,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/blocks/DesignRow.astro",
-      "source_location": "L13",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -14860,7 +14917,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/blocks/DesignRow.astro",
-      "source_location": "L13",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -14872,7 +14929,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/blocks/DesignRow.astro",
-      "source_location": "L13",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -15028,7 +15085,43 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/blocks/FeaturedCase.astro",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_blocks_featuredcase",
+      "target": "src_data_pages_pagemeta",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/blocks/FeaturedCase.astro",
       "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_blocks_featurerow",
+      "target": "src_lib_blocks_imgbrief",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/blocks/FeatureRow.astro",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_blocks_featurerow",
+      "target": "src_lib_blocks_link",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/blocks/FeatureRow.astro",
+      "source_location": "L12",
       "weight": 1.0
     },
     {
@@ -15053,6 +15146,18 @@
       "context": "import",
       "source_file": "src/components/blocks/ImageSlot.astro",
       "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_blocks_indexrows",
+      "target": "src_lib_blocks_carditem",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/blocks/IndexRows.astro",
+      "source_location": "L12",
       "weight": 1.0
     },
     {
@@ -15280,7 +15385,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/home/SectorTrack.astro",
-      "source_location": "L5",
+      "source_location": "L6",
       "weight": 1.0
     },
     {
@@ -15292,7 +15397,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/home/SectorTrack.astro",
-      "source_location": "L6",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -15304,7 +15409,31 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/home/Statement.astro",
-      "source_location": "L8",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_home_tierladder",
+      "target": "src_data_home_manufacturing",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/home/TierLadder.astro",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_home_tierladder",
+      "target": "src_data_home_tiers",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/home/TierLadder.astro",
+      "source_location": "L4",
       "weight": 1.0
     },
     {
@@ -16084,7 +16213,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Product.astro",
-      "source_location": "L15",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -16096,7 +16225,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Product.astro",
-      "source_location": "L15",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -16108,7 +16237,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Product.astro",
-      "source_location": "L16",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -16120,7 +16249,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Product.astro",
-      "source_location": "L17",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -16132,7 +16261,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/templates/Product.astro",
-      "source_location": "L29",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -17228,6 +17357,30 @@
       "weight": 1.0
     },
     {
+      "source": "src_components_blocks_card",
+      "target": "src_lib_blocks",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/blocks/Card.astro",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_blocks_carousel",
+      "target": "src_components_site_icon",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/blocks/Carousel.astro",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
       "source": "src_components_blocks_childcards",
       "target": "src_components_blocks_scrolltrack",
       "relation": "imports_from",
@@ -17289,7 +17442,7 @@
     },
     {
       "source": "src_components_blocks_designrow",
-      "target": "src_lib_equipment",
+      "target": "src_data_equipment",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -17297,6 +17450,18 @@
       "context": "import",
       "source_file": "src/components/blocks/DesignRow.astro",
       "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_blocks_designrow",
+      "target": "src_lib_equipment",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/blocks/DesignRow.astro",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -17385,7 +17550,7 @@
     },
     {
       "source": "src_components_blocks_featuredcase",
-      "target": "src_components_blocks_imageslot",
+      "target": "src_lib_blocks",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -17397,7 +17562,7 @@
     },
     {
       "source": "src_components_blocks_featuredcase",
-      "target": "src_components_blocks_quote",
+      "target": "src_components_blocks_imageslot",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -17409,7 +17574,19 @@
     },
     {
       "source": "src_components_blocks_featuredcase",
-      "target": "src_lib_blocks",
+      "target": "src_components_blocks_quote",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/blocks/FeaturedCase.astro",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_blocks_featuredcase",
+      "target": "src_data_pages",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -17421,7 +17598,7 @@
     },
     {
       "source": "src_components_blocks_featurerow",
-      "target": "src_components_blocks_imageslot",
+      "target": "src_lib_blocks",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -17429,6 +17606,18 @@
       "context": "import",
       "source_file": "src/components/blocks/FeatureRow.astro",
       "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_blocks_featurerow",
+      "target": "src_components_blocks_imageslot",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/blocks/FeatureRow.astro",
+      "source_location": "L13",
       "weight": 1.0
     },
     {
@@ -17453,6 +17642,18 @@
       "context": "import",
       "source_file": "src/components/blocks/ImageSlot.astro",
       "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_blocks_indexrows",
+      "target": "src_lib_blocks",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/blocks/IndexRows.astro",
+      "source_location": "L12",
       "weight": 1.0
     },
     {
@@ -17612,6 +17813,18 @@
       "weight": 1.0
     },
     {
+      "source": "src_components_blocks_scrolltrack",
+      "target": "src_components_site_icon",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/blocks/ScrollTrack.astro",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
       "source": "src_components_blocks_spectable",
       "target": "src_components_blocks_gap",
       "relation": "imports_from",
@@ -17685,7 +17898,7 @@
     },
     {
       "source": "src_components_home_sectortrack",
-      "target": "src_components_blocks_scrolltrack",
+      "target": "ref_astro_assets",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -17697,7 +17910,7 @@
     },
     {
       "source": "src_components_home_sectortrack",
-      "target": "src_data_home",
+      "target": "src_components_blocks_scrolltrack",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -17709,7 +17922,7 @@
     },
     {
       "source": "src_components_home_sectortrack",
-      "target": "src_data_media",
+      "target": "src_data_home",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -17720,15 +17933,15 @@
       "weight": 1.0
     },
     {
-      "source": "src_components_home_statement",
-      "target": "src_data_home",
+      "source": "src_components_home_sectortrack",
+      "target": "src_data_media",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "import",
-      "source_file": "src/components/home/Statement.astro",
-      "source_location": "L8",
+      "source_file": "src/components/home/SectorTrack.astro",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -17740,7 +17953,43 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/components/home/Statement.astro",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_home_statement",
+      "target": "ref_astro_assets",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/home/Statement.astro",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_home_statement",
+      "target": "src_data_home",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/home/Statement.astro",
       "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_home_tierladder",
+      "target": "src_data_home",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/home/TierLadder.astro",
+      "source_location": "L4",
       "weight": 1.0
     },
     {
@@ -19497,7 +19746,7 @@
     },
     {
       "source": "src_components_templates_product",
-      "target": "src_data_pages",
+      "target": "ref_astro_content",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -19509,7 +19758,7 @@
     },
     {
       "source": "src_components_templates_product",
-      "target": "src_lib_blocks",
+      "target": "src_data_pages",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -19521,7 +19770,7 @@
     },
     {
       "source": "src_components_templates_product",
-      "target": "src_lib_content",
+      "target": "src_lib_blocks",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -19533,7 +19782,7 @@
     },
     {
       "source": "src_components_templates_product",
-      "target": "src_layouts_base",
+      "target": "src_lib_content",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -19545,7 +19794,7 @@
     },
     {
       "source": "src_components_templates_product",
-      "target": "src_components_blocks_pagehero",
+      "target": "src_layouts_base",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -19557,7 +19806,7 @@
     },
     {
       "source": "src_components_templates_product",
-      "target": "src_components_blocks_section",
+      "target": "src_components_blocks_pagehero",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -19569,7 +19818,7 @@
     },
     {
       "source": "src_components_templates_product",
-      "target": "src_components_blocks_familydesigns",
+      "target": "src_components_blocks_section",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -19581,7 +19830,7 @@
     },
     {
       "source": "src_components_templates_product",
-      "target": "src_components_blocks_prose",
+      "target": "src_components_blocks_familydesigns",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -19593,7 +19842,7 @@
     },
     {
       "source": "src_components_templates_product",
-      "target": "src_components_blocks_spectable",
+      "target": "src_components_blocks_prose",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -19605,7 +19854,7 @@
     },
     {
       "source": "src_components_templates_product",
-      "target": "src_components_blocks_featurerow",
+      "target": "src_components_blocks_spectable",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -19617,7 +19866,7 @@
     },
     {
       "source": "src_components_templates_product",
-      "target": "src_components_blocks_mediaband",
+      "target": "src_components_blocks_featurerow",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -19629,7 +19878,7 @@
     },
     {
       "source": "src_components_templates_product",
-      "target": "src_components_blocks_statsstrip",
+      "target": "src_components_blocks_mediaband",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -19641,7 +19890,7 @@
     },
     {
       "source": "src_components_templates_product",
-      "target": "src_components_blocks_skeleton",
+      "target": "src_components_blocks_statsstrip",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -19653,7 +19902,7 @@
     },
     {
       "source": "src_components_templates_product",
-      "target": "src_components_blocks_pageending",
+      "target": "src_components_blocks_skeleton",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -19665,7 +19914,7 @@
     },
     {
       "source": "src_components_templates_product",
-      "target": "src_lib_mdx",
+      "target": "src_components_blocks_pageending",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -19673,6 +19922,18 @@
       "context": "import",
       "source_file": "src/components/templates/Product.astro",
       "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_templates_product",
+      "target": "src_lib_mdx",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/templates/Product.astro",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -26567,7 +26828,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/blocks/DesignRow.astro",
-      "source_location": "L29",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -26578,7 +26839,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/blocks/DesignRow.astro",
-      "source_location": "L32",
+      "source_location": "L33",
       "weight": 1.0
     },
     {
@@ -26725,6 +26986,17 @@
       "weight": 1.0
     },
     {
+      "source": "src_components_site_icon",
+      "target": "src_components_site_icon_paths",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/site/Icon.astro",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
       "source": "src_components_site_waterline",
       "target": "src_components_site_waterline_wave",
       "relation": "contains",
@@ -26842,7 +27114,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/templates/Product.astro",
-      "source_location": "L46",
+      "source_location": "L47",
       "weight": 1.0
     },
     {
@@ -29133,7 +29405,7 @@
     },
     {
       "source": "src_components_blocks_card",
-      "target": "src_lib_blocks",
+      "target": "src_components_site_icon",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -29178,7 +29450,7 @@
     },
     {
       "source": "src_components_blocks_designrow",
-      "target": "src_data_equipment",
+      "target": "src_components_site_icon",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -29223,7 +29495,7 @@
     },
     {
       "source": "src_components_blocks_featuredcase",
-      "target": "src_data_pages",
+      "target": "src_components_site_icon",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -29232,7 +29504,7 @@
     },
     {
       "source": "src_components_blocks_featurerow",
-      "target": "src_lib_blocks",
+      "target": "src_components_site_icon",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -29268,7 +29540,7 @@
     },
     {
       "source": "src_components_blocks_indexrows",
-      "target": "src_lib_blocks",
+      "target": "src_components_site_icon",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -29393,6 +29665,15 @@
       "source_file": "src/components/home/SectorTrack.astro"
     },
     {
+      "source": "src_components_home_sectortrack",
+      "target": "src_components_site_icon",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/home/SectorTrack.astro"
+    },
+    {
       "source": "src_components_home_statement",
       "target": "astro_assets",
       "relation": "imports_from",
@@ -29402,8 +29683,17 @@
       "source_file": "src/components/home/Statement.astro"
     },
     {
+      "source": "src_components_home_statement",
+      "target": "src_components_site_icon",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/home/Statement.astro"
+    },
+    {
       "source": "src_components_home_tierladder",
-      "target": "src_data_home",
+      "target": "src_components_site_icon",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -29539,6 +29829,15 @@
     {
       "source": "src_components_templates_product",
       "target": "astro_content",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/templates/Product.astro"
+    },
+    {
+      "source": "src_components_templates_product",
+      "target": "src_components_site_icon",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -30009,5 +30308,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "91329c4a807e86f0e48dd0a0c9b5045decbd816f"
+  "built_at_commit": "e33e935f564e7b8d105db0921ed53cd9290c15bc"
 }

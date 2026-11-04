@@ -8,6 +8,7 @@
  * numbering: these are alternatives, not steps. Anything slotted renders
  * under the rows, inside the same section.
  */
+import Icon from '@components/site/Icon.astro';
 import type { CardItem } from '@lib/blocks';
 
 interface Props {
@@ -39,7 +40,7 @@ const toneClass = tone === 'off' ? 'off' : tone === 'navy' ? 'navy' : '';
             <a href={item.href}>
               <span class="irows-title">{item.title}</span>
               {item.blurb && <span class="irows-blurb">{item.blurb}</span>}
-              <span class="irows-go" aria-hidden="true">→</span>
+              <span class="irows-go" aria-hidden="true"><Icon name="arrow" /></span>
             </a>
           </li>
         ))}

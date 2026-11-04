@@ -1,5 +1,6 @@
 ---
 // Sectors: a swipe/button carousel (ScrollTrack), never driven by page scroll.
+import Icon from '@components/site/Icon.astro';
 import { Image } from 'astro:assets';
 import ScrollTrack from '@components/blocks/ScrollTrack.astro';
 import { SECTORS } from '@data/home';
@@ -12,7 +13,7 @@ import { mediaFor } from '@data/media';
       <a class={`scard${photo ? ' has-img' : ''}`} href={s.href}>
         {photo && <Image src={photo} alt="" widths={[420, 760]} sizes="380px" loading="lazy" decoding="async" class="scard-img" />}
         <div><h3>{s.name}</h3><p>{s.blurb}</p></div>
-        <span class="arw">Explore →</span>
+        <span class="arw">Explore <Icon name="arrow" /></span>
       </a>
     );
   })}

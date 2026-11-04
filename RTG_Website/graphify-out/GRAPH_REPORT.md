@@ -1,17 +1,17 @@
 # Graph Report - RTG_Website  (2026-11-04)
 
 ## Corpus Check
-- 194 files · ~3,126,334 words
+- 195 files · ~3,126,500 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 11 file(s) not represented in the graph (top: .css 9, (none) 1, .xml 1)
 
 ## Summary
-- 969 nodes · 1406 edges · 139 communities (67 shown, 72 thin omitted)
+- 972 nodes · 1429 edges · 140 communities (67 shown, 73 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 21 edges (avg confidence: 0.92)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `91329c4a`
+- Built from commit: `e33e935f`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -107,13 +107,14 @@
 - dependencies
 - forms.ts
 - devDependencies
+- FormField.astro
 
 ## God Nodes (most connected - your core abstractions)
 1. `[]` - 29 edges
 2. `[]` - 28 edges
 3. `[]` - 26 edges
-4. `[]` - 25 edges
-5. `PageMeta` - 25 edges
+4. `PageMeta` - 26 edges
+5. `[]` - 25 edges
 6. `[]` - 23 edges
 7. `[]` - 21 edges
 8. `PageEntry` - 20 edges
@@ -135,11 +136,11 @@
 ## Import Cycles
 - None detected.
 
-## Communities (139 total, 72 thin omitted)
+## Communities (140 total, 73 thin omitted)
 
 ### Community 0 - "blocks.ts"
 Cohesion: 0.09
-Nodes (53): trail, common, string, lists, jsonLdPage, siblings, [], jsonLdPage (+45 more)
+Nodes (52): ref_astro_content, trail, lists, PATHS, jsonLdPage, siblings, [], jsonLdPage (+44 more)
 
 ### Community 1 - "site_data.py"
 Cohesion: 0.05
@@ -158,16 +159,16 @@ Cohesion: 0.09
 Nodes (27): collections, datetime, Audit: equipment hubs — `/equipment/` (E-00) and `/equipment/winches/` (E-01), Checked and fine, Findings, High, Low, Medium (+19 more)
 
 ### Community 5 - "RTG Website — project guide for Claude Code"
-Cohesion: 0.07
-Nodes (28): 1. What this is, 2. The workflow — follow this for every feature and every page, 3. Stack and conventions, 4. The 17 templates, 5. Known gaps — do not paper over these, 6. What must never be published, 7. Design system, 8. Tone of voice (+20 more)
+Cohesion: 0.06
+Nodes (29): 1. What this is, 2. The workflow — follow this for every feature and every page, 3. Stack and conventions, 4. The 17 templates, 5. Known gaps — do not paper over these, 6. What must never be published, 7. Design system, 8. Tone of voice (+21 more)
 
 ### Community 6 - "package.json"
 Cohesion: 0.15
 Nodes (12): description, name, private, type, version, astro, @astrojs/check, @fontsource/jetbrains-mono (+4 more)
 
 ### Community 7 - "home.ts"
-Cohesion: 0.13
-Nodes (11): src_assets_home_home_fleet_vessel, CONDITIONS, EQUIPMENT, HERO, HERO_PROOF, MANUFACTURING, SECTORS, SERVICE (+3 more)
+Cohesion: 0.14
+Nodes (12): ref_astro_assets, src_assets_home_home_fleet_vessel, CONDITIONS, EQUIPMENT, HERO, HERO_PROOF, MANUFACTURING, SECTORS (+4 more)
 
 ### Community 8 - "RTG design language"
 Cohesion: 0.10
@@ -186,8 +187,8 @@ Cohesion: 0.15
 Nodes (12): Accessibility, Before launch, Blocking — the site should not go live without these, Content depth, Content protection — verified, not just intended, Regenerating, RTG Website — Build, Run it (+4 more)
 
 ### Community 12 - "content.config.ts"
-Cohesion: 0.15
-Nodes (11): ref_astro_content, ref_astro_loaders, card, collections, formField, IDS, imgBrief, link (+3 more)
+Cohesion: 0.17
+Nodes (10): ref_astro_loaders, card, collections, formField, IDS, imgBrief, link, pages (+2 more)
 
 ### Community 13 - "tsconfig.json"
 Cohesion: 0.17
@@ -406,9 +407,9 @@ Cohesion: 0.50
 Nodes (4): devDependencies, @astrojs/check, typescript, xlsx
 
 ## Knowledge Gaps
-- **477 isolated node(s):** `pagesDir`, `pagesTs`, `unfinished`, `{ chromium }`, `assert` (+472 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 679 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **72 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **476 isolated node(s):** `pagesDir`, `pagesTs`, `unfinished`, `{ chromium }`, `assert` (+471 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 677 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **73 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
@@ -418,9 +419,9 @@ _Questions this graph is uniquely positioned to answer:_
 - **Why does `Critical` connect `site_data.py` to `blocks.ts`?**
   _High betweenness centrality (0.076) - this node is a cross-community bridge._
 - **What connects `pagesDir`, `pagesTs`, `unfinished` to the rest of the system?**
-  _477 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _476 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `blocks.ts` be split into smaller, more focused modules?**
-  _Cohesion score 0.08658008658008658 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.09046917736166632 - nodes in this community are weakly interconnected._
 - **Should `site_data.py` be split into smaller, more focused modules?**
   _Cohesion score 0.04609929078014184 - nodes in this community are weakly interconnected._
 - **Should `media.ts` be split into smaller, more focused modules?**

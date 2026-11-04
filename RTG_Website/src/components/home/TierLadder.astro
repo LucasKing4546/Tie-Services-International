@@ -1,5 +1,6 @@
 ---
 // Contract manufacturing: the four tiers as tabs.
+import Icon from '@components/site/Icon.astro';
 import { MANUFACTURING, TIERS } from '@data/home';
 ---
 <section class="tiers-sec" id="tiers">
@@ -25,7 +26,7 @@ import { MANUFACTURING, TIERS } from '@data/home';
           </article>
         ))}
       </div>
-      <p style="margin-top:30px"><a class="arw" href={MANUFACTURING.link.href}>{MANUFACTURING.link.label} →</a></p>
+      <p style="margin-top:30px"><a class="arw" href={MANUFACTURING.link.href}>{MANUFACTURING.link.label} <Icon name="arrow" /></a></p>
     </div>
   </div>
 </section>

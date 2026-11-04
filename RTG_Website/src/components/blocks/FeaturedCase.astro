@@ -5,6 +5,7 @@
  * that page's own MDX entry rather than being retyped here, so the band
  * can never drift out of sync with the case study it features.
  */
+import Icon from '@components/site/Icon.astro';
 import type { PageMeta } from '@data/pages';
 import type { PageEntry } from '@lib/blocks';
 import ImageSlot from './ImageSlot.astro';
@@ -30,7 +31,7 @@ const teaser = data.lede ?? page.description;
     <p class="mono red" style="margin:0 0 24px">{eyebrow}</p>
     <h2 class="d3" style="margin-bottom:24px;max-width:20ch">{page.h1}</h2>
     {teaser && <p class="lede">{teaser}</p>}
-    <p style="margin-top:20px"><a class="arw" href={page.slug}>{ctaLabel} →</a></p>
+    <p style="margin-top:20px"><a class="arw" href={page.slug}>{ctaLabel} <Icon name="arrow" /></a></p>
     {quote && (
       <>
         <hr style="border:0;border-top:1px solid var(--rule);margin:44px 0" />

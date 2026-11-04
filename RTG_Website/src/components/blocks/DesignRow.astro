@@ -9,6 +9,7 @@
  * figure this design has but the list doesn't show rides on its tag line,
  * so a family of A-frames isn't a column of dashes and nothing is lost.
  */
+import Icon from '@components/site/Icon.astro';
 import type { EquipmentItem } from '@data/equipment';
 import { datasheetRequest, designTags, formatLoad, type DesignFig } from '@lib/equipment';
 
@@ -43,7 +44,7 @@ const tags = [designTags(item), ...extra].filter(Boolean).join(' · ');
     <span class="finder-fig">{FIG[k].v ?? '—'}<small>{FIG[k].label}</small></span>
   ))}
   <span class="finder-links">
-    {view && <a href={view.href}>{view.label} <span aria-hidden="true">→</span></a>}
+    {view && <a href={view.href}>{view.label} <Icon name="arrow" /></a>}
     <a href={datasheetRequest(item)} aria-label={`Request the ${item.code} datasheet`}>Request datasheet</a>
   </span>
 </li>

@@ -12,6 +12,7 @@ interface Props {
 }
 
 const { eyebrow, heading, lede } = Astro.props;
+import Icon from '@components/site/Icon.astro';
 ---
 
 <section class="strack" data-scroll-track>
@@ -30,8 +31,8 @@ const { eyebrow, heading, lede } = Astro.props;
 
     <div class="wrap strack-foot">
       <div class="strack-nav">
-        <button type="button" class="strack-btn strack-prev" aria-label={`Previous: ${heading}`}>‹</button>
-        <button type="button" class="strack-btn strack-next" aria-label={`Next: ${heading}`}>›</button>
+        <button type="button" class="strack-btn strack-prev" aria-label={`Previous: ${heading}`}><Icon name="prev" /></button>
+        <button type="button" class="strack-btn strack-next" aria-label={`Next: ${heading}`}><Icon name="next" /></button>
       </div>
     </div>
   </div>

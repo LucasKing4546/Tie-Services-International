@@ -1,0 +1,16 @@
+---
+/**
+ * The site's arrow and chevrons, drawn rather than typed, in one stroke.
+ * Sized at 1em in currentColor, so they follow the type and colour of
+ * whatever holds them. Always decorative: the link or button names itself.
+ */
+interface Props { name: 'arrow' | 'prev' | 'next' }
+const PATHS = {
+  arrow: 'M4 12h15M13 6l6 6-6 6',
+  prev: 'M15 5l-7 7 7 7',
+  next: 'M9 5l7 7-7 7',
+};
+const { name } = Astro.props;
+---
+<svg class="ico" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false"
+  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d={PATHS[name]} /></svg>
