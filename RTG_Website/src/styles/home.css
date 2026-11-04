@@ -46,49 +46,7 @@
   .hero-proof{grid-template-columns:1fr 1fr;row-gap:24px}
   .hero-proof div{margin-right:0;padding-right:12px}
   .hero-proof div:nth-child(2n){border-right:0;padding-left:16px}}
-@media (prefers-reduced-motion:reduce){.vessel,.zs::before{animation:none}}
-
-/* ---------- equipment showroom ----------
-   One machine in open water, no frame around it. .zs::before is a work light
-   that drifts across the stage, the way an ROV lamp picks hardware out of the
-   dark. Drag turns the model (home-scroll.ts). */
-.zw{position:relative}
-.zs{position:relative;height:min(100svh,900px);overflow:hidden}
-.zs::before{content:"";position:absolute;inset:-20%;z-index:0;pointer-events:none;
-  background:radial-gradient(34% 44% at 50% 48%,rgba(255,255,255,.17),transparent 70%);
-  animation:lamp 17s ease-in-out infinite alternate}
-@keyframes lamp{from{transform:translate(-13%,-5%)}to{transform:translate(13%,4%)}}
-.zf{position:absolute;inset:0;z-index:1;cursor:grab;touch-action:pan-y}
-.zf.drag{cursor:grabbing}
-.zf-in{position:absolute;inset:0;display:grid;grid-template-rows:auto 1fr auto;
-  padding:94px var(--gut) clamp(24px,3vw,44px);width:100%;height:100%;max-width:var(--wrap);margin:0 auto}
-.zf canvas{position:absolute;inset:0;width:100%;height:100%;z-index:0}
-.zf-top,.zf-bot{position:relative;z-index:2;display:flex;justify-content:space-between;
-  align-items:flex-start;gap:24px;flex-wrap:wrap}
-.zf-bot{align-items:flex-end}
-.zf h3{color:#fff;font-size:clamp(24px,3.2vw,44px);letter-spacing:-.03em;line-height:1.1;margin:0}
-.zf .sub{color:rgba(255,255,255,.66);font-size:15px;margin:12px 0 0;max-width:38ch}
-.zf .spec{display:flex;gap:30px;flex-wrap:wrap;transition:opacity .2s ease}
-#mHead{transition:opacity .2s ease}
-.zf .spec div{display:flex;flex-direction:column;gap:5px}
-.zf .spec b{font-family:var(--f-d);font-weight:800;font-size:22px;color:#fff;letter-spacing:-.02em}
-.zf .spec span{font-family:var(--f-m);font-size:10px;letter-spacing:.14em;text-transform:uppercase;
-  color:rgba(255,255,255,.5)}
-.zf-pick{display:flex;gap:8px;flex-wrap:wrap}
-.zf-pick button{font-family:var(--f-d);font-weight:700;font-size:12.5px;letter-spacing:-.01em;
-  padding:10px 18px;border-radius:100px;border:1px solid rgba(255,255,255,.3);background:transparent;
-  color:rgba(255,255,255,.75);cursor:pointer;transition:all .3s var(--e)}
-.zf-pick button.on{background:var(--red);border-color:var(--red);color:#fff}
-@media (max-width:820px){.zw{height:auto!important}
-  .zs{height:auto}
-  .zf{position:relative!important;left:auto!important;top:auto!important;opacity:1!important;
-    width:auto!important;height:auto!important;transform:none!important;display:flex;flex-direction:column}
-  /* Text, then the model, then its figures: nothing lies on the machine, and
-     the canvas runs edge to edge so the model is not cut by the gutter. */
-  .zf-in{display:contents}
-  .zf-top{order:1;flex-direction:column;align-items:flex-start;gap:16px;padding:clamp(20px,2.6vw,40px) var(--gut) 8px}
-  .zf canvas{order:2;position:relative;inset:auto;height:auto;aspect-ratio:1/1}
-  .zf-bot{order:3;padding:8px var(--gut) 32px}}
+@media (prefers-reduced-motion:reduce){.vessel{animation:none}}
 
 /* ---------- statement ---------- */
 .stmt .d2{max-width:19ch}
@@ -96,10 +54,7 @@
 @media (max-width:900px){.stmt-grid{grid-template-columns:1fr;gap:34px}}
 
 /* ---------- pinned tiers ---------- */
-.pin-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
-@media (max-width:900px){.pin-grid{grid-template-columns:1fr;gap:32px}}
-.pin-vis{position:relative;aspect-ratio:1/1;max-height:56vh;margin:0 auto;width:100%}
-.pin-vis canvas{width:100%;height:100%;display:block}
+.pin-grid{display:grid}
 /* Tier panels share one grid cell, so the box is as tall as the longest
    panel and nothing shifts when the tab changes. visibility (delayed until
    the fade ends) keeps hidden panels out of the tab order and a11y tree. */
@@ -154,17 +109,8 @@
 
 #tiers .tier li{color:var(--ink)}
 
-/* machine lift: heading spacing and pick buttons */
-.zf-pick button{transition:transform .25s var(--e),background .25s var(--e),border-color .25s var(--e)}
-.zf-pick button:hover{transform:translateY(-2px)}
-/* Figures as readouts on a hairline, not in a box. */
-.zf .spec{gap:0}
-.zf .spec div{border-top:1px solid var(--rule);padding:12px 34px 0 0}
-.zf .btn.b-red{}
-@media (max-width:640px){.zf .spec{gap:18px;padding:14px 16px}}
-
-@media (prefers-reduced-motion:reduce){.ecard.lc,.case-vis,.zf-pick button,.lc-ph img{transition:none}
-  .ecard.lc:hover,.case-vis:hover,.zf-pick button:hover{transform:none}}
+@media (prefers-reduced-motion:reduce){.ecard.lc,.case-vis,.lc-ph img{transition:none}
+  .ecard.lc:hover,.case-vis:hover{transform:none}}
 
 /* statement: title and lede as one balanced block, centred on each other */
 .stmt-grid{grid-template-columns:minmax(0,1fr) minmax(0,500px);gap:56px;align-items:center}
@@ -173,9 +119,6 @@
 
 /* ---- pinned tiers, redesigned: open stage, no boxes, labelled steps ---- */
 #tiers{padding:clamp(72px,8vw,112px) 0}
-#tiers .pin-grid{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(40px,6vw,96px);align-items:center}
-#tiers .pin-vis{background:none;border:0;border-radius:0;max-height:62svh}
-#tiers .pin-vis::after{content:"";position:absolute;left:8%;right:8%;bottom:6%;height:1px;background:var(--rule)}
 .tier-h{margin-bottom:28px;max-width:26ch;font-size:clamp(26px,2.5vw,38px)}
 #tiers .tier .num{font-size:clamp(44px,4vw,60px);line-height:1;margin-bottom:14px}
 #tiers .tier h3{font-size:clamp(26px,2.4vw,34px);letter-spacing:-.03em;margin-bottom:12px}
@@ -193,9 +136,7 @@
 #tiers .pin-bar span{font-size:13px;line-height:1.25;color:var(--ink-2);font-weight:600}
 #tiers .pin-bar button.on b{color:var(--accent)}
 #tiers .pin-bar button.on span{color:var(--ink)}
-@media (max-width:900px){#tiers .pin-grid{grid-template-columns:minmax(0,1fr);gap:20px}
-  #tiers .pin-vis{max-height:30svh}
-  #tiers .pin-bar{gap:10px}
+@media (max-width:900px){#tiers .pin-bar{gap:10px}
   #tiers .pin-bar span{font-size:11.5px}
   .tier-h{font-size:clamp(22px,5.4vw,30px)}}
 @media (min-width:901px) and (max-height:820px){
@@ -248,10 +189,6 @@ html:not(.js) #tiers .pin-bar{display:none}
 html:not(.js) #tiers .pin-copy{display:flex;flex-direction:column;gap:28px}
 html:not(.js) #tiers .tier{opacity:1;visibility:visible;transform:none;pointer-events:auto}
 @media (prefers-reduced-motion:reduce){.tier,.tier.on{transition:none}}
-@media (max-width:820px){
-  .zf .spec{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;padding:0}
-  .zf .spec div{padding-right:0}
-}
 
 /* ---------- finder entry (FinderEntry.astro) ----------
    Closes the Equipment rows above it, so it gives up its own top padding. */

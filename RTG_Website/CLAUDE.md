@@ -106,11 +106,10 @@ architectural decision.
 
 | Thing | Choice | Why |
 |---|---|---|
-| Framework | **Astro 5**, static output | Zero JS by default. 70 mostly-static pages stay fast; 3D loads only where used. |
+| Framework | **Astro 5**, static output | Zero JS by default. 70 mostly-static pages stay fast. |
 | Language | TypeScript, strict | |
 | Content | MDX per page in `src/content/pages/` | A copywriter can edit prose without touching code. |
 | Metadata | `src/data/pages.ts` | Generated from the workbook. **Single source of truth.** |
-| 3D | three.js, lazily imported | ~500 kB — never on the critical path. |
 | Styling | Plain CSS with custom properties | No framework. Tokens in `src/styles/tokens.css`. |
 
 ### Directory map
@@ -135,10 +134,6 @@ src/
                           { page: PageMeta; entry: CollectionEntry<'pages'> }.
                           Fallback.astro is the temporary stand-in for any
                           template not yet built.
-  lib/rtg3d.ts            Procedural 3D models of RTG equipment.
-  lib/home-scroll.ts      Homepage 3D: the tier winch (driven by the Tiers
-                          tabs) and the equipment showroom. motion.ts below
-                          owns everything shared.
   lib/hoist.ts            Pays out the homepage hoist line on scroll.
   lib/motion.ts           Shared reveal/count-up/parallax system every page
                           boots on 'astro:page-load'. Templates opt in
@@ -203,7 +198,7 @@ Build order follows workbook priority: **P1 earns revenue or unblocks a sale.**
 
 | Template | Pages | Status | Notes |
 |---|---|---|---|
-| `Home` | 1 | **Done** | Full 3D scroll choreography. Reference for quality bar. |
+| `Home` | 1 | **Redesign pending** | 3D models removed on 2026-11-04 (site owner's decision); a new layout is being designed. Hero vessel and hoist line stay. |
 | `Hub` | 11 | **Done** | Section landing pages. Sectors, Equipment, Winches, Proof, Resources… |
 | `Sector` | 7 | **Done** | S-01…S-07. The market the buyer identifies with. P1. |
 | `Product` | 10 | **Done** | Equipment detail with open Tier 1 spec tables. `Product` schema. P1. |
@@ -263,9 +258,8 @@ These are real and unresolved. Flag them; do not invent content to fill them.
    still carries a `<Gap>` / `TO SUPPLY` marker gets `noindex` and is left out
    of the sitemap (`Base.astro`, `astro.config.mjs`). It clears itself when
    the page is finished. The pages are still built and reachable by URL.
-5. **No photography yet.** Every image is a placeholder. 3D models in
-   `lib/rtg3d.ts` are procedural stand-ins built from published product
-   categories — they are **not CAD** and their proportions are indicative.
+5. **Photography is partial.** Images registered in `src/data/media.ts` render;
+   every other slot shows the drawing-sheet placeholder (`ImageSlot.astro`).
 6. **Alt text is unwritten.** It arrives with the photography. It is a
    requirement, not a nicety.
 7. **Client names are published as written in the copy document.** Decided by
@@ -356,21 +350,6 @@ no reversed version.
   clip — this is already handled in `tokens.css`, do not remove it.
 - Target **WCAG 2.2 AA**. One `h1` per page, skip link, visible focus, full
   keyboard operation, `prefers-reduced-motion` honoured.
-
-### 3D
-
-`src/lib/rtg3d.ts` builds four machines procedurally: traction winch, A-frame
-LARS, hydraulic power unit and deck crane. `buildCrane({ rig: true })` returns a
-crane with a live hoist whose hook can carry a DOM payload.
-
-- Always lazily import. Never on the critical path.
-- Always gate rendering on visibility — `createViewer()` exposes a `visible`
-  flag; `home-scroll.ts` layers its own `onScreen` field on top of that per
-  stage, driven by an `IntersectionObserver`. Only render while on screen.
-- Honour `prefers-reduced-motion`.
-- When real CAD becomes available, export decimated GLB with all internal
-  geometry stripped (which also satisfies §6) and swap it in; the scene, lighting
-  and scroll wiring stay as they are.
 
 ---
 

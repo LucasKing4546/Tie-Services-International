@@ -194,9 +194,7 @@ const robots = offMap || unfinished ? 'noindex, follow' : 'index, follow, max-im
       import { initHoist } from '@lib/hoist';
       // astro:page-load fires on first load and after every client-side
       // navigation — the one place reveals, counters and parallax get
-      // booted. Don't call initMotion() again from a template: home-scroll.ts
-      // relies on this having already run and only layers the homepage's
-      // 3D on top.
+      // booted. Don't call initMotion() again from a template.
       document.addEventListener('astro:page-load', initMotion);
       document.addEventListener('astro:page-load', initForms);
       document.addEventListener('astro:page-load', initFormPrefill);

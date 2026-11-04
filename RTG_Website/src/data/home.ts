@@ -43,8 +43,8 @@ export const CONDITIONS = {
   ],
 };
 
-/** Machines in the showroom. Order drives the carousel; home-scroll.ts reads
- *  the same list, so the text beside the model can never drift from it. */
+/** Headline figures per machine family. Not rendered since the 3D showroom
+ *  went (2026-11-04); kept for the homepage redesign. */
 export const MACHINES = [
   { key: 'winch', label: 'Winch', name: 'Winches',
     desc: 'Geotechnical, survey, seismic, ROV and umbilical, mooring and utility.',

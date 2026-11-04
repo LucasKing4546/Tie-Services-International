@@ -2,8 +2,7 @@
    Shared block primitives. Imported by Base.astro, so every page gets them -
    unlike home.css, which is homepage-only. Promoted rules keep their exact
    declarations from home.css; anything genuinely homepage-specific (hero,
-   3D stages, marquee, pinned tiers, horizontal track, .scard, .case-vis,
-   .ecard.lc) stays there.
+   tiers, .scard, .case-vis, .ecard.lc) stays there.
    ========================================================================== */
 
 /* ---------- generic section ---------- */
@@ -295,8 +294,8 @@
    than tiled in a .stats grid — a case study's headline number, say. */
 .headline-num{font-family:var(--f-d);font-weight:800;font-size:clamp(44px,5.4vw,68px);
   letter-spacing:-.045em;line-height:1;margin:0}
-/* The site's single boldest number, on its own in a navy band. Same narrow
-   monochrome-vignette exception as the pinned stages above: it gives the
+/* The site's single boldest number, on its own in a navy band. A narrow
+   monochrome-vignette exception: it gives the
    figure a centre to sit in rather than floating on a flat slab. Scoped to
    the band that actually contains one. */
 

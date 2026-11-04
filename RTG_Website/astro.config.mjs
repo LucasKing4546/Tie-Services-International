@@ -32,12 +32,4 @@ export default defineConfig({
       filter: (page) => !page.includes('/resources/datasheets/') && !unfinished.has(new URL(page).pathname),
     }),
   ],
-  vite: {
-    build: {
-      // three.js is large — keep it in its own chunk so only 3D pages pay for it
-      // the 3D bundle is deliberately large and lazily imported only on pages
-      // that use it, so the default 500 kB warning is noise here
-      chunkSizeWarningLimit: 700,
-    },
-  },
 });

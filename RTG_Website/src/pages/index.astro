@@ -2,7 +2,7 @@
 import Base from '@layouts/Base.astro';
 import Hero from '@components/home/Hero.astro';
 import Statement from '@components/home/Statement.astro';
-import MachineLift from '@components/home/MachineLift.astro';
+import Conditions from '@components/home/Conditions.astro';
 import SectorTrack from '@components/home/SectorTrack.astro';
 import TierLadder from '@components/home/TierLadder.astro';
 import LifecycleSteps from '@components/home/LifecycleSteps.astro';
@@ -14,31 +14,10 @@ import '@/styles/home.css';
 <Base pageId="H-01">
   <Hero />
   <Statement />
-  <MachineLift />
+  <Conditions />
   <SectorTrack />
   <IndexRows items={EQUIPMENT} heading="Equipment" tone="default" />
   <FinderEntry />
   <TierLadder />
   <LifecycleSteps />
-
-  <Fragment slot="body-end">
-    <script>
-      // three.js is ~600 kB — fetch it only once idle, and only on this page.
-      // Everything above renders and is readable without it.
-      //
-      // Booted from 'astro:page-load', not run here directly: top-level script
-      // code only executes once per document, and ClientRouter never re-runs
-      // it — a client-side return trip to / would otherwise arrive with no 3D.
-      // The event fires on first load and again after every navigation;
-      // initHome() is idempotent, tearing down the previous page's stages
-      // first (releasing their WebGL contexts) and bailing if the homepage
-      // isn't in the document.
-      const boot = () => {
-        const start = () => import('@lib/home-scroll').then((m) => m.initHome());
-        if ('requestIdleCallback' in window) requestIdleCallback(start, { timeout: 1500 });
-        else setTimeout(start, 200);
-      };
-      document.addEventListener('astro:page-load', boot);
-    </script>
-  </Fragment>
 </Base>

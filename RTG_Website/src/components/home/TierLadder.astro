@@ -1,12 +1,9 @@
 ---
-// Contract manufacturing: the four tiers as tabs, with the 3D winch built up
-// to the selected tier (home-scroll.ts listens for 'tierchange').
+// Contract manufacturing: the four tiers as tabs.
 import { MANUFACTURING, TIERS } from '@data/home';
 ---
 <section class="tiers-sec" id="tiers">
   <div class="wrap pin-grid">
-    <div class="pin-vis"><canvas id="tierGL" role="img"
-      aria-label="3D winch assembly, built up to the selected manufacturing tier"></canvas></div>
     <div>
       <h2 class="d3 tier-h">{MANUFACTURING.heading}</h2>
       <p class="tier-intro">{MANUFACTURING.body}</p>
@@ -49,7 +46,6 @@ import { MANUFACTURING, TIERS } from '@data/home';
       });
       panels.forEach((p, i) => p.classList.toggle('on', i === idx));
       if (focus) tabs[idx].focus();
-      root.dispatchEvent(new CustomEvent('tierchange', { detail: idx }));
     };
     tabs.forEach((t, i) => {
       t.addEventListener('click', () => select(i));
