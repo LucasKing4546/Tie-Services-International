@@ -16,6 +16,55 @@ redesign of 2026-11-04 (3D removed).
   description length, pre-existing), 0 content-protection violations.
   `npx astro check`: 0 errors.
 
+## Start here in the next chat: DESIGN.md findings
+
+`DESIGN.md` (written 2026-11-04 by impeccable's documenter from the built
+code) found one accessibility failure and eight places where the code and
+CLAUDE.md §7 disagree. Fix these first, in this order. DESIGN.md currently
+describes the code as it is; whatever is decided, update DESIGN.md (and
+`.impeccable/design.json`) and CLAUDE.md §7 in the same change so the three
+agree. Keep site text verbatim throughout.
+
+**1. Focus ring fails WCAG 1.4.11 (code, no decision needed).**
+`src/styles/tokens.css:84` sets `:focus-visible{outline:3px solid var(--red)}`.
+Red measures about 2.3:1 on `--sea-1` and 1.3:1 on `--sea-0` (needs 3:1).
+Make it `--ink` (white) under water and keep red only on the sky/header
+(`.above`, `.hdr`), then drop the component overrides that only existed to
+patch this (about 16 `:focus-visible` rules across the stylesheets; grep
+them). Check with keyboard Tab on the homepage, a hub, a product page and a
+form, at 1440 and 390.
+
+**2. Decide code vs §7 for each disagreement (ask the user, one round).**
+Recommended answer first:
+
+| # | §7 says | Code does | Recommended |
+|---|---|---|---|
+| a | Cards 16px radius | Most cards 20px; tier cards 24, forms 22; 16 only on notes, spec tables, draft panels | Make 20px the card value, 16 for callouts/tables, update §7 |
+| b | Display tracking −3.5%, line-height 1.06 | Hero/page/section heads −0.04em; several overrides at 1.02 or 1.04 | Keep −0.04em (update §7); raise every 1.02/1.04 to 1.06 (the descender rule) |
+| c | Masked reveals are the only entrance motion | Also `.fu` fade-up, `.stag` stagger, tier tab crossfade, mobile menu | Update §7 to name this closed set |
+| d | No scattered hover effects | 8px card lift, red fill on sector cards, 1.06 image zoom, index-row slide, red disc | Update §7 to list this as the closed set; add nothing |
+| e | Never all-caps headings | Footer column h3s are mono uppercase | Fix the code (sentence case); also touches B22 (footer h3s with no h2) |
+| f | No textures | Image placeholders use a drawing-sheet grid | Update §7: allowed on placeholders only |
+| g | (silent) | The homepage spine | Add a short "Homepage spine" note to §7 |
+| h | Red never as type under water | Hero accent word is red on the sky (~5.5:1) | Already consistent; state it in §7 |
+
+**3. Dead code DESIGN.md lists (code, no decision needed).**
+Empty rules (`.tier-card .imgslot,.cmp-frame .imgslot{}`, `.case > .imgslot{}`,
+`.sec.off .imgslot-shot{}`, an empty `.tier-card:hover` shadow),
+`box-shadow` transitions with no shadow, `.sec{padding:112px}` in
+blocks.css that layout.css overrides, `.stats` defined three times
+(blocks.css, layout.css twice), and stale home.css comments ("glow and
+grid", "navy band", "pinned tiers"). The `eyebrow` prop in SectionHead and
+IndexRows still renders a mono label that ocean.css hides: remove the prop's
+output rather than hiding it. Delete only after grepping each selector.
+
+**4. Radius values (follows 2a).** 21 distinct `border-radius` values today;
+collapse to the set decided in 2a plus pills (100px) and controls (12px).
+
+After all four: `npm run build`, `npx astro check`, `node
+docs/audit-2026-10-29/forms-check.cjs`, screenshots at 1440 and 390 of the
+homepage, a hub and a product page, then commit per item.
+
 ## Done on 2026-11-03
 
 | Commit | Audit items |
@@ -54,11 +103,10 @@ a phone the spine has no visible link to the hoist (accepted).
 - **B20:** Proof hub opens on an empty draft card (Y-04); blank space on Y-04 and R-02; R-04 linked from nowhere.
 - **B21:** tablet header CTA centred; mobile menu doesn't close when focus leaves it.
 - **B22:** heading levels (draft panel h3 after h1, footer h3s with no h2, StepList h3s, Legal "On this page" h3); `lang="en"` should be `en-GB`.
-- **B23:** design-system drift (21 radius values, ~12 focus-ring overrides, `.stats` defined three times, dead rules); the glyph arrows part is done (`Icon.astro`).
+- **B23:** folded into "Start here" items 3 and 4 above; the glyph arrows part is done (`Icon.astro`).
 - **B25:** finder: no "Clear filters", placeholder 2.8:1, collapsed mobile filters hide the active count, exact DS match not ranked first.
 - **B26:** spec tables styled by three conflicting stylesheets; units orphan on mobile.
 - **B27:** sticky datasheet pill covers table rows; 22 px tap targets (`.arw`, finder links).
-- **New, from DESIGN.md (2026-11-04), fix first:** the global focus ring (`tokens.css:84`, 3px `--red`) is about 2.3:1 on `--sea-1` and 1.3:1 on `--sea-0`, failing WCAG 1.4.11 (3:1). Under water it should be `--ink` (white), which most component overrides already use. DESIGN.md also lists where the code and CLAUDE.md §7 disagree (card radius 20 vs 16 px, `.fu`/`.stag` entrance motion, the hover set, mono uppercase footer headings); decide which wins.
 - **Not in the audit:** Y-04 (vendor pack) and R-02 (catalogues) are Form-template pages with no form.
 - **Low items** (copy polish, units, stale comments, figures hard-coded instead of from `PROOF`) are in each section report.
 
