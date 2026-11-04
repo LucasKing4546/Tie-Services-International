@@ -1,7 +1,8 @@
 ---
 // The company, last before the seabed (the concept's About band): the family
 // story at reading size, the client line beside it. The client names in
-// STORY were authorised on 2026-10-08.
+// STORY were authorised on 2026-10-08. The page closes on the two enquiry
+// routes (labels as used by the hub heroes and the header).
 import Icon from '@components/site/Icon.astro';
 import { STORY } from '@data/home';
 ---
@@ -15,6 +16,10 @@ import { STORY } from '@data/home';
       <h3 class="d3">{STORY.trustedHeading}</h3>
       <p>{STORY.trusted}</p>
       <a class="arw" href={STORY.link.href}>{STORY.link.label} <Icon name="arrow" /></a>
+      <div class="hero-cta">
+        <a class="btn b-red" href="/contact/request-a-quotation/">Request a quotation</a>
+        <a class="btn btn-o" href="/contact/">Talk to an engineer</a>
+      </div>
     </div>
   </div>
 </section>

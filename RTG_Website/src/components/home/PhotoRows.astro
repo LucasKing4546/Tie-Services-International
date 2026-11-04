@@ -1,17 +1,24 @@
 ---
-// Sectors as the concept's market register: one ruled row per sector, led
-// by a photograph of RTG equipment at work in it, so the first thing under
-// the proof strip is the work itself rather than a menu.
+// The concept's register: one ruled row per item, led by a photograph of the
+// equipment itself, so the band shows the work rather than a menu. Used for
+// Sectors and Equipment. An item with no photograph yet keeps an empty plate
+// (crane and portable-spread photography is still to come from RTG).
 import Icon from '@components/site/Icon.astro';
 import { Image } from 'astro:assets';
-import { SECTORS } from '@data/home';
 import { mediaFor } from '@data/media';
+
+interface Props {
+  heading: string;
+  items: { title: string; blurb: string; href: string; ref?: string }[];
+  class: string;
+}
+const { heading, items, class: cls } = Astro.props;
 ---
-<section class="sec mkts">
+<section class:list={['sec', cls]}>
   <div class="wrap">
-    <h2 class="d2"><span class="rl"><span>Sectors</span></span></h2>
+    <h2 class="d2"><span class="rl"><span>{heading}</span></span></h2>
     <ul class="mkt-list stag">
-      {SECTORS.map((s) => {
+      {items.map((s) => {
         const photo = s.ref ? mediaFor(s.ref) : undefined;
         return (
           <li>
@@ -19,7 +26,7 @@ import { mediaFor } from '@data/media';
               <span class="mkt-img">
                 {photo && <Image src={photo} alt="" widths={[240, 480]} sizes="200px" loading="lazy" decoding="async" />}
               </span>
-              <h3>{s.name}</h3>
+              <h3>{s.title}</h3>
               <p>{s.blurb}</p>
               <span class="mkt-go" aria-hidden="true"><Icon name="arrow" /></span>
             </a>
@@ -27,5 +34,6 @@ import { mediaFor } from '@data/media';
         );
       })}
     </ul>
+    <slot />
   </div>
 </section>

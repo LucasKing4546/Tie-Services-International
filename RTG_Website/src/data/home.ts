@@ -45,33 +45,34 @@ export const CONDITIONS = {
 
 /** Mirrors S-01…S-07 in the Page Map. */
 export const SECTORS = [
-  { id: 'S-01', ref: 'IMG-S01-C', name: 'Ocean Survey & Hydrography', href: '/sectors/ocean-survey-hydrography/',
+  { id: 'S-01', ref: 'IMG-S01-A', name: 'Ocean Survey & Hydrography', href: '/sectors/ocean-survey-hydrography/',
     blurb: 'CTD, side scan, magnetometer, sub-bottom profiler and deep-tow handling, 300 to 4,000 m.' },
   { id: 'S-02', ref: 'IMG-S02-C', name: 'Marine Geotechnical', href: '/sectors/marine-geotechnical/',
     blurb: `Corer, CPT and vibrocorer handling with constant tension control. Proven to ${PROOF.cptDepthM.toLocaleString('en-GB')} m.` },
   { id: 'S-03', ref: 'IMG-E10-A', name: 'Offshore Wind & Subsea Cables', href: '/sectors/offshore-wind-subsea-cables/',
     blurb: 'Site-investigation handling and 5 to 20 Te cable tensioners.' },
-  { id: 'S-04', ref: 'IMG-S04-D', name: 'Seismic', href: '/sectors/seismic/',
+  { id: 'S-04', ref: 'IMG-S04-A', name: 'Seismic', href: '/sectors/seismic/',
     blurb: 'Source and streamer handling for continuous-duty acquisition.' },
   { id: 'S-05', ref: 'IMG-S05-C', name: 'Oceanographic Research', href: '/sectors/oceanographic-research/',
     blurb: 'Electric and hydraulic winches for precise, repeatable CTD and coring casts.' },
-  { id: 'S-06', ref: 'IMG-S06-B', name: 'Subsea, ROV & Diving', href: '/sectors/subsea-rov-diving/',
+  { id: 'S-06', ref: 'IMG-S06-A', name: 'Subsea, ROV & Diving', href: '/sectors/subsea-rov-diving/',
     blurb: 'ROV LARS, umbilical winches and personnel-rated handling.' },
   { id: 'S-07', ref: 'IMG-S07-B', name: 'Defence & Government', href: '/sectors/defence-government/',
     blurb: 'Class-certified handling with full material and weld traceability.' },
 ];
 
-/** Equipment families — mirrors E-01…E-12. */
+/** Equipment families — mirrors E-01…E-12. `ref` is a family photograph
+ *  from @data/media; cranes and portable spreads have none yet. */
 export const EQUIPMENT = [
-  { title: 'Winches', href: '/equipment/winches/',
+  { title: 'Winches', ref: 'IMG-E02-G', href: '/equipment/winches/',
     blurb: 'Geotechnical, survey, seismic, ROV and umbilical, mooring and utility; 240 kg to 48 t WLL.' },
-  { title: 'Launch & recovery systems', href: '/equipment/launch-recovery-systems/',
+  { title: 'Launch & recovery systems', ref: 'IMG-E07-A', href: '/equipment/launch-recovery-systems/',
     blurb: 'A-frames and LARS, 5 to 40 Te WLL.' },
   { title: 'Cranes & lifting', href: '/equipment/cranes-lifting/',
     blurb: 'Knuckle boom, telescopic and utility cranes, and davits.' },
-  { title: 'Handling systems', href: '/equipment/handling-systems/',
+  { title: 'Handling systems', ref: 'IMG-E10-A', href: '/equipment/handling-systems/',
     blurb: 'Cable and pipe tensioners, 5 to 20 Te.' },
-  { title: 'Power units', href: '/equipment/power-units/',
+  { title: 'Power units', ref: 'IMG-E02-C', href: '/equipment/power-units/',
     blurb: 'Hydraulic power units built and flushed to a defined cleanliness class.' },
   { title: 'Portable & containerised', href: '/equipment/portable-containerised/',
     blurb: 'Self-contained spreads for chartered vessels.' },

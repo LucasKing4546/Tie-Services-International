@@ -18,8 +18,9 @@ const intro = await entryFor('P-00');
 const cards = CASE_FIGS.map((f) => {
   const card = index.data.cards?.find((c) => c.pageId === f.id);
   if (!card) throw new Error(`CaseStudies: no P-01 card for ${f.id}`);
-  const [ref, ...rest] = (card.title ?? '').split(' ');
-  return { ...f, ref, title: rest.join(' '), blurb: card.blurb, href: page(f.id).slug };
+  // The index titles lead with the workbook code ("CS-01 Fleet standardisation").
+  const title = (card.title ?? '').replace(/^CS-\d+\s+/, '');
+  return { ...f, title, blurb: card.blurb, href: page(f.id).slug };
 });
 ---
 <section class="sec cases-sec">
@@ -36,7 +37,6 @@ const cards = CASE_FIGS.map((f) => {
               </figure>
             )}
             <div class="cs-body">
-              <span class="cs-ref">{c.ref}</span>
               <p class="cs-fig">{c.fig}</p>
               <h3>{c.title}</h3>
               <p class="cs-blurb">{c.blurb}</p>

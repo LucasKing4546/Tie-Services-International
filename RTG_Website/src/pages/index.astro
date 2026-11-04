@@ -14,23 +14,24 @@ import Base from '@layouts/Base.astro';
 import Hero from '@components/home/Hero.astro';
 import Statement from '@components/home/Statement.astro';
 import Conditions from '@components/home/Conditions.astro';
-import SectorRows from '@components/home/SectorRows.astro';
+import PhotoRows from '@components/home/PhotoRows.astro';
 import CaseStudies from '@components/home/CaseStudies.astro';
 import TierLadder from '@components/home/TierLadder.astro';
 import LifecycleSteps from '@components/home/LifecycleSteps.astro';
-import IndexRows from '@components/blocks/IndexRows.astro';
 import FinderEntry from '@components/home/FinderEntry.astro';
-import { EQUIPMENT } from '@data/home';
+import { EQUIPMENT, SECTORS } from '@data/home';
 import '@/styles/home.css';
+
+const sectors = SECTORS.map((s) => ({ title: s.name, blurb: s.blurb, href: s.href, ref: s.ref }));
 ---
 <Base pageId="H-01">
   <Hero />
   <div class="home-main">
-    <SectorRows />
+    <PhotoRows class="mkts" heading="Sectors" items={sectors} />
     <CaseStudies />
-    <IndexRows items={EQUIPMENT} heading="Equipment" tone="default">
+    <PhotoRows class="equip" heading="Equipment" items={EQUIPMENT}>
       <FinderEntry />
-    </IndexRows>
+    </PhotoRows>
     <Conditions />
     <TierLadder />
     <LifecycleSteps />

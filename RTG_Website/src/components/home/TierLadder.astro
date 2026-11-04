@@ -22,7 +22,6 @@ const photo = mediaFor('IMG-S07-C');
     <ol class="tiers stag">
       {TIERS.map((t) => (
         <li>
-          <span class="tier-n">{t.n}</span>
           <h3><a href={t.href}>{t.title}</a></h3>
           <p>{t.lede}</p>
           <ul>{t.points.map((pt) => <li>{pt}</li>)}</ul>
