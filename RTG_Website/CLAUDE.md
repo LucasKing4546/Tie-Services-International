@@ -310,10 +310,11 @@ their prev/next buttons; the homepage Tiers are tabs. Nothing pins.
 single gradient (`--sea-0` → `--sea-1` → `--sea-2`, `src/styles/ocean.css`) and
 every section sits transparent on it. Do not give a section its own opaque
 background. **Exception, the homepage (2026-11-05):** it follows
-`romica-website-concept.html` — each section is a solid band stepping from
-paper to the abyss (two light bands first), with 2px square corners, ruled
-lists and the contract-manufacturing tiers as four visible columns. Scoped in
-`home.css` under `.home-main` and `.band-light`; inner pages are unchanged. `Section`'s `tone="off"` / `tone="navy"` are faint translucent panels.
+`romica-website-concept.html` — every section below the waterline is a solid band, one
+step deeper than the last, from the teal surface to the abyss (never a light
+band under water), with ruled lists and the contract-manufacturing tiers as
+four visible columns. Corners stay the site's own. Scoped in `home.css` under
+`.home-main`; inner pages are unchanged. `Section`'s `tone="off"` / `tone="navy"` are faint translucent panels.
 
 Two palettes (decided 2026-10-29). The brand navy and red from the live RTG
 stylesheet, unchanged, colour the logo, the header, the footer and the

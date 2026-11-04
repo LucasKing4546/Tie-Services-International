@@ -138,30 +138,23 @@
 
 
 /* ---------- concept bands (romica-website-concept.html, 2026-11-05) ----------
-   Homepage only. Each section is its own solid band, stepping from paper to
-   the abyss, instead of sitting on main's single gradient. The first two
-   bands are light (dark type); the rest darken one step each. Square 2px
-   corners, ruled lists, larger reading type. */
-.home-main{--paper:#F4F7F7;--hivis:#F2B632}
-.band-light{--ink:#0D2B3B;--ink-2:#3B5967;--rule:rgba(13,43,59,.18);--panel:rgba(13,43,59,.05);
-  --accent:var(--red);--on-ink:#fff;color:var(--ink);color-scheme:light}
-.home-main > .stmt{background:var(--paper)}
-.home-main > .cond{background:#E3ECEE}
-.home-main > .strack{background:var(--sea-0)}
-.home-main > .irows{background:#143F52}
-.home-main > .tiers-sec{background:var(--sea-1)}
+   Homepage only. Below the waterline each section is its own solid band,
+   one step deeper than the last, from the teal surface the hero ends on
+   down to the abyss above the seabed footer. Ruled lists, larger reading
+   type; corners stay the site's own (cards 20px, buttons pills). */
+.home-main{--hivis:#F2B632}
+.home-main > .stmt{background:var(--sea-0)}
+.home-main > .cond{background:#19495B}
+.home-main > .strack{background:#143F52}
+.home-main > .irows{background:var(--sea-1)}
+.home-main > .tiers-sec{background:#0A2231}
 .home-main > .service{background:var(--sea-2)}
 .home-main > .sec{padding:clamp(48px,5vw,76px) 0}
 .home-main .strack-stick{padding:clamp(48px,5vw,76px) 0}
 .home-main .lede{font-size:clamp(18px,1.4vw,20px);line-height:1.55}
 
-/* Square corners: buttons, cards, controls, discs. */
-.hero .btn,.home-main .btn,.home-main .scard,.home-main .field select,.home-main .strack-btn,
-.home-main .irows-go,.home-main .irows-list a::before,.stmt-photo{border-radius:2px}
-.home-main .scard:hover{transform:none}
-
 /* Statement photo: the concept's cool North Sea grade. */
-.stmt-photo{margin:0 0 24px;overflow:hidden;aspect-ratio:16/10;background:var(--sea-0)}
+.stmt-photo{margin:0 0 24px;overflow:hidden;border-radius:16px;aspect-ratio:16/10;background:var(--sea-0)}
 .stmt-photo img{width:100%;height:100%;object-fit:cover;filter:saturate(.6) contrast(1.05)}
 .stmt-side{border-top:0;padding-top:0}
 
