@@ -46,6 +46,21 @@ const stacked = tiles.length === 3 && uprightCount === 1;
 const orderedTiles = stacked
   ? [...tiles].sort((a, b) => (a.ratio < 1.15 ? -1 : 0) - (b.ratio < 1.15 ? -1 : 0))
   : tiles;
+
+// Two uprights beside two wides (S-04): in one justified row the uprights
+// fall under the 280px min-width, which then overrides their flex share and
+// the heights come apart. Same answer as the stack case one column wider:
+// both uprights at full height, the two wides stacked in a third column.
+// Column widths follow the ratios so the crop (object-fit) stays slight.
+const quad = tiles.length === 4 && uprightCount === 2;
+const uprights = tiles.filter((t) => t.ratio < 1.15);
+const wides = tiles.filter((t) => t.ratio >= 1.15);
+const quadCols = quad
+  ? [...uprights.map((t) => t.ratio), wides.reduce((n, t) => n + t.ratio, 0) / 2 / 2.3]
+      .map((r) => `${r.toFixed(3)}fr`).join(' ')
+  : '';
+const shown = quad ? [...uprights, ...wides] : orderedTiles;
+const shape = stacked ? 'stack' : quad ? 'quad' : 'row';
 ---
 
 {items.length > 0 && (
@@ -59,8 +74,9 @@ const orderedTiles = stacked
       </div>
     )}
     <div class="wrap">
-      <div class="mband-grid stag" data-count={items.length} data-shape={stacked ? 'stack' : 'row'}>
-        {orderedTiles.map(({ media: m, ratio }) => (
+      <div class="mband-grid stag" data-count={items.length} data-shape={shape}
+        style={quad ? `grid-template-columns:${quadCols}` : undefined}>
+        {shown.map(({ media: m, ratio }) => (
           <figure class="mband-item" style={`flex-grow:${ratio.toFixed(4)}`}>
             <ImageSlot ref={m.ref} brief={m.brief} ratio={m.ratio} class="mband-plate" sizes={sizesFor(ratio)} />
             <figcaption>{m.brief}</figcaption>
