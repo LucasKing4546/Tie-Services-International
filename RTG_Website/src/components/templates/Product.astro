@@ -28,6 +28,7 @@ import StatsStrip from '@components/blocks/StatsStrip.astro';
 import Skeleton from '@components/blocks/Skeleton.astro';
 import PageEnding from '@components/blocks/PageEnding.astro';
 import { mdxComponents } from '@lib/mdx';
+import { mediaFor } from '@data/media';
 
 interface Props {
   page: PageMeta;
@@ -74,9 +75,14 @@ const datasheetLabel =
 // page (E-10) would cycle the same pair five times. Drop anything already
 // shown above; a configuration left with none gets a full-width copy row.
 const seen = new Set([data.hero.media?.ref]);
-const configMedia = data.specs.map((s) =>
-  s.media.filter((m) => !seen.has(m.ref) && seen.add(m.ref)),
-);
+// An upright shot goes beside the spec table, whose tall column suits it;
+// left for the band below, it stands alone at near-full height (E-06).
+const upright = (ref: string) => { const p = mediaFor(ref); return !!p && p.width / p.height < 0.95; };
+const configMedia = data.specs.map((s) => {
+  const fresh = s.media.filter((m) => !seen.has(m.ref) && seen.add(m.ref));
+  const lead = fresh.findIndex((m) => upright(m.ref));
+  return lead > 0 ? [fresh[lead], ...fresh.filter((_, j) => j !== lead)] : fresh;
+});
 const datasheetHref = datasheetPage ? `${datasheetPage.slug}?equipment=${encodeURIComponent(page.name)}` : undefined;
 ---
 
