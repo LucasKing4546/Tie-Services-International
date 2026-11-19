@@ -156,6 +156,12 @@
 /* (both of the above outrank .imgslot-shot's no-upscale cap, which is
    declared later in this file and would otherwise win on source order.) */
 .mband-grid[data-count="1"] .mband-item figcaption{flex:1;min-width:0;padding-bottom:4px}
+/* A lone landscape photo (S-07): at 62% it left half the band empty with the
+   caption stranded in the corner. Full width instead, caption under it,
+   height-capped so a 4:3 crops to roughly 16:9, held near the top. */
+.mband-grid[data-count="1"] .mband-item:has(.mband-plate[data-orient="landscape"]){flex-direction:column;align-items:stretch;gap:14px}
+.mband-grid[data-count="1"] .mband-plate[data-orient="landscape"]{max-width:min(100%,var(--imgslot-maxw,100%));max-height:min(80svh,760px)}
+.mband-grid[data-count="1"] .mband-plate[data-orient="landscape"] img{object-position:50% 15%}
 .mband-item figcaption{font-size:13px;line-height:1.45;color:var(--ink-2);max-width:44ch}
 .navy .mband-item figcaption{color:rgba(255,255,255,.6)}
 /* Portrait tile beside two landscapes: a justified row would stretch the
