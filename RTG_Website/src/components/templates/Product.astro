@@ -69,6 +69,14 @@ const datasheetPage = data.product?.datasheetPageId ? lookupPage(data.product.da
 // to 3.9 m Hs") rather than something to file a request under.
 const datasheetLabel =
   data.hero.ctas.find((c) => datasheetPage && c.href.startsWith(datasheetPage.slug))?.label ?? 'Request the datasheet';
+// Each photo shows once per page. The MDX lists a configuration's photos
+// independently, so the hero shot is often its first one and a two-photo
+// page (E-10) would cycle the same pair five times. Drop anything already
+// shown above; a configuration left with none gets a full-width copy row.
+const seen = new Set([data.hero.media?.ref]);
+const configMedia = data.specs.map((s) =>
+  s.media.filter((m) => !seen.has(m.ref) && seen.add(m.ref)),
+);
 const datasheetHref = datasheetPage ? `${datasheetPage.slug}?equipment=${encodeURIComponent(page.name)}` : undefined;
 ---
 
@@ -112,7 +120,7 @@ const datasheetHref = datasheetPage ? `${datasheetPage.slug}?equipment=${encodeU
       <FeatureRow
         id={`config-${i + 1}`}
         heading={s.caption.replace(/(\d) (m|kg|Te|kW)\b/g, '$1 $2')}
-        media={s.media[0]}
+        media={configMedia[i][0]}
         reverse={i % 2 === 1}
         tone={i % 2 === 1 ? 'off' : 'default'}
       >
@@ -122,7 +130,7 @@ const datasheetHref = datasheetPage ? `${datasheetPage.slug}?equipment=${encodeU
           <p class="note-line">First layer is the innermost wrap of cable on the drum, top layer the outermost. Line pull falls and line speed rises as layers build.</p>
         )}
       </FeatureRow>
-      {s.media.length > 1 && <MediaBand items={s.media.slice(1)} tone={i % 2 === 1 ? 'off' : 'default'} />}
+      {configMedia[i].length > 1 && <MediaBand items={configMedia[i].slice(1)} tone={i % 2 === 1 ? 'off' : 'default'} />}
     </>
   ))}
 

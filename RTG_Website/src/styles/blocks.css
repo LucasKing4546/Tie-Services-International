@@ -98,6 +98,7 @@
    Copy one side, media the other, alternating down the page. */
 .frow-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);
   gap:clamp(40px,5vw,84px);align-items:center}
+.frow-grid:not(:has(> .frow-media)){grid-template-columns:minmax(0,1fr)}
 .frow-rev .frow-grid{direction:rtl}
 .frow-rev .frow-grid > *{direction:ltr}
 .frow-copy > .mono{margin:0 0 22px}
