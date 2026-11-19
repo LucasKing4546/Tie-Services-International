@@ -30,7 +30,10 @@
    to outrank the .off + .off rule above. */
 .frow.frow + .mband.mband{padding-top:0}
 @media (min-width:901px){.frow.frow + .mband.mband{padding-top:clamp(48px,5vw,72px)}}
-.frow{overflow:visible;position:relative;z-index:1}
+/* No z-index here: the sticky .frow-media already paints its overhang above
+   the next (transparent) section, and a stacking context on the row made
+   html.to.design reorder every row to the end of the page. */
+.frow{overflow:visible}
 .frow-grid{gap:clamp(40px,6vw,110px)}
 .frow-copy h2{font-size:clamp(28px,3.6vw,52px);letter-spacing:-.04em;line-height:1.06;max-width:14ch}
 @media (min-width:901px){
